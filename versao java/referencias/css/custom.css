@@ -14,3 +14,7 @@ h1 i, h2 i, h3 i, h4 i {
 h3{
 	margin-top: 50px;
 }
+
+h3 .uml-word{
+	display: inline-block;
+}
