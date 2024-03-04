@@ -3007,56 +3007,349 @@ Process finished with exit code 0
                 conceitos, definindo restrições responsáveis por diferenciar o que é composição, agregação ou
                 associação.
             </p>
-            <div class="acessivel no-print">
-                <p>Clique ou toque para visualizar o conteúdo.</p>
-            </div>
-            <div class="painel-categorias">
-                <button type="button" class="btn-categorias btn-categoria02 center-block" data-toggle="modal"
-                    data-target="#modal-categoria02"></button>
-                <button type="button" class="btn-categorias btn-categoria03 center-block" data-toggle="modal"
-                    data-target="#modal-categoria03"></button>
+            <div class="no-print">
+              <p>Clique ou toque para visualizar o conteúdo.</p>
+           
+              <div class="painel-categorias">
+                  <button type="button" class="btn-categorias btn-categoria02 center-block" data-toggle="modal"
+                      data-target="#modal-categoria02"></button>
+                  <button type="button" class="btn-categorias btn-categoria03 center-block" data-toggle="modal"
+                      data-target="#modal-categoria03"></button>
+              </div>
+
+              <div class="modal modal-100 fade" id="modal-categoria03" aria-hidden="true">
+                  <div class="modal-dialog">
+                      <div class="modal-content no-print">
+                          <div class="modal-header" style="padding-top: 30px;">
+                              <button type="button" class="close" data-dismiss="modal"
+                                  aria-hidden="true">&times;</button>
+                              <h3 class="modal-title">
+                                  <div class="container">Composição</div>
+                              </h3>
+                          </div>
+                          <div class="modal-body">
+                              <div class="container">
+                                  <p>
+                                      Em uma composição, as classes relacionadas só funcionam adequadamente
+                                      juntas.
+                                      Por conta disso, a composição é considerada uma <b>associação do tipo
+                                          forte</b>, na
+                                      qual há dependência entre as partes.
+                                  </p>
+                                  <p>
+                                      Imagine uma casa e suas janelas. Componha a classe “Casa” com um objeto da
+                                      classe “Janela” no quarto, um na cozinha, um no banheiro e um na sala. Caso
+                                      seja
+                                      criado um objeto da classe “Casa” e, logo após, seja destruído, também serão
+                                      destruídas as suas janelas.
+                                  </p>
+                                  <p>
+                                      Veja esse exemplo transformado em código. Primeiramente, será criada a
+                                      classe
+                                      “Janela”, que será necessária para a composição da classe “Casa”.
+                                  </p>
+                                  <p>
+                                      A composição em Python envolve criar classes que contenham objetos de outras
+                                      classes como atributos. Isso permite que um objeto contenha outros objetos,
+                                      formando uma estrutura hierárquica. Observe este exemplo de composição
+                                      usando as
+                                      classes “Casa” e “Janela”:
+                                  </p>
+                                  <pre>
+                                      <code>
+  <span class="l-python-orange">class</span> Janela: 
+  <span class="l-python-orange">def</span> <span class="l-python-roxo">__init__</span>(<span class="l-python-violeta">self</span>, localizacao): 
+  <span class="l-python-violeta">self</span>.localizacao = localizacao 
+
+  <span class="l-python-orange"> def</span> <span class="l-python-blue">abrir</span>(<span class="l-python-violeta">self</span>): 
+  <span class="l-python-aescuro">print</span>(<span class="l-python-green">f"Janela na</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.localizacao<span class="l-python-orange">}</span> <span class="l-python-green">aberta."</span>) 
+
+  <span class="l-python-orange">def</span> <span class="l-python-blue">fechar</span>(<span class="l-python-violeta">self</span>): 
+  <span class="l-python-aescuro">print</span>(<span class="l-python-green">f"Janela na</span> <span class="l-python-orange">{</span<span class="l-python-violeta">>self</span>.localizacao<span class="l-python-orange">}</span> <span class="l-python-green">fechada."</span>) 
+
+  <span class="l-python-orange">class</span> Casa: 
+  <span class="l-python-orange">def</span><span class="l-python-roxo"> __init__</span>(<span class="l-python-violeta">self</span>): 
+  <span class="l-python-violeta">self</span>.quarto = Janela(<span class="l-python-green">"quarto"</span>) 
+  <span class="l-python-violeta"> self</span>.cozinha = Janela(<span class="l-python-green">"cozinha"</span>) 
+  <span class="l-python-violeta"> self</span>.banheiro = Janela(<span class="l-python-green">"banheiro"</span>) 
+  <span class="l-python-violeta"> self</span>.sala = Janela(<span class="l-python-green">"sala"</span>) 
+
+  <span class="l-python-orange">def</span> <span class="l-python-blue">abrir_janelas</span>(<span class="l-python-violeta">self</span>): 
+  <span class="l-python-violeta">self</span>.quarto.abrir() 
+  <span class="l-python-violeta">self</span>.cozinha.abrir() 
+  <span class="l-python-violeta">self</span>.banheiro.abrir() 
+  <span class="l-python-violeta">self</span>.sala.abrir() 
+
+  <span class="l-python-orange">def</span> <span class="l-python-blue">fechar_janelas</span>(<span class="l-python-violeta">self</span>): 
+  <span class="l-python-violeta">self</span>.quarto.fechar() 
+  <span class="l-python-violeta">self</span>.cozinha.fechar() 
+  <span class="l-python-violeta">self</span>.banheiro.fechar() 
+  <span class="l-python-violeta">self</span>.sala.fechar() 
+
+  # Criando uma casa 
+  minha_casa = Casa() 
+
+  # Abrindo todas as janelas 
+  minha_casa.abrir_janelas() 
+
+  # Fechando todas as janelas 
+  minha_casa.fechar_janelas() 
+                                      </code>
+                                  </pre>
+                                  <p>
+                                      Nesse exemplo, a classe “Casa” contém quatro objetos da classe “Janela”, um
+                                      para
+                                      cada cômodo. A composição permite que você acesse e manipule as janelas da
+                                      casa
+                                      por meio de métodos na classe “Casa”. Quando a instância da classe “Casa” é
+                                      destruída, as instâncias de “Janela” dentro dela também são destruídas. Isso
+                                      demonstra o conceito de composição em Python.
+                                  </p>
+                                  <p>Saída do programa:</p>
+                                  <pre>
+                                      <code>
+  Janela na quarto aberta. 
+  Janela na cozinha aberta. 
+  Janela na banheiro aberta. 
+  Janela na sala aberta. 
+  Janela na quarto fechada. 
+  Janela na cozinha fechada. 
+  Janela na banheiro fechada. 
+  Janela na sala fechada. 
+
+  Process finished with exit code 0 
+                                      </code>
+                                  </pre>
+                                  <p>
+                                      Conclui-se que, em uma composição, existe uma forte dependência entre as
+                                      partes.
+                                      Dessa forma, a composição é considerada uma associação do tipo forte, na
+                                      qual há
+                                      dependência entre as partes.
+                                  </p>
+                              </div>
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="botao borda-primaria-03"
+                                  data-dismiss="modal">Fechar</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="modal modal-100 fade" id="modal-categoria02" aria-hidden="true">
+                  <div class="modal-dialog">
+                      <div class="modal-content no-print">
+                          <div class="modal-header" style="padding-top: 30px;">
+                              <button type="button" class="close" data-dismiss="modal"
+                                  aria-hidden="true">&times;</button>
+                              <h3 class="modal-title">
+                                  <div class="container">Agregação</div>
+                              </h3>
+                          </div>
+                          <div class="modal-body">
+                              <div class="container">
+                                  <p>
+                                      Uma agregação é uma forma mais liberal de composição. Enquanto na composição
+                                      só
+                                      existe o todo, de forma que as classes só têm sentido juntas, na agregação,
+                                      há
+                                      um relacionamento típico de “proprietário” e “propriedade”, em que as duas
+                                      classes existem por conta própria, porém juntas têm uma relação na qual uma
+                                      classe é parte da outra, agregando informações ao proprietário.
+                                  </p>
+                                  <p>
+                                      Por exemplo, um departamento pode ter um ou mais funcionários, mas um
+                                      funcionário não tem um departamento, apenas faz parte de um departamento,
+                                      novamente, um relacionamento do tipo proprietário e propriedade. Portanto,
+                                      diz-se que a agregação tem uma natureza unidirecional.
+                                  </p>
+                                  <p>
+                                      Do ponto de vista de objetos instanciados em um código, o tempo de vida do
+                                      objeto da ‘classe propriedade” não depende do tempo de vida do objeto da
+                                      “classe
+                                      proprietário”. Ao remover qualquer um dos dois, o outro continuará existindo
+                                      e
+                                      funcionando por si só.
+                                  </p>
+                                  <p>
+                                      Em programação orientada a objetos, a agregação é um conceito que descreve a
+                                      relação entre um objeto “todo” e suas partes “partes”. Na agregação, um
+                                      objeto
+                                      principal (o “todo”) tem ou é composto por outros objetos (as “partes”), mas
+                                      a
+                                      vida das partes não depende do objeto principal. Isso significa que as
+                                      partes
+                                      podem existir independentemente do objeto principal.
+                                  </p>
+                                  <p>
+                                      Agora será explorada a agregação em Python usando um exemplo de classes
+                                      “Funcionário” e “Departamento”. O “Funcionário” será o objeto principal,
+                                      enquanto o “Departamento” será uma parte agregada.
+                                  </p>
+                                  <p>Primeiramente, será criada a classe “Funcionario”:</p>
+                                  <pre>
+                                      <code>
+  <span class="l-python-orange">class</span> Funcionario: 
+  <span class="l-python-orange"> def</span> <span class="l-python-roxo">__init__</span>(<span class="l-python-violeta">self</span>, nome): 
+  <span class="l-python-violeta">self</span>.nome = nome 
+
+  <span class="l-python-orange">def</span> <span class="l-python-blue">getNome</span>(<span class="l-python-violeta">self</span>): 
+  <span class="l-python-orange">return</span> <span class="l-python-violeta">self</span>.nome 
+                                      </code>
+                                  </pre>
+                                  <p>
+                                      A classe “Funcionario” contém um atributo “nome” e um método “getNome” para
+                                      acessar o nome do funcionário. Agora, será criada a classe “Departamento”,
+                                      que
+                                      agregará funcionários:
+                                  </p>
+                                  <pre>
+                                      <code>
+  <span class="l-python-orange">class</span> Departamento: 
+  <span class="l-python-orange">def</span> <span class="l-python-roxo">__init__</span>(<span class="l-python-violeta">self</span>, nome): 
+  <span class="l-python-violeta">self</span>.nome = nome 
+  <span class="l-python-violeta">self</span>.funcionarios = [] 
+
+  <span class="l-python-orange"> def</span> <span class="l-python-blue">getNome</span>(<span class="l-python-violeta">self</span>): 
+  <span class="l-python-orange">return</span> <span class="l-python-violeta">self</span>.nome 
+
+  <span class="l-python-orange">def</span> <span class="l-python-blue">adicionarFuncionario</span>(<span class="l-python-violeta">self</span>, funcionario): 
+  <span class="l-python-violeta">self</span>.funcionarios.append(funcionario) 
+                                      </code>
+                                  </pre>
+                                  <p>
+                                      A classe “Departamento” contém um atributo “nome”, que representa o nome do
+                                      departamento e uma lista de funcionários. Também tem métodos “getNome” para
+                                      acessar o nome do departamento e “adicionarFuncionario” para adicionar
+                                      funcionários à lista.
+                                  </p>
+                                  <p>Veja uma demonstração da agregação usando essas classes:</p>
+                                  <pre>
+                                      <code>
+  <span class="l-python-orange">class</span> Funcionario: 
+  <span class="l-python-orange">def</span> <span class="l-python-roxo">__init__</span>(<span class="l-python-violeta">self</span>, nome): 
+  <span class="l-python-violeta">self</span>.nome = nome 
+
+  <span class="l-python-orange">def</span> <span class="l-python-blue">getNome</span>(<span class="l-python-violeta">self</span>): 
+  <span class="l-python-orange">return</span> <span class="l-python-violeta">self</span>.nome 
+
+  <span class="l-python-orange">class</span> Departamento: 
+  <span class="l-python-orange">def</span> <span class="l-python-roxo">__init__</span>(<span class="l-python-violeta">self</span>, nome): 
+  <span class="l-python-violeta">self</span>.nome = nome 
+  <span class="l-python-violeta">self</span>.funcionarios = [] 
+
+  <span class="l-python-orange">def</span> <span class="l-python-blue">getNome</span>(<span class="l-python-violeta">self</span>): 
+  <span class="l-python-orange">return</span> <span class="l-python-violeta">self</span>.nome 
+
+  <span class="l-python-orange">def</span> <span class="l-python-blue">adicionarFuncionario</span>(<span class="l-python-violeta">self</span>, funcionario): 
+  <span class="l-python-violeta">self</span>.funcionarios.append(funcionario) 
+  # Criando funcionários 
+  funcionario1 = Funcionario(<span class="l-python-green">"Alice"</span>) 
+  funcionario2 = Funcionario(<span class="l-python-green">"Bob"</span>) 
+  funcionario3 = Funcionario(<span class="l-python-green">"Charlie"</span>) 
+
+  # Criando um departamento 
+  departamento = Departamento(<span class="l-python-green">"Recursos Humanos"</span>) 
+
+  # Adicionando funcionários ao departamento 
+  departamento.adicionarFuncionario(funcionario1) 
+  departamento.adicionarFuncionario(funcionario2) 
+  departamento.adicionarFuncionario(funcionario3) 
+
+  # Obtendo informações sobre o departamento e seus funcionários 
+  <span class="l-python-aescuro">print</span>(<span class="l-python-green">f"Departamento:</span> <span class="l-python-orange">{</span>departamento.getNome()<span class="l-python-orange">}</span><span class="l-python-green">"</span>) 
+  <span class="l-python-aescuro">print</span>(<span class="l-python-green">"Funcionários no departamento:"</span>) 
+  <span class="l-python-orange">for</span> funcionario <span class="l-python-orange">in</span> departamento.funcionarios: 
+  <span class="l-python-aescuro">print</span>(funcionario.getNome()) 
+                                      </code>
+                                  </pre>
+                                  <p>Saída do programa: </p>
+                                  <pre>
+                                      <code>
+  Departamento: Recursos Humanos 
+  Funcionários no departamento: 
+  Alice 
+  Bob 
+  Charlie 
+
+  Process finished with exit code 0 
+                                      </code>
+                                  </pre>
+                                  <p>
+                                      Nesse exemplo, foram criados funcionários (objetos da classe “Funcionario”)
+                                      e um
+                                      departamento (objeto da classe “Departamento”). Em seguida, foram
+                                      adicionados os
+                                      funcionários ao departamento usando o método “adicionarFuncionario”. O
+                                      departamento contém uma lista de funcionários agregados a ele.
+                                  </p>
+                                  <p>
+                                      A agregação permite que o departamento mantenha uma coleção de funcionários,
+                                      mas
+                                      os funcionários podem existir independentemente do departamento. Isso
+                                      demonstra
+                                      como a agregação é uma forma útil de modelar relacionamentos entre objetos
+                                      em
+                                      Python.
+                                  </p>
+                                  <div class="caixa-destaque icone anotar">
+                                      <p>
+                                          Perceba que, no exemplo de composição, os objetos “Janela” eram
+                                          instanciados
+                                          dentro da classe “Casa”. Esse comportamento fazia com que os objetos
+                                          nascessem e morressem dentro de um objeto da classe “Casa”, criando uma
+                                          dependência forte. Já no exemplo de agregação, foi instanciada a classe
+                                          “Funcionario” fora da classe “Departamento”, enviando apenas uma
+                                          referência
+                                          para dentro. Essa diferença torna possível a existência dos dois de
+                                          maneira
+                                          independente.
+                                      </p>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="botao borda-primaria-03"
+                                  data-dismiss="modal">Fechar</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
             </div>
 
-            <div class="modal modal-100 fade" id="modal-categoria03" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content no-print">
-                        <div class="modal-header" style="padding-top: 30px;">
-                            <button type="button" class="close" data-dismiss="modal"
-                                aria-hidden="true">&times;</button>
-                            <h3 class="modal-title">
-                                <div class="container">Composição</div>
-                            </h3>
-                        </div>
-                        <div class="modal-body">
-                            <div class="container">
-                                <p>
-                                    Em uma composição, as classes relacionadas só funcionam adequadamente
-                                    juntas.
-                                    Por conta disso, a composição é considerada uma <b>associação do tipo
-                                        forte</b>, na
-                                    qual há dependência entre as partes.
-                                </p>
-                                <p>
-                                    Imagine uma casa e suas janelas. Componha a classe “Casa” com um objeto da
-                                    classe “Janela” no quarto, um na cozinha, um no banheiro e um na sala. Caso
-                                    seja
-                                    criado um objeto da classe “Casa” e, logo após, seja destruído, também serão
-                                    destruídas as suas janelas.
-                                </p>
-                                <p>
-                                    Veja esse exemplo transformado em código. Primeiramente, será criada a
-                                    classe
-                                    “Janela”, que será necessária para a composição da classe “Casa”.
-                                </p>
-                                <p>
-                                    A composição em Python envolve criar classes que contenham objetos de outras
-                                    classes como atributos. Isso permite que um objeto contenha outros objetos,
-                                    formando uma estrutura hierárquica. Observe este exemplo de composição
-                                    usando as
-                                    classes “Casa” e “Janela”:
-                                </p>
-                                <pre>
-                                    <code>
+            <div class="acessivel print">
+              <h3>
+                  Composição
+              </h3>
+                        
+              <p>
+                  Em uma composição, as classes relacionadas só funcionam adequadamente
+                  juntas.
+                  Por conta disso, a composição é considerada uma <b>associação do tipo
+                      forte</b>, na
+                  qual há dependência entre as partes.
+              </p>
+              <p>
+                  Imagine uma casa e suas janelas. Componha a classe “Casa” com um objeto da
+                  classe “Janela” no quarto, um na cozinha, um no banheiro e um na sala. Caso
+                  seja
+                  criado um objeto da classe “Casa” e, logo após, seja destruído, também serão
+                  destruídas as suas janelas.
+              </p>
+              <p>
+                  Veja esse exemplo transformado em código. Primeiramente, será criada a
+                  classe
+                  “Janela”, que será necessária para a composição da classe “Casa”.
+              </p>
+              <p>
+                  A composição em Python envolve criar classes que contenham objetos de outras
+                  classes como atributos. Isso permite que um objeto contenha outros objetos,
+                  formando uma estrutura hierárquica. Observe este exemplo de composição
+                  usando as
+                  classes “Casa” e “Janela”:
+              </p>
+              <pre>
+                  <code>
 <span class="l-python-orange">class</span> Janela: 
 <span class="l-python-orange">def</span> <span class="l-python-roxo">__init__</span>(<span class="l-python-violeta">self</span>, localizacao): 
 <span class="l-python-violeta">self</span>.localizacao = localizacao 
@@ -3094,20 +3387,20 @@ minha_casa.abrir_janelas()
 
 # Fechando todas as janelas 
 minha_casa.fechar_janelas() 
-                                    </code>
-                                </pre>
-                                <p>
-                                    Nesse exemplo, a classe “Casa” contém quatro objetos da classe “Janela”, um
-                                    para
-                                    cada cômodo. A composição permite que você acesse e manipule as janelas da
-                                    casa
-                                    por meio de métodos na classe “Casa”. Quando a instância da classe “Casa” é
-                                    destruída, as instâncias de “Janela” dentro dela também são destruídas. Isso
-                                    demonstra o conceito de composição em Python.
-                                </p>
-                                <p>Saída do programa:</p>
-                                <pre>
-                                    <code>
+                  </code>
+              </pre>
+              <p>
+                  Nesse exemplo, a classe “Casa” contém quatro objetos da classe “Janela”, um
+                  para
+                  cada cômodo. A composição permite que você acesse e manipule as janelas da
+                  casa
+                  por meio de métodos na classe “Casa”. Quando a instância da classe “Casa” é
+                  destruída, as instâncias de “Janela” dentro dela também são destruídas. Isso
+                  demonstra o conceito de composição em Python.
+              </p>
+              <p>Saída do programa:</p>
+              <pre>
+                  <code>
 Janela na quarto aberta. 
 Janela na cozinha aberta. 
 Janela na banheiro aberta. 
@@ -3118,93 +3411,77 @@ Janela na banheiro fechada.
 Janela na sala fechada. 
 
 Process finished with exit code 0 
-                                    </code>
-                                </pre>
-                                <p>
-                                    Conclui-se que, em uma composição, existe uma forte dependência entre as
-                                    partes.
-                                    Dessa forma, a composição é considerada uma associação do tipo forte, na
-                                    qual há
-                                    dependência entre as partes.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="botao borda-primaria-03"
-                                data-dismiss="modal">Fechar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal modal-100 fade" id="modal-categoria02" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content no-print">
-                        <div class="modal-header" style="padding-top: 30px;">
-                            <button type="button" class="close" data-dismiss="modal"
-                                aria-hidden="true">&times;</button>
-                            <h3 class="modal-title">
-                                <div class="container">Agregação</div>
-                            </h3>
-                        </div>
-                        <div class="modal-body">
-                            <div class="container">
-                                <p>
-                                    Uma agregação é uma forma mais liberal de composição. Enquanto na composição
-                                    só
-                                    existe o todo, de forma que as classes só têm sentido juntas, na agregação,
-                                    há
-                                    um relacionamento típico de “proprietário” e “propriedade”, em que as duas
-                                    classes existem por conta própria, porém juntas têm uma relação na qual uma
-                                    classe é parte da outra, agregando informações ao proprietário.
-                                </p>
-                                <p>
-                                    Por exemplo, um departamento pode ter um ou mais funcionários, mas um
-                                    funcionário não tem um departamento, apenas faz parte de um departamento,
-                                    novamente, um relacionamento do tipo proprietário e propriedade. Portanto,
-                                    diz-se que a agregação tem uma natureza unidirecional.
-                                </p>
-                                <p>
-                                    Do ponto de vista de objetos instanciados em um código, o tempo de vida do
-                                    objeto da ‘classe propriedade” não depende do tempo de vida do objeto da
-                                    “classe
-                                    proprietário”. Ao remover qualquer um dos dois, o outro continuará existindo
-                                    e
-                                    funcionando por si só.
-                                </p>
-                                <p>
-                                    Em programação orientada a objetos, a agregação é um conceito que descreve a
-                                    relação entre um objeto “todo” e suas partes “partes”. Na agregação, um
-                                    objeto
-                                    principal (o “todo”) tem ou é composto por outros objetos (as “partes”), mas
-                                    a
-                                    vida das partes não depende do objeto principal. Isso significa que as
-                                    partes
-                                    podem existir independentemente do objeto principal.
-                                </p>
-                                <p>
-                                    Agora será explorada a agregação em Python usando um exemplo de classes
-                                    “Funcionário” e “Departamento”. O “Funcionário” será o objeto principal,
-                                    enquanto o “Departamento” será uma parte agregada.
-                                </p>
-                                <p>Primeiramente, será criada a classe “Funcionario”:</p>
-                                <pre>
-                                    <code>
+                  </code>
+              </pre>
+              <p>
+                  Conclui-se que, em uma composição, existe uma forte dependência entre as
+                  partes.
+                  Dessa forma, a composição é considerada uma associação do tipo forte, na
+                  qual há
+                  dependência entre as partes.
+              </p>
+                            
+              <h3>
+                Agregação
+              </h3>
+                        
+              <p>
+                  Uma agregação é uma forma mais liberal de composição. Enquanto na composição
+                  só
+                  existe o todo, de forma que as classes só têm sentido juntas, na agregação,
+                  há
+                  um relacionamento típico de “proprietário” e “propriedade”, em que as duas
+                  classes existem por conta própria, porém juntas têm uma relação na qual uma
+                  classe é parte da outra, agregando informações ao proprietário.
+              </p>
+              <p>
+                  Por exemplo, um departamento pode ter um ou mais funcionários, mas um
+                  funcionário não tem um departamento, apenas faz parte de um departamento,
+                  novamente, um relacionamento do tipo proprietário e propriedade. Portanto,
+                  diz-se que a agregação tem uma natureza unidirecional.
+              </p>
+              <p>
+                  Do ponto de vista de objetos instanciados em um código, o tempo de vida do
+                  objeto da ‘classe propriedade” não depende do tempo de vida do objeto da
+                  “classe
+                  proprietário”. Ao remover qualquer um dos dois, o outro continuará existindo
+                  e
+                  funcionando por si só.
+              </p>
+              <p>
+                  Em programação orientada a objetos, a agregação é um conceito que descreve a
+                  relação entre um objeto “todo” e suas partes “partes”. Na agregação, um
+                  objeto
+                  principal (o “todo”) tem ou é composto por outros objetos (as “partes”), mas
+                  a
+                  vida das partes não depende do objeto principal. Isso significa que as
+                  partes
+                  podem existir independentemente do objeto principal.
+              </p>
+              <p>
+                  Agora será explorada a agregação em Python usando um exemplo de classes
+                  “Funcionário” e “Departamento”. O “Funcionário” será o objeto principal,
+                  enquanto o “Departamento” será uma parte agregada.
+              </p>
+              <p>Primeiramente, será criada a classe “Funcionario”:</p>
+              <pre>
+                  <code>
 <span class="l-python-orange">class</span> Funcionario: 
 <span class="l-python-orange"> def</span> <span class="l-python-roxo">__init__</span>(<span class="l-python-violeta">self</span>, nome): 
 <span class="l-python-violeta">self</span>.nome = nome 
 
 <span class="l-python-orange">def</span> <span class="l-python-blue">getNome</span>(<span class="l-python-violeta">self</span>): 
 <span class="l-python-orange">return</span> <span class="l-python-violeta">self</span>.nome 
-                                    </code>
-                                </pre>
-                                <p>
-                                    A classe “Funcionario” contém um atributo “nome” e um método “getNome” para
-                                    acessar o nome do funcionário. Agora, será criada a classe “Departamento”,
-                                    que
-                                    agregará funcionários:
-                                </p>
-                                <pre>
-                                    <code>
+                  </code>
+              </pre>
+              <p>
+                  A classe “Funcionario” contém um atributo “nome” e um método “getNome” para
+                  acessar o nome do funcionário. Agora, será criada a classe “Departamento”,
+                  que
+                  agregará funcionários:
+              </p>
+              <pre>
+                  <code>
 <span class="l-python-orange">class</span> Departamento: 
 <span class="l-python-orange">def</span> <span class="l-python-roxo">__init__</span>(<span class="l-python-violeta">self</span>, nome): 
 <span class="l-python-violeta">self</span>.nome = nome 
@@ -3215,17 +3492,17 @@ Process finished with exit code 0
 
 <span class="l-python-orange">def</span> <span class="l-python-blue">adicionarFuncionario</span>(<span class="l-python-violeta">self</span>, funcionario): 
 <span class="l-python-violeta">self</span>.funcionarios.append(funcionario) 
-                                    </code>
-                                </pre>
-                                <p>
-                                    A classe “Departamento” contém um atributo “nome”, que representa o nome do
-                                    departamento e uma lista de funcionários. Também tem métodos “getNome” para
-                                    acessar o nome do departamento e “adicionarFuncionario” para adicionar
-                                    funcionários à lista.
-                                </p>
-                                <p>Veja uma demonstração da agregação usando essas classes:</p>
-                                <pre>
-                                    <code>
+                  </code>
+              </pre>
+              <p>
+                  A classe “Departamento” contém um atributo “nome”, que representa o nome do
+                  departamento e uma lista de funcionários. Também tem métodos “getNome” para
+                  acessar o nome do departamento e “adicionarFuncionario” para adicionar
+                  funcionários à lista.
+              </p>
+              <p>Veja uma demonstração da agregação usando essas classes:</p>
+              <pre>
+                  <code>
 <span class="l-python-orange">class</span> Funcionario: 
 <span class="l-python-orange">def</span> <span class="l-python-roxo">__init__</span>(<span class="l-python-violeta">self</span>, nome): 
 <span class="l-python-violeta">self</span>.nome = nome 
@@ -3261,11 +3538,11 @@ departamento.adicionarFuncionario(funcionario3)
 <span class="l-python-aescuro">print</span>(<span class="l-python-green">"Funcionários no departamento:"</span>) 
 <span class="l-python-orange">for</span> funcionario <span class="l-python-orange">in</span> departamento.funcionarios: 
 <span class="l-python-aescuro">print</span>(funcionario.getNome()) 
-                                    </code>
-                                </pre>
-                                <p>Saída do programa: </p>
-                                <pre>
-                                    <code>
+                  </code>
+              </pre>
+              <p>Saída do programa: </p>
+              <pre>
+                  <code>
 Departamento: Recursos Humanos 
 Funcionários no departamento: 
 Alice 
@@ -3273,48 +3550,41 @@ Bob
 Charlie 
 
 Process finished with exit code 0 
-                                    </code>
-                                </pre>
-                                <p>
-                                    Nesse exemplo, foram criados funcionários (objetos da classe “Funcionario”)
-                                    e um
-                                    departamento (objeto da classe “Departamento”). Em seguida, foram
-                                    adicionados os
-                                    funcionários ao departamento usando o método “adicionarFuncionario”. O
-                                    departamento contém uma lista de funcionários agregados a ele.
-                                </p>
-                                <p>
-                                    A agregação permite que o departamento mantenha uma coleção de funcionários,
-                                    mas
-                                    os funcionários podem existir independentemente do departamento. Isso
-                                    demonstra
-                                    como a agregação é uma forma útil de modelar relacionamentos entre objetos
-                                    em
-                                    Python.
-                                </p>
-                                <div class="caixa-destaque icone anotar">
-                                    <p>
-                                        Perceba que, no exemplo de composição, os objetos “Janela” eram
-                                        instanciados
-                                        dentro da classe “Casa”. Esse comportamento fazia com que os objetos
-                                        nascessem e morressem dentro de um objeto da classe “Casa”, criando uma
-                                        dependência forte. Já no exemplo de agregação, foi instanciada a classe
-                                        “Funcionario” fora da classe “Departamento”, enviando apenas uma
-                                        referência
-                                        para dentro. Essa diferença torna possível a existência dos dois de
-                                        maneira
-                                        independente.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="botao borda-primaria-03"
-                                data-dismiss="modal">Fechar</button>
-                        </div>
-                    </div>
-                </div>
+                  </code>
+              </pre>
+              <p>
+                  Nesse exemplo, foram criados funcionários (objetos da classe “Funcionario”)
+                  e um
+                  departamento (objeto da classe “Departamento”). Em seguida, foram
+                  adicionados os
+                  funcionários ao departamento usando o método “adicionarFuncionario”. O
+                  departamento contém uma lista de funcionários agregados a ele.
+              </p>
+              <p>
+                  A agregação permite que o departamento mantenha uma coleção de funcionários,
+                  mas
+                  os funcionários podem existir independentemente do departamento. Isso
+                  demonstra
+                  como a agregação é uma forma útil de modelar relacionamentos entre objetos
+                  em
+                  Python.
+              </p>
+              <div class="caixa-destaque icone anotar">
+                  <p>
+                      Perceba que, no exemplo de composição, os objetos “Janela” eram
+                      instanciados
+                      dentro da classe “Casa”. Esse comportamento fazia com que os objetos
+                      nascessem e morressem dentro de um objeto da classe “Casa”, criando uma
+                      dependência forte. Já no exemplo de agregação, foi instanciada a classe
+                      “Funcionario” fora da classe “Departamento”, enviando apenas uma
+                      referência
+                      para dentro. Essa diferença torna possível a existência dos dois de
+                      maneira
+                      independente.
+                  </p>
+              </div>                    
             </div>
+
             <p>
                 Agora você já conhece a composição e a agregação e compreende que ambas são tipos mais
                 restritivos
@@ -4271,189 +4541,7 @@ Process finished with exit code 0
         </div>
       </div>
     </div>
-    <div class="modal modal-100 fade" id="modal-categoria02" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content no-print">
-          <div class="modal-header" style="padding-top: 30px;">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3 class="modal-title">
-              <div class="container">Agregação</div>
-            </h3>
-          </div>
-          <div class="modal-body">
-            <div class="container">
-              <p>Uma agregação é uma forma mais liberal de composição. Enquanto na composição só existe o todo (de forma
-                que as classes só têm sentido quando estiverem juntas), na agregação há um relacionamento típico de
-                "proprietário" e "propriedade", no qual as duas classes existem por conta própria, porém, juntas, fazem
-                uma relação em que uma classe é parte da outra, agregando informações ao proprietário.</p>
-              <p>Por exemplo, um departamento pode ter um ou mais funcionários, mas um funcionário não <b>tem</b> um
-                departamento (ele apenas <b>faz parte</b> de um departamento – novamente, um relacionamento do tipo
-                proprietário e propriedade). Portanto, diz-se que a agregação contém uma natureza unidirecional.</p>
-              <p>Do ponto de vista de objetos instanciados em um código, o tempo de vida do objeto da classe
-                <b>propriedade</b> não depende do tempo de vida do objeto da classe <b>proprietário</b>. Quando se
-                remove qualquer um dos dois, o outro continuará existindo e funcionando por si só.</p>
-              <p>Que tal implementar o exemplo mostrado? Veja o código a seguir:</p>
-              <pre>
-                    <code>
-<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Funcionario</span> {
-    <span style="color: #4073e0">private</span> String nome;
-
-    Funcionario (String nome) {
-        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">nome</span> = nome;
-    }
-
-    <span style="color: #4073e0">public</span> String <span style="color: #00aa00">getNome</span>() {
-        <span style="color: #4073e0">return</span> <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">nome</span>;
-    }
-}
-                    </code>
-                  </pre>
-              <p>Como se pode ver, foi criada uma classe <b>Funcionario</b> bem simples, que tem uma propriedade privada
-                "nome", um método construtor e um método público <b>getNome()</b>.</p>
-              <p>Agora, será criada a classe <b>Departamento</b>, que será responsável por implementar a agregação.
-                Confira este código:</p>
-              <pre>
-                    <code>
-<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Departamento</span> {
-    <span style="color: #4073e0">private</span> String nome;
-    <span style="color: #4073e0">private</span> ArrayList&lt;Funcionario&gt; funcionarios = <span style="color: #4073e0">new</span> ArrayList&lt;&gt;();
-
-    Departamento (String nome) {
-        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">nome</span> = nome;
-    }
-
-    <span style="color: #4073e0">public</span> String <span style="color: #00aa00">getNome</span>() {
-        <span style="color: #4073e0">return</span> <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">name</span>;
-    }
-
-    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">adicionarFuncionario</span> (Funcionario funcionario) {
-        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">funcionarios</span>.<span style="color: #a0ceff">add</span>(funcionario);
-    }
-}
-                    </code>
-                  </pre>
-              <div class="caixa-destaque icone saiba-mais">
-                <p>Aprenda mais sobre <b>ArrayList</b> e <b>Generics</b> no conteúdo “Estruturas de Dados”, desta
-                  unidade curricular.</p>
-              </div>
-              <p>Note que a classe <b>Departamento</b> também tem uma propriedade privada "nome", um método público
-                <b>getNome()</b> e um método construtor, assim como a classe <b>Funcionario</b>.</p>
-              <p>Além disso, a classe <b>Departamento</b> contém uma propriedade privada "funcionarios", sendo esta uma
-                lista (uma <b>ArrayList</b>) de objetos da classe <b>Funcionario</b>. Para manipular essa lista, a
-                classe tem um método público chamado <b>adicionarFuncionario()</b>. Esse método recebe, por argumento,
-                um objeto da classe <b>Funcionario</b> e adiciona-o à lista de funcionários.</p>
-              <p>Com isso, é possível instanciar objetos das classes <b>Departamento</b> e <b>Funcionario</b>
-                separadamente. Ambas as classes contêm seus próprios nomes e métodos independentemente. Mesmo assim,
-                consegue-se criar uma agregação por meio do método <b>adicionarFuncionario()</b>, no qual se passa um
-                objeto da classe <b>Funcionario</b> para a função, que é responsável por adicioná-lo à propriedade
-                "funcionarios", sendo esta uma lista de funcionários. Esse comportamento cria o <b>relacionamento de
-                  agregação entre as classes</b>, com a classe <b>Funcionario</b> tornando-se parte da classe
-                <b>Departamento</b>.</p>
-              <div class="caixa-destaque icone anotar">
-                <p>Perceba que, no exemplo de composição, os objetos "Janela" eram instanciados dentro da classe
-                  <b>Casa</b>. Esse comportamento fazia com que os objetos “nascessem” e “morressem” dentro de um objeto
-                  da classe <b>Casa</b>, criando uma dependência forte. Já no exemplo de agregação, instanciou-se a
-                  classe <b>Funcionario</b> fora da classe <b>Departamento</b>, enviando apenas uma <b>referência</b>
-                  para dentro. Essa diferença torna possível a existência dos dois de maneira independente.</p>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="botao borda-primaria-03" data-dismiss="modal">Fechar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="modal modal-100 fade" id="modal-categoria03" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content no-print">
-          <div class="modal-header" style="padding-top: 30px;">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3 class="modal-title">
-              <div class="container">Composição</div>
-            </h3>
-          </div>
-          <div class="modal-body">
-            <div class="container">
-              <p>Em uma composição, as classes relacionadas só funcionam adequadamente quando juntas. Por conta disso, a
-                composição é considerada uma <b>associação do tipo forte</b>, na qual há dependência entre as partes.
-              </p>
-              <p>Imagine uma casa e suas janelas. Você comporá a sua classe <b>Casa</b> com um objeto da classe
-                <b>Janela</b> no quarto, um na cozinha, um no banheiro e um na sala. Caso seja criado um objeto da
-                classe <b>Casa</b> e, logo após, este mesmo seja destruído, também serão destruídas as suas janelas.</p>
-              <p>Para transformar esse exemplo em código, primeiramente deve-se criar a classe <b>Janela</b>, que será
-                necessária para a composição da classe <b>Casa</b>. </p>
-              <p>Observe o código a seguir:</p>
-              <pre>
-                    <code>
-<span style="color: #4073e0">class</span> <span style="color: #00aa00;">Janela</span> {
-    <span style="color: #4073e0">private</span> <span style="color: #00aaaa">boolean</span> estaAberta = <span style="color: #4073e0">false</span>;
-
-    Janela () { }
-
-    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">abrir</span> () {
-        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">estaAberta</span> = <span style="color: #4073e0">true</span>;
-    }
-
-    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">fechar</span> () {
-        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">estaAberta</span> = <span style="color: #4073e0">false</span>;
-    }
-
-    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">imprimirSituacao</span> () {
-        String situacao = <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">estaAberta</span> ? <span style="color: #aa5500">&quot;aberta&quot;</span> : <span style="color: #aa5500">&quot;fechada&quot;</span>;
-        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;A janela esta &quot;</span> + situacao);
-    }
-}
-                    </code>
-                  </pre>
-              <p>A classe <b>Janela</b> é bastante simples. Ela tem um atributo privado chamado <b>estaAberta</b>, sendo
-                um booleano, que indica se a janela está ou não aberta. Além disso, constam três métodos públicos: um
-                para abrir a janela (alterando o atributo <b>estaAberta</b> para <b>true</b>), um para fechar a janela
-                (alterando o atributo <b>estaAberta</b> para <b>false</b>) e um para imprimir o atual estado da janela
-                (aberta ou fechada).</p>
-              <p>Agora é preciso implementar, de fato, uma composição. Para isso, deve-se criar a classe <b>Casa</b>,
-                criando também uma composição com as janelas, sendo uma no quarto, uma na cozinha, uma no banheiro e uma
-                na sala. Confira este código:</p>
-              <pre>
-                    <code>
-<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Casa</span> {
-    <span style="color: #4073e0">private</span> Janela janelaQuarto = <span style="color: #4073e0">null</span>;
-    <span style="color: #4073e0">private</span> Janela janelaCozinha = <span style="color: #4073e0">null</span>;
-    <span style="color: #4073e0">private</span> Janela janelaBanheiro = <span style="color: #4073e0">null</span>;
-    <span style="color: #4073e0">private</span> Janela janelaSala = <span style="color: #4073e0">null</span>;
-
-    <span style="color: #4073e0">public</span> <span style="color: #00aa00">Casa</span> () {
-        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">janelaQuarto</span> = <span style="color: #4073e0">new</span> Janela();
-        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">janelaCozinha</span> = <span style="color: #4073e0">new</span> Janela();
-        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">janelaBanheiro</span> = <span style="color: #4073e0">new</span> Janela();
-        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">janelaSala</span> = <span style="color: #4073e0">new</span> Janela();
-    }
-}
-                    </code>
-                  </pre>
-              <p>As duas características mais importantes da classe <b>Casa</b> são (1) o seu método construtor e (2) os
-                seus atributos privados.</p>
-              <p>Dentro do método construtor, as quatro diferentes janelas estão sendo instanciadas, uma para cada peça
-                da casa de exemplo (quarto, cozinha, banheiro e sala). Além disso, cada uma das janelas é um atributo
-                privado na classe, não existindo nenhum método público que permita adicionar uma janela diferente à casa
-                ou alterar o seu valor.</p>
-              <p>Essas duas características fazem com que exista uma composição entre a casa e as suas janelas,
-                respeitando a regra citada anteriormente. Caso seja instanciado um novo objeto da classe <b>Casa</b> e,
-                logo após, o mesmo seja destruído, todas as suas janelas também serão destruídas. Isso porque o ciclo de
-                vida dos atributos para as janelas só existe dentro da classe <b>Casa</b>. Cada nova instância da classe
-                <b>Casa</b> criará novas janelas. Nunca se terá uma janela repetida sendo utilizada fora da classe
-                <b>Casa</b> neste exemplo.</p>
-              <p>Conclui-se, portanto, que em uma composição existe uma forte dependência entre as partes. Por conta
-                disso, a composição é considerada uma associação do tipo forte, na qual há dependência entre as partes.
-              </p>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="botao borda-primaria-03" data-dismiss="modal">Fechar</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    
 
 
   </div>
