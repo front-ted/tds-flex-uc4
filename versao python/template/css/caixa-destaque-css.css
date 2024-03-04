@@ -1,0 +1,321 @@
+/*--------- CAIXA DESTAQUE PIXEL ---------*/
+
+.caixa-destaque {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.destaque-pixel {
+  background-color: #2859c6;
+  color: #fff;
+  border-radius: 30px;
+  position: relative;
+  width: 70%;
+  margin: auto;
+  border: 5px solid white;
+}
+.destaque-pixel::before {
+  content: url("../../template/images/destaque_canto.png");
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.destaque-pixel::after {
+  content: url("../../template/images/destaque_canto.png");
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  transform: rotate(90deg);
+}
+.destaque-pixel .caixa-destaque {
+  background-color: transparent;
+  width: 100%;
+}
+.destaque-pixel .caixa-destaque::before {
+  content: url("../../template/images/destaque_canto.png");
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  transform: rotate(270deg);
+}
+.destaque-pixel .caixa-destaque::after {
+  content: url("../../template/images/destaque_canto.png");
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  transform: rotate(180deg);
+}
+/*--------- /CAIXA DESTAQUE PIXEL ---------*/
+
+/*--------- MARCADOR PIXEL ---------*/
+ul.marcador-pixel {
+  margin: 10px 0px;
+}
+ul.marcador-pixel li {
+  list-style-image: url("../../template/images/marcador_bullet_branco.png");
+  margin: 0.5em auto;
+}
+/*--------- /MARCADOR PIXEL ---------*/
+
+.destaque-pixel .caixa-destaque {
+  background-color: transparent;
+  width: 100%;
+}
+.destaque-pixel .caixa-destaque::before {
+  content: url("../../template/images/destaque_canto.png");
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  transform: rotate(270deg);
+}
+.destaque-pixel .caixa-destaque::after {
+  content: url("../../template/images/destaque_canto.png");
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  transform: rotate(180deg);
+}
+
+.icone-position-desafio::after {
+  content: url(../../template/images/desafio.png);
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+}
+
+.icone-position-nota::after {
+  content: url(../../template/images/anotar.png);
+  position: absolute;
+  top: 50%;
+  left: -5%;
+  transform: translate(-50%, -50%);
+}
+
+.icone-position-fundamental::after {
+  content: url(../../template/images/fundamental.png);
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+}
+
+.icone-position-anotar::after {
+  content: url(../../template/images/anotar.png);
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+}
+
+.icone-position-dica::after {
+  content: url(../../template/images/dica.png);
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+}
+
+.icone-position-atencao::after {
+  content: url(../../template/images/atencao.png);
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+}
+
+.icone-position-importante::after {
+  content: url(../../template/images/importante.png);
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+}
+
+.icone-position-refletir::after {
+  content: url(../../template/images/refletir.png);
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+}
+
+.icone-position-lampada::after {
+  content: url(../../template/images/lightbulb.png);
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+}
+
+.icone-position-lampada{
+  padding-left: 50px;
+}
+
+.icone-position-dica {
+  padding-left: 50px;
+}
+
+.icone-position-fundamental {
+  padding-left: 50px;
+}
+
+.icone-position-desafio {
+  padding-left: 50px;
+}
+
+.icone-position-atencao {
+  padding-left: 50px;
+}
+
+.icone-position-importante {
+  padding-left: 50px;
+}
+
+.icone-position-anotar {
+  padding-left: 50px;
+}
+
+.icone-position-refletir {
+  padding-left: 50px;
+}
+
+
+@media screen and (max-width: 600px) {
+  .icone-position-refletir::after {
+    content: "";
+    background: url(../../template/images/refletir.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .icone-position-anotar::after {
+    content: "";
+    background: url(../../template/images/anotar.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .icone-position-desafio::after {
+    content: "";
+    background: url(../../template/images/desafio.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .icone-position-importante::after {
+    content: "";
+    background: url(../../template/images/importante.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .icone-position-dica::after {
+    content: "";
+    background: url(../../template/images/dica.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-bottom: 25px;
+  }
+
+  .icone-position-fundamental::after {
+    content: "";
+    background: url(../../template/images/fundamental.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-bottom: 25px;
+  }
+
+  .icone-position-atencao::after {
+    content: "";
+    background: url(../../template/images/atencao.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-bottom: 25px;
+  }
+
+  .icone-position-dica {
+    padding-left: 20px;
+  }
+
+  .icone-position-fundamental {
+    padding-left: 20px;
+  }
+
+  .icone-position-desafio {
+    padding-left: 20px;
+  }
+
+  .icone-position-atencao {
+    padding-left: 20px;
+  }
+
+  .icone-position-importante {
+    padding-left: 20px;
+  }
+
+  .icone-position-anotar {
+    padding-left: 20px;
+  }
+
+  .icone-position-refletir {
+    padding-left: 20px;
+  }
+  .destaque-pixel {
+    margin-top: 80px;
+  }
+}

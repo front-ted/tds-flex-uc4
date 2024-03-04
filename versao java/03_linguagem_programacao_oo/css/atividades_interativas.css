@@ -1,0 +1,375 @@
+@font-face{
+    src: url(../fonts/OpenSans-Light.ttf);
+    font-family: opensans-light;
+}
+
+/*atividade 01*/
+.atividadeInterativa{
+    margin-bottom: 50px;
+}
+.atividadeInterativa select:focus{
+    outline: transparent;      
+}
+.atividadeInterativa li{
+    border: 2px solid #02735F;
+    padding: 10px;
+    list-style-position: inside;
+    margin-right: 50px;
+    padding-right: 80px;
+    border-radius: 10px;
+    background-color:  white;
+    background-repeat: no-repeat;
+    background-position-y:center;
+    background-position-x: 98%;
+    background-size: 50px;
+    background-image: none;
+}
+.interativa{
+    border-radius: 10px;
+    border: 2px solid #02735F;
+    padding: 5px;
+    margin: 10px; 
+    position: relative;     
+}
+.atividadeInterativa li.certo{
+    border-color: #4d9264;
+    background-color:  #bff0cf;
+    background-image: url(../objetos/ico-positive.png); 
+    border-width: 2px;   
+}
+.atividadeInterativa li.certo select{
+    border-color: #4d9264;
+    background-color:  #a2e0b7;
+    animation: none;    
+    opacity: 1; 
+}
+.atividadeInterativa li.errado{
+    border-color: #853333;
+    background-color:  #e0a2a2;
+    color: #020202 !important;
+    background-image: url(../objetos/ico-negative.png); 
+    animation: none;  
+    opacity: 1; 
+    border-width: 2px !important;
+}
+.atividadeInterativa li.errado select{
+    border-color: #853333;
+    background-color:  #f8c4c4;
+}
+
+/*Esquema da Bru*/
+div.esquemaDaBru {
+    list-style-position: inside;
+    list-style-type: lower-alpha;
+}
+.esquemaDaBru .alt-c, .esquemaDaBru .alt-e{
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position-y: center;
+    background-position-x: 98%;
+    padding: 5px 10px;
+    margin: 0;
+    width: fit-content;
+    padding-right: 60px;
+    transition: 150ms;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #000;
+    background-color: transparent;
+    border:none;
+    display: flex;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-family: roboto;
+    text-align: left;
+    margin-left: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+.esquemaDaBru .alt-c:hover, .esquemaDaBru .alt-e:hover{
+    background-color: lightgoldenrodyellow;
+    padding-right: 60px;
+}
+.esquemaDaBru .alt-c.certo{
+    background-color: rgb(215, 235, 175);    
+    background-image: url(../objetos/snd/ico-positive.png);
+}
+.esquemaDaBru .alt-e.errado{
+    background-color: rgb(235, 175, 175);   
+    background-image: url(../objetos/snd/ico-negative.png);
+}
+
+h4.subQuiz{
+    margin-top: 0;
+}
+
+p.enunciado{
+    border-top: 2px dashed #004B90;
+    padding-top: 10px;
+    margin-top: 10px;
+    color: #004B90;
+    font-weight: 600;
+}
+
+
+/*multiselect, aqui vou fazer especifico desse que eh com imagem*/
+.multi01{
+    padding:10px;
+    margin-bottom: 60px;
+    text-align: center;
+}
+.multi01 .botaoImagem{
+    display: inline-block;
+    width: 240px;    
+    height: 250px;
+    line-height: 1.2;
+    vertical-align: text-top;
+    border: 10px solid white;
+    cursor: pointer;
+    padding: 10px; 
+    border-radius: 10px; 
+    margin: 20px;  
+    position: relative;
+    background-size: cover;
+    background-position: center top;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0,0,0,.5);
+}
+
+.multi01 .botaoImagem.alt01{
+    background-image: url(../objetos/quiz_alt01.png);
+}
+.multi01 .botaoImagem.alt02{
+    background-image: url(../objetos/quiz_alt02.png);
+}
+.multi01 .botaoImagem.alt03{
+    background-image: url(../objetos/quiz_alt03.png);
+}
+.multi01 .botaoImagem.alt04{
+    background-image: url(../objetos/quiz_alt04.png);
+}
+.multi01 .botaoImagem.alt05{
+    background-image: url(../objetos/quiz_alt05.png);
+}
+
+.botaoImagem .img-label{
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px;  
+    line-height: 1;
+    background-color: rgba(255, 255, 255, .89); 
+    line-height: 1; 
+}
+
+.multiSelect .alt-e.errado{
+    border-color: #853333;
+    background-color:  #e0a2a2; 
+}
+.multiSelect .alt-e.errado::before{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    content: "";
+    background-image: url(../objetos/ico-negative.png);
+    background-size: contain;
+    right: 10px;
+    top: 10px;
+}
+.multiSelect .alt-c.certo::before{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    content: "";
+    background-image: url(../objetos/ico-positive.png);
+    background-size: contain;
+    right: 10px;
+    top: 10px;
+}
+.multiSelect .alt-c.certo{
+    border-color: #4d9264;
+    background-color:  #bff0cf;
+}
+
+
+/*ajustes pro fundo escuro*/
+.tela2 p.enunciado{
+    border-top: 2px dashed #E84F22;
+    border-bottom: 2px dashed #E84F22;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 40px;
+    color: #ffffff;
+    font-weight: 600; 
+}
+
+.tela2 .esquemaDaBru .alt-c, .tela2 .esquemaDaBru .alt-e{
+    color: #ffffff;
+}
+
+.tela2 .esquemaDaBru .alt-c:hover, .esquemaDaBru .alt-e:hover{    
+    color: black;
+}
+
+.tela2  .esquemaDaBru .alt-c.certo, .esquemaDaBru .alt-e.errado{
+    color: black;
+}
+
+.tela2 select{
+    color: black;
+}
+.tela2 .ol-atividade01 li{
+    color: black;
+}
+
+
+@media screen and (max-width:480px){
+    .ol-atividade01{
+        padding: 0;
+        margin-bottom: 60px;
+    }
+    .ol-atividade01 li{
+        line-height: 1.3;
+        width: 100%;
+        padding-right: 50px;
+        background-position-y: 10px;
+        background-size: 30px;
+    }
+    .atividade01{
+        max-width: 100%;
+        text-overflow: ellipsis;
+    }
+    div.esquemaDaBru{
+        padding: 0;
+    }
+}
+
+.atv-cont {
+    text-align: center;
+}
+
+#o1, #o2, #o3, #o4, #o5, #o6, #o7{
+    height: 150px;
+    width: 250px;
+    margin:0 auto 1em auto;
+    border-radius: 10px;
+    border: #02735F solid 4px;
+    transition-duration: .3s;
+}
+
+#o1 {
+    background: url("../objetos/luz.jpg");
+    background-size: cover;
+}
+
+#o2 {
+    background: url("../objetos/tempo.jpg");
+    background-size: cover;
+}
+
+#o3 {
+    background: url("../objetos/via.png");
+    background-size: cover;
+}
+
+#o4 {
+    background: url("../objetos/transito.jpg");
+    background-size: cover;
+}
+
+#o5 {
+    background: url("../objetos/veiculo.jpg");
+    background-size: cover;
+}
+
+#o6 {
+    background: url("../objetos/motorista.jpg");
+    background-size: cover;
+}
+
+#o7 {
+    background: url("../objetos/carga.jpg");
+    background-size: cover;
+}
+
+#o1:hover, #o2:hover, #o3:hover, #o4:hover, #o5:hover, #o6:hover, #o7:hover {
+    cursor: pointer;
+    opacity: 0.7;
+    transition-duration: .3s;
+}
+
+
+.resposta{
+    height: 150px;
+    width: 250px;
+    border: #02735F solid 4px;
+    border-radius: 10px;
+    background-color: #707070;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1em auto;
+    transition-duration: .3s;
+}
+
+.resposta:hover {
+    opacity: .6;
+    cursor:pointer;
+    transition-duration: .3s;
+}
+
+.resposta p{
+    color: white;
+    font-size: 20px;
+}
+
+@keyframes auraGlow{
+    from{
+        box-shadow: 0 0 0 orange;
+    }
+    to{
+        box-shadow: 0 0 0 5px orange;
+    }
+}
+@keyframes auraGlowRed{
+    from{
+        box-shadow: 0 0 0 red;
+    }
+    to{
+        box-shadow: 0 0 0 5px red;
+    }
+}
+
+.selecionado {
+    opacity: .6;
+    animation: auraGlow 500ms ease-in-out infinite alternate-reverse;
+}
+
+.correto {
+    border: green solid 4px !important;
+    pointer-events: none;
+    cursor: not-allowed;
+    transition-duration: .3s;
+    opacity: .6;
+}
+
+.opcao.errado, .resposta.errado{
+    border: red solid 4px !important;
+    opacity: .6;
+    transition-duration: .3s;
+    animation: auraGlowRed 500ms ease-in-out infinite alternate-reverse;
+}
+
+.feedback{
+    display: none;
+}
+.feedback.correto{
+    color: green;
+}
+.feedback.errado{
+    color: red;
+}

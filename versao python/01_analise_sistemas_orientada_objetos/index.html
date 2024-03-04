@@ -1,0 +1,2459 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Análise de sistemas orientada a objetos – Definição de UML. Principais diagramas UML. Diagrama de caso de uso. Diagrama de classe</title>
+
+    <!-- Bootstrap -->
+    <link href="../template/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../template/css/tecnicos_senac.css" rel="stylesheet">
+    <link href="../template/css/cores.css" rel="stylesheet">
+      <!--Extras - novas classes para facilitar-->
+      <link rel="stylesheet" href="../template/css/extras.css">
+    <link href="../template/css/sncload.css" rel="stylesheet">
+    <link href="../template/css/magnific-popup.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../template/css/cores-codigo.css">
+    <link rel="stylesheet" href="../template/css/caixa-destaque-css.css">
+
+
+    <!-- referencia ao arquivo css com estilos especificos da pagina -->
+    <link href="css/custom.css" type="text/css" rel="stylesheet">
+    <!-- css necessario para o print -->
+    <link href="../template/css/fa/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="../template/css/print.css" type="text/css" rel="stylesheet">
+    <link href="../template/fonts/roboto.css" type="text/css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+  
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Paulo Ricardo Soveral Junior</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">46914400.0000000</mso:Order>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Paulo Ricardo Soveral Junior</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ContentTypeId msdt:dt="string">0x010100393332CEE5C5294F9D2C3CF7CCDACBE5</mso:ContentTypeId>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body onLoad="Javascript:document.getElementById('sncloader').style.display='none';">
+    <!-- MARCA D´ÁGUA -->
+    <img src="../template/images/logo_senac_colorido.png" id="marcadaguaLogo">
+    <!-- /MARCA D´ÁGUA -->
+
+    <div id='sncloader' class='over-loader'><div class="over-cell"><div id="sncload"></div></div></div>
+    <header id="topo" class="senac no-print">
+        <div  class="header-tecnicos container">
+        	  <h1 id="nome-curso">Desenvolvimento de Sistemas</h1>
+            <div id="logo-senac"><img src="../template/images/logo-senac.png" alt="logo do senac"></div>
+        </div>
+        <div id="sombra"></div>
+    </header>
+
+    <div id="booklet" class="container fundo-tecnicos">
+        <header class="no-print">
+          <!-- BTO IMPRIMIR -->
+          <div class="grupo-imprimir no-print">
+            <button type="button" data-pdf="true" class="bto-imprimir" name="button">
+                <span class="fa fa-print"></span> <span>Imprimir</span>
+            </button>
+          </div>
+          <!-- /BTO IMPRIMIR -->
+        </header>
+<!-- - - - - - - - - - - - - - - - não alterar acima - - - - - - - - - - - - -->
+        <section class="paginas">
+
+          <!-- - - - - - - - cada página é independente  - - - - - - - - - - -->
+          <div class="pagina">
+
+            <!-- Menu -->
+            <div class="bg-fundo"></div>
+            <input type="checkbox" id="menu" name="menu" class="menu-checkbox no-print">
+            <label class="menu-toggle no-print" for="menu"><span>Toggle</span></label>
+            <div class="menu no-print" aria-hidden="true">
+              <div id="style-2" class="scroll-bar">
+                <div class="force-overflow">
+                  
+                  <ul class="eng-item-menu">
+                    <li class="item1">
+                      <a href="#t1" class="fundo-item">Introdução</a>
+                      <hr>
+                    </li>
+                    <li class="item2">
+                      <a href="#t2" class="fundo-item">Conceito de classes e objetos</a>
+                      <hr>
+                    </li>
+                    <li class="item3">
+                      <a href="#t3" class="fundo-item">Os quatro pilares da orientação a objetos</a>
+                      <hr>
+                    </li>
+                    <li class="item4">
+                      <a href="#t4" class="fundo-item">As vantagens da orientação a objetos</a>
+                      <hr>
+                    </li>
+                    <li class="item5">
+                      <a href="#t5" class="fundo-item">UML</a>
+                      <hr>
+                    </li>
+                    <li class="item6">
+                      <a href="#t6" class="fundo-item">Diagramas</a>
+                      <hr>
+                    </li>
+                    <li class="item7">
+                      <a href="#t7" class="fundo-item">Uso do aplicativo Diagrams</a>
+                      <hr>
+                    </li>
+                    <li class="item8">
+                      <a href="#t8" class="fundo-item">Encerramento</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <h1>Análise de sistemas orientada a objetos – definição uml. Principais diagramas uml. Diagrama de caso de uso. Diagrama de classe.</h1>
+
+            <h2 id="t1">Introdução</h2>
+
+            <p>Quando você começa a estudar programação, surgem duas questões extremamente importantes, que são os chamados <b>paradigmas de programação</b>. Neste curso, iniciou-se a abordagem de um dos mais clássicos paradigmas, o <b>estruturado</b>, porém, por uma necessidade maior de lógica, estruturação de dados, fluxo de informações e, com grande importância, necessidade de mercado, será iniciado agora o estudo do paradigma mais importante na realidade de todo o desenvolvedor atualmente, o <b>paradigma orientado a objetos</b>.</p>
+            <p class="icone pequeno refletir">Mas, afinal, o que é esse paradigma e para que ele serve?</p>
+            <p>Primeiramente, relembre como você aprendeu a programar até este momento. Na programação estruturada, você trabalhou principalmente utilizando uma única rotina e quebrando isso em sub-rotinas: o programa é lido de cima para baixo, da linha 1 até a última, linha a linha, porém o fluxo dos programas são sempre os mesmos.</p>
+            <p>É possível quebrar o paradigma estruturado em três tipos de estruturas:</p>
+            
+            <div aria-hidden="true" class="no-print">
+              <p class="text-center">Clique ou toque para visualizar o conteúdo.</p>
+              <div class="row">
+                <div class="col-sm-4 col-xs-12">
+                  <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="objetos/card_1_1.png" class="img-cards">
+                      </div>
+                      <div class="flip-card-back">
+                        <img src="objetos/card_1_1_hover.png" class="img-cards">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                  <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="objetos/card_1_2.png" class="img-cards">
+                      </div>
+                      <div class="flip-card-back">
+                        <img src="objetos/card_1_2_hover.png" class="img-cards">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                  <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="objetos/card_1_3.png" class="img-cards">
+                      </div>
+                      <div class="flip-card-back">
+                        <img src="objetos/card_1_3_hover.png" class="img-cards">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="acessivel print">
+              <p><b>Sequências</b></p>
+              <p>São os comandos básicos que serão executados.</p>
+              <p><b>Condições</b></p>
+              <p>São as sequências de comandos que só serão executados quando uma condição específica for verdadeira ou falsa (<b>se</b>, <b>senão</b>, <b>escolha</b> etc.).</p>
+              <p><b>Repetições</b></p>
+              <p>São as sequências de comandos que acontecerão em <i>loop</i> até que uma condição específica seja atingida (<b>para</b>, <b>enquanto</b> etc.).</p>
+            </div>
+            
+            <p>Este paradigma já deve estar bem compreendido, pois, no decorrer de sua aprendizagem, foi com ele que você aprendeu e desenvolveu seus primeiros passos em lógica de programação. Apenas para exemplificar visualmente, analise a estrutura a seguir:</p>
+            <img src="imagens/fig1.png" class="img-responsive center-block">
+            <p class="legenda-imagem">
+              Exemplo de um sistema que aplica o paradigma estruturado <br>
+              Fonte: Senac EAD (2022)
+            </p>
+            
+            <p class="acessivel no-print">A imagem inicia com uma elipse, dentro da qual consta o texto “Começo do sistema”. Uma seta leva para um retângulo abaixo com o texto “Ler 2 números – X e Y”; outra leva para um losango à direita com o texto “O resultado da divisão é par?”. Aqui, há duas setas: uma leva para cima, até um retângulo com o texto “Imprima Verdadeiro”; e a outra leva para baixo, até um retângulo com o texto “Imprima Falso”. Agora, há mais duas setas: uma leva para cima e a outra, para baixo, levando a uma elipse com o texto “Fim do sistema”.</p>
+            
+            <p>Com relação à orientação a objetos, é preciso saber que ela surgiu como uma alternativa para mudar a forma de entendimento de algoritmos e de construção de sistemas do paradigma estruturado. O surgimento dos estudos da orientação a objetos veio em 1967, pelo programador Alan Kay, que cunhou o termo <b>programação orientada a objetos</b>, embora esse termo tenha começado a ser utilizado de fato por grandes empresas na década de 1990.</p>
+            
+            <div class="destaque-pixel">
+              <div class="icone-position-anotar">
+                <div class="caixa-destaque ">
+                  <p>É preciso pensar que a orientação a objetos tem como propósito aproximar a lógica de programação ao mundo real, o qual é organizado com a criação de objetos, e esses objetos têm diversas <b>características</b> e <b>funções</b> que os diferenciam uns dos outros. Essa definição é chave para entender os primeiros passos de paradigma.</p>
+                </div>
+              </div>
+            </div>
+            
+            <p>Este estudo sobre paradigma começará com dois conceitos importantíssimos: <b>classes</b> e <b>objetos</b>. Dominando esses dois conceitos, será possível compreender que toda a orientação a objetos é construída acima deles.</p>
+            
+            <img src="objetos/figura_2.png" class="img-responsive center-block">
+            
+            <p class="legenda-imagem">
+              Programação estruturada <i>versus</i> programação orientada a objetos <br>
+              Fonte: Senac EAD (2022)
+            </p>
+            
+            <p class="acessivel no-print">Na imagem constam duas colunas. Na primeira coluna, logo acima, está o texto “Programação estruturada”; abaixo, há um quadrado com o texto “Dados globais – Variáveis”, ligado a esse quadrado estão quatro setas que levam a quatro retângulos, um abaixo do outro, e cada retângulo contém o texto “Procedimento”. Na segunda coluna, logo acima, está o texto “Programação orientada a objetos”; abaixo, consta o primeiro retângulo com o texto “Dados do objeto X”, e, ao lado direito, estão dois retângulos, um abaixo do outro, cada um com o texto “Método”. Abaixo disso está o segundo retângulo com o texto “Dados do objeto Y”, e, ao lado direito, estão dois retângulos, um abaixo do outro, cada um com o texto “Método”. Por fim, abaixo está o terceiro retângulo com o texto “Dados do objeto Z”, e, ao lado direito, dois retângulos, um abaixo do outro, cada um com o texto “Método”.</p>
+
+            <h2 id="t2">Conceito de classes e objetos</h2>
+            
+            <p>Inicialmente, neste conceito, é preciso entender que as <b>classes</b> “conversam” diretamente com <b>objetos</b>, e assim são formados os primeiros conceitos dessa linguagem.</p>
+            
+            <h3>Classe</h3>
+            
+            <p>Confira algumas características de uma classe:</p>
+            
+            <ul class="cor01">
+              <li>Toda classe tem nome, visibilidade e membros.</li>
+              <li>Uma classe é uma abstração, um molde ou projeto de qualquer coisa no mundo real.</li>
+              <li>A classe reúne características e ações para os objetos.</li>
+              <li>Basicamente, as classes definem como os objetos devem se parecer e se comportar.</li>
+              <li>Essas características são chamadas de atributos e as ações são chamadas de métodos.</li>              
+            </ul>
+            
+            <p>A classe é a descrição de um tipo de <b>objeto</b>. Que tal analisar isso de uma maneira mais visual, começando com a classe <b>Aluno</b>?</p>
+            
+            <div class='table-responsive'>
+              <table class='senac tabela-pequena'>
+                <tbody>
+                  <tr>
+                    <th>ALUNO</th>
+                  </tr>
+                  <tr>
+                    <td>Nome do aluno</td>
+                  </tr>
+                  <tr>
+                    <td>Número de matrícula</td>
+                  </tr>
+                  <tr>
+                    <td>CPF</td>
+                  </tr>
+                  <tr>
+                    <td>Data de nascimento</td>
+                  </tr>
+                  <tr>
+                    <td>Curso</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p class="legenda-imagem">
+              Atributos da classe <br>
+              Fonte Senac EAD (2022)
+            </p>
+            
+            <p>Nesse quadro, note que há o nome da classe e as <b>características</b> dela.</p>
+            
+            <ul class="cor01">
+              <li>Nome do aluno</li>
+              <li>Número de matrícula</li>
+              <li>CPF</li>
+              <li>Data de nascimento</li>
+              <li>Curso</li>
+            </ul>
+            
+            <p>Como se sabe, essas características são chamadas de <b>atributos</b>. Então, ainda é preciso definir as ações, ou melhor, os <b>métodos</b> dessa classe.</p>
+            
+            <div class='table-responsive'>
+              <table class='senac tabela-pequena'>
+                <tbody>
+                  <tr>
+                    <th>ALUNO</th>
+                  </tr>
+                  <tr>
+                    <td>Estudar</td>
+                  </tr>
+                  <tr>
+                    <td>Assistir à aula</td>
+                  </tr>
+                  <tr>
+                    <td>Enviar atividades</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="legenda-imagem">
+              Métodos da classe <br>
+              Fonte Senac EAD (2022)
+            </p>
+            <p>No quadro, agora constam o nome da classe e as <b>ações</b> dela.</p>
+            <ul class="cor01">
+              <li>Estudar</li>
+              <li>Assistir à aula</li>
+              <li>Enviar atividades</li>
+            </ul>
+            <p>Você está finalizando a construção da sua primeira classe. Que tal juntar agora os atributos e os métodos?</p>
+            <img src="objetos/figura_3.png" class="img-responsive center-block">
+            <p class="legenda-imagem">
+              Exemplo de uma classe com atributos e métodos <br>
+              Fonte Senac EAD (2022)
+            </p>
+            <p class="acessivel no-print">Na imagem consta uma tabela de apenas uma coluna e dez linhas. Na primeira linha está a palavra “Aluno”; abaixo, estão as palavras “Nome do aluno”, “Número de matrícula”, “CPF”, “Data de nascimento” e “Curso”. Abaixo disso está uma linha sem conteúdo textual, separando atributos e métodos. Nas últimas três linhas estão as palavras “Estudar”, “Assistir à aula” e “Enviar atividades”. Ao lado da palavra “Aluno”, no topo da tabela, consta uma seta apontando para direita e para o texto “Nome da classe”; abaixo, há uma chave apontando para o texto “Atributos”, e, por fim, abaixo, há uma chave apontando para o texto “Métodos”.</p>
+            
+            <div class="destaque-pixel">
+              <div class="icone-position-importante">
+                <div class="caixa-destaque ">
+                  <p>Portanto, o que é uma classe? É um molde, um modelo, um conjunto de informações e dados que formarão, no futuro, vários objetos. Essa definição é extremamente importante, pois se tem toda a estrutura do aluno.</p>
+                </div>
+              </div>
+            </div>
+            
+            <p>Claro que aluno é algo muito mais próximo do mundo real. Porém, quando se fala em “mundo real” na orientação a objetos não se está necessariamente falando de objetos concretos ou algo tão na superfície assim. Reflita se, no desenvolvimento de um sistema para uma faculdade, fosse pedido a você que criasse um sistema no qual podem ser cadastrados alunos, professores, demais funcionários e também as matérias (ou cadeiras) que estarão no sistema.</p>
+            <p>Uma matéria não é algo palpável, correto? Mesmo assim, é possível aproximá-la do mundo real e criar uma classe para que se possa desenvolvê-la com alguns atributos.</p>
+            
+            <div class='table-responsive'>
+              <table class='senac tabela-pequena'>
+                <tbody>
+                  <tr>
+                    <th>MATÉRIA</th>
+                  </tr>
+                  <tr>
+                    <td>Número máximo de alunos</td>
+                  </tr>
+                  <tr>
+                    <td>Professores cadastrados</td>
+                  </tr>
+                  <tr>
+                    <td>Turno</td>
+                  </tr>
+                  <tr>
+                    <td>carga horária</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="legenda-imagem">
+              Classe <b>matérias</b> <br>
+              Fonte Senac EAD (2022)
+            </p>
+            <p>Note que a ideia principal é conseguir criar uma classe por meio de qualquer informação que se tem e com isso desenvolver o sistema necessário.</p>
+            <p>Como você já deve ter aprendido quando estudou banco de dados, as classes “conversarão” umas com as outras. Um <b>Aluno</b> terá consigo uma ou várias <b>Matérias</b>. Um <b>Professor</b> pode ensinar em várias ou uma matéria, e assim por diante. Quando as classes estão “conversando” entre si, é um sinal de que o desenvolvimento do sistema está sendo encaminhado com sucesso.</p>
+            <p>Considere agora uma classe mais rotineira, como um carro.</p>
+            <p>Esse passo agora é importante, pois você iniciará um processo já conhecido, que é a <b>abstração</b>, ou seja, construir uma classe pensando desde o início no papel dela dentro do sistema. Imagine um sistema para uma concessionária de carros, no qual será necessário cadastrar os carros que estão à venda.</p>
+            <p>Quais serão os atributos desse carro? Pense nas características que podem constituir um carro e nos dados que seriam importantes para cadastrar o veículo dentro de um sistema.</p>
+            
+            <div class='table-responsive'>
+              <table class='senac tabela-pequena'>
+                <tbody>
+                  <tr>
+                    <th>CARRO</th>
+                  </tr>
+                  <tr>
+                    <td>Modelo</td>
+                  </tr>
+                  <tr>
+                    <td>Marca</td>
+                  </tr>
+                  <tr>
+                    <td>Preço</td>
+                  </tr>
+                  <tr>
+                    <td>Ano</td>
+                  </tr>
+                  <tr>
+                    <td>Combustível</td>
+                  </tr>
+                  <tr>
+                    <td style="background-color: #000;">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td>Acelerar</td>
+                  </tr>
+                  <tr>
+                    <td>Frear</td>
+                  </tr>
+                  <tr>
+                    <td>Ligar</td>
+                  </tr>
+                  <tr>
+                    <td>Abrir porta-malas</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="legenda-imagem">
+              Classe <b>carro</b> <br>
+              Fonte Senac EAD (2022)
+            </p>
+            <p>A classe <b>Carro</b> está pronta e agora se pode pensar em criar <b>objetos</b> a partir dela. Já se tem os atributos e métodos definidos, portanto o “molde” já está pronto. É bem possível que apenas com essas informações você já consiga pensar em vários carros diferentes, não é mesmo? E é a partir dessas diferenciações que o estudo sobre objetos será iniciado.</p>
+           
+            <div class="destaque-pixel">
+              <div class="icone-position-desafio">
+                <div class="caixa-destaque ">
+                  <p>Como já comentado, esse processo de <b>abstração</b> das classes é muito importante para que se tenham bem definidos os <b>atributos</b> e os <b>métodos</b> e facilite o desenvolvimento do processo quando chegar a hora de colocar tudo isso dentro dos códigos.</p>
+                  <p>Como um desafio para que você possa praticar, observe as imagens a seguir e defina, visualmente, os <b>atributos</b> e <b>métodos</b>, formando classes similares ao que foi feito com Aluno. Use tabelas no editor de texto ou desenhe à mão quadros representando as classes.</p>
+                </div>
+              </div>
+            </div>
+           
+            <a href="objetos/figura_4.jpg" target="_blank" class="ampliar-img">
+              <img src="objetos/figura_4.jpg" class="img-responsive center-block mt-60">
+            </a>
+            <p class="legenda-imagem">
+              Computadores <br>
+              Fonte: Imagens e Moldes (s.d.)
+            </p>
+            <p class="acessivel no-print">A imagem mostra três diferentes tipos de computadores: um mais simples, para uso diário, ao lado um computador gamer, que é voltado para jogos e alta performance, com luzes de LED, teclado e mouse iluminados e, à frente desses dois, um notebook.</p>
+            <a href="objetos/figura_5.jpg" target="_blank" class="ampliar-img">
+              <img src="objetos/figura_5.jpg" class="img-responsive center-block mt-40">
+            </a>
+            <p class="legenda-imagem">
+              Instrumentos musicais <br>
+              Fonte: TurboSquid (c2022)
+            </p>
+            <p class="acessivel no-print">A imagem mostra diversos instrumentos musicais diferentes. São quatro linhas de instrumentos, contendo saxofone, trombones, trompetes, violinos, pandeiros, violões, guitarras, baixos, tamborim, teclado, bateria, pianos.</p>
+
+            <h3>Objetos</h3>
+            <p>O processo mais abstrato da orientação a objetos já está bem definido como sendo as classes. Agora, será iniciado outro processo, que é o de tornar essas classes em objetos, aproximando-as do mundo real. Todos os objetos usarão os atributos e métodos da classe quando forem criados.</p>
+            <p>É importante definir algumas propriedades desses objetos para entender melhor. Três pilares devem ser considerados quando um objeto novo é criado. São eles:</p>
+            
+            <div aria-hidden="true" class="no-print">
+              <p class="text-center">Clique ou toque para visualizar o conteúdo.</p>
+              <div class="row">
+                <div class="col-sm-4 col-xs-12">
+                  <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="objetos/card_2_1.png" class="img-cards">
+                      </div>
+                      <div class="flip-card-back">
+                        <img src="objetos/card_2_1_hover.png" class="img-cards">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                  <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="objetos/card_2_2.png" class="img-cards">
+                      </div>
+                      <div class="flip-card-back">
+                        <img src="objetos/card_2_2_hover.png" class="img-cards">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                  <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="objetos/card_2_3.png" class="img-cards">
+                      </div>
+                      <div class="flip-card-back">
+                        <img src="objetos/card_2_3_hover.png" class="img-cards">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="acessivel print">
+              <p><b>Estado</b></p>
+              <p>Representado pelos valores dos atributos. </p>
+              <p><b>Estado</b></p>
+              <p>Representado pelo conjunto de métodos.</p>
+              <p><b>Estado</b></p>
+              <p>Um objeto é único, mesmo que o seu estado seja idêntico ao de outro.</p>
+            </div>
+
+            <p>Esses pilares parecem ser algo tão abstrato quanto as classes, não é mesmo? Para demonstrá-los melhor, observe o exemplo a seguir:</p>
+            
+            <div aria-hidden="true" class="no-print">
+              <p>Clique ou toque para visualizar o conteúdo.</p>
+              <div class='panel-group gaitinha' id='accordion01' role='tablist' aria-multiselectable='true'>
+                <div class='panel panel-default'>
+                  <div class='panel-heading' role='tab' id='heading01'>
+                    <h3 class='panel-title'>
+                      <a role='button' data-toggle='collapse' data-parent='#accordion01' href='#collapse01' aria-expanded='false' aria-controls='collapse01'>
+                        Estado
+                      </a>
+                    </h3>
+                  </div>
+                  <div id='collapse01' class='panel-collapse collapse in' role='tabpanel' aria-labelledby='heading01'>
+                    <div class='panel-body'>
+                      <img src="objetos/figura_6.png" class="img-responsive center-block">
+                      <p class="legenda-imagem">
+                        Exemplo de objeto e seu estado <br>
+                        Fonte: Senac EAD (2022)
+                      </p>
+                      <p class="acessivel no-print">A imagem mostra uma lâmpada à esquerda e duas setas saindo dela. A seta acima aponta para o texto “Acender” e a seta abaixo aponta para o texto “Apagar”.</p>
+                      <p>Os estados dos objetos “conversam” diretamente com os atributos que são definidos nas classes.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class='panel panel-default'>
+                  <div class='panel-heading' role='tab' id='heading02'>
+                    <h3 class='panel-title'>
+                      <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion01' href='#collapse02' aria-expanded='false' aria-controls='collapse02'>
+                        Comportamento
+                      </a>
+                    </h3>
+                  </div>
+                  <div id='collapse02' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading02'>
+                    <div class='panel-body'>
+                      <img src="objetos/figura_7.png" class="img-responsive center-block">
+                      <p class="legenda-imagem">
+                        Exemplo de objeto e comportamento <br>
+                        Fonte: Senac EAD (2022)
+                      </p>
+                      <p class="acessivel no-print">A imagem mostra uma lâmpada à esquerda e duas setas saindo dela. A seta acima aponta para o texto “Acesa” e a seta abaixo aponta para o texto “Apagada”.</p>
+                      <p>Os comportamentos dos objetos “conversam” diretamente com os métodos que são definidos nas classes.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class='panel panel-default'>
+                  <div class='panel-heading' role='tab' id='heading03'>
+                    <h3 class='panel-title'>
+                      <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion01' href='#collapse03' aria-expanded='false' aria-controls='collapse03'>
+                        Identidade
+                      </a>
+                    </h3>
+                  </div>
+                  <div id='collapse03' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading03'>
+                    <div class='panel-body'>
+                      <img src="objetos/figura_8.png" class="img-responsive center-block">
+                      <p class="legenda-imagem">
+                        Exemplo de objeto e identidade <br>
+                        Fonte: Senac EAD (2022)
+                      </p>
+                      <p class="acessivel no-print">A imagem mostra três lâmpadas coloridas. Da esquerda para a direita, as lâmpadas têm as cores amarela, azul e verde.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="acessivel print">
+              <h4>Estado</h4>
+              <p class="legenda-imagem">
+                Exemplo de objeto e seu estado <br>
+                Fonte: Senac EAD (2022)
+              </p>
+              <p>A imagem mostra uma lâmpada à esquerda e duas setas saindo dela. A seta acima aponta para o texto “Acender” e a seta abaixo aponta para o texto “Apagar”.</p>
+              <p>Os estados dos objetos “conversam” diretamente com os atributos que são definidos nas classes.</p>
+
+              <h4>Comportamento</h4>
+              <p class="legenda-imagem">
+                Exemplo de objeto e comportamento <br>
+                Fonte: Senac EAD (2022)
+              </p>
+              <p>A imagem mostra uma lâmpada à esquerda e duas setas saindo dela. A seta acima aponta para o texto “Acesa” e a seta abaixo aponta para o texto “Apagada”.</p>
+              <p>Os comportamentos dos objetos “conversam” diretamente com os métodos que são definidos nas classes.</p>
+
+              <h4>Identidade</h4>
+              <p class="legenda-imagem">
+                Exemplo de objeto e identidade <br>
+                Fonte: Senac EAD (2022)
+              </p>
+              <p>A imagem mostra três lâmpadas coloridas. Da esquerda para a direita, as lâmpadas têm as cores amarela, azul e verde.</p>
+            </div>
+            
+            <p>Agora, tendo já as definições de atributos e os métodos, o que sobra para a identidade?</p>
+            
+            <p>É neste momento que se entra em um dos conceitos mais importantes quando se fala de orientação a objetos: a <b>instanciação</b>.</p>
+            
+            <h4>Instanciação</h4>
+            
+            <p>Imagine o seguinte cenário: você recentemente comprou uma televisão e decidiu modelar essa televisão usando a orientação a objetos. A sua televisão tem todas as características que você estava procurando: tela de 42 polegadas e <i>widescreen</i>, é preta e tem botões nas laterais. Estes são os <b>atributos</b>. A televisão também desempenha as ações necessárias para que você tenha feito a compra dela, ações essas que representam as funções básicas de ligar, desligar, trocar canais, mudar brilho, e também funções mais complexas, como acessar a Internet e os canais de <i>streaming</i>. Estes são os <b>métodos</b>. Tranquilamente, é possível afirmar que essa é a identidade da sua televisão recentemente comprada e ela é um objeto.</p>
+            
+            <p>Sua televisão é um objeto seu, mas, com certeza, na loja em que você comprou existiam várias outras, similares ou não, sem acesso à Internet, mas na cor branca, de polegadas menores ou maiores, com botões frontais etc. Claro que essa televisão é sua e de mais ninguém, porém esse objeto específico é seu. Esse objeto chama-se <b>instância de classe</b>, e que classe é essa? Televisão, é claro!</p>
+            
+            <p>Para compreender melhor esse exemplo, observe a figura a seguir:</p>
+            <img src="objetos/figura_9.png" class="img-responsive center-block">
+            <p class="legenda-imagem">
+              Demonstração de instâncias de objetos <br>
+              Fonte: Senac EAD (2022)
+            </p>
+            
+            <p class="acessivel no-print">Na imagem constam duas colunas. Na coluna da esquerda, acima, está o texto “Classe”; abaixo há um círculo com o texto “Televisão”. Na coluna da direita, acima, está o texto “Objetos”; abaixo estão três televisores, um com tela de LED, abaixo deste um com tela LCD e abaixo um televisor de tubo (CRT).</p>
+            
+            <div class="destaque-pixel">
+              <div class="icone-position-anotar">
+                <div class="caixa-destaque ">              
+                  <p>Note que, como citado na definição de classe, a classe é um molde e os objetos é o que se cria a partir desse <b>molde</b>.</p>
+                </div>
+              </div>
+            </div>
+            
+            <p>Todo esse processo de criar algo a partir de um molde é o que se chama de instância de classe e isso gera as diferentes identidades de objetos. Então, retome agora a classe <b>Aluno</b> para criar algumas instâncias a partir dela:</p>
+            
+            <div class="row">
+              <div class="col-md-4 col-xs-12">
+                <p class="text-center"><b>Instância 1</b></p>
+                <div class='table-responsive'>
+                  <table class='senac tabela-pequena'>
+                    <tbody>
+                      <tr>
+                        <th>ALUNO</th>
+                      </tr>
+                      <tr>
+                        <td>João Silva</td>
+                      </tr>
+                      <tr>
+                        <td>1111111</td>
+                      </tr>
+                      <tr>
+                        <td>111.222.333-44</td>
+                      </tr>
+                      <tr>
+                        <td>12/02/1993</td>
+                      </tr>
+                      <tr>
+                        <td>Técnico em Desenvolvimento de Sistemas</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="col-md-4 col-xs-12">
+                <p class="text-center"><b>Instância 2</b></p>
+                <div class='table-responsive'>
+                  <table class='senac tabela-pequena'>
+                    <tbody>
+                      <tr>
+                        <th>ALUNO</th>
+                      </tr>
+                      <tr>
+                        <td>Bruno Costa</td>
+                      </tr>
+                      <tr>
+                        <td>2222222</td>
+                      </tr>
+                      <tr>
+                        <td>555.666.777-88</td>
+                      </tr>
+                      <tr>
+                        <td>17/10/1999</td>
+                      </tr>
+                      <tr>
+                        <td>Técnico em Desenvolvimento de Sistemas</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="col-md-4 col-xs-12">
+                <p class="text-center"><b>Instância 3</b></p>
+                <div class='table-responsive'>
+                  <table class='senac tabela-pequena'>
+                    <tbody>
+                      <tr>
+                        <th>ALUNO</th>
+                      </tr>
+                      <tr>
+                        <td>Leonardo Rosa</td>
+                      </tr>
+                      <tr>
+                        <td>3333333</td>
+                      </tr>
+                      <tr>
+                        <td>999.000.123-45</td>
+                      </tr>
+                      <tr>
+                        <td>12/02/1993</td>
+                      </tr>
+                      <tr>
+                        <td>Técnico em Desenvolvimento de Sistemas</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <p class="legenda-imagem">
+              Criar instâncias <br>
+              Fonte: Senac EAD (2022)
+            </p>
+            
+            <p>Observe que as três instâncias são objetos diferentes, porém alguns atributos têm os mesmos valores. As televisões podem ser similares (ou até mesmo idênticas), mas os alunos são diferentes, com nomes, números de matrículas e de CPF, sendo valores únicos. Em uma análise mais profunda, pode-se notar que os alunos João e Leonardo têm a mesma data de nascimento e os três alunos estão no mesmo curso, <b>mas ainda assim são objetos diferentes, porque são instâncias da classe Aluno</b>.</p>
+            
+            <div class="destaque-pixel">
+              <div class="icone-position-desafio">
+                <div class="caixa-destaque ">
+                  <p>Utilizando as mesmas imagens e classes apresentadas no desafio anterior, crie agora diferentes instâncias de objetos: no mínimo três de cada. Use diferentes valores para os atributos, a fim de praticar bem a diferença entre os objetos.</p>
+                </div>
+              </div>
+            </div>
+
+            <h2 id="t3" class="mt-40">Os quatro pilares da orientação a objetos</h2>
+            
+            <p>Os principais pilares da orientação a objetos já foram definidos: classes e objetos. Mas ainda existem outras quatro características desse paradigma que precisam ser atendidas para que a linguagem seja identificada como orientação a objetos. São elas:</p>
+            
+            <h4>Abstração</h4>
+            <p>Esse conceito já foi muito estudado desde o início deste curso. A abstração entra em contraste com o que já se estudou sobre lógica, e é uma etapa muito importante para diminuir o trabalho e pensar no passo a passo referente ao processo de desenvolvimento de um algoritmo.</p>
+            <p><b>Para relembrar:</b></p>
+            <p>Na lógica, existem os três pilares já conhecidos: <b>dedução</b>, <b>indução</b> e <b>abdução</b>. Trazendo esses conceitos para a orientação a objetos, a abstração serve justamente para se tentar aproximar um algoritmo (que é algo mais complexo) do mundo real.</p>            
+            
+            <div class="destaque-pixel">
+              <div class="icone-position-importante">
+                <div class="caixa-destaque ">
+                  <p>A abstração significa que usuário interagirá apenas com atributos e métodos selecionados de um objeto.</p>
+                </div>
+              </div>
+            </div>
+            
+            <p>A abstração servirá especificamente para simplificar o uso de um objeto. O exemplo mais clássico de todos é o do carro: enquanto condutor, você tem acesso a atributos simples de um carro, como a direção, acelerador, freios e afins. Porém os atributos mais complexos também estão ali, como o motor, mas você não deve interagir com eles.</p>
+            <p>Confira algumas características importantes acerca da abstração:</p>
+            <ul class="cor01">
+              <li>A abstração resolve problemas referentes ao <i>design</i>, ao qual o usuário tem acesso (ler, editar etc.).</li>
+              <li>A abstração serve para esconder detalhes indesejáveis enquanto mostra apenas informações essenciais.</li>
+              <li>Abstrair informações permite focar em quais informações o objeto deverá conter.</li>
+            </ul>
+            <p>Para compreender melhor, atente-se à estrutura a seguir:</p>
+            <img src="objetos/figura_10.png" class="img-responsive center-block">
+            <p class="legenda-imagem">
+              Demonstração de abstração <br>
+              Fonte: Senac EAD (2022)
+            </p>
+            <p class="acessivel no-print">Na imagem, à esquerda, está o texto “Usuário” e, abaixo, a imagem do avatar de um ser humano ao lado um celular, que tem acima o texto “Celular”, e, ao lado, há três setas apontando para três retângulos, nos quais estão os textos, de baixo para cima: “Botão – Tela Inicial”, “Botões de Volume” e “Entrada do Carregador”.</p>
+            <p>Note que, como o uso do celular é rotineiro, aquelas três funções básicas são utilizadas praticamente o tempo todo. Mas a complexidade delas e o modo como elas funcionam ficam escondidos, não sendo necessário saber como são executadas para que se use o aparelho, e essa é a ideia principal da abstração.</p>
+            <p>Essa proteção de atributos e métodos mais complexos “conversam” diretamente com a importância de deixar algumas coisas mais <b>protegidas</b> e <b>seguras</b> do acesso de quaisquer usuários e isso envolve o segundo pilar da orientação a objetos: o encapsulamento.</p>
+            <p>Antes de prosseguir, treine um pouco a definição de classes e a instanciação de objetos com este jogo:</p>
+
+            <!--OBJETO 1-->
+            <a href="objeto/index.html" target="_blank" class="btn-objeto_1"></a>
+
+            <h4>Encapsulamento</h4>
+            <p>O encapsulamento é sem dúvida uma das características que definem e tornam a orientação a objetos o que ela é. É uma técnica que, de certa maneira, acrescenta segurança a uma classe pelo fato de esconder ou proteger os detalhes de atributos e métodos dos objetos dessa classe.</p>
+            
+            <div class="destaque-pixel">
+              <div class="icone-position-importante">
+                <div class="caixa-destaque ">
+                  <p>Encapsulamento é uma técnica que oculta detalhes internos do funcionamento de um método e evita que dados de um objeto sofram acesos indevidos. É importante que o encapsulamento entre em ação na <b>instanciação</b>.</p>
+                </div>
+              </div>
+            </div>
+
+            <p>Quando um objeto é instanciado de uma classe, os atributos e métodos são encapsulados dentro do objeto (lembre-se de que cada objeto é único, mesmo se algumas informações forem iguais). O encapsulamento esconde a parte interna da implementação dos códigos e esconde também as informações internas de um objeto. Mas quão importante é isso? Muito!</p>
+            <p>Para compreender melhor a utilidade e a importância dessa técnica, é preciso ter em mente que um sistema (especialmente quando for orientado a objetos) não é formado por um único bloco monolítico de código, mas sim divido em <b>partes menores</b> e que realizam cada qual seu trabalho de maneira independente (classes, por exemplo). Assim, é necessário que essas partes se <b>comuniquem</b> para realizarem tarefas completas no sistema.</p>
+            <p>Em um sistema orientado a objeto, cada parte pode ser uma classe; das classes criam-se os objetos e esses precisarão comunicar uns com os outros. Um objeto poderá ler e modificar um atributo ou chamar um método de outro objeto, por exemplo.</p>
+            <p>Sem encapsulamento, um objeto pode acessar todos os atributos, inclusive atribuindo-lhes valores, e todos os métodos de outro. Em algumas situações, porém, isso pode não ser desejável e até ser mesmo perigoso. O encapsulamento, então, permite que se bloqueie o acesso a um ou mais atributos específicos e a um ou mais métodos, mantendo o acesso livre a outros.</p>
+            <p>Pense em exemplos nos quais a segurança é importante. Em um sistema desenvolvido por você, em que o usuário pode cadastrar o seu cartão de crédito para efetuar compras, é extremamente necessário que algumas informações sejam protegidas ou privadas. Portanto, é esse nível de preocupação que você precisa ter para este tipo de característica, que é o encapsulamento.</p>
+            <p>Além de questões de segurança, reflita também sobre o que foi estudado em abstração: o usuário precisa saber e ter acesso a tudo o que acontece dentro do sistema? Não! O mesmo acontece na relação entre objetos: um objeto não precisa acessar todos os detalhes do outro. Dessa forma, o encapsulamento também entra nessa questão.</p>
+            <p>Relembrando o objeto televisão, quando o usuário aperta no controle remoto o botão de ligar, o aparelho ligará, porém não se sabe (e não é preciso saber) o que está acontecendo dentro do sistema e como isso foi programado. Só é preciso saber como pressionar o botão. Um objeto, analogamente, só precisará saber como chamar um método de outro, não como ele foi desenvolvido nem como se modificam internamente os atributos desse outro método.</p>
+            <p>Para compreender melhor o encapsulamento, considere como exemplo as cápsulas de remédio:</p>
+            <img src="objetos/figura_11.png" class="img-responsive center-block">
+            <p class="legenda-imagem">
+              Exemplo visual do encapsulamento <br>
+              Fonte: Senac EAD (2022)
+            </p>
+            <p class="acessivel no-print">Na imagem, consta uma cápsula e, dentro dela, uma capsula menor ocupando metade do espaço da primeira. Acima da capsula maior está o texto “Classe”, dentro da cápsula menor estão dezessete pequenos círculos, nove desses círculos são laranjas e apontam para uma seta com o texto “Atributos”, os outros oito círculos são cinzas e apontam para uma seta com o texto “Métodos”.</p>
+            <p>Quando se fala sobre encapsulamento, existem duas importantes palavras-chave a respeito de atributos e métodos: estes podem ser <b>públicos</b> ou <b>privados</b>. Esses aspectos fazem uma grande diferença, pois ajudam a esconder informações importantes, as quais não deverão ser acessadas ou alteradas por outros usuários ou até mesmo outros desenvolvedores.</p>
+            <p>Que tal imaginar um cenário e aplicar questões públicas e privadas ao mesmo? Em um sistema bancário, o usuário pode checar seu saldo. Nesse primeiro exemplo, o saldo será deixado como público, sem um método ou qualquer outra forma de se chegar até ele.</p>
+            <img src="objetos/figura_12.png" class="img-responsive center-block">
+            <p class="legenda-imagem">
+              Demonstração de atributo público <br>
+              Fonte: Senac EAD (2022)
+            </p>
+            <p class="acessivel no-print">Na imagem, à esquerda, consta a imagem do avatar de um ser humano e, ao lado, um retângulo com o texto “Saldo – Público”.</p>
+            <p>Nesse exemplo, o usuário tem o atributo saldo como público. Pense no que aconteceria se o seu saldo bancário fosse público, acessível a todos que usassem e/ou operassem o sistema. Quão caótico isso seria? O encapsulamento, portanto, não é apenas uma característica da orientação a objetos, mas também uma grande necessidade quando se trata da criação de um sistema.</p>
+            <p>Agora, será deixado de lado o atributo “saldo privado” para se utilizar um método público para acessar esse saldo.</p>
+            <img src="objetos/figura_13.png" class="img-responsive center-block">
+            <p class="legenda-imagem">
+              Demonstração de método público e atributo privado <br>
+              Fonte: Senac EAD (2022)
+            </p>
+            <p class="acessivel no-print">Na imagem, à esquerda, consta o avatar de um ser humano; ao lado há uma seta apontando para um retângulo com o texto “Método – Público – A função desse método é solicitar a senha do usuário” e, ao lado deste, uma seta apontando para outro retângulo com o texto “Saldo – Privado”.</p>
+            <p>A diferença do método público para o privado é que o usuário e qualquer outro do sistema apenas verá o saldo se tiver a senha. Isso porque os outros usuários teriam acesso apenas ao método, que contém toda uma verificação de segurança.</p>
+            <p>Da mesma maneira, na relação entre objetos, um objeto “conta” poderia proteger seu atributo “saldo” para que outros objetos não alterassem diretamente seu valor. Ao invés disso, poderia ser disponibilizado um método público que fizesse a alteração com segurança.</p>
+            
+            <div class='table-responsive'>
+              <table class='senac tabela-pequena'>
+                <tbody>
+                  <tr>
+                    <th>CONTA</th>
+                  </tr>
+                  <tr>
+                    <td>privado: Saldo</td>
+                  </tr>
+                  <tr>
+                    <td style="background-color: #000;">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td>público: depositarValor</td>
+                  </tr>
+                  <tr>
+                    <td>público: sacarValor</td>
+                  </tr>
+                  <tr>
+                    <td>privado: validaSenha</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="legenda-imagem">
+              Método público <br>
+              Fonte: Senac EAD (2022)
+            </p>
+
+            <p>Lembre-se sempre do quanto é importante o encapsulamento até para proteção do seu próprio código, além do usuário.</p>
+            <p class="icone pequeno pergunta"><b>Quais são os benefícios do encapsulamento e por que ele é utilizado?</b></p>
+            
+            <div class="no-print" aria-hidden="true">
+              <p>Clique ou toque para visualizar o conteúdo.</p>
+              <div class='caixa-destaque-livre bg-primaria-02 borda-primaria-03'>
+                <ul id='abas01' class='nav nav-tabs' role='tablist'>
+                  <li role='presentation' class='active'><a href='#aba01' aria-controls='aba01' role='tab' data-toggle='tab'>Segurança</a></li>
+                  <li role='presentation'><a href='#aba02' aria-controls='aba02' role='tab' data-toggle='tab'>Previne erros comuns</a></li>
+                  <li role='presentation'><a href='#aba03' aria-controls='aba03' role='tab' data-toggle='tab'>Esconde a complexidade</a></li>
+                </ul>
+                <div class='tab-content'>
+                  <div role='tabpanel' class='tab-pane fade in active' id='aba01'>
+                    <p>Apenas métodos públicos e atributos são acessíveis externamente à classe.</p>
+                  </div>
+                  <div role='tabpanel' class='tab-pane fade' id='aba02'>
+                    <p>Como apenas campos públicos e métodos são acessíveis, é uma forma de os desenvolvedores protegerem alguns dados de suas classes.</p>
+                  </div>
+                  <div role='tabpanel' class='tab-pane fade' id='aba03'>
+                    <p>Ninguém pode ver o que está escondido e o quão complexo é a funcionalidade de um sistema.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="acessivel print">
+              <p><b>Segurança</b></p>
+              <p>Apenas métodos públicos e atributos são acessíveis externamente à classe.</p>
+              <p><b>Previne erros comuns</b></p>
+              <p>Como apenas campos públicos e métodos são acessíveis, é uma forma de os desenvolvedores protegerem alguns dados de suas classes.</p>
+              <p><b>Esconde a complexidade</b></p>
+              <p>Ninguém pode ver o que está escondido e o quão complexo é a funcionalidade de um sistema.</p>
+            </div>
+
+            <div class="no-print" aria-hidden="true">
+              <p>Clique ou toque para visualizar o conteúdo.</p>
+
+              <div class="metodos">
+                <button
+                type="button "
+                class="btn  metodos-publicos metodos-btns"
+                data-toggle="modal"
+                data-target="#modalPublico"
+              ></button>
+              <button
+                type="button"
+                class="btn metodos-privados metodos-btns"
+                data-toggle="modal"
+                data-target="#modalPrivado"
+              ></button>
+            </div>
+
+              
+            </div>
+
+            <div class="acessivel print">
+              <h4>Métodos públicos</h4>
+              <p>Métodos públicos são acessíveis de fora da classe e devem ser nomeados normalmente. Por convenção, eles <strong>não têm um sublinhado</strong> no início do nome. </p>
+
+            <div class="container">
+              <pre>
+                <code>
+<span class="language-python__blue">class </span><span class="language-python__red">MinhaClasse: </span><span class="language-python__blue">def </span><span class="language-python__red">metodo_publico</span><span>(self):</span>
+
+  <span class="language-python__green">return</span> <span class="language-python__blue">"Este é um método público."</span>
+
+  <span class="language-python__green">#início do Programa</span>
+
+  <span>objeto = MinhaClasse()</span>
+
+  <span class="language-python__orange">print</span><span>((objeto.metodo_publico())</span><span class="language-python__green"># Isso funcionará</span>
+              </code>
+            </pre>
+            </div>   
+            </div>
+               
+            <div class="acessivel print">
+              <h4>Métodos privados</h4>
+
+              <p>Métodos privados não devem ser acessados diretamente fora da classe. Por convenção, eles <strong>têm um sublinhado</strong> no início do nome.</p>
+
+              <div class="container">
+                <div class="code-place">
+                  <div class="language-python">
+                      <span class="language-python__blue">class </span><span class="language-python__red">MinhaClasse: </span><span class="language-python__blue">def </span><span class="language-python__red">__metodo_privado</span><span>(self):</span>
+                    <div>
+                      <div class="language-python">
+                        <span class="language-python__green">return</span> <span class="language-python__blue">"Este é um método privado."</span>
+                      </div>
+                      <div >
+                        <span class="language-python__blue">def </span><span class="language-python__red">metodo_publico_chama_privado</span><span>(self):</span>
+                      </div>
+                      <div >
+                        <span class="language-python__green">return</span> <span>self.metodo_privado()</span>
+                      </div>
+                      <div>
+                        <span>objeto = MinhaClasse()</span>
+                      </div>
+                      <div> 
+                        <span class="language-python__green"># Tentar acessar diretamente o método privado gerará um erro. </span> 
+                      </div>
+                      <div> 
+                        <span class="language-python__green"># objeto. metodo_privado()   # Isso gerará um erro</span> 
+                      </div>
+                      <div> 
+                        <span class="language-python__green"># Para acessar o método privado, você pode chamar o método público que o utiliza.</span> 
+                      </div>
+                      <div> 
+                        <span class="language-python__orange">print</span><span>(objeto.metodo_publico_chama_privado())</span><span class="language-python__green"># Isso funcionará</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <p class="caixa-destaque icone importante"><b>Usar um sublinhado no início de nomes de métodos para indicar privacidade é apenas uma convenção. Tecnicamente, os métodos com sublinhado no início ainda podem ser acessados de fora da classe, mas não é uma boa prática. Python confia na “convenção de privacidade” em vez de impor a restrição diretamente.</b></p>
+
+              <p>Além disso, a partir do Python 3.9, você pode usar a anotação private para fornecer um nível mais alto de proteção para membros de classe, mas isso ainda é uma convenção. </p>
+
+
+              <pre>
+                <code>
+<span class="language-python__blue">class </span><span class="language-python__red">MinhaClasse: </span>
+  
+<span class="language-python__blue">def </span><span class="language-python__red">__init</span><span>(self):</span>
+
+  <span class="">self.__atributo_privado =</span><span class="language-python__red">42</span>
+
+  <span>@property</span>
+
+  <span class="language-python__blue">def </span><span class="language-python__red">atributo_privado</span><span>(self)</span>
+
+  <span  class="language-python__blue ">return </span><span>self.__atributo_privado  </span><span>(self)</span>
+
+  <span>@atributo_privado.setter</span>
+
+  <span class="language-python__blue">def </span><span class="language-python__red">atributo_privado</span><span>(self, valor):</span>
+
+  <span class="">self.__atributo_privado = valor</span>
+
+  <span>
+    objeto = MinhaClasse()
+  </span>
+
+  <span class="language-python__orange">print</span><span>(objeto.atributo_privado) </span><span class="language-python__green"># Isso funcionará</span>
+
+  <span>objeto.atributo_privado = 100 </span></span><span class="language-python__green"># Isso funcionará</span>
+                </code>
+              </pre>         
+
+              <p>O uso de métodos privados no Python é uma questão de convenção e boa prática, e <strong>não uma imposição</strong> rígida do Python. Portanto, é importante seguir as convenções para manter o código organizado e de fácil manutenção. </p>
+            </div>
+            <div class="canto-heranca">
+              <div class="heranca ">
+
+
+
+
+
+                <h4>Herança</h4>
+                <p>A herança é uma das características que permite que algumas classes herdem funções e características de outras. Simplificando, tem-se uma “classe pai” e as “classes filhas” estenderão os atributos e métodos da classe pai. Essa “classe pai” é tecnicamente chamada de superclasse.</p>
+                <p>Ela conterá uma definição básica e talvez até genérica de um objeto e, estendendo-a para outras, é possível tornar os objetos mais específicos e com características mais complexas que a sua classe pai. Porém, considere que não se está replicando código e sim reutilizando o código da superclasse. Isso, sem dúvida, facilita o desenvolvimento do código e também evita que ele se desorganize.</p>
+
+                <div class="destaque-pixel">
+                  <div class="icone-position-importante">
+                    <div class="caixa-destaque ">              
+                      <p>É possível usar herança sempre que houver objetos similares, mas que precisam de algumas mudanças pontuais em suas <b>características</b> (atributos) e <b>ações</b> (métodos).</p>
+                    </div>
+                  </div>
+                </div>
+
+                <p>Para compreender melhor a herança, considere <b>itens eletrônicos</b> para exemplificar:</p>
+                <p>O primeiro passo é definir a <b>superclasse</b>. Então, comece definindo os <b>Itens Eletrônicos</b> como sua “classe pai”. Depois disso, estenda algumas classes filhas para que se chegue a uma gama de heranças. Visualmente, isso ficaria mais simples da seguinte forma:</p>
+                <img src="objetos/figura_14.png" class="img-responsive center-block">
+                <p class="legenda-imagem">
+                  Exemplo de herança utilizando <b>Item Eletrônico</b> com superclasse <br>
+                  Fonte: Senac EAD (2022)
+                </p>
+                <p class="acessivel no-print">No topo da imagem consta um retângulo com o texto “Item Eletrônico”. Abaixo dele estão dois retângulos: o da esquerda contém o texto “Aparelho telefônico” e o da direita contém o texto “Sistema de som”. Abaixo, há quatro retângulos: da esquerda para a direita estão os textos “Celular”, “Telefone com fio”, “Fone de ouvido” e “Caixa de som”.</p>
+                <p>Note, nesse diagrama visual, a gama de classes e os objetos que podem ser criados, porém, todas essas classes estenderão a classe pai, que é o <b>Item Eletrônico</b>. Dito isso, fica claro que será diminuída a quantidade de códigos e também que serão gerados objetos com características diferentes, podendo-se até mesmo implementar novas funcionalidades.</p>
+                <p>Um ponto a se destacar nesse diagrama é a expressão “é um”, que ajuda na compreensão da herança e na aproximação do objeto ao mundo real como um todo. Desmembrando esse diagrama, você o entenderá da seguinte forma.</p>
+                
+                <div class="row">
+                  <div class="col-sm-4 col-xs-12">
+                    <img src="objetos/layout_1_infogra_som1.png" class="img-responsive center-block">
+                  </div>
+                  <div class="col-sm-4 col-xs-12">
+                    <img src="objetos/layout_1_infogra_som2.png" class="img-responsive center-block">
+                  </div>
+                  <div class="col-sm-4 col-xs-12">
+                    <img src="objetos/layout_1_infogra_som3.png" class="img-responsive center-block">
+                  </div>
+                </div>
+                <div class="acessivel no-print">
+                  <ul>
+                    <li>Fone de ouvido e caixa de som são um sistema de som.</li>
+                    <li>Celular e telefone com fio são um telefone.</li>
+                    <li>Aparelho telefônico e sistema de som são um item eletrônico.</li>
+                    <li>Fone de ouvido, caixa de som, celular, telefone com fio, aparelho telefônico e sistema de som são todos itens eletrônicos, pois estendem essa classe, essa superclasse.</li>
+                  </ul>
+                </div>
+
+                <p>Reflita, então, quantos códigos estão sendo protegidos e quanto tempo está sendo salvo pelo fato de apenas se utilizar a herança para esse tipo de funcionalidade, que pode ser criada dentro dos sistemas.</p>
+                <img src="objetos/figura_15.png" class="img-responsive center-block">
+                <p class="legenda-imagem">
+                  Demonstração de relacionamentos entre classe pai e classes filhas <br>
+                  Fonte: Senac EAD (2022)
+                </p>
+                <p class="acessivel no-print">No topo da imagem consta um retângulo com o texto “Item Eletrônico”. Abaixo dele há dois retângulos: o da esquerda com o texto “Aparelho Telefônico” e o da direita com o texto “Sistema de som”. Abaixo, há quatro retângulos, da esquerda para a direita, com os textos: “Celular”, “Telefone com fio”, “Fone de ouvido” e “Caixa de Som”. Ao lado primeiro retângulo, ao topo, está a frase “Classe mais geral (classe pai)”; abaixo, entre os dois retângulos, consta o texto “Classes mais detalhadas (classes filhas”), e entre os quatro retângulos está o texto “Classes mais específicas (classes filhas)”.</p>
+                <p>Agora será criada a <b>superclasse</b>, com <b>atributos</b> e <b>métodos</b>, e em seguida será abordado o seu uso nas “classes filhas”.</p>
+                <div class='table-responsive'>
+                  <table class='senac tabela-pequena'>
+                    <tbody>
+                      <tr>
+                        <th>Item Eletrônico</th>
+                      </tr>
+                      <tr>
+                        <td>Ano de fabricação</td>
+                      </tr>
+                      <tr>
+                        <td>Fabricante</td>
+                      </tr>
+                      <tr>
+                        <td>Cor</td>
+                      </tr>
+                      <tr>
+                        <td>Preço</td>
+                      </tr>
+                      <tr>
+                        <td>Número de série</td>
+                      </tr>
+                      <tr>
+                        <td style="background-color: #000;">&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>Carregar</td>
+                      </tr>
+                      <tr>
+                        <td>Ligar</td>
+                      </tr>
+                      <tr>
+                        <td>Desligar</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p class="legenda-imagem">
+                  Superclasse <br>
+                  Fonte: Senac EAD (2022)
+                </p>
+                <p>Com a superclasse montada, será bem simples compreender que todas as classes filhas terão estes atributos e métodos para usarem e até mesmo alterarem o seu comportamento.</p>
+                <p>Agora, serão criadas as duas primeiras classes filhas. Essas duas usarão os <b>atributos</b> e <b>métodos</b> da classe pai, porém estenderão um pouco o tamanho dessa classe.</p>
+                <div class="row">
+                  <div class="col-sm-6 col-xs-12">
+                    <div class='table-responsive'>
+                      <table class='senac tabela-pequena'>
+                        <tbody>
+                          <tr>
+                            <th>Aparelho telefônico</th>
+                          </tr>
+                          <tr>
+                            <td>Modelo</td>
+                          </tr>
+                          <tr>
+                            <td>Bateria</td>
+                          </tr>
+                          <tr>
+                            <td>Chip</td>
+                          </tr>
+                          <tr>
+                            <td style="background-color: #000;">&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td>Efetuar ligação</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <p class="legenda-imagem">
+                      Aparelho telefônico – classe filha <br>
+                      Fonte: Senac EAD (2022)
+                    </p>
+                  </div>
+                  <div class="col-sm-6 col-xs-12">
+                    <div class='table-responsive'>
+                      <table class='senac tabela-pequena'>
+                        <tbody>
+                          <tr>
+                            <th>Sistema de Som</th>
+                          </tr>
+                          <tr>
+                            <td>CD, Fita, Bluetooth?</td>
+                          </tr>
+                          <tr>
+                            <td>Voltagem</td>
+                          </tr>
+                          <tr>
+                            <td>Volume máximo</td>
+                          </tr>
+                          <tr>
+                            <td style="background-color: #000;">&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td>Trocar faixa</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <p class="legenda-imagem">
+                      Sistema de som – Classe filha <br>
+                      Fonte: Senac EAD (2022)
+                    </p>
+                  </div>
+                </div>
+                <p>Agora as classes filhas estão estendidas, porém, você notou que não foi preciso declarar todos os atributos e métodos da superclasse? Isso porque tudo já está implementado nessa classe filha, o que é um dos princípios mais importantes da orientação a objetos, o <b>reúso de código</b>, e que é fornecido pela <b>herança</b>.</p>
+                <p>Confira um resumo da herança dentro da orientação a objetos:</p>
+                <ul class="cor01">
+                  <li>Uma classe pai, ou superclasse, definirá características e métodos para que as classes filhas possam usar e/ou alterar.</li>
+                  <li>As classes filhas estendem o uso e as funcionalidades da superclasse.</li>
+                  <li>Diferentes implementações e heranças múltiplas podem ser construídas, mas sempre reutilizando código e trazendo padrão para o desenvolvimento.</li>
+                </ul>
+
+
+                <p>A herança é um conceito fundamental na programação orientada a objetos (POO) e também é amplamente suportada em Python. Ela permite que você crie novas classes que herdam as características (atributos e métodos) de uma classe pai, permitindo a reutilização de código e a criação de uma hierarquia de classes. Em Python, a herança funciona da seguinte maneira. </p>
+
+
+
+                  <div class="no-print" aria-hidden="true">
+                    <p>Clique ou toque para visualizar o conteúdo.</p>
+                    <div
+                      class="panel-group gaitinha"
+                      id="accordion"
+                      role="tablist"
+                      aria-multiselectable="true"
+                    >
+                      <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                          <h4 class="panel-title">
+                            <a
+                              role="button"
+                              data-toggle="collapse"
+                              data-parent="#accordion"
+                              href="#collapseOne"
+                              aria-expanded="true"
+                              aria-controls="collapseOne"
+                            >
+                            <strong>1. Classe Pai (Classe Base ou Superclasse)</strong> 
+                            </a>
+                          </h4>
+                        </div>
+                        <div
+                          id="collapseOne"
+                          class="panel-collapse collapse in"
+                          role="tabpanel"
+                          aria-labelledby="headingOne"
+                        >
+                          <div class="panel-body">
+                            Esta é a classe que você deseja estender ou da qual deseja herdar funcionalidades. Ela define os atributos e os métodos iniciais que serão compartilhados pelas classes filhas. 
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                          <h4 class="panel-title">
+                            <a
+                              class="collapsed"
+                              role="button"
+                              data-toggle="collapse"
+                              data-parent="#accordion"
+                              href="#collapseTwo"
+                              aria-expanded="false"
+                              aria-controls="collapseTwo"
+                            >
+                            <strong>2. Classe Filha (Classe Derivada ou Subclasse)</strong>
+                            </a>
+                          </h4>
+                        </div>
+                        <div
+                          id="collapseTwo"
+                          class="panel-collapse collapse"
+                          role="tabpanel"
+                          aria-labelledby="headingTwo"
+                        >
+                          <div class="panel-body">
+                            Esta é a classe que herda da classe pai. A classe filha pode adicionar novos atributos e métodos, além de modificar ou substituir os existentes, conforme necessário.
+                          </div>
+                        </div>
+                      </div>
+
+                      
+                    </div>
+                  </div>
+
+                  <div class="acessivel print">
+                    <ol>
+                      <li>Classe Pai (Classe Base ou Superclasse)
+                        <p>
+                          Esta é a classe que você deseja estender ou da qual deseja herdar funcionalidades. Ela define os atributos e os métodos iniciais que serão compartilhados pelas classes filhas. 
+                        </p> 
+                      </li>
+                      <li>Classe Filha (Classe Derivada ou Subclasse) 
+                        <p>Esta é a classe que herda da classe pai. A classe filha pode adicionar novos atributos e métodos, além de modificar ou substituir os existentes, conforme necessário.</p>
+                      </li>
+                    </ol>
+                  </div>
+
+                  <p>Veja um exemplo de como a herança funciona em Python.</p>
+
+                  <p>Para começar, observe a definição da superclasse <strong>ItemEletronico</strong>: </p>
+
+                  <pre>
+                    <code>                
+    <span class="language-python__blue">class </span><span class="language-python__red">ItemEletronico: </span>
+
+    <span class="language-python__blue">def </span><span class="language-python__red">__init__</span><span>(self, ano_fabricacao, fabricante, cor, preco, numero_serie):</span>
+
+    <span class="">self.ano_fabricacao = ano_fabricacao</span>
+
+    <span class="">self.fabricante = fabricante</span>
+
+    <span class="">self.cor = cor self.preco = preco</span>
+
+    <span class="">self.numero_serie = numero_serie</span>
+
+    <span class="language-python__blue">def </span><span class="language-python__red">carregar</span><span>(self):</span>
+      <span class="language-python__blue ">pass </span><span class="language-python__green"># Este método será implementado nas classes filhas</span>
+
+    <span class="language-python__blue">def </span><span class="language-python__red">ligar</span><span>(self):</span>
+      <span class="language-python__blue ">pass </span><span class="language-python__green"># Este método será implementado nas classes filhas</span>
+
+    <span class="language-python__blue">def </span><span class="language-python__red">desligar</span><span>(self):</span>
+      <span class="language-python__blue ">pass </span><span class="language-python__green"># Este método será implementado nas classes filhas</span>                    
+                      </code>
+                  </pre>
+                  
+
+                  <p>
+                    A classe <strong>ItemEletronico</strong> tem os atributos comuns a todos os dispositivos eletrônicos e três métodos: <strong>carregar</strong>, <strong>ligar</strong> e <strong>desligar</strong>, que serão implementados nas classes filhas. 
+                  </p>
+
+                  <p>Agora será criada a primeira classe filha <strong>AparelhoTelefonico</strong>:</p>
+
+                  <pre>
+                    <code>
+    <span class="language-python__blue">class </span><span class="language-python__red">AparelhoTelefonico(ItemEletronico): </span>
+
+    <span class="language-python__blue">def </span><span class="language-python__red">__init__</span><span>(self, ano_fabricacao, fabricante, cor, preco, numero_serie, modelo, bateria, chip):</span>
+
+    <span class="language-python__orange">super</span><span>().__init__(ano_fabricacao, fabricante, cor, preco, numero_serie)  </span>
+
+      <span>self.modelo = modelo</span>
+
+      <span>self.bateria = bateria</span>
+
+      <span>self.chip = chip</span>
+
+      <span class="language-python__blue">def </span><span class="language-python__red">efetuar_ligacao</span><span>(self): </span>
+
+      <span class="language-python__blue">return </span><span class="language-python__green">f"Realizando ligação com o modelo {self.modelo}"</span>
+
+      <span class="language-python__blue">def </span><span class="language-python__red">carregar</span><span>(self): </span>
+
+      <span class="language-python__blue">return </span><span class="language-python__green">f"Carregando o telefone {self.modelo}"</span>
+
+      <span class="language-python__blue">def </span><span class="language-python__red">desligar</span><span>(self): </span>                     
+
+      <span class="language-python__blue">return </span><span class="language-python__green">f"Desligando o telefone {self.modelo}"</span>
+                    </code>
+                  </pre>
+
+                  <p>A classe <strong>AparelhoTelefonico</strong> herda da classe <strong>ItemEletronico</strong> e adiciona atributos específicos a um aparelho telefônico, como <strong>modelo</strong>, <strong>bateria</strong> e <strong>chip</strong>. Ela também implementa os métodos <strong>carregar</strong>, <strong>ligar</strong> e <strong>desligar</strong> e adiciona um método próprio, o <strong>efetuar_ligacao</strong>.</p>
+
+                  <p>Dando continuidade, será criada a segunda classe filha: <strong>SistemaDeSom</strong>:</p>
+
+
+                  <pre>
+                    <code>
+    <span class="language-python__blue">class </span><span class="language-python__red">SistemaDeSom(ItemEletronico): </span>
+
+    <span class="language-python__blue">def </span><span class="language-python__red">__init__</span><span>(self, ano_fabricacao, fabricante, cor, preco, numero_serie, tipo_aparelho, voltagem, volume_maximo):</span>
+
+    <span class="language-python__orange ">super</span><span>().__init__(ano_fabricacao, fabricante, cor, preco, numero_serie)  </span>
+
+      <span class="">self.tipo_aparelho = tipo_aparelho</span>
+
+      <span class="">self.voltagem = voltagem</span>
+
+      <span class="">self.volume_maximo = volume_maximo</span>
+
+      <span class="language-python__blue">def </span><span class="language-python__red">trocar_faixa</span><span>(self): </span>
+
+      <span class="language-python__blue ">return </span><span class="language-python__green">"Trocando de faixa de música"</span>
+
+      <span class="language-python__blue">def </span><span class="language-python__red">carregar</span><span>(self): </span>
+
+      <span class="language-python__blue ">return </span><span class="language-python__green">f"Carregando o sistema de som do tipo {self.tipo_aparelho}"</span>
+
+      <span class="language-python__blue">def </span><span class="language-python__red">ligar</span><span>(self): </span>                     
+
+      <span class="language-python__blue ">return </span><span class="language-python__green">f"Ligando o sistema de som do tipo {self.tipo_aparelho}"</span>
+
+      <span class="language-python__blue">def </span><span class="language-python__red">desligar</span><span>(self): </span>                     
+
+      <span class="language-python__blue ">return </span><span class="language-python__green">f"Desligando o sistema de som do tipo {self.tipo_aparelho}"</span>
+                    </code>
+                  </pre>
+
+                  <p>A classe <strong>SistemaDeSom</strong> também herda da classe <strong>ItemEletronico</strong> e adiciona atributos específicos a um sistema de som, como <strong>tipo_aparelho</strong>, <strong>voltagem</strong> e <strong>volume_maximo</strong>. Ela implementa os métodos <strong>carregar</strong>, <strong>ligar</strong> e <strong>desligar</strong> e adiciona um método próprio: trocar_faixa.</p>
+
+                  <p>
+                    Dessa forma, você tem uma hierarquia de classes com uma superclasse <strong>ItemEletronico</strong> e duas subclasses: <strong>AparelhoTelefonico</strong> e <strong>SistemaDeSom</strong>, que herdam atributos e métodos comuns da superclasse e implementam métodos específicos para seus tipos de dispositivo eletrônico. 
+                  </p>
+
+                  <div class="destaque-pixel">
+                    <div class="icone-position-desafio">
+                      <div class="caixa-destaque ">
+                        <p>No exemplo mostrado, as classes filhas eram o <b>Aparelho telefônico</b> e o <b>Sistema de som</b>, porém, neste desafio, você deverá criar as tabelas com os atributos e métodos para as outras filhas. Neste caso, serão quatro tabelas: “Celular”, “Telefone com fio”, “Fone de ouvido” e “Caixa de som”. Pense no que será diferente para cada uma, a fim de poder utilizar a herança ao máximo.</p>
+                      </div>
+                    </div>
+                </div>
+
+                <h4>Polimorfismo</h4>
+                <p>Esse pilar é sem dúvida um dos mais divertidos e que mais protegem o sistema, para que este não apresente longas linhas de código que replicam diversos comportamentos. Mas, comece seu estudo pelo começo.</p>
+                <p>Polimorfismo vem do grego <i>poli</i> = muitas, <i>morphos</i> = forma, logo, pode-se entender esse conceito como tendo-se <b>objetos que assumirão diversas formas</b>. Complexo, não é mesmo? Mas é preciso tentar tornar isso um pouco mais simples, já que o <b>polimorfismo</b>, assim como os outros três pilares trabalhados, é, sem dúvida, um dos grandes sustentadores da orientação a objetos.</p>
+                <p>Para esclarecer alguns pontos, polimorfismo é a capacidade de um objeto poder ser referenciado de várias formas. Mas cuidado, o polimorfismo não quer dizer que o objeto fica se transformando, como na herança. Muito pelo contrário, um objeto nasce de um tipo e “morre” exatamente do mesmo, o que muda no polimorfismo é como o programador referencia um objeto nele.</p>
+
+                <div class="destaque-pixel">
+                    <div class="icone-position-importante">
+                      <div class="caixa-destaque ">
+                  <p>O polimorfismo é uma consequência da herança.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <p>Entenda melhor essa conceituação com um exemplo visual e simples.</p>
+                <p>Considere a classe <b>Personagem</b> como uma <b>superclasse</b>. Ela será criada de modo bem simples, sem atributos e somente com um método.</p>
+                
+                <div class='table-responsive'>
+                  <table class='senac tabela-pequena'>
+                    <tbody>
+                      <tr>
+                        <th>Personagem</th>
+                      </tr>
+                      <tr>
+                        <td style="background-color: #000;">&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>Atacar</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p class="legenda-imagem">
+                  Classe personagem <br>
+                  Fonte: Senac EAD (2022)
+                </p>
+                
+                <p>Até aqui, tudo certo. Agora, serão criadas três classes filhas que também terão o método <b>Atacar</b>, começando-se a trabalhar a complexidade do polimorfismo.</p>
+                <div class="row">
+                  <div class="col-sm-4 col-xs-12">
+                    <div class='table-responsive'>
+                      <table class='senac tabela-pequena'>
+                        <tbody>
+                          <tr>
+                            <th>Guerreiro</th>
+                          </tr>
+                          <tr>
+                            <td style="background-color: #000;">&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td>Atacar</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-xs-12">
+                    <div class='table-responsive'>
+                      <table class='senac tabela-pequena'>
+                        <tbody>
+                          <tr>
+                            <th>Mago</th>
+                          </tr>
+                          <tr>
+                            <td style="background-color: #000;">&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td>Atacar</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 col-xs-12">
+                    <div class='table-responsive'>
+                      <table class='senac tabela-pequena'>
+                        <tbody>
+                          <tr>
+                            <th>Arqueiro</th>
+                          </tr>
+                          <tr>
+                            <td style="background-color: #000;">&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td>Atacar</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                
+                <p class="legenda-imagem">
+                  Classes filhas da superclasse <b>Personagem</b> <br>
+                  Fonte: Senac EAD (2022)
+                </p>
+                <p>Até este momento, a construção está bem simples. Porém, no polimorfismo, existe um processo básico e muito importante chamado <b>sobrescrita de métodos</b>. Suponha que, na superclasse <b>Personagem</b>, o método <b>Atacar</b> retorne apenas a mensagem “Você atacou”. Porém, como há três classes filhas que também têm o método “Atacar”, por que retornaria uma mensagem tão simples? Não é o que se quer neste momento. Então, graças ao polimorfismo, utiliza-se a sobrescrita para retornar mensagens diferentes a cada uma das classes. Os exemplos mostram o que se quer:</p>
+                <ul class="cor01">
+                  <li>Classe <b>Guerreiro</b>: “Você atacou com a sua espada”</li>
+                  <li>Classe <b>Mago</b>: “Você lançou uma bola de fogo”</li>
+                  <li>Classe <b>Arqueiro</b>: “Você disparou uma flecha”</li>
+                </ul>
+                
+                <p>A dica para entender o polimorfismo é saber que há o mesmo método, mas com <b>implementações diferentes</b>, isto é, há comportamentos diferentes para um mesmo método. O retorno de valores e/ou de mensagens diferentes depende da classe que está sendo utilizada e, nesse exemplo, todas são herdadas da classe <b>Personagem</b>, pois não se esqueça de que <b>Guerreiro</b>, <b>Mago</b> e <b>Arqueiro</b> são personagens.</p>
+                
+                <p>Um dos benefícios do polimorfismo é a abstração sobre o tipo concreto do objeto a ser utilizado, ou seja, é possível invocar o método descrito na superclasse sem precisar considerar se o objeto é de fato da superclasse ou de uma classe derivada. Por exemplo, seria possível ter um objeto do tipo “Personagem” e invocar o método <b>Atacar</b> a ele; como <b>Guerreiro</b> é derivado de <b>Personagem</b>, seria viável atribuir a esse objeto uma instância de <b>Guerreiro</b> e, ao invocar <b>Atacar</b>, ter o resultado “Você atacou com a sua espada”. Em seguida, pode-se atribuir ao mesmo objeto uma instância de <b>Arqueiro</b> e a mesma chamada a <b>Atacar</b> resultaria em “Você disparou uma flecha”. Do mesmo modo aconteceria com <b>Mago</b>.</p>
+                <img src="objetos/gif_1.gif" class="img-responsive center-block">
+                
+                <p class="acessivel no-print">O gif inicia com um quadro escrito “Personagem” e sobre ele o rótulo “Objeto: Peronsagem1”. Abaixo, o texto “Personagem1.Atacar()” cintila, mostrando o resultado “Você atacou”. Em seguida, surge à direita do quadro um retângulo colorido com o nome “GUERREIRO”, que se move até o interior do quadro “PERSONAGEM”. “Personagem. Atacar()” cintila de novo e mostra o resultado “Você atacou com a espada”. Apaga-se o quadro “GUERREIRO”. Em seguida, surge à direita do quadro um retângulo colorido com o nome “ARQUEIRO”, que se move até o interior do quadro “PERSONAGEM”. “Personagem. Atacar()” cintila de novo e mostra o resultado “Você disparou uma flecha”. Apaga-se o quadro “ARQUEIRO”. Em seguida, surge à direita do quadro um retângulo colorido com o nome “MAGO”, que se move até o interior do quadro “PERSONAGEM”. “Personagem. Atacar()” cintila de novo e mostra o resultado “Você lançou uma bola de fogo”.</p>
+                
+                <p>O objeto recebe diferentes instâncias de classes derivadas. A cada instância, o mesmo método <b>Atacar</b> é invocado, mostrando a resposta de acordo com a implementação da classe derivada.</p>
+                
+                <p>Estendendo esse uso, seria possível ter uma lista inteira de “Personagens”, em que cada item fosse uma instância de uma das classes derivadas. Você poderia invocar o método <b>Atacar</b> para cada item da lista, sem se preocupar se se trata de um <b>Mago</b>, <b>Guerreiro</b> ou <b>Arqueiro</b>, e o método responderia adequadamente segundo a implementação da classe derivada.</p>
+                
+                <p>Python usando uma superclasse <b>Personagem</b> simples com um método <b>atacar</b>.</p>
+
+                <p>Primeiramente, a definição da superclasse <b>Personagem</b>:</p>
+
+                  <pre>
+                    <code>
+    <span class="language-python__blue">class </span><span class="language-python__red">Personagem</span>
+
+    <span class="language-python__blue">def </span><span class="language-python__red">Atacar</span><span class="language-python__green">(self)</span>
+
+    <span class="language-python__blue ">pass</span><span class="language-python__green"># Este método será sobrescrito nas classes filhas </span>
+                    </code>
+                  </pre>
+                  
+                  <p>Aqui, a classe <b>Personagem</b> tem apenas um método chamado <b>Atacar</b>. No entanto, ele não faz nada (passa). Isso é intencional, pois o método será sobrescrito nas classes filhas.</p>
+
+                  <p>Agora serão criadas três classes filhas que herdam de <b>Personagem</b> e sobrescrevem o método <b>atacar</b>.</p> 
+
+                  <p>Classe Guerreiro: </p>
+
+                  <pre>
+                    <code>
+    <span class="language-python__blue">class </span><span class="language-python__red">Guerreiro(Personagem)</span>
+
+    <span class="language-python__blue">def </span><span class="language-python__red">Atacar</span><span class="language-python__green">(self)</span>
+
+    <span class="language-python__blue ">return </span><span class="language-python__green">"O guerreiro ataca com sua espada."</span>
+                    </code>
+                  </pre>
+
+                  <p>Classe Mago:</p>
+                  <pre>
+                    <code>
+    <span class="language-python__blue">class </span><span class="language-python__red">Mago(Personagem)</span>
+
+    <span class="language-python__blue">def </span><span class="language-python__red">Atacar</span><span class="language-python__green">(self)</span>
+
+    <span class="language-python__blue ">return </span><span class="language-python__green">"O mago lança um feitiço mágico."</span>
+                    </code>
+                  </pre>
+                    
+                  <p>Classe Arqueiro:</p>
+                  <pre>
+                    <code>
+    <span class="language-python__blue">class </span><span class="language-python__red">Arqueiro(Personagem)</span>
+
+    <span class="language-python__blue">def </span><span class="language-python__red">Atacar</span><span class="language-python__green">(self)</span>
+
+    <span class="language-python__blue">return </span><span class="language-python__green">"O arqueiro dispara uma flecha precisa."</span>
+                    </code>
+                  </pre>
+
+                  <p>Dessa forma, há três classes filhas, <b>Guerreiro</b>, <b>Mago</b> e <b>Arqueiro</b>, que herdam da classe <b>Personagem</b> e sobrescrevem o método <b>Atacar</b> com comportamento específico para cada tipo de personagem.</p>
+
+                  <div class="destaque-pixel">
+                    <div class="icone-position-dica">
+                      <div class="caixa-destaque">
+                        <p>A seguir, veja um modelo de como você pode usar o polimorfismo para criar instâncias de diferentes tipos de personagem e chamar o método <b>Atacar</b>.</p>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <pre>
+                    <code>
+    <span>guerreiro = Guerreiro()</span>
+    <span>mago = Mago()</span>
+    <span>arqueiro = Arqueiro()</span>
+    <span>arqueiro = Arqueiro()</span>
+    <span>personagens = [guerreiro, mago, arqueiro]</span>
+    <span class="language-python__blue">for </span><span>personagem <span class="language-python__blue">in</span> personagens:</span>
+    <span class="language-python__orange">print </span><span>(personagem.Atacar())</span>
+                    </code>
+                  </pre>
+                    
+
+                  <p>Nesse exemplo, foi criada uma lista de personagens com instâncias de <b>Guerreiro</b>, <b>Mago</b> e <b>Arqueiro</b>. Em seguida, foi iterado pela lista e chamado o método <b>atacar</b> para cada personagem. Como cada classe filha sobrescreve o método <b>atacar</b>, o resultado será específico para o tipo de personagem.</p>
+
+                  <div class="destaque-pixel">
+                    <div class="caixa-destaque">O polimorfismo permite que diferentes objetos se comportem de maneira diferente quando chamam o mesmo método, tornando o código mais flexível e extensível.</div>
+                  </div>
+
+                <h2 id="t4">As vantagens da orientação a objetos</h2>
+                <p>Agora você já deve ter compreendido os conceitos mais importantes relacionados à orientação a objetos, desvendou as diferenças da linguagem estruturada, conceituou classes e objetos e ingressou nos importantes pilares da orientação a objetos. Com isso tudo, porém, o grau de complexidade de programação aumentou, mas certamente, com todas essas novas características que serão implementadas por você, será mais fácil criar sistemas mais seguros, robustos e também com uma gama muito maior de possibilidades.</p>
+                <p>Um resumo das características da orientação a objetos, de acordo com o que foi estudado até este momento, seria da seguinte forma:</p>
+              
+                <div class="no-print" aria-hidden="true">
+                  <p>Clique ou toque para visualizar o conteúdo.</p>
+                  <div class='panel-group gaitinha' id='accordion02' role='tablist' aria-multiselectable='true'>
+                    <div class='panel panel-default'>
+                      <div class='panel-heading' role='tab' id='heading04'>
+                        <h3 class='panel-title'>
+                          <a role='button' data-toggle='collapse' data-parent='#accordion02' href='#collapse04' aria-expanded='false' aria-controls='collapse04'>
+                            O encapsulamento facilita a identificação de problemas.
+                          </a>
+                        </h3>
+                      </div>
+                      <div id='collapse04' class='panel-collapse collapse in' role='tabpanel' aria-labelledby='heading04'>
+                        <div class='panel-body'>
+                          <p>Quando você estiver programando diretamente com a orientação a objetos, certamente encontrará <i>bugs</i> e erros em código, porém, diferentemente da linguagem estruturada, será possível determinar que algum objeto não está funcionando, possibilitando ir direto à classe, sem ter que passar por todas as linhas de código.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class='panel panel-default'>
+                      <div class='panel-heading' role='tab' id='heading05'>
+                        <h3 class='panel-title'>
+                          <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion02' href='#collapse05' aria-expanded='false' aria-controls='collapse05'>
+                            O encapsulamento proporciona maior segurança.
+                          </a>
+                        </h3>
+                      </div>
+                      <div id='collapse05' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading05'>
+                        <div class='panel-body'>
+                          <p>Sem dúvidas, ainda com referência ao tópico sobre <b>encapsulamento</b>, você estará sempre filtrando informações que não serão expostas para o usuário e provendo a eles somente o que precisam.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class='panel panel-default'>
+                      <div class='panel-heading' role='tab' id='heading06'>
+                        <h3 class='panel-title'>
+                          <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion02' href='#collapse06' aria-expanded='false' aria-controls='collapse06'>
+                            É possível reutilizar códigos por meio da herança.
+                          </a>
+                        </h3>
+                      </div>
+                      <div id='collapse06' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading06'>
+                        <div class='panel-body'>
+                          <p>Como estudado, a herança é uma excelente técnica para evitar a repetição de códigos por meio de uma simples superclasse, independentemente do sistema a que você será alocado para construir. A herança poupará tempo de desenvolvimento e tornará seu sistema muito mais simples e leve para os usuários.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class='panel panel-default'>
+                      <div class='panel-heading' role='tab' id='heading07'>
+                        <h3 class='panel-title'>
+                          <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion02' href='#collapse07' aria-expanded='false' aria-controls='collapse07'>
+                            O polimorfismo torna o código mais flexível.
+                          </a>
+                        </h3>
+                      </div>
+                      <div id='collapse07' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading07'>
+                        <div class='panel-body'>
+                          <p>O fato de um simples método poder retornar valores/mensagens diferentes dentro de outras classes ou mesmo a criação de outros objetos simplesmente “salva a vida” (espaço e tempo também) de um desenvolvedor. Então, sempre fique atento quanto aos momentos em que as sobrescritas podem ser usadas para facilitar a sua estrutura.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="acessivel print">
+                  <p><b>O encapsulamento facilita a identificação de problemas.</b></p>
+                  <p>Quando você estiver programando diretamente com a orientação a objetos, certamente encontrará <i>bugs</i> e erros em código, porém, diferentemente da linguagem estruturada, será possível determinar que algum objeto não está funcionando, possibilitando ir direto à classe, sem ter que passar por todas as linhas de código.</p>
+                  <p><b>O encapsulamento proporciona maior segurança.</b></p>
+                  <p>Sem dúvidas, ainda com referência ao tópico sobre <b>encapsulamento</b>, você estará sempre filtrando informações que não serão expostas para o usuário e provendo a eles somente o que precisam.</p>
+                  <p><b>É possível reutilizar códigos por meio da herança.</b></p>
+                  <p>Como estudado, a herança é uma excelente técnica para evitar a repetição de códigos por meio de uma simples superclasse, independentemente do sistema a que você será alocado para construir. A herança poupará tempo de desenvolvimento e tornará seu sistema muito mais simples e leve para os usuários.</p>
+                  <p><b>O polimorfismo torna o código mais flexível.</b></p>
+                  <p>O fato de um simples método poder retornar valores/mensagens diferentes dentro de outras classes ou mesmo a criação de outros objetos simplesmente “salva a vida” (espaço e tempo também) de um desenvolvedor. Então, sempre fique atento quanto aos momentos em que as sobrescritas podem ser usadas para facilitar a sua estrutura.</p>
+                </div>
+                
+                <p>É importante também sinalizar que a orientação a objetos é algo que o mercado de trabalho trata com grande importância e sendo de grande necessidade. A maioria das linguagens que são exigidas pelo mercado de trabalho (Java, C++, C# etc.) no século XXI traz a necessidade da orientação a objetos como um máximo no seu dia a dia. Mesmo que as empresas e vagas não solicitem explicitamente o conhecimento da orientação a objetos, sem dúvida as linguagens atualmente são dessa forma. Portanto, refletir e compreender esses conceitos fará de você um grande desenvolvedor.</p>
+
+                <h2 id="t5">UML</h2>
+                <p>Quando se começa a estudar programação orientada a objetos, percebe-se que cada uma das classes começa a ter um comportamento individual e até mesmo “conversar” de uma maneira ou de outra umas com as outras. Esse conceito não é apenas importante para se manter uma organização das ideias, mas também é de suma importância ter isso expressado de modo visual e, claro, dentro dos padrões mais conhecidos do mundo, o padrão UML.</p>
+                <p class="icone pequeno refletir"><b><b>Afinal, o que é UML?</b></b></p>
+                <p>A área de desenvolvimento, assim como a informática como um todo, não é tão antiga. Sendo assim, ela teve que evoluir e se adaptar muito rápido às necessidades mercadológicas e de organização. A UML (Unified Modeling Language) surgiu para suprir essa necessidade e padronizar uma indústria que esteja recém iniciando suas atividades.</p>
+                <p>O seu desenvolvimento data entre 1994 e 1995, quando Grady Booch, Ivar Jacobson e James Rumbaugh trabalhavam na mesma empresa e apresentaram essa ideia para a OMG (Object Management Group), uma organização internacional que aprova padrões abertos para <i>softwares</i>, sistemas e aplicações orientadas a objetos. A ideia foi prontamente aprovada em 1997, além disso, desde 2005, a ISO (International Organization Standardization) aprovou a UML como um padrão mundialmente utilizado.</p>
+                <img src="objetos/figura_16.png" class="img-responsive center-block">
+                <p class="legenda-imagem">
+                  Criadores da UML <br>
+                  Legenda: a) Grady Booch; b) Ivar Jacobson; c) James Rumbaugh <br>
+                  Fonte: a) Wikipédia (2020); b) Jacobson (2009); c) EduRed (2018)
+                </p>
+                <p class="acessivel no-print">A imagem mostra três fotografias dos cientistas Grady Booch, Ivar Jacobson e James Rumbaugh.</p>
+                <p>A UML <b>não é uma linguagem</b> de programação, e sim uma forma de melhorar e exibir mais detalhadamente a abstração de um sistema, as suas classes e os objetos que poderão vir a ser gerados. </p>
+                <p>Imagine que a UML servirá como se fosse um guia visual para os desenvolvedores dos sistemas; uma planta baixa de um sistema, na qual, por tabelas, setas e linhas, estão definidas quais classes precisarão ser desenvolvidas e como elas “conversarão” entre si.</p>
+                <p>Desde o conteúdo sobre lógica, abordou-se sobre abstração e como traduzir os algoritmos. Agora, em orientação a objetos, traz-se a ideia de aproximar esses algoritmos do mundo real. Com a UML, essa aproximação poderá se tornar um pouco mais visual, facilitando até o processo de abstração, sendo trazido para dentro de um sistema e compartilhado com a equipe.</p>
+                
+                <div class="destaque-pixel">
+                  <div class="caixa-destaque ">
+                    <p>É importante lembrar que a UML tem como base a orientação a objetos e, por meio de símbolos e diagramas, forma essa “planta baixa” do sistema.</p>
+                  </div>
+                </div>
+                
+                <p class="icone pequeno refletir"><b>Por que a UML é necessária?</b></p>
+                <ul class="cor01">
+                  <li>Durante o processo de desenvolvimento de sistemas e de aplicações, sem dúvidas serão necessárias a colaboração e a documentação de todos os envolvidos. A UML e seus diagramas facilitam a comunicação e tornam a visualização dos sistemas mais simples para todos visualizarem.</li>
+                  <li>Na maioria das vezes, os clientes que solicitam os serviços de desenvolvimento de <i>software</i> não tem conhecimento sobre programação ou sobre todo o processo. A UML torna a explicação do funcionamento do sistema mais fácil e mais simples para todos os tipos de usuários.</li>
+                  <li>No mercado de trabalho atualmente, quando se fala de desenvolvimento de sistemas, a habilidade de entender, construir e interpretar UML é uma vantagem que muitos desenvolvedores têm, comunicando-se com diversas áreas como engenharia de <i>software</i>, análise de sistemas, ciências da computação e até mesmo jogos digitais.</li>
+                </ul>
+
+                <h2 id="t6">Diagramas</h2>
+                <p>Uma das questões que você deve considerar com relação à UML é que existem diversos tipos de diagramas que permeiam essa tecnologia. A UML é extremamente detalhada e, antes mesmo de se tocar em uma linha de código, você poderá passar dias apenas desenhando e planejando esses diagramas. </p>
+                <p>Veja alguns exemplos:</p>
+                <div aria-hidden="true" class="no-print">
+                  <p class="text-center">Clique ou toque para visualizar o conteúdo.</p>
+                  <div class="row">
+                    <div class="col-sm-4 col-xs-12">
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="objetos/card_3_1.png" class="img-cards">
+                          </div>
+                          <div class="flip-card-back">
+                            <img src="objetos/card_3_1_hover.png" class="img-cards">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-4 col-xs-12">
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="objetos/card_3_2.png" class="img-cards">
+                          </div>
+                          <div class="flip-card-back">
+                            <img src="objetos/card_3_2_hover.png" class="img-cards">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-4 col-xs-12">
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="objetos/card_3_3.png" class="img-cards">
+                          </div>
+                          <div class="flip-card-back">
+                            <img src="objetos/card_3_3_hover.png" class="img-cards">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="acessivel print">
+                  <p><b>Diagrama de classes</b></p>
+                  <p>Representam as classes de um sistema, com seus atributos, métodos e até mesmo relacionamentos entre elas, que são essenciais para o conteúdo de orientação a objetos.</p>
+                  <p><b>Diagrama de casos de uso</b></p>
+                  <p>Apresenta de modo mais visual como os usuários interagirão com certas funcionalidades do sistema.</p>
+                  <p><b>Diagrama de componentes</b></p>
+                  <p>É um tipo de diagrama usado para apresentar a arquitetura do <i>software</i> como um todo e como cada componente do sistema se comunicará com o usuário final.</p>
+                </div>
+                <p>Esses são apenas três entre vários outros diagramas que compõem essa tecnologia de UML e que “conversam” diretamente com todo o processo de desenvolvimento e concepção de um sistema. Lembre-se de que a UML é uma parte essencial do ciclo de vida do <i>software</i> e de que uma documentação aliada a diagramas bem desenhados pode poupar trabalho e tempo não só seu, mas de todas as pessoas envolvidas no projeto.</p>
+                <h4>Diagramas de classe</h4>
+                <p>Os diagramas de classe serão um dos melhores suportes não apenas para a visualização do seu programa, pois eles também servirão para descrever e documentar os diferentes aspectos do sistema, além de gerarem uma ideia geral de todo o trabalho que será desenvolvido.</p>
+                
+                <div class="destaque-pixel">
+                  <div class="caixa-destaque ">              
+                    <p>Esses diagramas mostrarão as classes, com seus atributos e métodos, e também trarão os encapsulamentos e as heranças entre as classes.</p>
+                  </div>
+                </div>
+                
+                <p>As características que devem ser consideradas são:</p>
+                <ul class="cor01">
+                  <li>Analisar e criar o <i>design</i> de uma aplicação de maneira estática, utilizando diagramas</li>
+                  <li>Descrever as responsabilidades do sistema e a hierarquia de classes</li>
+                  <li>Explicitar os componentes do sistema e como eles se relacionam entre si</li>
+                </ul>
+                <p>Como desenhar esses diagramas? O que deve conter dentro dessas tabelas? Isso será relativamente simples, cada uma das classes terá apenas <b>três</b> elementos:</p>
+                
+                <div class='table-responsive'>
+                  <table class='senac tabela-pequena'>
+                    <tbody>
+                      <tr>
+                        <td>Nome da classe</td>
+                      </tr>
+                      <tr>
+                        <td>Atributos</td>
+                      </tr>
+                      <tr>
+                        <td>Métodos</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p class="legenda-imagem">
+                  Diagrama <br>
+                  Fonte: Senac EAD (2022)
+                </p>
+                <p>Porém, existem alguns padrões e boas práticas que devem ser seguidos para que os diagramas estejam de acordo não só com os próprios padrões de UMLs, mas também com o que o mercado de trabalho exige.</p>
+                <div class="no-print" aria-hidden="true">
+                  <p>Clique ou toque para visualizar o conteúdo.</p>
+                  <div class='panel-group gaitinha' id='accordion03' role='tablist' aria-multiselectable='true'>
+                    <div class='panel panel-default'>
+                      <div class='panel-heading' role='tab' id='heading08'>
+                        <h3 class='panel-title'>
+                          <a role='button' data-toggle='collapse' data-parent='#accordion03' href='#collapse08' aria-expanded='false' aria-controls='collapse08'>
+                            Sessão superior
+                          </a>
+                        </h3>
+                      </div>
+                      <div id='collapse08' class='panel-collapse collapse in' role='tabpanel' aria-labelledby='heading08'>
+                        <div class='panel-body'>
+                          <p>Aqui será colocado o nome da classe. Você já conhece as definições do que é uma classe, porém, para escrever o nome dessa classe em um diagrama de classe, é preciso atentar-se ao seguinte:</p>
+                          <ul class="cor01">
+                            <li>A primeira letra sempre deverá ser maiúscula.</li>
+                            <li>O nome deve estar sempre centralizado e em negrito.</li>
+                            <li>Se for um nome único, é simples, será como “Aluno”. Em caso de nomes compostos, como funcionário público, a boa prática seria deixar como “FuncionarioPublico”, sem acentos e com ambas as letras iniciais de cada palavra em maiúscula.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class='panel panel-default'>
+                      <div class='panel-heading' role='tab' id='heading09'>
+                        <h3 class='panel-title'>
+                          <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion03' href='#collapse09' aria-expanded='false' aria-controls='collapse09'>
+                            Sessão central
+                          </a>
+                        </h3>
+                      </div>
+                      <div id='collapse09' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading09'>
+                        <div class='panel-body'>
+                          <p>É onde são colocados os atributos junto a sua visibilidade e seu tipo de dado.</p>
+                          <ul class="cor01">
+                            <li>Primeiro, serão utilizados os símbolos para explicitar se os atributos são públicos (+) ou privados (-).</li>
+                            <li>Após a visibilidade, o nome do atributo deve estar com letra minúscula; se for uma palavra composta, a primeira letra da segunda palavra deve estar com letra maiúscula, por exemplo: -enderecoCompleto: Texto. Note que se manteve o mesmo padrão de não haver acentos nem caracteres especiais.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class='panel panel-default'>
+                      <div class='panel-heading' role='tab' id='heading10'>
+                        <h3 class='panel-title'>
+                          <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion03' href='#collapse10' aria-expanded='false' aria-controls='collapse10'>
+                            Sessão inferior
+                          </a>
+                        </h3>
+                      </div>
+                      <div id='collapse10' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading10'>
+                        <div class='panel-body'>
+                          <p>Aqui é finalizado o diagrama de classe com os métodos, assim como sua visibilidade e seu retorno. Lembre-se de que o retorno é bem similar às sub-rotinas do Portugol.</p>
+                          <ul class="cor01">
+                            <li>Os padrões e as boas práticas dos métodos são idênticos aos usados na sessão central com os atributos.</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="acessivel print">
+                  <h4>Sessão superior</h4>
+                  <p>Aqui será colocado o nome da classe. Você já conhece as definições do que é uma classe, porém, para escrever o nome dessa classe em um diagrama de classe, é preciso atentar-se ao seguinte:</p>
+                  <ul class="cor01">
+                    <li>A primeira letra sempre deverá ser maiúscula.</li>
+                    <li>O nome deve estar sempre centralizado e em negrito.</li>
+                    <li>Se for um nome único, é simples, será como “Aluno”. Em caso de nomes compostos, como funcionário público, a boa prática seria deixar como “FuncionarioPublico”, sem acentos e com ambas as letras iniciais de cada palavra em maiúscula.</li>
+                  </ul>
+                  <h4>Sessão central</h4>
+                  <p>É onde são colocados os atributos junto a sua visibilidade e seu tipo de dado.</p>
+                  <ul class="cor01">
+                    <li>Primeiro, serão utilizados os símbolos para explicitar se os atributos são públicos (+) ou privados (-).</li>
+                    <li>Após a visibilidade, o nome do atributo deve estar com letra minúscula; se for uma palavra composta, a primeira letra da segunda palavra deve estar com letra maiúscula, por exemplo: -enderecoCompleto: Texto. Note que se manteve o mesmo padrão de não haver acentos nem caracteres especiais.</li>
+                  </ul>
+                  <h4>Sessão inferior</h4>
+                  <p>Aqui é finalizado o diagrama de classe com os métodos, assim como sua visibilidade e seu retorno. Lembre-se de que o retorno é bem similar às sub-rotinas do Portugol.</p>
+                  <ul class="cor01">
+                    <li>Os padrões e as boas práticas dos métodos são idênticos aos usados na sessão central com os atributos.</li>
+                  </ul>
+                </div>
+                <p>Embora sejam muitas informações e pareça complexo, na prática é muito mais simples. Confira um exemplo visual utilizando a classe <b>Aluno</b>, montada anteriormente:</p>
+                <img src="objetos/figura_17.png" class="img-responsive center-block">
+                <p class="legenda-imagem">
+                  Exemplo de diagrama da classe <b>Aluno</b> <br>
+                  Fonte: Diagramas.net (s.d.)
+                </p>
+                <p class="acessivel no-print">Na imagem consta uma tabela com uma coluna e nove linhas. Na primeira linha está a palavra “Aluno” e, abaixo, constam os seguintes textos em ordem: “nomeDoAluno: Texto”, “númeroMatricula: inteiro”, “cpf: inteiro”, “dataDeNascimento: inteiro”, “curso: Texto”, “estudar( ): void”, “assistirAula( ): void” e “enviarAtividades( ): void”.</p>
+                <p>Possivelmente, o exemplo visual facilitou a compreensão. Note que estão ali as três sessões dentro dos seus padrões. Uma estrutura bem montada ajuda a todos que estão envolvidos no projeto para que tenham facilidade em interpretar e posteriormente desenvolver esses diagramas via código.</p>
+                <p>Mas como será quando houver mais classes? Nesse momento é que a UML e os diagramas de classe realmente começam a agir e mostrar como as classes podem estar ligadas entre si e como funcionariam, facilitando a documentação e interpretação.</p>
+                <p>Que tal agora criar as classes <b>Aluno</b>, <b>Professor</b> e <b>Faculdade</b>?</p>
+                <img src="objetos/figura_18.png" class="img-responsive center-block">
+                <p class="legenda-imagem">
+                  Exemplo de múltiplas classes e seus relacionamentos utilizando diagramas <br>
+                  Fonte: Diagramas.net (s.d.)
+                </p>
+                <p class="acessivel no-print">Na imagem constam três tabelas, cada uma com uma coluna e nove linhas. Na primeira tabela está a palavra “Aluno”, no topo. Abaixo estão os seguintes textos, em ordem: “nomeDoAluno: Texto”, “numeroMatricula: inteiro”, “cpf: inteiro”, “dataDeNascimento: inteiro”, “curso: Texto”, “estudar( ): void”, “assistirAula( ): void” e “enviarAtividades( ): void”. Na segunda tabela consta a palavra “Professor”, no topo. Abaixo estão os seguintes textos, em ordem: “nomeDoProfessor: Texto”, “cpf: inteiro”, “formacao: inteiro”, “dataDeNascimento: inteiro”, “cursosRelacionados: Texto”, “lecionar( ): void”, “responderAlunos( ): void” e “registrarNotas( ): void”. Na terceira tabela, acima das duas primeiras, consta a palavra “Faculdade”, no topo. Abaixo estão os seguintes textos, em ordem: “NomeEscola: Texto”, “cnpj: inteiro”, “numeroAlunos: inteiro”, “numeroFuncionarios: inteiro”, “cursosOferecidos: Texto”, “matricularAluno( ): void”, “registrarProfessor( ): void” e “criarTurma( ): void” e “gerarDiploma( ): void”.</p>
+                <p>Nesse exemplo fica mais fácil observar como as classes “conversam” entre si e também uma estrutura maior de como isso pode formar um sistema. É claro que, durante o desenvolvimento de uma aplicação, a estrutura dos diagramas de classe e seus relacionamentos, tais como as <b>heranças</b>, serão importantes para a compreensão do funcionamento do <i>software</i>, além disso, essa estrutura é extremamente visual até mesmo para os clientes que contratarão seus serviços, o que pode ajudá-los a entenderem como está o andamento do projeto.</p>
+
+                <h2 id="t7">Uso do aplicativo Diagrams</h2>
+                <p>Obviamente, criar os <b>diagramas de classe</b> seria mais fácil com o uso de um <i>software</i> ou aplicativo. Então, será utilizado o aplicativo Diagrams, que é simples e fácil de usar para construir os diagramas de classe.</p>
+                
+                <div class="destaque-pixel">
+                  <div class="icone-position-importante">
+                    <div class="caixa-destaque ">
+                      <p>Importante! O aplicativo Diagrams é de uso gratuito e livre. Além do uso para UML, ele também oferece uma gama de outras formas e também a criação de fluxogramas. Fique à vontade para explorar a ferramenta.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="no-print mt-40" aria-hidden="true">
+                  <p>Clique ou toque para visualizar o conteúdo.</p>
+                  <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <button type="button" class="btn-diagrams center-block" data-toggle="modal" data-target="#modal-diagrams"></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="acessivel print">
+                  <p><b>1</b>. Para acessar o aplicativo, clique neste <i>link</i> <a href="https://app.diagrams.net" target="_blank">https://app.diagrams.net</a>. Realize os passos a seguir para utilizar a ferramenta.</p>
+                  <p><b>2</b>. Depois de entrar no aplicativo, você verá este pequeno <i>pop-up</i>:</p>
+                  <img src="objetos/figura_19.png" class="img-responsive center-block">
+                  <p class="legenda-imagem">
+                    <i>Pop-up</i> de entrada do Diagrams <br>
+                    Fonte: Diagrams.net (s.d.)
+                  </p>
+                  <p class="acessivel no-print">A imagem mostra um quadrado com uma tabela de três colunas e duas linhas. Na primeira linha está o ícone do Google Drive; ao lado deste, o ícone do 11Drive e, ao lado, o ícone de um dispositivo de armazenamento. Na linha de baixo, consta o ícone do Dropbox; ao lado, o ícone do GitHub e, ao lado, o ícone do GitLab.</p>
+                  <p>Essa tela é muito importante, pois é nela que você decidirá onde seus diagramas <b>ficarão salvos</b>. Você pode escolher qualquer uma das opções para salvar em nuvem ou, se preferir, pode clicar na opção <b>Decide later</b> para continuar o uso direto da ferramenta e realizar o salvamento dos arquivos manualmente. Todas essas opções anteriores estarão disponíveis novamente.</p>
+                  <p><b>3</b>. Conheça agora algumas funções básicas de edição da área de trabalho do Diagrams, como cor de fundo, cor do <i>grid</i> e algumas funções que ajudarão você a usar e compreender o aplicativo.</p>
+                  <img src="objetos/figura_20.png" class="img-responsive center-block">
+                  <p class="legenda-imagem">
+                    Demonstrativo de opções de cores e tamanho no Diagrams <br>
+                    Fonte: Diagrams.net (s.d.)
+                  </p>
+                  <p class="acessivel no-print">Na imagem constam dois destaques: o primeiro engloba o texto “View”. Abaixo dele há uma caixa de seleção, ao lado dela está o texto “Grid”, um texto com o valor numérico de “10pt” e um quadrado seletor de cores. Abaixo uma caixa de seleção com o texto “Page View”. Abaixo disso está uma caixa de seleção com o texto “Background” e, ao lado, o botão com o texto “Change”. Abaixo, há uma caixa de seleção com o texto “Shadow”. No segundo destaque está o texto “Paper Size”; abaixo dele consta uma caixa de opções com a opção marcada “A4 (210 mm x 297 mm)”; abaixo há duas opções com o texto “Portrait” que está marcada e, ao lado, a opção com o texto “Landscape”.</p>
+                  <p>Nessa imagem existem algumas opções que são relevantes quanto à personalização do aplicativo Diagrams, as quais podem alterar as cores, o tamanho da folha e orientação do documento.</p>
+                  <div>
+                    <h4>Grid</h4>
+                    <p>São as grades do documento. Essa opção pode ser desmarcada para que as grades fiquem ocultas ou para que se possa ajustar o tamanho e cor delas.</p>
+                    <h4>Page View</h4>
+                    <p>Enquanto você está desenvolvendo diagramas, o aplicativo, automaticamente, estará indicando a quantidade de páginas que estão sendo ocupadas. Caso você gere um arquivo (impresso ou em PDF), já saberá quantas páginas ele conterá. Essa opção pode ser desativada, se necessário.</p>
+                    <h4>Background</h4>
+                    <p>A cor de fundo padrão do Diagrams é branco, porém, caso haja a necessidade, pode-se trocar a cor desse fundo a qualquer momento.</p>
+                    <h4>Shadow</h4>
+                    <p>Aplica um efeito de sombra nos diagramas.</p>
+                    <h4>Paper Size</h4>
+                    <p>Refere-se ao tamanho do papel ou do documento que será gerado desse diagrama, caso seja exportado para o formato de PDF, por exemplo. O padrão A4 é utilizado em todos os documentos, porém pode ser trocado a qualquer momento, assim como a orientação da folha pode ser ajustada para <b>Portrait</b> (retrato) ou <b>Landscape</b> (paisagem).</p>
+                  </div>
+                  <p>Observe agora como isso se comporta no aplicativo Diagrams:</p>
+                  <img src="objetos/gif_2.gif" class="img-responsive center-block">
+                  <div class="acessivel no-print">Na animação, o usuário está clicando na caixa de seleção “Grid” duas vezes, depois isso clicando na seleção de cores e escolhendo uma cor azul. Após isso, o usuário clica duas vezes na opção “Page View”, depois na caixa de seleção “Background” e seleciona uma cor.</div>
+                  <p>Com isso, você já será capaz de gerar um processo mais personalizado.</p>
+                  <p>Agora você encontrará onde poderá produzir os seus <b>diagramas de classe</b> e entenderá um pouco a produção desses diagramas dentro do Diagrams.</p>
+                  <img src="objetos/figura_21.png" class="img-responsive center-block">
+                  <p class="legenda-imagem">
+                    Demonstração de onde encontrar a opção de UML no aplicativo Diagrams <br>
+                    Fonte: Diagrams.net (s.d.)
+                  </p>
+                  <p class="acessivel no-print">Na figura constam duas imagens. À esquerda há um menu vertical com um destaque para o último item do menu, com o texto “UML”; ao lado há diversos ícones retangulares e redondos.</p>
+                  <p>No Diagrams, no canto esquerdo, haverá os menus para acessar as opções sobre diagramas, fluxogramas e formas que a aplicação oferece. Contudo, como marcado na imagem, ao clicar em UML, você terá as opções que quiser para produzir seus diagramas de classe. O ícone que será utilizado neste momento é o terceiro da primeira linha. Ao clicar nele, surgirá o seguinte resultado:</p>
+                  <img src="objetos/gif_3.gif" class="img-responsive center-block">
+                  <div class="acessivel no-print">Na animação, o usuário está clicando no terceiro ícone da primeira linha do menu UML. Ao clicar, no lado direito, aparece uma tabela com três linhas, nas quais constam os seguintes textos, em ordem, de cima para baixo: “Classname”, “field:type” e “method(type): type”.</div>
+                  <p>Pronto! Agora, basta começar a digitar o nome da classe, os atributos e os métodos. Confira o quanto é simples esse processo:</p>
+                  <img src="objetos/gif_4.gif" class="img-responsive center-block">
+                  <div class="acessivel no-print">Na animação, o usuário está clicando no terceiro ícone da primeira linha do menu UML. Ao clicar, ao lado direito aparece uma tabela com três linhas com os seguintes textos, em ordem, de cima para baixo: “Classname”, “field:type” e “method(type): type”. Após isso, na primeira linha, o usuário altera o texto para “NomeDaClasse”; depois, na linha seguinte, altera para “atributo: tipo”; abaixo, altera para “método ( ): retorno”.</div>
+                  <p>Com isso, basta ampliar seu uso do aplicativo Diagrams e começar a produzir seus próprios diagramas de classe. Para finalizar, basta salvar esses diagramas. Como visto anteriormente, é possível salvá-los de diversas formas, seja em nuvem ou localmente, no seu dispositivo. Veja a demonstração de como salvar no aplicativo Diagrams.</p>
+                  <img src="objetos/gif_4.gif" class="img-responsive center-block">
+                  <div class="acessivel no-print">Na animação, o usuário clica na opção no canto superior direito “File”. Ao clicar, um menu se abre e o usuário clica na opção “Save”, que abre outra imagem com o texto “Save As”. Nesta imagem há sete diferentes ícones, que são, em ordem da esquerda para a direita e de cima para baixo: ícone Google Drive, ícone OneDrive, ícone Dropbox, ícone GitHub, ícone GitLab, ícone de dispositivo de armazenamento e ícone de navegador. Abaixo disso há três botões na mesma linha, em ordem, da esquerda para direita, “Open in New Window”, “Download” e “Close”.</div>
+                </div>
+
+                <div class="destaque-pixel">
+                  <div class="icone-position-desafio">
+                    <div class="caixa-destaque ">              
+                      <p>Você foi contratado para desenvolver um simples controle de estoque para uma rede de supermercados. O solicitante trouxe para vocês as seguintes necessidades desse sistema:</p>
+                      <ul class="cor01">
+                        <li>Cadastrar o produto dentro do estoque: cada produto terá uma quantidade em estoque, preço de compra e preço de venda, código de barras e data de vencimento.</li>
+                        <li>O cliente pode ser um conveniado do mercado, logo, ele precisará ter um cadastro com seu nome, CPF, endereço e data de cadastro.</li>
+                        <li>O estoque deverá armazenar os produtos assim como a quantidade máxima de produtos que cabem nele.</li>
+                        <li>O mercado será o gerenciador de tudo, podendo cadastrar os clientes e incluir produtos no estoque.</li>
+                      </ul>
+                      <p>Crie no Diagrams as seguintes classes: <b>Cliente</b>, <b>Mercado</b>, <b>Estoque</b> e <b>Produto</b>. Decida os <b>atributos</b> e <b>métodos</b> de cada classe e pratique o uso do Diagrams.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <h2 id="t8" class="mt-40">Encerramento</h2>
+                <p>A importância da orientação a objetos, conforme destacado neste conteúdo, é fundamental. Além disso, é extremamente relevante considerar o quanto a UML (Unified Modeling Language) e os diagramas de classe complementam e expandem o entendimento do desenvolvimento de <i>software</i> como um todo. Esse processo de visualização, documentação e exibição das classes e do escopo do sistema torna o desenvolvimento significativamente mais simples desde o início.</p>
+
+                  <div class="destaque-pixel">
+                    <div class="icone-position-dica">
+                      <div class="caixa-destaque">
+                        <p>Sempre que você iniciar um projeto, independentemente de seu tamanho, aplique esse conhecimento desde sua concepção. Isso facilitará consideravelmente a sua evolução como futuro desenvolvedor de sistemas simplesmente pelo ato de pensar, analisar e desenvolver diagramas antes mesmo de programar a primeira linha de código. </p>
+                      </div>
+                    </div>
+                  </div>
+
+
+                          <!-- Modais -->
+            <div class="modal fade"
+            id="modalPublico"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="myModalLabel"
+            aria-live="polite"
+            aria-atomic="true"
+            aria-hidden="false">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <h4 class="modal-title" id="myModalLabel">Métodos públicos</h4>
+                </div>
+                <div class="modal-body">
+
+                  <p>Métodos públicos são acessíveis de fora da classe e devem ser nomeados normalmente. Por convenção, eles <strong>não têm um sublinhado</strong> no início do nome. </p>
+
+                  <pre>
+                    <code>
+    <span class="language-python__blue">class </span><span class="language-python__red">MinhaClasse: </span><span class="language-python__blue">def </span><span class="language-python__red">metodo_publico</span><span>(self):</span>
+      
+          <span class="language-python__green">return</span> <span class="language-python__blue">"Este é um método público."</span>
+      
+          <span class="language-python__green">#início do Programa</span>
+        
+          <span>objeto = MinhaClasse()</span>
+        
+          <span class="language-python__orange">print</span><span>((objeto.metodo_publico())</span><span class="language-python__green"># Isso funcionará</span>
+                    </code>
+                  </pre>
+                  
+                          
+                          
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">
+                    Fechar
+                  </button>
+                </div>
+              </div>
+            </div>
+            </div>
+
+            <div
+        class="modal fade"
+        id="modalPrivado"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myModalLabel"
+        aria-live="polite"
+        aria-atomic="true"
+        aria-hidden="false"
+        >
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel">Métodos privados</h4>
+          </div>
+          <div class="modal-body">
+            <p>Métodos privados não devem ser acessados diretamente fora da classe. Por convenção, eles <strong>têm um sublinhado</strong> no início do nome.</p>
+
+            <pre>
+              <code>
+        <span class="language-python__blue">class </span><span class="language-python__red">MinhaClasse: </span><span class="language-python__blue">def </span><span class="language-python__red">__metodo_privado</span><span>(self):</span>
+
+        <span class="language-python__green">return</span> <span class="language-python__blue">"Este é um método privado."</span>
+
+        <span class="language-python__blue">def </span><span class="language-python__red">metodo_publico_chama_privado</span><span>(self):</span>
+
+        <span class="language-python__green">return</span> <span>self.metodo_privado()</span>
+
+        <span>objeto = MinhaClasse()</span>
+
+        <span class="language-python__green"># Tentar acessar diretamente o método privado gerará um erro. </span> 
+
+        <span class="language-python__green"># objeto. metodo_privado()   # Isso gerará um erro</span> 
+
+        <span class="language-python__green"># Para acessar o método privado, você pode chamar o método público que o utiliza.</span> 
+
+        <span class="language-python__orange">print</span><span>(objeto.metodo_publico_chama_privado())</span><span class="language-python__green"># Isso funcionará</span>
+              </code>
+            </pre>  
+
+            <div class="destaque-pixel">
+              <div class="icone-position-importante">
+                <div class="caixa-destaque">
+                    <p>Usar um sublinhado no início de nomes de métodos para indicar privacidade é apenas uma convenção. Tecnicamente, os métodos com sublinhado no início ainda podem ser acessados de fora da classe, mas não é uma boa prática. Python confia na “convenção de privacidade” em vez de impor a restrição diretamente.</p>
+                </div>
+              </div>
+            </div>
+
+            <p>Além disso, a partir do Python 3.9, você pode usar a anotação private para fornecer um nível mais alto de proteção para membros de classe, mas isso ainda é uma convenção. </p>
+
+
+            <pre>
+              <code>
+        <span class="language-python__blue">class </span><span class="language-python__red">MinhaClasse: </span>
+
+        <span class="language-python__blue">def </span><span class="language-python__red">__init</span><span>(self):</span>
+
+        <div class="language-python">
+        <span class="">self.__atributo_privado =</span><span class="language-python__red">42</span>
+
+        <span>@property</span>
+
+        <span class="language-python__blue">def </span><span class="language-python__red">atributo_privado</span><span>(self)</span>
+
+        <span  class="language-python__blue ">return </span><span>self.__atributo_privado  </span><span>(self)</span>
+
+        <span>@atributo_privado.setter</span>
+
+        <span class="language-python__blue">def </span><span class="language-python__red">atributo_privado</span><span>(self, valor):</span>
+
+        <span class="">self.__atributo_privado = valor</span>
+
+        <span>
+        objeto = MinhaClasse()
+        </span>
+
+        <span class="language-python__orange">print</span><span>(objeto.atributo_privado) </span><span class="language-python__green"># Isso funcionará</span>
+
+        <span>objeto.atributo_privado = 100 </span></span><span class="language-python__green"># Isso funcionará</span>
+              </code>
+            </pre>
+
+                    
+                    
+
+            <p>O uso de métodos privados no Python é uma questão de convenção e boa prática, e <strong>não uma imposição</strong> rígida do Python. Portanto, é importante seguir as convenções para manter o código organizado e de fácil manutenção. </p>
+            </div>
+
+          
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              Fechar
+            </button>
+          </div>
+        </div>
+        </div>
+            </div>
+
+            <!-- Modais 100% -->
+            <div class="modal modal-100 fade" id="modal-diagrams" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content no-print">
+                  <div class="modal-header" style="padding-top: 30px;">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3 class="modal-title">
+                      <div class="container">App Diagrams</div>
+                    </h3>
+                  </div>
+                  <div class="modal-body">
+                    <div class="container">
+                      <p><b>1</b>. Para acessar o aplicativo, clique neste <i>link</i> <a href="https://app.diagrams.net" target="_blank">https://app.diagrams.net</a>. Realize os passos a seguir para utilizar a ferramenta.</p>
+                      <p><b>2</b>. Depois de entrar no aplicativo, você verá este pequeno <i>pop-up</i>:</p>
+                      <img src="objetos/figura_19.png" class="img-responsive center-block">
+                      <p class="legenda-imagem">
+                        <i>Pop-up</i> de entrada do Diagrams <br>
+                        Fonte: Diagrams.net (s.d.)
+                      </p>
+                      <p class="acessivel no-print">A imagem mostra um quadrado com uma tabela de três colunas e duas linhas. Na primeira linha está o ícone do Google Drive; ao lado deste, o ícone do 11Drive e, ao lado, o ícone de um dispositivo de armazenamento. Na linha de baixo, consta o ícone do Dropbox; ao lado, o ícone do GitHub e, ao lado, o ícone do GitLab.</p>
+                      <p>Essa tela é muito importante, pois é nela que você decidirá onde seus diagramas <b>ficarão salvos</b>. Você pode escolher qualquer uma das opções para salvar em nuvem ou, se preferir, pode clicar na opção <b>Decide later</b> para continuar o uso direto da ferramenta e realizar o salvamento dos arquivos manualmente. Todas essas opções anteriores estarão disponíveis novamente.</p>
+                      <p><b>3</b>. Conheça agora algumas funções básicas de edição da área de trabalho do Diagrams, como cor de fundo, cor do <i>grid</i> e algumas funções que ajudarão você a usar e compreender o aplicativo.</p>
+                      <img src="objetos/figura_20.png" class="img-responsive center-block">
+                      <p class="legenda-imagem">
+                        Demonstrativo de opções de cores e tamanho no Diagrams <br>
+                        Fonte: Diagrams.net (s.d.)
+                      </p>
+                      <p class="acessivel no-print">Na imagem constam dois destaques: o primeiro engloba o texto “View”. Abaixo dele há uma caixa de seleção, ao lado dela está o texto “Grid”, um texto com o valor numérico de “10pt” e um quadrado seletor de cores. Abaixo uma caixa de seleção com o texto “Page View”. Abaixo disso está uma caixa de seleção com o texto “Background” e, ao lado, o botão com o texto “Change”. Abaixo, há uma caixa de seleção com o texto “Shadow”. No segundo destaque está o texto “Paper Size”; abaixo dele consta uma caixa de opções com a opção marcada “A4 (210 mm x 297 mm)”; abaixo há duas opções com o texto “Portrait” que está marcada e, ao lado, a opção com o texto “Landscape”.</p>
+                      <p>Nessa imagem existem algumas opções que são relevantes quanto à personalização do aplicativo Diagrams, as quais podem alterar as cores, o tamanho da folha e orientação do documento.</p>
+                      <div class="no-print" aria-hidden="true">
+                        <p>Clique ou toque para visualizar o conteúdo.</p>
+                        <div class='panel-group gaitinha' id='accordion04' role='tablist' aria-multiselectable='true'>
+                          <div class='panel panel-default'>
+                            <div class='panel-heading' role='tab' id='heading11'>
+                              <h3 class='panel-title'>
+                                <a role='button' data-toggle='collapse' data-parent='#accordion04' href='#collapse11' aria-expanded='false' aria-controls='collapse11'>
+                                  Grid
+                                </a>
+                              </h3>
+                            </div>
+                            <div id='collapse11' class='panel-collapse collapse in' role='tabpanel' aria-labelledby='heading11'>
+                              <div class='panel-body'>
+                                <p>São as grades do documento. Essa opção pode ser desmarcada para que as grades fiquem ocultas ou para que se possa ajustar o tamanho e cor delas.</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class='panel panel-default'>
+                            <div class='panel-heading' role='tab' id='heading12'>
+                              <h3 class='panel-title'>
+                                <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion04' href='#collapse12' aria-expanded='false' aria-controls='collapse12'>
+                                  Page View
+                                </a>
+                              </h3>
+                            </div>
+                            <div id='collapse12' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading12'>
+                              <div class='panel-body'>
+                                <p>Enquanto você está desenvolvendo diagramas, o aplicativo, automaticamente, estará indicando a quantidade de páginas que estão sendo ocupadas. Caso você gere um arquivo (impresso ou em PDF), já saberá quantas páginas ele conterá. Essa opção pode ser desativada, se necessário.</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class='panel panel-default'>
+                            <div class='panel-heading' role='tab' id='heading13'>
+                              <h3 class='panel-title'>
+                                <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion04' href='#collapse13' aria-expanded='false' aria-controls='collapse13'>
+                                  Background
+                                </a>
+                              </h3>
+                            </div>
+                            <div id='collapse13' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading13'>
+                              <div class='panel-body'>
+                                <p>A cor de fundo padrão do Diagrams é branco, porém, caso haja a necessidade, pode-se trocar a cor desse fundo a qualquer momento.</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class='panel panel-default'>
+                            <div class='panel-heading' role='tab' id='heading14'>
+                              <h3 class='panel-title'>
+                                <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion04' href='#collapse14' aria-expanded='false' aria-controls='collapse14'>
+                                  Shadow
+                                </a>
+                              </h3>
+                            </div>
+                            <div id='collapse14' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading14'>
+                              <div class='panel-body'>
+                                <p>Aplica um efeito de sombra nos diagramas.</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class='panel panel-default'>
+                            <div class='panel-heading' role='tab' id='heading15'>
+                              <h3 class='panel-title'>
+                                <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion04' href='#collapse15' aria-expanded='false' aria-controls='collapse15'>
+                                  Paper Size
+                                </a>
+                              </h3>
+                            </div>
+                            <div id='collapse15' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading15'>
+                              <div class='panel-body'>
+                                <p>Refere-se ao tamanho do papel ou do documento que será gerado desse diagrama, caso seja exportado para o formato de PDF, por exemplo. O padrão A4 é utilizado em todos os documentos, porém pode ser trocado a qualquer momento, assim como a orientação da folha pode ser ajustada para <b>Portrait</b> (retrato) ou <b>Landscape</b> (paisagem).</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="acessivel print">
+                        <h4>Grid</h4>
+                        <p>São as grades do documento. Essa opção pode ser desmarcada para que as grades fiquem ocultas ou para que se possa ajustar o tamanho e cor delas.</p>
+                        <h4>Page View</h4>
+                        <p>Enquanto você está desenvolvendo diagramas, o aplicativo, automaticamente, estará indicando a quantidade de páginas que estão sendo ocupadas. Caso você gere um arquivo (impresso ou em PDF), já saberá quantas páginas ele conterá. Essa opção pode ser desativada, se necessário.</p>
+                        <h4>Background</h4>
+                        <p>A cor de fundo padrão do Diagrams é branco, porém, caso haja a necessidade, pode-se trocar a cor desse fundo a qualquer momento.</p>
+                        <h4>Shadow</h4>
+                        <p>Aplica um efeito de sombra nos diagramas.</p>
+                        <h4>Paper Size</h4>
+                        <p>Refere-se ao tamanho do papel ou do documento que será gerado desse diagrama, caso seja exportado para o formato de PDF, por exemplo. O padrão A4 é utilizado em todos os documentos, porém pode ser trocado a qualquer momento, assim como a orientação da folha pode ser ajustada para <b>Portrait</b> (retrato) ou <b>Landscape</b> (paisagem).</p>
+                      </div>
+                      <p>Observe agora como isso se comporta no aplicativo Diagrams:</p>
+                      <img src="objetos/gif_2.gif" class="img-responsive center-block">
+                      <div class="acessivel no-print">Na animação, o usuário está clicando na caixa de seleção “Grid” duas vezes, depois isso clicando na seleção de cores e escolhendo uma cor azul. Após isso, o usuário clica duas vezes na opção “Page View”, depois na caixa de seleção “Background” e seleciona uma cor.</div>
+                      <p>Com isso, você já será capaz de gerar um processo mais personalizado.</p>
+                      <p>Agora você encontrará onde poderá produzir os seus <b>diagramas de classe</b> e entenderá um pouco a produção desses diagramas dentro do Diagrams.</p>
+                      <img src="objetos/figura_21.png" class="img-responsive center-block">
+                      <p class="legenda-imagem">
+                        Figura 21 – Demonstração de onde encontrar a opção de UML no aplicativo Diagrams <br>
+                        Fonte: Diagrams.net (s.d.)
+                      </p>
+                      <p class="acessivel no-print">Na figura constam duas imagens. À esquerda há um menu vertical com um destaque para o último item do menu, com o texto “UML”; ao lado há diversos ícones retangulares e redondos.</p>
+                      <p>No Diagrams, no canto esquerdo, haverá os menus para acessar as opções sobre diagramas, fluxogramas e formas que a aplicação oferece. Contudo, como marcado na imagem, ao clicar em UML, você terá as opções que quiser para produzir seus diagramas de classe. O ícone que será utilizado neste momento é o terceiro da primeira linha. Ao clicar nele, surgirá o seguinte resultado:</p>
+                      <img src="objetos/gif_3.gif" class="img-responsive center-block">
+                      <div class="acessivel no-print">Na animação, o usuário está clicando no terceiro ícone da primeira linha do menu UML. Ao clicar, no lado direito, aparece uma tabela com três linhas, nas quais constam os seguintes textos, em ordem, de cima para baixo: “Classname”, “field:type” e “method(type): type”.</div>
+                      <p>Pronto! Agora, basta começar a digitar o nome da classe, os atributos e os métodos. Confira o quanto é simples esse processo:</p>
+                      <img src="objetos/gif_4.gif" class="img-responsive center-block">
+                      <div class="acessivel no-print">Na animação, o usuário está clicando no terceiro ícone da primeira linha do menu UML. Ao clicar, ao lado direito aparece uma tabela com três linhas com os seguintes textos, em ordem, de cima para baixo: “Classname”, “field:type” e “method(type): type”. Após isso, na primeira linha, o usuário altera o texto para “NomeDaClasse”; depois, na linha seguinte, altera para “atributo: tipo”; abaixo, altera para “método ( ): retorno”.</div>
+                      <p>Com isso, basta ampliar seu uso do aplicativo Diagrams e começar a produzir seus próprios diagramas de classe. Para finalizar, basta salvar esses diagramas. Como visto anteriormente, é possível salvá-los de diversas formas, seja em nuvem ou localmente, no seu dispositivo. Veja a demonstração de como salvar no aplicativo Diagrams.</p>
+                      <img src="objetos/gif_4.gif" class="img-responsive center-block">
+                      <div class="acessivel no-print">Na animação, o usuário clica na opção no canto superior direito “File”. Ao clicar, um menu se abre e o usuário clica na opção “Save”, que abre outra imagem com o texto “Save As”. Nesta imagem há sete diferentes ícones, que são, em ordem da esquerda para a direita e de cima para baixo: ícone Google Drive, ícone OneDrive, ícone Dropbox, ícone GitHub, ícone GitLab, ícone de dispositivo de armazenamento e ícone de navegador. Abaixo disso há três botões na mesma linha, em ordem, da esquerda para direita, “Open in New Window”, “Download” e “Close”.</div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="botao borda-primaria-03" data-dismiss="modal">Fechar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </section>
+<!-- - - - - - - - - - - - - - - - não alterar abaixo- - - - - - - - - - - - -->
+        <footer class="text-center no-print">
+          <!-- <ul class="pagination">
+
+          </ul> -->
+        </footer>
+
+
+
+        
+
+    </div>
+
+    
+
+
+
+    
+
+
+
+
+    <!--  Em caso de footer personalizado utilizar esse elemento e adicionar a classe customizada
+    <footer>
+    </footer>
+	-->
+<!-- carrega todas as imagens dos icones nesta div
+ caso queira adicionar mais imagens de novos icones do css,
+ ou qualquer imagem que deva ser contabilizada durante a fase
+ de loading, referenciar aqui.
+ -->
+<div class="ico-div-loader">
+	<img src="../template/images/atencao.png">
+    <img src="../template/images/bg-content.jpg">
+    <img src="../template/images/bg-topo.jpg">
+    <img src="../template/images/black-zoom-in-256.png">
+    <img src="../template/images/concluindo.png">
+    <img src="../template/images/curtir.png">
+    <img src="../template/images/desafio.png">
+    <img src="../template/images/dica.png">
+    <img src="../template/images/doc.png">
+    <img src="../template/images/fundamental.png">
+    <img src="../template/images/icon-03.png">
+    <img src="../template/images/importante.png">
+    <img src="../template/images/lightbulb.png">
+    <img src="../template/images/link.png">
+    <img src="../template/images/link_pdf_hover.png">
+    <img src="../template/images/link_pdf_normal.png">
+    <img src="../template/images/logo-senac.png">
+    <img src="../template/images/mark-icon.png">
+    <img src="../template/images/mark-icon02.png">
+    <img src="../template/images/midia.png">
+    <img src="../template/images/monitor.png">
+    <img src="../template/images/nao_curtir.png">
+    <img src="../template/images/pergunta.png">
+    <img src="../template/images/pesquisa.png">
+    <img src="../template/images/play.png">
+    <img src="../template/images/radio_flat.png">
+    <img src="../template/images/refletir.png">
+    <img src="../template/images/saiba_mais.png">
+    <img src="../template/images/senac_loader.png">
+    <img src="../template/images/tanamidia.png">
+    <img src="../template/images/transcricao.png">
+    <img src="../template/images/transcricao_small.png">
+    <img src="../template/images/tv.png">
+    <img src="../template/images/tv_bottom.png">
+    <img src="../template/images/zoom.png">
+    <img src="../template/images/zoom_ie.cur">
+    <img src="../template/images/zoom_ie.png">
+    <!-- adicionar as imagens customizadas aqui abaixo -->
+</div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../template/js/jquery.min.js"></script>
+<script src="../template/js/bootstrap.min.js"></script>
+<script src="../template/js/jquery.magnific-popup.min.js"></script>
+<script src="../template/js/print.js"></script>
+<script src="../template/js/template.config.js"></script>
+<script src="../template/js/images.loader.js"></script>
+<script src="js/custom.js"></script>
+<noscript>
+  <style media="screen">
+    .over-loader { display: none;}    
+  </style>
+</noscript>
+</body>
+</html>
+<script>
+	//inicializa zoom na imagem
+	$('.zoom-imagem').magnificPopup({
+	 type: 'image',
+  	 mainClass: 'mfp-with-zoom', // this class is for CSS animation below
+ 	 zoom: {
+		enabled: true, // By default it's false, so don't forget to enable it
+
+		duration: 300, // duration of the effect, in milliseconds
+		easing: 'ease-in-out', // CSS transition easing function
+
+		// The "opener" function should return the element from which popup will be zoomed in
+		// and to which popup will be scaled down
+		// By defailt it looks for an image tag:
+		opener: function(openerElement) {
+		  // openerElement is the element on which popup was initialized, in this case its <a> tag
+		  // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+		  return openerElement.is('img') ? openerElement : openerElement.find('img');
+		}
+	  },
+	   image: {
+		  markup: '<div class="mfp-figure">'+
+					'<div class="mfp-close"></div>'+
+					'<div class="mfp-img"></div>'+ // Floated left
+					'<div class="mfp-bottom-bar">'+'<figcaption>'+'<div class="mfp-title" style="text-align:center"></div>'+
+					  '<div class="mfp-counter"></div>'+'</figcaption>'+
+					'</div>'+
+				  '</div>', // Popup HTML markup. `.mfp-img` div will be replaced with img tag, `.mfp-close` by close button
+
+		  cursor: 'mfp-zoom-out-cur', // Class that adds zoom cursor, will be added to body. Set to null to disable zoom out cursor.
+
+		  tError: '<a href="%url%">A imagem</a> não pode ser carregada.' // Error message
+	   }
+	});
+
+	//inicializa popover
+	$(function () {
+	  $('[data-toggle="popover"]').popover()
+	})
+	//inicializa tooltip
+	$(function () {
+	  $('[data-toggle="tooltip"]').tooltip()
+	})
+
+
+  $(function() {
+    $(".card").click(function() {
+      if ($(this).hasClass("exibe-frente")) {
+        $(this)
+          .children()
+          .first()
+          .hide();
+        $(this)
+          .children()
+          .last()
+          .show();
+        $(this).removeClass("exibe-frente");
+      } else {
+        $(".card .verso").hide();
+        $(".card .frente").show();
+        $(this).addClass("exibe-frente");
+      }
+    });
+  });
+
+  $( document ).ready(function() {
+    $(".card .verso").hide();
+  });
+
+
+
+
+  /*------- Script de animação do botão -------*/
+  var root = document.documentElement;
+  root.className += ' js';
+
+  function boxTop(idBox) {
+    var boxOffset = $(idBox).offset().top;
+    return boxOffset;
+  }
+
+  $(document).ready(function() {
+    var $target = $('.animeStart'),
+        $target2 = $('.animeStop'),
+        targetBox = $('.box'),
+        animationClass = 'anime-init',
+        windowHeight = $(window).height(),
+        offset = windowHeight - (windowHeight / 4);
+
+    function animeScroll() {
+      var documentTop = $(document).scrollTop();
+      $target.each(function() {
+        if (documentTop > boxTop(this) - offset) {
+          targetBox.addClass(animationClass);
+        } else {
+          targetBox.removeClass(animationClass);
+        }
+        if (documentTop > boxTop($target2) - offset) {
+          targetBox.removeClass(animationClass);
+        } 
+      });
+    }
+    animeScroll();
+
+    $(document).scroll(function() {
+      animeScroll();
+    });
+  });
+
+
+</script>
+
+<!-- Versao atual do handtalk -->
+<script>
+  var scriptElem=document.createElement("script");
+  scriptElem.src="https://plugin.handtalk.me/web/latest/handtalk.min.js",
+  scriptElem.charset="UTF-8",
+  scriptElem.onload=function(){
+        window.ht = new HT({
+            token:"bf5b7efb148a829a126a0e0c9fd533bf",
+            align:"top",
+            videoEnabled: true,
+            ytEmbedReplace: true,           
+            mobileConfig:{align:"right",
+                          actionsAlign:"top",
+                          customButtonStyle:{
+                                borderRadius:"6px",
+                                size:"38px",
+                                horizontalMargin:"13px",
+                                bottomMargin:"140px",
+                                rightMargin:"40px"}
+                          }
+          });        
+      $('.ht-skip').attr("aria-hidden","true")
+    },
+  document.body.appendChild(scriptElem);
+
+</script>

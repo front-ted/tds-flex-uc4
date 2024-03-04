@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Java</title>
+
+    <!-- Bootstrap -->
+    <link href="../template/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../template/css/tecnicos_senac.css" rel="stylesheet">
+    <link href="../template/css/cores.css" rel="stylesheet">
+      <!--Extras - novas classes para facilitar-->
+      <link rel="stylesheet" href="../template/css/extras.css">
+    <link href="../template/css/sncload.css" rel="stylesheet">
+    <link href="../template/css/magnific-popup.css" rel="stylesheet">
+    <!-- referencia ao arquivo css com estilos especificos da pagina -->
+    <link href="css/custom.css" type="text/css" rel="stylesheet">
+    <!-- css necessario para o print -->
+    <link href="../template/css/fa/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="../template/css/print.css" type="text/css" rel="stylesheet">
+    <link href="../template/fonts/roboto.css" type="text/css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+  
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Paulo Ricardo Soveral Junior</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">46914400.0000000</mso:Order>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Paulo Ricardo Soveral Junior</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ContentTypeId msdt:dt="string">0x010100393332CEE5C5294F9D2C3CF7CCDACBE5</mso:ContentTypeId>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body onLoad="Javascript:document.getElementById('sncloader').style.display='none';">
+    <!-- MARCA D´ÁGUA -->
+    <img src="../template/images/logo_senac_colorido.png" id="marcadaguaLogo">
+    <!-- /MARCA D´ÁGUA -->
+
+    <div id='sncloader' class='over-loader'><div class="over-cell"><div id="sncload"></div></div></div>
+    <header id="topo" class="senac no-print">
+        <div  class="header-tecnicos container">
+        	  <h1 id="nome-curso">Desenvolvimento de Sistemas</h1>
+            <div id="logo-senac"><img src="../template/images/logo-senac.png" alt="logo do senac"></div>
+        </div>
+        <div id="sombra"></div>
+    </header>
+
+    <div id="booklet" class="container fundo-tecnicos">
+        <header class="no-print">
+          <!-- BTO IMPRIMIR -->
+          <div class="grupo-imprimir no-print">
+            <button type="button" data-pdf="true" class="bto-imprimir" name="button">
+                <span class="fa fa-print"></span> <span>Imprimir</span>
+            </button>
+          </div>
+          <!-- /BTO IMPRIMIR -->
+        </header>
+<!-- - - - - - - - - - - - - - - - não alterar acima - - - - - - - - - - - - -->
+        <section class="paginas">
+
+          <!-- - - - - - - - cada página é independente  - - - - - - - - - - -->
+          <div class="pagina">
+            <h2>Java</h2>
+            <p>Java é uma das linguagens de programação mais populares em todo o mundo. Ela foi criada pela empresa Sun Microsystems, na qual James Gosling liderou uma equipe de pesquisadores em um esforço para criar uma nova linguagem voltada para a televisão interativa. Os princípios para a criação do Java foram simplicidade, robustez, portabilidade, independência de plataforma, segurança, alto desempenho, <i>multithread</i>, arquitetura neutra, orientação a objetos, interpretada e dinâmica. A criação da linguagem começou em 1991 e em pouco tempo o foco da equipe mudou para um novo nicho, a <b>W</b>orld <b>W</b>ide <b>W</b>eb (rede mundial de computadores, em português).</p>
+            <img src="objetos/layout_7_fig1.jpg" class="img-responsive center-block">
+            <p class="legenda-imagem">
+              Figura 1 – James Gosling, criador do Java <br>
+              Fonte: Deep (2012)
+            </p>
+            <p class="acessivel no-print">Na foto, está o criador do Java, James Gosling. Ele está usando óculos e sorrindo. No lado direito, está a logomarca do Java (uma xícara de café com o vapor subindo da xícara) e o texto “Java” logo abaixo.</p>
+            <p>No final da década de 1990, a linguagem Java começou a crescer além da <i>web</i>, expandindo-se para outros dispositivos como celulares, computadores domésticos e até mesmo o computador de bordo dos veículos de exploração de Marte da NASA (National Aeronautics and Space Administration). Devido a essa popularidade, a Sun criou diferentes variedades de Java para diferentes propósitos:</p>
+            <ul class="cor01">
+              <li>Java SE (Java Standard Edition): indicada para o desenvolvimento de aplicativos <i>desktop</i>.</li>
+              <li>Java ME (Java Micro Edition): indicada para dispositivos móveis e sistemas embutidos.</li>
+              <li>Java EE (Java Enterprise Edition): indicada para o desenvolvimento de aplicações <i>web</i>.</li>
+            </ul>
+            <p>Em 2010, a Oracle Corporation assumiu a gestão do Java quando adquiriu a Sun Microsystems. Desde então, a Oracle Corporation tem atualizado a linguagem de programação regularmente com a ajuda de uma comunidade dinâmica. Cada nova versão do Java traz muitos novos recursos e melhorias de desempenho, o que permite a evolução constante da linguagem.</p>
+
+            <h3>Versões do Java</h3>
+            <p>Muitas versões de Java foram lançadas até agora. A linguagem passou por várias mudanças desde o seu lançamento, com inúmeras adições de classes e pacotes à biblioteca padrão. Além das mudanças técnicas, as versões do Java também tiveram mudanças significativas em suas licenças e no seu suporte.</p>
+            <p>A versão estável atual do Java é o Java SE 17.</p>
+            <div class='table-responsive'>
+              <table class='senac'>
+                <tbody>
+                  <tr>
+                    <th>Versão</th>
+                    <th>Data de lançamento</th>
+                  </tr>
+                  <tr>
+                    <td>JDK Alfa e Beta</td>
+                    <td>1995</td>
+                  </tr>
+                  <tr>
+                    <td>JDK 1.0</td>
+                    <td>23 de janeiro de 1996</td>
+                  </tr>
+                  <tr>
+                    <td>JDK 1.1</td>
+                    <td>19 de fevereiro de 1997</td>
+                  </tr>
+                  <tr>
+                    <td>J2SE 1.2</td>
+                    <td>8 de dezembro de 1998</td>
+                  </tr>
+                  <tr>
+                    <td>J2SE 1.3</td>
+                    <td>8 de maio de 2000</td>
+                  </tr>
+                  <tr>
+                    <td>J2SE 1.4</td>
+                    <td>6 de fevereiro de 2002</td>
+                  </tr>
+                  <tr>
+                    <td>J2SE 5.0</td>
+                    <td>30 de setembro de 2004</td>
+                  </tr>
+                  <tr>
+                    <td>Java SE 6</td>
+                    <td>11 de dezembro de 2006</td>
+                  </tr>
+                  <tr>
+                    <td>Java SE 7</td>
+                    <td>28 de julho de 2011</td>
+                  </tr>
+                  <tr>
+                    <td>Java SE 8</td>
+                    <td>18 de março de 2014</td>
+                  </tr>
+                  <tr>
+                    <td>Java SE 9</td>
+                    <td>21 de setembro de 2017</td>
+                  </tr>
+                  <tr>
+                    <td>Java SE 10</td>
+                    <td>20 de março de 2018</td>
+                  </tr>
+                  <tr>
+                    <td>Java SE 11</td>
+                    <td>Setembro de 2018</td>
+                  </tr>
+                  <tr>
+                    <td>Java SE 12</td>
+                    <td>Março de 2019</td>
+                  </tr>
+                  <tr>
+                    <td>Java SE 13</td>
+                    <td>Setembro de 2019</td>
+                  </tr>
+                  <tr>
+                    <td>Java SE 14</td>
+                    <td>Março de 2020</td>
+                  </tr>
+                  <tr>
+                    <td>Java SE 15</td>
+                    <td>Setembro de 2020</td>
+                  </tr>
+                  <tr>
+                    <td>Java SE 16</td>
+                    <td>Março de 2021</td>
+                  </tr>
+                  <tr>
+                    <td>Java SE 17</td>
+                    <td>Setembro de 2021</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="legenda-imagem">
+              Tabela 1 – Versões do Java <br>
+              Fonte: Senac EAD (2022)
+            </p>
+            <p>Se você pesquisar pela versão 17 do Java, provavelmente encontrará, por exemplo, a versão <b>17.0.2</b>. Essa sequência de números separados por ponto é uma padronização que está presente em todas as versões do Java, em que:</p>
+            <ul class="cor01">
+              <li><b>17</b> representa a versão base.</li>
+              <li><b>0</b> representa mudanças de bibliotecas. Quando atualizado, significa que mais objetos e/ou métodos foram implementados.</li>
+              <li><b>2</b> representa a correção de <i>bugs</i>.</li>
+              <li>Cada versão base do Java contém uma licença na qual é especificado o que se pode ou não fazer com a linguagem.</li>
+            </ul>
+            <p>Assim que a Oracle se tornou proprietária do Java, as versões sucessoras do Java 8 passaram a ter mudanças significativas em suas licenças, solicitando pagamentos que antes não eram necessários. Isso fez com que muitos programadores se mantivessem na versão 8 por muitos anos e também implicou a criação de disponibilização do <b>OpenJDK</b>, uma ferramenta de desenvolvimento análoga às ferramentas padrão do Java, mas mantida por uma comunidade independente de programadores.</p>
+            <p>Com a chegada do <b>Java 17</b>, tem-se uma nova licença: a “Oracle No-Fee Terms and Conditions” – NFTC (ou “Termos e Condições Sem Taxa da Oracle”, em português). Essa licença permitiu o uso gratuito para todos os usuários, mesmo sendo uso comercial e de produção, algo muito semelhante à licença do Java 8, e essa licença deve fazer parte das futuras versões do Java também.</p>
+            <p>Outra questão que costuma confundir bastante quem está começando a estudar Java é a diferença entre os termos JVM, JRE e JDK.</p>
+            <div class="no-print" aria-hidden="true">
+              <p>Clique ou toque para visualizar o conteúdo.</p>
+              <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <button type="button" class="btn-versoes btn-versao01 center-block" data-toggle="modal" data-target="#modal-versao01"></button>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                  <button type="button" class="btn-versoes btn-versao02 center-block" data-toggle="modal" data-target="#modal-versao02"></button>
+                </div>
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                  <button type="button" class="btn-versoes btn-versao03 center-block" data-toggle="modal" data-target="#modal-versao03"></button>
+                </div>
+              </div>
+            </div>
+            <div class="acessivel print">
+              <h4>JVM (Máquina Virtual Java)</h4>
+              <p>A primeira coisa que você precisa ter em mente é que o Java é muito conhecido pelo conceito de multiplataforma e esse é o principal motivo do seu grande sucesso. A JVM (Java Virtual Machine) é um programa cuja finalidade é executar programas Java. A JVM tem duas funções principais: permitir que programas Java sejam executados em qualquer dispositivo ou sistema operacional (conhecido como princípio <i>write once, run anywhere</i> ou, em português, “gravar uma vez, executar em qualquer lugar”) e gerenciar e otimizar a memória do programa. </p>
+              <p>Quando o Java foi lançado em 1995, todos os programas de computador eram escritos em um sistema operacional específico e a memória do programa era gerenciada pelo desenvolvedor do <i>software</i>. Então, a JVM foi uma inovação para a época.</p>
+              <h4>JRE (Ambiente de Execução Java)</h4>
+              <p>O JRE contém uma JVM, os pacotes básicos do Java API Core e todas as ferramentas necessárias para a <b>execução</b> de programas Java. O Java presente na maioria das máquinas é uma versão do JRE e é o mínimo necessário para a execução de programas Java.</p>
+              <p>O JDK (Java Development Kit) é uma coleção de ferramentas para o desenvolvimento de aplicações Java. Ele inclui as APIs (<b>application programming interfaces</b>, ou interfaces de programação de aplicação, em português) Java para o desenvolvimento de aplicações, um compilador, um depurador e o próprio JRE para executar as aplicações desenvolvidas.</p>
+              <img src="objetos/layout_7_fig2.jpg" class="img-responsive center-block">
+              <p class="legenda-imagem">
+                Figura 2 – Diferença entre JDK, JRE, JVM e Java Class Library <br>
+                Fonte: Andrew; Dora (2019)
+              </p>
+              <p class="acessivel no-print">Na imagem há um retângulo com a cor azul e o título JDK. Dentro desse retângulo estão mais dois na cor amarela com os textos “JRE” e “Java Development Tools”. Dentro do retângulo JRE estão um quadrado e um retângulo, ambos de cor branca, com os textos “JVM” e “Java Class Library”, respectivamente. No retângulo “Java Development Tools” consta uma lista de itens, sendo eles: “javac”, “java”, “javap”, “apt”, “jar”, “jdb”, “javadoc”, “...”, respectivamente. Essa representação é uma ilustração de como cada elemento Java compõe o outro.</p>
+            </div>
+            <p>Na prática, a interação da JVM, do JRE e do JDK ocorre da seguinte maneira:</p>
+            <ol type="1">
+              <li>Você escreve o código do seu projeto usando um IDE (ambiente de desenvolvimento integrado).</li>
+              <li>Você utiliza o JDK para compilar o seu código e gerar um programa.</li>
+              <li>Para executar o seu programa, a JVM lê o seu código compilado e as bibliotecas necessárias que estão incluídas no JRE.</li>
+              <li>O seu programa é aberto e executado.</li>
+            </ol>
+            <p>Com isso, conclui-se que, se o seu objetivo é desenvolver aplicações Java, é essencial que ter o JDK instalado no seu computador. Agora, se o seu objetivo é apenas executar uma aplicação Java, então você precisará apenas do JRE. Em outras palavras, o JDK é destinado aos programadores Java, enquanto o JRE é destinado aos usuários de <i>softwares</i> desenvolvidos em Java.</p>
+            <p>Agora que você entendeu o que significam as siglas do mundo Java, que tal instalar e configurar o ambiente de desenvolvimento para o Java?</p>
+          </div>
+
+          <div class="pagina">
+            <h3>Ambiente de desenvolvimento</h3>
+            <p>Um ambiente de desenvolvimento é o conjunto de ferramentas utilizado no desenvolvimento de sistemas. Geralmente, esse ambiente é composto de algum <i>software</i> específico da linguagem de programação que será utilizada para programar e de um IDE, que conterá um editor de texto interno para escrever os códigos e também outras ferramentas para facilitar o processo de desenvolvimento de <i>software</i>. </p>
+            <p>Pensando na linguagem de programação Java, você precisará de uma versão do JDK e um IDE. Portanto, este estudo utilizará as versões mais recentes, o <b>Java Development Kit 17</b>, lançado em setembro de 2021, e o <b>Apache NetBeans IDE 13</b>, lançado em 4 de março de 2022.</p>
+            <div class="caixa-destaque icone atencao">
+              <p>As versões mais recentes do <b>Java Development Kit</b> e do <b>Apache NetBeans IDE</b> podem variar, de acordo com a data em que você estiver lendo esse conteúdo.</p>
+            </div>
+            <div class="no-print" aria-hidden="true">
+              <p>Clique ou toque para visualizar o conteúdo.</p>
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <button type="button" class="btn-instalacao btn-windows center-block" data-toggle="modal" data-target="#modal-windows"></button>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <button type="button" class="btn-instalacao btn-linux center-block" data-toggle="modal" data-target="#modal-linux"></button>
+                </div>
+              </div>
+            </div>
+            <div class="acessivel print">
+              <h3>JDK 17 – Instalação e configuração (Windows)</h3>
+              <p>O primeiro passo para instalar o Java Development Kit 17 no Windows é baixar o instalador por meio do <i>site</i> oficial da Oracle. A versão mais recente disponível é a 17.0.2. Logo, essa é a versão que será utilizada neste material. Procure por “Java SE 17 Archive Downloads” para acessar a página com opções de <i>download</i> dessa versão.</p>
+              <p>Para fazer o <i>download</i> do instalador, clique no <i>link</i> de <i>download</i> do <b>Windows x64 Installer</b>.</p>
+              <img src="objetos/layout_7_fig3.png" class="img-responsive center-block">
+              <p class="legenda-imagem">
+                Figura 3 – <i>Site</i> oficial do Java JDK 17 <br>
+                Fonte: Oracle (c2022)
+              </p>
+              <p class="acessivel no-print">Na imagem consta o site oficial da Oracle para download do Java JDK 17. O título da página é “Java SE Development Kit 17.0.2” e abaixo do título há a descrição This software is licensed under the Oracle no-Free Terms and Conditions License. Logo abaixo, há uma tabela com três colunas: “Product/File Description”, “File Size” e “Download”. Cada linha da tabela representa uma opção para download do JDK 17. A penúltima opção “Windows x64 Installer” está destacada com um contorno vermelho.</p>
+              <p>Depois de fazer o <i>download</i> do instalador, abra-o para iniciar o processo de instalação do JDK 17. Na primeira tela, você terá uma mensagem de boas-vindas e não será necessário realizar nenhuma ação. Em seguida, clique no botão <b>Next</b> para continuar.</p>
+              <img src="objetos/layout_7_fig4.png" class="img-responsive center-block">
+              <p class="legenda-imagem">
+                Figura 4 – Tela de boas-vindas do instalador do Java Development Kit 17 <br>
+                Fonte: Java Development Kit 17 (2022)
+              </p>
+              <p class="acessivel no-print">Na imagem consta a primeira tela apresentada pelo instalador Java Development Kit 17. No topo, há um cabeçalho azul e o logo do Java no canto esquerdo. Abaixo está o texto Welcome to the Instalation Wizard for Java SE Development Kit 17.0.2. This wizard will guide you through the installation process for the Java SE Development Kit 17.0.2. No rodapé estão, respectivamente, os botões “Next” e “Cancel”.</p>
+              <p>Na tela seguinte, você deve informar ao instalador onde o JDK deve ser instalado. Por padrão, o local informado é o <b>C:\Program Files\Java\jdk-17.0.2\</b> e recomenda-se que esse caminho não seja alterado, para facilitar a localização do JDK por outras ferramentas. Sendo assim, não é necessário fazer nenhuma configuração nessa tela. Clique em <b>Next</b> para continuar.</p>
+              <img src="objetos/layout_7_fig5.png" class="img-responsive center-block">
+              <p class="legenda-imagem">
+                Figura 5 – Tela de local de instalação do instalador do Java Development Kit 17 <br>
+                Fonte: Java Development Kit 17 (2022)
+              </p>
+              <p class="acessivel no-print">Na imagem consta a segunda tela apresentada pelo instalador Java Development Kit 17. No topo, há um cabeçalho azul e o logo do Java no canto esquerdo. Abaixo está o texto Java(TM) SE Development Kit 17.0.2 (64-bit), including a private JRE and src.zip. This will require 420MB on your hard drive. Click the “Change” button to change the installation folder. Logo abaixo, há um ícone de uma pasta com o texto Install Java (TM) SE Development Kit 17.0.2 (64-bit) to: C:\Program Files\Java\jdk-17.0.2\. Ao lado, há o botão “Change...”. No rodapé estão, respectivamente, os botões “Back”, “Next” e “Cancel”.</p>
+              <p>Agora, o JDK começará o processo de instalação no seu computador. Aguarde.</p>
+              <img src="objetos/layout_7_fig6.png" class="img-responsive center-block">
+              <p class="legenda-imagem">
+                Figura 6 – Tela de andamento do instalador do Java Development Kit 17 <br>
+                Fonte: Java Development Kit 17 (2022)
+              </p>
+              <p class="acessivel no-print">A imagem mostra a terceira tela apresentada pelo instalador Java Development Kit 17. No topo, há um cabeçalho azul e o logo do Java no canto esquerdo. Abaixo consta o texto “Status” e uma barra de progresso logo embaixo. No rodapé, não há nenhum botão.</p>
+              <p>Quando a instalação for concluída, você será levado a uma nova tela do instalador, que informará que o JDK foi instalado com sucesso. Para finalizar a instalação, clique em <b>Close</b>.</p>
+              <img src="objetos/layout_7_fig7.png" class="img-responsive center-block">
+              <p class="legenda-imagem">
+                Figura 7 – Tela de conclusão do instalador do Java Development Kit 17 <br>
+                Fonte: Java Development Kit 17 (2022)
+              </p>
+              <p class="acessivel no-print">A imagem mostra a última tela apresentada pelo instalador Java Development Kit 17. No topo, há um cabeçalho azul e o logo do Java no canto esquerdo. Abaixo está o texto Java(TM) SE Development Kit 17.0.2 (64-bit) Sucessfully Installed. Logo abaixo há outro texto: Click Next Steps to access tutorials, API documentation, developer guides, release notes and more to help you get started with the JDK e o botão “Next Steps”. No rodapé encontra-se apenas o botão “Close”.</p>
+              <h4>Variáveis de ambiente</h4>
+              <p>Quando um programa é executado, ele pode precisar de informações sobre o ambiente em que ele está sendo executado. Essas informações são passadas via variáveis de ambiente. Na prática, uma variável de ambiente é um atalho para um valor. Na maioria dos casos, é preciso adicionar esses valores para que alguns programas consigam encontrar o que precisam para serem executados corretamente.</p>
+              <p>Por exemplo, muitos programas precisam saber onde o binário do Java está localizado. Mas encontrá-lo não é algo tão simples, pois esse local pode variar dependendo do sistema operacional e até mesmo da versão do Java. Logo, a forma mais simples para esse programa acessar o binário do Java é por meio do valor informado na variável de ambiente.</p>
+              <p>No caso do Java, é preciso configurar manualmente a variável de ambiente para que outros programas consigam localizá-lo e ele funcione corretamente. Para isso, execute o seguinte passo a passo:</p>
+              <ol type="1">
+                <li>Clique no ícone do Windows localizado na barra de tarefas e digite “variáveis” para pesquisar o termo entre os <i>softwares</i> do seu computador.</li>
+                <li>Selecione a opção <b>Editar as variáveis de ambiente do sistema</b>. Tenha cuidado para não confundir com “Editar as variáveis de ambiente para sua conta”.</li>
+                <li>A janela <b>Propriedades do sistema</b> será aberta na guia <b>Avançado</b>. Clique no botão <b>Variáveis de ambiente...</b>.</li>
+                <li>Em <b>Variáveis do sistema</b>, clique em <b>Novo</b>.</li>
+                <li>No campo <b>Nome da variável</b>, digite o nome <b>JAVA_HOME</b>.</li>
+                <li>No campo <b>Valor da variável</b>, informe o caminho da instalação do JDK. Se você não tiver alterado o caminho de instalação durante a instalação do Java JDK 17, então seu caminho provavelmente será <b>C:\Program Files\Java\jdk-17.0.2.</b> Caso você não saiba o caminho, use o botão <b>Procurar no diretório...</b> para localizar o caminho.</li>
+                <img src="objetos/layout_7_fig8.png" class="img-responsive center-block">
+                <p class="legenda-imagem">
+                  Figura 8 – Nova variável de sistema do Windows <br>
+                  Fonte: Senac EAD (2022)
+                </p>
+                <p class="acessivel no-print">A imagem mostra a janela “Nova Variável de Sistema” do Windows. Nela, há dois campos para serem preenchidos. O primeiro campo chama-se “Nome da variável” e contém o valor “JAVA_HOME” na entrada de dados. Já o segundo campo chama-se “Valor da variável” e está preenchido com “C:\Program Files\Java\jdk-17.0.2”. Abaixo do último campo, há quatro botões, dois à esquerda e dois à direita. Os botões da esquerda são “Procurar diretório...” e “Procurar Arquivo...”, e os da direita são “Ok” e “Cancelar”.</p>
+                <li>Clique em <b>Ok</b> para adicionar a variável de ambiente.</li>
+              </ol>
+              <p>Para conferir se a variável foi configurada corretamente, abra o <b>Prompt de Comando</b> do Windows e execute o comando <b>echo %JAVA_HOME%</b>. Se estiver tudo certo, então o caminho de instalação do Java será exibido na tela. Caso não apareça, reinicie seu computador para que as alterações sejam processadas.</p>
+
+              <h3>JDK 17 – Instalação e configuração (Linux)</h3>
+              <div class="caixa-destaque icone atencao">
+                <p>Para esse passo a passo de instalação e configuração do Java no Linux, a distribuição <b>Ubuntu</b> será utilizada como base.</p>
+              </div>
+              <p>O primeiro passo para instalar o Java no Linux é atualizar o índice de pacotes do sistema. No terminal do Ubuntu, utilize este comando:</p>
+              <pre>
+                <code>
+sudo apt-get update
+                </code>
+              </pre>
+              <img src="objetos/layout_7_fig9.png" class="img-responsive center-block">
+              <p class="legenda-imagem">
+                Figura 9 – Terminal do Ubuntu <br>
+                Fonte: Ubuntu (2022)
+              </p>
+              <p class="acessivel no-print">A imagem mostra o terminal do Ubuntu aberto. O comando “sudo apt-get update” foi executado e o índice de pacotes do sistema foi atualizado. Na última linha está a mensagem “Lendo lista de pacotes... Pronto”.</p>
+              <p>Após isso, verifique se o Java já está instalado (ou não) com o comando:</p>
+              <pre>
+                <code>
+java - version
+                </code>
+              </pre>
+              <p>Se o Java não estiver instalado, você terá a seguinte saída:</p>
+              <img src="objetos/layout_7_fig10.png" class="img-responsive center-block">
+              <p class="legenda-imagem">
+                Figura 10 – Terminal do Ubuntu <br>
+                Fonte: Ubuntu (2022)
+              </p>
+              <p class="acessivel no-print">A imagem mostra o terminal do Ubuntu aberto. O comando “java -version” foi executado e a mensagem “Comando java não encontrado, mas pode ser instalado com:” aparece, seguida de uma lista de opções para fazer a instalação do Java. A lista apresenta as seguintes opções: “sudo apt install openjdk-11-jre-headless”, “sudo apt install default-jre”, “sudo apt install openjdk-13-jre-headless”, “sudo apt install openjdk-16-jre-headless, “sudo apt install openjdk-17-jre-headless” e “sudo apt install openjdk-8-jre-headless”.</p>
+              <p>A maneira mais simples de instalar o Java no Ubuntu é por meio dos repositórios do sistema. Por padrão, o Ubuntu empacota o OpenJDK, que é uma alternativa de código aberto para o JRE e o JDK da Oracle. Logo, siga com a instalação do OpenJDK 17 usando o seguinte comando:</p>
+              <pre>
+                <code>
+sudo apt-get install openjdk-17-jdk
+                </code>
+              </pre>
+              <p>Após isso, basta confirmar a operação pressionando a tecla <b>Enter</b>.</p>
+              <img src="objetos/layout_7_fig11.png" class="img-responsive center-block">
+              <p class="legenda-imagem">
+                Figura 11 – Terminal do Ubuntu <br>
+                Fonte: Ubuntu (2022)
+              </p>
+              <p class="acessivel no-print">A imagem mostra o terminal do Ubuntu aberto. Na primeira linha, o comando “sudo apt-get install openjdk-17-jdk” é executado. Na segunda linha, a senha é solicitada e, nas linhas seguintes, uma lista de pacotes que serão instalados é exibida. No final, consta a mensagem “Depois desta operação, 460 MB adicionais de espaço em disco serão usados. Você quer continuar? [S/n]”.</p>
+              <div class="caixa-destaque-livre bg-primaria-02 borda-primaria-03">
+                <p><b>Observação</b></p>
+                <p>Outra forma de instalar o OpenJDK seria por meio deste comando:</p>
+                <pre>
+                  <code>
+sudo apt-get install default-jdk
+                  </code>
+                </pre>
+                <p>Esse comando instalará a última versão disponível do JDK e, por isso, é importante que ele seja usado com cautela, pois é possível que uma versão diferente do JDK seja instalada.</p>
+                <p>Caso você queira fazer o <i>download</i> do JDK oficial da Oracle, acesse o <i>site</i> oficial do Oracle JDK 17 e prossiga com a instalação do pacote <b>Linux x64 Debian Package</b> oferecido na lista de <i>downloads</i>. Após isso, abra o terminal, acesse a pasta de <i>downloads</i> e execute o seguinte comando:</p>
+                <pre>
+                  <code>
+sudo  dpkg -i jdk-17.0.3_linux-x64_bin.deb
+                  </code>
+                </pre>
+                <p>Caso escolha essa abordagem, lembre-se de que o nome do arquivo pode variar, de acordo com a versão disponibilizada para <i>download</i>.</p>
+              </div>
+              <p>Assim que o processo de instalação terminar, verifique se está tudo correto executando este comando:</p>
+              <pre>
+                <code>
+java - version
+                </code>
+              </pre>
+              <img src="objetos/layout_7_fig12.png" class="img-responsive center-block">
+              <p class="legenda-imagem">
+                Figura 12 – Terminal do Ubuntu <br>
+                Fonte: Ubuntu (2022)
+              </p>
+              <p class="acessivel no-print">A imagem mostra o terminal do Ubuntu aberto com o retorno de “instalação completa” dos pacotes do Java. Após isso, consta o comando “java –version” sendo executado e as seguintes mensagens sendo retornadas: “openjdk version 17.0.2 2022-01-18”; “OpenJDK Runtime Environment (build 17.0.2+8-Ubuntu-120.04)”; “OpenJDK 64Bit Server VM (build 17.0.2+8-Ubuntu-120.03, mixed mode, sharing)”.</p>
+              <p>Agora, o terminal deve retornar a versão instalada do Java. Se a versão 17 for retornada no seu terminal, isso significa que o JDK 17 foi devidamente instalado no seu sistema Ubuntu.</p>
+            </div>
+          </div>
+
+          <div class="pagina">
+            <h3>IDE</h3>
+            <p>Um IDE é um <i>software</i> usado para criar aplicações que combina ferramentas comuns de desenvolvimento em uma única interface gráfica do usuário para facilitar o desenvolvimento de sistemas. Geralmente, um IDE ajuda você a organizar seus projetos de <i>software</i>, escrever código, testar, depurar e compilar o código. Como criar <i>softwares</i> é uma tarefa que demanda bastante tempo, é muito importante saber escolher um IDE que realmente torne o desenvolvimento de <i>software</i> mais produtivo e agradável.</p>
+            <p>A escolha de um IDE de um desenvolvedor pode ser uma coisa muito pessoal e o Java contém diversas opções de IDEs disponíveis. Cada IDE tem seus pontos positivos e negativos, por isso é importante fazer uma boa escolha. Como você está recém iniciando no mundo da programação Java, a melhor opção de IDE para começar é o <b>Apache NetBeans IDE</b>.</p>
+            <h4>Apache NetBeans IDE</h4>
+            <img src="objetos/layout_7_fig13.png" class="img-responsive center-block">
+            <p class="legenda-imagem">
+              Figura 13 – Apache NetBeans IDE (logo) <br>
+              Fonte: Ferreira (2020)
+            </p>
+            <p class="acessivel no-print">A imagem mostra a logomarca do Apache NetBeans IDE. Nela, há um cubo tridimensional na cor branca contornado com a cor verde no topo, a cor azul à direita e a cor vermelha à esquerda. Ao lado do cubo, há o texto “Apache” na cor azul e, na linha de baixo, “NetBeans IDE” na cor preta.</p>
+            <p>O NetBeans começou como um projeto estudantil (originalmente chamado Xelfi) na República Tcheca, em 1996. Xelfi foi o primeiro IDE Java escrito em Java, com seus primeiros pré-lançamentos em 1997.</p>
+            <p>Em junho de 2000, o NetBeans tornou-se <i>open source</i> (“código aberto”) pela Sun Microsystems, empresa que permaneceu como patrocinadora do projeto até janeiro de 2010, quando se tornou uma subsidiária da Oracle.</p>
+            <p>Ao longo de sua história na Sun Microsystems e na Oracle, o NetBeans tem sido gratuito e de código aberto e foi aproveitado por seu patrocinador como um mecanismo para impulsionar o ecossistema Java. Em 2016, a Oracle doou o código-fonte do NetBeans para a Apache Software Foundation, resultando assim no atual <b>Apache Netbeans IDE</b>.</p>
+            <p>O <b>Apache NetBeans IDE</b> permite que você desenvolva rapidamente e com facilidade aplicativos de <i>desktop</i> Java, Java EE e da <i>web</i>, bem como aplicativos HTML5 com HTML, JavaScript e CSS. O IDE também fornece um grande conjunto de ferramentas para desenvolvedores PHP e C/C++. É gratuito e de código aberto e contém uma grande comunidade de usuários e desenvolvedores em todo o mundo.</p>
+            <div class="caixa-destaque icone dica">
+              <p>O Apache NetBeans IDE está disponível para as plataformas Windows, Linux, macOS e Solaris.</p>
+            </div>
+            <p>Por ser um IDE bastante leve, multiplataforma e que está sempre sendo atualizado para acompanhar as versões do Java, o Apache NetBeans IDE é uma boa porta de entrada para desenvolvedores ao mundo Java. Atualmente, a versão mais recente é a versão 13, lançada em 4 de março de 2022.</p>
+            <div class="caixa-destaque icone atencao">
+              <p>A versão mais recente do <b>Apache Netbeans IDE</b> pode variar, dependendo da data em que você estiver lendo este conteúdo.</p>
+            </div>
+            <p>Nos próximos tópicos, você estudará como instalar, configurar e criar projetos no <b>Apache Netbeans IDE</b>. Porém, é essencial que você já tenha concluído a instalação do Java Development Kit primeiro, pois, durante a instalação do Apache Netbeans IDE, precisará informar onde o JDK está instalado para seguir com a instalação.</p>
+            <div class="no-print" aria-hidden="true">
+              <p>Clique ou toque para visualizar o conteúdo.</p>
+              <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <button type="button" class="btn-apache btn-apache_windows center-block" data-toggle="modal" data-target="#modal-apache_windows"></button>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <button type="button" class="btn-apache btn-apache_linux center-block" data-toggle="modal" data-target="#modal-apache_linux"></button>
+                </div>
+              </div>
+            </div>
+            <div class="acessivel print">
+              <h3>Apache Netbeans IDE 13 – Instalação e configuração (Windows)</h3>
+              <p>O primeiro passo é baixar o instalador do Apache NetBeans IDE no <i>site</i> oficial. No seu navegador, busque por “Download Apache NetBeans 13” para acessar a página de <i>downloads</i>. Como você está fazendo a instalação no sistema operacional Windows, selecione a primeira opção de instalador: <b>Apache-NetBeans-13-bin-windows-x64.exe</b>.</p>
+              <img src="objetos/layout_7_fig14.png" class="img-responsive center-block">
+              <p class="legenda-imagem">
+                Figura 14 – <i>Site</i> oficial do Apache NetBeans IDE 13 <br>
+                Fonte: Apache NetBeans (2022)
+              </p>
+              <p class="acessivel no-print">A imagem mostra a página de download do Apache NetBeans IDE 13. O título da página é “Downloading Apache NetBeans 13” e encontra-se abaixo do cabeçalho, que contém os links para navegar no site. Abaixo do título, está o texto Apache NetBeans 13 was released on March 4, 2022. See Apache NetBeans 13 Features for a full list of features. Apache NetBeans 13 is available for download from your closest Apache mirror e, em seguida, a lista de opções para download: “Binaries”, “Installers”, “Source”. Cada opção tem links com o nome dos arquivos que serão baixados. A seguir, está mais um texto com o seguinte conteúdo: Officially, it is importante that you verify the integrity of the downloaded files using the PGP signatures (.asc file) or a hash (.sha512 files). The PGP Keys used to sign this release are available here. Apache NetBeans can also be installed as a self-contained snap package on Linux.</p>
+              <p>Após fazer o <i>download</i> do Apache Netbeans 13 no <i>site</i> oficial, abra o instalador para iniciar o processo de instalação.</p>
+              <p>Na primeira tela do instalador, você terá uma breve mensagem de boas-vindas e apresentação do <i>software</i>. Apesar de ser possível especificar quais componentes serão instalados pelo botão <b>Customize...</b>, opte pela instalação completa, pois você precisará desses outros recursos no futuro. Então, pressione o botão <b>Next</b> para continuar.</p>
+              <img src="objetos/layout_7_fig15.png" class="img-responsive center-block">
+              <p class="legenda-imagem">
+                Figura 15 – Tela de boas-vindas do instalador do Apache NetBeans IDE <br>
+                Fonte: Apache NetBeans IDE (2022)
+              </p>
+              <p class="acessivel no-print">A imagem mostra a primeira tela apresentada pelo instalador do Apache NetBeans IDE 13. Nela, consta o título Welcome to the Apache NetBeans IDE 13 Installer e o texto The installer will install the NetBeans IDE with the following packs and runtimes. Click Customize to select the packs and runtimes to install. Abaixo, consta uma lista com os itens “Base IDE”, “Java SE”, “Java EE”, “HTML5/JavaScript” e “PHP”. Bem abaixo, perto do rodapé, está o botão “Customize...” e o texto “Installation Size: 780,8 MB”. No rodapé estão, respectivamente, os botões “Next” e “Cancel”.</p>
+              <p>Na tela seguinte, será apresentado o contrato de licença do Apache NetBeans IDE. Assim que finalizar a leitura, você pode marcar a opção <b>I accept the terms in the license agreement</b> e clicar no botão <b>Next</b> para continuar a instalação.</p>
+              <img src="objetos/layout_7_fig16.png" class="img-responsive center-block">
+              <p class="legenda-imagem">
+                Figura 16 – Tela de contrato do instalador do Apache NetBeans IDE <br>
+                Fonte: Apache NetBeans IDE (2022)
+              </p>
+              <p class="acessivel no-print">A imagem mostra a segunda tela apresentada pelo instalador do Apache NetBeans IDE 13. Nela, consta o título “License Agreement” e o texto Please read the following license agreement carefully. Logo abaixo, é apresentado o contrato de licença do software e um checkbox marcado com o texto I accept the terms in the license agreement. No rodapé constam, respectivamente, os botões “Back”, “Next” e “Cancel”.</p>
+              <p>Na tela seguinte, o instalador solicitará que você indique dois locais:</p>
+              <div class="acessivel print">
+                <p><b>Install the Apache NetBeans IDE in</b></p>
+                <p>Essa opção refere-se ao local em que o IDE será instalado. Por padrão, o local de instalação será na pasta <b>Program Files</b> do Windows.</p>
+                <p><b>JDK for the Apache NetBeans IDE</b></p>
+                <p>Nessa opção, é preciso informar onde o JDK está instalado. Por padrão, o instalador apontará para a versão mais recente do JDK que existir na pasta Java. Caso não haja, você precisará indicar manualmente o local em que o JDK foi instalado. Se você seguiu o conteúdo passo a passo até aqui, então esse campo já estará preenchido, pois já terá feito a instalação do JDK.</p>
+              </div>
+              <p>Se estiver tudo correto, siga com a instalação clicando em <b>Next</b>.</p>
+              <img src="objetos/layout_7_fig17.png" class="img-responsive center-block">
+              <p class="legenda-imagem">
+                Figura 17 – Tela de local de instalação do instalador do Apache NetBeans IDE <br>
+                Fonte: Apache NetBeans IDE (2022)
+              </p>
+              <p class="acessivel no-print">A imagem mostra a terceira tela apresentada pelo instalador do Apache NetBeans IDE 13. Nela, consta o título “Apache NetBeans IDE 13 Installation” e o texto Choose the installation folder and JDK™. Logo abaixo, há dois campos preenchidos e um botão “Browser...” ao lado de cada campo. O primeiro deles é o “Install the Apache NetBeans IDE to:”, e está preenchido com “C:\Program Files\NetBeans-13”. O segundo campo é o “JDK™ for the Apache NetBeans IDE:”, e está preenchido com “C:\Program Files\Java\jdk-17.0.2”. No rodapé estão, respectivamente, os botões “Back”, “Next” e “Cancel”.</p>
+              <p>Na tela seguinte, o instalador perguntará se você quer receber as atualizações do Apache NetBeans IDE. Para que seu ambiente esteja sempre atualizado, mantenha a opção <b>Check for Updates</b> marcada. Por fim, clique no botão <b>Install</b> para iniciar a instalação do IDE.</p>
+              <img src="objetos/layout_7_fig18.png" class="img-responsive center-block">
+              <p class="legenda-imagem">
+                Figura 18 – Tela de atualização do instalador do Apache NetBeans IDE <br>
+                Fonte: Apache NetBeans IDE (2022)
+              </p>
+              <p class="acessivel no-print">A imagem mostra a quarta tela apresentada pelo instalador do Apache NetBeans IDE 13. Nela, consta o título “Summary” e o texto Click Install to start the installation. Logo abaixo, está o texto “Base IDE Installation Folder: C\Program Files\NetBeans-13” seguido de uma check marcada com o conteúdo “Check for Updates”. Abaixo do checkbox, há o texto The NetBeans installer can automatically check for the updates of installed plug-ins using yout Internet Connection. Total Installation Size: 780,8 MB. No rodapé consta, respectivamente, os botões “Back”, “Install” e “Cancel”.</p>
+              <p>Assim que a instalação for finalizada, uma mensagem de “instalação concluída com sucesso” será apresentada e o Apache NetBeans IDE estará pronto para ser utilizado. Finalize a instalação clicando no botão <b>Finish</b>.</p>
+              <img src="objetos/layout_7_fig19.png" class="img-responsive center-block">
+              <p class="legenda-imagem">
+                Figura 19 – Tela de conclusão do instalador do Apache NetBeans IDE <br>
+                Fonte: Apache NetBeans IDE (2022)
+              </p>
+              <p class="acessivel no-print">A imagem mostra a última tela apresentada pelo instalador do Apache NetBeans IDE 13. Nela, consta o título “Setup Complete” e o texto Click Finish to complete the Apache NetBeans IDE setup. Logo abaixo, está a seguinte mensagem: Installation completed successfully. All plugins are up to date. To launch the IDE, use either the Start menu or the Apache NetBeans desktop icon. To Change installed components and add NetBeans plugins, use Plugin Manager that is an integral part of Apache NetBeans IDE. No rodapé, consta apenas o botão “Finish”.</p>
+
+              <h3>Apache Netbeans IDE 13 – Instalação e configuração (Linux)</h3>
+              <p>Para instalar o Apache Netbeans 13 no Ubuntu, existem três formas:</p>
+              <ul class="cor01">
+                <li>Usar o gerenciador de pacotes (comando <b>apt-get</b>).</li>
+                <li>Baixar o instalador do site oficial (arquivo <b>.deb</b>).</li>
+                <li>Fazer a instalação a partir da loja Ubuntu Software Center.</li>
+              </ul>
+              <p>Dessas, a terceira opção é a mais prática e garantirá a versão mais recente do <i>software</i>. Então, acesse o aplicativo Ubuntu Software Center.</p>
+              <img src="objetos/layout_7_fig20.png" class="img-responsive center-block">
+              <p class="legenda-imagem">
+                Figura 20 – Exemplo de menu de aplicativos do Ubuntu <br>
+                Fonte: Senac EAD (2022)
+              </p>
+              <p class="acessivel no-print">A imagem mostra um exemplo do menu de aplicativos do Ubuntu. Nele, estão sendo exibidos os ícones dos aplicativos Shotwell, Sudoku, Suporte a idio..., Tarefas, Transmission, Ubuntu Software, Utilitários e Vídeos. O aplicativo Ubuntu Software está destacado com um contorno vermelho. No lado esquerdo, no canto da tela, está a barra de tarefas do sistema operacional Linux Ubuntu. Nessa barra, há sete ícones de aplicativos. O penúltimo ícone trata-se do mesmo ícone do aplicativo Ubuntu Software e também está destacado com um contorno em vermelho.</p>
+              <p>Assim que a loja abrir, clique no ícone de lupa localizado no canto esquerdo da tela e preencha a barra de pesquisa que aparecerá com NetBeans. Você perceberá que há dois resultados: o <b>NetBeans</b> e o <b>Apache NetBeans</b>.</p>
+              <p>O aplicativo NetBeans trata-se da versão 10 do IDE, quando a Oracle era responsável pelas atualizações. Logo, essa é a versão desatualizada. A versão atualizada é a que está sendo mantida pela Apache e se chama <b>Apache NetBeans</b>. Selecione essa opção para continuar.</p>
+              <img src="objetos/layout_7_fig21.png" class="img-responsive center-block">
+              <p class="legenda-imagem">
+                Figura 21 – Ubuntu Software Center <br>
+                Fonte: Ubuntu Software Center (2022)
+              </p>
+              <p class="acessivel no-print">
+                Na imagem, o aplicativo Ubuntu Software Center está aberto. No topo do aplicativo, há uma barra preta com os botões “Explorar”, “Instalados” e “Atualizações (2)” posicionados no centro da barra. No canto esquerdo dessa barra está o ícone de uma lupa, destacado com um contorno em vermelho. Abaixo da barra preta, consta uma barra de pesquisa preenchida com o texto “NetBeans” e, abaixo, está sendo exibido o resultado da pesquisa. Os resultados contam com o ícone do aplicativo à esquerda, seguido do nome do aplicativo e a avalição (em estrelas) ao lado e, ainda, uma breve descrição do aplicativo. São três aplicativos que estão sendo exibidos como resultado da pesquisa: <br>
+                1.	NetBeans (três estrelas): Integrated Development Environment <br>
+                2.	ApacheNetBeans (três estrelas): Apache NetBeans IDE <br>
+                3.	tmcbeans (sem estrelas): IDE for students using Test My Code <br>
+                O segundo resultado está destacado com um contorno vermelho.                    
+              </p>
+              <p>Na página do Apache NetBeans, clique no botão <b>Instalar</b>.</p>
+              <img src="objetos/layout_7_fig22.png" class="img-responsive center-block">
+              <p class="legenda-imagem">
+                Figura 22 – Ubuntu Software Center <br>
+                Fonte: Ubuntu Software Center (2022)
+              </p>
+              <p class="acessivel no-print">A imagem mostra o Ubuntu Software Center aberto, exibindo o Apache NetBeans. Nessa tela constam o logo do NetBeans no topo e o nome do software “Apache NetBeans” no lado esquerdo. No lado direito, está a avaliação do software em três estrelas e o valor “(442)”, representando os números de usuários que avaliaram o aplicativo. Abaixo estão o botão “Instalar”, destacado em vermelho, uma captura de tela expandida e duas pequenas ao lado e a descrição do software logo abaixo: Apache NetBeans IDE lets you quickly and easily develop Java desktop, Java EE, and web applications, as well as HTML 5 applications with HTML, JavaScript and CSS. The IDE also provides a great set of tools for PHP and C/C++ developers. It is free and open source and has a large community of users and developers around the world. It requires Java 8 or later Java Development Kit installed. Disclaimer: This is a convenience binary of Apache NetBeans IDE, this is not na official release.</p>
+              <p>Assim que a instalação for finalizada, você encontrará o Apache NetBeans no seu menu de aplicativos pronto para ser utilizado.</p>
+              <img src="objetos/layout_7_fig23.png" class="img-responsive center-block">
+              <p class="legenda-imagem">
+                Figura 23 – Exemplo de menu de aplicativos do Ubuntu Software Center <br>
+                Fonte: Senac EAD (2022)
+              </p>
+              <p class="acessivel no-print">A imagem mostra o exemplo de menu de aplicativos do Ubuntu. Nele, estão sendo exibidos os ícones de 24 aplicativos, sendo o primeiro o Apache NetBeans IDE, que está destacado com um contorno vermelho.</p>
+            </div>
+          </div>
+
+          <div class="pagina">
+            <h3>Criação de projetos</h3>
+            <p>Agora que você já está com seu ambiente de desenvolvimento pronto, chegou a hora de criar seu primeiro projeto Java. Para isso, comece criando um projeto bem simples chamado “Hello, World!”.</p>
+            <div class="caixa-destaque icone atencao">
+              <p>Por enquanto, não serão abordadas questões técnicas da linguagem, como sintaxes e chamada de funções. Esse conteúdo será estudado em outros tópicos.</p>
+            </div>
+            <h4>Programa “Hello, World!”</h4>
+            <p>O “Hello, World!” (ou “Olá, mundo!”, em português) é um programa simples, com poucas linhas de código, que retorna a mensagem “Hello, World!“ na tela. Desenvolver um programa “Hello, World!” é uma prática comum entre as pessoas que estão aprendendo programação ou estão conhecendo uma nova linguagem de programação. </p>
+            <p>Ele também serve para verificar se um ambiente de programação está devidamente configurado, já que algumas linguagens de programação podem requerer algumas instalações e configurações adicionais. Assim, o “Hello, World!” também é uma forma de verificar se o ambiente está configurado adequadamente. Portanto, se o programa funcionar, significa que está tudo correto com o seu ambiente de desenvolvimento.</p>
+            <p>Com o Apache NetBeans IDE aberto, clique no primeiro item do menu superior <b>File</b> para revelar novas opções no menu e selecione a primeira opção, <b>New Project...</b>, para começar a criação de um novo projeto. Você também pode usar o atalho <b>CTRL + SHIFT + N</b> para acessar essa opção. </p>
+            <img src="objetos/layout_7_fig24.png" class="img-responsive center-block">
+            <p class="legenda-imagem">
+              Figura 24 – Apache NetBeans IDE <br>
+              Fonte: Apache NetBeans IDE (2022)
+            </p>
+            <p class="acessivel no-print">A imagem mostra a tela inicial do Apache NetBeans IDE 13. No topo, consta um menu de opções no qual o primeiro item “File” está selecionado, revelando novas opções na interface. Nessa lista de novas opções, a primeira opção “New Project...” está destacada com um contorno vermelho.</p>
+            <p>Uma nova janela será aberta e você será questionado sobre que tipo de projeto deseja criar. O Apache NetBeans IDE oferece três opções para projetos em Java:</p>
+            <ul class="cor01">
+              <li>Java with Maven</li>
+              <li>Java with Gradle</li>
+              <li>Java with Ant</li>
+            </ul>
+            <img src="objetos/layout_7_fig25.png" class="img-responsive center-block">
+            <p class="legenda-imagem">
+              Figura 25 – Apache NetBeans IDE <br>
+              Fonte: Apache NetBeans IDE (2022)
+            </p>
+            <p class="acessivel no-print">Na imagem, está a janela “New Project” na etapa “1. Choose Project”. No lado esquerdo está um quadrado com uma lista de opções dentro e o título “Categories”. Neste, a opção “Java with Maven” está selecionada. No lado direito, consta um outro quadrado com uma lista de opções dentro e o título “Projects”. Neste, a primeira opção da lista “Java Application” está selecionada.</p>
+            <p>Assim que você finalizar a codificação de um <i>software</i>, a etapa seguinte será compilar e rodar o projeto. Quando é necessário realizar a compilação (<i>build</i>) de um projeto, normalmente esse processo é realizado manualmente. Conforme o projeto se torna maior e mais complexo, principalmente quando são inseridas novas bibliotecas nele, esse processo tende a se tornar maior e mais complexo também. Para economizar tempo e trabalho, é comum desenvolvedores recorrerem a sistemas de compilação automático e, ao criar um projeto Java no NetBeans, o IDE oferece três opções, usando um sistema de compilação automático integrado. As opções oferecidas são o Maven, o Gradle e o Ant, respectivamente. Para compreender como cada uma dessas bibliotecas funciona na prática, crie três projetos de “Hello, World!” usando cada uma delas.</p>
+            <img src="objetos/layout_7_postit_1.png" class="img-responsive center-block">
+            <p class="acessivel no-print">Lembre-se de que a compilação é o processo de transformar o código escrito pelo programador em um programa executável. Ao contrário de outras linguagens, como C++, que geram arquivos de programa (extensão .exe), no caso do Java, o resultado serão arquivos chamados <i>bytecodes</i> (extensão .class), que, por sua vez, são interpretados pela JVM e executados.</p>
+            <p>Para se manter uma abordagem didática neste momento, a ordem sugerida pelo NetBeans será invertida. Ao invés de criar respectivamente um projeto com o Maven, seguido do Gradle e por fim com o Ant, você começará pelo Ant, em seguida partirá para o Gradle e só depois utilizará o Maven.</p>
+            <img src="objetos/layout_7_postit_2.png" class="img-responsive center-block">
+            <p class="acessivel no-print">Vale destacar ainda que é possível a compilação simples e direta de código Java a partir de terminal, usando o comando <b>javac</b>. Em projetos maiores, o mais interessante é recorrer a ferramentas de automatização, como as utilizadas pelo NetBeans.</p>
+            <h4>Ant</h4>
+            <p>O Apache Ant é uma biblioteca Java usada para automatizar processos de compilação e construção de aplicativos Java, lançado em 2000. Antes do seu surgimento, a única ferramenta de automação de <i>build</i> disponível era o Make, e este foi muito usado para construir aplicativos nos primeiros anos do Java. Em muitos aspectos, o Ant é muito semelhante ao seu antecessor e é a melhor opção para criação de projetos simples e para programadores que estão iniciando na área de programação.</p>
+            <p>Para criar um projeto com o Ant, selecione a opção <b>Java with Ant</b> em <b>Categories</b> e <b>Java Application</b> em <b>Projects</b>. Após isso, clique em <b>Next</b> para continuar.</p>
+            <img src="objetos/layout_7_fig26.png" class="img-responsive center-block">
+            <p class="legenda-imagem">
+              Figura 26 – Apache NetBeans IDE <br>
+              Fonte: Apache NetBeans IDE (2022)
+            </p>
+            <p class="acessivel no-print">A imagem mostra a janela “New Project” na etapa “1. Choose Project”. No lado esquerdo, está um quadrado com uma lista de opções dentro e o título “Categories”. Neste, a opção “Java with Ant” está selecionada. No lado direito, consta um outro quadrado com uma lista de opções dentro e o título “Projects”. Neste, a primeira opção da lista “Java Application” está selecionada.</p>
+            <p>Na tela seguinte, você precisará informar qual será o nome do seu projeto. Dessa forma, será criada uma pasta com o mesmo nome no local definido em <b>Project Location</b>. Por conta disso, é importante que o nome do projeto não contenha espaços nem caracteres especiais. Nesse exemplo, você criará um projeto “HelloWorld”. Após isso, tenha certeza de manter a opção <b>Create Main Class</b> selecionada para o IDE já criar o arquivo que será a classe principal e em seguida clique em <b>Finish</b>.</p>
+            <img src="objetos/layout_7_fig27.png" class="img-responsive center-block">
+            <p class="legenda-imagem">
+              Figura 27 – Apache NetBeans IDE <br>
+              Fonte: Apache NetBeans IDE (2022)
+            </p>
+            <p class="acessivel no-print">A imagem mostra a janela “New Project” na etapa “2. Name and Location”. Nessa tela, consta o título “Name and Location” e, logo abaixo, há vários campos de entrada de dados preenchidos. O primeiro campo é o “Project Name:” e está preenchido com “HelloWorld”. Este, está destacado com um contorno vermelho. O campo seguinte é o “Project Location:” e está preenchido com “C:\Users\tiluc\Documents\NetBeansProjects”. O próximo campo é o “Project Folder:” e está preenchido com “C:\Users\tiluc\Documents\NetBeansProjects\HelloWorld”. Abaixo, está uma checkbox desmarcada com o texto Use Dedicated Folder for Storing Libraries. Mais abaixo, constam outra checkbox, mas essa está marcada e tem o texto “Create Main Class”, e uma input ao lado preenchida com “helloworld.HelloWorld”. No rodapé estão, respectivamente, os botões “Finish”, “Cancel” e “Help”.</p>
+            <p>Assim que o projeto for criado, você verá a seguinte tela:</p>
+            <img src="objetos/layout_7_fig28.png" class="img-responsive center-block">
+            <p class="legenda-imagem">
+              Figura 28 – Apache NetBeans IDE <br>
+              Fonte: Apache NetBeans IDE (2022)
+            </p>
+            <p class="acessivel no-print">A imagem mostra a tela inicial do Apache NetBeans IDE com um projeto “HelloWorld” aberto. Do lado esquerdo, está a lista de projetos na guia “Projects”. Nessa lista, consta o projeto “HelloWorld” com o item “Source Packages” e o subitem “helloworld” expandidos, revelando o arquivo “HelloWorld.java” na estrutura do projeto. O arquivo “HelloWorld.java” está selecionado. Já no lado direito está o código inicial do projeto criado pela própria IDE.</p>
+            <p>Antes de escrever seu código, conheça melhor o Apache NetBeans IDE.</p>
+            <p>No lado esquerdo da tela está a lista de projetos. Todos os seus projetos criados com o NetBeans aparecerão aqui. Dentro de cada projeto, há <b>pacotes</b> que funcionam como subpastas para organizar os arquivos do projeto e, dentro dos pacotes, estarão os seus arquivos, os quais serão, na maioria, os códigos Java que você criará e escreverá. Ainda dentro do projeto, haverá as dependências que são, em sua essência, as <b>bibliotecas</b> necessárias para que algum recurso específico do projeto funcione. Se você expandir o item <b>Libraries</b> (“bibliotecas”, em português), encontrará todas as dependências Java sendo usadas pelo projeto. Repare que mesmo um projeto base, como o que está sendo criado agora, necessita de várias bibliotecas para funcionar. Conforme seu projeto for ficando maior e mais complexo, a tendências é o número de bibliotecas aumentar.</p>
+            <img src="objetos/layout_7_fig29.png" class="img-responsive center-block">
+            <p class="legenda-imagem">
+              Figura 29 – Apache NetBeans IDE <br>
+              Fonte: Apache NetBeans IDE (2022)
+            </p>
+            <p class="acessivel no-print">A imagem mostra a estrutura do projeto “HelloWorld” apresentada no Apache NetBeans IDE. Na raiz do projeto, estão duas pastas: “Source Packages” e “Libraries”. Ambas estão expandidas, revelando novos conteúdos dentro. Dentro de “Source Packages” está o pacote “helloworld”, que contém o arquivo “HelloWorld.java”. Já em “Libraries” está o “JDK 17 (default)” e, dentro dele, uma série de bibliotecas Java (“java.base”, “java.compiler”, “javadatransfer”, “java.desktop”, “java.management”, “java.naming”, “java.prefs”, “java.security.jgss”, “java.xml”, “jdk.accessibility”, “jdk.attach”, “jdk.compiler”, “jdk.dynalink”, “jdk.httpserver”, “jdk.jartool”, “jdk.javadoc”, “jdk.console”, “jdk.jdi”, “jdk.jfr”, “jdk.jshell”, “jdk.jsobject”).</p>
+            <p>Logo abaixo, há uma área que mostrará um resumo das variáveis e funções declaradas nos arquivos do seu projeto. Isso pode ser muito útil para localizar áreas específicas do seu código quando você tiver centenas de linhas em apenas um arquivo.</p>
+            <img src="objetos/layout_7_fig30.png" class="img-responsive center-block">
+            <p class="legenda-imagem">
+              Figura 30 – Apache NetBeans IDE <br>
+              Fonte: Apache NetBeans IDE (2022)
+            </p>
+            <p class="acessivel no-print">A imagem mostra a área “Navigator” do projeto “HelloWorld”, que é apresentada no canto inferior esquerdo do Apache NetBeans IDE. Nela, consta uma lista de itens e subitens. O primeiro item da lista é o projeto HelloWorld e nele há dois subitens: “HelloWorld()” e “main(String[] args)”, que contêm, respectivamente, um losango e um círculo com um risco na vertical como ícones localizados no lado esquerdo de cada item.</p>
+            <p>Por fim, é apresentada a área de edição de texto, que é onde você passará a maior parte do tempo escrevendo códigos. Quando se cria um arquivo Java no projeto, o IDE encarrega-se de criar toda a estrutura-base para se começar a escrever o código. Além disso, alguns comentários são adicionados, incluindo o nome do usuário do sistema operacional (linha 9), para representar uma assinatura de “quem criou esse código”. Esses comentários não são necessários para seu código funcionar, então você pode “limpá-los” para deixar seu código mais claro. Além disso, também adicione o seguinte trecho de código na sua função principal para exibir a mensagem “Hello, World!”:</p>
+            <pre>
+              <code>
+<span class="code1">System.out.</span><span class="code8">println</span><span class="code1">(</span><span class="code7">"Hello, World!"</span><span class="code1">);</span>
+              </code>
+            </pre>
+            <p>O código completo, sem os comentários, ficará da seguinte maneira:</p>
+            <pre>
+              <code>
+<span class="code1">package</span> helloworld;
+
+<span class="code1">public class</span> <span class="code2">HelloWorld</span> {
+    <span class="code1">public static</span> <span class="code2">void</span> <span class="code4">main</span>(<span class="code2">String</span>[] <span class="code5">args</span>) {
+        <span class="code5">System</span>.<span class="code5">out</span>.<span class="code4">println</span>(<span class="code3">"Olá, mundo!"</span>);
+    }
+}
+              </code>
+            </pre>
+            <p>Perceba que, após editar o arquivo <b>HelloWorld.java</b>, o nome dele ficará em negrito. Isso significa que o arquivo teve alterações e elas ainda não foram salvas. Se você editar o código de um arquivo e não salvar as alterações, elas não serão aplicadas ao seu programa. Portanto, lembre-se de salvar seu projeto sempre para que erros não ocorram.</p>
+            <img src="objetos/layout_7_fig31.png" class="img-responsive center-block">
+            <p class="legenda-imagem">
+              Figura 31 – Apache NetBeans IDE <br>
+              Fonte: Apache NetBeans IDE (2022)
+            </p>
+            <p class="acessivel no-print">
+              A imagem mostra a área de edição de texto do Apache NetBeans IDE. Nela, a aba “HelloWorld.java” está em negrito e, abaixo da aba, consta o editor de texto com o conteúdo do respectivo arquivo. O seguinte código está escrito: <br>
+              package helloworld; <br>
+              public class HelloWorld { <br>
+              public static void main(String[] args) { <br>
+              System.out.print("Olá, mundo!"); <br>
+              } <br>
+              } <br>
+            </p>
+            <p>Para salvar as alterações, acesse o menu <b>File</b> e selecione a opção <b>Save</b>. Porém, com o passar do tempo, esse processo pode se tornar muito cansativo para você. Como alternativa, é possível utilizar o atalho <b>CTRL + S</b> para salvar as alterações no arquivo mais rapidamente. Assim que as alterações forem salvas, o nome do arquivo não estará mais em negrito.</p>
+            <img src="objetos/layout_7_fig32.png" class="img-responsive center-block">
+            <p class="legenda-imagem">
+              Figura 32 – Apache NetBeans IDE <br>
+              Fonte: Apache NetBeans IDE (2022)
+            </p>
+            <p class="acessivel no-print">A imagem mostra uma visão completa do Apache NetBeans IDE. Nela, a aba “HelloWorld.java” está em negrito com o código de “HelloWorld” escrito no arquivo. No topo da tela, está o menu de opções da IDE, no qual a primeira opção “File” está expandida, revelando as outras opções. Entre estas está a função “Save CTRL+S”, que está destacada com um contorno vermelho.</p>
+            <p>Agora que você já escreveu o seu código e salvou as alterações, já pode rodar o projeto! Para isso, clique no botão de <b>Run Project</b>.</p>
+            <img src="objetos/layout_7_fig33.png" class="img-responsive center-block">
+            <p class="legenda-imagem">
+              Figura 33 – Apache NetBeans IDE <br>
+              Fonte: Apache NetBeans IDE (2022)
+            </p>
+            <p class="acessivel no-print">A imagem mostra o menu de opções do NetBeans no topo e, logo abaixo, alguns ícones para acesso rápido de outras funcionalidades do IDE. Entre essas opções, há um ícone de “Play”, que representa a função de “Run project”. Esse ícone está destacado com um contorno em vermelho.</p>
+            <p>Quando você tentar rodar o projeto, o Ant entrará em ação para primeiro compilar o projeto e só depois executá-lo compilado.</p>
+            <p>No final, você terá o resultado mostrado no <i>gif</i>:</p>
+            <img src="objetos/gif01.gif" class="img-responsive center-block">
+            <p class="acessivel no-print">
+              O gif mostra a área de edição de texto do Apache NetBeans IDE. Nele, a aba “HelloWorld.java” não está em negrito e, abaixo da aba, está o editor de texto com o conteúdo do respectivo arquivo. O seguinte código está escrito: <br>
+              package helloworld; <br>
+              public class HelloWorld { <br>
+              public static void main(String[] args) { <br>
+              System.out.println("Olá, mundo!"); <br>
+              } <br>
+              } <br>
+              O cursor do mouse se posiciona sobre o botão “Run Project”, localizado acima da aba do arquivo “HelloWorld.java”. O botão é clicado e é revelado abaixo do código um terminal branco chamado “Output – HelloWorld (run)”. O conteúdo do terminal é: <br>
+              “run: <br>
+              Olá, mundo! <br>
+              BUILD SUCCESSFUL (total time: 0 seconds)”.
+            </p>
+            <h4>Maven</h4>
+            <p>O Apache Maven é uma poderosa ferramenta de gerenciamento de projetos de <i>software</i> usada no ambiente de desenvolvimento Java para gerenciar e construir projetos, bem como para gerenciar dependências em projetos Java. Essas dependências são nada mais, nada menos do que as bibliotecas externas que a aplicação utilizará. Você pode definir as dependências e outras configurações do projeto por meio de um arquivo XML chamado <b>pom.xml</b>.</p>
+            <div class="caixa-destaque icone desafio">
+              <p>Agora que você já conhece um pouco do <b>Maven</b>, que tal praticar?</p>
+              <p>Crie um novo projeto no Apache NetBeans IDE com o Maven e utilize o mesmo código de “Hello, World!” usado na criação do projeto com o Ant. Por fim, execute o projeto e compare o tempo necessário para o projeto executar com o Ant e o Maven.</p>
+            </div>
+            <h4>Gradle</h4>
+            <p>Gradle é uma ferramenta de gerenciamento de dependência e automação de <i>build</i>, que foi construída sobre os conceitos do Ant e do Maven.</p>
+            <p>Uma das primeiras coisas que se pode notar sobre o Gradle é que ele não faz uso de arquivos XML, ao contrário do Maven. Isso levou a arquivos de configuração mais compactados e com menos confusão para os desenvolvedores. O arquivo de configuração do Gradle é por convenção chamado de <b>build.gradle</b>.</p>
+            <div class="caixa-destaque icone desafio">
+              <p>Crie um novo projeto no Apache NetBeans IDE com o <b>Gradle</b> e utilize o mesmo código de “Hello, World!” usado na criação do projeto com o Ant. Por fim, execute o projeto e compare o tempo necessário para o projeto executar com o Ant e o Maven.</p>
+            </div>
+            <h4>Comparação entre Ant, Maven e Gradle</h4>
+            <p>Se você realizou os desafios propostos sobre a criação do projeto “Hello, World!” com o Maven e o Gradle, você deve ter percebido que a construção do código-fonte permaneceu exatamente a mesma, em comparação com o Ant. Porém, existem algumas características diferentes, tais como:</p>
+            <ul class="cor01">
+              <li>As informações solicitadas pelo IDE para criar o projeto contêm alguns campos diferentes.</li>
+              <li>O tempo necessário para criar e executar o projeto é maior devido à necessidade de baixar pacotes e bibliotecas essenciais no projeto-base.</li>
+              <li>A estrutura de arquivos apresentada pelo IDE é diferente por conta de novos arquivos existentes no projeto (pacotes e bibliotecas externas do JDK).</li>
+              <li>O código-fonte do projeto inicial também é diferente, pois sugere uma outra abordagem para o desenvolvedor começar com a ferramenta designada.</li>
+            </ul>
+            <p>Apesar de o IDE recomendar o uso do Maven na criação de projetos, essa ferramenta pode tornar o desenvolvimento de <i>software</i> mais complexo para aqueles que estão começando nessa área (o mesmo vale para o Gradle). Como, inicialmente, não será necessário fazer uso de pacotes e bibliotecas externas do JDK para desenvolver as suas aplicações, a melhor opção é utilizar o Ant, já que ele não tem um gerenciador de pacotes que tornará o projeto mais complexo.</p>
+                   
+            <h3 class="mt-40">Encerramento</h3>
+            <p>Assim se concluem a introdução à linguagem de programação Java, a configuração do ambiente de desenvolvimento e a criação dos seus primeiros projetos usando o Apache NetBeans IDE. Esses são os primeiros passos para começar a aprender qualquer linguagem de programação e são a base para iniciar o desenvolvimento de sistemas com qualquer tecnologia. Agora que você já tem todas as ferramentas instaladas e em perfeito funcionamento, está pronto para aprofundar seus estudos na linguagem de programação Java.</p>
+          </div>
+
+          
+        </section>
+<!-- - - - - - - - - - - - - - - - não alterar abaixo- - - - - - - - - - - - -->
+        <footer class="text-center no-print">
+          <ul class="pagination">
+
+          </ul>
+        </footer>
+
+
+        <!-- Modais -->
+        <div class="modal fade" id="modal-versao01" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="myModalLabel">JVM (Máquina Virtual Java)</h4>
+              </div>
+              <div class="modal-body">
+                <p>A primeira coisa que você precisa ter em mente é que o Java é muito conhecido pelo conceito de multiplataforma e esse é o principal motivo do seu grande sucesso. A JVM (Java Virtual Machine) é um programa cuja finalidade é executar programas Java. A JVM tem duas funções principais: permitir que programas Java sejam executados em qualquer dispositivo ou sistema operacional (conhecido como princípio <i>write once, run anywhere</i> ou, em português, “gravar uma vez, executar em qualquer lugar”) e gerenciar e otimizar a memória do programa. </p>
+                <p>Quando o Java foi lançado em 1995, todos os programas de computador eram escritos em um sistema operacional específico e a memória do programa era gerenciada pelo desenvolvedor do <i>software</i>. Então, a JVM foi uma inovação para a época.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="modal-versao02" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="myModalLabel">JRE (Ambiente de Execução Java)</h4>
+              </div>
+              <div class="modal-body">
+                <p>O JRE contém uma JVM, os pacotes básicos do Java API Core e todas as ferramentas necessárias para a <b>execução</b> de programas Java. O Java presente na maioria das máquinas é uma versão do JRE e é o mínimo necessário para a execução de programas Java.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="modal-versao03" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="myModalLabel">JDK (<i>Kit</i> de Desenvolvimento Java)</h4>
+              </div>
+              <div class="modal-body">
+                <p>O JDK (Java Development Kit) é uma coleção de ferramentas para o desenvolvimento de aplicações Java. Ele inclui as APIs (<b>application programming interfaces</b>, ou interfaces de programação de aplicação, em português) Java para o desenvolvimento de aplicações, um compilador, um depurador e o próprio JRE para executar as aplicações desenvolvidas.</p>
+                <img src="objetos/layout_7_fig2.jpg" class="img-responsive center-block">
+                <p class="legenda-imagem">
+                  Figura 2 – Diferença entre JDK, JRE, JVM e Java Class Library <br>
+                  Fonte: Andrew; Dora (2019)
+                </p>
+                <p class="acessivel no-print">Na imagem há um retângulo com a cor azul e o título JDK. Dentro desse retângulo estão mais dois na cor amarela com os textos “JRE” e “Java Development Tools”. Dentro do retângulo JRE estão um quadrado e um retângulo, ambos de cor branca, com os textos “JVM” e “Java Class Library”, respectivamente. No retângulo “Java Development Tools” consta uma lista de itens, sendo eles: “javac”, “java”, “javap”, “apt”, “jar”, “jdb”, “javadoc”, “...”, respectivamente. Essa representação é uma ilustração de como cada elemento Java compõe o outro.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Modais 100% -->
+        <div class="modal modal-100 fade" id="modal-windows" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content no-print">
+              <div class="modal-header" style="padding-top: 30px;">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">
+                  <div class="container">JDK 17 – Instalação e configuração (Windows)</div>
+                </h3>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <p>O primeiro passo para instalar o Java Development Kit 17 no Windows é baixar o instalador por meio do <i>site</i> oficial da Oracle. A versão mais recente disponível é a 17.0.2. Logo, essa é a versão que será utilizada neste material. Procure por “Java SE 17 Archive Downloads” para acessar a página com opções de <i>download</i> dessa versão.</p>
+                  <p>Para fazer o <i>download</i> do instalador, clique no <i>link</i> de <i>download</i> do <b>Windows x64 Installer</b>.</p>
+                  <img src="objetos/layout_7_fig3.png" class="img-responsive center-block">
+                  <p class="legenda-imagem">
+                    Figura 3 – <i>Site</i> oficial do Java JDK 17 <br>
+                    Fonte: Oracle (c2022)
+                  </p>
+                  <p class="acessivel no-print">Na imagem consta o site oficial da Oracle para download do Java JDK 17. O título da página é “Java SE Development Kit 17.0.2” e abaixo do título há a descrição This software is licensed under the Oracle no-Free Terms and Conditions License. Logo abaixo, há uma tabela com três colunas: “Product/File Description”, “File Size” e “Download”. Cada linha da tabela representa uma opção para download do JDK 17. A penúltima opção “Windows x64 Installer” está destacada com um contorno vermelho.</p>
+                  <p>Depois de fazer o <i>download</i> do instalador, abra-o para iniciar o processo de instalação do JDK 17. Na primeira tela, você terá uma mensagem de boas-vindas e não será necessário realizar nenhuma ação. Em seguida, clique no botão <b>Next</b> para continuar.</p>
+                  <img src="objetos/layout_7_fig4.png" class="img-responsive center-block">
+                  <p class="legenda-imagem">
+                    Figura 4 – Tela de boas-vindas do instalador do Java Development Kit 17 <br>
+                    Fonte: Java Development Kit 17 (2022)
+                  </p>
+                  <p class="acessivel no-print">Na imagem consta a primeira tela apresentada pelo instalador Java Development Kit 17. No topo, há um cabeçalho azul e o logo do Java no canto esquerdo. Abaixo está o texto Welcome to the Instalation Wizard for Java SE Development Kit 17.0.2. This wizard will guide you through the installation process for the Java SE Development Kit 17.0.2. No rodapé estão, respectivamente, os botões “Next” e “Cancel”.</p>
+                  <p>Na tela seguinte, você deve informar ao instalador onde o JDK deve ser instalado. Por padrão, o local informado é o <b>C:\Program Files\Java\jdk-17.0.2\</b> e recomenda-se que esse caminho não seja alterado, para facilitar a localização do JDK por outras ferramentas. Sendo assim, não é necessário fazer nenhuma configuração nessa tela. Clique em <b>Next</b> para continuar.</p>
+                  <img src="objetos/layout_7_fig5.png" class="img-responsive center-block">
+                  <p class="legenda-imagem">
+                    Figura 5 – Tela de local de instalação do instalador do Java Development Kit 17 <br>
+                    Fonte: Java Development Kit 17 (2022)
+                  </p>
+                  <p class="acessivel no-print">Na imagem consta a segunda tela apresentada pelo instalador Java Development Kit 17. No topo, há um cabeçalho azul e o logo do Java no canto esquerdo. Abaixo está o texto Java(TM) SE Development Kit 17.0.2 (64-bit), including a private JRE and src.zip. This will require 420MB on your hard drive. Click the “Change” button to change the installation folder. Logo abaixo, há um ícone de uma pasta com o texto Install Java (TM) SE Development Kit 17.0.2 (64-bit) to: C:\Program Files\Java\jdk-17.0.2\. Ao lado, há o botão “Change...”. No rodapé estão, respectivamente, os botões “Back”, “Next” e “Cancel”.</p>
+                  <p>Agora, o JDK começará o processo de instalação no seu computador. Aguarde.</p>
+                  <img src="objetos/layout_7_fig6.png" class="img-responsive center-block">
+                  <p class="legenda-imagem">
+                    Figura 6 – Tela de andamento do instalador do Java Development Kit 17 <br>
+                    Fonte: Java Development Kit 17 (2022)
+                  </p>
+                  <p class="acessivel no-print">A imagem mostra a terceira tela apresentada pelo instalador Java Development Kit 17. No topo, há um cabeçalho azul e o logo do Java no canto esquerdo. Abaixo consta o texto “Status” e uma barra de progresso logo embaixo. No rodapé, não há nenhum botão.</p>
+                  <p>Quando a instalação for concluída, você será levado a uma nova tela do instalador, que informará que o JDK foi instalado com sucesso. Para finalizar a instalação, clique em <b>Close</b>.</p>
+                  <img src="objetos/layout_7_fig7.png" class="img-responsive center-block">
+                  <p class="legenda-imagem">
+                    Figura 7 – Tela de conclusão do instalador do Java Development Kit 17 <br>
+                    Fonte: Java Development Kit 17 (2022)
+                  </p>
+                  <p class="acessivel no-print">A imagem mostra a última tela apresentada pelo instalador Java Development Kit 17. No topo, há um cabeçalho azul e o logo do Java no canto esquerdo. Abaixo está o texto Java(TM) SE Development Kit 17.0.2 (64-bit) Sucessfully Installed. Logo abaixo há outro texto: Click Next Steps to access tutorials, API documentation, developer guides, release notes and more to help you get started with the JDK e o botão “Next Steps”. No rodapé encontra-se apenas o botão “Close”.</p>
+                  <h4>Variáveis de ambiente</h4>
+                  <p>Quando um programa é executado, ele pode precisar de informações sobre o ambiente em que ele está sendo executado. Essas informações são passadas via variáveis de ambiente. Na prática, uma variável de ambiente é um atalho para um valor. Na maioria dos casos, é preciso adicionar esses valores para que alguns programas consigam encontrar o que precisam para serem executados corretamente.</p>
+                  <p>Por exemplo, muitos programas precisam saber onde o binário do Java está localizado. Mas encontrá-lo não é algo tão simples, pois esse local pode variar dependendo do sistema operacional e até mesmo da versão do Java. Logo, a forma mais simples para esse programa acessar o binário do Java é por meio do valor informado na variável de ambiente.</p>
+                  <p>No caso do Java, é preciso configurar manualmente a variável de ambiente para que outros programas consigam localizá-lo e ele funcione corretamente. Para isso, execute o seguinte passo a passo:</p>
+                  <ol type="1">
+                    <li>Clique no ícone do Windows localizado na barra de tarefas e digite “variáveis” para pesquisar o termo entre os <i>softwares</i> do seu computador.</li>
+                    <li>Selecione a opção <b>Editar as variáveis de ambiente do sistema</b>. Tenha cuidado para não confundir com “Editar as variáveis de ambiente para sua conta”.</li>
+                    <li>A janela <b>Propriedades do sistema</b> será aberta na guia <b>Avançado</b>. Clique no botão <b>Variáveis de ambiente...</b>.</li>
+                    <li>Em <b>Variáveis do sistema</b>, clique em <b>Novo</b>.</li>
+                    <li>No campo <b>Nome da variável</b>, digite o nome <b>JAVA_HOME</b>.</li>
+                    <li>No campo <b>Valor da variável</b>, informe o caminho da instalação do JDK. Se você não tiver alterado o caminho de instalação durante a instalação do Java JDK 17, então seu caminho provavelmente será <b>C:\Program Files\Java\jdk-17.0.2.</b> Caso você não saiba o caminho, use o botão <b>Procurar no diretório...</b> para localizar o caminho.</li>
+                    <img src="objetos/layout_7_fig8.png" class="img-responsive center-block">
+                    <p class="legenda-imagem">
+                      Figura 8 – Nova variável de sistema do Windows <br>
+                      Fonte: Senac EAD (2022)
+                    </p>
+                    <p class="acessivel no-print">A imagem mostra a janela “Nova Variável de Sistema” do Windows. Nela, há dois campos para serem preenchidos. O primeiro campo chama-se “Nome da variável” e contém o valor “JAVA_HOME” na entrada de dados. Já o segundo campo chama-se “Valor da variável” e está preenchido com “C:\Program Files\Java\jdk-17.0.2”. Abaixo do último campo, há quatro botões, dois à esquerda e dois à direita. Os botões da esquerda são “Procurar diretório...” e “Procurar Arquivo...”, e os da direita são “Ok” e “Cancelar”.</p>
+                    <li>Clique em <b>Ok</b> para adicionar a variável de ambiente.</li>
+                  </ol>
+                  <p>Para conferir se a variável foi configurada corretamente, abra o <b>Prompt de Comando</b> do Windows e execute o comando <b>echo %JAVA_HOME%</b>. Se estiver tudo certo, então o caminho de instalação do Java será exibido na tela. Caso não apareça, reinicie seu computador para que as alterações sejam processadas.</p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="botao borda-primaria-03" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal modal-100 fade" id="modal-linux" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content no-print">
+              <div class="modal-header" style="padding-top: 30px;">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">
+                  <div class="container">JDK 17 – Instalação e configuração (Linux)</div>
+                </h3>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <div class="caixa-destaque icone atencao">
+                    <p>Para esse passo a passo de instalação e configuração do Java no Linux, a distribuição <b>Ubuntu</b> será utilizada como base.</p>
+                  </div>
+                  <p>O primeiro passo para instalar o Java no Linux é atualizar o índice de pacotes do sistema. No terminal do Ubuntu, utilize este comando:</p>
+                  <pre>
+                    <code>
+sudo apt-get update
+                    </code>
+                  </pre>
+                  <img src="objetos/layout_7_fig9.png" class="img-responsive center-block">
+                  <p class="legenda-imagem">
+                    Figura 9 – Terminal do Ubuntu <br>
+                    Fonte: Ubuntu (2022)
+                  </p>
+                  <p class="acessivel no-print">A imagem mostra o terminal do Ubuntu aberto. O comando “sudo apt-get update” foi executado e o índice de pacotes do sistema foi atualizado. Na última linha está a mensagem “Lendo lista de pacotes... Pronto”.</p>
+                  <p>Após isso, verifique se o Java já está instalado (ou não) com o comando:</p>
+                  <pre>
+                    <code>
+java - version
+                    </code>
+                  </pre>
+                  <p>Se o Java não estiver instalado, você terá a seguinte saída:</p>
+                  <img src="objetos/layout_7_fig10.png" class="img-responsive center-block">
+                  <p class="legenda-imagem">
+                    Figura 10 – Terminal do Ubuntu <br>
+                    Fonte: Ubuntu (2022)
+                  </p>
+                  <p class="acessivel no-print">A imagem mostra o terminal do Ubuntu aberto. O comando “java -version” foi executado e a mensagem “Comando java não encontrado, mas pode ser instalado com:” aparece, seguida de uma lista de opções para fazer a instalação do Java. A lista apresenta as seguintes opções: “sudo apt install openjdk-11-jre-headless”, “sudo apt install default-jre”, “sudo apt install openjdk-13-jre-headless”, “sudo apt install openjdk-16-jre-headless, “sudo apt install openjdk-17-jre-headless” e “sudo apt install openjdk-8-jre-headless”.</p>
+                  <p>A maneira mais simples de instalar o Java no Ubuntu é por meio dos repositórios do sistema. Por padrão, o Ubuntu empacota o OpenJDK, que é uma alternativa de código aberto para o JRE e o JDK da Oracle. Logo, siga com a instalação do OpenJDK 17 usando o seguinte comando:</p>
+                  <pre>
+                    <code>
+sudo apt-get install openjdk-17-jdk
+                    </code>
+                  </pre>
+                  <p>Após isso, basta confirmar a operação pressionando a tecla <b>Enter</b>.</p>
+                  <img src="objetos/layout_7_fig11.png" class="img-responsive center-block">
+                  <p class="legenda-imagem">
+                    Figura 11 – Terminal do Ubuntu <br>
+                    Fonte: Ubuntu (2022)
+                  </p>
+                  <p class="acessivel no-print">A imagem mostra o terminal do Ubuntu aberto. Na primeira linha, o comando “sudo apt-get install openjdk-17-jdk” é executado. Na segunda linha, a senha é solicitada e, nas linhas seguintes, uma lista de pacotes que serão instalados é exibida. No final, consta a mensagem “Depois desta operação, 460 MB adicionais de espaço em disco serão usados. Você quer continuar? [S/n]”.</p>
+                  <div class="caixa-destaque-livre bg-primaria-02 borda-primaria-03">
+                    <p><b>Observação</b></p>
+                    <p>Outra forma de instalar o OpenJDK seria por meio deste comando:</p>
+                    <pre>
+                      <code>
+sudo apt-get install default-jdk
+                      </code>
+                    </pre>
+                    <p>Esse comando instalará a última versão disponível do JDK e, por isso, é importante que ele seja usado com cautela, pois é possível que uma versão diferente do JDK seja instalada.</p>
+                    <p>Caso você queira fazer o <i>download</i> do JDK oficial da Oracle, acesse o <i>site</i> oficial do Oracle JDK 17 e prossiga com a instalação do pacote <b>Linux x64 Debian Package</b> oferecido na lista de <i>downloads</i>. Após isso, abra o terminal, acesse a pasta de <i>downloads</i> e execute o seguinte comando:</p>
+                    <pre>
+                      <code>
+sudo  dpkg -i jdk-17.0.3_linux-x64_bin.deb
+                      </code>
+                    </pre>
+                    <p>Caso escolha essa abordagem, lembre-se de que o nome do arquivo pode variar, de acordo com a versão disponibilizada para <i>download</i>.</p>
+                  </div>
+                  <p>Assim que o processo de instalação terminar, verifique se está tudo correto executando este comando:</p>
+                  <pre>
+                    <code>
+java - version
+                    </code>
+                  </pre>
+                  <img src="objetos/layout_7_fig12.png" class="img-responsive center-block">
+                  <p class="legenda-imagem">
+                    Figura 12 – Terminal do Ubuntu <br>
+                    Fonte: Ubuntu (2022)
+                  </p>
+                  <p class="acessivel no-print">A imagem mostra o terminal do Ubuntu aberto com o retorno de “instalação completa” dos pacotes do Java. Após isso, consta o comando “java –version” sendo executado e as seguintes mensagens sendo retornadas: “openjdk version 17.0.2 2022-01-18”; “OpenJDK Runtime Environment (build 17.0.2+8-Ubuntu-120.04)”; “OpenJDK 64Bit Server VM (build 17.0.2+8-Ubuntu-120.03, mixed mode, sharing)”.</p>
+                  <p>Agora, o terminal deve retornar a versão instalada do Java. Se a versão 17 for retornada no seu terminal, isso significa que o JDK 17 foi devidamente instalado no seu sistema Ubuntu.</p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="botao borda-primaria-03" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal modal-100 fade" id="modal-apache_windows" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content no-print">
+              <div class="modal-header" style="padding-top: 30px;">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">
+                  <div class="container">Apache Netbeans IDE 13 – Instalação e configuração (Windows)</div>
+                </h3>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <p>O primeiro passo é baixar o instalador do Apache NetBeans IDE no <i>site</i> oficial. No seu navegador, busque por “Download Apache NetBeans 13” para acessar a página de <i>downloads</i>. Como você está fazendo a instalação no sistema operacional Windows, selecione a primeira opção de instalador: <b>Apache-NetBeans-13-bin-windows-x64.exe</b>.</p>
+                  <img src="objetos/layout_7_fig14.png" class="img-responsive center-block">
+                  <p class="legenda-imagem">
+                    Figura 14 – <i>Site</i> oficial do Apache NetBeans IDE 13 <br>
+                    Fonte: Apache NetBeans (2022)
+                  </p>
+                  <p class="acessivel no-print">A imagem mostra a página de download do Apache NetBeans IDE 13. O título da página é “Downloading Apache NetBeans 13” e encontra-se abaixo do cabeçalho, que contém os links para navegar no site. Abaixo do título, está o texto Apache NetBeans 13 was released on March 4, 2022. See Apache NetBeans 13 Features for a full list of features. Apache NetBeans 13 is available for download from your closest Apache mirror e, em seguida, a lista de opções para download: “Binaries”, “Installers”, “Source”. Cada opção tem links com o nome dos arquivos que serão baixados. A seguir, está mais um texto com o seguinte conteúdo: Officially, it is importante that you verify the integrity of the downloaded files using the PGP signatures (.asc file) or a hash (.sha512 files). The PGP Keys used to sign this release are available here. Apache NetBeans can also be installed as a self-contained snap package on Linux.</p>
+                  <p>Após fazer o <i>download</i> do Apache Netbeans 13 no <i>site</i> oficial, abra o instalador para iniciar o processo de instalação.</p>
+                  <p>Na primeira tela do instalador, você terá uma breve mensagem de boas-vindas e apresentação do <i>software</i>. Apesar de ser possível especificar quais componentes serão instalados pelo botão <b>Customize...</b>, opte pela instalação completa, pois você precisará desses outros recursos no futuro. Então, pressione o botão <b>Next</b> para continuar.</p>
+                  <img src="objetos/layout_7_fig15.png" class="img-responsive center-block">
+                  <p class="legenda-imagem">
+                    Figura 15 – Tela de boas-vindas do instalador do Apache NetBeans IDE <br>
+                    Fonte: Apache NetBeans IDE (2022)
+                  </p>
+                  <p class="acessivel no-print">A imagem mostra a primeira tela apresentada pelo instalador do Apache NetBeans IDE 13. Nela, consta o título Welcome to the Apache NetBeans IDE 13 Installer e o texto The installer will install the NetBeans IDE with the following packs and runtimes. Click Customize to select the packs and runtimes to install. Abaixo, consta uma lista com os itens “Base IDE”, “Java SE”, “Java EE”, “HTML5/JavaScript” e “PHP”. Bem abaixo, perto do rodapé, está o botão “Customize...” e o texto “Installation Size: 780,8 MB”. No rodapé estão, respectivamente, os botões “Next” e “Cancel”.</p>
+                  <p>Na tela seguinte, será apresentado o contrato de licença do Apache NetBeans IDE. Assim que finalizar a leitura, você pode marcar a opção <b>I accept the terms in the license agreement</b> e clicar no botão <b>Next</b> para continuar a instalação.</p>
+                  <img src="objetos/layout_7_fig16.png" class="img-responsive center-block">
+                  <p class="legenda-imagem">
+                    Figura 16 – Tela de contrato do instalador do Apache NetBeans IDE <br>
+                    Fonte: Apache NetBeans IDE (2022)
+                  </p>
+                  <p class="acessivel no-print">A imagem mostra a segunda tela apresentada pelo instalador do Apache NetBeans IDE 13. Nela, consta o título “License Agreement” e o texto Please read the following license agreement carefully. Logo abaixo, é apresentado o contrato de licença do software e um checkbox marcado com o texto I accept the terms in the license agreement. No rodapé constam, respectivamente, os botões “Back”, “Next” e “Cancel”.</p>
+                  <p>Na tela seguinte, o instalador solicitará que você indique dois locais:</p>
+                  <div class="no-print" aria-hidden="true">
+                    <div class='panel-group gaitinha' id='accordion01' role='tablist' aria-multiselectable='true'>
+                      <div class='panel panel-default'>
+                        <div class='panel-heading' role='tab' id='heading01'>
+                          <h3 class='panel-title'>
+                            <a role='button' data-toggle='collapse' data-parent='#accordion01' href='#collapse01' aria-expanded='false' aria-controls='collapse01'>
+                              <b>Install the Apache NetBeans IDE in</b>
+                            </a>
+                          </h3>
+                        </div>
+                        <div id='collapse01' class='panel-collapse collapse in' role='tabpanel' aria-labelledby='heading01'>
+                          <div class='panel-body'>
+                            <p>Essa opção refere-se ao local em que o IDE será instalado. Por padrão, o local de instalação será na pasta <b>Program Files</b> do Windows.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='panel panel-default'>
+                        <div class='panel-heading' role='tab' id='heading02'>
+                          <h3 class='panel-title'>
+                            <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion01' href='#collapse02' aria-expanded='false' aria-controls='collapse02'>
+                              <b>JDK for the Apache NetBeans IDE</b>
+                            </a>
+                          </h3>
+                        </div>
+                        <div id='collapse02' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading02'>
+                          <div class='panel-body'>
+                            <p>Nessa opção, é preciso informar onde o JDK está instalado. Por padrão, o instalador apontará para a versão mais recente do JDK que existir na pasta Java. Caso não haja, você precisará indicar manualmente o local em que o JDK foi instalado. Se você seguiu o conteúdo passo a passo até aqui, então esse campo já estará preenchido, pois já terá feito a instalação do JDK.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="acessivel print">
+                    <p><b>Install the Apache NetBeans IDE in</b></p>
+                    <p>Essa opção refere-se ao local em que o IDE será instalado. Por padrão, o local de instalação será na pasta <b>Program Files</b> do Windows.</p>
+                    <p><b>JDK for the Apache NetBeans IDE</b></p>
+                    <p>Nessa opção, é preciso informar onde o JDK está instalado. Por padrão, o instalador apontará para a versão mais recente do JDK que existir na pasta Java. Caso não haja, você precisará indicar manualmente o local em que o JDK foi instalado. Se você seguiu o conteúdo passo a passo até aqui, então esse campo já estará preenchido, pois já terá feito a instalação do JDK.</p>
+                  </div>
+                  <p>Se estiver tudo correto, siga com a instalação clicando em <b>Next</b>.</p>
+                  <img src="objetos/layout_7_fig17.png" class="img-responsive center-block">
+                  <p class="legenda-imagem">
+                    Figura 17 – Tela de local de instalação do instalador do Apache NetBeans IDE <br>
+                    Fonte: Apache NetBeans IDE (2022)
+                  </p>
+                  <p class="acessivel no-print">A imagem mostra a terceira tela apresentada pelo instalador do Apache NetBeans IDE 13. Nela, consta o título “Apache NetBeans IDE 13 Installation” e o texto Choose the installation folder and JDK™. Logo abaixo, há dois campos preenchidos e um botão “Browser...” ao lado de cada campo. O primeiro deles é o “Install the Apache NetBeans IDE to:”, e está preenchido com “C:\Program Files\NetBeans-13”. O segundo campo é o “JDK™ for the Apache NetBeans IDE:”, e está preenchido com “C:\Program Files\Java\jdk-17.0.2”. No rodapé estão, respectivamente, os botões “Back”, “Next” e “Cancel”.</p>
+                  <p>Na tela seguinte, o instalador perguntará se você quer receber as atualizações do Apache NetBeans IDE. Para que seu ambiente esteja sempre atualizado, mantenha a opção <b>Check for Updates</b> marcada. Por fim, clique no botão <b>Install</b> para iniciar a instalação do IDE.</p>
+                  <img src="objetos/layout_7_fig18.png" class="img-responsive center-block">
+                  <p class="legenda-imagem">
+                    Figura 18 – Tela de atualização do instalador do Apache NetBeans IDE <br>
+                    Fonte: Apache NetBeans IDE (2022)
+                  </p>
+                  <p class="acessivel no-print">A imagem mostra a quarta tela apresentada pelo instalador do Apache NetBeans IDE 13. Nela, consta o título “Summary” e o texto Click Install to start the installation. Logo abaixo, está o texto “Base IDE Installation Folder: C\Program Files\NetBeans-13” seguido de uma check marcada com o conteúdo “Check for Updates”. Abaixo do checkbox, há o texto The NetBeans installer can automatically check for the updates of installed plug-ins using yout Internet Connection. Total Installation Size: 780,8 MB. No rodapé consta, respectivamente, os botões “Back”, “Install” e “Cancel”.</p>
+                  <p>Assim que a instalação for finalizada, uma mensagem de “instalação concluída com sucesso” será apresentada e o Apache NetBeans IDE estará pronto para ser utilizado. Finalize a instalação clicando no botão <b>Finish</b>.</p>
+                  <img src="objetos/layout_7_fig19.png" class="img-responsive center-block">
+                  <p class="legenda-imagem">
+                    Figura 19 – Tela de conclusão do instalador do Apache NetBeans IDE <br>
+                    Fonte: Apache NetBeans IDE (2022)
+                  </p>
+                  <p class="acessivel no-print">A imagem mostra a última tela apresentada pelo instalador do Apache NetBeans IDE 13. Nela, consta o título “Setup Complete” e o texto Click Finish to complete the Apache NetBeans IDE setup. Logo abaixo, está a seguinte mensagem: Installation completed successfully. All plugins are up to date. To launch the IDE, use either the Start menu or the Apache NetBeans desktop icon. To Change installed components and add NetBeans plugins, use Plugin Manager that is an integral part of Apache NetBeans IDE. No rodapé, consta apenas o botão “Finish”.</p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="botao borda-primaria-03" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal modal-100 fade" id="modal-apache_linux" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content no-print">
+              <div class="modal-header" style="padding-top: 30px;">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">
+                  <div class="container">Apache Netbeans IDE 13 – Instalação e configuração (Linux)</div>
+                </h3>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <p>Para instalar o Apache Netbeans 13 no Ubuntu, existem três formas:</p>
+                  <ul class="cor01">
+                    <li>Usar o gerenciador de pacotes (comando <b>apt-get</b>).</li>
+                    <li>Baixar o instalador do site oficial (arquivo <b>.deb</b>).</li>
+                    <li>Fazer a instalação a partir da loja Ubuntu Software Center.</li>
+                  </ul>
+                  <p>Dessas, a terceira opção é a mais prática e garantirá a versão mais recente do <i>software</i>. Então, acesse o aplicativo Ubuntu Software Center.</p>
+                  <img src="objetos/layout_7_fig20.png" class="img-responsive center-block">
+                  <p class="legenda-imagem">
+                    Figura 20 – Exemplo de menu de aplicativos do Ubuntu <br>
+                    Fonte: Senac EAD (2022)
+                  </p>
+                  <p class="acessivel no-print">A imagem mostra um exemplo do menu de aplicativos do Ubuntu. Nele, estão sendo exibidos os ícones dos aplicativos Shotwell, Sudoku, Suporte a idio..., Tarefas, Transmission, Ubuntu Software, Utilitários e Vídeos. O aplicativo Ubuntu Software está destacado com um contorno vermelho. No lado esquerdo, no canto da tela, está a barra de tarefas do sistema operacional Linux Ubuntu. Nessa barra, há sete ícones de aplicativos. O penúltimo ícone trata-se do mesmo ícone do aplicativo Ubuntu Software e também está destacado com um contorno em vermelho.</p>
+                  <p>Assim que a loja abrir, clique no ícone de lupa localizado no canto esquerdo da tela e preencha a barra de pesquisa que aparecerá com NetBeans. Você perceberá que há dois resultados: o <b>NetBeans</b> e o <b>Apache NetBeans</b>.</p>
+                  <p>O aplicativo NetBeans trata-se da versão 10 do IDE, quando a Oracle era responsável pelas atualizações. Logo, essa é a versão desatualizada. A versão atualizada é a que está sendo mantida pela Apache e se chama <b>Apache NetBeans</b>. Selecione essa opção para continuar.</p>
+                  <img src="objetos/layout_7_fig21.png" class="img-responsive center-block">
+                  <p class="legenda-imagem">
+                    Figura 21 – Ubuntu Software Center <br>
+                    Fonte: Ubuntu Software Center (2022)
+                  </p>
+                  <p class="acessivel no-print">
+                    Na imagem, o aplicativo Ubuntu Software Center está aberto. No topo do aplicativo, há uma barra preta com os botões “Explorar”, “Instalados” e “Atualizações (2)” posicionados no centro da barra. No canto esquerdo dessa barra está o ícone de uma lupa, destacado com um contorno em vermelho. Abaixo da barra preta, consta uma barra de pesquisa preenchida com o texto “NetBeans” e, abaixo, está sendo exibido o resultado da pesquisa. Os resultados contam com o ícone do aplicativo à esquerda, seguido do nome do aplicativo e a avalição (em estrelas) ao lado e, ainda, uma breve descrição do aplicativo. São três aplicativos que estão sendo exibidos como resultado da pesquisa: <br>
+                    1.	NetBeans (três estrelas): Integrated Development Environment <br>
+                    2.	ApacheNetBeans (três estrelas): Apache NetBeans IDE <br>
+                    3.	tmcbeans (sem estrelas): IDE for students using Test My Code <br>
+                    O segundo resultado está destacado com um contorno vermelho.                    
+                  </p>
+                  <p>Na página do Apache NetBeans, clique no botão <b>Instalar</b>.</p>
+                  <img src="objetos/layout_7_fig22.png" class="img-responsive center-block">
+                  <p class="legenda-imagem">
+                    Figura 22 – Ubuntu Software Center <br>
+                    Fonte: Ubuntu Software Center (2022)
+                  </p>
+                  <p class="acessivel no-print">A imagem mostra o Ubuntu Software Center aberto, exibindo o Apache NetBeans. Nessa tela constam o logo do NetBeans no topo e o nome do software “Apache NetBeans” no lado esquerdo. No lado direito, está a avaliação do software em três estrelas e o valor “(442)”, representando os números de usuários que avaliaram o aplicativo. Abaixo estão o botão “Instalar”, destacado em vermelho, uma captura de tela expandida e duas pequenas ao lado e a descrição do software logo abaixo: Apache NetBeans IDE lets you quickly and easily develop Java desktop, Java EE, and web applications, as well as HTML 5 applications with HTML, JavaScript and CSS. The IDE also provides a great set of tools for PHP and C/C++ developers. It is free and open source and has a large community of users and developers around the world. It requires Java 8 or later Java Development Kit installed. Disclaimer: This is a convenience binary of Apache NetBeans IDE, this is not na official release.</p>
+                  <p>Assim que a instalação for finalizada, você encontrará o Apache NetBeans no seu menu de aplicativos pronto para ser utilizado.</p>
+                  <img src="objetos/layout_7_fig23.png" class="img-responsive center-block">
+                  <p class="legenda-imagem">
+                    Figura 23 – Exemplo de menu de aplicativos do Ubuntu Software Center <br>
+                    Fonte: Senac EAD (2022)
+                  </p>
+                  <p class="acessivel no-print">A imagem mostra o exemplo de menu de aplicativos do Ubuntu. Nele, estão sendo exibidos os ícones de 24 aplicativos, sendo o primeiro o Apache NetBeans IDE, que está destacado com um contorno vermelho.</p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="botao borda-primaria-03" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+
+    <!--  Em caso de footer personalizado utilizar esse elemento e adicionar a classe customizada
+    <footer>
+    </footer>
+	-->
+<!-- carrega todas as imagens dos icones nesta div
+ caso queira adicionar mais imagens de novos icones do css,
+ ou qualquer imagem que deva ser contabilizada durante a fase
+ de loading, referenciar aqui.
+ -->
+<div class="ico-div-loader">
+	<img src="../template/images/atencao.png">
+    <img src="../template/images/bg-content.jpg">
+    <img src="../template/images/bg-topo.jpg">
+    <img src="../template/images/black-zoom-in-256.png">
+    <img src="../template/images/concluindo.png">
+    <img src="../template/images/curtir.png">
+    <img src="../template/images/desafio.png">
+    <img src="../template/images/dica.png">
+    <img src="../template/images/doc.png">
+    <img src="../template/images/fundamental.png">
+    <img src="../template/images/icon-03.png">
+    <img src="../template/images/importante.png">
+    <img src="../template/images/lightbulb.png">
+    <img src="../template/images/link.png">
+    <img src="../template/images/link_pdf_hover.png">
+    <img src="../template/images/link_pdf_normal.png">
+    <img src="../template/images/logo-senac.png">
+    <img src="../template/images/mark-icon.png">
+    <img src="../template/images/mark-icon02.png">
+    <img src="../template/images/midia.png">
+    <img src="../template/images/monitor.png">
+    <img src="../template/images/nao_curtir.png">
+    <img src="../template/images/pergunta.png">
+    <img src="../template/images/pesquisa.png">
+    <img src="../template/images/play.png">
+    <img src="../template/images/radio_flat.png">
+    <img src="../template/images/refletir.png">
+    <img src="../template/images/saiba_mais.png">
+    <img src="../template/images/senac_loader.png">
+    <img src="../template/images/tanamidia.png">
+    <img src="../template/images/transcricao.png">
+    <img src="../template/images/transcricao_small.png">
+    <img src="../template/images/tv.png">
+    <img src="../template/images/tv_bottom.png">
+    <img src="../template/images/zoom.png">
+    <img src="../template/images/zoom_ie.cur">
+    <img src="../template/images/zoom_ie.png">
+    <!-- adicionar as imagens customizadas aqui abaixo -->
+</div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../template/js/jquery.min.js"></script>
+<script src="../template/js/bootstrap.min.js"></script>
+<script src="../template/js/jquery.magnific-popup.min.js"></script>
+<script src="../template/js/print.js"></script>
+<script src="../template/js/template.config.js"></script>
+<script src="../template/js/images.loader.js"></script>
+<noscript>
+  <style media="screen">
+    .over-loader { display: none;}    
+  </style>
+</noscript>
+</body>
+</html>
+<script>
+	//inicializa zoom na imagem
+	$('.zoom-imagem').magnificPopup({
+	 type: 'image',
+  	 mainClass: 'mfp-with-zoom', // this class is for CSS animation below
+ 	 zoom: {
+		enabled: true, // By default it's false, so don't forget to enable it
+
+		duration: 300, // duration of the effect, in milliseconds
+		easing: 'ease-in-out', // CSS transition easing function
+
+		// The "opener" function should return the element from which popup will be zoomed in
+		// and to which popup will be scaled down
+		// By defailt it looks for an image tag:
+		opener: function(openerElement) {
+		  // openerElement is the element on which popup was initialized, in this case its <a> tag
+		  // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+		  return openerElement.is('img') ? openerElement : openerElement.find('img');
+		}
+	  },
+	   image: {
+		  markup: '<div class="mfp-figure">'+
+					'<div class="mfp-close"></div>'+
+					'<div class="mfp-img"></div>'+ // Floated left
+					'<div class="mfp-bottom-bar">'+'<figcaption>'+'<div class="mfp-title" style="text-align:center"></div>'+
+					  '<div class="mfp-counter"></div>'+'</figcaption>'+
+					'</div>'+
+				  '</div>', // Popup HTML markup. `.mfp-img` div will be replaced with img tag, `.mfp-close` by close button
+
+		  cursor: 'mfp-zoom-out-cur', // Class that adds zoom cursor, will be added to body. Set to null to disable zoom out cursor.
+
+		  tError: '<a href="%url%">A imagem</a> não pode ser carregada.' // Error message
+	   }
+	});
+
+	//inicializa popover
+	$(function () {
+	  $('[data-toggle="popover"]').popover()
+	})
+	//inicializa tooltip
+	$(function () {
+	  $('[data-toggle="tooltip"]').tooltip()
+	})
+
+
+  $(function() {
+    $(".card").click(function() {
+      if ($(this).hasClass("exibe-frente")) {
+        $(this)
+          .children()
+          .first()
+          .hide();
+        $(this)
+          .children()
+          .last()
+          .show();
+        $(this).removeClass("exibe-frente");
+      } else {
+        $(".card .verso").hide();
+        $(".card .frente").show();
+        $(this).addClass("exibe-frente");
+      }
+    });
+  });
+
+  $( document ).ready(function() {
+    $(".card .verso").hide();
+  });
+
+
+
+
+  /*------- Script de animação do botão -------*/
+  var root = document.documentElement;
+  root.className += ' js';
+
+  function boxTop(idBox) {
+    var boxOffset = $(idBox).offset().top;
+    return boxOffset;
+  }
+
+  $(document).ready(function() {
+    var $target = $('.animeStart'),
+        $target2 = $('.animeStop'),
+        targetBox = $('.box'),
+        animationClass = 'anime-init',
+        windowHeight = $(window).height(),
+        offset = windowHeight - (windowHeight / 4);
+
+    function animeScroll() {
+      var documentTop = $(document).scrollTop();
+      $target.each(function() {
+        if (documentTop > boxTop(this) - offset) {
+          targetBox.addClass(animationClass);
+        } else {
+          targetBox.removeClass(animationClass);
+        }
+        if (documentTop > boxTop($target2) - offset) {
+          targetBox.removeClass(animationClass);
+        } 
+      });
+    }
+    animeScroll();
+
+    $(document).scroll(function() {
+      animeScroll();
+    });
+  });
+
+
+</script>
+
+<script>
+  var scriptElem=document.createElement("script");
+  scriptElem.src="https://plugin.handtalk.me/web/latest/handtalk.min.js",
+  scriptElem.charset="UTF-8",
+  scriptElem.onload=function(){
+        window.ht = new HT({
+            token:"bf5b7efb148a829a126a0e0c9fd533bf",
+            align:"top",
+            videoEnabled: true,
+            ytEmbedReplace: true,           
+            mobileConfig:{align:"right",
+                          actionsAlign:"top",
+                          customButtonStyle:{
+                                borderRadius:"6px",
+                                size:"38px",
+                                horizontalMargin:"13px",
+                                bottomMargin:"140px",
+                                rightMargin:"40px"}
+                          }
+          });        
+      $('.ht-skip').attr("aria-hidden","true")
+    },
+  document.body.appendChild(scriptElem);
+</script>

@@ -1,0 +1,2663 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Orientação a objeto: fundamentos, conceitos de classes e objetos e aplicações</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/tecnicos_senac.css" rel="stylesheet">
+    <link href="css/cores.css" rel="stylesheet">
+      <!--Extras - novas classes para facilitar-->
+      <link rel="stylesheet" href="css/extras.css">    
+    <link href="css/sncload.css" rel="stylesheet">
+    <link href="css/magnific-popup.css" rel="stylesheet">
+    <!-- referencia ao arquivo css com estilos especificos da pagina -->
+    <!--<link href="custom.css" type="text/css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="../template/css/caixa-destaque-css.css">
+    <link rel="stylesheet" href="../template/css/cores-codigo.css">
+    <!-- css necessario para o print -->
+    <link href="css/fa/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="css/print.css" type="text/css" rel="stylesheet">
+    <link href="css/styles.css" type="text/css" rel="stylesheet">
+    <link href="css/atividades_interativas.css" type="text/css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+  
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Jos� Renato dos Santos Pereira</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">20152600.0000000</mso:Order>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Jos� Renato dos Santos Pereira</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ContentTypeId msdt:dt="string">0x010100393332CEE5C5294F9D2C3CF7CCDACBE5</mso:ContentTypeId>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body onLoad="Javascript:document.getElementById('sncloader').style.display='none';">
+    <!-- MARCA D´ÁGUA -->
+    <img src="images/logo_senac_colorido.png" id="marcadaguaLogo">
+    <!-- /MARCA D´ÁGUA -->
+
+    <div id='sncloader' class='over-loader'><div class="over-cell"><div id="sncload"></div></div></div>
+    <header id="topo" class="senac no-print">
+        <div  class="header-tecnicos container">
+        	  <h1 id="nome-curso">Desenvolvimento de sistemas</h1>
+            <div id="logo-senac"><img src="images/logo-senac.png" alt="logo do senac"></div>
+        </div>
+        <div id="sombra"></div>
+    </header>
+
+    <div id="booklet" class="container fundo-tecnicos">
+
+        <div class="acessivel no-print">
+          <p>Como sugestão, configure a opção de leitura de caracteres e de pontuação de seu leitor de tela para o grau máximo de leitura, a fim de que os códigos disponibilizados neste material sejam lidos corretamente. No caso do NVDA (Nonvisual Desktop Access), para localizar a opção <b>Grau de pontuação/símbolos</b>, acesse <b>Preferências</b> – <b>Configurações</b> – <b>Fala</b>. Altere o padrão <b>Pouco</b> para <b>Tudo</b>. Dessa forma, o leitor passará a ler os segmentos de código em sua totalidade.</p>
+        </div>
+
+        <header class="no-print">
+          <!-- BTO IMPRIMIR -->
+          <div class="grupo-imprimir no-print">
+            <button type="button" data-pdf="true" class="bto-imprimir" name="button">
+                <span class="fa fa-print"></span> <span>Imprimir</span>
+            </button>
+          </div>
+          <!-- /BTO IMPRIMIR -->
+        </header>
+<!-- - - - - - - - - - - - - - - - não alterar acima - - - - - - - - - - - - -->
+        <section class="paginas">
+
+          <!-- - - - - - - - cada página é independente  - - - - - - - - - - -->
+          <!-- Página 1 -->
+          <div class="pagina">
+            <h2>Orientação a objeto: fundamentos, conceitos de classes e objetos e aplicações</h2>
+
+            <p>Como já foi citado anteriormente nos conteúdos desta unidade curricular quanto aos conceitos iniciais da POO (programação orientada a objetos), é preciso ver na prática a sua utilização por meio de uma linguagem de programação. Neste momento, a linguagem utilizada para exemplificar os conceitos do paradigma orientado a objetos será o PYTHON, que, apesar de ser uma linguagem multiparadigma (pode ser usada em outros paradigmas da programação, como, por exemplo, o estruturado), é muito poderosa quando utilizada na POO, apresentando diversas vantagens como reutilização do código, facilidade de manutenção e atualização, além de grande capacidade de escalabilidade.</p>
+
+            <h3>Definição de classes no PYTHON</h3>
+            <div class="table-responsive">
+              <table class="senac tabela-pequena">
+                <thead>
+                  <th>ALUNO</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>NOME</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>MATRÍCULA</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>CURSO</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="legenda-imagem">
+              Classe <strong>alunos</strong>, que será implementada no PYTHON<br>
+              Fonte: Senac EAD (2022)
+            </p>
+            <p>Você estudou anteriormente que classe é uma abstração, um molde de qualquer elemento do mundo real. Nesta seção do conteúdo, você aprenderá como essa relação acontece dentro de uma linguagem de programação e quais são suas melhores formas de utilização para resolução de problemas do mundo real.</p>
+            <p>Neste exemplo, semelhante ao visto no conteúdo <strong>Orientação a objetos</strong> desta unidade curricular, você tem uma classe chamada <strong>Aluno</strong>, que contém como atributos os elementos <strong>Nome do Aluno</strong>, <strong>Número da Matrícula</strong> e <strong>Curso</strong>.</p>
+            
+            <p>Sem ainda se preocupar com métodos e outras nomenclaturas dentro da linguagem, conheça mais agora sobre a criação de uma classe, apenas considerando os atributos desta.</p>
+            <p>Sem ainda se preocupar com métodos e outras nomenclaturas dentro da linguagem vamos iniciar o entendimento de criação de uma classe apenas nos preocupando com os atributos da mesma.</p>
+
+            <p>Veja, a seguir, uma ideia inicial da criação de classes, com método construtor, em código Python: </p>
+
+            <pre>
+              <code>
+<span class="language-python__blue">class </span><span>Aluno</span><span>:</span>
+  <span class="language-python__green">#construtor da classe</span>
+  <span class="language-python__blue">def </span><span class="language-python__red">___init__</span><span>(self, nome, matricula, curso):</span>
+    <span>self.nome = nome</span>
+    <span>self.matricula = matricula</span>
+    <span>self.curso = curso</span>
+              </code>
+            </pre>
+
+            <div class="destaque-pixel">
+              <div class="caixa-destaque">
+                <p>Nesse exemplo, foi criada uma classe <b>Aluno</b> com um construtor que inicializa os atributos <b>nome</b>, <b>matrícula</b> e <b>curso</b> quando um objeto <b>Aluno</b> é criado. Ainda não se preocupe com palavras como <i>public</i> e <i>private</i>, que serão posteriormente explicadas no item “Encapsulamento” deste conteúdo.</p>
+              </div>
+            </div>
+
+            <p>No código, há uma classe Aluno criada, por meio da palavra reservada “class”, e como atributos estão presentes “nome”, primeiro atributo que é do tipo <i>String</i> (variável tipo texto), um segundo atributo “matricula”, um int (variável do tipo inteiro, números sem vírgula) e como terceiro atributo utilizamos “cpf”, outro <i>String</i>.</p>
+
+            <p>É possível analisar outras possibilidades de criação de classes para um melhor entendimento dessa etapa, como mostrado no exemplo a seguir:</p>
+
+            <div class="table-responsive">
+              <table class="senac tabela-pequena">
+                <thead>
+                  <th>ANIMAL</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>NOME</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>RAÇA</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>PESO</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="legenda-imagem">
+              Classe animal que será implementada no Python<br>
+              Fonte: Senac EAD (2023)     
+            </p>
+
+            <p>Agora será criado o código das classes Animal de acordo com esquematizado. </p>
+            
+            <pre>
+              <code>
+<span class="language-python__blue">class </span><span class="language-python__red">Animal</span>: 
+  <span class="language-python__green"># Construtor da classe</span> 
+  <span class="language-python__blue">def</span>  <span class="language-python__red">__init__</span>(self, nome, raca, peso): 
+    self.nome = nome 
+    self.raca = raca 
+    self.peso = peso 
+              </code>
+            </pre>
+            
+            <p>Nesse código, há uma classe <b>Animal</b>, e, como atributos, foram utilizados “nome”, que é uma <i>string</i>; como segundo atributo o item “raca” (sem “ç”, que não se utiliza em nomes de atributos e variáveis), que também é uma <i>string</i>; e, como terceiro atributo, o item “peso”, que é do tipo <i>float</i> (número que aceita vírgula).</p>
+
+            <p>Antes do primeiro desafio, entenda como é criado o primeiro projeto no Pycharm, <i>Integrated Development Environment</i> (IDE), em inglês, que pode ser traduzido como “Ambiente de Desenvolvimento Integrado” ou simplesmente “Ambiente de Desenvolvimento” (AD).</p>
+
+            <pre>
+              <code>
+
+
+
+                <h1 style="color:aliceblue">ESPERA VIDEO</h1>
+
+
+
+
+              </code>
+            </pre>      
+            
+            <div class="destaque-pixel ">
+              <div class="icone-position-desafio">
+                <div class="caixa-destaque ">
+                  <p>Crie as classes Carro, Celular, Professor e Música, definindo 4 atributos para cada uma delas, primeiramente planeje as classes em uma folha de papel e depois passe para a ferramenta Pycharm, como mostrado nos exemplos anteriores. </p>
+                </div>
+              </div>
+            </div>
+          
+            
+            <button type="button" class="btn btn-primary btn-lg no-print btn-gabarito" data-toggle="modal" data-target="#gabarito1">
+              Gabarito
+            </button>
+            <div class="no-print">
+              <div class="modal fade no-print" id="gabarito1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"  aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myGabarito1ModalLabel">GABARITO</h4>
+                    </div>
+                    <div class="modal-body">
+                          <pre>
+                            <code>
+<span class="language-python__blue">class</span> <span class="language-python__red">Carro</span>: 
+<span class="language-python__blue">def</span> <span class="language-python__red">__init__</span><span>(self, marca, modelo, ano, cor)</span>: 
+      self.marca = marca 
+      self.modelo = modelo 
+      self.ano = ano 
+      self.cor = cor 
+  
+<span class="language-python__blue">class</span> <span class="language-python__red">Celular</span>: 
+<span class="language-python__blue">def</span> <span class="language-python__red">__init__</span>(self, marca, modelo, sistema_operacional, cor): 
+        self.marca = marca 
+        self.modelo = modelo 
+        self.sistema_operacional = sistema_operacional 
+        self.cor = cor 
+
+<span class="language-python__blue">class</span> <span class="language-python__red">Professor</span>: 
+<span class="language-python__blue">def</span> <span class="language-python__red">__init__</span>(self, nome, disciplina, salario, idade): 
+        self.nome = nome 
+        self.disciplina = disciplina 
+        self.salario = salario 
+        self.idade = idade 
+
+<span class="language-python__blue">class</span> <span class="language-python__red">Musica: 
+<span class="language-python__blue">def</span> <span class="language-python__red">__init__</span>(self, titulo, artista, genero, duracao): 
+        self.titulo = titulo 
+        self.artista = artista 
+        self.genero = genero 
+        self.duracao = duração 
+                            </code>
+                          </pre>
+                      <p>
+                        Nas classes acima, cada uma possui quatro atributos que representam informações relacionadas ao tipo de objeto correspondente (carro, celular, professor e música). Os atributos são inicializados no método construtor __init__ de cada classe. 
+                      </p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="acessivel print">
+              
+              <h4>GABARITO</h4>
+                            <pre>
+                              <code>
+  <span class="language-python__blue">class</span> <span class="language-python__red">Carro</span>: 
+  <span class="language-python__blue">def</span> <span class="language-python__red">__init__</span><span>(self, marca, modelo, ano, cor)</span>: 
+        self.marca = marca 
+        self.modelo = modelo 
+        self.ano = ano 
+        self.cor = cor 
+    
+  <span class="language-python__blue">class</span> <span class="language-python__red">Celular</span>: 
+  <span class="language-python__blue">def</span> <span class="language-python__red">__init__</span>(self, marca, modelo, sistema_operacional, cor): 
+          self.marca = marca 
+          self.modelo = modelo 
+          self.sistema_operacional = sistema_operacional 
+          self.cor = cor 
+  
+  <span class="language-python__blue">class</span> <span class="language-python__red">Professor</span>: 
+  <span class="language-python__blue">def</span> <span class="language-python__red">__init__</span>(self, nome, disciplina, salario, idade): 
+          self.nome = nome 
+          self.disciplina = disciplina 
+          self.salario = salario 
+          self.idade = idade 
+  
+  <span class="language-python__blue">class</span> <span class="language-python__red">Musica: 
+  <span class="language-python__blue">def</span> <span class="language-python__red">__init__</span>(self, titulo, artista, genero, duracao): 
+          self.titulo = titulo 
+          self.artista = artista 
+          self.genero = genero 
+          self.duracao = duração 
+                              </code>
+                            </pre>
+              <p>
+                Nas classes acima, cada uma possui quatro atributos que representam informações relacionadas ao tipo de objeto correspondente (carro, celular, professor e música). Os atributos são inicializados no método construtor __init__ de cada classe. 
+              </p>
+
+            </div>
+
+            <h4>Como utilizar classes e objetos no Python</h4>
+            <p>Agora será abordada a importância do uso da POO e suas vantagens em relação ao paradigma estruturado de programação. Na linguagem estruturada, utiliza-se uma variável sempre que é necessário armazenar um valor durante o funcionamento do programa e, a cada novo armazenamento, é preciso criar novas variáveis. Na orientação a objetos, por sua vez, é possível criar uma classe e instanciá-la quantas vezes forem necessárias por meio de objetos, de seus atributos e de métodos, o que facilita muito o trabalho do programador quando ele entende como funcionam as particularidades desse tipo de programação</p>
+
+            <p>Retornando à primeira classe criada, veja a forma que ela poderia ser utilizada em um programa real.</p>
+
+            <pre>
+              <code>
+<span class="language-python__blue">class</span> <span class="language-python__red">Aluno</span>: 
+  <span class="language-python__green">#Construtor da classe</span>
+  <span class="language-python__blue">def</span> <span class="language-python__red">__init__</span><span>(self, nome, matricula, curso)</span>: 
+    self.nome = nome 
+    self.matricula = matricula 
+    self.curso = curso  
+              </code>
+            </pre>
+
+            <p>A partir deste momento, você começará a criar (instanciar) seus primeiros objetos e ver na prática o maravilhoso mundo da orientação a objetos, no qual, por meio de um esqueleto (classe), será possível transformar a abstração em objetos reais. Veja o código a seguir e atente-se aos comentários. Transcreva-o no Pycharm, no arquivo principal (AlunoApp).</p>
+
+            <pre>
+              <code>
+<span class="language-python__green">#Exemplo de uso da classe</span>
+aluno1 = Aluno(<span class="language-python__green">"João", "12345", "Engenharia"</span>) 
+aluno2 = Aluno(<span class="language-python__green">"Maria", "67890", "Ciência da Computação"</span>) 
+
+<span class="language-python__green">#Acesso aos atributos do aluno</span>
+<span class="language-python__red">print</span>(<span class="language-python__green">"Nome do Aluno 1:", aluno1.nome</span>) 
+<span class="language-python__red">print</span>(<span class="language-python__green">"Matrícula do Aluno 1:", aluno1.matricula</span>) 
+<span class="language-python__red">print</span>(<span class="language-python__green">"Curso do Aluno 1:", aluno1.curso</span>) 
+
+<span class="language-python__red">print</span>(<span class="language-python__green">"\nNome do Aluno 2:", aluno2.nome</span>) 
+<span class="language-python__red">print</span>(<span class="language-python__green">"Matrícula do Aluno 2:", aluno2.matricula</span>) 
+<span class="language-python__red">print</span>(<span class="language-python__green">"Matrícula do Aluno 2:", aluno2.matricula</span>) 
+<span class="language-python__red">print</span>(<span class="language-python__green">"Curso do Aluno 2:", aluno2.curso</span>) 
+              </code>
+            </pre>  
+
+            <p>Depois de rodar esse código, você terá este resultado na tela:</p>
+            <img src="imagens/destaque_resultado1.png" class="center-block img-responsive hidden-sm hidden-xs print">
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+            <a href="imagens/destaque_resultado1.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imagens/destaque_resultado1.png" class="center-block img-responsive"></a>
+
+            <div class="acessivel no-print">
+              <p>run:</p>
+              <p>Nome do Aluno 1: João</p>
+              <p>Matrícula do Aluno 1: 12345</p>
+              <p>Curso do Aluno 1: Engenharia</p>
+              <br>
+              <p>Nome do Aluno 2: Maria</p>
+              <p>Matrícula do Aluno 2: 67890</p>
+              <p> Curso do Aluno 2: Ciência da Computação</p>
+            </div>
+            
+
+            <p>Para melhorar, você criará novos objetos da mesma classe, mostrando que é possível iniciar todos os atributos de uma classe ou apenas os necessários para cada objeto. Por exemplo, é possível criar um objeto “aluno1” com nome, matrícula e CPF, um “aluno2” com nome e matrícula e um objeto “aluno3” somente com CPF, ou seja, você pode instanciar apenas o que precisa para cada um.</p>
+
+            <p>Nos exemplos a seguir, será instanciado mais de um objeto da mesma classe. Atente-se ao código e aos comentários contidos nele.</p>
+
+            <pre>
+              <code>
+<span class="language-python__green">#Criação do Objeto aluno1</span>
+aluno1 = Aluno(<span class="language-python__green">"João", "12345", "Engenharia"</span>) 
+
+<span class="language-python__green">#Criação do Objeto aluno2</span>
+aluno2 = Aluno("Maria", "67890", "Ciência da Computação") 
+
+<span class="language-python__green">#Acesso aos atributos do aluno1</span> 
+<span class="language-python__blue">print</span>(<span class="language-python__green">"Nome do Aluno 1:"</span>, aluno1.nome) 
+<span class="language-python__blue">print</span>(<span class="language-python__green">"Matrícula do Aluno 1:"</span>, aluno1.matricula) 
+<span class="language-python__blue">print</span>(<span class="language-python__green">"Curso do Aluno 1:", aluno1.curso</span>) 
+
+<span class="language-python__green">#Acesso aos atributos do aluno2</span> 
+<span class="language-python__blue">print</span>(<span class="language-python__green">"\nNome do Aluno 2:", aluno2.nome</span>) 
+<span class="language-python__blue">print</span>(<span class="language-python__green">"Matrícula do Aluno 2:", aluno2.matricula</span>) 
+<span class="language-python__blue">print</span>(<span class="language-python__green">"Curso do Aluno 2:", aluno2.curso</span>) 
+
+<span class="language-python__green">#Criação do Objeto aluno3</span>
+aluno3 = Aluno(<span class="language-python__green">'Pedro'</span>,<span class="language-python__blue">485884</span>,<span class="language-python__green">"Análise e Desenvolvimento de Sistemas"</span>) 
+
+<span class="language-python__green">#Acesso aos atributos do aluno3</span>
+<span class="language-python__blue">print</span>(<span class="language-python__green">"\nNome do Aluno 3:"</span>, aluno3.nome) 
+<span class="language-python__blue">print</span>(<span class="language-python__green">"Matrícula do Aluno 3:"</span>, aluno3.matricula) 
+<span class="language-python__blue">print</span>(<span class="language-python__green">"Curso do Aluno 3:"</span>, aluno3.curso) 
+
+<span class="language-python__green">#alteração de dados do Objeto aluno3</span>
+aluno3.nome=<span class="language-python__green">"Pedro Antônio"</span>
+aluno3.matricula=<span class="language-python__blue">2023023</span>
+
+<span class="language-python__green">#Acesso aos atributos do aluno3</span>
+<span class="language-python__blue">print</span>(<span class="language-python__green">"\nNome do Aluno 3:"</span>, aluno3.nome) 
+<span class="language-python__blue">print</span>(<span class="language-python__green">"Matrícula do Aluno 3:"</span>, aluno3.matricula) 
+<span class="language-python__blue">print</span>(<span class="language-python__green">"Curso do Aluno 3:"</span>, aluno3.curso) 
+              </code>
+            </pre>
+
+            <p>Após rodar esse código, você terá este resultado na tela:</p>
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+            <a href="imagens/destaque_resultado2.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imagens/destaque_resultado2.png" class="center-block img-responsive"></a>
+            <div class="acessivel no-print">
+              <p>run:</p>
+              <p>Mostrar Alunos:</p>
+              <br>
+              <p>Nome do aluno1: Celso Medeiros</p>
+              <p>Matrícula do aluno1: 1</p>
+              <p>CPF do aluno1: 00134578090</p>
+              <br>
+              <p>Nome do aluno2: Camila Alves</p>
+              <p>Matrícula do aluno2: 2</p>
+              <br>
+              <p>CPF do aluno3: 0019007890</p>
+              <p>BUILD SUCCESSFUL (total time: 0 seconds)</p>
+            </div>
+
+            <div class="saida-codigo">
+              <img src="imagens/destaque_resultado2.png" class="center-block img-responsive print">
+              <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+              <a href="imagens/destaque_resultado2.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imagens/destaque_resultado2.png" class="center-block img-responsive"></a>
+            </div>
+            
+            <div class="acessivel no-print">
+              <p>Nome do Aluno 1: João</p>
+              <p>Matrícula do Aluno 1: 12345</p>
+              <p>Curso do Aluno 1: Engenharia</p>
+              
+              <p>Nome do Aluno 2: Maria</p>
+              <p>Matrícula do Aluno 2: 67890</p>
+              <p>Curso do Aluno 2: Ciência da Computação</p>
+              
+              <p>Nome do Aluno 3: Pedro</p>
+              <p>Matrícula do Aluno 3: 485884</p>
+              <p>Curso do Aluno 3: Análise e Desenvolvimento de Sistemas</p>
+              
+              <p>Nome do Aluno 3: Pedro Antônio</p>
+              <p>Matrícula do Aluno 3: 2023023</p>
+              <p>Curso do Aluno 3: Análise e Desenvolvimento de Sistemas</p>
+              <p>Process finished with exit code 0</p>
+            </div>
+          </div>
+
+          <!-- Página 2 -->
+          <div class="pagina">
+            <h3>Métodos em Python</h3>
+
+            <p>Os métodos são uma das partes mais importantes de um objeto. Eles são o local no qual acontecem as ações do objeto e devem, entre outras coisas, ser utilizados para fazer cálculos, comparações, ordenações etc.</p>
+            
+            <p>Um método pode ou não retornar um valor, dependendo de como foi configurado. A seguir, ficará demonstrada a forma de utilização dessa poderosa etapa da POO.</p>
+
+            <p>Para exemplificar o uso dos métodos, será resgatada a classe <strong>Aluno</strong>, mas agora com mais um atributo chamado “idade”, deixando a classe com a seguinte configuração:</p>
+            <div class="table-responsive">
+              <table class="senac tabela-pequena">
+                <thead>
+                  <th>ALUNO</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>NOME</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>MATRÍCULA</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>CURSO</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>IDADE</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="legenda-imagem">
+              Tabela 3 – Classe Aluno, na qual serão criados os métodos<br>
+              Fonte: Senac EAD (2022)
+            </p>
+
+
+            <h4>Funções</h4>
+            <p>Antes de implementar o primeiro método, é importante relembrar e um conhecimento já aprendido durante o curso, que são as funções, pois elas têm algumas semelhanças importantes com os métodos na POO. Para fazer esta comparação, analise a função <strong>calcularMedia()</strong>. </p>
+
+            <pre>
+              <code>
+
+<span class="language-python__green"># Definindo uma função para calcular a média de duas notas</span>
+<span class="language-python__blue">def</span> <span class="language-python__red">calcular_media</span>(nota1, nota2):  
+  <span class="language-python__green"># Soma as duas notas</span> 
+  soma = nota1 + nota2  
+  <span class="language-python__green"># Calcula a média dividindo a soma pelo número de notas (2)</span> 
+  media = soma / 2  
+  <span class="language-python__blue">return</span> media  
+
+<span class="language-python__green"># Função principal para receber as notas do aluno e calcular a média</span> 
+<span class="language-python__blue">def</span> <span class="language-python__red">main</span>():  
+<span class="language-python__orange">print</span>(<span class="language-python__green">"Calculadora de Média de Notas"</span>)  
+nome_aluno = <span class="language-python__orange">input</span>(<span class="language-python__green">"Digite o nome do aluno: "</span>)  
+
+nota1 = float(<span class="language-python__orange">input</span>(<span class="language-python__green">"Digite a primeira nota: "</span>))  
+
+nota2 = float(<span class="language-python__orange">input</span>(<span class="language-python__green">"Digite a segunda nota: "</span>))  
+
+<span class="language-python__green"># Chama a função calcular_media para obter o resultado</span>  
+media = calcular_media(nota1, nota2)  
+
+<span class="language-python__green"># Exibe a média com duas casas decimais</span>
+<span class="language-python__orange">print</span>(f"A média das notas do aluno {nome_aluno} é: {media:.2f}")  
+
+<span class="language-python__green">#verifica para chamar função main</span>  
+if __name__ == <span class="language-python__green">"__main__"</span>:  
+
+main() 
+              </code>
+            </pre>
+
+            <p>Nesse programa, para começar, foi definida uma função chamada <b>calcular_media</b>, que aceita duas notas como argumentos, soma as notas e calcula a média. Em seguida, há uma função principal chamada <b>main</b>, que solicita ao usuário as notas do aluno, chama a função <b>calcular_media</b> e exibe o resultado. </p>
+            
+            <p>Para rodar o programa, você pode copiá-lo e colá-lo em um ambiente Python, como o IDLE, ou em um script Python, e seguir as instruções para inserir as notas do aluno e vê-las.</p>
+
+            <p>Nas próximas linhas de códigos, você começará a implementação dos métodos e descobrirá as incríveis vantagens de sua utilização. Atente-se aos comentários.</p>
+
+            <pre>
+              <code>
+<span class="language-python__green">#definição da Classe aluno e do construtor __init__</span>
+<span class="language-python__orange">class</span> Aluno: 
+<span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>, nome, matricula, cpf, data_nascimento): 
+    <span class="language-python__red">self</span>.nome = nome 
+    <span class="language-python__red">self</span>.matricula = matricula 
+    <span class="language-python__red">self</span>.cpf = cpf 
+    <span class="language-python__red">self</span>.data_nascimento = data_nascimento 
+
+    <span class="language-python__green"># define método listarAluno para os objetos da classe</span>
+    def  listarAluno(<span class="language-python__red">self</span>): 
+        print(<span class="language-python__green">"Nome: "</span>, <span class="language-python__red">self</span>.nome) 
+        print(<span class="language-python__green">"Matrícula: "</span>, <span class="language-python__red">self</span>.matricula) 
+        print(<span class="language-python__green">"CPF: "</span>, <span class="language-python__red">self</span>.cpf) 
+        print(<span class="language-python__green">"Data de Nascimento: "</span>, <span class="language-python__red">self</span>.data_nascimento) 
+        print(<span class="language-python__green">"------------------------"</span>) 
+ 
+ 
+<span class="language-python__green"># Exemplos de criação de objetos Aluno</span>
+aluno1 = Aluno(<span class="language-python__green">"João Silva", "12345", "123.456.789-00", "01/01/2000"</span>) 
+aluno2 = Aluno(<span class="language-python__green">"Maria Souza", "67890", "987.654.321-00", "15/03/1999"</span>) 
+aluno3 = Aluno(<span class="language-python__green">"Pedro Santos", "54321", "111.222.333-44", "30/07/2001"</span>) 
+ 
+<span class="language-python__green"># Chamar o método listarAluno para cada objeto</span>
+aluno1.listarAluno() 
+aluno2.listarAluno() 
+aluno3.listarAluno() 
+              </code>
+            </pre>
+
+            <p>Nesse exemplo, foi criada a classe Aluno com um construtor __init__ para inicializar os atributos. Em seguida, definiu-se o método listarAlunos para exibir informações dos objetos alunos. Depois, foram criados três objetos da classe Aluno (aluno1, aluno2 e aluno3). Finalmente, foi chamado o método listarAlunos para listar as informações de cada objeto aluno criado.</p>
+
+            <p>O resultado da execução será algo como o exemplo a seguir:</p>
+
+            <pre>
+              <code>
+    <span><strong>Matrícula:  12345 
+
+    CPF:  123.456.789-00 
+
+    Data de Nascimento:  01/01/2000 
+
+    ------------------------ 
+
+    Nome:  Maria Souza 
+
+    Matrícula:  67890 
+
+    CPF:  987.654.321-00 
+
+    Data de Nascimento:  15/03/1999 
+
+    ------------------------ 
+
+    Nome:  Pedro Santos 
+
+    Matrícula:  54321 
+
+    CPF:  111.222.333-44 
+
+    Data de Nascimento:  30/07/2001 
+
+    ------------------------ 
+
+    Process finished with exit code 0</strong></span>
+              </code>
+            </pre>
+
+            <div class="destaque-pixel">
+              <div class="caixa-destaque">
+                <p><b>
+                  Nota: nos nomes dos métodos utilizamos o padrão da linguagem chamado “CamelCase” onde deixamos em maiúsculo a primeira letra de cada palavra (de um termo composto), com exceção do primeiro termo, como por exemplo o método “mostrarmaiornota”, fica “mostrarMaiorNota”, facilitando a leitura e padrão de criação. 
+                </p></b>
+              </div>
+            </div>
+            
+
+            <p>Analisando o código, note que as duas linhas de código mostradas em seguida retornaram o mesmo valor. Talvez você se pergunte, na primeira vez em que se deparar com um código desse, “por que utilizar métodos se posso simplesmente usar a segunda linha de código para mostrar um atributo de um objeto?”. A resposta torna-se mais simples a cada exemplo de utilização dos métodos analisado, mas saiba de antemão que, com o uso dos métodos, o código fica mais organizado, enxuto, reutilizável e seguro. Em seguida, note também que, cada vez que quiser chamar o nome de um aluno, você utilizará <strong>aluno.mostrarNome()</strong> e não precisará escrever a linha de código maior aprendida anteriormente.</p>
+
+            <pre>
+              <code>
+    <span class="language-python__green">#chamada do método mais fácil</span> 
+    aluno1.listarAluno() 
+
+    <span class="language-python__green">#forma anterior sem o uso do método </span> 
+    <span class="language-python__blue">print</span>(<span class="language-python__green">"Nome: "</span>, <strong>aluno1</strong>.nome) 
+    <span class="language-python__blue">print</span>(<span class="language-python__green">"Matrícula: "</span>, <strong>aluno1</strong>.matricula) 
+    <span class="language-python__blue">print</span>(<span class="language-python__green">"CPF: "</span>, <strong>aluno1</strong>.cpf) 
+    <span class="language-python__blue">print</span>(<span class="language-python__green">"Data de Nascimento: "</span>, <strong>aluno1</strong>.data_nascimento) 
+    <span class="language-python__blue">print</span>(<span class="language-python__green">"------------------------"</span>) 
+              </code>
+            </pre>
+
+            <div class="destaque-pixel">
+              <div class="icone-position-desafio">
+                <div class="caixa-destaque ">
+                  <p>Utilizando o código exemplificado, crie um método para mostrar <b>nome</b> e <b>cpf</b> e outro método para mostrar <b>nome</b> e <b>idade</b> do aluno. Use como base o método <b>listarAluno()</b>, sempre utilizando verbos para os nomes dos métodos.</p>
+                </div>
+              </div>
+            </div>
+
+
+            <button type="button" class="btn btn-primary btn-lg no-print btn-gabarito" data-toggle="modal" data-target="#gabarito2">
+              Gabarito
+            </button>
+
+            <div class="no-print">
+              <div class="modal fade no-print" id="gabarito2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"  aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myGabarito2ModalLabel">GABARITO</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p>Para adicionar dois métodos à classe Aluno, um para mostrar o nome e CPF do aluno e outro para mostrar o nome e idade do aluno, você pode criar os seguintes métodos: </p>
+                          <pre>
+                            <code>
+<span class="language-python__red">from</span> datetime <span class="language-python__red">import</span> datetime
+
+<span class="language-python__orange">class</span> Aluno: 
+  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>, nome, matricula, cpf, data_nascimento): 
+    <span class="language-python__red">self</span>.nome = nome 
+    <span class="language-python__red">self</span>.matricula = matricula 
+    <span class="language-python__red">self</span>.cpf = cpf 
+    <span class="language-python__red">self</span>.data_nascimento = data_nascimento 
+
+<span class="language-python__orange">def</span> <span class="language-python__blue">listarAluno</span>(<span class="language-python__red">self)</span>: 
+  <span class="language-python__blue">print</span>(<span class="language-python__green">"Nome: "</span>, self.nome) 
+  <span class="language-python__blue">print</span>(<span class="language-python__green">"Matrícula: "</span>, self.matricula) 
+  <span class="language-python__blue">print</span>(<span class="language-python__green">"CPF: "</span>, self.cpf) 
+  <span class="language-python__blue">print</span>(<span class="language-python__green">"Data de Nascimento: "</span>, self.data_nascimento) 
+  <span class="language-python__blue">print</span>(<span class="language-python__green">"------------------------"</span>) 
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">mostrar_nome_e_cpf(self)</span>: 
+    <span class="language-python__blue">print</span>(<span class="language-python__green">"Nome: "</span>, self.nome) 
+    <span class="language-python__blue">print</span>(<span class="language-python__green">"CPF: "</span>, self.cpf) 
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">mostrar_nome_e_idade(self)</span>: 
+    <span class="language-python__green">#Calcular a idade com base na data de nascimento</span>
+    data_nascimento = datetime.strptime(<span class="language-python__red">self</span>.data_nascimento, <span class="language-python__green">'%d/%m/%Y'</span>) 
+    hoje = datetime.now() 
+    idade = hoje.year - data_nascimento.year - ((hoje.month, hoje.day) < (data_nascimento.month, data_nascimento.day)) 
+    <span class="language-python__blue">print</span>(<span class="language-python__green">"Nome: "</span>, self.nome) 
+    <span class="language-python__blue">print</span>(<span class="language-python__green">"Idade: "</span>, idade)
+  
+    <span class="language-python__green">#Exemplos de criação de objetos Aluno</span> 
+    aluno1 = Aluno(<span class="language-python__green">"João Silva", "12345", "123.456.789-00", "01/01/2000"</span>) 
+    aluno2 = Aluno(<span class="language-python__green">"Maria Souza", "67890", "987.654.321-00", "15/03/1999"</span>) 
+    aluno3 = Aluno(<span class="language-python__green">"Pedro Santos", "54321", "111.222.333-44", "30/07/2001"</span>)
+
+    <span class="language-python__green"># Chamar o método listarAluno para cada objeto</span>
+    aluno1.listarAluno() 
+    aluno2.listarAluno() 
+    aluno3.listarAluno() 
+    
+    <span class="language-python__green"># Chamar o método mostrar_nome_e_cpf para cada objeto</span> 
+    aluno1.mostrar_nome_e_cpf() 
+    aluno2.mostrar_nome_e_cpf() 
+    aluno3.mostrar_nome_e_cpf() 
+    
+    <span class="language-python__green"># Chamar o método mostrar_nome_e_idade para cada objeto</span>
+    aluno1.mostrar_nome_e_idade() 
+    aluno2.mostrar_nome_e_idade() 
+    aluno3.mostrar_nome_e_idade()   
+                            </code>
+                          </pre>
+                      <p>
+                        Nesse exemplo, os métodos <b>mostrar_nome_e_cpf</b> e <b>mostrar_nome_e_idade</b> foram adicionados à classe Aluno. O método <b>mostrar_nome_e_cpf</b> imprime o nome e o CPF do aluno, enquanto o método <b>mostrar_nome_e_idade</b> calcula a idade do aluno com base na data de nascimento e imprime o nome e a idade. 
+                      </p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="acessivel print">
+              
+              <h4>GABARITO</h4>
+              <p>Para adicionar dois métodos à classe Aluno, um para mostrar o nome e CPF do aluno e outro para mostrar o nome e idade do aluno, você pode criar os seguintes métodos: </p>
+                          <pre>
+                            <code>
+<span class="language-python__red">from</span> datetime <span class="language-python__red">import</span> datetime
+
+<span class="language-python__orange">class</span> Aluno: 
+  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>, nome, matricula, cpf, data_nascimento): 
+    <span class="language-python__red">self</span>.nome = nome 
+    <span class="language-python__red">self</span>.matricula = matricula 
+    <span class="language-python__red">self</span>.cpf = cpf 
+    <span class="language-python__red">self</span>.data_nascimento = data_nascimento 
+
+<span class="language-python__orange">def</span> <span class="language-python__blue">listarAluno</span>(<span class="language-python__red">self)</span>: 
+  <span class="language-python__blue">print</span>(<span class="language-python__green">"Nome: "</span>, self.nome) 
+  <span class="language-python__blue">print</span>(<span class="language-python__green">"Matrícula: "</span>, self.matricula) 
+  <span class="language-python__blue">print</span>(<span class="language-python__green">"CPF: "</span>, self.cpf) 
+  <span class="language-python__blue">print</span>(<span class="language-python__green">"Data de Nascimento: "</span>, self.data_nascimento) 
+  <span class="language-python__blue">print</span>(<span class="language-python__green">"------------------------"</span>) 
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">mostrar_nome_e_cpf(self)</span>: 
+    <span class="language-python__blue">print</span>(<span class="language-python__green">"Nome: "</span>, self.nome) 
+    <span class="language-python__blue">print</span>(<span class="language-python__green">"CPF: "</span>, self.cpf) 
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">mostrar_nome_e_idade(self)</span>: 
+    <span class="language-python__green">#Calcular a idade com base na data de nascimento</span>
+    data_nascimento = datetime.strptime(<span class="language-python__red">self</span>.data_nascimento, <span class="language-python__green">'%d/%m/%Y'</span>) 
+    hoje = datetime.now() 
+    idade = hoje.year - data_nascimento.year - ((hoje.month, hoje.day) < (data_nascimento.month, data_nascimento.day)) 
+    <span class="language-python__blue">print</span>(<span class="language-python__green">"Nome: "</span>, self.nome) 
+    <span class="language-python__blue">print</span>(<span class="language-python__green">"Idade: "</span>, idade)
+  
+    <span class="language-python__green">#Exemplos de criação de objetos Aluno</span> 
+    aluno1 = Aluno(<span class="language-python__green">"João Silva", "12345", "123.456.789-00", "01/01/2000"</span>) 
+    aluno2 = Aluno(<span class="language-python__green">"Maria Souza", "67890", "987.654.321-00", "15/03/1999"</span>) 
+    aluno3 = Aluno(<span class="language-python__green">"Pedro Santos", "54321", "111.222.333-44", "30/07/2001"</span>)
+
+    <span class="language-python__green"># Chamar o método listarAluno para cada objeto</span>
+    aluno1.listarAluno() 
+    aluno2.listarAluno() 
+    aluno3.listarAluno() 
+    
+    <span class="language-python__green"># Chamar o método mostrar_nome_e_cpf para cada objeto</span> 
+    aluno1.mostrar_nome_e_cpf() 
+    aluno2.mostrar_nome_e_cpf() 
+    aluno3.mostrar_nome_e_cpf() 
+    
+    <span class="language-python__green"># Chamar o método mostrar_nome_e_idade para cada objeto</span>
+    aluno1.mostrar_nome_e_idade() 
+    aluno2.mostrar_nome_e_idade() 
+    aluno3.mostrar_nome_e_idade()   
+                            </code>
+                          </pre>
+              <p>
+                Nesse exemplo, os métodos mostrar_nome_e_cpf e mostrar_nome_e_idade foram adicionados à classe Aluno. O método mostrar_nome_e_cpf imprime o nome e o CPF do aluno, enquanto o método mostrar_nome_e_idade calcula a idade do aluno com base na data de nascimento e imprime o nome e a idade. 
+              </p>
+            </div>
+            
+            <p>Vamos pensar em uma situação em que eu queira uma descrição completa de um aluno, onde apenas com uma linha de código eu conseguisse apresentar seu nome, matrícula, CPF e idade, será isso possível?</p>            
+          </div>
+
+          <!-- Página 3 -->
+          <div class="pagina">
+            <h3>Métodos com passagem de valores e retorno</h3>
+            
+            <p>Outra forma de usar os métodos é quando necessita-se utilizar a passagem de valores através dos atributos da classe, para calcular algo que será retornado como resposta. Para esse exemplo, será modificada a configuração da classe aluno para focar em atributos necessários ao cálculo da média de um aluno, e o escopo da classe agora será o seguinte:</p>
+
+            <div class="table-responsive">
+              <table class="senac tabela-pequena">
+                <thead>
+                  <th>ALUNO</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>NOME</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>NOTA1</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>NOTA2</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>MÉDIA</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="legenda-imagem">
+              Classe Aluno com argumentos modificados<br>
+              Fonte: Senac EAD (2022)
+            </p>
+
+            <p>Nessa classe, foram modificados os atributos, tendo dois métodos iniciais: um para descrever nome, nota1 e nota 2 do aluno e outro para calcular a média. Em seguida, criamos dois objetos da classe Aluno (aluno1 e aluno2) com suas respectivas notas. Usamos o método <b>listar_dados</b> para listar as informações dos alunos, incluindo a média calculada com base nas notas fornecidas.</p>
+
+            <p>Além disso, há um método chamado <b>atualizar_notas</b> na classe Aluno, que recebe duas novas notas como parâmetros e atualiza as notas do aluno, recalculando também a média. O método <b>atualizar_notas</b> é chamado para modificar as notas do aluno1 e, em seguida, o método <b>listar_dados</b> é usado para listar os dados atualizados do aluno.</p>
+
+            <p>Veja um exemplo de saída na Console. </p>
+
+            <div class="saida-codigo">
+              <img src="imagens/destaque_resultado3.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+              <a href="objetos/layout_3_code_?.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="objetos/layout_3_code_?.png" class="center-block img-responsive"></a>
+            </div>
+
+            <div class="acessivel no-print">           
+              <p>Dados aluno 1 ANTES da alteração: </p>
+              <p>Nome:  João Silva</p> 
+              <p>Nota 1:  8.5</p>
+              <p>Nota 2:  7.5</p> 
+              <p>Média:  8.0</p> 
+
+              <p>------------------------</p> 
+
+              <p>Dados aluno 1 DEPOIS da alteração:</p> 
+              <p>Nome:  João Silva</p> 
+              <p>Nota 1:  9.0</p> 
+              <p>Nota 2:  9.5</p> 
+              <p>Média:  9.25</p> 
+
+              <p>------------------------</p> 
+
+              <p>Process finished with exit code 0 </p>
+            </div>
+
+            <p>
+              Esse exemplo demonstra como você pode criar métodos que aceitam parâmetros para realizar ações específicas em objetos de uma classe. Observação: pode-se usar o método calcular_media independentemente do método construtor, como forma de calcular e ver a nota do aluno. 
+            </p>
+
+            <p>
+              Primeiramente, será criado um objeto Aluno e, em seguida, chamado o método calcular_media para calcular a média com base nas notas fornecidas que estão no objeto. 
+            </p>
+
+            <pre>
+              <code>
+  <span class="language-python__green">#Exemplo de criação de um objeto Aluno</span>  
+  aluno1 = Aluno(<span class="language-python__green">"João Silva"</span>,<span class="language-python__red"> 8.5, 7.5</span>)  
+
+  <span class="language-python__green">#Chamar o método calcular_media para calcular a média do objeto aluno1 e atribui o valor calculado à variável media_do_aluno1</span> 
+  media_do_aluno1 = aluno1.calcular_media()  
+
+  <span class="language-python__green"># Imprimir a média calculada</span>  
+  <span class="language-python__orange">print</span>(<span class="language-python__green">"A média do aluno 1 é:"</span>, media_do_aluno1) 
+              </code>
+            </pre>
+
+            <p>Nesse exemplo, foi criado um objeto aluno1 com as notas 8.5 e 7.5. Em seguida, chamou-se o método calcular_media para calcular a média do aluno. O resultado é impresso na tela.</p>
+
+            <p class="no-print" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+            <a href="imagens/infografico_calcular.png" target="_blank" class="print" aria-hidden="true"><img src="imagens/infografico_calcular.png" class="center-block img-responsive"></a>
+
+            <div class="acessivel no-print">
+              <h4>Aqui está a explicação do método calcular_media: </h4>
+
+              <ul>
+                <li>O método calcular_media é definido na classe Aluno.</li>
+                <li>São usadas as notas nota1 e nota2 que foram fornecidas como atributos do objeto Aluno.</li>
+                <li>Calcula-se a média somando as duas notas e dividindo-as por 2 (a média aritmética).</li>
+                <li>A média calculada é retornada como resultado do método.</li>
+              </ul>
+            </div>
+
+            <p>Dessa forma, o método calcular_media permite calcular a média do aluno com base nas notas armazenadas nos atributos nota1 e nota2, que é útil para obter a média de um aluno específico criado a partir da classe Aluno.</p>
+
+            <div class="destaque-pixel ">
+              <div class="icone-position-anotar">
+                <div class="caixa-destaque ">
+                  <p>A grande vantagem de usar métodos é que, analisando o exemplo, é possível instanciar uma turma de, por exemplo, 40 alunos com suas notas, e apenas com os métodos <b>listar_dados()</b> e <b>calcular_media()</b>, é possível detalhar as informações de cada aluno, sem ter que reescrever todos os dados e o cálculo de média para cada aluno individualmente.</p>
+                </div>
+              </div>
+            </div>
+
+            <p>
+              Outra análise importante desse formato de programação é a sua escalabilidade. Imagine um projeto em que é necessário inserir outras possibilidades, como, por exemplo, um método para mostrar qual a maior nota de aluno e outro método para mostrar se o aluno foi aprovado ou reprovado, conforme a média for maior ou igual a 7. Em um paradigma estruturado, seria necessário fazer esse cálculo individual para cada aluno. Nesse caso, serão criados dois métodos que resolverão o problema, independentemente do número de alunos de uma turma.
+            </p>
+
+            <p>
+              Abaixo do método <b>>calcular_media()</b>, da classe Aluno, serão criados os métodos <b>maior_nota()</b> e <b>situação()</b>, o primeiro mostrará a maior nota do aluno e o segundo se ele foi aprovado ou reprovado, conforme suas duas notas apresentadas.
+            </p>
+
+            <div class="destaque-pixel">
+              <div class="icone-position-anotar">
+                <div class="caixa-destaque ">              
+                  Será utilizado o mesmo código já criado e incluído o que for necessário para resolver o problema.
+                </div>
+              </div>
+            </div>
+
+            <pre>
+              <code>
+  <span class="language-python__orange">def</span> <span class="language-python__blue">maior_nota</span>(<span class="language-python__red">self</span>): 
+    <span class="language-python__orange">return</span> max(<span class="language-python__red">self</span>.nota1, <span class="language-python__red">self</span>.nota2) 
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">situacao</span>(<span class="language-python__red">self</span>): 
+    <span class="language-python__orange">if</span> <span class="language-python__red">self</span>.media >= <span class="language-python__blue">6.0</span>: 
+      <span class="language-python__orange">return</span> <span class="language-python__green">"Aprovado"</span> 
+    <span class="language-python__orange">else</span>: 
+      <span class="language-python__orange">return</span> <span class="language-python__green">"Reprovado"</span>
+
+
+  <span class="language-python__green"># Exemplo de criação de um objeto Aluno</span> 
+  aluno1 = Aluno(<span class="language-python__green">"João Silva"</span>, <span class="language-python__blue">8.5, 7.5</span>) 
+          
+  <span class="language-python__green"># Chamar o método maior_nota para obter a maior nota do aluno</span>
+  maior_nota_aluno1 = aluno1.maior_nota() 
+  
+  <span class="language-python__green"># Imprimir a maior nota</span> 
+  print(<span class="language-python__green">"Maior nota do aluno 1:"</span>, maior_nota_aluno1) 
+  
+  <span class="language-python__green"># Chamar o método situacao para determinar se o aluno foi aprovado ou reprovado</span>
+  situacao_aluno1 = aluno1.situacao() 
+  
+  <span class="language-python__green"># Imprimir a situação do aluno</span>
+  print(<span class="language-python__green">"Situação do aluno 1:"</span>, situacao_aluno1) 
+              </code>
+            </pre>
+
+            <p>
+              Neste código, foram adicionados dois métodos à classe Aluno: 
+            </p>
+
+            <div class="destaque-pixel">
+              <div class="caixa-destaque" style="padding-left:20px">
+                <ul class="marcador-pixel">
+                  <li>O método maior_nota() calcula e retorna a maior nota entre nota1 e nota2 do aluno.</li>
+                  <li>O método situacao determina se o aluno foi aprovado (com média maior ou igual a 6.0) ou reprovado (com média menor que 6.0) e retorna a situação.</li>
+                  <li>Os exemplos demonstram como chamar esses métodos para obter a maior nota do aluno e determinar a situação (aprovado ou reprovado) com base na média.</li>
+                </ul>
+              </div>
+            </div>
+
+            <p>
+              Os métodos têm um grande poder sobre o objeto, podendo modificar o valor de seus atributos, e em outros casos, apenas retornando uma mensagem sem modificar os valores dos atributos dos objetos. Por exemplo, a classe calcular_media(), que, nesse caso, retorna o valor do cálculo da média do aluno.
+            </p>
+
+            <p>
+              Note que foi mostrado o resultado para dois alunos, para exemplificar situações em que os alunos foram aprovados ou reprovados. Para criar essa situação para 40 alunos, bastaria instanciar os 40 objetos com seus valores de atributos e chamar os métodos listar_dados, calcular_media, maior_nota e situação. 
+            </p>
+            
+            <p>
+              Para instanciar 40 objetos, seria possível fazer: 
+            </p>
+
+            <pre>
+              <code>
+  <span class="language-python__orange">class </span>Aluno:
+    <span class="language-python__orange">def </span><span class="language-python__red">__init__</span>(<span class="language-python__red">_self</span>, nome, nota1, nota2): 
+      <span class="language-python__red">self</span>.nome = nome 
+      <span class="language-python__red">self</span>.nota1 = nota1 
+      <span class="language-python__red">self</span>.nota2 = nota2 
+      <span class="language-python__red">self</span>.media = <span class="language-python__red">self</span>.calcular_media()
+
+  <span class="language-python__orange">def </span><span class="language-python__blue">calcular_media</span>(<span class="language-python__red">self</span>): 
+    <span class="language-python__orange">return </span>(<span class="language-python__orange">self</span>.nota1 + <span class="language-python__red">self</span>.nota2)/<span class="language-python__blue">2</span>
+
+  <span class="language-python__orange">def </span><span class="language-python__blue">atualizar_notas</span>(<span class="language-python__red">self</span>,nova_nota1, nova_nota2): 
+    <span class="language-python__red">self</span>.nota1 = nova_nota1 
+    <span class="language-python__red">self</span>.nota2 = nova_nota2 
+    <span class="language-python__red">self</span>.media = <span class="language-python__red">self</span>.calcular_media()
+
+  <span class="language-python__orange">def </span><span class="language-python__blue">listar_dados</span>(<span class="language-python__red">self</span>): 
+    <span class="language-python__blue">print(<span class="language-python__green">"Nome: "</span>,<span        class="language-python__red">self</span>.nome)</span> 
+    <span class="language-python__blue">print(<span class="language-python__green">"Nota 1: "</span>,<span        class="language-python__red">self</span>.nota1)</span> 
+    <span class="language-python__blue">print(<span class="language-python__green">"Nota 2: "</span>,<span        class="language-python__red">self</span>.nota2)</span> 
+    <span class="language-python__blue">print(<span class="language-python__green">"Média: "</span>,<span        class="language-python__red">self</span>.media)</span> 
+    <span class="language-python__blue">print(<span class="language-python__green">"------------------------"</span>)
+                      
+    <span class="language-python__orange">def </span><span class="language-python__blue">maior_nota</span>(<span class="language-python__red">self</span>): 
+      <span class="language-python__orange">return </span>max(<span class="language-python__orange">self</span>.nota1, <span class="language-python__red">self</span>.nota2)
+
+    <span class="language-python__orange">def </span><span class="language-python__blue">situacao</span>(<span class="language-python__red">self</span>): 
+      <span class="language-python__orange">if </span>(<span class="language-python__orange">self</span>.media >= <span class="language-python__blue">6.0</span>:
+        <span class="language-python__orange">return </span><span class="language-python__green">"Aprovado"</span>
+      <span class="language-python__orange">else</span>:
+        <span class="language-python__orange">return </span><span class="language-python__green">"Reprovado"</span>
+
+    <span class="language-python__green"># Lista para armazenar os objetos Aluno</span>
+    <span>alunos = []</span>
+
+    <span class="language-python__green"># Criar 40 objetos Aluno e adicioná-los à lista</span>
+
+    <span class="language-python__orange">for </span>i <span class="language-python__orange">in </span><span>range</span>(<span class="language-python__blue">1</span>,<span class="language-python__blue">41</span>):
+      nome = input(<span class="language-python__green">"Digite o nome do aluno " </span>+ str(i) + <span class="language-python__green">":"</span>)
+      nota1 = float(input(<span class="language-python__green">"Digite nota 1 do aluno " </span>+ nome + <span class="language-python__green">":"</span>))
+      nota2 = float(input(<span class="language-python__green">"Digite nota 2 do aluno " </span>+ nome + <span class="language-python__green">":"</span>))
+      <span class="language-python__green">#criação do objeto aluno</span>
+      aluno = Aluno(nome, nota1, nota2)
+      <span class="language-python__green">#adiciona objeto a lista alunos</span>
+      alunos.append(aluno)
+
+    <span class="language-python__green">#Listar os dados de todos os alunos</span>
+    <span class="language-python__orange">for </span>aluno <span class="language-python__orange">in </span>alunos:
+      aluno.listar_dados()
+              </code>
+            </pre>
+
+            <p>Nesse código, foi criada uma lista vazia chamada <b>alunos=[]</b> para armazenar os objetos Aluno. Usou-se um loop for para criar 40 objetos Aluno com nomes e suas respectivas notas informadas nos respectivos comandos <b>input</b>, nas variáveis nome, nota1 e nota2. Na sequência, é criado um objeto e adicionado à lista alunos. Em seguida, usou-se outro loop for para listar os dados de todos os alunos na lista. Isso permite que você inicialize e acesse os dados de 40 objetos da classe Aluno de forma automatizada</p>
+
+            <p>
+              Veja, em outro exemplo, um programa PYTHON que possui uma classe que simula as operações de um televisor. Considere que a TV pode ligar, desligar, trocar de canal e alterar o volume do som. Os canais podem ir de 2 a 13 (os canais VHF) e o volume do som de 0 a 100. Essas operações só podem ser realizadas com a TV ligada.
+            </p>
+
+            <img src="imagens/infografico_televisao.png" class="center-block img-responsive hidden-sm hidden-xs print">
+            <p class="legenda-imagem">
+              Diagrama UML para a classe Televisor<br>
+              Fonte: Senac EAD (2024)
+            </p>
+
+            <div class="acessivel no-print">
+              <div class="table-responsive">
+              <table class="senac tabela-pequena">
+                <thead>
+                  <th>Televisor</th>
+                </thead>
+                <tbody class="uml__televisao">
+                  <tr>
+                    <td>
+                      <ul>
+                        <li>canal</li>
+                        <li>volume</li>
+                        <li>desligada</li>
+                        <li>mudar_canal</li>
+                        <li>diminuir_volume</li>
+                        <li>ligar</li>
+                        <li>desligar</li>
+                        <li>mostrar_status</li>
+                      </ul>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+            </div>
+            
+            <p class="acessivel no-print">Classe com o título “Televisor”, com os atributos do canal: byte, volume: short, ligada: boolean. Métodos mudar_canal, aumentar_volume, diminuir_volume, ligar, desligar e mostrar_status.</p>
+          
+
+            <pre>
+              <code>
+<span class="language-python__orange">class</span> <span>Televisor</span>
+  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>): 
+  <span class="language-python__red">self</span>.canal = 2  <span class="language-python__grey"># Inicializa no canal 2</span>
+  <span class="language-python__red">self</span>.volume = 2  <span class="language-python__grey"># Inicializa com volume 0</span>
+  <span class="language-python__red">self</span>.ligada = <span class="language-python__orange">false</span>  <span class="language-python__grey"># Inicializa desligada</span>
+                
+  <span class="language-python__orange">def</span> <span class="language-python__blue">ligar</span>(<span class="language-python__red">self</span>):
+  <span class="language-python__red">self</span>.ligada = True
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">desligar</span>(<span class="language-python__red">self</span>):
+  <span class="language-python__red">self</span>.ligada = False
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">mudar_canal</span>(<span class="language-python__red">self</span>,novo_canal):
+    <span class="language-python__orange">if</span> <span class="language-python__red">self</span>.ligada <span class="language-python__orange">and</span> <span class="language-python__blue">2</span> <span><= novo_canal <=</span> <span class="language-python__blue">13</span>;
+      <span class="language-python__red">self</span><span>.canal =  novo_canal</span>
+    <span class="language-python__orange">else</span>
+      <span class="language-python__grey">print</span>(<span class="language-python__green">"O televisor está desligado ou o canal não está disponível."</span>)
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">aumentar_volume</span>(<span class="language-python__red">self</span>):
+  <span class="language-python__orange">if</span> <span class="language-python__red">self</span>.ligada <span class="language-python__orange">and</span> <span class="language-python__red">self</span><span>.volume <</span> <span class="language-python__blue">100</span>
+    <span class="language-python__red">self</span><span>.volume +=</span> <span class="language-python__blue">1</span>
+  
+  <span class="language-python__orange">def</span> <span class="language-python__blue">diminuir_volume</span>(<span class="language-python__red">self</span>):
+  <span class="language-python__orange">if</span> <span class="language-python__red">self</span>.ligada <span class="language-python__orange">and</span> <span class="language-python__red">self</span><span>.volume ></span> <span class="language-python__blue">0</span>
+    <span class="language-python__red">self</span><span>.volume -=</span> <span class="language-python__blue">1</span>
+  
+  <span class="language-python__orange">def</span> <span class="language-python__blue">mostrar_status</span>(<span class="language-python__red">self</span>):
+    <span>status =</span> <span class="language-python__green">"Ligada"</span> <span class="language-python__orange">if</span> <span class="language-python__red">self</span><span>.ligada</span> <span class="language-python__orange">else</span> <span class="language-python__green">"Desligada"</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"</span><span class="language-python__green">----------------------"</span><span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"</span><span class="language-python__green">f"Status:</span> <span class="language-python__orange">{</span><span>status</span><span class="language-python__orange">}</span><span><span class="language-python__green">"</span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"</span><span class="language-python__green">f"Canal:</span> <span class="language-python__orange">{</span><span class="language-python__red">self</span><span>.canal</span><span class="language-python__orange">}</span><span><span class="language-python__green">"</span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"</span><span class="language-python__green">f"Volume: </span><span class="language-python__orange">{</span><span class="language-python__red">self</span><span>.volume</span><span class="language-python__orange">}</span><span><span class="language-python__green">"</span>)</span>
+    <span class="language-python__grey">print</span><span class="language-python__green">("------------------------")</span>
+
+  <span class="language-python__grey"># Função para exibir o menu</span>
+  <span class="language-python__orange">def</span> <span class="language-python__blue">exibir_menu</span><span>():</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Digite uma operação para o Televisor:"</span><span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"[L] Ligar"</span><span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"[D] Desligar"</span><span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"[T] Trocar canal"</span><span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"[+] Aumentar volume"</span><span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"[-] Diminuir volume"</span><span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"[X] Sair"</span><span>)</span>
+
+  <span class="language-python__grey"># Função principal</span>
+  <span class="language-python__orange">def</span> <span class="language-python__blue">main</span><span>():</span>
+    <span>televisor = Televisor()</span>
+    <span>televisor.mostrar_status()</span>
+    <span class="language-python__orange">while True</span><span>:</span>
+      <span>exibir_menu()</span>
+      <span>opcao =</span> <span class="language-python__grey">input</span><span>(</span><span class="language-python__green">"Escolha uma opção: "</span><span>).upper()</span>
+      
+      <span class="language-python__orange">if</span> <span>opcao ==</span> <span class="language-python__green">'L'</span><span>:</span>
+        <span>televisor.ligar()</span>
+      <span class="language-python__orange">elseif</span> <span>opcao ==</span> <span class="language-python__green">'D'</span><span>:</span>
+        <span>televisor.desligar()</span>
+      <span class="language-python__orange">elseif</span> <span>opcao ==</span> <span class="language-python__green">'T'</span><span>:</span>
+        <span>novo_canal =</span> <span class="language-python__grey">int</span><span>(</span><span class="language-python__grey">input</span><span>(</span><span class="language-python__green">"Digite o novo canal: "</span><span>))</span>
+      <span class="language-python__orange">elseif</span> <span>opcao ==</span> <span class="language-python__green">'+'</span><span>:</span>
+        <span>televisor.aumentar_volume()</span>
+      <span class="language-python__orange">elseif</span> <span>opcao ==</span> <span class="language-python__green">'-'</span><span>:</span>
+        <span>televisor.diminuir_volume()</span>
+      <span class="language-python__orange">elseif</span> <span>opcao ==</span> <span class="language-python__green">'x'</span><span>:</span>
+        <span class="language-python__orange">break</span>
+      <span class="language-python__orange">else</span> <span>:</span> 
+        <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Opção inválida. Tente novamente."</span><span>)</span>
+      
+      <span>televisor.mostrar_status()</span>
+
+<span class="language-python__orange">if</span> <span>__name__ ==</span> <span class="language-python__green">"__main__"</span><span>:</span>
+
+  <span>main()</span>
+
+              </code>
+            </pre>
+
+            <p>Nesse programa, há a classe Televisor com os métodos para ligar, desligar, mudar canal e aumentar volume. O televisor começa desligado por padrão, e todas as operações (mudar canal e aumentar volume) só podem ser realizadas quando o televisor está ligado. O programa também inclui um método mostrar_status para exibir o status atual do televisor.</p>
+
+            <p>O programa tem uma função exibir_menu para exibir o menu de opções e uma função main que contém um loop que permite ao usuário interagir com o televisor. O usuário pode escolher as opções do menu e, com base na escolha, as operações apropriadas são realizadas no televisor. O loop continua até que o usuário escolha a opção de sair (digitar 'X').</p>
+
+            <p>Esse exemplo demonstra como utilizar a classe Televisor para realizar operações de controle de canal e volume em um televisor simulado. Certifique-se de que o televisor esteja ligado antes de fazer qualquer alteração no canal ou volume.</p>
+
+            <div class="destaque-pixel ">
+              <div class="icone-position-desafio">
+                <div class="caixa-destaque ">              
+                  <p>Altere a classe Televisor do exemplo acima e inclua um método “display()”, que mostra na tela o canal e o volume atuais se a TV estiver ligada.</p> 
+                </div>
+              </div>
+            </div>
+
+            <div class="no-print" aria-hidden="true">
+              <button
+                type="button"
+                class="btn btn-primary btn-lg btn-gabarito"
+                data-toggle="modal"
+                data-target="#gabarito3"
+              >GABARITO</button>
+            </div>
+
+            <div class="no-print">
+              <div
+                class="modal fade"
+                id="gabarito3"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="myModalLabel"
+                aria-live="polite"
+                aria-atomic="true"
+                aria-hidden="false"
+              >
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                      >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      <h4 class="modal-title" id="myModalLabel">Gabarito</h4>
+                    </div>
+                    <div class="modal-body">
+                      <pre>
+                        <code>
+  <span class="language-python__orange">class</span> <span>Televisor</span>
+    <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>): 
+      <span class="language-python__red">self</span>.canal = 2  <span class="language-python__grey"># Inicializa no canal 2</span>
+      <span class="language-python__red">self</span>.volume = 2  <span class="language-python__grey"># Inicializa com volume 0</span>
+      <span class="language-python__red">self</span>.ligada = <span class="language-python__orange">false</span>  <span class="language-python__grey"># Inicializa desligada</span>
+                  
+    <span class="language-python__orange">def</span> <span class="language-python__blue">ligar</span>(<span class="language-python__red">self</span>):
+      <span class="language-python__red">self</span>.ligada = True
+  
+    <span class="language-python__orange">def</span> <span class="language-python__blue">desligar</span>(<span class="language-python__red">self</span>):
+      <span class="language-python__red">self</span>.ligada = False
+  
+    <span class="language-python__orange">def</span> <span class="language-python__blue">mudar_canal</span>(<span class="language-python__red">self</span>,novo_canal):
+      <span class="language-python__orange">if</span> <span class="language-python__red">self</span>.ligada <span class="language-python__orange">and</span> <span class="language-python__blue">2</span> <span><= novo_canal <=</span> <span class="language-python__blue">13</span>;
+        <span class="language-python__red">self</span><span>.canal =  novo_canal</span>
+      <span class="language-python__orange">else</span>
+        <span class="language-python__grey">print</span>(<span class="language-python__green">"O televisor está desligado ou o canal não está disponível."</span>)
+  
+    <span class="language-python__orange">def</span> <span class="language-python__blue">aumentar_volume</span>(<span class="language-python__red">self</span>):
+      <span class="language-python__orange">if</span> <span class="language-python__red">self</span>.ligada <span class="language-python__orange">and</span> <span class="language-python__red">self</span><span>.volume <</span> <span class="language-python__blue">100</span>
+        <span class="language-python__red">self</span><span>.volume +=</span> <span class="language-python__blue">1</span>
+    
+    <span class="language-python__orange">def</span> <span class="language-python__blue">diminuir_volume</span>(<span class="language-python__red">self</span>):
+      <span class="language-python__orange">if</span> <span class="language-python__red">self</span>.ligada <span class="language-python__orange">and</span> <span class="language-python__red">self</span><span>.volume ></span> <span class="language-python__blue">0</span>
+        <span class="language-python__red">self</span><span>.volume -=</span> <span class="language-python__blue">1</span>
+    
+    <span class="language-python__orange">def</span> <span class="language-python__blue">mostrar_status</span>(<span class="language-python__red">self</span>):
+      <span>status =</span> <span class="language-python__green">"Ligada"</span> <span class="language-python__orange">if</span> <span class="language-python__red">self</span><span>.ligada</span> <span class="language-python__orange">else</span> <span class="language-python__green">"Desligada"</span>
+      <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"</span><span class="language-python__green">----------------------"</span><span>)</span>
+      <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"</span><span class="language-python__green">f"Status:</span> <span class="language-python__orange">{</span><span>status</span><span class="language-python__orange">}</span><span><span class="language-python__green">"</span>)</span>
+      <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"</span><span class="language-python__green">f"Canal:</span> <span class="language-python__orange">{</span><span class="language-python__red">self</span><span>.canal</span><span class="language-python__orange">}</span><span><span class="language-python__green">"</span>)</span>
+      <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"</span><span class="language-python__green">f"Volume: </span><span class="language-python__orange">{</span><span class="language-python__red">self</span><span>.volume</span><span class="language-python__orange">}</span><span><span class="language-python__green">"</span>)</span>
+      <span class="language-python__grey">print</span><span class="language-python__green">("------------------------")</span>
+  
+  
+    <span class="language-python__orange">def</span> <span class="language-python__blue">display</span>(<span class="language-python__red">self</span>):
+      <span class="language-python__orange">if</span> <span class="language-python__red">self</span>.ligada:</span> 
+      <span class="language-python__blue">print</span><span>(</span><span class="language-python__green">f"Canal:</span> <span class="language-python__orange">{</span><span class="language-python__red">self</span>.canal<span class="language-python__orange">}</span><span class="language-python__green">"</span>)
+      <span class="language-python__blue">print</span><span>(</span><span class="language-python__green">f"Canal:</span> <span class="language-python__orange">{</span><span class="language-python__red">self</span>.volume<span class="language-python__orange">}</span><span class="language-python__green">"</span>)
+  
+    <span class="language-python__grey"># Função para exibir o menu</span>
+    <span class="language-python__orange">def</span> <span class="language-python__blue">exibir_menu</span><span>():</span>
+      <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Digite uma operação para o Televisor:"</span><span>)</span>
+      <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"[L] Ligar"</span><span>)</span>
+      <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"[D] Desligar"</span><span>)</span>
+      <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"[T] Trocar canal"</span><span>)</span>
+      <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"[+] Aumentar volume"</span><span>)</span>
+      <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"[-] Diminuir volume"</span><span>)</span>
+      <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"[X] Sair"</span><span>)</span>
+  
+    <span class="language-python__grey"># Função principal</span>
+    <span class="language-python__orange">def</span> <span class="language-python__blue">main</span><span>():</span>
+      <span>televisor = Televisor()</span>
+      <span>televisor.mostrar_status()</span>
+      <span class="language-python__orange">while True</span><span>:</span>
+        <span>exibir_menu()</span>
+        <span>opcao =</span> <span class="language-python__grey">input</span><span>(</span><span class="language-python__green">"Escolha uma opção: "</span><span>).upper()</span>
+        
+        <span class="language-python__orange">if</span> <span>opcao ==</span> <span class="language-python__green">'L'</span><span>:</span>
+          <span>televisor.ligar()</span>
+        <span class="language-python__orange">elseif</span> <span>opcao ==</span> <span class="language-python__green">'D'</span><span>:</span>
+          <span>televisor.desligar()</span>
+        <span class="language-python__orange">elseif</span> <span>opcao ==</span> <span class="language-python__green">'T'</span><span>:</span>
+          <span>novo_canal =</span> <span class="language-python__grey">int</span><span>(</span><span class="language-python__grey">input</span><span>(</span><span class="language-python__green">"Digite o novo canal: "</span><span>))</span>
+        <span class="language-python__orange">elseif</span> <span>opcao ==</span> <span class="language-python__green">'+'</span><span>:</span>
+          <span>televisor.aumentar_volume()</span>
+        <span class="language-python__orange">elseif</span> <span>opcao ==</span> <span class="language-python__green">'-'</span><span>:</span>
+          <span>televisor.diminuir_volume()</span>
+        <span class="language-python__orange">elseif</span> <span>opcao ==</span> <span class="language-python__green">'x'</span><span>:</span>
+          <span class="language-python__orange">break</span>
+        <span class="language-python__orange">else</span> <span>:</span> 
+          <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Opção inválida. Tente novamente."</span><span>)</span>
+        
+        <span>televisor.mostrar_status()</span>
+  
+  <span class="language-python__orange">if</span> <span>__name__ ==</span> <span class="language-python__green">"__main__"</span><span>:</span>
+  
+    <span>main()</span>
+          
+                        </code>
+                      </pre>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">
+                        Fechar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="acessivel print">
+              <h3>Gabarito</h3>
+              <pre>
+                <code>
+<span class="language-python__orange">class</span> <span>Televisor</span>
+  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>): 
+    <span class="language-python__red">self</span>.canal = 2  <span class="language-python__grey"># Inicializa no canal 2</span>
+    <span class="language-python__red">self</span>.volume = 2  <span class="language-python__grey"># Inicializa com volume 0</span>
+    <span class="language-python__red">self</span>.ligada = <span class="language-python__orange">false</span>  <span class="language-python__grey"># Inicializa desligada</span>
+                
+  <span class="language-python__orange">def</span> <span class="language-python__blue">ligar</span>(<span class="language-python__red">self</span>):
+    <span class="language-python__red">self</span>.ligada = True
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">desligar</span>(<span class="language-python__red">self</span>):
+    <span class="language-python__red">self</span>.ligada = False
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">mudar_canal</span>(<span class="language-python__red">self</span>,novo_canal):
+    <span class="language-python__orange">if</span> <span class="language-python__red">self</span>.ligada <span class="language-python__orange">and</span> <span class="language-python__blue">2</span> <span><= novo_canal <=</span> <span class="language-python__blue">13</span>;
+      <span class="language-python__red">self</span><span>.canal =  novo_canal</span>
+    <span class="language-python__orange">else</span>
+      <span class="language-python__grey">print</span>(<span class="language-python__green">"O televisor está desligado ou o canal não está disponível."</span>)
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">aumentar_volume</span>(<span class="language-python__red">self</span>):
+    <span class="language-python__orange">if</span> <span class="language-python__red">self</span>.ligada <span class="language-python__orange">and</span> <span class="language-python__red">self</span><span>.volume <</span> <span class="language-python__blue">100</span>
+      <span class="language-python__red">self</span><span>.volume +=</span> <span class="language-python__blue">1</span>
+  
+  <span class="language-python__orange">def</span> <span class="language-python__blue">diminuir_volume</span>(<span class="language-python__red">self</span>):
+    <span class="language-python__orange">if</span> <span class="language-python__red">self</span>.ligada <span class="language-python__orange">and</span> <span class="language-python__red">self</span><span>.volume ></span> <span class="language-python__blue">0</span>
+      <span class="language-python__red">self</span><span>.volume -=</span> <span class="language-python__blue">1</span>
+  
+  <span class="language-python__orange">def</span> <span class="language-python__blue">mostrar_status</span>(<span class="language-python__red">self</span>):
+    <span>status =</span> <span class="language-python__green">"Ligada"</span> <span class="language-python__orange">if</span> <span class="language-python__red">self</span><span>.ligada</span> <span class="language-python__orange">else</span> <span class="language-python__green">"Desligada"</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"</span><span class="language-python__green">----------------------"</span><span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"</span><span class="language-python__green">f"Status:</span> <span class="language-python__orange">{</span><span>status</span><span class="language-python__orange">}</span><span><span class="language-python__green">"</span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"</span><span class="language-python__green">f"Canal:</span> <span class="language-python__orange">{</span><span class="language-python__red">self</span><span>.canal</span><span class="language-python__orange">}</span><span><span class="language-python__green">"</span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"</span><span class="language-python__green">f"Volume: </span><span class="language-python__orange">{</span><span class="language-python__red">self</span><span>.volume</span><span class="language-python__orange">}</span><span><span class="language-python__green">"</span>)</span>
+    <span class="language-python__grey">print</span><span class="language-python__green">("------------------------")</span>
+
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">display</span>(<span class="language-python__red">self</span>):
+    <span class="language-python__orange">if</span> <span class="language-python__red">self</span>.ligada:</span> 
+    <span class="language-python__blue">print</span><span>(</span><span class="language-python__green">f"Canal:</span> <span class="language-python__orange">{</span><span class="language-python__red">self</span>.canal<span class="language-python__orange">}</span><span class="language-python__green">"</span>)
+    <span class="language-python__blue">print</span><span>(</span><span class="language-python__green">f"Canal:</span> <span class="language-python__orange">{</span><span class="language-python__red">self</span>.volume<span class="language-python__orange">}</span><span class="language-python__green">"</span>)
+
+  <span class="language-python__grey"># Função para exibir o menu</span>
+  <span class="language-python__orange">def</span> <span class="language-python__blue">exibir_menu</span><span>():</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Digite uma operação para o Televisor:"</span><span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"[L] Ligar"</span><span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"[D] Desligar"</span><span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"[T] Trocar canal"</span><span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"[+] Aumentar volume"</span><span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"[-] Diminuir volume"</span><span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"[X] Sair"</span><span>)</span>
+
+  <span class="language-python__grey"># Função principal</span>
+  <span class="language-python__orange">def</span> <span class="language-python__blue">main</span><span>():</span>
+    <span>televisor = Televisor()</span>
+    <span>televisor.mostrar_status()</span>
+    <span class="language-python__orange">while True</span><span>:</span>
+      <span>exibir_menu()</span>
+      <span>opcao =</span> <span class="language-python__grey">input</span><span>(</span><span class="language-python__green">"Escolha uma opção: "</span><span>).upper()</span>
+      
+      <span class="language-python__orange">if</span> <span>opcao ==</span> <span class="language-python__green">'L'</span><span>:</span>
+        <span>televisor.ligar()</span>
+      <span class="language-python__orange">elseif</span> <span>opcao ==</span> <span class="language-python__green">'D'</span><span>:</span>
+        <span>televisor.desligar()</span>
+      <span class="language-python__orange">elseif</span> <span>opcao ==</span> <span class="language-python__green">'T'</span><span>:</span>
+        <span>novo_canal =</span> <span class="language-python__grey">int</span><span>(</span><span class="language-python__grey">input</span><span>(</span><span class="language-python__green">"Digite o novo canal: "</span><span>))</span>
+      <span class="language-python__orange">elseif</span> <span>opcao ==</span> <span class="language-python__green">'+'</span><span>:</span>
+        <span>televisor.aumentar_volume()</span>
+      <span class="language-python__orange">elseif</span> <span>opcao ==</span> <span class="language-python__green">'-'</span><span>:</span>
+        <span>televisor.diminuir_volume()</span>
+      <span class="language-python__orange">elseif</span> <span>opcao ==</span> <span class="language-python__green">'x'</span><span>:</span>
+        <span class="language-python__orange">break</span>
+      <span class="language-python__orange">else</span> <span>:</span> 
+        <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Opção inválida. Tente novamente."</span><span>)</span>
+      
+      <span>televisor.mostrar_status()</span>
+
+<span class="language-python__orange">if</span> <span>__name__ ==</span> <span class="language-python__green">"__main__"</span><span>:</span>
+
+  <span>main()</span>
+                </code>
+              </pre>
+            </div>
+            
+            <div class="destaque-pixel ">
+              <div class="icone-position-desafio">
+                <div class="caixa-destaque ">                  
+                  <p>Crie uma classe chamada calculadora que tenha os atributos valor1, valor2 e operação, e um método calcular() que deve retornar o resultado conforme os valores e operação escolhidos, as operações serão “+” para adição, “-“ para subtração, “*” para multiplicação e “/” para divisão.</p> 
+                </div>
+              </div>
+            </div>
+
+            <div class="no-print" aria-hidden="true">
+              <button
+                type="button"
+                class="btn btn-primary btn-lg btn-gabarito"
+                data-toggle="modal"
+                data-target="#gabarito4"
+              >GABARITO</button>
+            </div>
+
+            <div class="no-print">
+              <div
+                class="modal fade"
+                id="gabarito4"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="myModalLabel"
+                aria-live="polite"
+                aria-atomic="true"
+                aria-hidden="false"
+              >
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                      >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      <h4 class="modal-title" id="myModalLabel">Gabarito</h4>
+                    </div>
+                    <div class="modal-body">
+                      <pre>
+                        <code>
+<span class="language-python__orange">class</span> <span>Calculadora</span><span>:</span>
+  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span><span>, valor1, valor2, operacao):</span>  
+    <span class="language-python__red">self</span>.valor1 = valor1  
+    <span class="language-python__red">self</span>.valor2 = valor2  
+    <span class="language-python__red">self</span>.operacao  = operacao
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">calcular</span>(<span class="language-python__red">self</span>):
+  <span class="language-python__orange">if</span> <span class="language-python__red">self</span><span>.operacao ==</span> <span class="language-python__green">"+"</span><span>:</span>
+    <span class="language-python__grey">return</span><span class="language-python__green">self.valor1 + self.valor2</span>
+    <span class="language-python__orange">elseif</span> <span class="language-python__red">self</span><span>.operacao ==</span> <span class="language-python__green">"-"</span><span>:</span>
+    <span class="language-python__grey">return</span><span class="language-python__green">self.valor1 - self.valor2</span>
+    <span class="language-python__orange">elseif</span> <span class="language-python__red">self</span><span>.operacao ==</span> <span class="language-python__green">"*"</span><span>:</span>
+    <span class="language-python__grey">return</span><span class="language-python__green">self.valor1 * self.valor2</span>
+    <span class="language-python__orange">elseif</span> <span class="language-python__red">self</span><span>.operacao ==</span> <span class="language-python__green">"/"</span><span>:</span>
+      <span class="language-python__grey">if</span><span class="language-python__green">self.valor2 == 0:</span>
+        <span class="language-python__grey">return </span><span class="language-python__green">"Erro: Divisão por zero"</span>
+      <span class="language-python__grey">else</span>
+        <span class="language-python__grey">return </span><span class="language-python__green">self.valor1 / self.valor2</span>
+    <span class="language-python__grey">else</span>
+      <span class="language-python__grey">return </span><span class="language-python__green">"Operação inválida"</span>
+
+  <span class="language-python__grey"># Função para exibir o menu</span>
+  <span class="language-python__orange">def</span> <span class="language-python__blue">exibir_menu</span>():</span>
+    <span class="language-python__grey">print</span><span class="language-python__green">("Escolha a operação:")</span>
+    <span class="language-python__grey">print</span><span class="language-python__green">("[+] Soma")</span>
+    <span class="language-python__grey">print</span><span class="language-python__green">("[-] Subtração")</span>
+    <span class="language-python__grey">print</span><span class="language-python__green">("[*] Multiplicação")</span>
+    <span class="language-python__grey">print</span><span class="language-python__green">("[/] Divisão")</span>
+    <span class="language-python__grey">print</span><span class="language-python__green">("[x] Sair")</span>
+    
+  <span class="language-python__grey"># Função principal</span>
+  <span class="language-python__orange">def</span> <span class="language-python__blue">main</span>():</span>
+    <span class="language-python__orange">while</span> <span class="language-python__red">True</span><span>:</span>
+      <span>exibir_menu()</span>
+      <span class="language-python__orange">operacao</span> <span>=</span> <span class="language-python__grey">input</span><span>("</span><span class="language-python__green">Digite a operação desejada: </span><span>")</span>
+
+      <span class="language-python__orange">if</span> <span>operacao == </span> <span class="language-python__green">'x'</span><span>:</span>
+          <span>break</span>
+
+      <span class="language-python__orange">try</span>
+        <span class="language-python__orange">valor1</span> <span>= float(</span> <span class="language-python__grey">input</span><span>("</span><span class="language-python__green">Digite o primeiro valor: </span><span>"))</span>
+        <span class="language-python__orange">valor2</span> <span>= float(</span> <span class="language-python__grey">input</span><span>("</span><span class="language-python__green">Digite o segundo valor: </span><span>"))</span>
+      <span class="language-python__orange">except ValueError:</span>
+        <span class="language-python__grey">print</span><span class="language-python__green">("Valores inválidos. Tente novamente.")</span>
+        <span class="language-python__orange">continue</span>
+
+        <span class="language-python__blue">calculadora</span><span> = </span><span class="language-python__red">Calculadora</span><span>(</span><span class="language-python__blue">valor1</span><span>,</span><span class="language-python__blue">valor2</span><span>,</span><span class="language-python__blue">operacao</span><span>)</span>
+        <span class="language-python__blue">resultado</span><span> = </span><span class="language-python__red">calculadora</span><span>.</span><span class="language-python__blue">calcular()</span><span>
+
+        <span class="language-python__grey">print</span><span>(<span class="language-python__green">f"Resultado da operação</span><span>:</span> <span class="language-python__orange">{</span>valor1<span class="language-python__orange">}</span> <span class="language-python__orange">{</span>operacao<span class="language-python__orange">}</span> <span class="language-python__orange">{</span>valor2<span class="language-python__orange">}</span> = <span class="language-python__orange">{</span>resultado<span class="language-python__orange">}</span><span class="language-python__green">"</span></span><span>)</span>
+
+<span class="language-python__orange">if</span> <span>__name__ == </span> <span class="language-python__green">"__main__"</span><span>:</span>
+  <span>main()</span>
+                        </code>
+                      </pre>
+                      <p>Esse programa inclui um menu interativo com opções para escolher a operação. O usuário pode inserir os valores valor1 e valor2, e o programa realizará a operação desejada e mostrará o resultado. O programa continuará a funcionar até que o usuário escolha a opção de sair (digitar 'x').</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">
+                        Fechar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="acessivel print">
+              <pre>
+                <code>
+<span class="language-python__orange">class</span> <span>Calculadora</span><span>:</span>
+<span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span><span>, valor1, valor2, operacao):</span>  
+<span class="language-python__red">self</span>.valor1 = valor1  
+<span class="language-python__red">self</span>.valor2 = valor2  
+<span class="language-python__red">self</span>.operacao  = operacao
+
+<span class="language-python__orange">def</span> <span class="language-python__blue">calcular</span>(<span class="language-python__red">self</span>):
+<span class="language-python__orange">if</span> <span class="language-python__red">self</span><span>.operacao ==</span> <span class="language-python__green">"+"</span><span>:</span>
+<span class="language-python__grey">return</span><span class="language-python__green">self.valor1 + self.valor2</span>
+<span class="language-python__orange">elseif</span> <span class="language-python__red">self</span><span>.operacao ==</span> <span class="language-python__green">"-"</span><span>:</span>
+<span class="language-python__grey">return</span><span class="language-python__green">self.valor1 - self.valor2</span>
+<span class="language-python__orange">elseif</span> <span class="language-python__red">self</span><span>.operacao ==</span> <span class="language-python__green">"*"</span><span>:</span>
+<span class="language-python__grey">return</span><span class="language-python__green">self.valor1 * self.valor2</span>
+<span class="language-python__orange">elseif</span> <span class="language-python__red">self</span><span>.operacao ==</span> <span class="language-python__green">"/"</span><span>:</span>
+<span class="language-python__grey">if</span><span class="language-python__green">self.valor2 == 0:</span>
+<span class="language-python__grey">return </span><span class="language-python__green">"Erro: Divisão por zero"</span>
+<span class="language-python__grey">else</span>
+<span class="language-python__grey">return </span><span class="language-python__green">self.valor1 / self.valor2</span>
+<span class="language-python__grey">else</span>
+<span class="language-python__grey">return </span><span class="language-python__green">"Operação inválida"</span>
+
+<span class="language-python__grey"># Função para exibir o menu</span>
+<span class="language-python__orange">def</span> <span class="language-python__blue">exibir_menu</span>():</span>
+<span class="language-python__grey">print</span><span class="language-python__green">("Escolha a operação:")</span>
+<span class="language-python__grey">print</span><span class="language-python__green">("[+] Soma")</span>
+<span class="language-python__grey">print</span><span class="language-python__green">("[-] Subtração")</span>
+<span class="language-python__grey">print</span><span class="language-python__green">("[*] Multiplicação")</span>
+<span class="language-python__grey">print</span><span class="language-python__green">("[/] Divisão")</span>
+<span class="language-python__grey">print</span><span class="language-python__green">("[x] Sair")</span>
+
+<span class="language-python__grey"># Função principal</span>
+<span class="language-python__orange">def</span> <span class="language-python__blue">main</span>():</span>
+<span class="language-python__orange">while</span> <span class="language-python__red">True</span><span>:</span>
+<span>exibir_menu()</span>
+<span class="language-python__orange">operacao</span> <span>=</span> <span class="language-python__grey">input</span><span>("</span><span class="language-python__green">Digite a operação desejada: </span><span>")</span>
+
+<span class="language-python__orange">if</span> <span>operacao == </span> <span class="language-python__green">'x'</span><span>:</span>
+  <span>break</span>
+
+<span class="language-python__orange">try</span>
+<span class="language-python__orange">valor1</span> <span>= float(</span> <span class="language-python__grey">input</span><span>("</span><span class="language-python__green">Digite o primeiro valor: </span><span>"))</span>
+<span class="language-python__orange">valor2</span> <span>= float(</span> <span class="language-python__grey">input</span><span>("</span><span class="language-python__green">Digite o segundo valor: </span><span>"))</span>
+<span class="language-python__orange">except ValueError:</span>
+<span class="language-python__grey">print</span><span class="language-python__green">("Valores inválidos. Tente novamente.")</span>
+<span class="language-python__orange">continue</span>
+
+<span class="language-python__blue">calculadora</span><span> = </span><span class="language-python__red">Calculadora</span><span>(</span><span class="language-python__blue">valor1</span><span>,</span><span class="language-python__blue">valor2</span><span>,</span><span class="language-python__blue">operacao</span><span>)</span>
+<span class="language-python__blue">resultado</span><span> = </span><span class="language-python__red">calculadora</span><span>.</span><span class="language-python__blue">calcular()</span><span>
+
+<span class="language-python__grey">print</span><span>(<span class="language-python__green">f"Resultado da operação</span><span>:</span> <span class="language-python__orange">{</span>valor1<span class="language-python__orange">}</span> <span class="language-python__orange">{</span>operacao<span class="language-python__orange">}</span> <span class="language-python__orange">{</span>valor2<span class="language-python__orange">}</span> = <span class="language-python__orange">{</span>resultado<span class="language-python__orange">}</span><span class="language-python__green">"</span></span><span>)</span>
+
+<span class="language-python__orange">if</span> <span>__name__ == </span> <span class="language-python__green">"__main__"</span><span>:</span>
+<span>main()</span>
+                </code>
+              </pre>
+              <p>Esse programa inclui um menu interativo com opções para escolher a operação. O usuário pode inserir os valores valor1 e valor2, e o programa realizará a operação desejada e mostrará o resultado. O programa continuará a funcionar até que o usuário escolha a opção de sair (digitar 'x').</p>
+            </div>
+       
+            <h3>Variáveis de tipos primitivos e de referência em Python</h3>
+
+            <p>Python, em relação a outras linguagens orientadas a objetos, por exemplo, Python, tem abordagens diferentes em relação aos tipos primitivos e de referência. Em Python, todos os tipos de dados são objetos, o que significa que eles são armazenados como objetos, incluindo números inteiros, flutuantes, <i>strings</i> e outros tipos “simples”. Python também permite que você crie suas próprias classes (tipos de referência) com atributos e métodos personalizados, como visto até aqui.</p>
+
+            <p>Python faz uso extenso de objetos e referências, e a distinção entre tipos primitivos e de referência não é tão pronunciada quanto em Python. No entanto, essa diferença na abordagem de tipos não é tão visível no código Python do dia a dia, pois Python cuida da alocação de memória e gerenciamento de objetos automaticamente.</p>
+
+            <p>Em resumo, em Python, todos os tipos de dados são objetos, não é preciso se preocupar com a distinção entre tipos primitivos e de referência como em Python. Python é uma linguagem mais dinâmica e flexível nesse aspecto.</p>
+
+
+          </div>
+
+           <!-- Página 4 -->
+           <div class="pagina">
+            <h3>Métodos construtores</h3>
+
+            <p>Em Python, um método construtor é um método especial que é chamado quando um objeto de uma classe é criado. O método construtor é geralmente chamado <b>__init__</b> (com dois sublinhados antes e depois de init) e é usado para inicializar os atributos do objeto. Aqui estão detalhes sobre os métodos construtores em Python:</p>
+
+            <ul>
+              <li>
+                Nome e Convenção <p>O método construtor é chamado de __init__ por convenção, mas o nome pode ser alterado, embora não seja recomendado. O método <b>__init__</b> deve estar presente em cada classe que você cria, a menos que você herde um construtor de uma classe pai. </p>
+              </li>
+              <li>
+                Parâmetros <p>O método <b>__init__</b> pode receber parâmetros que são usados para inicializar os atributos do objeto. O primeiro parâmetro, por convenção, é sempre self, que se refere ao próprio objeto que está sendo criado. Os parâmetros subsequentes do <b>__init__</b> são usados para inicializar os atributos da classe. Por exemplo, se você tem uma classe Carro com atributos como marca, modelo e ano, você pode passar esses valores como parâmetros para o método <b>__init__</b>. </p>
+              </li>
+              <li>Inicialização de Atributos <p>Dentro do método <b>__init__</b>, você pode atribuir os valores dos parâmetros aos atributos da classe usando o formato self.atributo = valor.</p>
+              </li>
+              <li>
+                Chamada Automática <p>Quando você cria uma instância (objeto) da classe, o método __init__ é chamado automaticamente para inicializar os atributos da instância. Você não precisa chamar o método __init__ explicitamente.</p>
+              </li>
+            </ul>
+
+            <p>Veja:</p>
+
+            <pre>
+              <code>
+<span class="language-python__orange">class</span> <span>Carro:</span> 
+  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span><span>(</span><span class="language-python__red">self</span><span>, marca=</span><span class="language-python__green">"Desconhecida"</span><span>, modelo=</span><span class="language-python__green">"Desconhecido"</span><span>, ano=</span><span class="language-python__blue">0</span><span>):</span> 
+    <span class="language-python__red">self</span>.marca = marca 
+    <span class="language-python__red">self</span>.modelo = modelo 
+    <span class="language-python__red">self</span>.ano = ano 
+ 
+<span class="language-python__grey"># Criando instâncias da classe Carro com diferentes construtores</span>
+<span>carro1 = Carro(</span><span class="language-python__green">"Toyota"</span><span>,</span> <span class="language-python__green">"Corolla"</span><span>,</span> <span class="language-python__blue">2022</span><span>)</span> 
+<span>carro2 = Carro(</span><span class="language-python__green">"Honda"</span><span>,</span> <span class="language-python__green">"Civic"</span><span>)</span> 
+<span>carro3 = Carro()</span> 
+ 
+<span class="language-python__grey">print</span><span>(carro1.marca, carro1.modelo, carro1.ano)</span><span class="language-python__grey">  # Output: Toyota Corolla 2022 </span> 
+
+<span class="language-python__grey">print</span><span>(carro2.marca, carro2.modelo, carro2.ano)</span><span class="language-python__grey">  # Output: Honda Civic 0 </span>
+
+<span class="language-python__grey">print</span><span>(carro3.marca, carro3.modelo, carro3.ano)</span><span class="language-python__grey">  # Output: Desconhecida Desconhecido 0 </span>
+              </code>
+            </pre>
+          
+
+          <p>Saída na console:</p>
+          <pre>
+            <code>
+<span>Toyota Corolla 2022</span>
+
+<span>Honda Civic 0</span>
+
+<span>Desconhecida Desconhecido 0 </span>
+
+<span>Process finished with exit code 0</span>
+            </code>
+          </pre>
+
+          <p>Nesse exemplo, a classe Carro tem um único método construtor __init, mas com argumentos-padrão para os atributos. Isso permite que você crie instâncias da classe com diferentes conjuntos de valores, dependendo dos argumentos fornecidos durante a criação do objeto. Se um valor não for fornecido, ele assume o valor-padrão.</p>
+
+          <p>São métodos chamados sempre que um novo objeto é criado e possibilita uma série de comandos que permitem a inicialização dos valores que serão guardados nos atributos. É importante frisar que este tipo de método não retorna nenhum tipo de valor.</p>
+
+          <div class="destaque-pixel ">
+            <div class="icone-position-desafio">
+              <div class="caixa-destaque ">    
+                <p>No método construtor, <b>sempre terá o mesmo nome da classe</b> à qual ele se refere.</p>
+              </div>
+            </div>
+          </div>
+
+          </div>
+
+
+          <!-- Página 5 -->
+          <div class="pagina">
+            <h3>Associações entre objetos</h3>
+            
+            <p>Um sistema não será formado apenas por uma classe. E provavelmente várias dessas classes se relacionarão com outras. São chamados de associação os arranjos em que uma classe tem alguma ligação (geralmente um atributo) com outra classe.</p>
+            
+            <p>Em Python, a associação entre objetos permite que um objeto seja incluído como um atributo em outra classe. Essa é uma forma de modelar relações entre objetos do mundo real. Um exemplo de como criar uma classe Funcionario com os atributos nome, cargo, dataNascimento e salario e uma classe Empresa com os atributos nome, cnpj e gerente, em que gerente é um objeto da classe Funcionario. A seguir, veja métodos para listar os atributos de funcionários e os atributos da empresa. </p>            
+            
+            <pre>
+              <code>
+<span class="language-python__orange">class</span> <span>Funcionario:</span> 
+  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span><span>, nome, cargo, dataNascimento, salario):</span> 
+    <span class="language-python__red">self</span><span>.nome = nome</span> 
+    <span class="language-python__red">self</span><span>.cargo = cargo</span> 
+    <span class="language-python__red">self</span><span>.dataNascimento = dataNascimento</span> 
+    <span class="language-python__red">self</span><span>.salario = salario</span> 
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">listar_atributos</span><span>(</span><span class="language-python__red">self</span><span>):</span> 
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Nome:"</span>, <span class="language-python__red">self</span>.nome<span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Cargo:"</span>, <span class="language-python__red">self</span>.cargo<span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Data de Nascimento:"</span>, <span class="language-python__red">self</span>.dataNascimento<span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Salário:"</span>, <span class="language-python__red">self</span>.salario<span>)</span> 
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"------------------------"</span><span>)</span>
+    
+ 
+<span class="language-python__orange">class</span> <span>Empresa:</span>
+  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span><span>, nome, cnpj, gerente):</span>
+    <span class="language-python__red">self</span><span>.nome = nome</span> 
+    <span class="language-python__red">self</span><span>.cnpj = cnpj</span> 
+    <span class="language-python__red">self</span><span>.gerente = gerente</span> <span class="language-python__grey"># O gerente é um objeto da classe Funcionario</span>
+
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">listar_atributos</span><span>(</span><span class="language-python__red">self</span><span>):</span> 
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Nome da Empresa:"</span>, <span class="language-python__red">self</span>.nome<span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"CNPJ:"</span>, <span class="language-python__red">self</span>.cnpj<span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Gerente:"</span>, <span class="language-python__red">self</span>.gerente.listar_atributos()<span>)</span> 
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"------------------------"</span><span>)</span>
+
+<span class="language-python__grey"># Criando um funcionário</span>
+<span>funcionario1 = Funcionario(</span><span class="language-python__green">"João Silva"</span><span>,</span><span class="language-python__green">"Gerente de Vendas"</span><span>,</span><span class="language-python__green">"01/05/1985"</span><span>,</span> <span class="language-python__blue">5000.0</span><span>)</span> 
+
+<span class="language-python__grey"># Criando uma empresa com o funcionário como gerente</span>
+<span>empresa1 = Empresa(</span><span class="language-python__green">"Minha Empresa"</span><span>,</span><span class="language-python__green">"1234567890"</span><span>,</span><span>funcionario1</span><span>)</span> 
+ 
+<span class="language-python__grey"># Listando atributos do funcionário</span>
+<span>funcionario1.listar_atributos()</span> 
+ 
+<span class="language-python__grey"># Listando atributos da empresa, incluindo o gerente</span>
+<span>empresa1.listar_atributos()</span> 
+              </code>
+            </pre>
+
+            <p>É possível ir além e representar na classe a lista de funcionários que a empresa emprega. Para isso, adiciona-se um atributo à classe Empresa que seja uma lista para representar todos os objetos Funcionario da empresa. Veja o exemplo:</p>
+
+            <pre>
+              <code>
+<span class="language-python__orange">class</span> <span>Funcionario:</span> 
+  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span><span>, nome, cargo, dataNascimento, salario):</span> 
+    <span class="language-python__red">self</span><span>.nome = nome</span> 
+    <span class="language-python__red">self</span><span>.cargo = cargo</span> 
+    <span class="language-python__red">self</span><span>.dataNascimento = dataNascimento</span> 
+    <span class="language-python__red">self</span><span>.salario = salario</span>
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">listar_atributos</span><span>(</span><span class="language-python__red">self</span><span>):</span> 
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Nome:"</span>, <span class="language-python__red">self</span>.nome<span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Cargo:"</span>, <span class="language-python__red">self</span>.cargo<span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Data de Nascimento:"</span>, <span class="language-python__red">self</span>.dataNascimento<span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Salário:"</span>, <span class="language-python__red">self</span>.salario<span>)</span> 
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"------------------------"</span><span>)</span>
+
+<span class="language-python__orange">class</span> <span>Empresa:</span>
+  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span><span>, nome, cnpj, gerente):</span>
+    <span class="language-python__red">self</span><span>.nome = nome</span> 
+    <span class="language-python__red">self</span><span>.cnpj = cnpj</span> 
+    <span class="language-python__red">self</span><span>.gerente = gerente</span> 
+    <span class="language-python__red">self</span><span>.funcionarios = []</span> <span class="language-python__grey"># Lista de funcionários</span> 
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">adicionar_funcionario</span><span>(</span><span class="language-python__red">self</span>, funcionario<span>):</span>
+    <span class="language-python__red">self</span><span>.funcionarios.append(funcionario)</span>
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">listar_atributos</span><span>(</span><span class="language-python__red">self</span><span>):</span> 
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Nome da Empresa:"</span>, <span class="language-python__red">self</span>.nome<span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"CNPJ:"</span>, <span class="language-python__red">self</span>.cnpj<span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Gerente:"</span>, <span class="language-python__red">self</span>.gerente.listar_atributos()<span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Funcionários:"</span><span>)</span>
+    <span class="language-python__orange">for</span> <span>funcionario</span> <span class="language-python__orange">in</span> <span class="language-python__red">self</span><span>.funcionarios:</span>
+      <span>funcionario.listar_atributos()</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"------------------------"</span><span>)</span>
+
+    <span class="language-python__grey"># Criando funcionários</span>
+    <span>funcionario1 = Funcionario(</span><span class="language-python__green">"João Silva"</span><span>,</span><span class="language-python__green">"Gerente de Vendas"</span><span>,</span><span class="language-python__green">"01/05/1985"</span><span>,</span> <span class="language-python__blue">5000.0</span><span>)</span>
+    <span>funcionario2 = Funcionario(</span><span class="language-python__green">"Maria Souza"</span><span>,</span><span class="language-python__green">"Analista de Marketing"</span><span>,</span><span class="language-python__green">"15/08/1990"</span><span>,</span> <span class="language-python__blue">3500.0</span><span>)</span>
+
+    <span class="language-python__grey"># Criando uma empresa com funcionários</span>
+      <span>empresa1 = Empresa(</span><span class="language-python__green">"Minha Empresa"</span><span>,</span><span class="language-python__green">"1234567890"</span><span>,</span><span>funcionario1</span><span>)</span>
+    
+    <span class="language-python__grey"># Adicionando funcionário à lista de funcionários da empresa</span>
+      <span>empresa1.adicionar_funcionario(funcionario2)</span>
+
+    <span class="language-python__grey"># Listando atributos da empresa, incluindo o gerente e os funcionários</span>
+      <span>empresa1.listar_atributos()</span>
+              </code>
+            </pre>
+
+            <p>Neste exemplo, adicionamos um atributo funcionarios na classe Empresa, que é uma lista para representar todos os objetos Funcionario da empresa. Também criamos um método adicionar_funcionario na classe Empresa para adicionar funcionários à lista. O método listar_atributos foi atualizado para listar os atributos dos funcionários da empresa.</p>
+
+            <p>Dessa forma, você pode adicionar, listar e gerenciar múltiplos funcionários associados a uma empresa.</p>
+
+            <div class="destaque-pixel ">
+              <div class="icone-position-desafio">
+                <div class="caixa-destaque ">                  
+                  <p><b>Desafio</b>: no mesmo projeto acima, crie uma nova classe “Venda” que mantenha o total vendido (double) e o vendedor que a realizou.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="no-print" aria-hidden="true">
+              <button
+                type="button"
+                class="btn btn-primary btn-lg btn-gabarito"
+                data-toggle="modal"
+                data-target="#gabarito5"
+              >GABARITO</button>
+            </div>
+
+            <div class="no-print">
+              <div
+                class="modal fade"
+                id="gabarito5"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="myModalLabel"
+                aria-live="polite"
+                aria-atomic="true"
+                aria-hidden="false"
+              >
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                      >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      <h4 class="modal-title" id="myModalLabel">GABARITO DESAFIO:</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p>Adicionar uma nova classe chamada Venda ao mesmo projeto. A classe Venda pode manter informações sobre o total vendido (um valor em ponto flutuante, geralmente representando o valor monetário da venda) e o vendedor que a realizou (um objeto da classe Funcionario). Aqui está como você pode fazer isso: </p>
+                      <pre>
+                        <code>
+<span class="language-python__orange">class</span> <span>Funcionario:</span> 
+  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span><span>(</span><span class="language-python__red">self</span><span>, nome, cargo, dataNascimento, salario):</span> 
+    <span class="language-python__red">self</span><span>.nome = nome</span> 
+    <span class="language-python__red">self</span><span>.cargo = cargo</span> 
+    <span class="language-python__red">self</span><span>.dataNascimento = dataNascimento</span> 
+    <span class="language-python__red">self</span><span>.salario = salario</span>
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">listar_atributos</span><span>(</span><span class="language-python__red">self</span><span>):</span> 
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Nome:"</span>, <span class="language-python__red">self</span>.nome<span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Cargo:"</span>, <span class="language-python__red">self</span>.cargo<span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Data de Nascimento:"</span>, <span class="language-python__red">self</span>.dataNascimento<span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Salário:"</span>, <span class="language-python__red">self</span>.salario<span>)</span> 
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"------------------------"</span><span>)</span>
+
+<span class="language-python__orange">class</span> <span>Empresa:</span>
+  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span><span>, nome, cnpj, gerente):</span>
+    <span class="language-python__red">self</span><span>.nome = nome</span> 
+    <span class="language-python__red">self</span><span>.cnpj = cnpj</span> 
+    <span class="language-python__red">self</span><span>.gerente = gerente</span> 
+    <span class="language-python__red">self</span><span>.funcionarios = []</span> <span class="language-python__grey"># Lista de funcionários</span> 
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">adicionar_funcionario</span><span>(</span><span class="language-python__red">self</span>, funcionario<span>):</span>
+    <span class="language-python__red">self</span><span>.funcionarios.append(funcionario)</span>
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">listar_atributos</span><span>(</span><span class="language-python__red">self</span><span>):</span> 
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Nome da Empresa:"</span>, <span class="language-python__red">self</span>.nome<span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"CNPJ:"</span>, <span class="language-python__red">self</span>.cnpj<span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Gerente:"</span>, <span class="language-python__red">self</span>.gerente.listar_atributos()<span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Funcionários:"</span><span>)</span>
+    <span class="language-python__orange">for</span> <span>funcionario</span> <span class="language-python__orange">in</span> <span class="language-python__red">self</span><span>.funcionarios:</span>
+      <span>funcionario.listar_atributos()</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"------------------------"</span><span>)</span>
+
+<span class="language-python__orange">class</span> <span>Venda:</span> 
+  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>span>(</span><span class="language-python__red">self</span><span>, total, vendedor):</span> 
+  <span class="language-python__red">self</span><span>.total = total</span> 
+  <span class="language-python__red">self</span><span>.vendedor = vendedor</span> 
+ 
+  <span class="language-python__orange">def</span> <span class="language-python__green">listar_detalhes</span><span>(</span><span class="language-python__red">self</span><span>):</span> 
+        <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Total da Venda:"</span><span>,</span> <span class="language-python__red">self</span><span>.total)</span> 
+        <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Vendedor:"</span><span>)</span> 
+        <span class="language-python__red">self</span><span><span>.vendedor.listar_atributos()</span> 
+        <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"------------------------"</span><span>)</span> 
+
+<span class="language-python__grey"># Criando funcionários</span>
+<span>funcionario1 = Funcionario(</span><span class="language-python__green">"João Silva"</span><span>,</span><span class="language-python__green">"Gerente de Vendas"</span><span>,</span><span class="language-python__green">"01/05/1985"</span><span>,</span> <span class="language-python__blue">5000.0</span><span>)</span>
+<span>funcionario2 = Funcionario(</span><span class="language-python__green">"Maria Souza"</span><span>,</span><span class="language-python__green">"Analista de Marketing"</span><span>,</span><span class="language-python__green">"15/08/1990"</span><span>,</span> <span class="language-python__blue">3500.0</span><span>)</span>
+
+<span class="language-python__grey"># Criando uma empresa com funcionários</span>
+  <span>empresa1 = Empresa(</span><span class="language-python__green">"Minha Empresa"</span><span>,</span><span class="language-python__green">"1234567890"</span><span>,</span><span>funcionario1</span><span>)</span>
+
+<span class="language-python__grey"># Adicionando funcionário à lista de funcionários da empresa</span>
+  <span>empresa1.adicionar_funcionario(funcionario2)</span>
+
+<span class="language-python__grey"># Listando atributos da empresa, incluindo o gerente e os funcionários</span>
+  <span>empresa1.listar_atributos()</span>
+                        </code>
+                      </pre>
+                      <p>Esse programa inclui um menu interativo com opções para escolher a operação. O usuário pode inserir os valores valor1 e valor2, e o programa realizará a operação desejada e mostrará o resultado. O programa continuará a funcionar até que o usuário escolha a opção de sair (digitar 'x').</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">
+                        Fechar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="acessivel print">
+              <h4>GABARITO DESAFIO:</h4>
+                    
+                <p>Adicionar uma nova classe chamada Venda ao mesmo projeto. A classe Venda pode manter informações sobre o total vendido (um valor em ponto flutuante, geralmente representando o valor monetário da venda) e o vendedor que a realizou (um objeto da classe Funcionario). Aqui está como você pode fazer isso: </p>
+                <pre>
+                  <code>
+<span class="language-python__orange">class</span> <span>Funcionario:</span> 
+  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span><span>(</span><span class="language-python__red">self</span><span>, nome, cargo, dataNascimento, salario):</span> 
+    <span class="language-python__red">self</span><span>.nome = nome</span> 
+    <span class="language-python__red">self</span><span>.cargo = cargo</span> 
+    <span class="language-python__red">self</span><span>.dataNascimento = dataNascimento</span> 
+    <span class="language-python__red">self</span><span>.salario = salario</span>
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">listar_atributos</span><span>(</span><span class="language-python__red">self</span><span>):</span> 
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Nome:"</span>, <span class="language-python__red">self</span>.nome<span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Cargo:"</span>, <span class="language-python__red">self</span>.cargo<span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Data de Nascimento:"</span>, <span class="language-python__red">self</span>.dataNascimento<span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Salário:"</span>, <span class="language-python__red">self</span>.salario<span>)</span> 
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"------------------------"</span><span>)</span>
+
+<span class="language-python__orange">class</span> <span>Empresa:</span>
+  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span><span>, nome, cnpj, gerente):</span>
+    <span class="language-python__red">self</span><span>.nome = nome</span> 
+    <span class="language-python__red">self</span><span>.cnpj = cnpj</span> 
+    <span class="language-python__red">self</span><span>.gerente = gerente</span> 
+    <span class="language-python__red">self</span><span>.funcionarios = []</span> <span class="language-python__grey"># Lista de funcionários</span> 
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">adicionar_funcionario</span><span>(</span><span class="language-python__red">self</span>, funcionario<span>):</span>
+    <span class="language-python__red">self</span><span>.funcionarios.append(funcionario)</span>
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">listar_atributos</span><span>(</span><span class="language-python__red">self</span><span>):</span> 
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Nome da Empresa:"</span>, <span class="language-python__red">self</span>.nome<span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"CNPJ:"</span>, <span class="language-python__red">self</span>.cnpj<span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Gerente:"</span>, <span class="language-python__red">self</span>.gerente.listar_atributos()<span>)</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Funcionários:"</span><span>)</span>
+    <span class="language-python__orange">for</span> <span>funcionario</span> <span class="language-python__orange">in</span> <span class="language-python__red">self</span><span>.funcionarios:</span>
+      <span>funcionario.listar_atributos()</span>
+    <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"------------------------"</span><span>)</span>
+
+<span class="language-python__orange">class</span> <span>Venda:</span> 
+  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>span>(</span><span class="language-python__red">self</span><span>, total, vendedor):</span> 
+  <span class="language-python__red">self</span><span>.total = total</span> 
+  <span class="language-python__red">self</span><span>.vendedor = vendedor</span> 
+ 
+  <span class="language-python__orange">def</span> <span class="language-python__green">listar_detalhes</span><span>(</span><span class="language-python__red">self</span><span>):</span> 
+        <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Total da Venda:"</span><span>,</span> <span class="language-python__red">self</span><span>.total)</span> 
+        <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"Vendedor:"</span><span>)</span> 
+        <span class="language-python__red">self</span><span><span>.vendedor.listar_atributos()</span> 
+        <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"------------------------"</span><span>)</span> 
+
+<span class="language-python__grey"># Criando funcionários</span>
+<span>funcionario1 = Funcionario(</span><span class="language-python__green">"João Silva"</span><span>,</span><span class="language-python__green">"Gerente de Vendas"</span><span>,</span><span class="language-python__green">"01/05/1985"</span><span>,</span> <span class="language-python__blue">5000.0</span><span>)</span>
+<span>funcionario2 = Funcionario(</span><span class="language-python__green">"Maria Souza"</span><span>,</span><span class="language-python__green">"Analista de Marketing"</span><span>,</span><span class="language-python__green">"15/08/1990"</span><span>,</span> <span class="language-python__blue">3500.0</span><span>)</span>
+
+<span class="language-python__grey"># Criando uma empresa com funcionários</span>
+  <span>empresa1 = Empresa(</span><span class="language-python__green">"Minha Empresa"</span><span>,</span><span class="language-python__green">"1234567890"</span><span>,</span><span>funcionario1</span><span>)</span>
+
+<span class="language-python__grey"># Adicionando funcionário à lista de funcionários da empresa</span>
+  <span>empresa1.adicionar_funcionario(funcionario2)</span>
+
+<span class="language-python__grey"># Listando atributos da empresa, incluindo o gerente e os funcionários</span>
+  <span>empresa1.listar_atributos()</span>
+                  </code>
+                </pre>
+                <p>Esse programa inclui um menu interativo com opções para escolher a operação. O usuário pode inserir os valores valor1 e valor2, e o programa realizará a operação desejada e mostrará o resultado. O programa continuará a funcionar até que o usuário escolha a opção de sair (digitar 'x').</p>
+            </div>
+
+            <p>A classe Venda tem dois atributos: total para armazenar o valor da venda e vendedor que é um objeto da classe Funcionario representando o vendedor da venda.</p>
+
+            <p>O método listar_detalhes na classe Venda é usado para listar os detalhes da venda, incluindo o valor total e os atributos do vendedor.</p>
+
+            <p>Você pode criar várias instâncias da classe Venda para registrar várias vendas, cada uma associada a um vendedor específico. Isso permite rastrear as vendas e os vendedores que as realizaram no contexto da sua empresa.</p>
+
+          </div>
+
+          <!-- Página 6 -->
+          <div class="pagina">
+            <h3><b>MÓDULOS E PACOTES EM PYTHON</b></h3>
+
+            <p>Em Python, existe uma funcionalidade semelhante aos pacotes em Python, chamada de "módulos" e "pacotes". Os módulos são arquivos Python individuais (.py) que contêm código, enquanto os pacotes são diretórios que contêm vários módulos relacionados.</p>
+
+            <p>Por padrão, ao criar um projeto no NetBeans, gera-se um pacote de mesmo nome do projeto.</p>
+
+            <p><b>Módulos</b>: Em Python, um módulo é um arquivo que contém código Python reutilizável. Você pode importar módulos em outros arquivos Python para reutilizar código. Para criar um módulo, basta criar um arquivo Python (.py) com funções, classes e variáveis e, em seguida, você pode importá-lo em outros scripts. Exemplo de criação de módulo:</p>
+
+            <p>Salve um arquivo Python com o nome: math_operations.py</p>
+
+            <pre>
+              <code>
+<span class="language-python__grey"># math_operations.py</span>
+<span class="language-python__orange">def</span> <span class="language-python__blue">add</span><span>(a, b):</span>
+  <span class="language-python__orange">return</span> <span>a + b</span>
+
+<span class="language-python__orange">def</span> <span class="language-python__blue">subtract</span><span>(a, b):</span>
+  <span class="language-python__orange">return</span> <span>a - b</span>          
+              </code>
+            </pre>
+
+            <p>Exemplo de uso de módulo:</p>
+
+            <p>Salve um arquivo .Python com o nome: uso_modulo.py.</p>
+
+            <pre>
+              <code>
+<span class="language-python__grey"># uso_modulo.py</span>
+<span class="language-python__orange">from</span> <span>math_operations</span> <span class="language-python__orange">import</span> <span>add, subtract</span>
+<span>result = add(</span><span class="language-python__blue">5</span><span>,</span> <span class="language-python__blue">3</span><span>)</span>
+<span class="language-python__grey">print (</span><span class="language-python__green">"5 + 3 = "</span><span>,result)</span>
+              </code>
+            </pre>
+
+            <p><b>Pacotes</b>: Os pacotes são diretórios que contêm módulos relacionados. Eles são usados para organizar seu código de forma mais estruturada. Um pacote é representado por um diretório que contém um arquivo especial chamado __init__.py (mesmo que este arquivo esteja vazio). Os módulos dentro do diretório podem ser importados usando notação de ponto.</p>
+            <p>Exemplo de estrutura de pacotes:</p>
+
+            <pre class="estrutura_pacotes">
+              <code >
+meu_pacote/ 
+
+├── __init__.py 
+
+├── modulo1.py 
+
+├── modulo2.py 
+
+└── subpacote/ 
+
+    ├── __init__.py 
+
+    └── modulo3.py 
+              </code>
+            </pre>
+            
+
+            <p>Exemplo do uso de Pacotes:</p>
+
+            <pre>
+              <code>
+<span class="language-python__orange">from</span> <span>meu_pacote </span> <span class="language-python__orange">import</span> <span>modulo1</span>
+<span class="language-python__orange">from</span> <span>meu_pacote.subpacote </span> <span class="language-python__orange">import</span> <span>modulo3</span>
+
+<span>resultado1 = modulo1.funcao_modulo1()</span>
+<span>resultado2 = modulo3.funcao_modulo3()</span>
+              </code>
+            </pre>
+
+            <p>Os pacotes e módulos em Python ajudam na organização e modularização do código, tornando-o mais fácil de gerenciar e reutilizar. Você pode criar pacotes e módulos para dividir seu código em partes lógicas e evitar a poluição do espaço de nomes global.</p>
+
+            
+            <pre>
+              <code>
+
+
+                <h1>ESPERA VIDEO</h1>
+
+
+
+              </code>
+            </pre>
+
+            <div class="acessivel print">
+              <p>Uma maneira conveniente de visualizar a estrutura de pacotes e módulos em seu projeto Python. A ferramenta que permite fazer isso é chamada de "Project View" (Visualização de Projeto). Com a Visualização de Projeto, você pode ver e explorar a estrutura do seu projeto, incluindo os pacotes e módulos que fazem parte dele. Aqui estão os passos para acessar e utilizar a Visualização de Projeto:</p>
+              <ol>
+                <li><b>Abra a Visualização de Projeto</b>: 
+                  <ul>
+                    <li>
+                      Na maioria das versões do PyCharm, você pode abrir a Visualização de Projeto na barra lateral à esquerda da janela principal. 
+                    </li>
+                    <li>
+                      Se você não vê a barra lateral, pode ativá-la pressionando "Alt + 1" no Windows/Linux ou "Command + 1" no macOS. Isso abrirá a Visualização de Projeto. 
+                    </li>
+                  </ul>
+                </li>
+                <li><b>Navegue na Estrutura do Projeto</b>:
+                  <ul>
+                    <li>
+                      Na Visualização de Projeto, você verá a estrutura do seu projeto, incluindo diretórios, pacotes e módulos.
+                    </li>
+                    <li>
+                      Clique nas setas ao lado de diretórios e pacotes para expandi-los e visualizar seu conteúdo.
+                    </li>
+                  </ul>
+                </li>
+                <li><b>Examine Pacotes e Módulos</b>:
+                  <ul>
+                    <li>Ao expandir pacotes, você verá todos os módulos Python contidos neles. Você pode clicar em um módulo para abri-lo no editor.
+                    </li>
+                    <li>Você também pode clicar com o botão direito em pacotes e módulos para acessar opções como criar novos arquivos ou pastas.</li>
+                  </ul>
+                </li>
+                <li><b>Pesquise Recursos</b>:
+                  <ul>
+                    <li>Use a barra de pesquisa na parte superior da Visualização de Projeto para encontrar rapidamente pacotes, módulos ou qualquer outro recurso em seu projeto.</li>
+                  </ul>
+                </li>
+                <li><b>Arraste e Solte</b>:
+                  <ul>
+                    <li>Você pode arrastar e soltar pacotes, módulos e arquivos diretamente na Visualização de Projeto para reorganizá-los em seu projeto.</li>
+                  </ul>
+                </li>
+              </ol>
+              <p>A Visualização de Projeto é uma ferramenta poderosa para navegar e gerenciar a estrutura do seu projeto Python no PyCharm. Isso torna mais fácil encontrar, abrir e organizar pacotes e módulos em seu projeto de desenvolvimento.</p>
+            </div>
+          </div>
+
+          <!-- Página 7 -->
+          <div class="pagina">
+            <h3>Modificadores de acesso em PYTHON</h3>
+
+            <p>Em Python, os modificadores de acesso são usados para controlar a visibilidade dos membros de uma classe (atributos e métodos) a partir de fora da classe. No entanto, Python não segue exatamente o mesmo modelo de modificadores de acesso que outras linguagens, como Python. Em vez disso, Python usa convenções para indicar a visibilidade. Aqui estão as convenções e exemplos:</p>
+
+            <p><b>Público (Public)</b>: Os membros de uma classe que não têm um prefixo especial são considerados públicos e podem ser acessados de qualquer lugar, dentro ou fora da classe.Exemplo:</p>
+
+            <pre>
+              <code>
+<span class="language-python__orange">class</span> MinhaClasse: 
+  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>): 
+  <span class="language-python__red">self</span>.atributo_publico = <span class="language-python__blue">10</span> 
+             
+<span>objeto = MinhaClasse()</span> 
+<span class="language-python__grey">print</span>(objeto.atributo_publico)  <span class="language-python__grey"># Acesso ao atributo público</span> 
+              </code>
+            </pre>
+
+            <p><b>Privado (Private)</b>: Os membros de uma classe podem ser tornados privados prefixando-os com um sublinhado duplo __. Embora isso não impeça o acesso, é uma convenção que indica que o membro deve ser tratado como privado e não deve ser acessado diretamente de fora da classe. Exemplo:</p>
+
+            <pre>
+              <code>
+<span class="language-python__orange">class</span> MinhaClasse: 
+  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>): 
+  <span class="language-python__red">self</span>__.atributo_privado = <span class="language-python__blue">20</span> 
+             
+<span>objeto = MinhaClasse()</span> 
+<span class="language-python__grey"># Isso não é recomendado, mas é possível</span> 
+<span class="language-python__grey">print</span>(objeto.atributo_privado)  
+              </code>
+            </pre>
+
+            <p><b>Padrão (Default)</b>: Os membros que não têm um prefixo especial são considerados públicos por padrão. No entanto, é uma convenção que membros que começam com um sublinhado simples _ (por exemplo, _atributo) são considerados como membros "protegidos", embora ainda possam ser acessados de fora da classe. Exemplo:</p>
+
+            <pre>
+              <code>
+<span class="language-python__orange">class</span> MinhaClasse: 
+  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>): 
+  <span class="language-python__red">self</span>_.atributo_privado = <span class="language-python__blue">30</span> 
+              
+<span>objeto = MinhaClasse()</span> 
+ 
+<span class="language-python__grey">print</span>(atributo_privado) <span class="language-python__grey"># Acesso a um atributo "protegido"</span>
+              </code>
+            </pre>
+
+            <p><b>Protegido (Protected)</b>: Embora Python não tenha um modificador de acesso "protected" como em algumas outras linguagens, é uma convenção que membros com um sublinhado simples _ como prefixo (por exemplo, _atributo) são considerados como "protegidos". Isso significa que eles não devem ser acessados diretamente de fora da classe, mas isso não é fortemente aplicado.Exemplo: </p>
+
+            <pre>
+              <code>
+<span class="language-python__orange">class</span> MinhaClasse: 
+  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>): 
+  <span class="language-python__red">self</span>._atributo_protegido = <span class="language-python__blue">30</span> 
+             
+<span>objeto = MinhaClasse()</span> 
+<span class="language-python__grey"># Embora seja possível, não é recomendado</span> 
+<span class="language-python__grey">print</span>(objeto._atributo_protegido) 
+              </code>
+            </pre>
+
+            <p>Em resumo, Python usa convenções de nomenclatura para indicar a visibilidade de membros de classes, <b>mas essas convenções são amplamente baseadas na confiança do programador em seguir boas práticas</b>. Python confia nos programadores para tratar membros como privados ou protegidos com responsabilidade e não impõe restrições rígidas de acesso como em algumas outras linguagens. Portanto, é essencial entender as convenções e usá-las adequadamente para manter o código organizado e seguro.</p>
+
+            <div class="destaque-pixel ">
+              <div class="icone-position-desafio">
+                <div class="caixa-destaque ">    
+                  Desafio: retome o projeto TesteTV exemplificado anteriormente. Proteja seus atributos para que modificações em valores de canal, volume e ligada aconteçam apenas a partir de seus métodos públicos.
+                </div>
+              </div>
+            </div>
+
+            <div class="no-print" aria-hidden="true">
+              <button
+                type="button"
+                class="btn btn-primary btn-lg btn-gabarito"
+                data-toggle="modal"
+                data-target="#gabarito6"
+              >GABARITO</button>
+            </div>
+
+            <div class="no-print">
+              <div
+                class="modal fade"
+                id="gabarito6"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="myModalLabel"
+                aria-live="polite"
+                aria-atomic="true"
+                aria-hidden="false"
+              >
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                      >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      <h4 class="modal-title" id="myModalLabel">GABARITO DESAFIO</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p>Para proteger os atributos da classe Televisor e garantir que as modificações em valores de canal, volume e ligada ocorram apenas a partir de seus métodos públicos, você pode usar as convenções de acesso discutidas anteriormente e adicionar métodos para realizar essas operações. Aqui está uma versão modificada da classe Televisor com os atributos protegidos:</p>
+                      <pre>
+                        <code>
+<span class="language-python__orange">class</span> <span>Televisor</span>
+  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>): 
+    <span class="language-python__red">self</span>._canal = 2  <span class="language-python__grey"># Inicializa no canal 2</span>
+    <span class="language-python__red">self</span>._volume = 2  <span class="language-python__grey"># Inicializa com volume 0</span>
+    <span class="language-python__red">self</span>._ligada = <span class="language-python__orange">False</span>   
+                
+  <span class="language-python__orange">def</span> <span class="language-python__blue">ligar</span>(<span class="language-python__red">self</span>):
+    <span class="language-python__red">self</span>._ligada = True
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">desligar</span>(<span class="language-python__red">self</span>):
+    <span class="language-python__red">self</span>._ligada = False
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">mudar_canal</span>(<span class="language-python__red">self</span>,novo_canal):
+    <span class="language-python__orange">if</span> <span class="language-python__red">self</span>._ligada <span class="language-python__orange">and</span> <span class="language-python__blue">2</span> <span><= novo_canal <=</span> <span class="language-python__blue">13</span>;
+      <span class="language-python__red">self</span><span>._canal =  novo_canal</span>
+    <span class="language-python__orange">else</span>
+      <span class="language-python__grey">print</span>(<span class="language-python__green">"Canal fora do intervalo permitido.")</span>
+    <span class="language-python__orange">else</span>
+      <span class="language-python__grey">print</span>(<span class="language-python__green">"O televisor está desligado.")</span>
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">aumentar_volume</span>(<span class="language-python__red">self</span>):
+    <span class="language-python__orange">if</span> <span class="language-python__red">self</span>._ligada <span class="language-python__orange">and</span> <span class="language-python__red">self</span><span>._volume <</span> <span class="language-python__blue">100</span>
+      <span class="language-python__red">self</span><span>._volume +=</span> <span class="language-python__blue">1</span>
+    <span class="language-python__orange">else</span>
+      <span class="language-python__grey">print</span>(<span class="language-python__green">"O televisor está desligado.")</span>
+  
+  <span class="language-python__orange">def</span> <span class="language-python__blue">diminuir_volume</span>(<span class="language-python__red">self</span>):
+    <span class="language-python__orange">if</span> <span class="language-python__red">self</span>._ligada <span class="language-python__orange">and</span> <span class="language-python__red">self</span><span>._volume ></span> <span class="language-python__blue">0</span>
+      <span class="language-python__red">self</span><span>._volume -=</span> <span class="language-python__blue">1</span>
+  
+  <span class="language-python__orange">def</span> <span class="language-python__blue">display</span>(<span class="language-python__red">self</span>):
+    <span class="language-python__orange">if</span> <span class="language-python__red">self</span>._ligada:</span> 
+      <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">f"Canal:</span> <span class="language-python__orange">{</span><span class="language-python__red">self</span>._canal<span class="language-python__orange">}</span><span>,</span><span class="language-python__green">f"Volume:</span><span class="language-python__orange">{</span><span class="language-python__red">self</span>._volume<span class="language-python__orange">}</span><span class="language-python__green">"</span>)
+    <span class="language-python__orange">else</span>
+      <span class="language-python__grey">print</span>(<span class="language-python__green">"O televisor está desligado.")</span>
+
+<span class="language-python__grey"># Exemplo de uso da classe Televisor</span>
+<span>televisor1 = Televisor()</span>
+<span>televisor1.ligar()</span>
+<span>televisor1.trocar_canal(<span class="language-python__blue">5</span>)</span>
+<span>televisor1.aumentar_volume()</span>
+<span>televisor1.display()</span>
+<span>televisor1.desligar()</span>
+<span>televisor1.trocar_canal(<span class="language-python__blue">7</span>
+<span>televisor1.display()</span>
+                        </code>
+                      </pre>
+                      <p>Neste exemplo, os atributos _canal, _volume e _ligada são considerados protegidos (convenção de Python), e eles só podem ser acessados e modificados através dos métodos públicos da classe. Isso garante que as operações em torno desses atributos estejam sob controle da classe e evita modificações diretas a partir do exterior. </p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">
+                        Fechar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="acessivel print">
+              <h4>GABARITO DESAFIO</h4>
+              <p>Para proteger os atributos da classe Televisor e garantir que as modificações em valores de canal, volume e ligada ocorram apenas a partir de seus métodos públicos, você pode usar as convenções de acesso discutidas anteriormente e adicionar métodos para realizar essas operações. Aqui está uma versão modificada da classe Televisor com os atributos protegidos:</p>
+              <pre>
+                <code>
+<span class="language-python__orange">class</span> <span>Televisor</span>
+<span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>): 
+<span class="language-python__red">self</span>._canal = 2  <span class="language-python__grey"># Inicializa no canal 2</span>
+<span class="language-python__red">self</span>._volume = 2  <span class="language-python__grey"># Inicializa com volume 0</span>
+<span class="language-python__red">self</span>._ligada = <span class="language-python__orange">False</span>   
+        
+<span class="language-python__orange">def</span> <span class="language-python__blue">ligar</span>(<span class="language-python__red">self</span>):
+<span class="language-python__red">self</span>._ligada = True
+
+<span class="language-python__orange">def</span> <span class="language-python__blue">desligar</span>(<span class="language-python__red">self</span>):
+<span class="language-python__red">self</span>._ligada = False
+
+<span class="language-python__orange">def</span> <span class="language-python__blue">mudar_canal</span>(<span class="language-python__red">self</span>,novo_canal):
+<span class="language-python__orange">if</span> <span class="language-python__red">self</span>._ligada <span class="language-python__orange">and</span> <span class="language-python__blue">2</span> <span><= novo_canal <=</span> <span class="language-python__blue">13</span>;
+<span class="language-python__red">self</span><span>._canal =  novo_canal</span>
+<span class="language-python__orange">else</span>
+<span class="language-python__grey">print</span>(<span class="language-python__green">"Canal fora do intervalo permitido.")</span>
+<span class="language-python__orange">else</span>
+<span class="language-python__grey">print</span>(<span class="language-python__green">"O televisor está desligado.")</span>
+
+<span class="language-python__orange">def</span> <span class="language-python__blue">aumentar_volume</span>(<span class="language-python__red">self</span>):
+<span class="language-python__orange">if</span> <span class="language-python__red">self</span>._ligada <span class="language-python__orange">and</span> <span class="language-python__red">self</span><span>._volume <</span> <span class="language-python__blue">100</span>
+<span class="language-python__red">self</span><span>._volume +=</span> <span class="language-python__blue">1</span>
+<span class="language-python__orange">else</span>
+<span class="language-python__grey">print</span>(<span class="language-python__green">"O televisor está desligado.")</span>
+
+<span class="language-python__orange">def</span> <span class="language-python__blue">diminuir_volume</span>(<span class="language-python__red">self</span>):
+<span class="language-python__orange">if</span> <span class="language-python__red">self</span>._ligada <span class="language-python__orange">and</span> <span class="language-python__red">self</span><span>._volume ></span> <span class="language-python__blue">0</span>
+<span class="language-python__red">self</span><span>._volume -=</span> <span class="language-python__blue">1</span>
+
+<span class="language-python__orange">def</span> <span class="language-python__blue">display</span>(<span class="language-python__red">self</span>):
+<span class="language-python__orange">if</span> <span class="language-python__red">self</span>._ligada:</span> 
+<span class="language-python__grey">print</span><span>(</span><span class="language-python__green">f"Canal:</span> <span class="language-python__orange">{</span><span class="language-python__red">self</span>._canal<span class="language-python__orange">}</span><span>,</span><span class="language-python__green">f"Volume:</span><span class="language-python__orange">{</span><span class="language-python__red">self</span>._volume<span class="language-python__orange">}</span><span class="language-python__green">"</span>)
+<span class="language-python__orange">else</span>
+<span class="language-python__grey">print</span>(<span class="language-python__green">"O televisor está desligado.")</span>
+
+<span class="language-python__grey"># Exemplo de uso da classe Televisor</span>
+<span>televisor1 = Televisor()</span>
+<span>televisor1.ligar()</span>
+<span>televisor1.trocar_canal(<span class="language-python__blue">5</span>)</span>
+<span>televisor1.aumentar_volume()</span>
+<span>televisor1.display()</span>
+<span>televisor1.desligar()</span>
+<span>televisor1.trocar_canal(<span class="language-python__blue">7</span>
+<span>televisor1.display()</span>
+                </code>
+              </pre>
+              <p>Neste exemplo, os atributos _canal, _volume e _ligada são considerados protegidos (convenção de Python), e eles só podem ser acessados e modificados através dos métodos públicos da classe. Isso garante que as operações em torno desses atributos estejam sob controle da classe e evita modificações diretas a partir do exterior. </p>
+            </div>
+
+            <h3>Encapsulamento em PYTHON</h3>
+
+            <p>Em Python, o encapsulamento é alcançado principalmente por meio de convenções de nomenclatura e do uso de atributos e métodos públicos, protegidos e privados. O encapsulamento é uma das formas de princípio da programação orientada a objetos que visa ocultar os detalhes internos de uma classe e fornecer uma interface pública para interagir com essa classe.</p>
+
+            <p>Aqui estão as convenções de encapsulamento em Python:</p>
+
+            <ul>
+              <li>
+                <p><b>Atributos e Métodos Públicos</b>: São acessados diretamente e podem ser usados por qualquer código que tenha acesso à classe. Para tornar um atributo ou método público, não é necessário adicionar prefixos especiais. Apenas use nomes descritivos.</p>
+                <p>Exemplo:</p>
+                <pre>
+                  <code>
+<span class="language-python__orange">class</span> MinhaClasse: 
+  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>): 
+  <span class="language-python__red">self</span>.atributo_publico  = <span class="language-python__blue">30</span> 
+             
+  <span class="language-python__orange">def</span> <span class="language-python__blue">metodo_publico</span>(<span class="language-python__red">self</span>): 
+    <span class="language-python__orange"> return</span> <span class="language-python__green">"Método público"</span>
+                  </code>
+                </pre>
+              </li>
+              <li>
+                <p><b>Atributos e Métodos Protegidos</b>: São acessados com um sublinhado simples _ como prefixo (por exemplo, _atributo ou _metodo()). Isso é uma convenção para indicar que esses membros devem ser tratados como protegidos, mas ainda podem ser acessados de fora da classe. O encapsulamento é mais baseado na confiança do desenvolvedor. </p>
+                <p>Exemplo:</p>
+                <pre>
+                  <code>
+<span class="language-python__orange">class</span> MinhaClasse: 
+  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>): 
+  <span class="language-python__red">self</span>._atributo_protegido  = <span class="language-python__blue">42</span> <span class="language-python__grey"># Atributo protegido</span>
+             
+  <span class="language-python__orange">def</span> <span class="language-python__blue">_metodo_protegido</span>(<span class="language-python__red">self</span>): 
+    <span class="language-python__orange"> return</span> <span class="language-python__green">"Método protegido"</span>
+                  </code>
+                </pre>
+              </li>
+              <li>
+                <p><b>Atributos e Métodos Privados</b>: São acessados com um sublinhado duplo __ como prefixo (por exemplo, __atributo ou __metodo()). Isso é uma convenção para tornar esses membros privados. Ainda é possível acessá-los, mas eles são "name mangling" (renomeados) internamente pela classe, tornando mais difícil o acesso de fora.</p>
+                <p>Exemplo:</p>
+                <pre>
+                  <code>
+<span class="language-python__orange">class</span> MinhaClasse: 
+  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>): 
+  <span class="language-python__red">self</span>.__atributo_privado  = <span class="language-python__blue">42</span> <span class="language-python__grey"># Atributo privado</span>
+             
+  <span class="language-python__orange">def</span> <span class="language-python__blue">__metodo_privado</span>(<span class="language-python__red">self</span>): 
+    <span class="language-python__orange"> return</span> <span class="language-python__green">"Método privado"</span>
+                  </code>
+                </pre>
+              </li>
+            </ul>
+
+            <p>Lembrando que essas são convenções e não restrições rigorosas. Python confia nos desenvolvedores para seguir essas práticas de encapsulamento, mas os membros públicos, protegidos e privados podem ser acessados de fora da classe, embora seja desencorajado acessar membros protegidos e privados diretamente.</p>
+
+            <p>O encapsulamento em Python é mais baseado na cultura e na confiança do desenvolvedor do que em restrições rígidas de acesso. Portanto, é importante seguir as convenções para manter o código organizado e seguro.</p>
+          </div>
+
+          <!-- Página 8 -->
+          <div class="pagina">
+
+            <h3>Encerramento</h3>
+
+            <p>Agora que aprendemos a lógica de programação orientada a objetos, estamos preparados para criar códigos mais complexos e que permitem uma melhor reutilização, segurança e escalabilidade, e o domínio deste conceito é imprescindível a todo programador, e com certeza a atualização deste conhecimento é algo que irá acompanhar você ao longo de toda carreira no mercado de trabalho.</p>
+
+            <p>À medida que concluímos esta apostila, espero que tenha adquirido uma compreensão sólida dos princípios da programação orientada a objetos em Python. A orientação a objetos é uma abordagem poderosa e fundamental para o desenvolvimento de software, permitindo-nos criar programas mais organizados, flexíveis e reutilizáveis. Python, com sua sintaxe clara e recursos orientados a objetos, oferece um ambiente ideal para a implementação de projetos de software robustos e eficazes. À medida que você avança em sua jornada de programação, aprofundar seu conhecimento em orientação a objetos será um passo crucial. Lembre-se de que a OOP (Programação Orientada a Objetos) é uma ferramenta valiosa em seu kit de desenvolvedor e pode abrir portas para a criação de aplicativos sofisticados e de alta qualidade. Continue a explorar, praticar e aplicar esses conceitos em seus projetos, e você estará bem encaminhado para se tornar um programador Python habilidoso e eficaz." </p>
+
+
+            <!-- Caixa de destaque pixelada -->
+            <!-- <div class="destaque-pixel">
+              <div class="caixa-destaque">
+                <ul class="marcador-pixel">
+                  <li>Adssd dsams dkwhd a sdad</li>
+                  <li>Adssd dsams dkwhd a sdad</li>
+                  <li>Adssd dsams dkwhd a sdad</li>
+                </ul>
+              </div>
+            </div> -->
+            <!-- Caixa de destaque pixelada -->
+
+          </div>
+
+        </section>
+<!-- - - - - - - - - - - - - - - - não alterar abaixo- - - - - - - - - - - - -->
+
+        <br>
+        <footer class="text-center no-print">
+          <ul class="pagination">
+
+          </ul>
+        </footer>
+
+    </div>
+
+    </div>
+
+
+
+    <!--  Em caso de footer personalizado utilizar esse elemento e adicionar a classe customizada
+    <footer>
+    </footer>
+	-->
+<!-- carrega todas as imagens dos icones nesta div
+ caso queira adicionar mais imagens de novos icones do css,
+ ou qualquer imagem que deva ser contabilizada durante a fase
+ de loading, referenciar aqui.
+ -->
+<div class="ico-div-loader">
+	<img src="images/atencao.png">
+    <img src="images/bg-content.jpg">
+    <img src="images/bg-topo.jpg">
+    <img src="images/black-zoom-in-256.png">
+    <img src="images/concluindo.png">
+    <img src="images/curtir.png">
+    <img src="images/desafio.png">
+    <img src="images/dica.png">
+    <img src="images/doc.png">
+    <img src="images/fundamental.png">
+    <img src="images/icon-03.png">
+    <img src="images/importante.png">
+    <img src="images/lightbulb.png">
+    <img src="images/link.png">
+    <img src="images/link_pdf_hover.png">
+    <img src="images/link_pdf_normal.png">
+    <img src="images/logo-senac.png">
+    <img src="images/mark-icon.png">
+    <img src="images/mark-icon02.png">
+    <img src="images/midia.png">
+    <img src="images/monitor.png">
+    <img src="images/nao_curtir.png">
+    <img src="images/pergunta.png">
+    <img src="images/pesquisa.png">
+    <img src="images/play.png">
+    <img src="images/radio_flat.png">
+    <img src="images/refletir.png">
+    <img src="images/saiba_mais.png">
+    <img src="images/senac_loader.png">
+    <img src="images/tanamidia.png">
+    <img src="images/transcricao.png">
+    <img src="images/transcricao_small.png">
+    <img src="images/tv.png">
+    <img src="images/tv_bottom.png">
+    <img src="images/zoom.png">
+    <img src="images/zoom_ie.cur">
+    <img src="images/zoom_ie.png">
+    <!-- adicionar as imagens customizadas aqui abaixo -->
+</div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/print.js"></script>
+<script src="js/template.config.js"></script>
+<script src="js/images.loader.js"></script>
+<script src="js/interativos.js"></script>
+<noscript>
+  <style media="screen">
+    .over-loader { display: none;}    
+  </style>
+</noscript>
+</body>
+</html>
+<script>
+	//inicializa zoom na imagem
+	$('.zoom-imagem').magnificPopup({
+	 type: 'image',
+  	 mainClass: 'mfp-with-zoom', // this class is for CSS animation below
+ 	 zoom: {
+		enabled: true, // By default it's false, so don't forget to enable it
+
+		duration: 300, // duration of the effect, in milliseconds
+		easing: 'ease-in-out', // CSS transition easing function
+
+		// The "opener" function should return the element from which popup will be zoomed in
+		// and to which popup will be scaled down
+		// By defailt it looks for an image tag:
+		opener: function(openerElement) {
+		  // openerElement is the element on which popup was initialized, in this case its <a> tag
+		  // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+		  return openerElement.is('img') ? openerElement : openerElement.find('img');
+		}
+	  },
+	   image: {
+		  markup: '<div class="mfp-figure">'+
+					'<div class="mfp-close"></div>'+
+					'<div class="mfp-img"></div>'+ // Floated left
+					'<div class="mfp-bottom-bar">'+'<figcaption>'+'<div class="mfp-title" style="text-align:center"></div>'+
+					  '<div class="mfp-counter"></div>'+'</figcaption>'+
+					'</div>'+
+				  '</div>', // Popup HTML markup. `.mfp-img` div will be replaced with img tag, `.mfp-close` by close button
+
+		  cursor: 'mfp-zoom-out-cur', // Class that adds zoom cursor, will be added to body. Set to null to disable zoom out cursor.
+
+		  tError: '<a href="%url%">A imagem</a> não pode ser carregada.' // Error message
+	   }
+	});
+
+	//inicializa popover
+	$(function () {
+	  $('[data-toggle="popover"]').popover()
+	});
+	//inicializa tooltip
+	$(function () {
+	  $('[data-toggle="tooltip"]').tooltip()
+	});
+/*questao 1*/
+  $('.q1b1').click(function(){
+    $('.questao1 p.feedback').css('display','none');
+    $('.q1f1').css('display','block');
+  });
+  $('.q1b2').click(function(){
+    $('.questao1 p.feedback').css('display','none');
+    $('.q1f2').css('display','block');
+  });
+  $('.q1b3').click(function(){
+    $('.questao1 p.feedback').css('display','none');
+    $('.q1f3').css('display','block');
+  });
+  $('.q1b4').click(function(){
+    $('.questao1 p.feedback').css('display','none');
+    $('.q1f4').css('display','block');
+  });
+  $('.q1b5').click(function(){
+    $('.questao1 p.feedback').css('display','none');
+    $('.q1f5').css('display','block');
+  });
+/*questao 2*/
+  $('.q2b1').click(function(){
+    $('.questao2 p.feedback').css('display','none');
+    $('.q2f1').css('display','block');
+  });
+  $('.q2b2').click(function(){
+    $('.questao2 p.feedback').css('display','none');
+    $('.q2f2').css('display','block');
+  });
+  $('.q2b3').click(function(){
+    $('.questao2 p.feedback').css('display','none');
+    $('.q2f3').css('display','block');
+  });
+  $('.q2b4').click(function(){
+    $('.questao2 p.feedback').css('display','none');
+    $('.q2f4').css('display','block');
+  });
+  $('.q2b5').click(function(){
+    $('.questao2 p.feedback').css('display','none');
+    $('.q2f5').css('display','block');
+  });
+
+/*questao 3*/
+  $('.q3b1').click(function(){
+    $('.questao3 p.feedback').css('display','none');
+    $('.q3f1').css('display','block');
+  });
+  $('.q3b2').click(function(){
+    $('.questao3 p.feedback').css('display','none');
+    $('.q3f2').css('display','block');
+  });
+  $('.q3b3').click(function(){
+    $('.questao3 p.feedback').css('display','none');
+    $('.q3f3').css('display','block');
+  });
+  $('.q3b4').click(function(){
+    $('.questao3 p.feedback').css('display','none');
+    $('.q3f4').css('display','block');
+  });
+  $('.q3b5').click(function(){
+    $('.questao3 p.feedback').css('display','none');
+    $('.q3f5').css('display','block');
+  });
+
+/*questao 4*/
+$('.q4b1').click(function(){
+    $('.questao4 p.feedback').css('display','none');
+    $('.q4f1').css('display','block');
+  });
+  $('.q4b2').click(function(){
+    $('.questao4 p.feedback').css('display','none');
+    $('.q4f2').css('display','block');
+  });
+  $('.q4b3').click(function(){
+    $('.questao4 p.feedback').css('display','none');
+    $('.q4f3').css('display','block');
+  });
+  $('.q4b4').click(function(){
+    $('.questao4 p.feedback').css('display','none');
+    $('.q4f4').css('display','block');
+  });
+  $('.q4b5').click(function(){
+    $('.questao4 p.feedback').css('display','none');
+    $('.q4f5').css('display','block');
+  });
+
+  /*questao 5*/
+$('.q5b1').click(function(){
+    $('.questao5 p.feedback').css('display','none');
+    $('.q5f1').css('display','block');
+  });
+  $('.q5b2').click(function(){
+    $('.questao5 p.feedback').css('display','none');
+    $('.q5f2').css('display','block');
+  });
+  $('.q5b3').click(function(){
+    $('.questao5 p.feedback').css('display','none');
+    $('.q5f3').css('display','block');
+  });
+  $('.q5b4').click(function(){
+    $('.questao5 p.feedback').css('display','none');
+    $('.q5f4').css('display','block');
+  });
+  $('.q5b5').click(function(){
+    $('.questao5 p.feedback').css('display','none');
+    $('.q5f5').css('display','block');
+  });
+
+   /*questao 6*/
+$('.q6b1').click(function(){
+    $('.questao6 p.feedback').css('display','none');
+    $('.q6f1').css('display','block');
+  });
+  $('.q6b2').click(function(){
+    $('.questao6 p.feedback').css('display','none');
+    $('.q6f2').css('display','block');
+  });
+  $('.q6b3').click(function(){
+    $('.questao6 p.feedback').css('display','none');
+    $('.q6f3').css('display','block');
+  });
+  $('.q6b4').click(function(){
+    $('.questao6 p.feedback').css('display','none');
+    $('.q6f4').css('display','block');
+  });
+  $('.q6b5').click(function(){
+    $('.questao6 p.feedback').css('display','none');
+    $('.q6f5').css('display','block');
+  });
+
+  /*questao 7*/
+$('.q7b1').click(function(){
+    $('.questao7 p.feedback').css('display','none');
+    $('.q7f1').css('display','block');
+  });
+  $('.q7b2').click(function(){
+    $('.questao7 p.feedback').css('display','none');
+    $('.q7f2').css('display','block');
+  });
+  $('.q7b3').click(function(){
+    $('.questao7 p.feedback').css('display','none');
+    $('.q7f3').css('display','block');
+  });
+  $('.q7b4').click(function(){
+    $('.questao7 p.feedback').css('display','none');
+    $('.q7f4').css('display','block');
+  });
+  $('.q7b5').click(function(){
+    $('.questao7 p.feedback').css('display','none');
+    $('.q7f5').css('display','block');
+  });
+
+  /*questao 8*/
+$('.q8b1').click(function(){
+    $('.questao8 p.feedback').css('display','none');
+    $('.q8f1').css('display','block');
+  });
+  $('.q8b2').click(function(){
+    $('.questao8 p.feedback').css('display','none');
+    $('.q8f2').css('display','block');
+  });
+  $('.q8b3').click(function(){
+    $('.questao8 p.feedback').css('display','none');
+    $('.q8f3').css('display','block');
+  });
+  $('.q8b4').click(function(){
+    $('.questao8 p.feedback').css('display','none');
+    $('.q8f4').css('display','block');
+  });
+  $('.q8b5').click(function(){
+    $('.questao8 p.feedback').css('display','none');
+    $('.q8f5').css('display','block');
+  });
+
+</script>
+<script>
+  var scriptElem=document.createElement("script");
+  scriptElem.src="https://plugin.handtalk.me/web/latest/handtalk.min.js",
+  scriptElem.charset="UTF-8",
+  scriptElem.onload=function(){
+        window.ht = new HT({
+            token:"bf5b7efb148a829a126a0e0c9fd533bf",
+            align:"top",
+            videoEnabled: true,
+            ytEmbedReplace: true,           
+            mobileConfig:{align:"right",
+                          actionsAlign:"top",
+                          customButtonStyle:{
+                                borderRadius:"6px",
+                                size:"38px",
+                                horizontalMargin:"13px",
+                                bottomMargin:"140px",
+                                rightMargin:"40px"}
+                          }
+          });        
+      $('.ht-skip').attr("aria-hidden","true")
+    },
+  document.body.appendChild(scriptElem);
+</script>
+
+<script>
+
+  var url = new URL(window.location.href);
+  
+  var params = new URLSearchParams(url.search);
+  
+  var pageNumber = parseInt(params.get('page'));
+  
+  var estiloFundo = {};
+  
+  if (pageNumber === 1) {
+      document.body.classList.add('pagina-1');
+  } else {
+      document.body.classList.remove('pagina-1');
+  }
+  
+  </script>
+  

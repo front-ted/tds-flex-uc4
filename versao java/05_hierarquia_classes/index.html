@@ -1,0 +1,2792 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:mso="urn:schemas-microsoft-com:office:office"
+  xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Linguagem de programação orientada a objetos: sintaxe da linguagem para orientação a objeto, definição de classes, atributos, encapsulamentos, métodos, herança, interface, polimorfismo, modificadores de acesso</title>
+
+  <!-- Bootstrap -->
+  <link href="../template/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../template/css/tecnicos_senac.css" rel="stylesheet">
+  <link href="../template/css/cores.css" rel="stylesheet">
+  <!--Extras - novas classes para facilitar-->
+  <link rel="stylesheet" href="../template/css/extras.css">
+  <link href="../template/css/sncload.css" rel="stylesheet">
+  <link href="../template/css/magnific-popup.css" rel="stylesheet">
+  <!-- referencia ao arquivo css com estilos especificos da pagina -->
+  <link href="css/custom.css" type="text/css" rel="stylesheet">
+  <!-- css necessario para o print -->
+  <link href="../template/css/fa/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+  <link href="../template/css/print.css" type="text/css" rel="stylesheet">
+  <link href="../template/fonts/roboto.css" type="text/css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+
+  <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Paulo Ricardo Soveral Junior</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">46914400.0000000</mso:Order>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Paulo Ricardo Soveral Junior</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ContentTypeId msdt:dt="string">0x010100393332CEE5C5294F9D2C3CF7CCDACBE5</mso:ContentTypeId>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body onLoad="Javascript:document.getElementById('sncloader').style.display='none';">
+  <!-- MARCA D´ÁGUA -->
+  <img src="../template/images/logo_senac_colorido.png" id="marcadaguaLogo">
+  <!-- /MARCA D´ÁGUA -->
+
+  <div id='sncloader' class='over-loader'>
+    <div class="over-cell">
+      <div id="sncload"></div>
+    </div>
+  </div>
+  <header id="topo" class="senac no-print">
+    <div class="header-tecnicos container">
+      <h1 id="nome-curso">Desenvolvimento de Sistemas</h1>
+      <div id="logo-senac"><img src="../template/images/logo-senac.png" alt="logo do senac"></div>
+    </div>
+    <div id="sombra"></div>
+  </header>
+
+  <div id="booklet" class="container fundo-tecnicos">
+
+    <div class="acessivel no-print">
+      <p>Como sugestão, configure a opção de leitura de caracteres e de pontuação de seu leitor de tela para o grau
+        máximo de leitura, a fim de que os códigos disponibilizados neste material sejam lidos corretamente. No caso do
+        NVDA (Nonvisual Desktop Access), para localizar a opção <b>Grau de pontuação/símbolos, acesse Preferências –
+          Configurações – Fala</b>. Altere o padrão <b>Pouco</b> para <b>Tudo</b>. Dessa forma, o leitor passará a ler
+        os segmentos de código em sua totalidade.</p>
+    </div>
+
+    <header class="no-print">
+      <!-- BTO IMPRIMIR -->
+      <div class="grupo-imprimir no-print">
+        <button type="button" data-pdf="true" class="bto-imprimir" name="button">
+          <span class="fa fa-print"></span> <span>Imprimir</span>
+        </button>
+      </div>
+      <!-- /BTO IMPRIMIR -->
+    </header>
+    <!-- - - - - - - - - - - - - - - - não alterar acima - - - - - - - - - - - - -->
+    <section class="paginas">
+
+      <!-- - - - - - - - cada página é independente  - - - - - - - - - - -->
+      <div class="pagina pag-principal no-print">
+        <h2 class="text-center mt-40">Linguagem de programação orientada a objetos: sintaxe da linguagem para orientação a objeto, definição de classes, atributos, encapsulamentos, métodos, herança, interface, polimorfismo, modificadores de acesso</h2>
+
+        <p class="text-center mt-40" aria-hidden="true">Clique ou toque para visualizar o conteúdo.</p>
+
+        <div class="menu-piramide hidden-xs">
+          <a href="index.html?page=2" id="menu-titulo1" class="menu-titulo menu-titulo1"></a>
+          <a href="index.html?page=3" id="menu-titulo2" class="menu-titulo menu-titulo2"></a>
+          <a href="index.html?page=4" id="menu-titulo3" class="menu-titulo menu-titulo3"></a>
+          <a href="index.html?page=5" id="menu-titulo4" class="menu-titulo menu-titulo4"></a>
+          <a href="index.html?page=6" id="menu-titulo5" class="menu-titulo menu-titulo5"></a>
+          <a href="index.html?page=7" id="menu-titulo6" class="menu-titulo menu-titulo6"></a>
+          <a href="index.html?page=8" id="menu-titulo7" class="menu-titulo menu-titulo7"></a>
+          <a href="index.html?page=9" id="menu-titulo8" class="menu-titulo menu-titulo8"></a>
+        </div>
+
+        <div class="menu-piramide_mobile visible-xs">
+          <a href="index.html?page=2" id="menu-titulo1_mobile" class="menu-titulo_mobile"></a>
+          <a href="index.html?page=3" id="menu-titulo2_mobile" class="menu-titulo_mobile"></a>
+          <a href="index.html?page=4" id="menu-titulo3_mobile" class="menu-titulo_mobile"></a>
+          <a href="index.html?page=5" id="menu-titulo4_mobile" class="menu-titulo_mobile"></a>
+          <a href="index.html?page=6" id="menu-titulo5_mobile" class="menu-titulo_mobile"></a>
+          <a href="index.html?page=7" id="menu-titulo6_mobile" class="menu-titulo_mobile"></a>
+          <a href="index.html?page=8" id="menu-titulo7_mobile" class="menu-titulo_mobile"></a>
+          <a href="index.html?page=9" id="menu-titulo8_mobile" class="menu-titulo_mobile"></a>
+        </div>
+
+      </div>
+
+      <!-- Página 2 -->
+      <div class="pagina">
+        <h3>Introdução</h3>
+        <p>Como você já deve ter aprendido, diversos conceitos da programação fazem abstrações e comparações com o mundo
+          real. Por exemplo, os conceitos de estrutura de dados contêm diversos paralelos com a vida real, como uma fila
+          de pessoas, uma pilha de roupas etc. Isso acontece porque diariamente tenta-se resolver problemas reais e a
+          melhor forma de alcançar esse objetivo é abstraindo conceitos reais para dentro do código-fonte.</p>
+        <p>Com a programação orientada a objetos não é diferente. No decorrer dos anos, foram criados conceitos que
+          abstraem e relacionam a estruturação de um <i>software</i> com o mundo real. Esses conceitos visam a
+          estruturar de maneira organizada o código-fonte, separando responsabilidades e simplificando o código.</p>
+        <p>Conheça agora alguns desses conceitos e entenda o seu uso e, mais importante, quando utilizá-los.</p>
+
+        <h3>Herança</h3>
+        <img src="objetos/layout_5_fig1.jpg" class="img-responsive center-block">
+        <p class="legenda-imagem">
+          Figura 1 – A herança está no próprio ser humano, em seus genes <br>
+          Fonte: Andrade (2013)
+        </p>
+        <p class="acessivel no-print">A imagem mostra a representação da evolução da espécie humana a partir de primatas
+          com seis figuras, sendo a primeira de um macaco e a última de um homem.</p>
+        <p>O conceito de herança é muito comum na vida. A evolução das espécies, as características semelhantes entre
+          uma criança e seus pais são apenas alguns dos diversos exemplos práticos de herança.</p>
+        <div class="caixa-destaque icone importante">
+          <p>Na programação orientada a objetos, o conceito de herança é utilizado para que uma classe herde os
+            comportamentos e as características de outra classe diferente.</p>
+        </div>
+        <p>Para facilitar a compreensão dos próximos tópicos, pense na relação do conceito de herança com o verbo
+          <b>ser</b>. Por exemplo, se houver uma classe chamada <b>Pessoa</b> e uma classe chamada <b>Aluno</b>,
+          relacionadas por meio do conceito de herança, será possível afirmar que um “aluno” <b>é</b> uma “pessoa”.</p>
+        <p>Quando se aplica o conceito de herança na programação orientada a objetos, cria-se uma relação de mãe e
+          filha. A classe filha herda as características da classe mãe. Uma classe mãe é chamada de <b>superclasse</b>
+          ou <b>classe-base</b>. Já uma classe filha é chamada de <b>subclasse</b> ou <b>classe derivada</b>.</p>
+        <p>Uma subclasse herda todos os métodos e atributos públicos (<i>public</i>) ou protegidos (<i>protected</i>) de
+          sua superclasse, podendo sobrescrevê-los para alterar o comportamento. Já os métodos privados (<i>private</i>)
+          da superclasse não são visíveis para a subclasse.</p>
+        <p>Para compreender melhor, observe o diagrama a seguir e também os <i>gifs</i> retirados dos <i>sites</i> Gifer
+          (s.d.).</p>
+        <div class="no-print" aria-hidden="true">
+          <p>Clique ou toque para visualizar o conteúdo.</p>
+          <div class="div-painel_robo">
+            <button type="button" class="btn-painel_robo btn-painel_robo01 center-block" data-toggle="modal" data-target="#modal-painel_robo01"></button>
+            <button type="button" class="btn-painel_robo btn-painel_robo02 center-block" data-toggle="modal" data-target="#modal-painel_robo02"></button>
+            <button type="button" class="btn-painel_robo btn-painel_robo03 center-block" data-toggle="modal" data-target="#modal-painel_robo03"></button>
+          </div>
+          <p class="legenda-imagem">
+            Figura 2 – Herança de uma classe robô (mais genérica) e classes que são derivadas dela <br>
+            Fonte: Senac EAD (2022)
+          </p>
+          <p class="acessivel no-print">A imagem mostra um diagrama UML com classe “Robô”, atributos “Bateria” e
+            “Fabricante”, métodos “Movimentar()” e “EvitarObstaculos()”. Abaixo, à esquerda, aparece a classe derivada
+            “Robô Cheetah”, com método “Pular()”. Abaixo da classe “Robô”, à direita, está a classe derivada “Robô de
+            Limpeza”, com atributo “HoraAgendada” e médodo “Aspirar()”.</p>
+        </div>
+        <div class="acessivel print">
+          <img src='objetos/layout_5_fig2.png' class='img-responsive center-block'>
+          <p class="legenda-imagem">
+            Figura 2 – Herança de uma classe robô (mais genérica) e classes que são derivadas dela <br>
+            Fonte: Senac EAD (2022)
+          </p>
+          <p class="acessivel no-print">A imagem mostra um diagrama UML com classe “Robô”, atributos “Bateria” e
+            “Fabricante”, métodos “Movimentar()” e “EvitarObstaculos()”. Abaixo, à esquerda, aparece a classe derivada
+            “Robô Cheetah”, com método “Pular()”. Abaixo da classe “Robô”, à direita, está a classe derivada “Robô de
+            Limpeza”, com atributo “HoraAgendada” e médodo “Aspirar()”.</p>
+          <img src='objetos/gif_01.gif' class='img-responsive center-block'>
+          <p class="acessivel no-print">A animação mostra um robô quadrúpede pulando um obstáculo.</p>
+          <img src='objetos/gif_02.gif' class='img-responsive center-block'>
+          <p class="acessivel no-print">A animação mostra um robô comum de limpeza percorrendo um corredor e mudando sua
+            direção ao encontrar as paredes.</p>
+        </div>
+        <p>Os <i>gifs</i> mostraram o robô Cheetah, que, além das capacidades normais de robô, ainda pode pular, e o
+          robô de limpeza, que, além de movimentar e evitar obstáculos, aspira e tem um agendamento para iniciar a
+          limpeza. Nesse exemplo, <b>Robô</b> é classe mãe, <b>Robô Cheetah</b> e <b>Robô Limpeza</b> são classes filhas
+          ou derivadas.</p>
+        <p>Antes de iniciar os conhecimentos sobre os códigos Java, relembre os conceitos de hierarquia de classes por
+          meio do jogo a seguir. Caso queira reler esses conceitos, consulte o conteúdo “Orientação a Objetos”, desta
+          unidade.</p>
+
+        <!--OBJETO 3-->
+        <a href="objeto/index.html" target="_blank" class="btn-objeto_3"></a>
+
+        <p>Neste momento, será criada a estrutura exemplificada anteriormente, de <b>Pessoas</b> e <b>Alunos</b>,
+          utilizando o conceito de herança da programação orientada a objetos. Analise este código:</p>
+        <pre>
+          <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Pessoa</span> {
+    <span style="color: #4073e0">public</span> String nome;
+    <span style="color: #4073e0">public</span> String cpf;
+    <span style="color: #4073e0">private</span> String uuid;
+
+    <span style="color: #4073e0">public</span> <span style="color: #00aa00">Pessoa</span>() { }
+}
+          </code>
+        </pre>
+        <p>Observe que está sendo criada uma classe <b>Pessoa</b>, que contém os atributos públicos "nome" e "cpf". Da
+          mesma forma, a classe <b>Pessoa</b> contém o atributo privado "uuid" e tem um método construtor vazio.</p>
+        <div class="caixa-destaque icone anotar">
+          <p>Para os exemplos deste conteúdo, crie um projeto Java no NetBeans, implemente as classes e programe o
+            método <b>main()</b> da classe principal, quando necessário. Se precisar, crie um projeto para cada exemplo
+            ou um para cada subtítulo, para organizar seus estudos.</p>
+        </div>
+        <p>Agora, crie a classe <b>Aluno</b>. Essa classe será uma subclasse da classe <b>Pessoa</b>, herdando todos os
+          seus métodos e atributos públicos ou protegidos. Confira o código a seguir:</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Aluno</span> <span class="code-destaque"><span style="color: #4073e0">extends</span> Pessoa</span> {
+    <span style="color: #4073e0">public</span> String matricula;
+
+    <span style="color: #4073e0">public</span> <span style="color: #00aa00">Aluno</span>() { }
+}
+              </code>
+            </pre>
+        <p>De forma básica, a classe <b>Aluno</b> tem apenas um atributo público chamado “matrícula”. Além disso, ela
+          contém um método construtor vazio.</p>
+        <p>Agora, foque na sintaxe responsável pela definição de uma herança em Java. Por meio da palavra-chave
+          <i>extends</i>, você define a relação de herança entre duas classes diferentes. Na definição da classe em
+          questão, definiu-se que a classe <b>Aluno</b> <i>extends</i> (que em português significa <b>estende</b>) a
+          classe <b>Pessoa</b>. Desta forma, a classe <b>Aluno</b> herda todos os métodos e atributos públicos ou
+          protegidos da classe <b>Pessoa</b>. Veja este código:</p>
+        <pre>
+              <code>
+Aluno fulano = <span style="color: #4073e0">new</span> Aluno();
+fulano.<span style="color: #a0ceff">nome</span> = <span style="color: #aa5500">&quot;Fulano&quot;</span>;
+fulano.<span style="color: #a0ceff">cpf</span> = <span style="color: #aa5500">&quot;000.000.000-00&quot;</span>;
+fulano.<span style="color: #a0ceff">matricula</span> = <span style="color: #aa5500">&quot;123456&quot;</span>;
+              </code>
+            </pre>
+        <p>Note que você está instanciando um objeto da classe <b>Aluno</b>. Como a classe <b>Aluno</b> é uma subclasse
+          da classe <b>Pessoa</b>, todos os objetos instanciados da classe <b>Aluno</b> terão acesso a todos os
+          atributos e métodos públicos ou protegidos da superclasse (neste caso, a classe <b>Pessoa</b>). Dessa forma,
+          você consegue utilizar os atributos "nome" e "cpf", que não foram definidos na classe <b>Aluno</b> (classe que
+          está sendo instanciada), mas sim na classe <b>Pessoa</b>, a superclasse desse exemplo.</p>
+        <div class="caixa-destaque-livre bg-primaria-02 borda-primaria-03">
+          <p><b>Exemplo 1</b>: implementando classes para representar funcionários de uma empresa, os quais têm nome e
+            salário. Os funcionários podem ser vendedores, que também têm comissão, ou administrativos, aos quais é
+            necessário indicar seu o cargo. A todos os funcionários é possível aplicar aumento. O seguinte diagrama UML
+            representa as classes <b>Vendedor</b> e <b>Administrativo</b> separadamente.</p>
+          <img src="objetos/layout_5_fig3.png" class="img-responsive center-block">
+          <p class="legenda-imagem">
+            Figura 3 – Classes <b>Vendedor</b> e <b>Administrativo</b> <br>
+            Fonte: Senac EAD (2022)
+          </p>
+          <p class="acessivel no-print">A imagem mostra um diagrama para a classe “Vendedor”, com os atributos “nome:
+            String”, “salario: float” e “comissão: float” e o método “aplicaAumento(float v)”. À direita, há uma
+            diagrama para classe “Administrativo”, com os atributos “nome: String”, “salario: float”, “cargo: String” e
+            o método “aplicaAumento(float v)”.</p>
+        </div>
+        <p>Pelo diagrama, nota-se a repetição nos atributos “nome” e “salário”, além do método <b>aplicaAumento()</b>.
+          Isso e o contexto apresentado mostram indícios de que uma hierarquia de classes pode ser importante:</p>
+        <img src="objetos/layout_5_fig4.png" class="img-responsive center-block">
+        <p class="legenda-imagem">
+          Figura 4 – Diagrama adaptado com hierarquia de classes (<b>Vendedor</b> e <b>Administrativo</b> derivam de
+          <b>Funcionario</b>) <br>
+          Fonte: Senac EAD (2022)
+        </p>
+        <p class="acessivel no-print">Diagrama para classe “Funcionario” com os atributos “nome: String” e “salario:
+          float” e o método “aplicaAumento(float v)”. Ligada por flecha de hierarquia à esquerda está a classe
+          “Vendedor”, com “comissão: float”. Ligada à classe “Funcionario” por flecha de hierarquia à direita está um
+          diagrama para a classe “Administrativo”, com o atributo “cargo: String”.</p>
+        <p>Em Java, é possível implementar as classes da seguinte maneira:</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Funcionario</span> {
+    <span style="color: #4073e0">public</span> String nome;
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">float</span> salario;
+    
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">aplicaAumento</span>(<span style="color: #00aaaa">float</span> valor)
+    {
+        salario = salario + valor;
+    }
+}
+              </code>
+            </pre>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Vendedor</span> <span style="color: #4073e0">extends</span> Funcionario{
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">float</span> comissao;
+}
+              </code>
+            </pre>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Administrativo</span> <span style="color: #4073e0">extends</span> Funcionario {
+    <span style="color: #4073e0">public</span> String cargo;
+}
+              </code>
+            </pre>
+        <p>Na classe principal do projeto, no método <b>main()</b>, podem ser feitos alguns testes:</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">static</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">main</span>(String[] args) {
+    Vendedor joao;
+    Administrativo maria;
+
+    joao = <span style="color: #4073e0">new</span> Vendedor();
+    joao.<span style="color: #a0ceff">nome</span> = <span style="color: #aa5500">&quot;João Siqueira&quot;</span>;
+    joao.<span style="color: #a0ceff">salario</span> = <span style="color: #009999">1000</span>;
+    joao.<span style="color: #a0ceff">comissao</span> = <span style="color: #009999">10</span>;
+
+    maria = <span style="color: #4073e0">new</span> Administrativo();
+    maria.<span style="color: #a0ceff">nome</span> = <span style="color: #aa5500">&quot;Maria Sá&quot;</span>;
+    maria.<span style="color: #a0ceff">salario</span> = <span style="color: #009999">1500</span>;
+    maria.<span style="color: #a0ceff">cargo</span> = <span style="color: #aa5500">&quot;Contadora&quot;</span>;
+    
+    System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Vendedor&gt; Nome: &quot;</span> + joao.<span style="color: #a0ceff">nome</span> + <span style="color: #aa5500">&quot;, salario: &quot;</span> + joao.<span style="color: #a0ceff">salario</span> + <span style="color: #aa5500">&quot;, comissao: &quot;</span> + joao.<span style="color: #a0ceff">comissao</span> + <span style="color: #aa5500">&quot;%&quot;</span>);
+    System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Administrativo&gt; Nome: &quot;</span> + maria.<span style="color: #a0ceff">nome</span> + <span style="color: #aa5500">&quot;, salario: &quot;</span> + maria.<span style="color: #a0ceff">salario</span> + <span style="color: #aa5500">&quot;, cargo: &quot;</span> + maria.<span style="color: #a0ceff">cargo</span>);
+    
+    joao.<span style="color: #a0ceff">aplicaAumento</span>(<span style="color: #009999">500</span>); <span style="color: #aaaaaa; font-style: italic">//método definido na superclasse...</span>
+    maria.<span style="color: #a0ceff">aplicaAumento</span>(<span style="color: #009999">300</span>);<span style="color: #aaaaaa; font-style: italic">//...que pode ser invocado pela classe derivada</span>
+    
+    System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Salário de &quot;</span> + joao.<span style="color: #a0ceff">nome</span> + <span style="color: #aa5500">&quot; agora é &quot;</span> + joao.<span style="color: #a0ceff">salario</span>);
+    System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Salário de &quot;</span> + maria.<span style="color: #a0ceff">nome</span> + <span style="color: #aa5500">&quot; agora é &quot;</span> + maria.<span style="color: #a0ceff">salario</span>);
+}
+              </code>
+            </pre>
+        <p>Tanto “joao” (<b>Vendedor</b>) quanto “maria”( <b>Administrativo</b>) contêm os atributos “nome” e “salario”
+          obtidos da classe <b>Funcionario</b> por meio da herança. Experimente apagar o trecho <b>extends
+            Funcionario</b> da classe <b>Vendedor</b> e verifique que o código apresentará erro, acusando que os
+          atributos “nome” e “salario” não existem para “joao”.</p>
+        <div class='caixa-destaque-livre bg-primaria-02 borda-primaria-03 icone desafio no-print' aria-hidden="true">
+          <ul id='abas01' class='nav nav-tabs' role='tablist'>
+            <li role='presentation' class='active'><a href='#home' aria-controls='home' role='tab'
+                data-toggle='tab'>Desafio 1</a></li>
+            <li role='presentation'><a href='#profile' aria-controls='profile' role='tab' data-toggle='tab'>Desafio
+                2</a></li>
+          </ul>
+          <div class='tab-content'>
+            <div role='tabpanel' class='tab-pane fade in active' id='home'>
+              <p>Crie em um programa Java uma aplicação que leia dados de cartões de débito e crédito. Use uma
+                hierarquia de classes, considerando que</p>
+              <ul class="cor01">
+                <li>todos os cartões contêm número do cartão, nome do portador, validade e código de segurança.</li>
+                <li>cartões de crédito contêm ainda um limite.</li>
+                <li>cartões de débito necessitam da informação de saldo atual em conta.</li>
+              </ul>
+              <p>No programa, o usuário informará se o cartão que cadastrará é de crédito ou débito; em seguida,
+                informará os dados desse cartão.</p>
+            </div>
+            <div role='tabpanel' class='tab-pane fade' id='profile'>
+              <p>Expanda o programa do desafio anterior solicitando ao usuário um valor de compra. De acordo com o
+                valor, mostre mensagem de erro se o limite estourar no crédito ou se o saldo for insuficiente no débito;
+                mostre mensagem de sucesso caso contrário.</p>
+            </div>
+          </div>
+        </div>
+        <div class="acessivel print">
+          <h4>Desafio 1</h4>
+          <p>Crie em um programa Java uma aplicação que leia dados de cartões de débito e crédito. Use uma hierarquia de
+            classes, considerando que</p>
+          <ul class="cor01">
+            <li>todos os cartões contêm número do cartão, nome do portador, validade e código de segurança.</li>
+            <li>cartões de crédito contêm ainda um limite.</li>
+            <li>cartões de débito necessitam da informação de saldo atual em conta.</li>
+          </ul>
+          <p>No programa, o usuário informará se o cartão que cadastrará é de crédito ou débito; em seguida, informará
+            os dados desse cartão.</p>
+          <h4>Desafio 2</h4>
+          <p>Expanda o programa do desafio anterior solicitando ao usuário um valor de compra. De acordo com o valor,
+            mostre mensagem de erro se o limite estourar no crédito ou se o saldo for insuficiente no débito; mostre
+            mensagem de sucesso caso contrário.</p>
+        </div>
+        <h4>Método construtor e método “super”</h4>
+        <p>É muito comum a utilização de métodos construtores que permitam instanciar objetos de uma classe já com
+          alguns atributos inicializados (isto é, com seu valor definido). Analise o exemplo a seguir:</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Pessoa</span> {
+    <span style="color: #4073e0">public</span> String nome;
+    <span style="color: #4073e0">public</span> String cpf;
+
+    <span style="color: #4073e0">public</span> <span style="color: #00aa00">Pessoa</span>(String _nome, String _cpf) {
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">nome</span> = _nome;
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">cpf</span> = _cpf;
+    }
+}
+              </code>
+            </pre>
+        <p>Observe que, na classe <b>Pessoa</b> existe um método construtor que recebe os argumentos "nome" e "cpf",
+          preenchendo, respectivamente, os atributos "nome" e "cpf" da classe no momento da criação da instância.</p>
+        <p>Agora, considerando o exemplo anterior da aplicação prática do conceito de herança (em programação orientada
+          a objetos) em Java, como se pode inicializar os atributos da superclasse (a classe <b>Pessoa</b>) ao
+          instanciar a classe <b>Aluno</b>? Confira este código:</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Aluno</span> <span style="color: #4073e0">extends</span> Pessoa {
+    <span style="color: #4073e0">public</span> String matricula;
+
+    <span style="color: #4073e0">public</span> <span style="color: #00aa00">Aluno</span>(String _nome, String _cpf, String _matricula) {
+        <span style="color: #4073e0">super</span>(_nome, _cpf);
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">matricula</span> = _matricula;
+    }
+}
+              </code>
+            </pre>
+        <p>Como se pode ver, está sendo utilizado um método chamado <b>super()</b>. O método <b>super() referencia o
+            método construtor da superclasse</b> (neste caso, da classe <b>Pessoa</b>). Dessa forma, os argumentos
+          passados para o método <b>super()</b> são também conferidos aos atributos da superclasse para o novo objeto
+          instanciado. Conheça mais sobre o método “super”?</p>
+        <div class="caixa-destaque icone anotar">
+          <p>Isso quer dizer que você pode acessar os métodos e atributos públicos e protegidos da subclasse por meio da
+            superclasse? Não! Apenas o contrário. Na programação orientada a objetos, somente a subclasse herda os
+            métodos e atributos públicos ou protegidos da superclasse. O contrário não é verdade.</p>
+        </div>
+
+        <h3>Superclasse</h3>
+        <p>Como visto anteriormente, a superclasse é o nome utilizado para representar a classe mãe em uma estrutura de
+          herança na programação orientada a objetos. Em uma herança, as classes filhas (subclasses) herdam os atributos
+          e métodos públicos ou protegidos da superclasse.</p>
+        <p>Ainda recordando o exemplo anterior, utiliza-se o método <b>super()</b> na subclasse para <b>construir</b>
+          (utilizando o método construtor) a superclasse dentro (a partir) da subclasse. Isso acontece porque a
+          palavra-chave "super" é utilizada para referenciar a superclasse dentro do contexto de uma subclasse.</p>
+        <p>Com isso, outros métodos da superclasse podem ser acessados a partir da subclasse, não se limitando apenas ao
+          método construtor, como visto no exemplo apresentado. Confira o código a seguir:</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Automovel</span> {
+    <span style="color: #4073e0">private</span> <span style="color: #00aaaa">int</span> potencia = <span style="color: #009999">3</span>;
+
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">imprimirDados</span>() {
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Potencia: &quot;</span> + potencia);
+    }
+}
+              </code>
+            </pre>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Carro</span> <span style="color: #4073e0">extends</span> Automovel {
+    <span style="color: #4073e0">private</span> <span style="color: #00aaaa">int</span> consumo = <span style="color: #009999">1</span>;
+    
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">imprimirDados</span>() {
+        <span style="color: #4073e0">super</span>.<span style="color: #a0ceff">imprimirDados</span>();
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Consumo: &quot;</span> + consumo);
+    }
+}
+              </code>
+            </pre>
+        <p>Note que há uma superclasse chamada <b>Automovel</b>, que contém um atributo privado chamado "potencia" (ou
+          seja, um atributo não acessível pelas subclasses). Além disso, a superclasse contém um método público chamado
+          <b>imprimirDados()</b>.</p>
+        <p>Também há uma subclasse chamada <b>Carro</b>, com um atributo privado chamado "consumo" e um método público
+          chamado <b>imprimirDados()</b>. Dentro do método, a palavra-chave chama-se "super" e, por meio dela,
+          consegue-se acessar os atributos públicos ou protegidos da superclasse. Neste caso, está sendo chamado o
+          método <b>imprimirDados()</b> da superclasse.</p>
+        <p>Dessa forma, consegue-se continuar utilizando um método da superclasse por meio da subclasse, apenas
+          complementando o seu comportamento com algo extra (nesse caso, está sendo apresentado o valor do atributo
+          "consumo", existente apenas na subclasse).</p>
+        <div class="caixa-destaque-livre bg-primaria-02 borda-primaria-03">
+          <p><b>Exemplo 2</b>: um serviço de <i>streaming</i> tem disponíveis em seu catálogo diversos filmes. Cada um
+            tem dados como título, ano, diretor(a), gênero, duração e produtora responsável; cada vídeo é capaz de fazer
+            “play” – ou “tocar”. Algum tempo depois, o serviço começou a oferecer séries e cada episódio tem informações
+            como título, ano, diretor(a), número do episódio, temporada e duração do episódio, e também pode “tocar”.
+          </p>
+          <p>Note que há uma porção de informações comuns entre filme e episódio, além do método <b>tocar()</b> presente
+            em ambas as classes. Essa é uma situação propícia para aplicar herança: pode-se considerar ambos,
+            genericamente, como “vídeos”. Em um diagrama UML, você teria o seguinte:</p>
+          <img src="objetos/layout_5_fig5.png" class="img-responsive center-block">
+          <p class="legenda-imagem">
+            Figura 5 – Classe <b>Video</b> e suas derivadas <b>Filme</b> e <b>Episodio</b> <br>
+            Fonte: Senac EAD (2022)
+          </p>
+          <p class="acessivel no-print">Diagrama da classe “Video” com os atributos “titulo: String”, “direcao: String”,
+            “ano: int”, “duração: float” e o método “tocar()”. Setas de hierarquia ligam à esquerda com a classe
+            “Filme”, com os atributos “gênero: String” e “produtora: String”. À direita, a hierarquia se liga com
+            “Episodio”, com os atributos “episodio:int”, “temporada:int”.</p>
+        </div>
+        <p>Em Java, é possível criar as classes como o seguinte exemplo:</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Video</span> {
+    <span style="color: #4073e0">public</span> String titulo;
+    <span style="color: #4073e0">public</span> String direcao;
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">int</span> ano;
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">float</span> duracao;
+    
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">tocar</span>()
+    {
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Executando o vídeo &#39;&quot;</span> + titulo + <span style="color: #aa5500">&quot;&#39; dirigido por &quot;</span> + direcao);
+    }
+}
+              </code>
+            </pre>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Filme</span> <span style="color: #4073e0">extends</span> Video {
+    <span style="color: #4073e0">public</span> String genero;
+    <span style="color: #4073e0">public</span> String produtora;
+}
+              </code>
+            </pre>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Episodio</span> <span style="color: #4073e0">extends</span> Video {
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">int</span> episodio;
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">int</span> temporada;
+}
+              </code>
+            </pre>
+        <p>No método principal do projeto, pode-se então criar instâncias de vídeos genéricos, de filmes e de episódios
+          de séries.</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">static</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">main</span>(String[] args) {
+    Video v = <span style="color: #4073e0">new</span> Video();
+    Filme f = <span style="color: #4073e0">new</span> Filme();
+    Episodio e = <span style="color: #4073e0">new</span> Episodio();
+    
+    v.<span style="color: #a0ceff">titulo</span> = <span style="color: #aa5500">&quot;Video generico&quot;</span>;
+    v.<span style="color: #a0ceff">direcao</span> = <span style="color: #aa5500">&quot;Francisco da silva&quot;</span>;
+    v.<span style="color: #a0ceff">ano</span> = <span style="color: #009999">2022</span>;
+    v.<span style="color: #a0ceff">duracao</span> = <span style="color: #009999">30</span>;
+    
+    f.<span style="color: #a0ceff">titulo</span> = <span style="color: #aa5500">&quot;Aventuras nos Alpes&quot;</span>;
+    f.<span style="color: #a0ceff">direcao</span> = <span style="color: #aa5500">&quot;Joana da silva&quot;</span>;
+    f.<span style="color: #a0ceff">ano</span> = <span style="color: #009999">2000</span>;
+    f.<span style="color: #a0ceff">duracao</span> = <span style="color: #009999">120</span>;
+    f.<span style="color: #a0ceff">genero</span> = <span style="color: #aa5500">&quot;Aventura&quot;</span>;
+    f.<span style="color: #a0ceff">produtora</span> = <span style="color: #aa5500">&quot;Sun Films&quot;</span>;
+    
+    e.<span style="color: #a0ceff">titulo</span> = <span style="color: #aa5500">&quot;Tecnologias perigosas&quot;</span>;
+    e.<span style="color: #a0ceff">direcao</span> = <span style="color: #aa5500">&quot;Joaquim da silva&quot;</span>;
+    e.<span style="color: #a0ceff">ano</span> = <span style="color: #009999">2021</span>;
+    e.<span style="color: #a0ceff">duracao</span> = <span style="color: #009999">45</span>;
+    e.<span style="color: #a0ceff">episodio</span> = <span style="color: #009999">5</span>;
+    e.<span style="color: #a0ceff">temporada</span> = <span style="color: #009999">1</span>;
+    
+    v.<span style="color: #a0ceff">tocar</span>();
+    f.<span style="color: #a0ceff">tocar</span>();
+    e.<span style="color: #a0ceff">tocar</span>();
+}
+              </code>
+            </pre>
+        <p>Observe que existe acesso aos atributos de vídeo e ao método <b>tocar()</b>, presente apenas na classe
+          <b>Video</b>.</p>
+        <p>Veja também que a instanciação seria facilitada com um método construtor que receba todas as informações de
+          uma vez. Isso será feito na classe <b>Video</b>.</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Video</span> {
+    <span style="color: #4073e0">public</span> String titulo;
+    <span style="color: #4073e0">public</span> String direcao;
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">int</span> ano;
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">float</span> duracao;
+    
+    <span class="code-destaque"><span style="color: #4073e0">public</span> <span style="color: #00aa00">Video</span>(String _titulo, String _direcao, <span style="color: #00aaaa">int</span> _ano, <span style="color: #00aaaa">float</span> _duracao)
+    {
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">titulo</span> = _titulo;
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">direcao</span> = _direcao;
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">ano</span> = _ano;
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">duracao</span> = _duracao;
+    }</span>
+    
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">tocar</span>()
+    {
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Executando o vídeo &#39;&quot;</span> + titulo + <span style="color: #aa5500">&quot;&#39; dirigido por &quot;</span> + direcao);
+    }
+}
+              </code>
+            </pre>
+        <p>Note agora que o projeto apresenta erro. As classes <b>Filme</b> e <b>Episodio</b> emitem a mensagem
+          <i>constructor Video in class Video cannot be Applied to given types</i> (“construtor video na classe
+          <b>Video</b> não pode ser aplicado aos tipos”). Isso ocorre porque, se uma superclasse implementa um
+          construtor parametrizado, todas as suas classes derivadas também precisarão implementar uma versão desse
+          construtor, como consta a seguir:</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Filme</span> <span style="color: #4073e0">extends</span> Video {
+    <span style="color: #4073e0">public</span> String genero;
+    <span style="color: #4073e0">public</span> String produtora;
+    
+    <span style="color: #4073e0">public</span> <span style="color: #00aa00">Filme</span>(String _titulo, String _direcao, <span style="color: #00aaaa">int</span> _ano, <span style="color: #00aaaa">float</span> _duracao)
+    {
+        <span style="color: #4073e0">super</span>(_titulo, _direcao, _ano, _duracao);
+    }
+}
+              </code>
+            </pre>
+        <p>A classe <b>Filme</b> ganha então um construtor com os mesmos parâmetros solicitados no construtor de vídeo;
+          esse é o mínimo que se pode fazer para que o erro de compilação não ocorra mais. O comando <b>super(_titulo,
+            _direcao, _ano, _duracao);</b> garante que o construtor da classe mãe seja chamado, preenchendo os
+          atributos.</p>
+        <p>Evidentemente, o construtor na classe derivada pode também contar com parâmetros adicionais, como se vê a
+          seguir para a classe <b>Episodio</b>, onde são incluídos os parâmetros “_episodio” e “_temporada”.</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Episodio</span> <span style="color: #4073e0">extends</span> Video {
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">int</span> episodio;
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">int</span> temporada;
+    
+    <span style="color: #4073e0">public</span> <span style="color: #00aa00">Episodio</span>(String _titulo, String _direcao, <span style="color: #00aaaa">int</span> _ano, <span style="color: #00aaaa">float</span> _duracao, <span style="color: #00aaaa">int</span> _episodio, <span style="color: #00aaaa">int</span> _temporada)
+    {
+        <span style="color: #4073e0">super</span>(_titulo, _direcao, _ano, _duracao);
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">episodio</span> = _episodio;
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">temporada</span> = _temporada;
+    }
+}
+              </code>
+            </pre>
+        <p>Com esses construtores, pode-se deixar o código presente no método principal do projeto mais compacto:</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">static</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">main</span>(String[] args) {
+    Video v = <span style="color: #4073e0">new</span> Video(<span style="color: #aa5500">&quot;Video generico&quot;</span>, <span style="color: #aa5500">&quot;Francisco da silva&quot;</span>, <span style="color: #009999">2022</span>, <span style="color: #009999">30</span>);
+      
+    Filme f = <span style="color: #4073e0">new</span> Filme(<span style="color: #aa5500">&quot;Aventuras nos Alpes&quot;</span>, <span style="color: #aa5500">&quot;Joana da silva&quot;</span>, <span style="color: #009999">2000</span>, <span style="color: #009999">120</span>);
+    f.<span style="color: #a0ceff">genero</span> = <span style="color: #aa5500">&quot;Aventura&quot;</span>;
+    f.<span style="color: #a0ceff">produtora</span> = <span style="color: #aa5500">&quot;Sun Films&quot;</span>;
+    
+    Episodio e = <span style="color: #4073e0">new</span> Episodio(<span style="color: #aa5500">&quot;Tecnologias perigosas&quot;</span>, <span style="color: #aa5500">&quot;Joaquim da silva&quot;</span>, <span style="color: #009999">2021</span>, <span style="color: #009999">45</span>, <span style="color: #009999">5</span>, <span style="color: #009999">1</span>);
+            
+    v.<span style="color: #a0ceff">tocar</span>();
+    f.<span style="color: #a0ceff">tocar</span>();
+    e.<span style="color: #a0ceff">tocar</span>();
+}
+              </code>
+            </pre>
+        <p>Um ponto interessante sobre hierarquia de classes é o de que se pode referenciar um objeto de um tipo
+          derivado pelo tipo de sua superclasse. Nesse projeto, por exemplo, é possível referenciar o filme <b>f</b> com
+          uma variável de referência do tipo <b>Video</b>, desta maneira (inclua o trecho ao final do código em
+          <b>main()</b> para testar):</p>
+        <pre>
+              <code>
+Video referencia1 = f;
+referencia1.<span style="color: #a0ceff">tocar</span>();
+
+Video referencia2 = <span style="color: #4073e0">new</span> Episodio(<span style="color: #aa5500">&quot;Série clássica&quot;</span>, <span style="color: #aa5500">&quot;João da silva&quot;</span>, <span style="color: #009999">1980</span>, <span style="color: #009999">30</span>, <span style="color: #009999">2</span>, <span style="color: #009999">2</span>);
+referencia2.<span style="color: #a0ceff">tocar</span>();
+              </code>
+            </pre>
+        <div class="caixa-destaque icone importante">
+          <p>É importante notar, contudo, que usando as variáveis “referencia1” e “referencia2”, não se pode alcançar os
+            atributos e métodos próprios de <b>Filme</b> e <b>Episodio</b>, já que essas variáveis têm o formato da
+            classe mãe.</p>
+          <pre>
+                <code>
+referencia1.<span style="color: #a0ceff">genero</span> = <span style="color: #aa5500">&quot;Teste&quot;</span>;<span style="color: #aaaaaa; font-style: italic">//erro</span>
+referencia2.<span style="color: #a0ceff">episodio</span> = <span style="color: #009999">1</span>;<span style="color: #aaaaaa; font-style: italic">//erro</span>
+                </code>
+              </pre>
+        </div>
+        <p>Qual é a vantagem então de se usar o tipo da superclasse como referência? Em alguns casos, podem ser usadas
+          as assinaturas providas pela superclasse sem a preocupação sobre qual a instância está executando. Por
+          exemplo, imagine uma <i>playlist</i> em que estarão filmes e episódios misturados. Não importa o que estiver
+          na<i> playlist</i>, ela tocará um vídeo após o outro. Assim, seria possível usar uma lista de vídeos da
+          seguinte maneira (inclua o trecho ao final do código em <b>main()</b> para testar):</p>
+        <pre>
+          <code>
+<span class="code-destaque">Video[] playlist = <span style="color: #4073e0">new</span> Video[<span style="color: #009999">5</span>];</span>
+playlist[<span style="color: #009999">0</span>] = v; <span style="color: #aaaaaa; font-style: italic">// um vídeo genérico</span>
+playlist[<span style="color: #009999">1</span>] = f; <span style="color: #aaaaaa; font-style: italic">// um filme</span>
+playlist[<span style="color: #009999">2</span>] = e; <span style="color: #aaaaaa; font-style: italic">// um episódio</span>
+playlist[<span style="color: #009999">3</span>] = referencia2; <span style="color: #aaaaaa; font-style: italic">//outro episódio</span>
+playlist[<span style="color: #009999">4</span>] = <span style="color: #4073e0">new</span> Filme(<span style="color: #aa5500">&quot;Filme clássico&quot;</span>, <span style="color: #aa5500">&quot;José da silva&quot;</span>, <span style="color: #009999">1970</span>, <span style="color: #009999">130</span>); 
+
+System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Tocando playlist: &quot;</span>);
+<span style="color: #4073e0">for</span>(<span style="color: #00aaaa">int</span> i=<span style="color: #009999">0</span>; i&lt; playlist.<span style="color: #a0ceff">length</span>; i++)
+{
+    <span style="color: #aaaaaa; font-style: italic">//não importa se é vídeo, filme ou episódio, dê o play!</span>
+    playlist[i].<span style="color: #a0ceff">tocar</span>();
+}
+          </code>
+        </pre>
+
+        <h3>Hierarquia de classes - 1</h3>
+        <p>Assista agora um vídeo que mostra um a criação de um projeto para testar Hierarquia de classes</p>
+
+        <iframe class="center-block hidden-xs" width="640" height="360" src="https://www.youtube.com/embed/cmy6OyLuSZE" title="TDS - UC 06 - Hierarquia de classes - 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe class="center-block visible-xs" width="320" height="180" src="https://www.youtube.com/embed/cmy6OyLuSZE" title="TDS - UC 06 - Hierarquia de classes - 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <a href="index.html?page=1" class="botao bg-primaria-03 texto-primaria-02 mt-60 no-print">Tela inicial</a>
+      </div>
+
+      <div class="pagina">
+        <h3>Modificador de acesso <i>protected</i></h3>
+        <p>Utilizou-se bastante o modificador <i>public</i> e algumas vezes o <i>private</i> em atributos e métodos dos
+          exemplos apresentados até este momento. Como se sabe, <i>public</i> deixa o atributo ou método aberto para
+          acesso a partir de qualquer outra classe e <i>private</i> fecha o atributo ou método apenas para a própria
+          classe – inclusive se essa classe for derivada. Considere a classe <b>Pessoa</b> implementada anteriormente.
+          Proteja o atributo “cpf”, marcando-o como <i>private</i>. Inclua também um método público
+          <b>mostraDadosPessoa()</b>:</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Pessoa</span> {
+    <span style="color: #4073e0">public</span> String nome;
+    <span class="code-destaque"><span style="color: #4073e0">private</span></span> String cpf;
+
+    <span style="color: #4073e0">public</span> <span style="color: #00aa00">Pessoa</span>(String _nome, String _cpf) {
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">nome</span> = _nome;
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">cpf</span> = _cpf;
+    }
+    
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">mostraDadosPessoa</span>()
+    {
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Pessoa: &quot;</span> + nome + <span style="color: #aa5500">&quot; cpf: &quot;</span> + cpf);
+    }
+}
+              </code>
+            </pre>
+        <p>Observe que o acesso dentro da classe <b>Pessoa</b> é livre. Inclusive, se houver um objeto do tipo “Aluno”,
+          que é derivado de <b>Pessoa</b>, invocando <b>mostraDadosPessoa()</b>, isso não será um problema (teste o
+          código a seguir no método <b>main</b> da classe principal do seu projeto):</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">static</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">main</span>(String[] args) {
+    Aluno a = <span style="color: #4073e0">new</span> Aluno(<span style="color: #aa5500">&quot;José&quot;</span>, <span style="color: #aa5500">&quot;00100200304&quot;</span>, <span style="color: #aa5500">&quot;12345&quot;</span>);
+    a.<span style="color: #a0ceff">mostraDadosPessoa</span>();<span style="color: #aaaaaa; font-style: italic">//sem erros</span>
+}
+              </code>
+            </pre>
+        <p>Ao executar, note que a resposta é impressa na tela normalmente. No entanto, tente agora implementar um
+          método <b>mostraDadosAluno()</b> na classe <b>Aluno</b>:</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Aluno</span> <span style="color: #4073e0">extends</span> Pessoa {
+    <span style="color: #4073e0">public</span> String matricula;
+
+    <span style="color: #4073e0">public</span> <span style="color: #00aa00">Aluno</span>(String _nome, String _cpf, String _matricula) {
+        <span style="color: #4073e0">super</span>(_nome, _cpf);
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">matricula</span> = _matricula;
+    }
+    
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">mostraDadosAluno</span>()
+    {
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Aluno: &quot;</span> + nome + 
+            <span style="color: #aa5500">&quot; cpf: &quot;</span> + cpf + <span style="color: #aaaaaa; font-style: italic">//erro: &quot;cpf has private access in Pessoa&quot;</span>
+            <span style="color: #aa5500">&quot; matricula: &quot;</span>+ matricula);
+    }
+}
+              </code>
+            </pre>
+        <p>O IDE (ambiente de desenvolvimento integrado) já acusará erro (automaticamente ou ao compilar o projeto)
+          indicando que “cpf” está bloqueado na classe <b>Pessoa</b>. </p>
+        <div class="caixa-destaque icone importante">
+          <p>Para situações em que é necessário expor algum atributo ou método de uma superclasse para suas classes
+            derivadas ou classes que estejam no mesmo pacote, mas manter o bloqueio para as demais classes, pode-se usar
+            o modificador de acesso <i>protected</i>.</p>
+        </div>
+        <p>Aplique o modificador <i>protected</i> à classe <b>Pessoa</b>.</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Pessoa</span> {
+    <span style="color: #4073e0">public</span> String nome;
+    <span class="code-destaque"><span style="color: #4073e0">protected</span></span> String cpf;
+
+    <span style="color: #4073e0">public</span> <span style="color: #00aa00">Pessoa</span>(String _nome, String _cpf) {
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">nome</span> = _nome;
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">cpf</span> = _cpf;
+    }
+    
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">mostraDadosPessoa</span>()
+    {
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Pessoa: &quot;</span> + nome + <span style="color: #aa5500">&quot; cpf: &quot;</span> + cpf);
+    }
+}
+              </code>
+            </pre>
+        <p>A partir de agora, o método <b>mostraDadosAluno()</b> na classe <b>Aluno</b> já não gera mais falhas, uma vez
+          que a classe <b>Aluno</b> é derivada de <b>Pessoa</b> e, portanto, contém acesso a “cpf”.</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">static</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">main</span>(String[] args) {
+    Aluno a = <span style="color: #4073e0">new</span> Aluno(<span style="color: #aa5500">&quot;José&quot;</span>, <span style="color: #aa5500">&quot;00100200304&quot;</span>, <span style="color: #aa5500">&quot;12345&quot;</span>);
+    a.<span style="color: #a0ceff">mostraDadosPessoa</span>();<span style="color: #aaaaaa; font-style: italic">//sem erros</span>
+    a.<span style="color: #a0ceff">mostraDadosAluno</span>();<span style="color: #aaaaaa; font-style: italic">//sem erros</span>
+}
+              </code>
+            </pre>
+        <p>Por outro lado, o acesso a partir de classes não derivadas e em outros pacotes continua bloqueado. Você pode
+          testar criando uma nova classe em um novo pacote no projeto NetBeans.</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">import</span> <span style="color: #00aaaa;">hierarquia2.Pessoa</span>;
+
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">NewClass</span> {
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">testeAcesso</span>()
+    {
+        Pessoa p = <span style="color: #4073e0">new</span> Pessoa(<span style="color: #aa5500">&quot;Maria&quot;</span>, <span style="color: #aa5500">&quot;11122233344&quot;</span>);
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(p.<span style="color: #a0ceff">cpf</span>);<span style="color: #aaaaaa; font-style: italic">//erro</span>
+        
+    }
+}
+              </code>
+            </pre>
+        <div class="caixa-destaque icone anotar">
+          <p>Nesse trecho, “hierarquia2” é o nome do pacote no projeto usado para a escrita deste exemplo. Adapte com o
+            nome do pacote principal presente em seu projeto.</p>
+        </div>
+
+        <a href="index.html?page=1" class="botao bg-primaria-03 texto-primaria-02 mt-60 no-print">Tela inicial</a>
+      </div>
+
+      <div class="pagina">
+        <h3>Classes abstratas</h3>
+        <p>Uma classe abstrata é uma categoria especial de classe. Isso porque não se pode instanciar objetos de uma
+          classe abstrata, como usualmente se faz com uma classe normal. Uma classe abstrata funciona como um "modelo"
+          para outras classes, um "protocolo" a ser seguido.</p>
+        <img src="objetos/layout_5_fig6.png" class="img-responsive center-block">
+        <p class="legenda-imagem">
+          Figura 6 – Árvores <br>
+          Fonte: Freepik (c2010-2022)
+        </p>
+        <p class="acessivel no-print">A imagem contém a ilustração de trinta e duas árvores diferentes uma da outra,
+          dispostas em cinco fileiras.</p>
+        <p>A imagem mostra diferentes árvores que, se representadas em orientação a objetos, poderiam derivar de uma
+          classe abstrata <b>Árvore</b>, que apenas dita as características mais gerais de uma árvore.</p>
+        <div class="caixa-destaque icone anotar">
+          <p>Entende-se que árvores seguem um modelo de abstração. Todas as árvores contêm características e
+            comportamentos em comum, o que permite identificar o que é uma árvore ou não, sem precisar conhecer todas as
+            espécies de árvores.</p>
+        </div>
+        <p>A utilização de uma classe abstrata traz um novo conceito para a programação orientada a objetos. Trata-se
+          dos métodos <b>concretos</b> e <b>abstratos</b>.</p>
+        
+        <div>
+          <h4>Métodos concretos</h4>
+          <p>Métodos concretos são os métodos já conhecidos e utilizados diversas vezes. Já os métodos abstratos são,
+            assim como as classes abstratas, apenas "modelos", "protocolos", e não contêm uma
+            implementação/comportamento. Analise o código a seguir.</p>
+          <pre>
+                <code>
+<span style="color: #4073e0">public</span> <span class="code-destaque"><span style="color: #4073e0">abstract</span></span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Conta</span> {
+<span style="color: #4073e0">private</span> <span style="color: #00aaaa">double</span> saldo;
+
+<span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">setSaldo</span>(<span style="color: #00aaaa">double</span> saldo) {
+<span style="color: #4073e0">this</span>.<span style="color: #a0ceff">saldo</span> = saldo;
+}
+
+<span style="color: #4073e0">public</span> <span style="color: #00aaaa">double</span> <span style="color: #00aa00">getSaldo</span>() {
+<span style="color: #4073e0">return</span> saldo;
+}
+
+<span style="color: #4073e0">public</span> <span class="code-destaque"><span style="color: #4073e0">abstract</span></span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">imprimirExtrato</span>();
+}
+                </code>
+              </pre>
+          <p>Note que há uma nova palavra-chave: <i>abstract</i> (em português, “abstrato”). Essa palavra-chave indica
+            que o respectivo componente é um componente abstrato. No caso do código de exemplo, a classe <b>Conta</b> e
+            o método <b>imprimirExtrato()</b> são abstratos. Além das abstrações, ainda há uma propriedade e dois
+            métodos concretos, sendo a propriedade "saldo" e os métodos <b>getSaldo()</b> e <b>setSaldo()</b>, com
+            definições bastante comuns.</p>
+          <p>Já o método <b>imprimirExtrato()</b>, como se pode ver, não contém uma implementação. Nele, definiu-se o
+            nível de acesso (<i>public</i>), utilizou-se a palavra-chave <i>abstract</i> (para declarar o método como
+            abstrato), definiu-se o retorno do método (neste caso, <i>void</i>) e, então, definiu-se o nome do método
+            (<b>imprimirExtrato()</b>). Normalmente, a seguir, ocorreria a implementação do método, implementando o seu
+            comportamento. Mas, no caso de um método abstrato, isso não ocorre, pois, como dito anteriormente, métodos
+            abstratos são apenas modelos a serem seguidos, eles não podem ser usados diretamente.</p>
+          <p>Experimente incluir em <b>main()</b> uma instanciação da classe abstrata <b>Conta</b>.</p>
+          <pre>
+                <code>
+Conta minhaConta = <span style="color: #4073e0">new</span> Conta();
+                </code>
+              </pre>
+          <p>Uma mensagem de erro deve ser emitida pelo IDE, informando a impossibilidade de instanciação: <i>Conta is
+              abstract; cannot be instantiated</i> (o que significa “Conta é abstrata; não pode ser instanciada”).</p>
+          <p>Mas como se pode utilizar uma classe abstrata se não é possível instanciá-la? Resumidamente, é preciso
+            criar uma ou mais classes que <b>estendem</b> (herdam) a classe abstrata. Veja este exemplo:</p>
+          <pre>
+                <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">ContaCorrente</span> <span style="color: #4073e0">extends</span> Conta {
+
+    <span class="code-destaque"><span style="color: #888888">@Override</span></span>
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">imprimirExtrato</span>() {
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Imprimindo extrato da conta...&quot;</span>);
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot; - Saldo: &quot;</span> + <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">getSaldo</span>());
+    }
+
+}
+                </code>
+              </pre>
+          <p>Observe que foi criada uma classe <b>ContaCorrente</b>, que <b>estende</b> (herda) a classe modelo (a
+            classe abstrata) <b>Conta</b>.</p>
+          <p>Essa nova classe <b>ContaCorrente</b> herda (como se aprendeu na seção passada) todos os métodos concretos
+            da superclasse (neste caso, da classe abstrata <b>Conta</b>). Ou seja, os métodos <b>getSaldo()</b> e
+            <b>setSaldo()</b> estão disponíveis para uso nos objetos que instanciam a classe <b>ContaCorrente</b>,
+            executando o mesmo comportamento definido e implementado na superclasse (a classe abstrata).</p>
+          <h4>Método abstrato</h4>
+          <p>Já o método abstrato <b>imprimirExtrato()</b> deve ser <b>sobrescrito</b> para tornar-se um método concreto
+            (e, logo, poder ser utilizado), uma vez que ele não tem código na superclasse. Tornar o método concreto,
+            portanto, significa basicamente preenchê-lo com código executável e torná-lo utilizável.</p>
+          <p>Para isso, é necessário utilizar uma anotação chamada <b>@Override</b> (que significa “sobrescrever”) sobre
+            a declaração do método. A partir dessa definição, haverá um método concreto que, assim como os métodos
+            <b>getSaldo()</b> e <b>setSaldo()</b>, pode ser utilizado pelos objetos que instanciarem a classe
+            <b>ContaCorrente</b>.</p>
+        </div>
+        <div class="caixa-destaque-livre bg-primaria-02 borda-primaria-03">
+          <p><b>Exemplo 3</b>: uma empresa precisa emitir relatórios periódicos de vendas e de gastos. Os relatórios
+            seguem um padrão de cabeçalho e rodapé e todos utilizam informações com nome da empresa e sumarização de
+            valores. Que tal programar uma aplicação Java que esboce uma solução para essa situação?</p>
+        </div>
+        <p>Considere uma classe-base <b>Relatorio</b>. Ela garantirá um cabeçalho e rodapé padrões, além das informações
+          extras.</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">abstract</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Relatorio</span> {
+    <span style="color: #4073e0">public</span> String nomeEmpresa;
+    <span style="color: #4073e0">protected</span> <span style="color: #00aaaa">float</span> total;
+    
+    <span style="color: #4073e0">public</span> String <span style="color: #00aa00">emiteCabecalho</span>() {
+        <span style="color: #4073e0">return</span> nomeEmpresa + <span style="color: #aa5500">&quot;\n-------&quot;</span>;
+    }
+    
+    <span style="color: #4073e0">public</span> String <span style="color: #00aa00">emiteRodape</span>() {
+        <span style="color: #4073e0">return</span> <span style="color: #aa5500">&quot;\nTotal:&quot;</span> + total + <span style="color: #aa5500">&quot;\n-------\nEste relatório é confidencial&quot;</span>;
+    }
+    
+    <span style="color: #4073e0">public</span> <span style="color: #4073e0">abstract</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">emiteRelatorio</span>(); 
+}
+              </code>
+            </pre>
+        <p>Agora há uma classe abstrata <b>Relatorio</b> com dois métodos concretos e um abstrato.</p>
+        <p>Primeiramente, crie o relatório de vendas e, para isso, utilize uma classe auxiliar:</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Venda</span> {
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">float</span> valor;
+    <span style="color: #4073e0">public</span> String cliente;
+    
+    <span style="color: #4073e0">public</span> <span style="color: #00aa00">Venda</span>(<span style="color: #00aaaa">float</span> _valor, String _cliente) {
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">valor</span> = _valor;
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">cliente</span> = _cliente;
+    }
+}
+              </code>
+            </pre>
+        <p>Agora, crie uma classe <b>RelatorioVenda</b>, que estenderá a classe <b>Relatorio</b>.</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">RelatorioVenda</span> <span style="color: #4073e0">extends</span> Relatorio{
+    <span style="color: #4073e0">public</span> Venda[] vendas = <span style="color: #4073e0">null</span>;
+}
+              </code>
+            </pre>
+        <p>A classe contará com uma lista de vendas, que será usada na montagem do relatório. Note que, nesse momento, a
+          classe emite erro solicitando que se implemente o método abstrato <b>emitirRelatorio()</b>, implementado a
+          seguir:</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">RelatorioVenda</span> <span style="color: #4073e0">extends</span> Relatorio{
+    <span style="color: #4073e0">public</span> Venda[] vendas = <span style="color: #4073e0">null</span>;
+      
+    <span style="color: #888888">@Override</span>
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">emiteRelatorio</span>() {
+        <span style="color: #00aaaa">float</span> totalVendas = <span style="color: #009999">0</span>;
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;RELATORIO DE VENDAS&quot;</span>);
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #4073e0">super</span>.<span style="color: #a0ceff">emiteCabecalho</span>());
+        
+        <span style="color: #4073e0">if</span>(vendas != <span style="color: #4073e0">null</span>) {
+            <span style="color: #4073e0">for</span>(Venda v : vendas) {
+                System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(v.<span style="color: #a0ceff">cliente</span> + <span style="color: #aa5500">&quot; - R$&quot;</span> + v.<span style="color: #a0ceff">valor</span>);
+                totalVendas += v.<span style="color: #a0ceff">valor</span>;
+            }
+        }
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">total</span> = totalVendas;
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #4073e0">super</span>.<span style="color: #a0ceff">emiteRodape</span>());
+    }
+}
+              </code>
+            </pre>
+        <p>O método inicia mostrando o cabeçalho segundo o método <b>emitirCabecalho()</b> definido na superclasse,
+          depois percorre a lista de vendas, sumarizando os valores. Essa soma é passada ao atributo “total” definido
+          também em <b>Relatorio</b>. Por fim, é mostrado o rodapé definido por <b>emiteRodape()</b> de
+          <b>Relatorio</b>.</p>
+        <p>Você pode testar com o seguinte código em <b>main()</b> da classe principal do projeto:</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">static</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">main</span>(String[] args) {
+    RelatorioVenda relVendas = <span style="color: #4073e0">new</span> RelatorioVenda();
+    relVendas.<span style="color: #a0ceff">vendas</span> = <span style="color: #4073e0">new</span> Venda[]{<span style="color: #4073e0">new</span> Venda(<span style="color: #009999">100</span>, <span style="color: #aa5500">&quot;Maria&quot;</span>), <span style="color: #4073e0">new</span> Venda(<span style="color: #009999">150</span>, <span style="color: #aa5500">&quot;Joao&quot;</span>), <span style="color: #4073e0">new</span> Venda(<span style="color: #009999">100</span>, <span style="color: #aa5500">&quot;Antonio&quot;</span>)};  
+    relVendas.<span style="color: #a0ceff">nomeEmpresa</span> = <span style="color: #aa5500">&quot;Empresa XYZ S.A.&quot;</span>;
+    relVendas.<span style="color: #a0ceff">emiteRelatorio</span>();       
+}
+              </code>
+            </pre>
+        <p>Ao executar, você poderá ver na tela a listagem das vendas realizadas. Note que a criação de um objeto do
+          tipo “Relatorio” gera falha, já que se trata de uma classe abstrata.</p>
+        <pre>
+              <code>
+Relatorio rel = <span style="color: #4073e0">new</span> Relatorio();<span style="color: #aaaaaa; font-style: italic">//erro </span>
+<span style="color: #aaaaaa; font-style: italic">//&quot;Relatorio is abstract; cannot be instantiated&quot;</span>
+<span style="color: #aaaaaa; font-style: italic">// ou &quot;Relatorio é abstrato e não pode ser instanciado&quot;</span>
+              </code>
+            </pre>
+        <p>De maneira análoga, é possível criar uma classe <b>Compras</b>, com o valor e a descrição do gasto, e uma
+          <b>RelatorioCompras</b>, estendendo <b>Relatorio</b> e implementando <b>emiteRelatorio()</b>.</p>
+        <div class="caixa-destaque icone desafio">
+          <ul class="cor01">
+            <li>Crie uma classe <b>Produto</b>, com “nome” e “valor”.</li>
+            <li>Crie uma classe abstrata <b>Loja</b>, com método abstrato “lista valores” e com uma lista de produtos.
+            </li>
+            <li>Crie duas classes concretas, implementando a classe <b>Loja</b>: classe <b>loja</b> <b>suburbio</b>, em
+              que os preços são mostrados todos na tela com 10% de desconto, e outra <b>loja shopping</b>, em que os
+              preços dos produtos são listados todos com adição de 15% do valor original.</li>
+          </ul>
+        </div>
+
+        <h3 class="mt-60">Hierarquia de classes - 2</h3>
+        <p>Assista agora um vídeo que continua demonstrando a criação de um projeto para testar Hierarquia de classes</p>
+        <iframe class="center-block hidden-xs" width="640" height="360" src="https://www.youtube.com/embed/wXQtUcPvumo" title="TDS - UC 06 - Hierarquia de classes - 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe class="center-block visible-xs" width="320" height="180" src="https://www.youtube.com/embed/wXQtUcPvumo" title="TDS - UC 06 - Hierarquia de classes - 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <a href="index.html?page=1" class="botao bg-primaria-03 texto-primaria-02 mt-60 no-print">Tela inicial</a>
+      </div>
+
+      <div class="pagina">
+        <h3>Interface</h3>
+        <p>Interfaces são relativamente semelhantes a classes abstratas. Enquanto uma classe abstrata define métodos
+          abstratos (servindo como um modelo para as subclasses – que herdam os seus métodos), uma interface é um
+          "contrato", definindo um conjunto de métodos que serão implementados. Dessa forma, uma interface é
+          completamente abstrata (não contém nenhum método concreto, diferente de uma classe abstrata).</p>
+        <div class="caixa-destaque icone importante">
+          <p>Uma classe só pode herdar uma única superclasse. Assim, quando se trabalha com classes abstratas, pode-se
+            estender apenas uma classe abstrata, herdando os seus comportamentos e implementando os seus métodos
+            abstratos.</p>
+            <p>Agora, quando se fala sobre interfaces, <b>uma classe pode implementar diversas delas</b>.</p>
+        </div>
+        <p>Por exemplo,
+          imagine um canivete suíço: ele pode cortar como uma faca, abrir garrafas, abrir latas, sacar rolhas, serrar e
+          furar. Se você tentar abstrair isso para dentro de um código, poderia ter uma interface para cada
+          comportamento, definindo os seus respectivos métodos (por exemplo, a interface faca pode cortar e afiar,
+          enquanto a interface saca-rolha pode sacar uma rolha) e criar uma única classe <b>CaniveteSuico</b>, que
+          implementará todas essas interfaces.</p>
+        <p>Confira um exemplo, analisando o seguinte código.</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span class="code-destaque"><span style="color: #4073e0">interface</span></span> <span style="color: #00aa00;">AppDAO</span> {
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">salvar</span>(Object registro);
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">atualizar</span>(Object registro);
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">deletar</span>(<span style="color: #00aaaa">int</span> id);
+    <span style="color: #4073e0">public</span> Object <span style="color: #00aa00">buscar</span>(<span style="color: #00aaaa">int</span> id);
+    <span style="color: #4073e0">public</span> List&lt;Object&gt; <span style="color: #00aa00">listar</span>();
+}
+
+              </code>
+            </pre>
+        <div class="caixa-destaque icone anotar">
+          <p>Para criar interface em projeto NetBeans, clique com o botão direito do <i>mouse</i> no pacote em que
+            deseja criar e depois em <b>New > Java Interface</b>.</p>
+        </div>
+        <p>Note que a interface não contém nenhuma implementação. Todos os métodos são como os métodos abstratos. Porém,
+          como você está trabalhando com uma interface (e não uma classe abstrata), não é preciso utilizar a
+          palavra-chave <i>abstract</i> para definir que esses métodos são abstratos.</p>
+        <p>No exemplo, você está criando uma interface <b>AppDAO</b>, que cria um contrato especificando os métodos
+          necessários para caracterizar uma classe como um Data Access Object (DAO).</p>
+        <div class="caixa-destaque icone anotar">
+          <p>DAO, acrônimo de Data Access Object (que significa “objeto de acesso a dados”), é um conceito de
+            programação, sendo um padrão para persistência de dados, no qual todas as funcionalidades de bancos de dados
+            devem ser feitas por classes DAO.</p>
+        </div>
+        <p>Agora, crie uma classe que implemente o contrato <b>AppDAO</b>. Veja este código:</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">FuncionarioDAO</span> <span class="code-destaque"><span style="color: #4073e0">implements</span></span> AppDAO {
+    <span style="color: #888888">@Override</span>
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">salvar</span>(Object registro) {
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Funcionário salvo!&quot;</span>);
+    }
+
+    <span style="color: #888888">@Override</span>
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">atualizar</span>(Object registro) {
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Funcionário atualizado!&quot;</span>);
+    }
+
+    <span style="color: #888888">@Override</span>
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">deletar</span>(<span style="color: #00aaaa">int</span> id) {
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Funcionário deletado!&quot;</span>);
+    }
+
+    <span style="color: #888888">@Override</span>
+    <span style="color: #4073e0">public</span> Object <span style="color: #00aa00">buscar</span>(<span style="color: #00aaaa">int</span> id) {
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Funcionário não encontrado!&quot;</span>);
+        <span style="color: #4073e0">return</span> <span style="color: #4073e0">null</span>;
+    }
+
+    <span style="color: #888888">@Override</span>
+    <span style="color: #4073e0">public</span> List&lt;Object&gt; <span style="color: #00aa00">listar</span>() {
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Nenhum funcionário cadastrado!&quot;</span>);
+        <span style="color: #4073e0">return</span> <span style="color: #4073e0">null</span>;
+    }
+
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">verificarFerias</span>(<span style="color: #00aaaa">int</span> id) {
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Funcionário possui 10 dias de férias remuneradas!&quot;</span>);
+    }
+}
+              </code>
+            </pre>
+        <p>A primeira diferença que se pode notar está na definição da classe. A classe <b>FuncionarioDAO</b> está
+          implementando (e isso é definido pelo uso da palavra-chave <i>implements</i>) a interface <b>AppDAO</b>.</p>
+        <div class="caixa-destaque icone importante">
+          <p>Além disso, todos os métodos abstratos existentes na interface <b>AppDAO</b> devem ser obrigatoriamente
+            implementados na classe, já que ela está implementando a interface <b>AppDAO</b> (logo, o contrato deve ser
+            seguido).</p>
+        </div>
+        <p>Todos os métodos abstratos da interface devem ter a anotação <b>@Override</b> (a mesma utilizada nas
+          subclasses das classes abstratas). Como agora existem classes concretas, é preciso implementar o comportamento
+          de todas as classes abstratas.</p>
+        <p>Por último, você pode implementar métodos "extras", que não foram previamente definidos na interface. É o
+          caso do método <b>verificarFerias()</b>, que não existe na interface <b>AppDAO</b>, porém existe na classe
+          <b>FuncionarioDAO</b>.</p>
+        <div class="caixa-destaque-livre bg-primaria-02 borda-primaria-03">
+          <p><b>Exemplo 4</b>: criar um programa Java para cálculo de área e perímetro de uma forma geométrica. Toda
+            forma deve conseguir realizar ambos os cálculos; não há informação comum entre as formas. A princípio, serão
+            implementados “círculo” e “retângulo”. Trata-se de um caso em que se torna interessante o uso de interfaces,
+            já que o que se quer em comum entre as classes são comportamentos e não dados.</p>
+          <img src="objetos/layout_5_fig7.png" class="img-responsive center-block">
+          <p class="legenda-imagem">
+            Figura 7 – Diagrama de classes para a solução de formas geométricas <br>
+            Fonte: Senac EAD (2022)
+          </p>
+          <p class="acessivel no-print">A imagem mostra um diagrama de classe “&lt;&lt;interface>> FormaGeometrica”, com
+            métodos “calculaArea():float”, “calculaPerimetro():float”. Abaixo, com flecha tracejada, conectam-se a
+            “FormaGeometrica” à classe “Circulo”, com atributo “raio:float”, e à classe “Retangulo”, com atributos
+            “base:float” e “altura:float”.</p>
+        </div>
+        <p><b>Circulo</b> e <b>Retangulo</b> são classes concretas que implementam a interface <b>FormaGeometrica</b>.
+          Em um novo projeto Java, crie a interface <b>FormaGeometrica</b>.</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">interface</span> <span style="color: #00aa00;">FormaGeometrica</span> {
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">float</span> <span style="color: #00aa00">calculaArea</span>();
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">float</span> <span style="color: #00aa00">calculaPerimetro</span>();
+}
+              </code>
+            </pre>
+        <p>Depois, pode-se implementar a interface <b>FormaGeometrica</b> nas classes <b>Circulo</b> e <b>Retangulo</b>:
+        </p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Circulo</span> <span style="color: #4073e0">implements</span> FormaGeometrica {
+    <span style="color: #4073e0">private</span> <span style="color: #00aaaa">double</span> raio;
+
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">double</span> <span style="color: #00aa00">getRaio</span>() {
+        <span style="color: #4073e0">return</span> raio;
+    }
+
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">setRaio</span>(<span style="color: #00aaaa">double</span> raio) {
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">raio</span> = raio;
+    }
+    
+    <span style="color: #aaaaaa; font-style: italic">/*implementações de FormaGeometrica*/</span>
+    <span style="color: #888888">@Override</span>
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">double</span> <span style="color: #00aa00">calculaArea</span>() {
+        <span style="color: #4073e0">return</span> Math.<span style="color: #a0ceff">PI</span> * raio * raio;
+    }
+
+    <span style="color: #888888">@Override</span>
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">double</span> <span style="color: #00aa00">calculaPerimetro</span>() {
+        <span style="color: #4073e0">return</span> <span style="color: #009999">2</span> * Math.<span style="color: #a0ceff">PI</span> * raio;
+    }
+  
+}
+              </code>
+            </pre>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Retangulo</span> <span style="color: #4073e0">implements</span> FormaGeometrica{
+    <span style="color: #4073e0">private</span> <span style="color: #00aaaa">double</span> base;
+    <span style="color: #4073e0">private</span> <span style="color: #00aaaa">double</span> altura;
+
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">double</span> <span style="color: #00aa00">getBase</span>() {
+        <span style="color: #4073e0">return</span> base;
+    }
+
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">setBase</span>(<span style="color: #00aaaa">double</span> base) {
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">base</span> = base;
+    }
+
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">double</span> <span style="color: #00aa00">getAltura</span>() {
+        <span style="color: #4073e0">return</span> altura;
+    }
+
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">setAltura</span>(<span style="color: #00aaaa">double</span> altura) {
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">altura</span> = altura;
+    }
+    
+    <span style="color: #aaaaaa; font-style: italic">/*implementações de FormaGeometrica*/</span>
+    <span style="color: #888888">@Override</span>
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">double</span> <span style="color: #00aa00">calculaArea</span>() {
+      <span style="color: #4073e0">return</span> base * altura;
+    }
+
+    <span style="color: #888888">@Override</span>
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">double</span> <span style="color: #00aa00">calculaPerimetro</span>() {
+        <span style="color: #4073e0">return</span> <span style="color: #009999">2</span> * (base + altura);
+    }
+  
+}
+              </code>
+            </pre>
+        <p>É possível testar com o seguinte código no método <b>main()</b> do projeto:</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">static</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">main</span>(String[] args) {
+    Circulo c = <span style="color: #4073e0">new</span> Circulo();
+    c.<span style="color: #a0ceff">setRaio</span>(<span style="color: #009999">5.0</span>);
+    System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Area do círculo: &quot;</span> + c.<span style="color: #a0ceff">calculaArea</span>());
+    
+    Retangulo r = <span style="color: #4073e0">new</span> Retangulo();
+    r.<span style="color: #a0ceff">setAltura</span>(<span style="color: #009999">10</span>);
+    r.<span style="color: #a0ceff">setBase</span>(<span style="color: #009999">5</span>);
+    System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Area do quadrado: &quot;</span> + r.<span style="color: #a0ceff">calculaArea</span>());
+    
+    FormaGeometrica formas[] = <span style="color: #4073e0">new</span> FormaGeometrica[<span style="color: #009999">2</span>];
+    formas[<span style="color: #009999">0</span>] = c;
+    formas[<span style="color: #009999">1</span>] = r;
+    
+    <span style="color: #4073e0">for</span>(<span style="color: #00aaaa">int</span> i=<span style="color: #009999">0</span>; i&lt;formas.<span style="color: #a0ceff">length</span>; i++)
+    {
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Area da forma &quot;</span> + i +<span style="color: #aa5500">&quot;: &quot;</span> + formas[i].<span style="color: #a0ceff">calculaArea</span>());
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Perímetro da forma &quot;</span> + i +<span style="color: #aa5500">&quot;: &quot;</span> + formas[i].<span style="color: #a0ceff">calculaPerimetro</span>());
+    }
+}
+              </code>
+            </pre>
+        <p>Você pode criar um vetor genérico de formas geométricas e percorrê-lo invocando os métodos previstos pelo
+          contrato da interface <b>FormaGeometrica</b>, sem se preocupar se o item é um círculo ou retângulo – se eles
+          implementam <b>FormaGeometrica</b>, tenha certeza de que eles sabem calcular a área e o perímetro da forma.
+        </p>
+
+        <h3 class="mt-40">Hierarquia de classes - 3</h3>
+        <p>Assista agora um vídeo que continua demonstrando o projeto que explora a Hierarquia de classes</p>
+
+        <iframe class="center-block hidden-xs" width="640" height="360" src="https://www.youtube.com/embed/kABDxu1ERrE" title="TDS - UC 06 - Hierarquia de classes - 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe class="center-block visible-xs" width="320" height="180" src="https://www.youtube.com/embed/kABDxu1ERrE" title="TDS - UC 06 - Hierarquia de classes - 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+        <a href="index.html?page=1" class="botao bg-primaria-03 texto-primaria-02 mt-60 no-print">Tela inicial</a>
+      </div>
+
+      <div class="pagina">
+        <h3>Múltiplas interfaces</h3>
+        <p>Como descoberto antes, diferentemente das classes abstratas, as interfaces podem ser implementadas em
+          conjunto. Ou seja, uma classe pode implementar mais de uma interface ao mesmo tempo. Qual tal recriar o
+          exemplo anterior da interface de DAO, mas utilizando o conceito de múltiplas interfaces?</p>
+        <p>Nesse exemplo, o objetivo será criar duas interfaces diferentes: <i>query</i> e <i>command</i>. Ambas são
+          outros dois conceitos da programação, sendo <i>query</i> para representar operações de leitura e
+          <i>command</i> para representar operações de mutação (inserir, alterar ou remover).</p>
+        <p>Assim, identifica-se que a interface DAO pode ser dividida em duas interfaces, uma <i>query</i> e uma
+          <i>command</i>. A interface <i>query</i> especificará todas as funções de leitura, enquanto a interface
+          <i>command</i> especificará as funções de mutação.</p>
+        <div class="caixa-destaque icone anotar">
+          <p>Esses conceitos (DAO, <i>query</i> e <i>command</i>) são amplamente utilizados em projetos de
+            <i>software</i>. Os três abrangem o mesmo princípio de qualidade de <i>software</i>, chamada "separação de
+            responsabilidades". Você aprenderá mais sobre isso em breve.</p>
+        </div>
+        <p>Seguindo esse novo exemplo, observe o código a seguir:</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">interface</span> <span style="color: #00aa00;">AppQuery</span> {
+    <span style="color: #4073e0">public</span> Object <span style="color: #00aa00">buscar</span>(<span style="color: #00aaaa">int</span> id);
+    <span style="color: #4073e0">public</span> List&lt;Object&gt; <span style="color: #00aa00">listar</span>();
+}
+
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">interface</span> <span style="color: #00aa00;">AppCommand</span> {
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">salvar</span>(Object registro);
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">atualizar</span>(Object registro);
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">deletar</span>(<span style="color: #00aaaa">int</span> id);
+}
+              </code>
+            </pre>
+        <p>Veja que agora existem duas interfaces, em vez de apenas uma. A nova interface <b>AppQuery</b> ficou
+          responsável pela especificação dos métodos abstratos <b>buscar()</b> e <b>listar()</b>, mantendo a mesma
+          assinatura que se tinha na interface <b>AppDAO</b>. Já a nova interface <b>AppCommand</b> ficou responsável
+          pela especificação dos métodos abstratos <b>salvar()</b>,<b>atualizar()</b> e <b>deletar()</b>, mantendo
+          também a mesma assinatura que se tinha na interface <b>AppDAO</b>.</p>
+        <p>Se você juntar as duas interfaces novas, terá exatamente o mesmo contrato que tinha na antiga interface
+          <b>AppDAO</b>.</p>
+        <p>Agora, crie uma classe que implementará as duas interfaces, <b>AppQuery</b> e <b>AppCommand</b>. Confira o
+          seguinte código:</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">FuncionarioDAO</span> <span style="color: #4073e0">implements</span> AppQuery, AppCommand {
+    <span style="color: #888888">@Override</span>
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">salvar</span>(Object registro) {
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Funcionário salvo!&quot;</span>);
+    }
+
+    <span style="color: #888888">@Override</span>
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">atualizar</span>(Object registro) {
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Funcionário atualizado!&quot;</span>);
+    }
+
+    <span style="color: #888888">@Override</span>
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">deletar</span>(<span style="color: #00aaaa">int</span> id) {
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Funcionário deletado!&quot;</span>);
+    }
+
+    <span style="color: #888888">@Override</span>
+    <span style="color: #4073e0">public</span> Object <span style="color: #00aa00">buscar</span>(<span style="color: #00aaaa">int</span> id) {
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Funcionário não encontrado!&quot;</span>);
+        <span style="color: #4073e0">return</span> <span style="color: #4073e0">null</span>;
+    }
+
+    <span style="color: #888888">@Override</span>
+    <span style="color: #4073e0">public</span> List&lt;Object&gt; <span style="color: #00aa00">listar</span>() {
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Nenhum funcionário cadastrado!&quot;</span>);
+        <span style="color: #4073e0">return</span> <span style="color: #4073e0">null</span>;
+    }
+
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">verificarFerias</span>(<span style="color: #00aaaa">int</span> id) {
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Funcionário possui 10 dias de férias remuneradas!&quot;</span>);
+    }
+}
+              </code>
+            </pre>
+        <p>Como se pode ver, está sendo utilizado o mesmo código do exemplo anterior (utilizando a interface
+          <b>AppDAO</b>). Entretanto, desta vez, estão sendo implementadas duas interfaces ao mesmo tempo (as duas novas
+          interfaces, <b>AppQuery</b> e <b>AppCommand</b>). Como a assinatura dos métodos permaneceu igual, o corpo da
+          classe permanece o mesmo.</p>
+        <div class="caixa-destaque icone desafio">
+          <p>Crie um programa orientado a objeto que implemente pelo menos três partes diferentes de um carro (exemplo:
+            motor, janelas e rádio). Para cada funcionalidade, apenas imprima uma linha descrevendo a ação que está
+            sendo realizada. Utilize interfaces para concluir este desafio.</p>
+        </div>
+        <p>Agora, você já sabe as diferenças entre classes abstratas e interfaces e como utilizá-las. Conheça, neste
+          momento, algumas estratégias e técnicas muito utilizadas em projetos de <i>software</i> e que requisitam a
+          utilização de abstrações para funcionar.</p>
+        <div class="caixa-destaque icone anotar">
+          <p>Você pode juntar uma herança à implementação de interfaces. Basta criar uma classe, estendê-la (usando a
+            palavra-chave <i>extends</i>) de uma outra classe (a superclasse) e também implementar as interfaces
+            desejadas (usando a palavra-chave <i>implements</i>).</p>
+        </div>
+
+        <a href="index.html?page=1" class="botao bg-primaria-03 texto-primaria-02 mt-60 no-print">Tela inicial</a>
+      </div>
+
+      <div class="pagina">
+        <h3>Polimorfismo</h3>
+        <p>Na programação orientada a objetos, polimorfismo é o conceito no qual você pode alcançar comportamentos
+          diferentes por meio da mesma interface. Seguindo o significado da palavra "polimorfo", um método ou uma classe
+          polimorfa é uma classe que pode se passar por outras, adotando diferentes comportamentos dependendo do seu
+          contexto. Uma forma prática de entender esse conceito é imaginar que um mesmo método pode ter diferentes
+          versões.</p>
+        <p>Existem duas formas principais para implementar o conceito de polimorfismo: polimorfismo estático e
+          polimorfismo dinâmico. Conheça um pouco mais sobre cada um:</p>
+        <div class="no-print" aria-hidden="true">
+          <p>Clique ou toque para visualizar o conteúdo.</p>
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <button type="button" class="btn-polimorfismo btn-polimorfismo01 center-block" data-toggle="modal"
+                data-target="#modal-polimorfismo01"></button>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <button type="button" class="btn-polimorfismo btn-polimorfismo02 center-block" data-toggle="modal"
+                data-target="#modal-polimorfismo02"></button>
+            </div>
+          </div>
+        </div>
+        <div class="acessivel print">
+          <h4>Polimorfismo estático</h4>
+          <p>Seguindo o conceito de polimorfismo, o <b>polimorfismo estático</b> é uma forma de adicionar diferentes
+            comportamentos para o mesmo método. O fato de ser estático significa que o compilador consegue determinar
+            qual comportamento/versão será executado.</p>
+          <div class="caixa-destaque icone anotar">
+            <p>Em seguida, você aprenderá que existe outro tipo de polimorfismo, no qual só é possível validar qual
+              comportamento/versão será executado em tempo de execução (isto é, executando o código-fonte).</p>
+          </div>
+          <p>O polimorfismo estático também é conhecido como polimorfismo em tempo de compilação (em inglês,
+            <i>compile-time polymorphism</i>), ligação estática (<i>static binding</i>), ligação em tempo de compilação
+            (<i>compile-time binding</i>), ligação precoce (<i>early binding</i>) e <b>sobrecarga de método</b>
+            (<i>method overloading</i>) – sendo esta última a forma mais comum. </p>
+          <p>Existem diversas formas diferentes de realizar um polimorfismo estático, dependendo do <i>kit</i> de
+            recursos da linguagem de programação utilizada. A única regra é que a implementação deve atender ao
+            conceito. Ou seja, deve ser possível determinar qual comportamento será executado (do método ou classe
+            polimorfo) ainda no compilador (sem a necessidade de executar o código).</p>
+          <p>Uma das formas mais conhecidas de polimorfismo em Java é a <b>sobrecarga de método</b>. Nela, você pode
+            implementar diversos métodos com o mesmo nome dentro da mesma classe, mudando apenas o conjunto de
+            argumentos do método. Para isso funcionar, os argumentos do método devem ser diferentes em pelo menos um dos
+            três critérios a seguir:</p>
+          <ul class="checklist">
+            <li>Os métodos precisam ter um número diferente de argumentos.</li>
+            <li>Os métodos devem ter tipos de dados diferentes nos seus argumentos (por exemplo, um método recebendo uma
+              <i>string</i> e outro, um <i>date</i>).</li>
+            <li>Os métodos devem receber os argumentos em ordens diferentes.</li>
+          </ul>
+          <p>Nessa estratégia, devido ao diferente conjunto de argumentos, cada método tem uma assinatura diferente.
+            Isso permite que o compilador identifique qual método deve ser chamado (de acordo com os argumentos
+            providos) e o vincule à chamada do método, sendo determinado o comportamento que será executado ainda no
+            compilador.</p>
+          <p>Confira o exemplo no código a seguir:</p>
+          <pre>
+                <code>
+<span style="color: #4073e0">class</span> <span style="color: #00aa00;">Calculadora</span> {
+    <span style="color: #00aaaa">int</span> <span style="color: #00aa00">somar</span> (<span style="color: #00aaaa">int</span> a, <span style="color: #00aaaa">int</span> b) {
+        <span style="color: #4073e0">return</span> a + b;
+    }
+
+    <span style="color: #00aaaa">int</span> <span style="color: #00aa00">somar</span> (<span style="color: #00aaaa">int</span> a, <span style="color: #00aaaa">int</span> b, <span style="color: #00aaaa">int</span> c) {
+        <span style="color: #4073e0">return</span> a + b + c;
+    }
+}
+                </code>
+              </pre>
+          <p>Nesse exemplo, note que foi criada uma classe <b>Calculadora</b> com o método <b>somar()</b>. Definiu-se o
+            método duas vezes, porém com o conjunto de argumentos diferentes.</p>
+          <div class="caixa-destaque">
+            <p>A primeira versão do método <b>somar()</b> espera receber dois argumentos do tipo <i>int</i> (números
+              inteiros), chamados de "a" e "b". Já a segunda versão do método espera receber três argumentos do tipo
+              <i>int</i>, chamados de "a", "b" e "c".</p>
+          </div>
+          <p>Este é um exemplo simples do conceito de sobrecarga de método. Se você instanciar a classe
+            <b>Calculadora</b> e executar o método <b>.somar()</b> passando apenas dois números inteiros como argumento,
+            o compilador já identificará que está sendo utilizada a primeira versão (que espera receber dois
+            argumentos). Agora, se você executar o método <b>.somar()</b> passando três números inteiros como argumento,
+            o compilador identificará que está sendo utilizada a segunda versão (que espera receber três números
+            inteiros).</p>
+          <p>Agora veja este outro exemplo:</p>
+          <pre>
+                <code>
+<span style="color: #4073e0">class</span> <span style="color: #00aa00;">Usuario</span> {
+    <span style="color: #00aaaa">void</span> <span style="color: #00aa00">seguir</span> (Usuario usuario) {
+        <span style="color: #aaaaaa; font-style: italic">// Seguir um usuário novo</span>
+    }
+
+    <span style="color: #00aaaa">void</span> <span style="color: #00aa00">seguir</span> (Comunidade) {
+        <span style="color: #aaaaaa; font-style: italic">// Seguir uma comunidade</span>
+    }
+
+    <span style="color: #00aaaa">void</span> <span style="color: #00aa00">seguir</span> (Hashtag) {
+        <span style="color: #aaaaaa; font-style: italic">// Seguir uma hashtag</span>
+    }
+}
+                </code>
+              </pre>
+          <p>Nesse caso, há um hipotético usuário de rede social, que pode seguir usuários, comunidades e
+            <i>hashtags</i>. A sobrecarga de método está sendo feita sobre o método <b>.seguir()</b>, mudando apenas a
+            sua assinatura, indicando se é um usuário, uma comunidade ou uma <i>hashtag</i> que está sendo seguida.
+            Dessa forma, é possível adotar comportamentos diferentes de acordo com os argumentos providos.</p>
+          <div class="caixa-destaque icone desafio">
+            <p>Crie um programa orientado a objetos que simule uma autenticação. Aplique sobrecarga de método para
+              validar com <i>login</i> e senha ou com número de celular e código numérico. Não se preocupe em validar a
+              autenticidade, apenas apresente uma mensagem de sucesso dizendo qual método de autenticação foi usado
+              (senha ou código).</p>
+          </div>
+
+          <h4>Polimorfismo dinâmico</h4>
+          <p>Como dito anteriormente, existe outro tipo de polimorfismo, no qual só é possível validar qual
+            comportamento/versão será executado em tempo de execução (isto é, executando o código-fonte). Esse formato
+            de polimorfismo é conhecido como <b>polimorfismo dinâmico</b>.</p>
+          <p>Como ele, o compilador não consegue determinar a versão/comportamento que será executada de um método ou
+            classe polimorfa. Nesse cenário, a diferença existe apenas no tempo de execução, ou seja, é um cenário muito
+            comum e utilizado em alguns conceitos de boas práticas, que serão estudados futuramente, como na injeção de
+            dependências.</p>
+          <p>O polimorfismo dinâmico também é conhecido como:</p>
+          <ul class="cor01">
+            <li>Polimorfismo em tempo de execução (do inglês <i>run-time polymorphism</i>)</li>
+            <li>Ligação dinâmica (<i>dynamic binding</i>)</li>
+            <li>Ligação em tempo de execução (<i>run-time binding</i>)</li>
+            <li>Ligação tardia (<i>late binding</i>)</li>
+            <li>Sobreposição de método (<i>method overriding</i>)</li>
+          </ul>
+          <p>Para o polimorfismo dinâmico funcionar, suponha que existam diferentes métodos com a mesma assinatura (isto
+            é, métodos que recebem os mesmos argumentos e retornam o mesmo tipo de dado), sendo cada método em uma
+            classe diferente. Para caracterizar o polimorfismo dinâmico, cada classe deverá (1) herdar da mesma
+            superclasse ou (2) implementar a mesma interface ou classe abstrata.</p>
+          <p>Assim como no polimorfismo estático, existem diversas técnicas para atingir o objetivo do polimorfismo
+            dinâmico, dependendo dos recursos providos pela linguagem de programação em uso. No Java, é muito comum a
+            utilização da técnica de <b>sobreposição de método</b>. Para exemplificar um cenário, observe a imagem a
+            seguir.</p>
+          <img src="objetos/layout_5_fig8_ilustra_falas.png" class="img-responsive center-block">
+          <p class="legenda-imagem">
+            Figura 8 – Exemplo de polimorfismo com a ação “Falar” <br>
+            Fonte: Adaptado de Ediriweera (2017)
+          </p>
+          <p class="acessivel no-print">A imagem contém um homem falando "Agora falem!" para um cachorro, um pato e um
+            gato. O cachorro está respondendo "Au-au", o pato está respondendo "Quac" e o gato está respondendo "Miau".
+          </p>
+          <p>Note que todos os objetos são animais e que cada um “fala” de uma maneira específica. Essa imagem é um
+            exemplo de sobreposição de método, uma estratégia para alcançar o polimorfismo dinâmico. Nele, estão três
+            animais diferentes: um cachorro, um pato e um gato. Os três animais são capazes de se comunicar (no
+            programa, esse método é chamado de "falar"), porém cada animal comunica-se de uma forma diferente.</p>
+          <p>Que tal trazer esse exemplo da vida real para código? Analise o código a seguir:</p>
+          <pre>
+                <code>
+<span style="color: #4073e0">class</span> <span style="color: #00aa00;">Animal</span> {   
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">falar</span> (){
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;???&quot;</span>);
+    }
+}
+                </code>
+              </pre>
+          <pre>
+                <code>
+<span style="color: #4073e0">class</span> <span style="color: #00aa00;">Cachorro</span> <span style="color: #4073e0">extends</span> Animal {
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">falar</span> () {
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Au au&quot;</span>);
+    }
+}
+                </code>
+              </pre>
+          <pre>
+                <code>
+<span style="color: #4073e0">class</span> <span style="color: #00aa00;">Pato</span> <span style="color: #4073e0">extends</span> Animal {
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">falar</span> () {
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Quack&quot;</span>);
+    }
+}
+                </code>
+              </pre>
+          <pre>
+                <code>
+<span style="color: #4073e0">class</span> <span style="color: #00aa00;">Gato</span> <span style="color: #4073e0">extends</span> Animal {
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">falar</span> () {
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Miau&quot;</span>);
+    }
+}
+                </code>
+              </pre>
+          <p>Transformando esse exemplo em código, há uma superclasse chamada <b>Animal</b> e três subclasses chamadas
+            <b>Cachorro</b>, <b>Pato</b> e <b>Gato</b>. A superclasse e as subclasses tem um método <b>falar</b> com a
+            mesma assinatura (sem argumentos de entrada e com o mesmo retorno <i>void</i>), porém cada subclasse contém
+            um comportamento específico.</p>
+          <p>Agora serão utilizadas as classes:</p>
+          <pre>
+                <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">MeuProjeto</span> {
+    <span style="color: #4073e0">public</span> <span style="color: #4073e0">static</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">main</span>(String args[]) {
+        Animal cachorro = <span style="color: #4073e0">new</span> Cachorro();
+        Animal pato = <span style="color: #4073e0">new</span> Pato();
+        Animal gato = <span style="color: #4073e0">new</span> Gato();
+
+        cachorro.<span style="color: #a0ceff">falar</span>(); <span style="color: #aaaaaa; font-style: italic">// &quot;Au au&quot;</span>
+        pato.<span style="color: #a0ceff">falar</span>(); <span style="color: #aaaaaa; font-style: italic">// &quot;Quack&quot;</span>
+        gato.<span style="color: #a0ceff">falar</span>(); <span style="color: #aaaaaa; font-style: italic">// &quot;Miau&quot;</span>
+    }
+}
+                </code>
+              </pre>
+          <p>Note que os três objetos são do tipo “Animal”. Isso implica que, caso alguma outra função do programa
+            precise receber algum animal, todos os três objetos são argumentos válidos para serem utilizados. Porém,
+            cada objeto foi instanciado por meio de uma subclasse diferente. O objeto "cachorro" foi instanciado da
+            classe <b>Cachorro</b>, o objeto "pato" foi instanciado da classe <b>Pato</b> e o objeto "gato" foi
+            instanciado da classe <b>Gato</b>. Logo, ao chamar o método <b>falar</b> de qualquer um dos animais, você
+            terá resultados diferentes em tempo de execução.</p>
+          <p>Em outras palavras, em um exemplo de sobreposição de métodos utilizando herança (ou seja, com uma
+            superclasse e diversas subclasses), quando um objeto é atribuído a uma classe de referência (ou seja, à
+            superclasse) e um de seus métodos é chamado, o método executado será o da classe do objeto (a subclasse) e
+            não o da classe de referência (a superclasse). Isso é exatamente o que foi visto no código de exemplo
+            anterior. Todos os objetos são do tipo da superclasse (<b>Animal</b>, a classe de referência), mas, quando
+            se executa o método <b>falar</b>, é executado o comportamento da subclasse (a classe do objeto).</p>
+        </div>
+        <div class="caixa-destaque-livre bg-primaria-02 borda-primaria-03">
+          <p><b>Exemplo 5</b>: retomando o exemplo 2, em que foram criadas classes para um serviço de <i>streaming</i>,
+            tem-se a classe-base <b>Video</b> e as classes derivadas <b>Filme</b> e <b>Episodio</b>. Note que o método
+            <b>tocar()</b> está presente apenas na superclasse, mas seria adequado que tivessem implementações também em
+            <b>Filme</b> e <b>Episodio</b>, já que essas classes contêm atributos próprios. Pode-se usar polimorfismo
+            para isso.</p>
+        </div>
+        <p>Reabra o projeto criado para aquele exemplo e, em <b>Filme.java</b>, faça a seguinte modificação:</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Filme</span> <span style="color: #4073e0">extends</span> Video {
+    <span style="color: #4073e0">public</span> String genero;
+    <span style="color: #4073e0">public</span> String produtora;
+    
+    <span style="color: #4073e0">public</span> <span style="color: #00aa00">Filme</span>(String _titulo, String _direcao, <span style="color: #00aaaa">int</span> _ano, <span style="color: #00aaaa">float</span> _duracao)
+    {
+        <span style="color: #4073e0">super</span>(_titulo, _direcao, _ano, _duracao);
+    }
+
+    <span class="code-destaque"><span style="color: #888888">@Override</span>
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">tocar</span>() {
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Você está assistindo ao filme &quot;</span> + titulo
+                + <span style="color: #aa5500">&quot;, que tem direção de &quot;</span> + direcao 
+                + <span style="color: #aa5500">&quot;. Este é um filme de &quot;</span> + genero
+                + <span style="color: #aa5500">&quot; e durará &quot;</span> + duracao + <span style="color: #aa5500">&quot; minutos&quot;</span>);  
+    }</span>
+}
+
+              </code>
+            </pre>
+        <p>Neste momento, o método <b>tocar()</b> definido em <b>Video</b> está sendo sobrescrito. Isso significa que,
+          quando um objeto “Filme” executar o método <b>tocar()</b>, ele obedecerá a essa nova implementação, e não a da
+          presente em <b>Video</b>.</p>
+        <p>Também é preciso implementar o método em <b>Episodio</b>:</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Episodio</span> <span style="color: #4073e0">extends</span> Video {
+  <span style="color: #4073e0">public</span> <span style="color: #00aaaa">int</span> episodio;
+  <span style="color: #4073e0">public</span> <span style="color: #00aaaa">int</span> temporada;
+  
+  <span style="color: #4073e0">public</span> <span style="color: #00aa00">Episodio</span>(String _titulo, String _direcao, <span style="color: #00aaaa">int</span> _ano, <span style="color: #00aaaa">float</span> _duracao, <span style="color: #00aaaa">int</span> _episodio, <span style="color: #00aaaa">int</span> _temporada)
+  {
+      <span style="color: #4073e0">super</span>(_titulo, _direcao, _ano, _duracao);
+      <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">episodio</span> = _episodio;
+      <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">temporada</span> = _temporada;
+  }
+  
+  <span class="code-destaque"><span style="color: #888888">@Override</span>
+  <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">tocar</span>() {
+      System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Você está assistindo ao episódio nº&quot;</span> + episodio
+              + <span style="color: #aa5500">&quot; da temporada &quot;</span> + temporada
+              + <span style="color: #aa5500">&quot; da série &quot;</span> + titulo);  
+  }</span>
+}
+
+              </code>
+            </pre>
+        <p>Para testar, o código do método <b>main()</b> pode ser alterado para o seguinte:</p>
+        <pre>
+              <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">static</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">main</span>(String[] args) {
+    Video v = <span style="color: #4073e0">new</span> Video(<span style="color: #aa5500">&quot;Video generico&quot;</span>, <span style="color: #aa5500">&quot;Francisco da silva&quot;</span>, <span style="color: #009999">2022</span>, <span style="color: #009999">30</span>);
+      
+    Filme f = <span style="color: #4073e0">new</span> Filme(<span style="color: #aa5500">&quot;Aventuras nos Alpes&quot;</span>, <span style="color: #aa5500">&quot;Joana da silva&quot;</span>, <span style="color: #009999">2000</span>, <span style="color: #009999">120</span>);
+    f.<span style="color: #a0ceff">genero</span> = <span style="color: #aa5500">&quot;Aventura&quot;</span>;
+    f.<span style="color: #a0ceff">produtora</span> = <span style="color: #aa5500">&quot;Sun Films&quot;</span>;
+    
+    Episodio e = <span style="color: #4073e0">new</span> Episodio(<span style="color: #aa5500">&quot;Tecnologias Perigosas&quot;</span>, <span style="color: #aa5500">&quot;Joaquim da silva&quot;</span>, <span style="color: #009999">2021</span>, <span style="color: #009999">45</span>, <span style="color: #009999">5</span>, <span style="color: #009999">1</span>);
+            
+    v.<span style="color: #a0ceff">tocar</span>();
+    f.<span style="color: #a0ceff">tocar</span>();
+    e.<span style="color: #a0ceff">tocar</span>();
+}
+              </code>
+            </pre>
+        <p>Ao executar, você deverá ver como resultado estas três linhas:</p>
+        <img src="objetos/layout_5_tela_naveg.png" class="img-responsive center-block">
+        <p class="acessivel no-print">
+          Executando o vídeo 'Video generico' dirigido por Francisco da silva <br>
+          Você está assistindo ao filme Aventuras nos Alpes, que tem direção de Joana da silva. Este é um filme de
+          Aventura e durará 120.0 minutos <br>
+          Você está assistindo ao episódio nº5 da temporada 1 da série Tecnologias Perigosas
+        </p>
+        <p>A primeira linha ocorre porque <b>v</b> é do tipo “Video” e, portanto, acessa a implementação original de
+          <b>tocar()</b>. A segunda linha reflete que <b>f</b>, um objeto do tipo “Filme”, acessa o código presente em
+          <b>Filme</b> para o método <b>tocar</b> – e analogamente para o objeto <b>e</b> do tipo “Episodio”, na
+          terceira linha.</p>
+        <div class="caixa-destaque icone desafio">
+          <p>Crie um programa para conversão de medidas. Crie uma classe <b>Medida</b> com os métodos
+            <b>converterDeMetro</b> e <b>converterParaMetro</b>; ambas retornarão o mesmo valor informado pelo usuário,
+            já que estão em metros. Crie classes derivadas <b>Polegada</b>, <b>Pé</b> e <b>Milha</b>, que implementem
+            versões de <b>converterDeMetro</b> (recebendo por parâmetro o valor em metros e retornando na medida
+            correspondente à classe), e <b>converterParaMetro</b> (recebendo um valor na medida correspondente à classe
+            e retornando em metros). Esses métodos retornarão valores calculados de acordo com os dados a seguir:</p>
+          <ul class="cor01">
+            <li>1 polegada = 0,0254 metro</li>
+            <li>1 pé = 0,3048 metro</li>
+            <li>1 milha = 1609,34 metros</li>
+          </ul>
+        </div>
+
+        <a href="index.html?page=1" class="botao bg-primaria-03 texto-primaria-02 mt-60 no-print">Tela inicial</a>
+      </div>
+
+      <div class="pagina">
+        <h3>Associação</h3>
+        <p>Até aqui, você já conheceu uma variedade de estratégias utilizadas na programação orientada a objetos. Cada
+          técnica contém suas vantagens e desvantagens e tenta abstrair algum conceito do mundo real, tornando-o
+          flexível para a implementação de um código-fonte limpo e escalável, facilitando a manutenção desse código a
+          longo prazo.</p>
+        <p>Conheça agora um conceito que cada vez mais ganha espaço em projetos de <i>software</i> orientados a objetos.
+          Trata-se da <b>associação</b>.</p>
+        <p>Associação é um conceito em programação orientada a objetos que <b>modela o relacionamento entre duas ou mais
+            classes</b>. Assim como visto em herança, a associação envolve o uso de outras classes para construir
+          classes mais complexas. Porém, a associação caracteriza um relacionamento representado pelo verbo
+          "<b>ter</b>", enquanto a herança é representada pelo verbo "ser".</p>
+        <div class="row">
+          <div class="col-md-3 col-sm-4 col-xs-12">
+            <img src="objetos/layout_5_ilustra_pc_desmontado.png" class="img-responsive center-block">
+          </div>
+          <div class="col-md-9 col-sm-8 col-xs-12">
+            <p>Por exemplo, imagine um computador. Um computador tem uma placa-mãe, um processador, um disco rígido
+              etc.. Caso você modelasse um programa orientado a objetos para representar um computador, a utilização de
+              herança não faria a melhor representação desse cenário, pois o computador não é suas peças, ele tem as
+              peças, são um complemento à sua estrutura. Nesse cenário, a utilização de associação é a melhor escolha.
+            </p>
+          </div>
+        </div>
+        <div class="caixa-destaque icone importante">
+          <p>O conceito de associação é frequentemente usado no mundo real e deve ser aproveitado também no
+            desenvolvimento de <i>software</i>. Um carro não é um motor; ele <b>tem</b> um. Uma máquina de café
+            <b>tem</b> um moedor e uma unidade de infusão, mas não <b>é</b> nenhum deles. Por conta dessa grande
+            similaridade com diversos casos do mundo real, o conceito de associação tem ganhado muito espaço em projetos
+            de <i>software</i> orientados a objeto.</p>
+        </div>
+        <p>Existem três categorias de associação, que são:</p>
+        <ul class="cor01">
+          <li>Associação</li>
+          <li>Agregação</li>
+          <li>Composição</li>
+        </ul>
+        <p>Pode-se dizer que todas as três são associações, o que as diferem são apenas regras em seus conceitos,
+          definindo restrições, responsáveis por diferenciar o que é composição, agregação ou associação.</p>
+        <div class="no-print" aria-hidden="true">
+          <p>Clique ou toque para visualizar o conteúdo.</p>
+          <div class="painel-categorias">
+            <button type="button" class="btn-categorias btn-categoria01 center-block" data-toggle="modal"
+              data-target="#modal-categoria01"></button>
+            <button type="button" class="btn-categorias btn-categoria02 center-block" data-toggle="modal"
+              data-target="#modal-categoria02"></button>
+            <button type="button" class="btn-categorias btn-categoria03 center-block" data-toggle="modal"
+              data-target="#modal-categoria03"></button>
+          </div>
+        </div>
+        <div class="acessivel print">
+          <h3>Composição</h3>
+          <p>Em uma composição, as classes relacionadas só funcionam adequadamente quando juntas. Por conta disso, a
+            composição é considerada uma <b>associação do tipo forte</b>, na qual há dependência entre as partes.</p>
+          <p>Imagine uma casa e suas janelas. Você comporá a sua classe <b>Casa</b> com um objeto da classe
+            <b>Janela</b> no quarto, um na cozinha, um no banheiro e um na sala. Caso seja criado um objeto da classe
+            <b>Casa</b> e, logo após, este mesmo seja destruído, também serão destruídas as suas janelas.</p>
+          <p>Para transformar esse exemplo em código, primeiramente deve-se criar a classe <b>Janela</b>, que será
+            necessária para a composição da classe <b>Casa</b>. </p>
+          <p>Observe o código a seguir:</p>
+          <pre>
+                <code>
+<span style="color: #4073e0">class</span> <span style="color: #00aa00;">Janela</span> {
+    <span style="color: #4073e0">private</span> <span style="color: #00aaaa">boolean</span> estaAberta = <span style="color: #4073e0">false</span>;
+
+    Janela () { }
+
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">abrir</span> () {
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">estaAberta</span> = <span style="color: #4073e0">true</span>;
+    }
+
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">fechar</span> () {
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">estaAberta</span> = <span style="color: #4073e0">false</span>;
+    }
+
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">imprimirSituacao</span> () {
+        String situacao = <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">estaAberta</span> ? <span style="color: #aa5500">&quot;aberta&quot;</span> : <span style="color: #aa5500">&quot;fechada&quot;</span>;
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;A janela esta &quot;</span> + situacao);
+    }
+}
+                </code>
+              </pre>
+          <p>A classe <b>Janela</b> é bastante simples. Ela tem um atributo privado chamado <b>estaAberta</b>, sendo um
+            booleano, que indica se a janela está ou não aberta. Além disso, constam três métodos públicos: um para
+            abrir a janela (alterando o atributo <b>estaAberta</b> para <b>true</b>), um para fechar a janela (alterando
+            o atributo <b>estaAberta</b> para <b>false</b>) e um para imprimir o atual estado da janela (aberta ou
+            fechada).</p>
+          <p>Agora é preciso implementar, de fato, uma composição. Para isso, deve-se criar a classe <b>Casa</b>,
+            criando também uma composição com as janelas, sendo uma no quarto, uma na cozinha, uma no banheiro e uma na
+            sala. Confira este código:</p>
+          <pre>
+                <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Casa</span> {
+    <span style="color: #4073e0">private</span> Janela janelaQuarto = <span style="color: #4073e0">null</span>;
+    <span style="color: #4073e0">private</span> Janela janelaCozinha = <span style="color: #4073e0">null</span>;
+    <span style="color: #4073e0">private</span> Janela janelaBanheiro = <span style="color: #4073e0">null</span>;
+    <span style="color: #4073e0">private</span> Janela janelaSala = <span style="color: #4073e0">null</span>;
+
+    <span style="color: #4073e0">public</span> <span style="color: #00aa00">Casa</span> () {
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">janelaQuarto</span> = <span style="color: #4073e0">new</span> Janela();
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">janelaCozinha</span> = <span style="color: #4073e0">new</span> Janela();
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">janelaBanheiro</span> = <span style="color: #4073e0">new</span> Janela();
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">janelaSala</span> = <span style="color: #4073e0">new</span> Janela();
+    }
+}
+                </code>
+              </pre>
+          <p>As duas características mais importantes da classe <b>Casa</b> são (1) o seu método construtor e (2) os
+            seus atributos privados.</p>
+          <p>Dentro do método construtor, as quatro diferentes janelas estão sendo instanciadas, uma para cada peça da
+            casa de exemplo (quarto, cozinha, banheiro e sala). Além disso, cada uma das janelas é um atributo privado
+            na classe, não existindo nenhum método público que permita adicionar uma janela diferente à casa ou alterar
+            o seu valor.</p>
+          <p>Essas duas características fazem com que exista uma composição entre a casa e as suas janelas, respeitando
+            a regra citada anteriormente. Caso seja instanciado um novo objeto da classe <b>Casa</b> e, logo após, o
+            mesmo seja destruído, todas as suas janelas também serão destruídas. Isso porque o ciclo de vida dos
+            atributos para as janelas só existe dentro da classe <b>Casa</b>. Cada nova instância da classe <b>Casa</b>
+            criará novas janelas. Nunca se terá uma janela repetida sendo utilizada fora da classe <b>Casa</b> neste
+            exemplo.</p>
+          <p>Conclui-se, portanto, que em uma composição existe uma forte dependência entre as partes. Por conta disso,
+            a composição é considerada uma associação do tipo forte, na qual há dependência entre as partes.</p>
+
+          <h3>Agregação</h3>
+          <p>Uma agregação é uma forma mais liberal de composição. Enquanto na composição só existe o todo (de forma que
+            as classes só têm sentido quando estiverem juntas), na agregação há um relacionamento típico de
+            "proprietário" e "propriedade", no qual as duas classes existem por conta própria, porém, juntas, fazem uma
+            relação em que uma classe é parte da outra, agregando informações ao proprietário.</p>
+          <p>Por exemplo, um departamento pode ter um ou mais funcionários, mas um funcionário não <b>tem</b> um
+            departamento (ele apenas <b>faz parte</b> de um departamento – novamente, um relacionamento do tipo
+            proprietário e propriedade). Portanto, diz-se que a agregação contém uma natureza unidirecional.</p>
+          <p>Do ponto de vista de objetos instanciados em um código, o tempo de vida do objeto da classe
+            <b>propriedade</b> não depende do tempo de vida do objeto da classe <b>proprietário</b>. Quando se remove
+            qualquer um dos dois, o outro continuará existindo e funcionando por si só.</p>
+          <p>Que tal implementar o exemplo mostrado? Veja o código a seguir:</p>
+          <pre>
+                <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Funcionario</span> {
+    <span style="color: #4073e0">private</span> String nome;
+
+    Funcionario (String nome) {
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">nome</span> = nome;
+    }
+
+    <span style="color: #4073e0">public</span> String <span style="color: #00aa00">getNome</span>() {
+        <span style="color: #4073e0">return</span> <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">nome</span>;
+    }
+}
+                </code>
+              </pre>
+          <p>Como se pode ver, foi criada uma classe <b>Funcionario</b> bem simples, que tem uma propriedade privada
+            "nome", um método construtor e um método público <b>getNome()</b>.</p>
+          <p>Agora, será criada a classe <b>Departamento</b>, que será responsável por implementar a agregação. Confira
+            este código:</p>
+          <pre>
+                <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Departamento</span> {
+    <span style="color: #4073e0">private</span> String nome;
+    <span style="color: #4073e0">private</span> ArrayList&lt;Funcionario&gt; funcionarios = <span style="color: #4073e0">new</span> ArrayList&lt;&gt;();
+
+    Departamento (String nome) {
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">nome</span> = nome;
+    }
+
+    <span style="color: #4073e0">public</span> String <span style="color: #00aa00">getNome</span>() {
+        <span style="color: #4073e0">return</span> <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">name</span>;
+    }
+
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">adicionarFuncionario</span> (Funcionario funcionario) {
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">funcionarios</span>.<span style="color: #a0ceff">add</span>(funcionario);
+    }
+}
+                </code>
+              </pre>
+          <div class="caixa-destaque icone saiba-mais">
+            <p>Aprenda mais sobre <b>ArrayList</b> e <b>Generics</b> no conteúdo “Estruturas de Dados”, desta unidade
+              curricular.</p>
+          </div>
+          <p>Note que a classe <b>Departamento</b> também tem uma propriedade privada "nome", um método público
+            <b>getNome()</b> e um método construtor, assim como a classe <b>Funcionario</b>.</p>
+          <p>Além disso, a classe <b>Departamento</b> contém uma propriedade privada "funcionarios", sendo esta uma
+            lista (uma <b>ArrayList</b>) de objetos da classe <b>Funcionario</b>. Para manipular essa lista, a classe
+            tem um método público chamado <b>adicionarFuncionario()</b>. Esse método recebe, por argumento, um objeto da
+            classe <b>Funcionario</b> e adiciona-o à lista de funcionários.</p>
+          <p>Com isso, é possível instanciar objetos das classes <b>Departamento</b> e <b>Funcionario</b> separadamente.
+            Ambas as classes contêm seus próprios nomes e métodos independentemente. Mesmo assim, consegue-se criar uma
+            agregação por meio do método <b>adicionarFuncionario()</b>, no qual se passa um objeto da classe
+            <b>Funcionario</b> para a função, que é responsável por adicioná-lo à propriedade "funcionarios", sendo esta
+            uma lista de funcionários. Esse comportamento cria o <b>relacionamento de agregação entre as classes</b>,
+            com a classe <b>Funcionario</b> tornando-se parte da classe <b>Departamento</b>.</p>
+          <div class="caixa-destaque icone anotar">
+            <p>Perceba que, no exemplo de composição, os objetos "Janela" eram instanciados dentro da classe
+              <b>Casa</b>. Esse comportamento fazia com que os objetos “nascessem” e “morressem” dentro de um objeto da
+              classe <b>Casa</b>, criando uma dependência forte. Já no exemplo de agregação, instanciou-se a classe
+              <b>Funcionario</b> fora da classe <b>Departamento</b>, enviando apenas uma <b>referência</b> para dentro.
+              Essa diferença torna possível a existência dos dois de maneira independente.</p>
+          </div>
+
+          <h3>Associação</h3>
+          <p>Agora você já conhece a composição e a agregação e entende que ambas são os tipos mais restritivos de
+            associação. Isso significa que os exemplos vistos anteriormente podem ser chamados de associação. Criando um
+            conceito geral, é possível afirmar que a associação é a simples relação entre duas classes, por meio de seus
+            objetos. Uma associação pode ser um para um, um para muitos, muitos para um ou muitos para muitos.
+            Entretanto, existe um tipo de associação que não se enquadra como composição e nem como agregação. Trata-se
+            da <b>associação bidirecional</b>.</p>
+          <p>Como a agregação e a composição só podem ser unidirecionais, um relacionamento bidirecional é
+            exclusivamente uma associação. Para entender melhor, é preciso começar compreendendo as semelhanças.</p>
+          <p>Uma associação é, assim como a agregação, um relacionamento semanticamente fraco entre duas classes
+            distintas. Ou seja, as duas classes existem sem depender uma da outra. Também como a composição e a
+            agregação, uma associação é um relacionamento de "uso" (identificado pelo verbo "ter") entre dois ou mais
+            objetos.</p>
+          <p>Apesar das semelhanças, uma associação bidirecional não tem uma estrutura de proprietário e propriedade,
+            sendo dois objetos completamente independentes. Os objetos que fazem parte do relacionamento de associação
+            podem ser criados e destruídos de modo independente, e contêm informações e comportamentos de maneira
+            independente também.</p>
+          <p>Por exemplo, imagine um namoro. Considere apenas uma classe chamada <b>Pessoa</b>, que tem suas
+            características e seus comportamentos funcionando e existindo de maneira independente. Entretanto, existe
+            uma propriedade cônjuge que faz referência a um outro objeto da classe <b>Pessoa</b>. Este tipo de
+            relacionamento chama-se <b>bidirecional</b>, pois os dois objetos relacionam-se um com o outro, de maneira
+            bidirecional. Confira o código a seguir:</p>
+          <pre>
+                <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Pessoa</span> {
+    <span style="color: #4073e0">private</span> String nome;
+    <span style="color: #4073e0">private</span> Pessoa conjuge = <span style="color: #4073e0">null</span>;
+
+    Pessoa (String nome) {
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">nome</span> = nome;
+    }
+
+    <span style="color: #4073e0">public</span> String <span style="color: #00aa00">getNome</span>() {
+        <span style="color: #4073e0">return</span> <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">nome</span>;
+    }
+
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">namorar</span>(Pessoa pessoa) {
+        <span style="color: #4073e0">if</span> (<span style="color: #4073e0">this</span>.<span style="color: #a0ceff">conjuge</span> == <span style="color: #4073e0">null</span>) {
+            <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">conjuge</span> = pessoa;
+            pessoa.<span style="color: #a0ceff">namorar</span>(<span style="color: #4073e0">this</span>);
+        }
+    }
+
+    <span style="color: #4073e0">public</span> Pessoa <span style="color: #00aa00">getConjuge</span>() {
+        <span style="color: #4073e0">return</span> <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">conjuge</span>;
+    }
+}
+                </code>
+              </pre>
+          <p>Perceba que a classe <b>Pessoa</b> contém uma propriedade "conjuge" do tipo "Pessoa". Assim como no exemplo
+            de agregação, existe um método público que permite prover um valor para essa propriedade. Trata-se do método
+            <b>namorar()</b>.</p>
+          <p>O método <b>namorar()</b> recebe, por argumento, um objeto da classe <b>Pessoa</b>. Esse objeto então é
+            referenciado como valor da propriedade "conjuge". Além disso, o método <b>namorar()</b> implementa o
+            relacionamento bidirecional, fazendo o objeto enviado como argumento também referenciar de volta. Dessa
+            forma, os dois objetos referenciam-se um ao outro, conceituando um relacionamento bidirecional.</p>
+        </div>
+
+
+        <a href="index.html?page=1" class="botao bg-primaria-03 texto-primaria-02 mt-60 no-print">Tela inicial</a>
+      </div>
+
+      <div class="pagina">
+        <h3>Encerramento</h3>
+        <img src="objetos/layout_5_ilustra_programador.png" class="img-responsive center-block">
+        <p>Se você chegou até aqui, já conheceu alguns dos principais conceitos da programação orientada a objetos. Além
+          disso, praticou diversos exemplos, aplicando o conceito de herança, polimorfismo e associação, por meio do uso
+          de técnicas como sobrecarga de método e sobreposição de método, e do uso de recursos como classes abstratas e
+          interfaces.</p>
+
+        <a href="index.html?page=1" class="botao bg-primaria-03 texto-primaria-02 mt-60 no-print">Tela inicial</a>
+      </div>
+
+
+    </section>
+    <!-- - - - - - - - - - - - - - - - não alterar abaixo- - - - - - - - - - - - -->
+
+    <!--
+        <footer class="text-center no-print">
+          <ul class="pagination">
+
+          </ul>
+        </footer>
+        -->
+
+
+    <!-- Modais -->
+    <div class="modal fade" id="modal-polimorfismo01" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                aria-hidden="true">×</span></button>
+            <h4 class="modal-title" id="myModalLabel">Polimorfismo estático</h4>
+          </div>
+          <div class="modal-body">
+            <p>Seguindo o conceito de polimorfismo, o <b>polimorfismo estático</b> é uma forma de adicionar diferentes
+              comportamentos para o mesmo método. O fato de ser estático significa que o compilador consegue determinar
+              qual comportamento/versão será executado.</p>
+            <div class="caixa-destaque icone anotar">
+              <p>Em seguida, você aprenderá que existe outro tipo de polimorfismo, no qual só é possível validar qual
+                comportamento/versão será executado em tempo de execução (isto é, executando o código-fonte).</p>
+            </div>
+            <p>O polimorfismo estático também é conhecido como polimorfismo em tempo de compilação (em inglês,
+              <i>compile-time polymorphism</i>), ligação estática (<i>static binding</i>), ligação em tempo de
+              compilação (<i>compile-time binding</i>), ligação precoce (<i>early binding</i>) e <b>sobrecarga de
+                método</b> (<i>method overloading</i>) – sendo esta última a forma mais comum. </p>
+            <p>Existem diversas formas diferentes de realizar um polimorfismo estático, dependendo do <i>kit</i> de
+              recursos da linguagem de programação utilizada. A única regra é que a implementação deve atender ao
+              conceito. Ou seja, deve ser possível determinar qual comportamento será executado (do método ou classe
+              polimorfo) ainda no compilador (sem a necessidade de executar o código).</p>
+            <p>Uma das formas mais conhecidas de polimorfismo em Java é a <b>sobrecarga de método</b>. Nela, você pode
+              implementar diversos métodos com o mesmo nome dentro da mesma classe, mudando apenas o conjunto de
+              argumentos do método. Para isso funcionar, os argumentos do método devem ser diferentes em pelo menos um
+              dos três critérios a seguir:</p>
+            <ul class="checklist">
+              <li>Os métodos precisam ter um número diferente de argumentos.</li>
+              <li>Os métodos devem ter tipos de dados diferentes nos seus argumentos (por exemplo, um método recebendo
+                uma <i>string</i> e outro, um <i>date</i>).</li>
+              <li>Os métodos devem receber os argumentos em ordens diferentes.</li>
+            </ul>
+            <p>Nessa estratégia, devido ao diferente conjunto de argumentos, cada método tem uma assinatura diferente.
+              Isso permite que o compilador identifique qual método deve ser chamado (de acordo com os argumentos
+              providos) e o vincule à chamada do método, sendo determinado o comportamento que será executado ainda no
+              compilador.</p>
+            <p>Confira o exemplo no código a seguir:</p>
+            <pre>
+                  <code>
+<span style="color: #4073e0">class</span> <span style="color: #00aa00;">Calculadora</span> {
+    <span style="color: #00aaaa">int</span> <span style="color: #00aa00">somar</span> (<span style="color: #00aaaa">int</span> a, <span style="color: #00aaaa">int</span> b) {
+        <span style="color: #4073e0">return</span> a + b;
+    }
+
+    <span style="color: #00aaaa">int</span> <span style="color: #00aa00">somar</span> (<span style="color: #00aaaa">int</span> a, <span style="color: #00aaaa">int</span> b, <span style="color: #00aaaa">int</span> c) {
+        <span style="color: #4073e0">return</span> a + b + c;
+    }
+}
+                  </code>
+                </pre>
+            <p>Nesse exemplo, note que foi criada uma classe <b>Calculadora</b> com o método <b>somar()</b>. Definiu-se
+              o método duas vezes, porém com o conjunto de argumentos diferentes.</p>
+            <div class="caixa-destaque">
+              <p>A primeira versão do método <b>somar()</b> espera receber dois argumentos do tipo <i>int</i> (números
+                inteiros), chamados de "a" e "b". Já a segunda versão do método espera receber três argumentos do tipo
+                <i>int</i>, chamados de "a", "b" e "c".</p>
+            </div>
+            <p>Este é um exemplo simples do conceito de sobrecarga de método. Se você instanciar a classe
+              <b>Calculadora</b> e executar o método <b>.somar()</b> passando apenas dois números inteiros como
+              argumento, o compilador já identificará que está sendo utilizada a primeira versão (que espera receber
+              dois argumentos). Agora, se você executar o método <b>.somar()</b> passando três números inteiros como
+              argumento, o compilador identificará que está sendo utilizada a segunda versão (que espera receber três
+              números inteiros).</p>
+            <p>Agora veja este outro exemplo:</p>
+            <pre>
+                  <code>
+<span style="color: #4073e0">class</span> <span style="color: #00aa00;">Usuario</span> {
+    <span style="color: #00aaaa">void</span> <span style="color: #00aa00">seguir</span> (Usuario usuario) {
+        <span style="color: #aaaaaa; font-style: italic">// Seguir um usuário novo</span>
+    }
+
+    <span style="color: #00aaaa">void</span> <span style="color: #00aa00">seguir</span> (Comunidade) {
+        <span style="color: #aaaaaa; font-style: italic">// Seguir uma comunidade</span>
+    }
+
+    <span style="color: #00aaaa">void</span> <span style="color: #00aa00">seguir</span> (Hashtag) {
+        <span style="color: #aaaaaa; font-style: italic">// Seguir uma hashtag</span>
+    }
+}
+                  </code>
+                </pre>
+            <p>Nesse caso, há um hipotético usuário de rede social, que pode seguir usuários, comunidades e
+              <i>hashtags</i>. A sobrecarga de método está sendo feita sobre o método <b>.seguir()</b>, mudando apenas a
+              sua assinatura, indicando se é um usuário, uma comunidade ou uma <i>hashtag</i> que está sendo seguida.
+              Dessa forma, é possível adotar comportamentos diferentes de acordo com os argumentos providos.</p>
+            <div class="caixa-destaque icone desafio">
+              <p>Crie um programa orientado a objetos que simule uma autenticação. Aplique sobrecarga de método para
+                validar com <i>login</i> e senha ou com número de celular e código numérico. Não se preocupe em validar
+                a autenticidade, apenas apresente uma mensagem de sucesso dizendo qual método de autenticação foi usado
+                (senha ou código).</p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modal-polimorfismo02" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                aria-hidden="true">×</span></button>
+            <h4 class="modal-title" id="myModalLabel">Polimorfismo dinâmico</h4>
+          </div>
+          <div class="modal-body">
+            <p>Como dito anteriormente, existe outro tipo de polimorfismo, no qual só é possível validar qual
+              comportamento/versão será executado em tempo de execução (isto é, executando o código-fonte). Esse formato
+              de polimorfismo é conhecido como <b>polimorfismo dinâmico</b>.</p>
+            <p>Como ele, o compilador não consegue determinar a versão/comportamento que será executada de um método ou
+              classe polimorfa. Nesse cenário, a diferença existe apenas no tempo de execução, ou seja, é um cenário
+              muito comum e utilizado em alguns conceitos de boas práticas, que serão estudados futuramente, como na
+              injeção de dependências.</p>
+            <p>O polimorfismo dinâmico também é conhecido como:</p>
+            <ul class="cor01">
+              <li>Polimorfismo em tempo de execução (do inglês <i>run-time polymorphism</i>)</li>
+              <li>Ligação dinâmica (<i>dynamic binding</i>)</li>
+              <li>Ligação em tempo de execução (<i>run-time binding</i>)</li>
+              <li>Ligação tardia (<i>late binding</i>)</li>
+              <li>Sobreposição de método (<i>method overriding</i>)</li>
+            </ul>
+            <p>Para o polimorfismo dinâmico funcionar, suponha que existam diferentes métodos com a mesma assinatura
+              (isto é, métodos que recebem os mesmos argumentos e retornam o mesmo tipo de dado), sendo cada método em
+              uma classe diferente. Para caracterizar o polimorfismo dinâmico, cada classe deverá (1) herdar da mesma
+              superclasse ou (2) implementar a mesma interface ou classe abstrata.</p>
+            <p>Assim como no polimorfismo estático, existem diversas técnicas para atingir o objetivo do polimorfismo
+              dinâmico, dependendo dos recursos providos pela linguagem de programação em uso. No Java, é muito comum a
+              utilização da técnica de <b>sobreposição de método</b>. Para exemplificar um cenário, observe a imagem a
+              seguir.</p>
+            <img src="objetos/layout_5_fig8_ilustra_falas.png" class="img-responsive center-block">
+            <p class="legenda-imagem">
+              Figura 8 – Exemplo de polimorfismo com a ação “Falar” <br>
+              Fonte: Adaptado de Ediriweera (2017)
+            </p>
+            <p class="acessivel no-print">A imagem contém um homem falando "Agora falem!" para um cachorro, um pato e um
+              gato. O cachorro está respondendo "Au-au", o pato está respondendo "Quac" e o gato está respondendo
+              "Miau".</p>
+            <p>Note que todos os objetos são animais e que cada um “fala” de uma maneira específica. Essa imagem é um
+              exemplo de sobreposição de método, uma estratégia para alcançar o polimorfismo dinâmico. Nele, estão três
+              animais diferentes: um cachorro, um pato e um gato. Os três animais são capazes de se comunicar (no
+              programa, esse método é chamado de "falar"), porém cada animal comunica-se de uma forma diferente.</p>
+            <p>Que tal trazer esse exemplo da vida real para código? Analise o código a seguir:</p>
+            <pre>
+                  <code>
+<span style="color: #4073e0">class</span> <span style="color: #00aa00;">Animal</span> {   
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">falar</span> (){
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;???&quot;</span>);
+    }
+}
+                  </code>
+                </pre>
+            <pre>
+                  <code>
+<span style="color: #4073e0">class</span> <span style="color: #00aa00;">Cachorro</span> <span style="color: #4073e0">extends</span> Animal {
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">falar</span> () {
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Au au&quot;</span>);
+    }
+}
+                  </code>
+                </pre>
+            <pre>
+                  <code>
+<span style="color: #4073e0">class</span> <span style="color: #00aa00;">Pato</span> <span style="color: #4073e0">extends</span> Animal {
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">falar</span> () {
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Quack&quot;</span>);
+    }
+}
+                  </code>
+                </pre>
+            <pre>
+                  <code>
+<span style="color: #4073e0">class</span> <span style="color: #00aa00;">Gato</span> <span style="color: #4073e0">extends</span> Animal {
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">falar</span> () {
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;Miau&quot;</span>);
+    }
+}
+                  </code>
+                </pre>
+            <p>Transformando esse exemplo em código, há uma superclasse chamada <b>Animal</b> e três subclasses chamadas
+              <b>Cachorro</b>, <b>Pato</b> e <b>Gato</b>. A superclasse e as subclasses tem um método <b>falar</b> com a
+              mesma assinatura (sem argumentos de entrada e com o mesmo retorno <i>void</i>), porém cada subclasse
+              contém um comportamento específico.</p>
+            <p>Agora serão utilizadas as classes:</p>
+            <pre>
+                  <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">MeuProjeto</span> {
+    <span style="color: #4073e0">public</span> <span style="color: #4073e0">static</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">main</span>(String args[]) {
+        Animal cachorro = <span style="color: #4073e0">new</span> Cachorro();
+        Animal pato = <span style="color: #4073e0">new</span> Pato();
+        Animal gato = <span style="color: #4073e0">new</span> Gato();
+
+        cachorro.<span style="color: #a0ceff">falar</span>(); <span style="color: #aaaaaa; font-style: italic">// &quot;Au au&quot;</span>
+        pato.<span style="color: #a0ceff">falar</span>(); <span style="color: #aaaaaa; font-style: italic">// &quot;Quack&quot;</span>
+        gato.<span style="color: #a0ceff">falar</span>(); <span style="color: #aaaaaa; font-style: italic">// &quot;Miau&quot;</span>
+    }
+}
+                  </code>
+                </pre>
+            <p>Note que os três objetos são do tipo “Animal”. Isso implica que, caso alguma outra função do programa
+              precise receber algum animal, todos os três objetos são argumentos válidos para serem utilizados. Porém,
+              cada objeto foi instanciado por meio de uma subclasse diferente. O objeto "cachorro" foi instanciado da
+              classe <b>Cachorro</b>, o objeto "pato" foi instanciado da classe <b>Pato</b> e o objeto "gato" foi
+              instanciado da classe <b>Gato</b>. Logo, ao chamar o método <b>falar</b> de qualquer um dos animais, você
+              terá resultados diferentes em tempo de execução.</p>
+            <p>Em outras palavras, em um exemplo de sobreposição de métodos utilizando herança (ou seja, com uma
+              superclasse e diversas subclasses), quando um objeto é atribuído a uma classe de referência (ou seja, à
+              superclasse) e um de seus métodos é chamado, o método executado será o da classe do objeto (a subclasse) e
+              não o da classe de referência (a superclasse). Isso é exatamente o que foi visto no código de exemplo
+              anterior. Todos os objetos são do tipo da superclasse (<b>Animal</b>, a classe de referência), mas, quando
+              se executa o método <b>falar</b>, é executado o comportamento da subclasse (a classe do objeto).</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal-painel_robo01" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                aria-hidden="true">×</span></button>
+            <h4 class="modal-title" id="myModalLabel">Robô</h4>
+          </div>
+          <div class="modal-body">
+            <img src="objetos/gif_01.gif" class="img-responsive center-block">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modal-painel_robo02" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                aria-hidden="true">×</span></button>
+            <h4 class="modal-title" id="myModalLabel">Robô Cheetah</h4>
+          </div>
+          <div class="modal-body">
+            <img src="objetos/gif_02.gif" class="img-responsive center-block">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modal-painel_robo03" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                aria-hidden="true">×</span></button>
+            <h4 class="modal-title" id="myModalLabel">Robô de limpeza</h4>
+          </div>
+          <div class="modal-body">
+            <img src="objetos/gif_03.gif" class="img-responsive center-block">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+
+    <!-- Modais 100% -->
+    <div class="modal modal-100 fade" id="modal-categoria01" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content no-print">
+          <div class="modal-header" style="padding-top: 30px;">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3 class="modal-title">
+              <div class="container">Associação</div>
+            </h3>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <p>Agora você já conhece a composição e a agregação e entende que ambas são os tipos mais restritivos de
+                associação. Isso significa que os exemplos vistos anteriormente podem ser chamados de associação.
+                Criando um conceito geral, é possível afirmar que a associação é a simples relação entre duas classes,
+                por meio de seus objetos. Uma associação pode ser um para um, um para muitos, muitos para um ou muitos
+                para muitos. Entretanto, existe um tipo de associação que não se enquadra como composição e nem como
+                agregação. Trata-se da <b>associação bidirecional</b>.</p>
+              <p>Como a agregação e a composição só podem ser unidirecionais, um relacionamento bidirecional é
+                exclusivamente uma associação. Para entender melhor, é preciso começar compreendendo as semelhanças.</p>
+              <p>Uma associação é, assim como a agregação, um relacionamento semanticamente fraco entre duas classes
+                distintas. Ou seja, as duas classes existem sem depender uma da outra. Também como a composição e a
+                agregação, uma associação é um relacionamento de "uso" (identificado pelo verbo "ter") entre dois ou
+                mais objetos.</p>
+              <p>Apesar das semelhanças, uma associação bidirecional não tem uma estrutura de proprietário e
+                propriedade, sendo dois objetos completamente independentes. Os objetos que fazem parte do
+                relacionamento de associação podem ser criados e destruídos de modo independente, e contêm informações e
+                comportamentos de maneira independente também.</p>
+              <p>Por exemplo, imagine um namoro. Considere apenas uma classe chamada <b>Pessoa</b>, que tem suas
+                características e seus comportamentos funcionando e existindo de maneira independente. Entretanto,
+                existe uma propriedade cônjuge que faz referência a um outro objeto da classe <b>Pessoa</b>. Este tipo
+                de relacionamento chama-se <b>bidirecional</b>, pois os dois objetos relacionam-se um com o outro, de
+                maneira bidirecional. Confira o código a seguir:</p>
+              <pre>
+                    <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Pessoa</span> {
+    <span style="color: #4073e0">private</span> String nome;
+    <span style="color: #4073e0">private</span> Pessoa conjuge = <span style="color: #4073e0">null</span>;
+
+    Pessoa (String nome) {
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">nome</span> = nome;
+    }
+
+    <span style="color: #4073e0">public</span> String <span style="color: #00aa00">getNome</span>() {
+        <span style="color: #4073e0">return</span> <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">nome</span>;
+    }
+
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">namorar</span>(Pessoa pessoa) {
+        <span style="color: #4073e0">if</span> (<span style="color: #4073e0">this</span>.<span style="color: #a0ceff">conjuge</span> == <span style="color: #4073e0">null</span>) {
+            <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">conjuge</span> = pessoa;
+            pessoa.<span style="color: #a0ceff">namorar</span>(<span style="color: #4073e0">this</span>);
+        }
+    }
+
+    <span style="color: #4073e0">public</span> Pessoa <span style="color: #00aa00">getConjuge</span>() {
+        <span style="color: #4073e0">return</span> <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">conjuge</span>;
+    }
+}
+                    </code>
+                  </pre>
+              <p>Perceba que a classe <b>Pessoa</b> contém uma propriedade "conjuge" do tipo "Pessoa". Assim como no
+                exemplo de agregação, existe um método público que permite prover um valor para essa propriedade.
+                Trata-se do método <b>namorar()</b>.</p>
+              <p>O método <b>namorar()</b> recebe, por argumento, um objeto da classe <b>Pessoa</b>. Esse objeto então é
+                referenciado como valor da propriedade "conjuge". Além disso, o método <b>namorar()</b> implementa o
+                relacionamento bidirecional, fazendo o objeto enviado como argumento também referenciar de volta. Dessa
+                forma, os dois objetos referenciam-se um ao outro, conceituando um relacionamento bidirecional.</p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="botao borda-primaria-03" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal modal-100 fade" id="modal-categoria02" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content no-print">
+          <div class="modal-header" style="padding-top: 30px;">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3 class="modal-title">
+              <div class="container">Agregação</div>
+            </h3>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <p>Uma agregação é uma forma mais liberal de composição. Enquanto na composição só existe o todo (de forma
+                que as classes só têm sentido quando estiverem juntas), na agregação há um relacionamento típico de
+                "proprietário" e "propriedade", no qual as duas classes existem por conta própria, porém, juntas, fazem
+                uma relação em que uma classe é parte da outra, agregando informações ao proprietário.</p>
+              <p>Por exemplo, um departamento pode ter um ou mais funcionários, mas um funcionário não <b>tem</b> um
+                departamento (ele apenas <b>faz parte</b> de um departamento – novamente, um relacionamento do tipo
+                proprietário e propriedade). Portanto, diz-se que a agregação contém uma natureza unidirecional.</p>
+              <p>Do ponto de vista de objetos instanciados em um código, o tempo de vida do objeto da classe
+                <b>propriedade</b> não depende do tempo de vida do objeto da classe <b>proprietário</b>. Quando se
+                remove qualquer um dos dois, o outro continuará existindo e funcionando por si só.</p>
+              <p>Que tal implementar o exemplo mostrado? Veja o código a seguir:</p>
+              <pre>
+                    <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Funcionario</span> {
+    <span style="color: #4073e0">private</span> String nome;
+
+    Funcionario (String nome) {
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">nome</span> = nome;
+    }
+
+    <span style="color: #4073e0">public</span> String <span style="color: #00aa00">getNome</span>() {
+        <span style="color: #4073e0">return</span> <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">nome</span>;
+    }
+}
+                    </code>
+                  </pre>
+              <p>Como se pode ver, foi criada uma classe <b>Funcionario</b> bem simples, que tem uma propriedade privada
+                "nome", um método construtor e um método público <b>getNome()</b>.</p>
+              <p>Agora, será criada a classe <b>Departamento</b>, que será responsável por implementar a agregação.
+                Confira este código:</p>
+              <pre>
+                    <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Departamento</span> {
+    <span style="color: #4073e0">private</span> String nome;
+    <span style="color: #4073e0">private</span> ArrayList&lt;Funcionario&gt; funcionarios = <span style="color: #4073e0">new</span> ArrayList&lt;&gt;();
+
+    Departamento (String nome) {
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">nome</span> = nome;
+    }
+
+    <span style="color: #4073e0">public</span> String <span style="color: #00aa00">getNome</span>() {
+        <span style="color: #4073e0">return</span> <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">name</span>;
+    }
+
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">adicionarFuncionario</span> (Funcionario funcionario) {
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">funcionarios</span>.<span style="color: #a0ceff">add</span>(funcionario);
+    }
+}
+                    </code>
+                  </pre>
+              <div class="caixa-destaque icone saiba-mais">
+                <p>Aprenda mais sobre <b>ArrayList</b> e <b>Generics</b> no conteúdo “Estruturas de Dados”, desta
+                  unidade curricular.</p>
+              </div>
+              <p>Note que a classe <b>Departamento</b> também tem uma propriedade privada "nome", um método público
+                <b>getNome()</b> e um método construtor, assim como a classe <b>Funcionario</b>.</p>
+              <p>Além disso, a classe <b>Departamento</b> contém uma propriedade privada "funcionarios", sendo esta uma
+                lista (uma <b>ArrayList</b>) de objetos da classe <b>Funcionario</b>. Para manipular essa lista, a
+                classe tem um método público chamado <b>adicionarFuncionario()</b>. Esse método recebe, por argumento,
+                um objeto da classe <b>Funcionario</b> e adiciona-o à lista de funcionários.</p>
+              <p>Com isso, é possível instanciar objetos das classes <b>Departamento</b> e <b>Funcionario</b>
+                separadamente. Ambas as classes contêm seus próprios nomes e métodos independentemente. Mesmo assim,
+                consegue-se criar uma agregação por meio do método <b>adicionarFuncionario()</b>, no qual se passa um
+                objeto da classe <b>Funcionario</b> para a função, que é responsável por adicioná-lo à propriedade
+                "funcionarios", sendo esta uma lista de funcionários. Esse comportamento cria o <b>relacionamento de
+                  agregação entre as classes</b>, com a classe <b>Funcionario</b> tornando-se parte da classe
+                <b>Departamento</b>.</p>
+              <div class="caixa-destaque icone anotar">
+                <p>Perceba que, no exemplo de composição, os objetos "Janela" eram instanciados dentro da classe
+                  <b>Casa</b>. Esse comportamento fazia com que os objetos “nascessem” e “morressem” dentro de um objeto
+                  da classe <b>Casa</b>, criando uma dependência forte. Já no exemplo de agregação, instanciou-se a
+                  classe <b>Funcionario</b> fora da classe <b>Departamento</b>, enviando apenas uma <b>referência</b>
+                  para dentro. Essa diferença torna possível a existência dos dois de maneira independente.</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="botao borda-primaria-03" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal modal-100 fade" id="modal-categoria03" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content no-print">
+          <div class="modal-header" style="padding-top: 30px;">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3 class="modal-title">
+              <div class="container">Composição</div>
+            </h3>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <p>Em uma composição, as classes relacionadas só funcionam adequadamente quando juntas. Por conta disso, a
+                composição é considerada uma <b>associação do tipo forte</b>, na qual há dependência entre as partes.
+              </p>
+              <p>Imagine uma casa e suas janelas. Você comporá a sua classe <b>Casa</b> com um objeto da classe
+                <b>Janela</b> no quarto, um na cozinha, um no banheiro e um na sala. Caso seja criado um objeto da
+                classe <b>Casa</b> e, logo após, este mesmo seja destruído, também serão destruídas as suas janelas.</p>
+              <p>Para transformar esse exemplo em código, primeiramente deve-se criar a classe <b>Janela</b>, que será
+                necessária para a composição da classe <b>Casa</b>. </p>
+              <p>Observe o código a seguir:</p>
+              <pre>
+                    <code>
+<span style="color: #4073e0">class</span> <span style="color: #00aa00;">Janela</span> {
+    <span style="color: #4073e0">private</span> <span style="color: #00aaaa">boolean</span> estaAberta = <span style="color: #4073e0">false</span>;
+
+    Janela () { }
+
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">abrir</span> () {
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">estaAberta</span> = <span style="color: #4073e0">true</span>;
+    }
+
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">fechar</span> () {
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">estaAberta</span> = <span style="color: #4073e0">false</span>;
+    }
+
+    <span style="color: #4073e0">public</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">imprimirSituacao</span> () {
+        String situacao = <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">estaAberta</span> ? <span style="color: #aa5500">&quot;aberta&quot;</span> : <span style="color: #aa5500">&quot;fechada&quot;</span>;
+        System.<span style="color: #a0ceff">out</span>.<span style="color: #a0ceff">println</span>(<span style="color: #aa5500">&quot;A janela esta &quot;</span> + situacao);
+    }
+}
+                    </code>
+                  </pre>
+              <p>A classe <b>Janela</b> é bastante simples. Ela tem um atributo privado chamado <b>estaAberta</b>, sendo
+                um booleano, que indica se a janela está ou não aberta. Além disso, constam três métodos públicos: um
+                para abrir a janela (alterando o atributo <b>estaAberta</b> para <b>true</b>), um para fechar a janela
+                (alterando o atributo <b>estaAberta</b> para <b>false</b>) e um para imprimir o atual estado da janela
+                (aberta ou fechada).</p>
+              <p>Agora é preciso implementar, de fato, uma composição. Para isso, deve-se criar a classe <b>Casa</b>,
+                criando também uma composição com as janelas, sendo uma no quarto, uma na cozinha, uma no banheiro e uma
+                na sala. Confira este código:</p>
+              <pre>
+                    <code>
+<span style="color: #4073e0">public</span> <span style="color: #4073e0">class</span> <span style="color: #00aa00;">Casa</span> {
+    <span style="color: #4073e0">private</span> Janela janelaQuarto = <span style="color: #4073e0">null</span>;
+    <span style="color: #4073e0">private</span> Janela janelaCozinha = <span style="color: #4073e0">null</span>;
+    <span style="color: #4073e0">private</span> Janela janelaBanheiro = <span style="color: #4073e0">null</span>;
+    <span style="color: #4073e0">private</span> Janela janelaSala = <span style="color: #4073e0">null</span>;
+
+    <span style="color: #4073e0">public</span> <span style="color: #00aa00">Casa</span> () {
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">janelaQuarto</span> = <span style="color: #4073e0">new</span> Janela();
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">janelaCozinha</span> = <span style="color: #4073e0">new</span> Janela();
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">janelaBanheiro</span> = <span style="color: #4073e0">new</span> Janela();
+        <span style="color: #4073e0">this</span>.<span style="color: #a0ceff">janelaSala</span> = <span style="color: #4073e0">new</span> Janela();
+    }
+}
+                    </code>
+                  </pre>
+              <p>As duas características mais importantes da classe <b>Casa</b> são (1) o seu método construtor e (2) os
+                seus atributos privados.</p>
+              <p>Dentro do método construtor, as quatro diferentes janelas estão sendo instanciadas, uma para cada peça
+                da casa de exemplo (quarto, cozinha, banheiro e sala). Além disso, cada uma das janelas é um atributo
+                privado na classe, não existindo nenhum método público que permita adicionar uma janela diferente à casa
+                ou alterar o seu valor.</p>
+              <p>Essas duas características fazem com que exista uma composição entre a casa e as suas janelas,
+                respeitando a regra citada anteriormente. Caso seja instanciado um novo objeto da classe <b>Casa</b> e,
+                logo após, o mesmo seja destruído, todas as suas janelas também serão destruídas. Isso porque o ciclo de
+                vida dos atributos para as janelas só existe dentro da classe <b>Casa</b>. Cada nova instância da classe
+                <b>Casa</b> criará novas janelas. Nunca se terá uma janela repetida sendo utilizada fora da classe
+                <b>Casa</b> neste exemplo.</p>
+              <p>Conclui-se, portanto, que em uma composição existe uma forte dependência entre as partes. Por conta
+                disso, a composição é considerada uma associação do tipo forte, na qual há dependência entre as partes.
+              </p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="botao borda-primaria-03" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  </div>
+
+
+
+  <!--  Em caso de footer personalizado utilizar esse elemento e adicionar a classe customizada
+    <footer>
+    </footer>
+	-->
+  <!-- carrega todas as imagens dos icones nesta div
+ caso queira adicionar mais imagens de novos icones do css,
+ ou qualquer imagem que deva ser contabilizada durante a fase
+ de loading, referenciar aqui.
+ -->
+  <div class="ico-div-loader">
+    <img src="../template/images/atencao.png">
+    <img src="../template/images/bg-content.jpg">
+    <img src="../template/images/bg-topo.jpg">
+    <img src="../template/images/black-zoom-in-256.png">
+    <img src="../template/images/concluindo.png">
+    <img src="../template/images/curtir.png">
+    <img src="../template/images/desafio.png">
+    <img src="../template/images/dica.png">
+    <img src="../template/images/doc.png">
+    <img src="../template/images/fundamental.png">
+    <img src="../template/images/icon-03.png">
+    <img src="../template/images/importante.png">
+    <img src="../template/images/lightbulb.png">
+    <img src="../template/images/link.png">
+    <img src="../template/images/link_pdf_hover.png">
+    <img src="../template/images/link_pdf_normal.png">
+    <img src="../template/images/logo-senac.png">
+    <img src="../template/images/mark-icon.png">
+    <img src="../template/images/mark-icon02.png">
+    <img src="../template/images/midia.png">
+    <img src="../template/images/monitor.png">
+    <img src="../template/images/nao_curtir.png">
+    <img src="../template/images/pergunta.png">
+    <img src="../template/images/pesquisa.png">
+    <img src="../template/images/play.png">
+    <img src="../template/images/radio_flat.png">
+    <img src="../template/images/refletir.png">
+    <img src="../template/images/saiba_mais.png">
+    <img src="../template/images/senac_loader.png">
+    <img src="../template/images/tanamidia.png">
+    <img src="../template/images/transcricao.png">
+    <img src="../template/images/transcricao_small.png">
+    <img src="../template/images/tv.png">
+    <img src="../template/images/tv_bottom.png">
+    <img src="../template/images/zoom.png">
+    <img src="../template/images/zoom_ie.cur">
+    <img src="../template/images/zoom_ie.png">
+    <!-- adicionar as imagens customizadas aqui abaixo -->
+  </div>
+
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="../template/js/jquery.min.js"></script>
+  <script src="../template/js/bootstrap.min.js"></script>
+  <script src="../template/js/jquery.magnific-popup.min.js"></script>
+  <script src="../template/js/print.js"></script>
+  <script src="../template/js/template.config.js"></script>
+  <script src="../template/js/images.loader.js"></script>
+  <noscript>
+    <style media="screen">
+      .over-loader {
+        display: none;
+      }
+    </style>
+  </noscript>
+</body>
+
+</html>
+<script>
+  //inicializa zoom na imagem
+  $('.zoom-imagem').magnificPopup({
+    type: 'image',
+    mainClass: 'mfp-with-zoom', // this class is for CSS animation below
+    zoom: {
+      enabled: true, // By default it's false, so don't forget to enable it
+
+      duration: 300, // duration of the effect, in milliseconds
+      easing: 'ease-in-out', // CSS transition easing function
+
+      // The "opener" function should return the element from which popup will be zoomed in
+      // and to which popup will be scaled down
+      // By defailt it looks for an image tag:
+      opener: function (openerElement) {
+        // openerElement is the element on which popup was initialized, in this case its <a> tag
+        // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+        return openerElement.is('img') ? openerElement : openerElement.find('img');
+      }
+    },
+    image: {
+      markup: '<div class="mfp-figure">' +
+        '<div class="mfp-close"></div>' +
+        '<div class="mfp-img"></div>' + // Floated left
+        '<div class="mfp-bottom-bar">' + '<figcaption>' +
+        '<div class="mfp-title" style="text-align:center"></div>' +
+        '<div class="mfp-counter"></div>' + '</figcaption>' +
+        '</div>' +
+        '</div>', // Popup HTML markup. `.mfp-img` div will be replaced with img tag, `.mfp-close` by close button
+
+      cursor: 'mfp-zoom-out-cur', // Class that adds zoom cursor, will be added to body. Set to null to disable zoom out cursor.
+
+      tError: '<a href="%url%">A imagem</a> não pode ser carregada.' // Error message
+    }
+  });
+
+  //inicializa popover
+  $(function () {
+    $('[data-toggle="popover"]').popover()
+  })
+  //inicializa tooltip
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+
+
+  $(function () {
+    $(".card").click(function () {
+      if ($(this).hasClass("exibe-frente")) {
+        $(this)
+          .children()
+          .first()
+          .hide();
+        $(this)
+          .children()
+          .last()
+          .show();
+        $(this).removeClass("exibe-frente");
+      } else {
+        $(".card .verso").hide();
+        $(".card .frente").show();
+        $(this).addClass("exibe-frente");
+      }
+    });
+  });
+
+  $(document).ready(function () {
+    $(".card .verso").hide();
+  });
+
+
+
+
+  /*------- Script de animação do botão -------*/
+  var root = document.documentElement;
+  root.className += ' js';
+
+  function boxTop(idBox) {
+    var boxOffset = $(idBox).offset().top;
+    return boxOffset;
+  }
+
+  $(document).ready(function () {
+    var $target = $('.animeStart'),
+      $target2 = $('.animeStop'),
+      targetBox = $('.box'),
+      animationClass = 'anime-init',
+      windowHeight = $(window).height(),
+      offset = windowHeight - (windowHeight / 4);
+
+    function animeScroll() {
+      var documentTop = $(document).scrollTop();
+      $target.each(function () {
+        if (documentTop > boxTop(this) - offset) {
+          targetBox.addClass(animationClass);
+        } else {
+          targetBox.removeClass(animationClass);
+        }
+        if (documentTop > boxTop($target2) - offset) {
+          targetBox.removeClass(animationClass);
+        }
+      });
+    }
+    animeScroll();
+
+    $(document).scroll(function () {
+      animeScroll();
+    });
+  });
+
+
+  $(document).ready(function () {
+
+    //localStorage.clear()
+
+    var pagsTotais;
+
+    //Menu normal
+    $('.menu-titulo1').click(function () {
+      localStorage.setItem('pagTitulo1', '2');
+    });
+    $('.menu-titulo2').click(function () {
+      localStorage.setItem('pagTitulo2', '3');
+    });
+    $('.menu-titulo3').click(function () {
+      localStorage.setItem('pagTitulo3', '4');
+    });
+    $('.menu-titulo4').click(function () {
+      localStorage.setItem('pagTitulo4', '5');
+    });
+    $('.menu-titulo5').click(function () {
+      localStorage.setItem('pagTitulo5', '6');
+    });
+    $('.menu-titulo6').click(function () {
+      localStorage.setItem('pagTitulo6', '7');
+    });
+    $('.menu-titulo7').click(function () {
+      localStorage.setItem('pagTitulo7', '8');
+    });
+    $('.menu-titulo8').click(function () {
+      localStorage.setItem('pagTitulo8', '9');
+    });
+
+    //Menu mobile
+    $('#menu-titulo1_mobile').click(function () {
+      localStorage.setItem('pagTitulo1', '2');
+    });
+    $('#menu-titulo2_mobile').click(function () {
+      localStorage.setItem('pagTitulo2', '3');
+    });
+    $('#menu-titulo3_mobile').click(function () {
+      localStorage.setItem('pagTitulo3', '4');
+    });
+    $('#menu-titulo4_mobile').click(function () {
+      localStorage.setItem('pagTitulo4', '5');
+    });
+    $('#menu-titulo5_mobile').click(function () {
+      localStorage.setItem('pagTitulo5', '6');
+    });
+    $('#menu-titulo6_mobile').click(function () {
+      localStorage.setItem('pagTitulo6', '7');
+    });
+    $('#menu-titulo7_mobile').click(function () {
+      localStorage.setItem('pagTitulo7', '8');
+    });
+    $('#menu-titulo8_mobile').click(function () {
+      localStorage.setItem('pagTitulo8', '9');
+    });
+
+    pagsTotais = localStorage.getItem('pagTitulo1') +
+      localStorage.getItem('pagTitulo2') +
+      localStorage.getItem('pagTitulo3') +
+      localStorage.getItem('pagTitulo4') +
+      localStorage.getItem('pagTitulo5') +
+      localStorage.getItem('pagTitulo6') +
+      localStorage.getItem('pagTitulo7') +
+      localStorage.getItem('pagTitulo8');
+
+    //alert('Info: '+pagsTotais);
+
+    if (pagsTotais.includes('2')) {
+      $('#menu-titulo1').addClass('pag-visitada');
+      $('#menu-titulo1_mobile').addClass('pag-visitada');
+    }
+    if (pagsTotais.includes('3')) {
+      $('#menu-titulo2').addClass('pag-visitada');
+      $('#menu-titulo2_mobile').addClass('pag-visitada');
+    }
+    if (pagsTotais.includes('4')) {
+      $('#menu-titulo3').addClass('pag-visitada');
+      $('#menu-titulo3_mobile').addClass('pag-visitada');
+    }
+    if (pagsTotais.includes('5')) {
+      $('#menu-titulo4').addClass('pag-visitada');
+      $('#menu-titulo4_mobile').addClass('pag-visitada');
+    }
+    if (pagsTotais.includes('6')) {
+      $('#menu-titulo5').addClass('pag-visitada');
+      $('#menu-titulo5_mobile').addClass('pag-visitada');
+    }
+    if (pagsTotais.includes('7')) {
+      $('#menu-titulo6').addClass('pag-visitada');
+      $('#menu-titulo6_mobile').addClass('pag-visitada');
+    }
+    if (pagsTotais.includes('8')) {
+      $('#menu-titulo7').addClass('pag-visitada');
+      $('#menu-titulo7_mobile').addClass('pag-visitada');
+    }
+    if (pagsTotais.includes('9')) {
+      $('#menu-titulo8').addClass('pag-visitada');
+      $('#menu-titulo8_mobile').addClass('pag-visitada');
+    }
+
+  });
+</script>
+
+<!-- Versao atual do handtalk -->
+<script>
+  var scriptElem = document.createElement("script");
+  scriptElem.src = "https://plugin.handtalk.me/web/latest/handtalk.min.js",
+    scriptElem.charset = "UTF-8",
+    scriptElem.onload = function () {
+      window.ht = new HT({
+        token: "bf5b7efb148a829a126a0e0c9fd533bf",
+        align: "top",
+        videoEnabled: true,
+        ytEmbedReplace: true,
+        mobileConfig: {
+          align: "right",
+          actionsAlign: "top",
+          customButtonStyle: {
+            borderRadius: "6px",
+            size: "38px",
+            horizontalMargin: "13px",
+            bottomMargin: "140px",
+            rightMargin: "40px"
+          }
+        }
+      });
+      $('.ht-skip').attr("aria-hidden", "true")
+    },
+    document.body.appendChild(scriptElem);
+</script>

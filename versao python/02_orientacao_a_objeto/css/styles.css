@@ -1,0 +1,342 @@
+body {
+    background: url("../objetos/background.png") no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  
+  .pagina-1 {
+    background: url("../imagens/bg_elemento1.png") 3% -20% no-repeat,
+      url("../objetos/background.png") no-repeat center;
+    background-size: 15%, cover;
+    background-attachment: local, fixed;
+  }
+  
+  .codigo {
+    background-color: #2d2d2d;
+    padding: 0.8em 2em;
+    color: white;
+    line-height: 1.5em;
+    margin: 0.5em 4em;
+    font-family: consolas, monospace;
+    border-radius: 5px;
+  }
+  
+  .caixa-destaque .codigo {
+    margin: 0.5em 10px;
+  }
+  
+  .inline-code {
+    background-color: #2d2d2d;
+    color: white;
+    font-family: consolas, monospace;
+    padding: 3px 10px;
+  }
+  pre {
+    background: #1e1e1e !important;
+    border: #2875c6 solid 1px !important;
+  }
+  pre code {
+    color: #dcdcdc !important;
+  }
+  .tab1 {
+    padding-left: 40px;
+  }
+  
+  pre.estrutura_pacotes {
+    background: white !important;
+    border: 2px solid black !important;
+    padding-top: 0 !important;
+  }
+  
+  pre.estrutura_pacotes > code {
+    color: black !important;
+    font-size: 16px;
+  }
+  
+  .tab2 {
+    padding-left: 80px;
+  }
+  
+  .language-python__blue {
+    color: #90dcfe;
+  }
+  
+  .language-python__grey {
+    color: grey;
+  }
+  .language-python__green {
+    color: rgb(168, 240, 134);
+  }
+  
+  .language-python__red {
+    color: #e42c2c;
+  }
+  
+  .language-python__orange {
+    color: orange;
+  }
+  
+  .btn-gabarito {
+    display: block;
+    margin: auto;
+  }
+  figure {
+    margin: 1.5em auto;
+  }
+  
+  .uml__televisao > tr > td > ul {
+    margin-left: 0px;
+  }
+  
+  figcaption {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 30px;
+  }
+  
+  #obj-container {
+    height: 470px;
+    width: 536px;
+    background-color: transparent;
+    background-image: url("../objetos/08_infograf_1_4.png");
+    margin: 15px auto;
+    position: relative;
+  }
+  
+  .obj-btn {
+    position: absolute;
+  
+    background-color: transparent;
+    border: none;
+  
+    width: 280px;
+    height: 240px;
+  }
+  
+  #obj-1 {
+    background-image: url("../objetos/08_infograf_1_1.png");
+    left: 50%;
+    transform: translateX(-50%);
+    background-position: center -10px;
+  }
+  
+  #obj-1:hover {
+    background-image: url("../objetos/08_infograf_1_hover_1.png");
+  }
+  
+  #obj-2 {
+    bottom: 0;
+    left: 0;
+    background-image: url("../objetos/08_infograf_1_2.png");
+    background-position: 5% 100%;
+  }
+  
+  #obj-2:hover {
+    background-image: url("../objetos/08_infograf_1_hover_2.png");
+  }
+  
+  #obj-3 {
+    bottom: 0;
+    right: 0;
+    background-image: url("../objetos/08_infograf_1_3.png");
+    background-position: 95% 100%;
+  }
+  
+  #obj-3:hover {
+    background-image: url("../objetos/08_infograf_1_hover_3.png");
+  }
+  
+  .code-dif {
+    color: #a6b6c7;
+  }
+  
+  .nav-tabs {
+    margin-left: 0;
+  }
+  
+  .obj-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-modal {
+    height: 221px;
+    width: 213px;
+    margin: 5px;
+    background-color: transparent;
+    border: none;
+  }
+  
+  #modal-btn-1 {
+    background-image: url("../objetos/08_modal_1.png");
+  }
+  
+  #modal-btn-1:hover {
+    background-image: url("../objetos/08_modal_1_hover.png");
+  }
+  
+  #modal-btn-2 {
+    background-image: url("../objetos/08_modal_2.png");
+  }
+  
+  #modal-btn-2:hover {
+    background-image: url("../objetos/08_modal_2_hover.png");
+  }
+  
+  #modal-btn-3 {
+    background-image: url("../objetos/08_modal_3.png");
+  }
+  
+  #modal-btn-3:hover {
+    background-image: url("../objetos/08_modal_3_hover.png");
+  }
+  
+  #modal-btn-4 {
+    background-image: url("../objetos/08_modal_4.png");
+  }
+  
+  #modal-btn-4:hover {
+    background-image: url("../objetos/08_modal_4_hover.png");
+  }
+  
+  .modal-100 .modal-content {
+    padding: 45px;
+  }
+  
+  .laranja {
+    color: rgb(175, 125, 75);
+  }
+  
+  .vermelho {
+    color: rgb(175, 75, 75);
+  }
+  
+  .ttip {
+    cursor: pointer;
+  }
+  
+  .btn-modal-mobile {
+    display: block;
+    margin: 10px auto;
+    width: 180px;
+    font-size: 18px;
+    padding: 10px;
+    background-color: transparent;
+    border: 3px solid #a6b6c7;
+    border-radius: 10px;
+  }
+  
+  .checklist li {
+    list-style-image: url("../images/check.png");
+  }
+  
+  .marcador li {
+    list-style-image: url("../images/marcador_azul.png");
+  }
+  
+  .carousel-control {
+    background-image: none !important;
+  }
+  .icone-desafio {
+    padding-left: 100px;
+    background-position: 10px center;
+    background-size: 80px 80px;
+    background-image: url(../images/desafio.png);
+    background-repeat: no-repeat;
+  }
+  .botao {
+    display: block;
+    margin: 20px auto;
+  }
+  .btn-passagem {
+    background: url("../objetos/layout_3_botao_metodos_com_passagem.png")
+      no-repeat;
+    background-size: 100%;
+    width: 320px;
+    height: 229px;
+    border: none;
+  }
+  .btn-construtores {
+    background: url("../objetos/layout_3_botao_metodos_construtores.png")
+      no-repeat;
+    background-size: 100%;
+    width: 320px;
+    height: 229px;
+    border: none;
+  }
+  
+  .code-destaque {
+    background-color: #2875c6;
+  }
+  
+  code b {
+    text-decoration: underline;
+  }
+  
+  .tabela-pequena {
+    width: 200px !important;
+  }
+  .tabela-media {
+    width: 500px !important;
+  }
+  .tabela-grande {
+    width: 800px !important;
+  }
+  
+  .saida-codigo {
+    position: relative;
+    margin-top: 50px;
+  }
+  
+  .imagem-lupa {
+    position: absolute;
+    top: -10%;
+    left: 10%;
+  }
+  
+  @media screen and (max-width: 1700px) {
+    body {
+      background: url("../objetos/background.png") no-repeat center;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+  }
+  
+  @media screen and (max-width: 820px) {
+    .tabela-grande {
+      width: 100% !important;
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .obj-row {
+      flex-direction: column;
+    }
+  
+    .codigo {
+      width: 100%;
+      margin: 5px;
+      overflow: scroll;
+    }
+    .icone-nota {
+      background-position: center 10px;
+      padding-left: 0.9em;
+      padding-right: 0.9em;
+      padding-top: 100px;
+      line-height: 1.7;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .tabela-media,
+    .tabela-grande {
+      width: 100% !important;
+    }
+  
+    /*---------  ---------*/
+    .destaque-pixel {
+      width: 90%;
+    }
+  }
+  

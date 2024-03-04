@@ -1,0 +1,207 @@
+@font-face {
+    font-family: source-light;
+    src: url("../fonts/SourceSerifPro-Light.ttf");
+}
+@font-face {
+    font-family: source-regular;
+    src: url("../fonts/SourceSansPro-Regular.ttf");
+}
+@font-face {
+    font-family: source-bold;
+    src: url("../fonts/SourceSansPro-Bold.ttf");
+}
+body{
+    background: url('../imgs/bg.jpg') no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow-x: hidden;
+}
+h2{font-size: 30px;}
+h3{font-size: 24px;}
+h4{font-size: 20px;}
+p, li, a, td{
+    font-family: source-regular;
+    font-size: 16px;
+}
+h2, h3, h4{font-family: source-bold;}
+.citacao p{
+    font-size: 15px;
+    margin: 0;
+}
+.clique{
+    text-align: center;
+}
+.painel{
+    background: url('../imgs/painel_BG.png') no-repeat;
+    width: 281px;
+    height: 260px;
+    margin: 40px auto;
+    position: relative;
+}
+.painel button{
+    border: none;
+    width: 120px;
+    height: 120px;
+    position: absolute;
+}
+.bt-plan{
+    background: url('../imgs/botao_plan.png');
+    top: -45px;
+    left: 85px;
+}
+.bt-plan:hover{background: url('../imgs/botao_plan_hover.png');}
+.bt-do{
+    background: url('../imgs/botao_do.png');
+    right: -45px;
+    top: 75px;
+}
+.bt-do:hover{background: url('../imgs/botao_do_hover.png');}
+.bt-check{
+    background: url('../imgs/botao_check.png');
+    bottom: -45px;
+    left: 80px;
+}
+.bt-check:hover{background: url('../imgs/botao_check_hover.png');}
+.bt-act{
+    background: url('../imgs/botao_act.png');
+    left: -45px;
+    top: 75px;
+}
+.bt-act:hover{background: url('../imgs/botao_act_hover.png');}
+.grupo-imprimir {margin-top: 20px}
+.fundo-tecnicos{
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 80px;
+}
+.bloco{
+    background: #D8E6F5;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.bloco.azul{
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background: #ECECEC;
+    padding-left: 0;
+}
+.bloco-final{
+    background: #D8E6F5;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    margin-bottom: -80px;
+}
+/*.bloco.azul *{color: #fff;}*/
+.panel-default{
+    border: none !important;
+    border-radius: 0;
+}
+.panel-heading {
+    color: #fff !important;
+    border: none !important;
+    border-radius: 0;
+}
+.panel-heading:hover, .panel-heading:active, .panel-heading:focus, .panel-heading.ativo{
+    color: #000 !important;
+}
+.panel-heading a{
+    font-family: source-bold;
+    font-size: 16px;
+}
+.panel-collapse{
+    padding: 0 30px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+.mt-40 {
+  margin-top: 40px;
+}
+.mt-60 {
+  margin-top: 60px;
+}
+
+pre {
+  background: #1e1e1e !important;
+  border: #2875c6 solid 1px !important;
+}
+pre code{
+  color: #dcdcdc !important;
+}
+.code-destaque{
+  background-color: #0b37fa !important;
+}
+.code1{
+  color: #4f9bec !important;
+}
+.code2{
+  color: #80db6e !important;
+}
+.code3{
+  color: #ee8469 !important;
+}
+.code4{
+  color: #fdff92 !important;
+}
+.code5{
+  color: #a0ceff !important;
+}
+.code6{
+  color: #a9bb76 !important;
+}
+.code7{
+  color: #13851c !important;
+}
+.code8{
+  color: #eeb155 !important;
+}
+.code9{
+  color: #e155ee !important;
+}
+
+.btn-painel {
+  background-size: 100%;
+  border: none;
+  width: 200px;
+  height: 167px;
+  margin: 10px auto;
+}
+.btn-painel01 {background: url("../imgs/layout_4_botao_teclado_1.png") no-repeat; background-size: 100%;}
+.btn-painel02 {background: url("../imgs/layout_4_botao_teclado_2.png") no-repeat; background-size: 100%;}
+.btn-painel03 {background: url("../imgs/layout_4_botao_teclado_3.png") no-repeat; background-size: 100%;}
+.btn-painel04 {background: url("../imgs/layout_4_botao_teclado_4.png") no-repeat; background-size: 100%;}
+.btn-painel01:hover {background-image: url("../imgs/layout_4_botao_teclado_1_hover.png");}
+.btn-painel02:hover {background-image: url("../imgs/layout_4_botao_teclado_2_hover.png");}
+.btn-painel03:hover {background-image: url("../imgs/layout_4_botao_teclado_3_hover.png");}
+.btn-painel04:hover {background-image: url("../imgs/layout_4_botao_teclado_4_hover.png");}
+
+.btn-classes {
+  background-size: 100%;
+  border: none;
+  width: 216px;
+  height: 170px;
+  margin: 10px auto;
+}
+.btn-classe01 {background: url("../imgs/layout_4_botao_code1.png") no-repeat; background-size: 100%;}
+.btn-classe02 {background: url("../imgs/layout_4_botao_code2.png") no-repeat; background-size: 100%;}
+.btn-classe03 {background: url("../imgs/layout_4_botao_code3.png") no-repeat; background-size: 100%;}
+.btn-classe01:hover {background-image: url("../imgs/layout_4_botao_code1_hover.png");}
+.btn-classe02:hover {background-image: url("../imgs/layout_4_botao_code2_hover.png");}
+.btn-classe03:hover {background-image: url("../imgs/layout_4_botao_code3_hover.png");}
+
+.btn-classesSet {
+  background-size: 100%;
+  border: none;
+  width: 216px;
+  height: 170px;
+  margin: 10px auto;
+}
+.btn-classeSet01 {background: url("../imgs/layout_4_botao_code_1.png") no-repeat; background-size: 100%;}
+.btn-classeSet02 {background: url("../imgs/layout_4_botao_code_2.png") no-repeat; background-size: 100%;}
+.btn-classeSet01:hover {background-image: url("../imgs/layout_4_botao_code_1_hover.png");}
+.btn-classeSet02:hover {background-image: url("../imgs/layout_4_botao_code_2_hover.png");}
+
+.img-separador{
+  margin: -28px auto;
+}

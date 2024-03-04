@@ -1,0 +1,276 @@
+body {
+  background: url("../objetos/background.png") no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.fundo-tecnicos{
+  border-bottom: none !important;
+}
+
+.icone.hardware {
+  background-image: url(../objetos/icone-hardware.png);
+}
+.icone.software {
+  background-image: url(../objetos/icone-software.png);
+}
+
+code{
+  color: #333;
+}
+
+.desafio-frente {
+  padding: 50px 50px 250px 50px;
+  position: relative;
+  background-color: #2875c6;
+  color: white;
+  width: 60%;
+  margin: 0 auto 50px auto;
+  text-align: center;
+}
+.desafio-frente::before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: 30px;
+  margin-left: -77px;
+  width: 155px;
+  height: 154px;
+  background-image: url(../../template/images/desafio.png);
+  content: "";
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.desafio-frente:hover::before {
+  transform: scale(1.05);
+}
+.desafio-frente2 {
+  padding: 50px 50px 250px 50px;
+  position: relative;
+  background-color: #2875c6;
+  color: white;
+  width: 60%;
+  margin: 0 auto 50px auto;
+  text-align: center;
+}
+.desafio-frente2::before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: 60px;
+  margin-left: -77px;
+  width: 155px;
+  height: 154px;
+  background-image: url(../../template/images/desafio.png);
+  content: "";
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.desafio-frente2:hover::before {
+  transform: scale(1.05);
+}
+
+.desafio-verso {
+  padding: 50px;
+  position: relative;
+  background-color: #2875c6;
+  color: white;
+  width: 60%;
+  margin: 0 auto 50px auto;
+  text-align: center;
+}
+.desafio-verso-d3 {
+  padding: 50px;
+  position: relative;
+  background-color: #2875c6;
+  font-weight: bold;
+  color: white;
+  width: 90%;
+  margin: 0 auto 50px auto;
+  text-align: center;
+}
+
+h1 i,
+h2 i,
+h3 i,
+h4 i {
+  font-weight: bold;
+}
+
+h4 {
+  margin: 0px;
+  margin-top: 40px;
+}
+
+pre {
+  background: #1e1e1e;
+  color: #dcdcdc;
+}
+
+ul.checklist li {
+  list-style-image: url('../objetos/marcador_checklist.png') !important;
+}
+ul.seta li {
+  list-style-image: url('../objetos/marcador_seta.png') !important;
+}
+
+pre {
+  background: #1e1e1e !important;
+  border: #2875c6 solid 1px !important;
+}
+code{
+  color: #dcdcdc !important;
+}
+.code-destaque{
+  background-color: #0b37fa !important;
+}
+.code1{
+  color: #4f9bec !important;
+}
+.code2{
+  color: #80db6e !important;
+}
+.code3{
+  color: #ee8469 !important;
+}
+.code4{
+  color: #fdff92 !important;
+}
+.code5{
+  color: #a0ceff !important;
+}
+.code6{
+  color: #a9bb76 !important;
+}
+.code7{
+  color: #13851c !important;
+}
+.code8{
+  color: #eeb155 !important;
+}
+.code9{
+  color: #e155ee !important;
+}
+
+
+.btn-versoes {
+  background-size: 100%;
+  border: none;
+  width: 280px;
+  height: 77px;
+  margin: 10px auto;
+}
+.btn-versao01 {background: url("../objetos/layout_7_botao_java1.png") no-repeat; background-size: 100%;}
+.btn-versao02 {background: url("../objetos/layout_7_botao_java2.png") no-repeat; background-size: 100%;}
+.btn-versao03 {background: url("../objetos/layout_7_botao_java3.png") no-repeat; background-size: 100%;}
+.btn-versao01:hover {background-image: url("../objetos/layout_7_botao_java1_hover.png");}
+.btn-versao02:hover {background-image: url("../objetos/layout_7_botao_java2_hover.png");}
+.btn-versao03:hover {background-image: url("../objetos/layout_7_botao_java3_hover.png");}
+
+
+.mt-20 {
+  margin-top: 20px;
+}
+.mt-40 {
+  margin-top: 40px;
+}
+.mt-60 {
+  margin-top: 60px;
+}
+
+
+.btn-instalacao {
+  background-size: 100%;
+  border: none;
+  width: 320px;
+  height: 131px;
+  margin: 10px auto;
+}
+.btn-windows {background: url("../objetos/layout_7_botao_java_win.png") no-repeat; background-size: 100%;}
+.btn-linux {background: url("../objetos/layout_7_botao_java_linux.png") no-repeat; background-size: 100%;}
+.btn-windows:hover {background-image: url("../objetos/layout_7_botao_java_win_hover.png");}
+.btn-linux:hover {background-image: url("../objetos/layout_7_botao_java_linux_hover.png");}
+
+.btn-apache {
+  background-size: 100%;
+  border: none;
+  width: 320px;
+  height: 157px;
+  margin: 10px auto;
+}
+.btn-apache_windows {background: url("../objetos/layout_7_botao_apache_win.png") no-repeat; background-size: 100%;}
+.btn-apache_linux {background: url("../objetos/layout_7_botao_apache_linux.png") no-repeat; background-size: 100%;}
+.btn-apache_windows:hover {background-image: url("../objetos/layout_7_botao_apache_win_hover.png");}
+.btn-apache_linux:hover {background-image: url("../objetos/layout_7_botao_apache_linux_hover.png");}
+
+
+@media screen and (max-width: 800px) {
+  .fig04-kanban,
+  .ilustra-metodos {
+    width: 85%;
+  }
+  .desafio-frente::before {
+    margin-top: 80px;
+  }
+  .btn-stored_procedure {
+    width: 300px;
+    height: 76px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .fundo-tecnicos{
+    background-color: #fff !important;
+  }
+
+  .fig04-kanban,
+  .ilustra-metodos {
+    width: 100%;
+  }
+  .desafio-frente::before {
+    margin-top: 270px;
+  }
+  .desafio-frente2::before {
+    margin-top: 410px;
+  }
+
+  .painel-passos {
+    transform: scale(0.82);
+    margin: -35px;
+  }
+}
+
+.js .anime-init {
+  display: initial;
+  transform: translate3D(0px, 0px, 0px);
+  transition: 0.2s all ease;
+}
+.btn-destaque {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background: url("../objetos/bt_hamburguer-25.png") no-repeat;
+  background-size: 100%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  display: none;
+  cursor: pointer;
+}
+.btn-destaque:hover {
+  transform: scale(1.2);
+  transition: 0.2s all ease;
+}
+
+.img-hamburguer{
+  width: 30px;
+  margin-left: 5px;
+  margin-right: 2px;
+}
+
+.icone.dicas {
+  background-image: url(../objetos/img_infografico_dicas.png);
+}

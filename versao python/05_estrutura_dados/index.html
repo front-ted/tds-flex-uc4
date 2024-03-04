@@ -1,0 +1,3236 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Estrutura de dados: conceitos, aplicação e usabilidade – pilha, fila, deck, listas</title>
+
+    <!-- Bootstrap -->
+    <link href="../template/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../template/css/tecnicos_senac.css" rel="stylesheet">
+    <link href="../template/css/cores.css" rel="stylesheet">
+    <!--Extras - novas classes para facilitar-->
+    <link rel="stylesheet" href="../template/css/extras.css">
+    <link href="../template/css/sncload.css" rel="stylesheet">
+    <link href="../template/css/magnific-popup.css" rel="stylesheet">
+    <link href="../template/css/atividades_interativas.css" rel="stylesheet">
+    <link rel="stylesheet" href="../template/css/cores-codigo.css">
+    <link rel="stylesheet" href="../template/css/caixa-destaque-css.css">
+    <!-- referencia ao arquivo css com estilos especificos da pagina -->
+    <link href="css/custom.css" type="text/css" rel="stylesheet">
+    <!-- css necessario para o print -->
+    <link href="../template/css/fa/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="../template/css/print.css" type="text/css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+  
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Bruna Flores de Oliveira</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">46085400.0000000</mso:Order>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Bruna Flores de Oliveira</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ContentTypeId msdt:dt="string">0x010100393332CEE5C5294F9D2C3CF7CCDACBE5</mso:ContentTypeId>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body onLoad="Javascript:document.getElementById('sncloader').style.display='none';">
+    <!-- MARCA D´ÁGUA -->
+    <img src="../template/images/logo_senac_colorido.png" id="marcadaguaLogo">
+    <!-- /MARCA D´ÁGUA -->
+
+    <div id='sncloader' class='over-loader'><div class="over-cell"><div id="sncload"></div></div></div>
+    <header id="topo" class="senac no-print">
+        <div  class="header-tecnicos container">
+          <h1 id="nome-curso">Desenvolvimento de Sistemas</h1>
+          <div id="logo-senac"><img src="../template/images/logo-senac.png" alt="logo do senac"></div>
+        </div>
+        <div id="sombra"></div>
+    </header>
+
+    <div id="booklet" class="fundo-tecnicos">
+
+        <div class="acessivel no-print">
+          <p>Como sugestão, configure a opção de leitura de caracteres e de pontuação de seu leitor de tela para o grau máximo de leitura, para que os códigos disponibilizados neste material sejam lidos corretamente. No caso do NVDA (Nonvisual Desktop Access), para localizar a opção <b>Grau de pontuação/símbolos</b>, acesse <b>Preferências – Configurações – Fala</b>. Altere o padrão <b>Pouco</b> para <b>Tudo</b>. Dessa forma, o leitor passará a ler os segmentos de código em sua totalidade.</p>
+        </div>
+        
+<!-- - - - - - - - - - - - - - - - não alterar acima - - - - - - - - - - - - -->
+        <section class="paginas">
+
+          <!-- - - - - - - - cada página é independente  - - - - - - - - - - -->
+          <div class="pagina">
+            <div class="bloco">
+              <div class="container">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <header class="no-print">
+                    <!-- BTO IMPRIMIR -->
+                    <div class="grupo-imprimir no-print">
+                      <button type="button" data-pdf="true" class="bto-imprimir" name="button">
+                        <span class="fa fa-print"></span> <span>Imprimir</span>
+                      </button>
+                    </div>
+                    <!-- /BTO IMPRIMIR -->
+                  </header>
+                  <h2>Estrutura de dados: conceitos, aplicação e usabilidade – pilha, fila, deck, listas </h2>
+
+                  <h3>Introdução</h3>
+
+                  <p>Estruturas de dados são meios de organizar e manipular informações de modo que as operações sobre elas sejam eficientes. Por exemplo, é muito mais eficiente e intuitivo manipular uma série de números em um vetor do que em muitas variáveis separadas. Além de prover uma maneira de guardar informações, as estruturas devem permitir operações para acesso e manipulação desses dados. No caso dos vetores, os índices permitem um acesso rápido à determinada informação.</p>
+
+                  <p>Sem conhecer estruturas de dados, o programador pode escrever programas e chegar a uma solução correta, mas que provavelmente será menos eficiente do que se aplicasse a estrutura adequada.</p>
+                  
+                  <p>As classes em si são um tipo de estrutura de dados que guardam informações e permitem a criação de métodos para manipulá-las. É a partir de classes que muitas outras estruturas de dados são possíveis, como listas ligadas, árvores, pilhas, filas, entre outras.</p>
+
+                  <div class="destaque-pixel">
+                    <div class="icone-position-anotar">
+                      <div class="caixa-destaque">                    <p>Para um bom aproveitamento, siga esta leitura realizando e testando os exemplos demonstrados. Crie um projeto no PYCHARM para cada exemplo ou modifique um código já existente. Execute, realize modificações e teste para entender como cada estrutura funciona.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <img src="imgs/separador.png" class="img-separador img-responsive center-block">
+            <div class="bloco azul">
+              <div class="container">
+
+                <h3><i>Generics</i></h3>
+
+                <img src="./imagens/ilustra_python.png" style="margin-bottom: 35px;" class="center-block img-responsive" alt="r imagem ilustrativa referente a Python">
+
+                <div class="destaque-pixel">
+                  <div class="caixa-destaque">
+                    Python é uma linguagem de programação dinâmica e flexível, conhecida por sua
+                    simplicidade e legibilidade. Embora Python não seja estritamente “tipado”, a
+                    partir da versão 3.5, foram introduzidas as anotações de tipo (<i>type hints</i>),
+                    permitindo uma forma opcional de especificar tipos de dados em variáveis,
+                    argumentos de função e retornos de função. Com as anotações de tipo, é
+                    possível criar estruturas de dados genéricas, tornando o código mais legível e
+                    seguro.
+                  </div>
+                </div>              
+                
+                <p>
+                  Tipos genéricos permitem que você escreva um código que possa trabalhar com
+                  diferentes tipos de dados, mantendo a flexibilidade e a segurança. Em vez de
+                  definir tipos de dados específicos, você pode criar funções e classes que
+                  funcionem com tipos indefinidos, permitindo que os tipos sejam especificados
+                  quando o código é utilizado.
+                </p>
+
+                <h4>Declarando tipos genéricos</h4>
+
+                <p>
+                  Em Python, os tipos genéricos são declarados usando o módulo <i>typing</i>. O tipo
+                  genérico mais comum é <i>List</i>, que representa uma lista que pode conter
+                  elementos de qualquer tipo. Veja um exemplo:
+                </p>
+
+                <pre>
+                  <code>
+<span class="language-python__red">from</span> typing <span class="language-python__red">import</span> List
+<span class="language-python__red">def</span> <span class="language-python__blue">imprime_lista</span>(lista: List[<span class="language-python__blue">int</span>]):
+    <span class="language-python__red">for</span> elemento <span class="language-python__red">in</span> lista:
+        <span class="language-python__blue">print</span>(elemento)
+
+minha_lista = [<span class="language-python__blue">1</span>, <span class="language-python__blue">2</span>, <span class="language-python__blue">3</span>, <span class="language-python__blue">4</span>, <span class="language-python__blue">5</span>]
+imprime_lista(minha_lista)
+segunda_lista=[<span class="language-python__green">"segunda-feira"</span>, <span class="language-python__green">"terça-feira"</span>, <span class="language-python__green">"quarta-feira"</span>, <span class="language-python__green">"quinta-feira"</span>, <span class="language-python__green">"sexta-feira"</span>, <span class="language-python__green">"sábado"</span>, <span class="language-python__green">"domingo"</span>]
+imprime_lista(segunda_lista)
+                  </code>
+                </pre>
+
+                <p>
+                  Nesse exemplo, a função <span class="source-font">imprime_lista</span> é declarada para aceitar uma lista de
+                  inteiros, mas a mesma função pode ser usada com outros tipos de dados
+                  simplesmente especificando o tipo desejado ao chamar a função.
+                </p>
+
+                <p><b>Saída na console</b></p>
+
+                <pre>
+                  <code>
+1
+
+2
+
+3
+
+4
+
+5
+
+segunda-feira
+
+terça-feira
+
+quarta-feira
+
+quinta-feira
+
+sexta-feira
+
+sábado
+
+domingo
+
+Process finished with exit code 0
+                  </code>
+                </pre>
+
+                <h4>Criando classes genéricas</h4>
+
+                <p>
+                  Você também pode criar classes genéricas para trabalhar com tipos
+                  desconhecidos. Por exemplo, você pode criar uma classe Caixa, que pode conter
+                  qualquer tipo de objeto.
+                </p>
+
+                <pre>
+                  <code>
+<span class="language-python__orange">from</span> typing <span class="language-python__orange">import</span> TypeVar
+T = TypeVar(<span class="language-python__green">'T'</span>)
+<span class="language-python__orange">class</span> Caixa:
+    <span class="language-python__orange">def</span> <span span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>, conteudo: T):
+        <span class="language-python__red">self</span>.conteudo = conteudo
+
+minha_caixa = Caixa(<span class="language-python__green">"Olá, Python!"</span>) # tipo String
+outra_caixa =Caixa(<span class="language-python__blue">42</span>) # tipo inteiro
+
+<span class="language-python__blue">print</span>(minha_caixa.conteudo)
+<span class="language-python__blue">print</span>(outra_caixa.conteudo)
+                  </code>
+                </pre>
+
+                <p>
+                  Aqui foi usado <span class="source-font"><b>TypeVar</b></span> para criar um tipo genérico <span class="source-font"><b>T</b></span>, que pode ser qualquer tipo de dado. Isso permite que a classe <span class="source-font"><b>Caixa</b></span> seja parametrizada com diferentes tipos, tornando-a flexível.
+                </p>
+
+                <h4>Benefícios dos tipos genéricos</h4>
+
+                <img src="./imagens/infografico_layout.png" class="img-responsive center-block" alt="">
+
+                <div class="acessivel no-print">
+                  <ul>
+                    <li><b>Segurança de tipo:</b> o uso de tipos genéricos permite a detecção de erros de tipo
+                      em tempo de compilação, em vez de tempo de execução. Isso torna o código
+                      mais robusto.</li>
+                    <li><b>Reutilização de código:</b> você pode escrever funções e classes genéricas que
+                      podem ser reutilizadas com diferentes tipos de dados, economizando tempo e
+                      esforço.</li>
+                    <li><b>Legibilidade do código:</b> ao especificar os tipos esperados, seu código se torna
+                      mais legível e compreensível, facilitando a colaboração com outros
+                      desenvolvedores.</li>
+                  </ul>
+                </div>
+
+                <p>
+                  Tipos genéricos são uma adição valiosa ao arsenal de Python, tornando-o ainda
+                  mais versátil e adequado para lidar com uma ampla variedade de situações. Com
+                  tipos genéricos, você pode escrever um código mais seguro, legível e flexível,
+                  economizando tempo e evitando erros. À medida que você explora Python,
+                  considere a integração de tipos genéricos em seus projetos para aproveitar ao
+                  máximo essa funcionalidade.
+                </p>          
+                              
+                <div class="no-print" aria-hidden="true">
+                  <p>Clique ou toque para visualizar o conteúdo.</p>
+                  <div class="row">
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                      <button type="button" class="btn-painel btn-painel01 center-block" data-toggle="modal" data-target="#modalPilhas"></button>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                      <button type="button" class="btn-painel btn-painel02 center-block" data-toggle="modal" data-target="#modalFilas"></button>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                      <button type="button" class="btn-painel btn-painel03 center-block" data-toggle="modal" data-target="#modalDequeDeck"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- MODAIS -->
+              <div class="no-print">
+
+              <!-- MODAL PILHAS -->
+
+              <div class="modal modal-100 fade" id="modalPilhas" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content no-print">
+                    <div class="modal-header" style="padding-top: 30px;">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h3 class="modal-title">
+                        <div class="container">Pilha</div>
+                      </h3>
+                    </div>
+                    <div class="modal-body">
+                      <div class="container">
+                        <h4>Conceitos</h4>
+      
+                        <p>
+                          Pilhas são listas de valores que simulam uma pilha de objetos. Pense por
+                          exemplo em pratos empilhados em um restaurante buffet. Você irá pegar o prato
+                          do topo dessa pilha, e não o da base. Os funcionários do restaurante farão a
+                          reposição incluindo novos pratos acima do que está no topo.
+                        </p>
+      
+                        <p>
+                          Da mesma maneira acontece com uma estrutura de dados pilha: um valor,
+                          quando é incluindo, vai ao topo da pilha e quando é retirado também sai do topo.
+                          Daí a denominação comum de que se trata de uma estrutura LIFO – Last in, Fist
+                          out, ou “último a entrar, primeiro a sair”. Isso significa que o último valor incluído
+                          é o primeiro a ser excluído.
+                        </p>
+      
+                        <p>
+                          As pilhas utilizam apenas as operações de empilhar (geralmente chamado
+                          <i>“push”</i>) para incluir dados e desempilhar (“pop”) para excluir; geralmente ainda
+                          acompanham de um método <i>peek</i>, usado para verificar qual valor está no topo
+                          da pilha sem retirá-lo, como mostra o gif a seguir:
+                        </p>
+      
+                        <img src="./imagens/fig1.jpg" class="img-responsive center-block"alt="" srcset="">
+                        <p class="legenda-imagem">Funcionamento de uma pilha. pop(). Inclui um valor no topo; push() recupera e retira
+                          o valor do topo  <br>  Fonte: Senac EAD (2024) </p>
+      
+                        <p class="acessivel no-print">
+                          imagem exemplificando pilha. Há três caixas ao centro, uma embaixo da outra; a de
+                          cima tem o número três, abaixo o número dois e abaixo o um. Do lado direito da caixa de número
+                          três, há a palavra “topo”, e ao lado da caixa um há a palavra “base”. À esquerda, surge a
+                          expressão “push()” e uma caixa com o número quatro. Em seguida, essa caixa se move até
+                          acima da três e “topo” passa para o lado da quatro. Depois, “pop()” se apaga e surge a expressão
+                          “push()”. O quatro sai do topo da pilha e a palavra “topo” volta a descer para o três.
+                        </p>
+      
+                        <h4>Usabilidade</h4>
+      
+                        <p>
+                          Um uso clássico de pilhas acontece no próprio sistema operacional. Processos
+                          de sistema geralmente iniciam outros processos, que iniciam outros. Constrói-se
+                          assim uma pilha de processos, uma vez que o último processo iniciado deve ser
+                          finalizado para que o anterior (que chamou o último) possa ser processado ou
+                          finalizado, e assim por diante. 
+                        </p>
+      
+                        <p>
+                          Outra aplicação clássica de pilhas acontece nos compiladores, para verificar a
+                          abertura e o fechamento de parênteses em uma expressão lógica, por exemplo.
+                          Assim, por meio de uma pilha de caracteres, pode-se validar a seguinte
+                          expressão:
+                        </p>
+      
+                        <pre>
+                          <code>
+      <span class="language-python__red">(</span>x * <span class="language-python__green">(</span>y - 2<span class="language-python__green">)</span> / <span class="language-python__blue">(</span>10 + z<span class="language-python__blue">)</span><span class="language-python__red">)</span><span>)</span>
+                          </code>
+                        </pre>
+      
+                        <p>
+                          É possível percorrer a expressão e usar pilha para empilhar valor ao encontrar
+                          (e desempilhar ao encontrar). Se a expressão estiver correta, a pilha estará vazia
+                          ao final. No exemplo acima, esse algoritmo mostraria que a expressão está
+                          incorreta, pois ao alcançar o último caractere) a pilha já estará vazia.
+                        </p>
+      
+                        <p>
+                          Em qualquer situação análoga em que a última informação incluída tenha que
+                          ser processada antes que a anteriormente incluída, podemos aplicar pilhas.
+                        </p>
+      
+                        <h4>Aplicação</h4>
+      
+                        <p>
+                          Em Python, é relativamente fácil implementar uma pilha usando uma lista (ou
+                          <i>array</i>) nativa. Veja um exemplo de como criar uma pilha em Python:
+                        </p>
+      
+                        <pre>
+                          <code>
+<span class="language-python__orange">class</span> Pilha:
+  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>):
+      <span class="language-python__red">self</span>.items = []
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">push</span>(<span class="language-python__red">self</span>, item):
+      <span class="language-python__red">self</span>.items.append(item)
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">pop</span>(<span class="language-python__red">self</span>):
+      <span class="language-python__orange">if not</span> <span class="language-python__red">self</span>.is_empty():
+          <span class="language-python__orange">return</span> <span class="language-python__red">self</span>.items.pop()
+      <span class="language-python__orange">else</span>:
+          <span class="language-python__orange">return None</span>
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">peek</span>(<span class="language-python__red">self</span>):
+      <span class="language-python__orange">if not</span> <span class="language-python__red">self</span>.is_empty():
+          <span class="language-python__orange">return</span> <span class="language-python__red">self</span>.items[-<span class="language-python__blue">1</span>]
+      <span class="language-python__orange">else</span>:
+          <span class="language-python__orange">return None</span>
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">is_empty</span>(<span class="language-python__red">self</span>):
+      <span class="language-python__orange">return</span> <span class="language-python__grey">len</span>(<span class="language-python__red">self</span>.items) == <span class="language-python__blue">0</span>
+
+  <span class="language-python__orange">def</span> <span class="language-python__blue">size</span>(<span class="language-python__red">self</span>):
+      <span class="language-python__orange">return</span> <span class="language-python__grey">len</span>(<span class="language-python__red">self</span>.items)
+                          </code>
+                        </pre>
+      
+                        <h4>Uso de pilhas em Python</h4>
+      
+                        <p>
+                          As pilhas têm uma ampla gama de aplicações em programação. A seguir, veja
+                          alguns exemplos.
+                        </p>
+      
+                        <img src="./imagens/modal_pilha_infografico.png" alt="" class="img-responsive center-block">
+      
+                        <p>
+                          Pilhas são uma estrutura de dados poderosa e versátil em programação. Elas
+                          facilitam o gerenciamento de elementos em ordem LIFO, tornando-as valiosas
+                          em diversas aplicações. Implementar e compreender o uso de pilhas em Python
+                          é uma habilidade fundamental para qualquer desenvolvedor, pois permite
+                          solucionar uma ampla variedade de problemas de forma eficaz e eficiente.
+                          Portanto, ao enfrentar problemas que envolvem o gerenciamento de elementos
+                          em ordem específica, considere o uso de pilhas como uma ferramenta valiosa
+                          em seu conjunto de habilidades de programação.
+                        </p>
+      
+                        <p>
+                          Imagine que será necessário implementar um código para organizar e
+                          determinar quais carros devem sair de um caminhão-cegonha. Os carros estão
+                          enfileirados, mas o último a entrar será o primeiro a sair.
+                        </p>
+      
+                        <p>
+                          Nessa aplicação, será solicitado o nome de cada carro e depois apresentada a
+                          ordem em que eles sairão do caminhão. Será considerado apenas um dos
+                          andares do veículo de transporte.
+                        </p>
+      
+                        <img src="./imagens/fig2.png" alt="" class="img-responsive center-block">
+                        <p class="legenda-imagem">
+                          Caminhão-cegonha <br>
+                          Fonte: https://ohanatransportes.com.br
+                        </p>
+
+                        <p>
+                          Teste com os valores “fusca”, “chevette” e “opala” para verificar que o resultado
+                          final será “opala, chevette, fusca”.
+                        </p>
+      
+                        <pre>
+                          <code>
+Digite o nome do carro (ou digite 'sair' para encerrar): fusca
+Digite o nome do carro (ou digite 'sair' para encerrar): chevette
+Digite o nome do carro (ou digite 'sair' para encerrar): opala
+Digite o nome do carro (ou digite 'sair' para encerrar): sair
+Ordem de saída dos carros:
+1. opala
+2. chevette
+3. fusca
+
+Process finished with exit code 0
+                          </code>
+                        </pre>
+      
+                        <div class="destaque-pixel">
+                          <div class="icone-position-desafio">
+                            <div class="caixa-destaque">
+                              Implemente um programa PYTHON em que o usuário informará números
+                              inteiros. Inclua o primeiro número em uma pilha e inclua os próximos apenas se
+                              for maior que último número informado. Depois desempilhe os valores
+                              mostrando na tela cada um em sequência.
+                            </div>
+                          </div>
+                        </div>
+      
+                       
+
+
+
+
+                        
+
+
+
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="no-print" aria-hidden="true">
+                          <p>Clique ou toque para visualizar o conteúdo.</p>
+                          <div class='panel-group gaitinha' id='gabarito-1' role='tablist' aria-multiselectable='true'>
+                            
+                            <div class='panel panel-default'>
+                              <div class='panel-heading' role='tab' id='heading11'>
+                                <h3 class='panel-title'>
+                                  <a class="collapsed" role='button' data-toggle='collapse' data-parent='#gabarito-1' href='#collapse99' aria-expanded='false' aria-controls='collapse11'>
+                                    Gabarito
+                                  </a>
+                                </h3>
+                              </div>
+                              <div id='collapse99' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading11'>
+                                <div class='panel-body'>
+                      <pre>
+                        <code>
+
+<span class="language-python__orange">def</span> <span class="language-python__green">main</span>():
+  <span class="language-python__grey">pilha = []</span> # Inicializa uma lista vazia para representar a pilha
+
+
+  <span class="language-python__orange">while True</span>:
+      <span class="language-python__orange">try</span>:
+          <span class="language-python__grey">numero</span> = int(input(<span class="language-python__green">"Informe um número inteiro (ou digite '0' para encerrar): ")</span>)
+          <span class="language-python__orange">except</span> <span class="language-python__grey">ValueError</span>:
+              <span class="language-python__grey">print</span>(<span class="language-python__green">"Por favor, digite um número inteiro válido."</span>)
+              <span class="language-python__orange">continue</span>
+
+
+          <span class="language-python__orange">if</span> <span class="language-python__grey">numero ==</span> 0:
+              <span class="language-python__grey">break</span>
+
+          <span class="language-python__orange">if not</span> pilha <span class="language-python__orange">or</span> numero > pilha[-<span class="language-python__green">1</span>]:
+              pilha.append(numero)
+          <span class="language-python__orange">else</span>:
+              <span class="language-python__grey">print</span>(<span class="language-python__green">"O número não é maior que o último número informado. Tente novamente."</span>)
+
+  <span class="language-python__grey">print</span>(<span class="language-python__grey">"</span><span class="language-python__orange">\n</span><span class="language-python__green">Números desempilhados na sequência correta:"</span>)
+  <span class="language-python__orange">while</span> pilha:
+      <span class="language-python__grey">print</span>(pilha.pop())
+
+
+main()
+                        </code>
+                      </pre>
+                                </div>
+                              </div>
+                            </div>
+                            
+                          </div>
+                        </div>
+
+
+
+
+
+                        
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="botao borda-primaria-03" data-dismiss="modal">Fechar</button>
+                    </div>
+                    </div>
+                  </div>
+                </div>               
+              </div>
+
+              <!-- MODAL FILAS -->
+
+              <div class="modal modal-100 fade" id="modalFilas" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content no-print">
+                      <div class="modal-header" style="padding-top: 30px;">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h3 class="modal-title">
+                          <div class="container">Fila</div>
+                        </h3>
+                      </div>
+                      <div class="modal-body">
+                        <div class="container">
+                          <h4>Conceitos</h4>
+        
+                          <p>
+                            O que diferencia uma pilha de uma fila é a ordem em que os elementos são
+                            incluídos e excluídos da estrutura. Aqui, o primeiro valor incluído será o primeiro
+                            a ser retirado (FIFO – <i>First in first out</i>).
+                          </p>
+        
+                          <p>
+                            As filas necessitam basicamente das operações de enfileirar (“enqueue” ou
+                            “add”) e desenfileirar (“dequeue” ou “remove”). O <i>gif</i> a seguir demonstra a
+                            inclusão do dado após o último elemento da fila; remove() exclui o primeiro item
+                            da fila
+                          </p>
+                          <img src="./imgs/03.gif" class="img-responsive center-block"alt="gif exemplo fila">
+                          <p class="legenda-imagem">
+                            Funcionamento de uma Fila. add() incluindo dado após o último elemento da fila e remove() exclui o primeiro item da fila <br> Fonte: Senac EAD (2024)
+                          </p>
+
+                          <p class="acessivel no-print">
+                            imagem mostrando os números 1, 2 e 3 em caixas uma ao lado da outra. Surge a expressão “add()” acima e uma caixa “4” surge à direita de “3”. Apaga-se a expressão “add()” e surge “remove()”; a caixa “1”, mais à esquerda de todas, se apaga
+                          </p>
+
+                          <h4>Usabilidade</h4>
+
+                          <p>
+                            As situações que envolvem o uso de fila são intuitivas. Uma fila de pessoas
+                            esperando para serem atendidas em um consultório médico, por exemplo, pode
+                            se beneficiar dessa estrutura de dados. Uma lista de documentos enviados para
+                            impressão também certamente implementa uma estrutura de dados fila, uma vez
+                            que o primeiro documento enviado deve ser também o primeiro a ser impresso,
+                            e a ordem dos documentos deve ser preservada.
+                          </p>
+
+                          <h4>Aplicação</h4>
+
+                          <p>
+                            Em Python, uma fila é uma estrutura de dados linear que segue o princípio
+                            “primeiro a entrar, primeiro a sair” (FIFO – <i>First-In-First-Out</i>). Ela é
+                            frequentemente utilizada para organizar elementos de forma que o primeiro
+                            elemento inserido seja o primeiro a ser retirado. As filas são comumente
+                            implementadas usando listas, mas para operações mais eficientes, é preferível
+                            usar a biblioteca <span class="source-font">collections.deque</span>.
+                          </p>
+
+                          <p>
+                            Veja uma explicação sobre filas em Python, com exemplos práticos:
+                          </p>
+                          
+    <div class="exemplos__filas">
+      <img src="imagens/marcador1.png" alt="" srcset="" class="marcador-numerado-1__fila">
+      <img src="imagens/marcador2.png" alt="" srcset="" class="marcador-numerado-2__fila">
+      <img src="imagens/marcador3.png" alt="" srcset="" class="marcador-numerado-3__fila">
+      <img src="imagens/marcador4.png" alt="" srcset="" class="marcador-numerado-4__fila">
+      <img src="imagens/marcador5.png" alt="" srcset="" class="marcador-numerado-5__fila">
+
+                            <pre class="codigo-exemplo__filas">
+                              <code>
+Criando uma fila: para criar uma fila em Python, você pode usar uma lista ou um objeto <span class="source-font">deque</span> da biblioteca <span class="source-font">collections</span>. Observe um exemplo de criação de uma 
+fila usando <span class="source-font">deque</span>:
+            
+    <span class="language-python__orange">from</span> collections <span class="language-python__orange">import</span> deque
+    fila = deque()
+      
+Inserindo elementos na fila (enfileirar): para inserir elementos na fila, 
+você usa o método append() para listas ou o método append() para objetos 
+deque. Veja o exemplo com deque:
+    fila = deque()
+    fila.append(<span class="language-python__blue">1</span>)
+    fila.append(<span class="language-python__blue">2</span>)
+    fila.append(<span class="language-python__blue">3</span>)
+      
+Removendo elementos da fila (desenfileirar): para remover elementos da
+fila, você utiliza o método popleft() para objetos deque ou o método pop(0)
+para listas. A seguir, observe um exemplo de como desenfileirar
+elementos:
+    elemento = fila.popleft()
+    <span class="language-python__grey">print</span>(elemento) <span class="language-python__grey"># Isso irá imprimir 1</span>
+
+Verificando o tamanho da fila: para verificar o tamanho da fila, você pode 
+usar a função len():
+    tamanho = <span class="language-python__grey">len</span>(fila)
+
+Verificando se a fila está vazia: para verificar se a fila está vazia, você pode usar a função len() e verificar se o tamanho é igual a 0 ou utilizar o fato de que uma lista vazia ou deque vazio é avaliado como false em contexto booleano.
+    <span class="language-python__orange">if not</span> fila:
+    <span class="language-python__grey">print</span>(<span class="language-python__green">"A fila está vazia."</span>)
+                              </code>
+                            </pre>
+    </div>
+                          
+
+                          <p>
+                            Observe o exemplo completo de uma fila em Python:
+                          </p>
+
+                          <pre>
+                            <code>
+<span class="language-python__orange">from</span> collections <span class="language-python__orange">import</span> deque
+fila = deque()
+fila.append(<span class="language-python__blue">1</span>)
+fila.append(<span class="language-python__blue">2</span>)
+fila.append(<span class="language-python__blue">3</span>)
+<span class="language-python__grey">print</span>(<span class="language-python__green">"Tamanho da fila:"</span>, <span class="language-python__grey">len</span>(fila))
+<span class="language-python__grey">print</span>(<span class="language-python__green">"Desenfileirando elementos:"</span>)
+<span class="language-python__orange">while</span> fila:
+    elemento = fila.popleft()
+    <span class="language-python__grey">print</span>(elemento)
+                            </code>
+                          </pre>
+
+                          <p>
+                            Esse exemplo cria uma fila, enfileira alguns elementos, mostra o tamanho da fila
+                            e, em seguida, desenfileira os elementos na ordem em que foram enfileirados.
+                          </p>
+
+                          <p>
+                            Em resumo, filas são estruturas de dados importantes em Python para lidar com
+                            operações “primeiro a entrar, primeiro a sair”. Elas são amplamente utilizadas
+                            em algoritmos de busca, gerenciamento de tarefas, processamento em lotes e
+                            muito mais. As filas facilitam o gerenciamento de elementos em uma ordem
+                            específica.                            
+                          </p>
+
+                          <p>
+                            Veja a implementação de uma fila com nomes de pessoas a serem atendidas
+                            em uma clínica. A ordem de chegada delas será a ordem em que serão
+                            atendidas.                            
+                          </p>
+
+                          <pre>
+                            <code>
+<span class="language-python__orange">from</span> collections <span class="language-python__orange">import</span> deque
+
+<span class="language-python__grey"># Inicializa uma fila vazia</span>
+fila_de_atendimento = deque()
+
+<span class="language-python__grey"># Função para adicionar uma pessoa à fila</span>
+<span class="language-python__orange">def</span> <span class="language-python__blue">adicionar_pessoa</span>():
+    <span class="language-python__orange">while True</span>:
+        nome = <span class="language-python__grey">input</span>(<span class="language-python__green">"Digite o nome da pessoa a ser atendida (ou digite 'sair' para encerrar a entrada na fila): "</span>)
+        <span class="language-python__orange">if</span> nome.lower() != <span class="language-python__green">'sair'</span>:
+            fila_de_atendimento.append(nome)
+            <span class="language-python__grey">print</span>(<span class="language-python__green">f"</span><span class="language-python__orange">{</span>nome<span class="language-python__orange">}</span> <span class="language-python__green">foi adicionado à fila de atendimento."</span>)
+        <span class="language-python__orange">else</span>:
+            <span class="language-python__grey">print</span>(<span class="language-python__green">"Encerrando ENTRADA NA FILA"</span>)
+            <span class="language-python__orange">break</span>
+
+<span class="language-python__grey"># Função para atender pessoas na ordem de chegada</span>
+<span class="language-python__orange">def</span> <span class="language-python__blue">atender_pessoas</span>():
+    <span class="language-python__orange">if not</span> fila_de_atendimento:
+        <span class="language-python__grey">print</span>(<span class="language-python__green">"A fila de atendimento está vazia."</span>)
+        <span class="language-python__grey">return</span>
+
+    pessoa = fila_de_atendimento.popleft()
+    <span class="language-python__grey">print</span>(<span class="language-python__green">f"Atendendo</span> <span class="language-python__orange">{</span>pessoa<span class="language-python__orange">}</span><span class="language-python__green">"</span>)
+
+
+<span class="language-python__orange">def</span> <span class="language-python__blue">listar_fila</span>():
+    <span class="language-python__grey">print</span>(<span class="language-python__green">"Fila de Atendimento:"</span>)
+    <span class="language-python__orange">for</span> i, pessoa <span class="language-python__orange">in</span> <span class="language-python__grey">enumerate</span>(fila_de_atendimento, <span class="language-python__red">start</span>=<span class="language-python__blue">1</span>):
+        <span class="language-python__grey">print</span>(<span class="language-python__green">f"</span><span class="language-python__orange">{</span>i<span class="language-python__orange">}</span>. <span class="language-python__orange">{</span>pessoa<span class="language-python__orange">}</span><span class="language-python__green">"</span>)
+
+<span class="language-python__grey"># Menu para interagir com o programa</span>
+<span class="language-python__orange">while True</span>:
+    <span class="language-python__grey">print</span>(<span class="language-python__green">"</span><span class="language-python__orange">\n</span><span class="language-python__green">Opções:"</span>)
+    <span class="language-python__grey">print</span>(<span class="language-python__green">"1. Adicionar pessoa à fila"</span>)
+    <span class="language-python__grey">print</span>(<span class="language-python__green">"2. Atender próxima pessoa"</span>)
+    <span class="language-python__grey">print</span>(<span class="language-python__green">"3. Listar Fila"</span>)
+    <span class="language-python__grey">print</span>(<span class="language-python__green">"4. Encerrar o programa"</span>)
+
+    opcao = <span class="language-python__grey">input</span>(<span class="language-python__green">"Escolha uma opção: "</span>)
+
+    <span class="language-python__orange">if</span> opcao == <span class="language-python__green">'1'</span>:
+        adicionar_pessoa()
+    <span class="language-python__orange">elif</span> opcao == '2':
+        atender_pessoas()
+    <span class="language-python__orange">elif</span> opcao == '3':
+        listar_fila()
+    <span class="language-python__orange">elif</span> opcao == '4':
+        <span class="language-python__grey">print</span>(<span class="language-python__green">"Encerrando o programa."</span>)
+        <span class="language-python__orange">break</span>
+    <span class="language-python__orange">else</span>:
+        <span class="language-python__grey">print</span>(<span class="language-python__green">"Opção inválida. Tente novamente."</span>)
+                            </code>
+                          </pre>
+
+                          <p>
+                            Esse programa permite adicionar pessoas à fila e atendê-las na ordem de
+                            chegada. Para adicionar uma pessoa, escolha a opção 1 e digite o nome da
+                            pessoa. Para atender à próxima pessoa da fila, escolha a opção 2. Tem uma
+                            opção adicional para listar a fila de atendimento, a opção 3, permitindo que você
+                            visualize a ordem das pessoas na fila. Você pode encerrar o programa
+                            escolhendo a opção 4.
+                          </p>
+
+                          <p>
+                            Execute esse programa em seu ambiente Python e siga as instruções para
+                            adicionar e atender às pessoas na clínica na ordem correta. O resultado desse
+                            código será:                            
+                          </p>
+
+                          <pre>
+                            <code>
+Opções:
+1. Adicionar pessoa à fila
+2. Atender próxima pessoa
+3. Listar Fila
+4. Encerrar o programa
+Escolha uma opção: 1
+Digite o nome da pessoa a ser atendida (ou digite 'sair' para encerrar
+a entrada na fila): samuel
+samuel foi adicionado à fila de atendimento.
+Digite o nome da pessoa a ser atendida (ou digite 'sair' para encerrar
+a entrada na fila): mirela
+mirela foi adicionado à fila de atendimento.
+Digite o nome da pessoa a ser atendida (ou digite 'sair' para encerrar
+a entrada na fila): Manoela
+Manoela foi adicionado à fila de atendimento.
+Digite o nome da pessoa a ser atendida (ou digite 'sair' para encerrar
+a entrada na fila): sair
+Encerrando ENTRADA NA FILA
+
+Opções:
+1. Adicionar pessoa à fila
+2. Atender próxima pessoa
+3. Listar Fila
+4. Encerrar o programa
+Escolha uma opção: 3
+Fila de Atendimento:
+1. samuel
+2. mirela
+3. Manoela
+
+Opções:
+1. Adicionar pessoa à fila
+2. Atender próxima pessoa
+3. Listar Fila
+4. Encerrar o programa
+Escolha uma opção: 2
+Atendendo samuel
+
+Opções:
+1. Adicionar pessoa à fila
+2. Atender próxima pessoa
+3. Listar Fila
+4. Encerrar o programa
+Escolha uma opção: 3
+Fila de Atendimento:
+1. mirela
+2. Manoela
+
+Opções:
+1. Adicionar pessoa à fila
+2. Atender próxima pessoa
+3. Listar Fila
+4. Encerrar o programa
+Escolha uma opção: 3
+Fila de Atendimento:
+1. mirela
+2. Manoela
+
+Opções:
+1. Adicionar pessoa à fila
+2. Atender próxima pessoa
+3. Listar Fila
+4. Encerrar o programa
+Escolha uma opção:                            
+                            </code>
+                          </pre>
+
+                          <p>
+                            Essa é a implementação mais tradicional para fila. No entanto, existe ainda outra
+                            classe que implementa diretamente a interface Queue e trabalha de uma
+                            maneira mais específica. <b>PriorityQueue</b> é uma fila que mantém sempre
+                            ordenados os seus elementos.
+                          </p>
+
+                          <p>
+                            Uma fila de prioridade (Priority Queue) em Python pode ser implementada
+                            usando o módulo <span class="source-font">heapq</span> da biblioteca padrão. O <span class="source-font">heapq</span> fornece funções para criar e gerenciar filas de prioridade de forma eficiente. A fila de prioridade mantém os
+                            elementos em ordem com base em uma chave de prioridade associada a cada elemento. Elementos com menor prioridade são retirados primeiro.                            
+                          </p>
+
+                          <p>
+                            A seguir, veja como implementar uma fila de prioridade em Python usando o
+                            <span class="source-font">heapq</span>:                            
+                          </p>
+
+                          <pre>
+                            <code>
+<span class="language-python__orange">import</span> heapq
+
+<span class="language-python__grey"># Inicializa uma fila de prioridade vazia</span>
+fila_de_prioridade = []
+
+# Adiciona elementos à fila de prioridade
+heapq.heappush(fila_de_prioridade, (<span class="language-python__blue">3</span>, <span class="language-python__green">"Alice"</span>))
+heapq.heappush(fila_de_prioridade, (<span class="language-python__blue">1</span>, <span class="language-python__green">"Bob"</span>))
+heapq.heappush(fila_de_prioridade, (<span class="language-python__blue">2</span>, <span class="language-python__green">"Charlie"</span>))
+heapq.heappush(fila_de_prioridade, (<span class="language-python__blue">4</span>, <span class="language-python__green">"David"</span>))
+
+<span class="language-python__grey"># Retira elementos da fila de prioridade (serão retirados em ordem de prioridade)</span>
+<span class="language-python__orange">while</span> fila_de_prioridade:
+    prioridade, elemento = heapq.heappop(fila_de_prioridade)
+    <span class="language-python__grey">print</span>(<span class="language-python__green">f"Atendendo</span> <span class="language-python__orange">{</span>elemento<span class="language-python__orange">}</span> <span class="language-python__green">com prioridade</span> <span class="language-python__orange">{</span>prioridade<span class="language-python__orange">}</span><span class="language-python__green">"</span>)                              
+                            </code>
+                          </pre>
+
+                          <p>
+                            Nesse exemplo, cada elemento na fila de prioridade é uma tupla que contém a prioridade e o valor associado. O <span class="source-font">heapq</span> é usado para adicionar elementos à fila de prioridade com <span class="source-font">heapq.heappush()</span> e retirar elementos em ordem de prioridade com <span class="source-font">heapq.heappop()</span>. A saída desse programa será:                               
+                          </p>
+
+                          
+                          <img src="./imagens/destaque_resultado.png" alt="" srcset="" class="center-block img-responsive"> 
+
+
+                          <p>
+                            Você pode ajustar os valores de prioridade conforme necessário para atender às
+                            suas necessidades. A fila de prioridade é útil para implementar algoritmos que
+                            exigem a ordenação de elementos com base em prioridades, como algoritmos
+                            de busca, escalonamento de tarefas, entre outros.                            
+                          </p>
+
+                          <p>
+                            PriorityQueue será aplicado ao exemplo a fim de comparar seu resultado. A
+                            alteração necessária no código aparece em destaque.                            
+                          </p>
+
+                          <pre>
+                            <code>
+<span class="language-python__orange">import</span> queue
+
+<span class="language-python__grey"># Inicializa uma fila de prioridade vazia</span>
+fila_de_atendimento = queue.PriorityQueue()
+                              
+<span class="language-python__grey"># Função para adicionar uma pessoa à fila com prioridade</span>
+<span class="language-python__orange">def</span> <span class="language-python__blue">adicionar_pessoa</span>(): 
+    nome = <span class="language-python__blue">input</span>(<span class="language-python__green">"Digite o nome da pessoa a ser atendida (ou digite 'sair' para encerrar a entrada na fila):"</span>)
+    <span class="language-python__orange">if</span> nome.lower() != <span class="language-python__green">'sair'</span>:
+        prioridade = <span class="language-python__blue">int</span>(<span class="language-python__blue">input</span>(<span class="language-python__green">"Digite a prioridade da pessoa (um número inteiro): "</span>))
+        fila_de_atendimento.put((prioridade, nome))
+        <span class="language-python__grey">print</span>(<span class="language-python__green">f"</span><span class="language-python__orange">{</span>nome<span class="language-python__orange">}</span> <span class="language-python__green">foi adicionado à fila de atendimento com prioridade</span> <span class="language-python__orange">{</span>prioridade<span class="language-python__orange">}</span>.<span class="language-python__green">"</span>)
+    <span class="language-python__orange">else</span>:
+        <span class="language-python__grey">print</span>(<span class="language-python__green">"Encerrando ENTRADA NA FILA"</span>)
+
+<span class="language-python__grey"># Função para atender pessoas na ordem de prioridade</span>
+<span class="language-python__orange">def</span> <span class="language-python__blue">atender_pessoas</span>():
+    <span class="language-python__orange">try</span>:
+        prioridade, pessoa = fila_de_atendimento.get_nowait()
+        <span class="language-python__grey">print</span>(<span class="language-python__green">f"Atendendo</span><span class="language-python__orange"> {</span>pessoa<span class="language-python__orange">}</span><span class="language-python__green"> com prioridade</span> <span class="language-python__orange">{</span>prioridade<span class="language-python__orange">}</span><span class="language-python__green">"</span>)
+    <span class="language-python__orange">except</span> queue.Empty:
+        <span class="language-python__grey">print</span>(<span class="language-python__green">"A fila de atendimento está vazia."</span>)
+
+<span class="language-python__grey"># Função para listar a fila de prioridade (apenas para visualização)</span>
+<span class="language-python__orange">def</span> <span class="language-python__blue">listar_fila</span>():
+    fila_copy = fila_de_atendimento.queue.copy()
+    fila_copy.sort() <span class="language-python__grey"># Ordena a cópia para exibição</span>
+    <span class="language-python__grey">print</span>(<span class="language-python__grey">"Fila de Atendimento:"</span>)
+    <span class="language-python__orange">for</span> prioridade, pessoa <span class="language-python__orange">in</span> fila_copy:
+        <span class="language-python__grey">print</span>(<span class="language-python__green">f"Prioridade</span><span class="language-python__orange"> {</span>prioridade<span class="language-python__orange">}</span>:<span class="language-python__orange">{</span>pessoa<span class="language-python__orange">}</span><span class="language-python__green">"</span>)
+        
+<span class="language-python__grey"># Menu para interagir com o programa</span>
+<span class="language-python__orange">while True</span>:
+    <span class="language-python__grey">print</span>(<span class="language-python__green">"</span><span class="language-python__orange">\n</span><span class="language-python__green">Opções:"</span>)
+    <span class="language-python__grey">print</span>(<span class="language-python__green">"1. Adicionar pessoa à fila"</span>)
+    <span class="language-python__grey">print</span>(<span class="language-python__green">"2. Atender próxima pessoa"</span>)
+    <span class="language-python__grey">print</span>(<span class="language-python__green">"3. Listar Fila"</span>)
+    <span class="language-python__grey">print</span>(<span class="language-python__green">"4. Encerrar o programa"</span>)
+                               
+    opcao = <span class="language-python__grey">input</span>(<span class="language-python__green">"Escolha uma opção: "</span>)
+
+    <span class="language-python__orange">if</span> opcao == <span class="language-python__green">'1'</span>: 
+        adicionar_pessoa()
+    <span class="language-python__orange">elif</span> opcao == <span class="language-python__green">'2'</span>: 
+        atender_pessoas()
+    <span class="language-python__orange">elif</span> opcao == <span class="language-python__green">'3'</span>: 
+        listar_fila()
+    <span class="language-python__orange">elif</span> opcao == <span class="language-python__green">'4'</span>: 
+        <span class="language-python__grey">print</span>(<span class="language-python__green">"Encerrando o programa."</span>)
+        <span class="language-python__orange">break</span>
+    <span class="language-python__orange">else</span>:
+        <span class="language-python__grey">print</span>(<span class="language-python__green">"Opção inválida. Tente novamente."</span>)
+                            </code>
+                          </pre>
+
+                          <pre>
+                            <code>
+Opções:
+1. Adicionar pessoa à fila
+2. Atender próxima pessoa
+3. Listar Fila
+4. Encerrar o programa
+Escolha uma opção: 1
+Digite o nome da pessoa a ser atendida (ou digite 'sair' para encerrar a entrada na fila): ana
+Digite a prioridade da pessoa (um número inteiro): 3
+ana foi adicionada à fila de atendimento com prioridade 3.
+Digite o nome da pessoa a ser atendida (ou digite 'sair' para encerrar a entrada na fila): Paulo
+Digite a prioridade da pessoa (um número inteiro): 4
+Paulo foi adicionado à fila de atendimento com prioridade 4.
+Digite o nome da pessoa a ser atendida (ou digite 'sair' para encerrar a entrada na fila): vera
+Digite a prioridade da pessoa (um número inteiro): 1
+vera foi adicionada à fila de atendimento com prioridade 1.
+Digite o nome da pessoa a ser atendida (ou digite 'sair' para encerrar a entrada na fila): jorge
+Digite a prioridade da pessoa (um número inteiro): 2
+jorge foi adicionado à fila de atendimento com prioridade 2.
+Digite o nome da pessoa a ser atendida (ou digite 'sair' para encerrar a entrada na fila): sair
+Encerrando ENTRADA NA FILA
+
+Opções:
+1. Adicionar pessoa à fila
+2. Atender próxima pessoa
+3. Listar Fila
+4. Encerrar o programa
+Escolha uma opção: 3
+Fila de Atendimento:
+Prioridade 1: vera
+Prioridade 2: jorge
+Prioridade 3: ana
+Prioridade 4: Paulo
+
+Opções:
+1. Adicionar pessoa à fila
+2. Atender próxima pessoa
+3. Listar Fila
+4. Encerrar o programa
+Escolha uma opção: 3
+Fila de Atendimento:
+Prioridade 2: jorge
+Prioridade 3: ana
+Prioridade 4: Paulo
+
+Opções:
+1. Adicionar pessoa à fila
+2. Atender próxima pessoa
+3. Listar Fila
+4. Encerrar o programa
+Escolha uma opção:
+                            </code>
+                          </pre>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="botao borda-primaria-03" data-dismiss="modal">Fechar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>                
+                
+              </div>
+
+              <!-- MODAL Deque/Deck -->
+
+              <div class="modal modal-100 fade" id="modalDequeDeck" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content no-print">
+                    <div class="modal-header" style="padding-top: 30px;">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h3 class="modal-title">
+                        <div class="container">Deque/deck</div>
+                      </h3>
+                    </div>
+                    <div class="modal-body">
+                      <div class="container">
+                        
+                        <p>
+                          Anteriormente mencionamos que LinkedList implementa uma interface chamada
+                          Deque. Trata-se de uma estrutura de dados específica que traz flexibilidade à
+                          fila, permitindo a inclusão e retirada tanto do início quanto do fim da fila.                            
+                        </p>
+
+                        <p>
+                          Para isso, a interface oferece os seguintes métodos (evidentemente
+                          implementados por LinkedList):                            
+                        </p>
+
+                        <ul>
+                          <li>
+                            addFirst(): adiciona um elemento ao início da fila.
+                          </li>
+                          <li>
+                            addLast(): adiciona um elemento ao fim da fila.
+                          </li>
+                          <li>
+                            removeFirst(): remove o elemento no início da fila.
+                          </li>
+                          <li>
+                            removeLast(): remove o elemento no fim da fila.
+                          </li>
+                          <li>
+                            getFirst(): retorna o elemento no início da fila.
+                          </li>
+                          <li>
+                            getLast(): retorna o elemento no fim da fila.
+                          </li>
+                        </ul>
+      
+                        <div class="destaque-pixel">
+                          <div class="icone-position-desafio">
+                            <div class="caixa-destaque">
+                              Escreva um programa Python que implemente uma fila de mensagens enviadas
+                              em um <i>chat</i>. Obtenha do usuário ao menos cinco mensagens textuais. No final,
+                              apresente e descarte a sequência de mensagens na ordem correta.
+                            </div>     
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="botao borda-primaria-03" data-dismiss="modal">Fechar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>             
+              </div>
+
+              </div>
+
+              <div class="acessivel print">
+                
+                <h3>Pilha</h3>
+              
+                  <h4>Conceitos</h4>
+
+                  <p>
+                    Pilhas são listas de valores que simulam uma pilha de objetos. Pense por
+                    exemplo em pratos empilhados em um restaurante buffet. Você irá pegar o prato
+                    do topo dessa pilha, e não o da base. Os funcionários do restaurante farão a
+                    reposição incluindo novos pratos acima do que está no topo.
+                  </p>
+        
+                  <p>
+                    Da mesma maneira acontece com uma estrutura de dados pilha: um valor,
+                    quando é incluindo, vai ao topo da pilha e quando é retirado também sai do topo.
+                    Daí a denominação comum de que se trata de uma estrutura LIFO – Last in, Fist
+                    out, ou “último a entrar, primeiro a sair”. Isso significa que o último valor incluído
+                    é o primeiro a ser excluído.
+                  </p>
+
+                  <p>
+                    As pilhas utilizam apenas as operações de empilhar (geralmente chamado
+                    <i>“push”</i>) para incluir dados e desempilhar (“pop”) para excluir; geralmente ainda
+                    acompanham de um método <i>peek</i>, usado para verificar qual valor está no topo
+                    da pilha sem retirá-lo, como mostra o gif a seguir:
+                  </p>
+        
+                  <img src="./imagens/fig1.jpg" class="img-responsive center-block"alt="" srcset="">
+                  <p class="legenda-imagem">Funcionamento de uma pilha. pop(). Inclui um valor no topo; push() recupera e retira
+                    o valor do topo  <br>  Fonte: Senac EAD (2024) </p>
+
+                  <p class="acessivel no-print">
+                    imagem exemplificando pilha. Há três caixas ao centro, uma embaixo da outra; a de
+                    cima tem o número três, abaixo o número dois e abaixo o um. Do lado direito da caixa de número
+                    três, há a palavra “topo”, e ao lado da caixa um há a palavra “base”. À esquerda, surge a
+                    expressão “push()” e uma caixa com o número quatro. Em seguida, essa caixa se move até
+                    acima da três e “topo” passa para o lado da quatro. Depois, “pop()” se apaga e surge a expressão
+                    “push()”. O quatro sai do topo da pilha e a palavra “topo” volta a descer para o três.
+                  </p>
+        
+                  <h4>Usabilidade</h4>
+
+                  <p>
+                    Um uso clássico de pilhas acontece no próprio sistema operacional. Processos
+                    de sistema geralmente iniciam outros processos, que iniciam outros. Constrói-se
+                    assim uma pilha de processos, uma vez que o último processo iniciado deve ser
+                    finalizado para que o anterior (que chamou o último) possa ser processado ou
+                    finalizado, e assim por diante. 
+                  </p>
+
+                  <p>
+                    Outra aplicação clássica de pilhas acontece nos compiladores, para verificar a
+                    abertura e o fechamento de parênteses em uma expressão lógica, por exemplo.
+                    Assim, por meio de uma pilha de caracteres, pode-se validar a seguinte
+                    expressão:
+                  </p>
+        
+                  <pre>
+                    <code>
+<span class="language-python__red">(</span>x * <span class="language-python__green">(</span>y - 2<span class="language-python__green">)</span> / <span class="language-python__blue">(</span>10 + z<span class="language-python__blue">)</span><span class="language-python__red">)</span><span>)</span>
+                    </code>
+                  </pre>
+        
+                  <p>
+                    É possível percorrer a expressão e usar pilha para empilhar valor ao encontrar
+                    (e desempilhar ao encontrar). Se a expressão estiver correta, a pilha estará vazia
+                    ao final. No exemplo acima, esse algoritmo mostraria que a expressão está
+                    incorreta, pois ao alcançar o último caractere) a pilha já estará vazia.
+                  </p>
+
+                  <p>
+                    Em qualquer situação análoga em que a última informação incluída tenha que
+                    ser processada antes que a anteriormente incluída, podemos aplicar pilhas.
+                  </p>
+
+                  <h4>Aplicação</h4>
+
+                  <p>
+                    Em Python, é relativamente fácil implementar uma pilha usando uma lista (ou
+                    <i>array</i>) nativa. Veja um exemplo de como criar uma pilha em Python:
+                  </p>
+        
+                  <pre>
+                    <code>
+<span class="language-python__orange">class</span> Pilha:
+    <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>):
+        <span class="language-python__red">self</span>.items = []
+
+    <span class="language-python__orange">def</span> <span class="language-python__blue">push</span>(<span class="language-python__red">self</span>, item):
+        <span class="language-python__red">self</span>.items.append(item)
+
+    <span class="language-python__orange">def</span> <span class="language-python__blue">pop</span>(<span class="language-python__red">self</span>):
+        <span class="language-python__orange">if not</span> <span class="language-python__red">self</span>.is_empty():
+            <span class="language-python__orange">return</span> <span class="language-python__red">self</span>.items.pop()
+        <span class="language-python__orange">else</span>:
+            <span class="language-python__orange">return None</span>
+        
+<span class="language-python__orange">def</span> <span class="language-python__blue">peek</span>(<span class="language-python__red">self</span>):
+    <span class="language-python__orange">if not</span> <span class="language-python__red">self</span>.is_empty():
+        <span class="language-python__orange">return</span> <span class="language-python__red">self</span>.items[-<span class="language-python__blue">1</span>]
+    <span class="language-python__orange">else</span>:
+        <span class="language-python__orange">return None</span>
+
+<span class="language-python__orange">def</span> <span class="language-python__blue">is_empty</span>(<span class="language-python__red">self</span>):
+    <span class="language-python__orange">return</span> <span class="language-python__grey">len</span>(<span class="language-python__red">self</span>.items) == <span class="language-python__blue">0</span>
+
+<span class="language-python__orange">def</span> <span class="language-python__blue">size</span>(<span class="language-python__red">self</span>):
+    <span class="language-python__orange">return</span> <span class="language-python__grey">len</span>(<span class="language-python__red">self</span>.items)
+                </code>
+                  </pre>
+        
+                  <h4>Uso de pilhas em Python</h4>
+
+                  <p>
+                    As pilhas têm uma ampla gama de aplicações em programação. A seguir, veja
+                    alguns exemplos.
+                  </p>
+        
+                  <ul>
+                    <li>
+                      <b>Avaliação de expressões matemáticas</b>: pilhas são frequentemente
+                      usadas para avaliar expressões matemáticas infixas, convertendo-as em
+                      notação pós-fixa (ou polonesa reversa) e, em seguida, calculando o
+                      resultado.
+                    </li>
+                    <li>
+                      <b>Navegação em árvores</b>: ao percorrer árvores, como árvores binárias, as
+                      pilhas podem ser usadas para manter o controle dos nós visitados e
+                      realizar a travessia em profundidade (<i>in-order</i>, <i>pre-order</i>, <i>post-order</i>).
+                    </li>
+                    <li>
+                      <b>Rastreamento de histórico</b>: as pilhas são úteis para manter um histórico
+                      de ações do usuário em aplicativos, permitindo desfazer ou refazer ações.
+                    </li>
+                    <li>
+                      <b>Detecção de parênteses balanceados</b>: pilhas podem ser usadas para
+                      verificar se uma expressão tem parênteses balanceados.
+                    </li>
+                  </ul>
+        
+                  <p>
+                    Pilhas são uma estrutura de dados poderosa e versátil em programação. Elas
+                    facilitam o gerenciamento de elementos em ordem LIFO, tornando-as valiosas
+                    em diversas aplicações. Implementar e compreender o uso de pilhas em Python
+                    é uma habilidade fundamental para qualquer desenvolvedor, pois permite
+                    solucionar uma ampla variedade de problemas de forma eficaz e eficiente.
+                    Portanto, ao enfrentar problemas que envolvem o gerenciamento de elementos
+                    em ordem específica, considere o uso de pilhas como uma ferramenta valiosa
+                    em seu conjunto de habilidades de programação.
+                  </p>
+
+                  <p>
+                    Imagine que será necessário implementar um código para organizar e
+                    determinar quais carros devem sair de um caminhão-cegonha. Os carros estão
+                    enfileirados, mas o último a entrar será o primeiro a sair.
+                  </p>
+        
+                  <p>
+                    Nessa aplicação, será solicitado o nome de cada carro e depois apresentada a
+                    ordem em que eles sairão do caminhão. Será considerado apenas um dos
+                    andares do veículo de transporte.
+                  </p>
+
+                  <img src="./imagens/fig2.png" alt="" class="img-responsive center-block">
+                  <p class="legenda-imagem">
+                    Caminhão-cegonha <br>
+                    Fonte: https://ohanatransportes.com.br
+                  </p>
+                  <p class="acessivel no-print">
+                    imagem exemplificando pilha. Há três caixas ao centro, uma embaixo da outra; a de cima tem o número três, abaixo o número dois e abaixo o um. Do lado direito da caixa de número três, há a palavra “topo”, e ao lado da caixa um há a palavra “base”. À esquerda, surge a expressão “push()” e uma caixa com o número quatro. Em seguida, essa caixa se move até acima da três e “topo” passa para o lado da quatro. Depois, “pop()” se apaga e surge a expressão “push()”. O quatro sai do topo da pilha e a palavra “topo” volta a descer para o três. 
+                  </p>
+
+                  <p>
+                    Teste com os valores “fusca”, “chevette” e “opala” para verificar que o resultado
+                    final será “opala, chevette, fusca”.
+                  </p>
+        
+                  <pre>
+                    <code>
+Digite o nome do carro (ou digite 'sair' para encerrar): fusca
+Digite o nome do carro (ou digite 'sair' para encerrar): chevette
+Digite o nome do carro (ou digite 'sair' para encerrar): opala
+Digite o nome do carro (ou digite 'sair' para encerrar): sair
+Ordem de saída dos carros:
+1. opala
+2. chevette
+3. fusca
+
+Process finished with exit code 0
+                    </code>
+                  </pre>
+        
+                  <div class="caixa-destaque icone-desafio">
+                    Implemente um programa PYTHON em que o usuário informará números
+                    inteiros. Inclua o primeiro número em uma pilha e inclua os próximos apenas se
+                    for maior que último número informado. Depois desempilhe os valores
+                    mostrando na tela cada um em sequência.
+                  </div>
+
+                  <h3>Gabarito</h3>
+
+                  <pre>
+                    <code>
+
+<span class="language-python__orange">def</span> <span class="language-python__green">main</span>():
+<span class="language-python__grey">pilha = []</span> # Inicializa uma lista vazia para representar a pilha
+
+
+<span class="language-python__orange">while True</span>:
+  <span class="language-python__orange">try</span>:
+      <span class="language-python__grey">numero</span> = int(input(<span class="language-python__green">"Informe um número inteiro (ou digite '0' para encerrar): ")</span>)
+      <span class="language-python__orange">except</span> <span class="language-python__grey">ValueError</span>:
+          <span class="language-python__grey">print</span>(<span class="language-python__green">"Por favor, digite um número inteiro válido."</span>)
+          <span class="language-python__orange">continue</span>
+
+
+      <span class="language-python__orange">if</span> <span class="language-python__grey">numero ==</span> 0:
+          <span class="language-python__grey">break</span>
+
+      <span class="language-python__orange">if not</span> pilha <span class="language-python__orange">or</span> numero > pilha[-<span class="language-python__green">1</span>]:
+          pilha.append(numero)
+      <span class="language-python__orange">else</span>:
+          <span class="language-python__grey">print</span>(<span class="language-python__green">"O número não é maior que o último número informado. Tente novamente."</span>)
+
+<span class="language-python__grey">print</span>(<span class="language-python__grey">"</span><span class="language-python__orange">\n</span><span class="language-python__green">Números desempilhados na sequência correta:"</span>)
+<span class="language-python__orange">while</span> pilha:
+  <span class="language-python__grey">print</span>(pilha.pop())
+
+
+main()
+                    </code>
+                  </pre>
+                  
+                  <h3>Fila</h3>
+                
+                  <h4>Conceitos</h4>
+          
+                  <p>
+                    O que diferencia uma pilha de uma fila é a ordem em que os elementos são
+                    incluídos e excluídos da estrutura. Aqui, o primeiro valor incluído será o primeiro
+                    a ser retirado (FIFO – <i>First in first out</i>).
+                  </p>
+        
+                  <p>
+                    As filas necessitam basicamente das operações de enfileirar (“enqueue” ou
+                    “add”) e desenfileirar (“dequeue” ou “remove”). O <i>gif</i> a seguir demonstra a
+                    inclusão do dado após o último elemento da fila; remove() exclui o primeiro item
+                    da fila
+                  </p>
+                  <img src="./imagens/fig3.png" class="center-block img-responsive" alt="gif exemplo fila">
+                  <p class="legenda-imagem">
+                    Funcionamento de uma Fila. add() incluindo dado após o último elemento da fila e remove() exclui o primeiro item da fila <br> Fonte: Senac EAD (2024)
+                  </p>
+
+                  <p class="acessivel no-print">
+                    imagem mostrando os números 1, 2 e 3 em caixas uma ao lado da outra. Surge a expressão “add()” acima e uma caixa “4” surge à direita de “3”. Apaga-se a expressão “add()” e surge “remove()”; a caixa “1”, mais à esquerda de todas, se apaga
+                  </p>
+
+                  <h4>Usabilidade</h4>
+
+                  <p>
+                    As situações que envolvem o uso de fila são intuitivas. Uma fila de pessoas
+                    esperando para serem atendidas em um consultório médico, por exemplo, pode
+                    se beneficiar dessa estrutura de dados. Uma lista de documentos enviados para
+                    impressão também certamente implementa uma estrutura de dados fila, uma vez
+                    que o primeiro documento enviado deve ser também o primeiro a ser impresso,
+                    e a ordem dos documentos deve ser preservada.
+                  </p>
+
+                  <h4>Aplicação</h4>
+  
+                  <p>
+                    Em Python, uma fila é uma estrutura de dados linear que segue o princípio
+                    “primeiro a entrar, primeiro a sair” (FIFO – <i>First-In-First-Out</i>). Ela é
+                    frequentemente utilizada para organizar elementos de forma que o primeiro
+                    elemento inserido seja o primeiro a ser retirado. As filas são comumente
+                    implementadas usando listas, mas para operações mais eficientes, é preferível
+                    usar a biblioteca <span class="source-font">collections.deque</span>.
+                  </p>
+
+                  <p>
+                    Veja uma explicação sobre filas em Python, com exemplos práticos:
+                  </p>               
+              
+                  <pre class="codigo-exemplo__filas">
+                    <code>
+                      <ol>
+                        <li>
+              Criando uma fila: para criar uma fila em Python, você pode usar uma lista ou um objeto <span class="source-font">deque</span> da biblioteca <span class="source-font">collections</span>. Observe um exemplo de criação de uma 
+              fila usando <span class="source-font">deque</span>:
+                          
+                  <span class="language-python__orange">from</span> collections <span class="language-python__orange">import</span> deque
+                  fila = deque()
+                      </li>
+                      <li>
+              Inserindo elementos na fila (enfileirar): para inserir elementos na fila, 
+              você usa o método append() para listas ou o método append() para objetos 
+              deque. Veja o exemplo com deque:
+                  fila = deque()
+                  fila.append(<span class="language-python__blue">1</span>)
+                  fila.append(<span class="language-python__blue">2</span>)
+                  fila.append(<span class="language-python__blue">3</span>)
+                    </li>
+                    <li>
+              Removendo elementos da fila (desenfileirar): para remover elementos da
+              fila, você utiliza o método popleft() para objetos deque ou o método pop(0)
+              para listas. A seguir, observe um exemplo de como desenfileirar
+              elementos:
+                  elemento = fila.popleft()
+                  <span class="language-python__grey">print</span>(elemento) <span class="language-python__grey"># Isso irá imprimir 1</span>
+                  </li>
+                  <li>
+              Verificando o tamanho da fila: para verificar o tamanho da fila, você pode 
+              usar a função len():
+                  tamanho = <span class="language-python__grey">len</span>(fila)
+                  </li>
+                  <li>
+              Verificando se a fila está vazia: para verificar se a fila está vazia, você pode usar a função len() e verificar se o tamanho é igual a 0 ou utilizar o fato de que uma lista vazia ou deque vazio é avaliado como false em contexto booleano.
+                  <span class="language-python__orange">if not</span> fila:
+                  <span class="language-python__grey">print</span>(<span class="language-python__green">"A fila está vazia."</span>)
+                  </li>
+                </ol>
+                    </code>
+                  </pre>
+
+                  <p>
+                    Observe o exemplo completo de uma fila em Python:
+                  </p>
+          
+                <pre>
+                    <code>
+<span class="language-python__orange">from</span> collections <span class="language-python__orange">import</span> deque
+fila = deque()
+fila.append(<span class="language-python__blue">1</span>)
+fila.append(<span class="language-python__blue">2</span>)
+fila.append(<span class="language-python__blue">3</span>)
+<span class="language-python__grey">print</span>(<span class="language-python__green">"Tamanho da fila:"</span>, <span class="language-python__grey">len</span>(fila))
+<span class="language-python__grey">print</span>(<span class="language-python__green">"Desenfileirando elementos:"</span>)
+<span class="language-python__orange">while</span> fila:
+    elemento = fila.popleft()
+    <span class="language-python__grey">print</span>(elemento)
+                  </code>
+                </pre>
+
+                <p>
+                  Esse exemplo cria uma fila, enfileira alguns elementos, mostra o tamanho da fila
+                  e, em seguida, desenfileira os elementos na ordem em que foram enfileirados.
+                </p>
+
+                <p>
+                  Em resumo, filas são estruturas de dados importantes em Python para lidar com
+                  operações “primeiro a entrar, primeiro a sair”. Elas são amplamente utilizadas
+                  em algoritmos de busca, gerenciamento de tarefas, processamento em lotes e
+                  muito mais. As filas facilitam o gerenciamento de elementos em uma ordem
+                  específica.                            
+                </p>
+
+                <p>
+                  Veja a implementação de uma fila com nomes de pessoas a serem atendidas
+                  em uma clínica. A ordem de chegada delas será a ordem em que serão
+                  atendidas.                            
+                </p>
+
+                <pre>
+                  <code>
+<span class="language-python__orange">from</span> collections <span class="language-python__orange">import</span> deque
+
+<span class="language-python__grey"># Inicializa uma fila vazia</span>
+fila_de_atendimento = deque()
+          
+<span class="language-python__grey"># Função para adicionar uma pessoa à fila</span>
+<span class="language-python__orange">def</span> <span class="language-python__blue">adicionar_pessoa</span>():
+    <span class="language-python__orange">while True</span>:
+        nome = <span class="language-python__grey">input</span>(<span class="language-python__green">"Digite o nome da pessoa a ser atendida (ou digite 'sair' para encerrar a entrada na fila): "</span>)
+        <span class="language-python__orange">if</span> nome.lower() != <span class="language-python__green">'sair'</span>:
+            fila_de_atendimento.append(nome)
+            <span class="language-python__grey">print</span>(<span class="language-python__green">f"</span><span class="language-python__orange">{</span>nome<span class="language-python__orange">}</span> <span class="language-python__green">foi adicionado à fila de atendimento."</span>)
+        <span class="language-python__orange">else</span>:
+            <span class="language-python__grey">print</span>(<span class="language-python__green">"Encerrando ENTRADA NA FILA"</span>)
+            <span class="language-python__orange">break</span>
+          
+<span class="language-python__grey"># Função para atender pessoas na ordem de chegada</span>
+<span class="language-python__orange">def</span> <span class="language-python__blue">atender_pessoas</span>():
+    <span class="language-python__orange">if not</span> fila_de_atendimento:
+        <span class="language-python__grey">print</span>(<span class="language-python__green">"A fila de atendimento está vazia."</span>)
+        <span class="language-python__grey">return</span>
+
+    pessoa = fila_de_atendimento.popleft()
+    <span class="language-python__grey">print</span>(<span class="language-python__green">f"Atendendo</span> <span class="language-python__orange">{</span>pessoa<span class="language-python__orange">}</span><span class="language-python__green">"</span>)
+          
+          
+<span class="language-python__orange">def</span> <span class="language-python__blue">listar_fila</span>():
+    <span class="language-python__grey">print</span>(<span class="language-python__green">"Fila de Atendimento:"</span>)
+    <span class="language-python__orange">for</span> i, pessoa <span class="language-python__orange">in</span> <span class="language-python__grey">enumerate</span>(fila_de_atendimento, <span class="language-python__red">start</span>=<span class="language-python__blue">1</span>):
+        <span class="language-python__grey">print</span>(<span class="language-python__green">f"</span><span class="language-python__orange">{</span>i<span class="language-python__orange">}</span>. <span class="language-python__orange">{</span>pessoa<span class="language-python__orange">}</span><span class="language-python__green">"</span>)
+          
+<span class="language-python__grey"># Menu para interagir com o programa</span>
+<span class="language-python__orange">while True</span>:
+    <span class="language-python__grey">print</span>(<span class="language-python__green">"</span><span class="language-python__orange">\n</span><span class="language-python__green">Opções:"</span>)
+    <span class="language-python__grey">print</span>(<span class="language-python__green">"1. Adicionar pessoa à fila"</span>)
+    <span class="language-python__grey">print</span>(<span class="language-python__green">"2. Atender próxima pessoa"</span>)
+    <span class="language-python__grey">print</span>(<span class="language-python__green">"3. Listar Fila"</span>)
+    <span class="language-python__grey">print</span>(<span class="language-python__green">"4. Encerrar o programa"</span>)
+
+    opcao = <span class="language-python__grey">input</span>(<span class="language-python__green">"Escolha uma opção: "</span>)
+
+    <span class="language-python__orange">if</span> opcao == <span class="language-python__green">'1'</span>:
+        adicionar_pessoa()
+    <span class="language-python__orange">elif</span> opcao == '2':
+        atender_pessoas()
+    <span class="language-python__orange">elif</span> opcao == '3':
+        listar_fila()
+    <span class="language-python__orange">elif</span> opcao == '4':
+        <span class="language-python__grey">print</span>(<span class="language-python__green">"Encerrando o programa."</span>)
+        <span class="language-python__orange">break</span>
+    <span class="language-python__orange">else</span>:
+        <span class="language-python__grey">print</span>(<span class="language-python__green">"Opção inválida. Tente novamente."</span>)
+                  </code>
+                </pre>
+
+                <p>
+                  Esse programa permite adicionar pessoas à fila e atendê-las na ordem de
+                  chegada. Para adicionar uma pessoa, escolha a opção 1 e digite o nome da
+                  pessoa. Para atender à próxima pessoa da fila, escolha a opção 2. Tem uma
+                  opção adicional para listar a fila de atendimento, a opção 3, permitindo que você
+                  visualize a ordem das pessoas na fila. Você pode encerrar o programa
+                  escolhendo a opção 4.
+                </p>
+
+                <p>
+                  Execute esse programa em seu ambiente Python e siga as instruções para
+                  adicionar e atender às pessoas na clínica na ordem correta. O resultado desse
+                  código será:                            
+                </p>
+
+                <pre>
+                  <code>
+Opções:
+1. Adicionar pessoa à fila
+2. Atender próxima pessoa
+3. Listar Fila
+4. Encerrar o programa
+Escolha uma opção: 1
+Digite o nome da pessoa a ser atendida (ou digite 'sair' para encerrar
+a entrada na fila): samuel
+samuel foi adicionado à fila de atendimento.
+Digite o nome da pessoa a ser atendida (ou digite 'sair' para encerrar
+a entrada na fila): mirela
+mirela foi adicionado à fila de atendimento.
+Digite o nome da pessoa a ser atendida (ou digite 'sair' para encerrar
+a entrada na fila): Manoela
+Manoela foi adicionado à fila de atendimento.
+Digite o nome da pessoa a ser atendida (ou digite 'sair' para encerrar
+a entrada na fila): sair
+Encerrando ENTRADA NA FILA
+          
+Opções:
+1. Adicionar pessoa à fila
+2. Atender próxima pessoa
+3. Listar Fila
+4. Encerrar o programa
+Escolha uma opção: 3
+Fila de Atendimento:
+1. samuel
+2. mirela
+3. Manoela
+          
+Opções:
+1. Adicionar pessoa à fila
+2. Atender próxima pessoa
+3. Listar Fila
+4. Encerrar o programa
+Escolha uma opção: 2
+Atendendo samuel
+
+Opções:
+1. Adicionar pessoa à fila
+2. Atender próxima pessoa
+3. Listar Fila
+4. Encerrar o programa
+Escolha uma opção: 3
+Fila de Atendimento:
+1. mirela
+2. Manoela
+          
+Opções:
+1. Adicionar pessoa à fila
+2. Atender próxima pessoa
+3. Listar Fila
+4. Encerrar o programa
+Escolha uma opção: 3
+Fila de Atendimento:
+1. mirela
+2. Manoela
+
+Opções:
+1. Adicionar pessoa à fila
+2. Atender próxima pessoa
+3. Listar Fila
+4. Encerrar o programa
+Escolha uma opção:                            
+                            </code>
+                </pre>
+
+                <p>
+                  Essa é a implementação mais tradicional para fila. No entanto, existe ainda outra
+                  classe que implementa diretamente a interface Queue e trabalha de uma
+                  maneira mais específica. <b>PriorityQueue</b> é uma fila que mantém sempre
+                  ordenados os seus elementos.
+                </p>
+
+                <p>
+                  Uma fila de prioridade (Priority Queue) em Python pode ser implementada
+                  usando o módulo <span class="source-font">heapq</span> da biblioteca padrão. O <span class="source-font">heapq</span> fornece funções para criar e gerenciar filas de prioridade de forma eficiente. A fila de prioridade mantém os
+                  elementos em ordem com base em uma chave de prioridade associada a cada elemento. Elementos com menor prioridade são retirados primeiro.                            
+                </p>
+
+                <p>
+                  A seguir, veja como implementar uma fila de prioridade em Python usando o
+                  <span class="source-font">heapq</span>:                            
+                </p>
+
+                <pre>
+                  <code>
+<span class="language-python__orange">import</span> heapq
+
+<span class="language-python__grey"># Inicializa uma fila de prioridade vazia</span>
+fila_de_prioridade = []
+
+# Adiciona elementos à fila de prioridade
+heapq.heappush(fila_de_prioridade, (<span class="language-python__blue">3</span>, <span class="language-python__green">"Alice"</span>))
+heapq.heappush(fila_de_prioridade, (<span class="language-python__blue">1</span>, <span class="language-python__green">"Bob"</span>))
+heapq.heappush(fila_de_prioridade, (<span class="language-python__blue">2</span>, <span class="language-python__green">"Charlie"</span>))
+heapq.heappush(fila_de_prioridade, (<span class="language-python__blue">4</span>, <span class="language-python__green">"David"</span>))
+
+<span class="language-python__grey"># Retira elementos da fila de prioridade (serão retirados em ordem de prioridade)</span>
+<span class="language-python__orange">while</span> fila_de_prioridade:
+prioridade, elemento = heapq.heappop(fila_de_prioridade)
+<span class="language-python__grey">print</span>(<span class="language-python__green">f"Atendendo</span> <span class="language-python__orange">{</span>elemento<span class="language-python__orange">}</span> <span class="language-python__green">com prioridade</span> <span class="language-python__orange">{</span>prioridade<span class="language-python__orange">}</span><span class="language-python__green">"</span>)                              
+                  </code>
+                </pre>
+
+                <p>
+                  Nesse exemplo, cada elemento na fila de prioridade é uma tupla que contém a prioridade e o valor associado. O <span class="source-font">heapq</span> é usado para adicionar elementos à fila de prioridade com <span class="source-font">heapq.heappush()</span> e retirar elementos em ordem de prioridade com <span class="source-font">heapq.heappop()</span>. A saída desse programa será:                               
+                </p>
+          
+                <img src="./imagens/destaque_resultado.png" alt="" srcset="" class="center-block img-responsive"> 
+
+                <p>
+                  Você pode ajustar os valores de prioridade conforme necessário para atender às
+                  suas necessidades. A fila de prioridade é útil para implementar algoritmos que
+                  exigem a ordenação de elementos com base em prioridades, como algoritmos
+                  de busca, escalonamento de tarefas, entre outros.                            
+                </p>
+
+                <p>
+                  PriorityQueue será aplicado ao exemplo a fim de comparar seu resultado. A
+                  alteração necessária no código aparece em destaque.                            
+                </p>
+          
+                <pre>
+                        <code>
+<span class="language-python__orange">import</span> queue
+
+<span class="language-python__grey"># Inicializa uma fila de prioridade vazia</span>
+fila_de_atendimento = queue.PriorityQueue()
+                                    
+<span class="language-python__grey"># Função para adicionar uma pessoa à fila com prioridade</span>
+<span class="language-python__orange">def</span> <span class="language-python__blue">adicionar_pessoa</span>(): 
+nome = <span class="language-python__blue">input</span>(<span class="language-python__green">"Digite o nome da pessoa a ser atendida (ou digite 'sair' para encerrar a entrada na fila):"</span>)
+<span class="language-python__orange">if</span> nome.lower() != <span class="language-python__green">'sair'</span>:
+    prioridade = <span class="language-python__blue">int</span>(<span class="language-python__blue">input</span>(<span class="language-python__green">"Digite a prioridade da pessoa (um número inteiro): "</span>))
+    fila_de_atendimento.put((prioridade, nome))
+    <span class="language-python__grey">print</span>(<span class="language-python__green">f"</span><span class="language-python__orange">{</span>nome<span class="language-python__orange">}</span> <span class="language-python__green">foi adicionado à fila de atendimento com prioridade</span> <span class="language-python__orange">{</span>prioridade<span class="language-python__orange">}</span>.<span class="language-python__green">"</span>)
+<span class="language-python__orange">else</span>:
+    <span class="language-python__grey">print</span>(<span class="language-python__green">"Encerrando ENTRADA NA FILA"</span>)
+      
+<span class="language-python__grey"># Função para atender pessoas na ordem de prioridade</span>
+<span class="language-python__orange">def</span> <span class="language-python__blue">atender_pessoas</span>():
+<span class="language-python__orange">try</span>:
+    prioridade, pessoa = fila_de_atendimento.get_nowait()
+    <span class="language-python__grey">print</span>(<span class="language-python__green">f"Atendendo</span><span class="language-python__orange"> {</span>pessoa<span class="language-python__orange">}</span><span class="language-python__green"> com prioridade</span> <span class="language-python__orange">{</span>prioridade<span class="language-python__orange">}</span><span class="language-python__green">"</span>)
+<span class="language-python__orange">except</span> queue.Empty:
+    <span class="language-python__grey">print</span>(<span class="language-python__green">"A fila de atendimento está vazia."</span>)
+      
+<span class="language-python__grey"># Função para listar a fila de prioridade (apenas para visualização)</span>
+<span class="language-python__orange">def</span> <span class="language-python__blue">listar_fila</span>():
+fila_copy = fila_de_atendimento.queue.copy()
+fila_copy.sort() <span class="language-python__grey"># Ordena a cópia para exibição</span>
+<span class="language-python__grey">print</span>(<span class="language-python__grey">"Fila de Atendimento:"</span>)
+<span class="language-python__orange">for</span> prioridade, pessoa <span class="language-python__orange">in</span> fila_copy:
+    <span class="language-python__grey">print</span>(<span class="language-python__green">f"Prioridade</span><span class="language-python__orange"> {</span>prioridade<span class="language-python__orange">}</span>:<span class="language-python__orange">{</span>pessoa<span class="language-python__orange">}</span><span class="language-python__green">"</span>)
+    
+<span class="language-python__grey"># Menu para interagir com o programa</span>
+<span class="language-python__orange">while True</span>:
+<span class="language-python__grey">print</span>(<span class="language-python__green">"</span><span class="language-python__orange">\n</span><span class="language-python__green">Opções:"</span>)
+<span class="language-python__grey">print</span>(<span class="language-python__green">"1. Adicionar pessoa à fila"</span>)
+<span class="language-python__grey">print</span>(<span class="language-python__green">"2. Atender próxima pessoa"</span>)
+<span class="language-python__grey">print</span>(<span class="language-python__green">"3. Listar Fila"</span>)
+<span class="language-python__grey">print</span>(<span class="language-python__green">"4. Encerrar o programa"</span>)
+                            
+opcao = <span class="language-python__grey">input</span>(<span class="language-python__green">"Escolha uma opção: "</span>)
+      
+<span class="language-python__orange">if</span> opcao == <span class="language-python__green">'1'</span>: 
+adicionar_pessoa()
+<span class="language-python__orange">elif</span> opcao == <span class="language-python__green">'2'</span>: 
+atender_pessoas()
+<span class="language-python__orange">elif</span> opcao == <span class="language-python__green">'3'</span>: 
+listar_fila()
+<span class="language-python__orange">elif</span> opcao == <span class="language-python__green">'4'</span>: 
+<span class="language-python__grey">print</span>(<span class="language-python__green">"Encerrando o programa."</span>)
+<span class="language-python__orange">break</span>
+<span class="language-python__orange">else</span>:
+<span class="language-python__grey">print</span>(<span class="language-python__green">"Opção inválida. Tente novamente."</span>)
+                    </code>
+                </pre>
+
+                <pre>
+                      <code>
+Opções:
+1. Adicionar pessoa à fila
+2. Atender próxima pessoa
+3. Listar Fila
+4. Encerrar o programa
+Escolha uma opção: 1
+Digite o nome da pessoa a ser atendida (ou digite 'sair' para encerrar a entrada na fila): ana
+Digite a prioridade da pessoa (um número inteiro): 3
+ana foi adicionada à fila de atendimento com prioridade 3.
+Digite o nome da pessoa a ser atendida (ou digite 'sair' para encerrar a entrada na fila): Paulo
+Digite a prioridade da pessoa (um número inteiro): 4
+Paulo foi adicionado à fila de atendimento com prioridade 4.
+Digite o nome da pessoa a ser atendida (ou digite 'sair' para encerrar a entrada na fila): vera
+Digite a prioridade da pessoa (um número inteiro): 1
+vera foi adicionada à fila de atendimento com prioridade 1.
+Digite o nome da pessoa a ser atendida (ou digite 'sair' para encerrar a entrada na fila): jorge
+Digite a prioridade da pessoa (um número inteiro): 2
+jorge foi adicionado à fila de atendimento com prioridade 2.
+Digite o nome da pessoa a ser atendida (ou digite 'sair' para encerrar a entrada na fila): sair
+Encerrando ENTRADA NA FILA
+          
+Opções:
+1. Adicionar pessoa à fila
+2. Atender próxima pessoa
+3. Listar Fila
+4. Encerrar o programa
+Escolha uma opção: 3
+Fila de Atendimento:
+Prioridade 1: vera
+Prioridade 2: jorge
+Prioridade 3: ana
+Prioridade 4: Paulo
+          
+Opções:
+1. Adicionar pessoa à fila
+2. Atender próxima pessoa
+3. Listar Fila
+4. Encerrar o programa
+Escolha uma opção: 3
+Fila de Atendimento:
+Prioridade 2: jorge
+Prioridade 3: ana
+Prioridade 4: Paulo
+
+Opções:
+1. Adicionar pessoa à fila
+2. Atender próxima pessoa
+3. Listar Fila
+4. Encerrar o programa
+Escolha uma opção:
+                    </code>
+                </pre>
+
+                <h3>Deque/deck</h3>
+            
+                <p>
+                  Anteriormente mencionamos que LinkedList implementa uma interface chamada
+                  Deque. Trata-se de uma estrutura de dados específica que traz flexibilidade à
+                  fila, permitindo a inclusão e retirada tanto do início quanto do fim da fila.                            
+                </p>
+
+                <p>
+                  Para isso, a interface oferece os seguintes métodos (evidentemente
+                  implementados por LinkedList):                            
+                </p>
+  
+                <ul>
+                  <li>
+                    addFirst(): adiciona um elemento ao início da fila.
+                  </li>
+                  <li>
+                    addLast(): adiciona um elemento ao fim da fila.
+                  </li>
+                  <li>
+                    removeFirst(): remove o elemento no início da fila.
+                  </li>
+                  <li>
+                    removeLast(): remove o elemento no fim da fila.
+                  </li>
+                  <li>
+                    getFirst(): retorna o elemento no início da fila.
+                  </li>
+                  <li>
+                    getLast(): retorna o elemento no fim da fila.
+                  </li>
+                </ul>
+
+                <div class="caixa-destaque icone-desafio">
+                  Escreva um programa Python que implemente uma fila de mensagens enviadas
+                  em um <i>chat</i>. Obtenha do usuário ao menos cinco mensagens textuais. No final,
+                  apresente e descarte a sequência de mensagens na ordem correta.
+                </div>                        
+              </div>
+
+             
+
+              <!-- GABARITO 2 -->
+
+              <div
+                class="modal fade"
+                id="modalGabarito2"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="myModalLabel"
+                aria-live="polite"
+                aria-atomic="true"
+                aria-hidden="false"
+              >
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                      >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      <h4 class="modal-title" id="myModalLabel">GABARITO</h4>
+                    </div>
+                    <div class="modal-body">
+
+                      <pre>
+                        <code>
+
+<span class="language-python__orange">def</span> <span class="language-python__green">main</span>():
+  <span class="language-python__grey">pilha = []</span> # Inicializa uma lista vazia para representar a pilha
+
+
+  <span class="language-python__orange">while True</span>:
+      <span class="language-python__orange">try</span>:
+          <span class="language-python__grey">numero</span> = int(input(<span class="language-python__green">"Informe um número inteiro (ou digite '0' para encerrar): ")</span>)
+          <span class="language-python__orange">except</span> <span class="language-python__grey">ValueError</span>:
+              <span class="language-python__grey">print</span>(<span class="language-python__green">"Por favor, digite um número inteiro válido."</span>)
+              <span class="language-python__orange">continue</span>
+
+
+          <span class="language-python__orange">if</span> <span class="language-python__grey">numero ==</span> 0:
+              <span class="language-python__grey">break</span>
+
+          <span class="language-python__orange">if not</span> pilha <span class="language-python__orange">or</span> numero > pilha[-<span class="language-python__green">1</span>]:
+              pilha.append(numero)
+          <span class="language-python__orange">else</span>:
+              <span class="language-python__grey">print</span>(<span class="language-python__green">"O número não é maior que o último número informado. Tente novamente."</span>)
+
+  <span class="language-python__grey">print</span>(<span class="language-python__grey">"</span><span class="language-python__orange">\n</span><span class="language-python__green">Números desempilhados na sequência correta:"</span>)
+  <span class="language-python__orange">while</span> pilha:
+      <span class="language-python__grey">print</span>(pilha.pop())
+
+
+main()
+                        </code>
+                      </pre>
+
+                      <p>
+                      Neste código, pedimos ao usuário que insira números inteiros. Se o número for
+                      maior do que o último número informado (ou se a pilha estiver vazia), ele é
+                      adicionado à pilha. Caso contrário, o programa informa que o número não é
+                      maior que o último número informado.
+                      </p>
+                      
+                      <p>
+                        Após a entrada dos números, o programa desempilha os valores na sequência
+                        correta (o último número informado será o primeiro a ser desempilhado) e os
+                        exibe na tela.
+                      </p>
+
+                      <p>
+                        Você pode executar este código no seu ambiente Python e seguir as instruções
+                        para testá-lo.
+                      </p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">
+                        Fechar
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <img src="imgs/separador.png" class="img-separador img-responsive center-block">
+            <div class="bloco azul">
+              <div class="container">
+                <h3>Listas</h3>
+                <h4>Conceito</h4>
+                
+                <p>A estrutura de dados mais básica, na maioria das linguagens de programação,
+                  é o vetor (ou <i>array</i>), chamado de “lista” em Python, capaz de armazenar uma
+                  quantidade específica de valores em um espaço dedicado da memória,
+                  organizando-os de maneira sequencial. As limitações do vetor, como a
+                  incapacidade de expandir um vetor já declarado ou de eliminar um índice da
+                  estrutura, levaram à implementação de estruturas de dados que têm o mesmo
+                  propósito, mas que contam com mais flexibilidade.</p>
+
+                <p>Uma dessas estruturas é a <b>lista ligada</b>, em que os elementos estão conectados por meio de referências; ao invés de os valores estarem juntos em um bloco de memória, como acontece em um vetor, na lista ligada cada elemento está em uma parte da memória, apenas mantendo referência para o próximo elemento e, em algumas implementações, também para o anterior.</p>
+
+                <img src="imgs/layout_4_fig_2.png" class="img-responsive center-block">
+                <p class="legenda-imagem">
+                  Implementações de listas ligadas <br>
+                  Fonte: Senac EAD (2022)
+                </p>
+
+                <p class="acessivel no-print">A imagem mostra, acima, o rótulo “Lista ligada” e, à direita, uma caixa com o número 5, com uma flecha direcionada à outra com o número 10, à direita, que está com uma flecha direcionada à outra, com o número 15, também à direita. Esta última caixa traz um X à direita, indicando que não aponta mais nada. Abaixo, há o rótulo “Lista duplamente ligada” e inicia com caixa com um X à esquerda, o valor 5 e uma flecha para a caixa da direita; à direita, a caixa com o valor 10 tem uma flecha apontando à esquerda para a caixa de valor 5 e outra apontando para a caixa seguinte; à direita, a caixa com o valor 15 tem uma flecha à esquerda apontando para a caixa 10 e um X à direita. Abaixo, há o rótulo “Lista ligada circular” e inicia com caixa com valor 5 com flecha à direita apontando para a caixa 10, com flecha à direita apontando para 15, que traz à direita uma flecha que aponta de volta para a primeira caixa 5.</p>
+                
+
+                <div class="destaque-pixel">
+                  <div class="icone-position-anotar">
+                    <div class="caixa-destaque">
+                      <p>Como qualquer outra estrutura de dados, é possível implementar uma lista ligada a partir de classes simples, em que cada elemento é um objeto “nó”, que aponta para outro objeto “nó”.</p>
+                    </div>  
+                  </div>
+                </div>
+                
+                
+                <p>Em um vetor de cinco posições, por exemplo, se você quiser incluir um sexto elemento, precisará criar novo vetor com mais posições, transferir todos os dados e incluir o novo valor. Se quiser excluir um item, é preciso remanejar os seguintes para a posição anterior.</p>
+                <p>Na lista ligada, no entanto, ao incluir um novo elemento, escolhe-se a posição na qual será adicionado, cria-se um novo elemento e atualiza-se o apontamento do elemento anterior para que se ligue ao próximo. Não é necessário recriar toda a estrutura. Confira o <i>gif</i> a seguir para compreender melhor:</p>
+                
+                <img src="imgs/05.gif" class="img-responsive center-block">
+                <p class="acessivel no-print">O gif mostra caixas com os números 5, 10 e 20, uma à direita da outra e uma com flecha apontando de uma para a outra. Surge a caixa 25, à direita de 20; a caixa 20 cria uma flecha que aponta para 25. Surge uma caixa 15 abaixo; a caixa 10 apaga a flecha que aponta para 20 e cria uma flecha para a 15, da qual sai uma flecha apontando para 20.</p>
+                <p>Ao remover um item de lista ligada, simplesmente atualiza-se o apontamento do elemento anterior para o seguinte ao elemento removido. Veja mais detalhes no <i>gif</i> a seguir:</p>
+                <img src="imgs/06.gif" class="img-responsive center-block">
+                <p class="acessivel no-print">O gif mostra uma lista ligada com caixas 5, 10, 15, 20, 25, uma à direita da outra e cada uma com flecha apontando para a seguinte. Primeiro, a caixa 10 some; a flecha que apontava de 5 para 10 é substituída por uma flecha de 5 para 15. Depois a 25 some e a flecha que saía de 20 e apontava para 25 é excluída.</p>
+                <p>A flexibilidade da lista ligada vem a um custo: torna-se mais dispendioso buscar um valor na lista, já que é necessário percorrer item a item para encontrá-lo (por não ser uma estrutura contígua, os índices usados em vetores para acessar uma posição da estrutura não são aplicáveis aqui). </p>
+                <p>Essa não é a única implementação de uma estrutura sequencial flexível. Em alguns casos, a substituição de um vetor pode ser mais vantajosa que a lista ligada; em outros, pode-se combinar vetores e listas ligadas para usar alguns benefícios de ambas as estruturas.</p>
+                <h4>Usabilidade</h4>
+                <p>Em qualquer formato que seja, as listas lidam com coleções de valores. Em algumas linguagens, como Java, essa coleção é necessariamente de valores do mesmo tipo (ou de um tipo derivado). Em boa parte das situações, vetores podem ser suficientes e com bom desempenho. Listas ligadas são recomendadas quando se necessita de flexibilidade de adição e remoção de itens, mas pouca busca de valores.</p>
+
+
+                <h4>Aplicação</h4>
+                <p>Em Python, não existe uma estrutura de dados exatamente equivalente às listas ligadas do Java, uma vez que Python tem suas próprias estruturas de dados para gerenciamento de coleções. No entanto, você pode simular listas ligadas usando classes personalizadas. Veja como criar uma lista ligada em Python usando classes.</p>
+
+                <pre>
+                  <code>
+<span class="language-python__grey"># Definindo a classe Node que representa um nó em uma lista ligada.</span>
+<span class="language-python__orange">class</span> Node:
+    <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>, data):
+        <span class="language-python__red">self</span>.data = data <span class="language-python__grey"># O dado armazenado no nó</span>
+        <span class="language-python__red">self</span>.next = <span class="language-python__orange">None</span> <span class="language-python__grey"># O próximo nó na lista (inicializado como None)</span>
+
+<span class="language-python__grey"># Definindo a classe LinkedList que representa a lista ligada.</span>
+<span class="language-python__orange">class</span> LinkedList:
+    <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>):
+        <span class="language-python__red">self</span>.head = <span class="language-python__orange">None</span> # A cabeça da lista (inicialmente vazia)
+
+    <span class="language-python__grey"># Método para adicionar um novo nó com dados à lista ligada.</span>
+    <span class="language-python__orange">def</span> <span class="language-python__blue">append</span>(<span class="language-python__red">self</span>, data):
+        new_node = Node(data) <span class="language-python__grey"># Cria um novo nó com os dados</span>
+        <span class="language-python__orange">if</span> <span class="language-python__red">self</span>.head <span class="language-python__orange">is None:</span> <span class="language-python__grey"># Se a lista estiver vazia, o novo nó se torna a cabeça.</span>
+            <span class="language-python__red">self</span>.head = new_node
+            <span class="language-python__orange">return</span>
+        current = <span class="language-python__red">self</span>.head <span class="language-python__grey"># Inicia a partir da cabeça da lista</span>
+        <span class="language-python__orange">while</span> current.next: <span class="language-python__grey"># Encontra o último nó na lista</span>
+            current = current.next
+        current.next = new_node <span class="language-python__grey"># Conecta o novo nó ao último nó encontrado</span>
+
+    <span class="language-python__grey"># Método para exibir os elementos da lista ligada.</span>
+    <span class="language-python__orange">def</span> <span class="language-python__blue">display</span>(<span class="language-python__red">self</span>):
+        current = <span class="language-python__red">self</span>.head <span class="language-python__grey"># Começa a partir da cabeça da lista</span>
+        <span class="language-python__orange">while</span> current: <span class="language-python__grey"># Enquanto houver nós para percorrer</span>
+            <span class="language-python__grey">print</span>(current.data, <span class="language-python__red">end</span>=' -> ') <span class="language-python__grey"># Exibe os dados do nó atual</span>
+            current = current.next <span class="language-python__grey"># Move-se para o próximo nó</span>
+            <span class="language-python__grey">print</span>("None") <span class="language-python__grey"># Quando a lista termina, imprime "None"</span>
+<span class="language-python__grey"># Exemplo de uso</span>
+my_list = LinkedList() <span class="language-python__grey"># Cria uma instância da lista ligada</span>
+my_list.append(1) <span class="language-python__grey"># Adiciona o número 1 à lista</span>
+my_list.append(2) <span class="language-python__grey"># Adiciona o número 2 à lista</span>
+my_list.append(3) <span class="language-python__grey"># Adiciona o número 3 à lista</span>
+my_list.display() <span class="language-python__grey"># Exibe os elementos da lista</span>                    
+                  </code>
+                </pre>
+
+                <p>
+                  Nesse código, foram criadas duas classes: <span class="source-font">Node</span> para representar um nó na lista
+                  ligada e <span class="source-font">LinkedList</span> para representar a própria lista ligada. A lista ligada é
+                  construída adicionando nós a ela, em que cada nó contém um dado e uma referência ao próximo nó. O método <span class="source-font">append</span> adiciona um novo nó à lista, e o método <span class="source-font">display</span> exibe os elementos da lista ligada na ordem em que foram adicionados. No exemplo, é criada uma instância da lista ligada, adicionados três elementos a ela e, em seguida, exibida a lista completa.                  
+                </p>
+
+                <h4>Laços <i>for each</i> e <i>for in</i></h4>
+
+                <p>
+                  Em Python, o <i>for each</i> e o <i>for in</i> são abordagens semelhantes para realizar
+                  iterações em estruturas de dados iteráveis, como listas, tuplas, dicionários e
+                  <i>strings</i>. Ambas as estruturas fornecem maneiras eficientes de acessar e
+                  processar os elementos dessas coleções, tornando o código mais legível e
+                  conciso.
+                </p>
+
+                <div class="no-print" aria-hidden="true">
+                  <p>Clique ou toque para visualizar o conteúdo.</p>
+                  <button
+                    type="button"
+                    class="btn btn-painel btn-ForEach"
+                    data-toggle="modal"
+                    data-target="#modalForEach"
+                  ></button>
+
+                  <button
+                    type="button"
+                    class="btn btn-painel btn-ForIn"
+                    data-toggle="modal"
+                    data-target="#modalForIn"
+                  ></button>
+                </div>
+
+
+                <!-- Modal for each -->
+                <div
+                  class="modal fade"
+                  id="modalForEach"
+                  tabindex="-1"
+                  role="dialog"
+                  aria-labelledby="myModalLabel"
+                  aria-live="polite"
+                  aria-atomic="true"
+                  aria-hidden="false"
+                >
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button
+                          type="button"
+                          class="close"
+                          data-dismiss="modal"
+                          aria-label="Close"
+                        >
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">1. <i>For each</i> em Python</h4>
+                      </div>
+                      <div class="modal-body">
+                        <p>
+                          O <i>for each</i> é uma abordagem intuitiva para percorrer todos os elementos de uma coleção sem se preocupar com índices ou controle manual. A sintaxe é simples:                          
+                        </p>
+                        <pre>
+                          <code>
+<span class="language-python__blue">for</span> elemento <span class="language-python__blue">in</span> colecao:
+
+<span class="language-python__grey"># Código para processar cada elemento</span>
+                          </code>
+                        </pre>
+
+                        <ul>
+                          <li>
+                            O “elemento” representa cada elemento da coleção em cada iteração.
+                          </li>
+                          <li>
+                            A “colecao” representa a estrutura de dados iterável que está sendo percorrida, como uma lista, tupla, dicionário ou <i>string</i>.
+                          </li>
+                        </ul>
+
+                        <pre>
+                          <code>
+nomes = [<span class="language-python__green">"Alice"</span>, <span class="language-python__green">"Bob"</span>, <span class="language-python__green">"Charlie"</span>]
+<span class="language-python__blue">for</span> nome <span class="language-python__blue">in</span> nomes:
+    <span class="language-python__orange">print</span>(nome)                            
+                          </code>
+                        </pre>
+
+                        <p>
+                          Nesse exemplo, o <i>for each</i> percorre a lista “nomes” e imprime cada nome, simplificando a iteração em comparação com uma abordagem baseada em índices.
+                        </p>
+
+                        <p>
+                          Saída na console:
+                        </p>
+
+                        <pre>
+                          <code>
+Alice
+Bob
+Charlie                            
+
+Process finished with exit code 0
+                          </code>
+                        </pre>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                          Fechar
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Modal for in -->
+                <div
+                  class="modal fade"
+                  id="modalForIn"
+                  tabindex="-1"
+                  role="dialog"
+                  aria-labelledby="myModalLabel"
+                  aria-live="polite"
+                  aria-atomic="true"
+                  aria-hidden="false"
+                >
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button
+                          type="button"
+                          class="close"
+                          data-dismiss="modal"
+                          aria-label="Close"
+                        >
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">2. <i>For in</i> em Python</h4>
+                      </div>
+                      <div class="modal-body">
+                        <p>
+                          O <i>for in</i> é uma abordagem versátil que pode ser usada para iterar em uma coleção, mas também oferece acesso                          
+                        </p>
+                        <pre>
+                          <code>
+<span class="language-python__blue">for</span>  indice, elemento <span class="language-python__blue">in</span> <span class="language-python__orange">enumerate</span> (colecao):
+
+<span class="language-python__grey"># Código para processar o índice e o elemento</span>
+                          </code>
+                        </pre>
+
+                        <ul>
+                          <li>
+                            O “indice” representa o índice de cada elemento na coleção.                          
+                          </li>
+                          <li>
+                            O “elemento” representa cada elemento da coleção em cada iteração.
+                          </li>
+                          <li>
+                            A “colecao” representa a estrutura de dados iterável que está sendo percorrida.
+                          </li>
+                        </ul>
+
+                        <pre>
+                          <code>
+nomes = [<span class="language-python__green">"Alice"</span>, <span class="language-python__green">"Bob"</span>, <span class="language-python__green">"Charlie"</span>]
+<span class="language-python__blue">for</span>  indice, nome <span class="language-python__blue">in</span> <span class="language-python__orange">enumerate</span>(nomes):
+    <span class="language-python__orange">print</span>(<span class="language-python__green">f"Índice {indice}: {nome}"</span>)                            
+                          </code>
+                        </pre>
+
+                        <p>
+                          Nesse exemplo, o <i>for in</i> percorre a lista nomes e imprime o índice e o nome de cada elemento.
+                        </p>
+
+                        <p>
+                          Saída na console:
+                        </p>
+
+                        <pre>
+                          <code>
+Índice 0: Alice
+Índice 1: Bob
+Índice 2: Charlie
+
+Process finished with exit code 0                            
+                          </code>
+                        </pre>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                          Fechar
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="acessivel print">
+                  <h4>1. <i>For each</i> em Python</h4>
+                
+                  <p>
+                    O <i>for each</i> é uma abordagem intuitiva para percorrer todos os elementos de uma coleção sem se preocupar com índices ou controle manual. A sintaxe é simples:                          
+                  </p>
+                  <pre>
+                    <code>
+<span class="language-python__blue">for</span> elemento <span class="language-python__blue">in</span> colecao:
+
+<span class="language-python__grey"># Código para processar cada elemento</span>
+                    </code>
+                  </pre>
+
+                  <ul>
+                    <li>
+                      O “elemento” representa cada elemento da coleção em cada iteração.
+                    </li>
+                    <li>
+                      A “colecao” representa a estrutura de dados iterável que está sendo percorrida, como uma lista, tupla, dicionário ou <i>string</i>.
+                    </li>
+                  </ul>
+
+                  <pre>
+                    <code>
+nomes = [<span class="language-python__green">"Alice"</span>, <span class="language-python__green">"Bob"</span>, <span class="language-python__green">"Charlie"</span>]
+<span class="language-python__blue">for</span> nome <span class="language-python__blue">in</span> nomes:
+<span class="language-python__orange">print</span>(nome)                            
+                    </code>
+                  </pre>
+
+                  <p>
+                    Nesse exemplo, o <i>for each</i> percorre a lista “nomes” e imprime cada nome, simplificando a iteração em comparação com uma abordagem baseada em índices.
+                  </p>
+
+                  <p>
+                    Saída na console:
+                  </p>
+
+                  <pre>
+                    <code>
+Alice
+Bob
+Charlie                            
+
+Process finished with exit code 0
+                    </code>
+                  </pre>
+
+                    <h4>2. <i>For in</i> em Python</h4>
+                  
+                    <p>
+                      O <i>for in</i> é uma abordagem versátil que pode ser usada para iterar em uma coleção, mas também oferece acesso                          
+                    </p>
+                    <pre>
+                      <code>
+<span class="language-python__blue">for</span>  indice, elemento <span class="language-python__blue">in</span> <span class="language-python__orange">enumerate</span> (colecao):
+
+<span class="language-python__grey"># Código para processar o índice e o elemento</span>
+                      </code>
+                    </pre>
+
+                    <ul>
+                      <li>
+                        O “indice” representa o índice de cada elemento na coleção.                          
+                      </li>
+                      <li>
+                        O “elemento” representa cada elemento da coleção em cada iteração.
+                      </li>
+                      <li>
+                        A “colecao” representa a estrutura de dados iterável que está sendo percorrida.
+                      </li>
+                    </ul>
+
+                    <pre>
+                      <code>
+nomes = [<span class="language-python__green">"Alice"</span>, <span class="language-python__green">"Bob"</span>, <span class="language-python__green">"Charlie"</span>]
+<span class="language-python__blue">for</span>  indice, nome <span class="language-python__blue">in</span> <span class="language-python__orange">enumerate</span>(nomes):
+    <span class="language-python__orange">print</span>(<span class="language-python__green">f"Índice {indice}: {nome}"</span>)                            
+                      </code>
+                    </pre>
+
+                    <p>
+                      Nesse exemplo, o <i>for in</i> percorre a lista nomes e imprime o índice e o nome de cada elemento.
+                    </p>
+
+                    <p>
+                      Saída na console:
+                    </p>
+
+                    <pre>
+                      <code>
+Índice 0: Alice
+Índice 1: Bob
+Índice 2: Charlie
+
+Process finished with exit code 0                            
+                      </code>
+                    </pre>                      
+                </div>
+
+
+                <h4>Diferenças entre <i>for each</i> e <i>for in</i> em Python</h4>
+
+                <div class="destaque-pixel">
+                  <div class="caixa-destaque">
+                    <ul class="marcador-pixel">
+                      <li>
+                        O <i>for each</i> é mais simples e direto, mas não fornece acesso direto aos índices dos elementos.
+                      </li>
+                      <li>
+                        O <i>for in</i> oferece a capacidade de acessar tanto os índices quanto os elementos da coleção, tornando-o mais versátil em algumas situações.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <p>
+                  Ambas as abordagens são úteis, e escolher entre elas depende das
+                  necessidades específicas do seu código. Use o <i>for each</i> quando você só precisar
+                  acessar os elementos da coleção e o <i>for in</i> quando desejar trabalhar com os 
+                  índices ou precisar de ambos os índices e elementos. Essas estruturas de
+                  repetição em Python tornam a programação mais eficiente e legível, permitindo
+                  que você itere facilmente em coleções de dados.
+                </p>
+            </div>
+            </div>
+            
+            <img src="imgs/separador.png" class="img-separador img-responsive center-block">
+            <div class="bloco">
+              <div class="container">
+                <h3 class="mt-60">Encerramento</h3>
+                <div class="row mt-40">
+                  <div class="col-sm-2 col-xs-12">
+                    <img src="imgs/layout_4_bandeira_finalizar.png" class="img-responsive center-block">
+                  </div>
+                  <div class="col-sm-10 col-xs-12">
+                    <p>Você pode perceber a partir desse conteúdo que Java traz muitas implementações de algoritmos e estruturas clássicas, o que é uma boa ajuda ao programador – ao invés de construir toda a regra para uma pilha, por exemplo, basta usar a classe <b>Stack</b>.</p>
+                  </div>
+                </div>
+                <p>É importante seguir pesquisando a biblioteca Java, que traz mais uma variedade de estruturas de dados ou de interfaces que podem ser úteis para determinados problemas. Em algumas situações, no entanto, será necessário implementar a estrutura. Daí a importância de saber a sua utilidade e seu funcionamento, verificando se ela se aplica ou não à situação que se deseja desenvolver.</p>
+              </div>
+            </div>
+          </div>
+        
+        </section>
+
+    </div>
+        
+<!-- - - - - - - - - - - - - - - - não alterar abaixo- - - - - - - - - - - - -->
+        <!--
+        <footer class="text-center no-print">
+          <ul class="pagination">
+
+          </ul>
+        </footer>
+        -->
+
+
+        <!-- Modais 100% -->
+        <div class="modal modal-100 fade" id="modal-painel01" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content no-print">
+              <div class="modal-header" style="padding-top: 30px;">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">
+                  <div class="container">Pilha</div>
+                </h3>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <h4>Conceitos</h4>
+                  <p><b>Pilhas são listas de valores que simulam uma pilha de objetos</b>. Pense, por exemplo, em pratos empilhados em um restaurante que oferece serviço de bufê. Você pegará o prato do topo dessa pilha, e não o da base. Os funcionários do restaurante farão a reposição incluindo novos pratos acima do que está no topo.</p>
+                  <p>Da mesma maneira acontece com uma estrutura de dados pilha: um valor, quando é incluído, vai ao topo da pilha e, quando é retirado, também sai do topo. Daí a denominação comum de que se trata de uma estrutura LIFO (<i>last in, fist out</i>, ou “último a entrar, primeiro a sair”). Isso significa que o último valor incluído é o primeiro a ser excluído.</p>
+                  <p>As pilhas utilizam apenas as operações de empilhar (geralmente chamado <i>push</i>), para incluir dados, e desempilhar (<i>pop</i>), para excluir; geralmente ainda acompanham de um método <i>peek</i>, usado para verificar qual valor está no topo da pilha sem retirá-lo, como mostra o <i>gif</i> a seguir:</p>
+                  <img src="imgs/01.gif" class="img-responsive center-block">
+                  <p class="acessivel no-print">O gif exemplifica uma pilha. Ao centro, há três caixas: uma com número 3, abaixo dela, número 2, e, abaixo, número 1. Ao lado de “3” está a palavra “topo” e, ao lado de “1”, a palavra “base”. À esquerda, surge a expressão “push()” e uma caixa com o número 4. Em seguida, essa caixa se move até acima de “3” e “topo” passa para o lado de “4”. Depois apaga-se “pop()” e surge a expressão “push()”. O “4” sai do topo da pilha e a palavra “topo” volta a descer para “3”.</p>
+                  <h4>Usabilidade</h4>
+                  <p>Um uso clássico de pilhas acontece no próprio sistema operacional. Processos de sistema geralmente iniciam outros processos, que iniciam outros. Constrói-se assim uma pilha de processos, uma vez que o último processo iniciado deve ser finalizado para que o anterior (que chamou o último) possa ser processado ou finalizado, e assim por diante. </p>
+                  <p>Outra aplicação clássica de pilhas acontece nos compiladores, para verificar a abertura e o fechamento de parênteses em uma expressão lógica, por exemplo. Assim, por meio de uma pilha de caracteres, seria possível validar a seguinte expressão:</p>
+                  <pre>
+                    <code>
+<span class="code3">(</span>x * <span class="code2">(</span>y - 2<span class="code2">)</span> / <span class="code1">(</span>10 + z<span class="code1">)</span><span class="code3">)</span>)
+                    </code>
+                  </pre>
+                  <p>É possível percorrer a expressão e usar pilha para empilhar valor ao encontrar o caractere “<b>(</b>” e desempilhar ao encontrar o caractere “<b>)</b>”. Se a expressão estiver correta, a pilha estará vazia ao final. No exemplo mostrado, esse algoritmo indicaria que a expressão está incorreta, pois, ao alcançar o último caractere, a pilha já estará vazia.</p>
+                  <p>Em qualquer situação análoga em que a última informação incluída tenha que ser processada antes que a anteriormente incluída, é possível aplicar pilhas.</p>
+                  <h4>Aplicação</h4>
+                  <p>Java implementa pilha por meio da classe <b>Stack</b>, presente no pacote <b>java.util</b>. A declaração de um objeto <b>Stack</b> de números inteiros fica como o exemplo a seguir:</p>
+                  <pre>
+                    <code>
+Stack&lt;Integer&gt; pilha = <span style="color: #0000aa">new</span> Stack&lt;Integer&gt;();
+                    </code>
+                  </pre>
+                  <p>Os principais métodos de <b>Stack</b> são:</p>
+                  <div class="no-print" aria-hidden="true">
+                    <p>Clique ou toque para visualizar o conteúdo.</p>
+                    <div class='panel-group gaitinha' id='accordion01' role='tablist' aria-multiselectable='true'>
+                        <div class='panel panel-default'>
+                          <div class='panel-heading' role='tab' id='heading01'>
+                            <h3 class='panel-title'>
+                              <a role='button' data-toggle='collapse' data-parent='#accordion01' href='#collapse01' aria-expanded='false' aria-controls='collapse01'>
+                                empty()
+                              </a>
+                            </h3>
+                          </div>
+                          <div id='collapse01' class='panel-collapse collapse in' role='tabpanel' aria-labelledby='heading01'>
+                            <div class='panel-body'>
+                              <p>Retorna verdadeiro se a pilha está vazia.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class='panel panel-default'>
+                          <div class='panel-heading' role='tab' id='heading02'>
+                            <h3 class='panel-title'>
+                              <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion01' href='#collapse02' aria-expanded='false' aria-controls='collapse02'>
+                                peek()
+                              </a>
+                            </h3>
+                          </div>
+                          <div id='collapse02' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading02'>
+                            <div class='panel-body'>
+                              <p>Retorna o valor presente no topo da pilha.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class='panel panel-default'>
+                          <div class='panel-heading' role='tab' id='heading03'>
+                            <h3 class='panel-title'>
+                              <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion01' href='#collapse03' aria-expanded='false' aria-controls='collapse03'>
+                                pop()
+                              </a>
+                            </h3>
+                          </div>
+                          <div id='collapse03' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading03'>
+                            <div class='panel-body'>
+                              <p>Retira o item do topo, retornando seu valor.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class='panel panel-default'>
+                          <div class='panel-heading' role='tab' id='heading04'>
+                            <h3 class='panel-title'>
+                              <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion01' href='#collapse04' aria-expanded='false' aria-controls='collapse04'>
+                                push(T valor)
+                              </a>
+                            </h3>
+                          </div>
+                          <div id='collapse04' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading04'>
+                            <div class='panel-body'>
+                              <p>Adiciona um novo elemento do tipo T (definido pelo <i>generics</i>) no topo da pilha.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class='panel panel-default'>
+                          <div class='panel-heading' role='tab' id='heading05'>
+                            <h3 class='panel-title'>
+                              <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion01' href='#collapse05' aria-expanded='false' aria-controls='collapse05'>
+                                search(Object valor)
+                              </a>
+                            </h3>
+                          </div>
+                          <div id='collapse05' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading05'>
+                            <div class='panel-body'>
+                              <p>Retorna a posição de determinado elemento.</p>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="acessivel print">
+                    <h4>empty()</h4>
+                    <p>Retorna verdadeiro se a pilha está vazia.</p>
+                    <h4>peek()</h4>
+                    <p>Retorna o valor presente no topo da pilha.</p>
+                    <h4>pop()</h4>
+                    <p>Retira o item do topo, retornando seu valor.</p>
+                    <h4>push(T valor)</h4>
+                    <p>Adiciona um novo elemento do tipo T (definido pelo <i>generics</i>) no topo da pilha.</p>
+                    <h4>search(Object valor)</h4>
+                    <p>Retorna a posição de determinado elemento.</p>
+                  </div>
+                  <p>Imagine que você precisa implementar um código para organizar e determinar quais carros devem sair de um caminhão-cegonha. Os carros estão enfileirados, mas o último a entrar será o primeiro a sair.</p>
+                  <p>Nesta aplicação, será solicitado o nome de cada carro e depois deverá ser apresentada a ordem em que eles sairão do caminhão. Para simplificar, considere apenas um dos andares do veículo de transporte.</p>
+                  <img src="imgs/layout_4_fig_1.png" class="img-responsive center-block">
+                  <p class="legenda-imagem">
+                    Figura 1 – Caminhão-cegonha <br>
+                    Fonte: Ohana Transportes de Veículos (s.d.)
+                  </p>
+                  <p class="acessivel no-print">A imagem mostra um caminhão-cegonha carregando vários carros, um atrás do outro, em dois andares.</p>
+                  <p>Crie um novo projeto Java ou reescreva o método <b>main()</b> de algum já existente com o seguinte código.</p>
+                  <pre>
+                    <code>
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.ArrayList</span>;
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.Date</span>;
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.Scanner</span>;
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.Stack</span>;
+
+<span style="color: #0000aa">public</span> <span style="color: #0000aa">class</span> <span style="color: #00aa00;">TesteStack</span> {
+
+    <span style="color: #0000aa">public</span> <span style="color: #0000aa">static</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">main</span>(String[] args) {
+        Scanner entrada = <span style="color: #0000aa">new</span> Scanner(System.<span style="color: #1e90ff">in</span>);
+        String carro, continuar = <span style="color: #aa5500">&quot;S&quot;</span>;
+        
+        <span style="color: #aaaaaa; font-style: italic">//declaração da pilha</span>
+        Stack&lt;String&gt; cegonha = <span style="color: #0000aa">new</span> Stack&lt;String&gt;();
+        
+        <span style="color: #0000aa">while</span>(!continuar.<span style="color: #1e90ff">equals</span>(<span style="color: #aa5500">&quot;N&quot;</span>))
+        {
+            System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(<span style="color: #aa5500">&quot;Digite o nome do próximo carro a entrar no caminhão cegonha: &quot;</span>);
+            carro = entrada.<span style="color: #1e90ff">nextLine</span>();
+            <span style="color: #aaaaaa; font-style: italic">//incluindo o carro na pilha</span>
+            cegonha.<span style="color: #1e90ff">push</span>(carro);
+            System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(<span style="color: #aa5500">&quot;Continuar informando dados? S/N&quot;</span>);
+            continuar = entrada.<span style="color: #1e90ff">nextLine</span>();
+        }
+        
+        System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(<span style="color: #aa5500">&quot;Retirar os carros nesta ordem:&quot;</span>);
+        <span style="color: #0000aa">while</span>(!cegonha.<span style="color: #1e90ff">empty</span>()) <span style="color: #aaaaaa; font-style: italic">//enquanto ainda há elementos na pilha</span>
+        {
+            <span style="color: #aaaaaa; font-style: italic">//retira o item do topo </span>
+            carro = cegonha.<span style="color: #1e90ff">pop</span>();
+            System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(carro);
+        }
+    }
+    
+}
+                    </code>
+                  </pre>
+                  <p>Teste com os valores “fusca”, “chevette” e “opala” para verificar que o resultado final será “opala, chevette, fusca”.</p>
+                  <div class="caixa-destaque borda-primaria-03 icone desafio">
+                    <p>Implemente um programa Java em que o usuário informará números inteiros. Inclua o primeiro número em uma pilha e inclua os próximos apenas se for maior que último número informado. Depois, desempilhe os valores mostrando na tela cada um em sequência.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="botao borda-primaria-03" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal modal-100 fade" id="modal-painel02" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content no-print">
+              <div class="modal-header" style="padding-top: 30px;">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">
+                  <div class="container">Fila</div>
+                </h3>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <h4>Conceitos</h4>
+                  <p>O que diferencia uma pilha de uma fila é a ordem em que os elementos são incluídos e excluídos da estrutura. Aqui, o primeiro valor incluído será o primeiro a ser retirado (FIFO – <i>first in, first out</i>). </p>
+                  <p>As filas necessitam basicamente das operações de enfileirar (<i>enqueue</i> ou <i>add</i>) e desenfileirar (<i>dequeue</i> ou <i>remove</i>). O <i>gif</i> a seguir demonstra a inclusão do dado após o último elemento da fila; <b>remove()</b> exclui o primeiro item da fila.</p>
+                  <img src="imgs/03.gif" class="img-responsive center-block">
+                  <p class="acessivel no-print">O gif mostra os números 1, 2 e 3 em caixas, uma ao lado da outra. Surge a expressão “add()” acima e uma caixa “4” surge à direita de “3”. Apaga-se a expressão “add()” e surge “remove()”; a caixa “1”, mais à esquerda de todas, então se apaga.</p>
+                  <h4>Usabilidade</h4>
+                  <img src="imgs/layout_4_aguardando_atendimento.png" class="img-responsive center-block">
+                  <p>As situações que envolvem o uso de fila são intuitivas. Uma fila de pessoas esperando para serem atendidas em um consultório médico, por exemplo, pode se beneficiar dessa estrutura de dados. Uma lista de documentos enviados para impressão também certamente implementa uma estrutura de dados fila, uma vez que o primeiro documento enviado deve ser também o primeiro a ser impresso e a ordem dos documentos deve ser preservada.</p>
+                  <h4>Aplicação</h4>
+                  <p>A interface <b>Queue</b> da biblioteca padrão Java representa uma fila e está presente no pacote <b>java.util</b>. Ela traz os seguintes métodos:</p>
+                  <div>
+                    <p>Clique ou toque para visualizar o conteúdo.</p>
+                    <div class='panel-group gaitinha' id='accordion02' role='tablist' aria-multiselectable='true'>
+                        <div class='panel panel-default'>
+                          <div class='panel-heading' role='tab' id='heading06'>
+                            <h3 class='panel-title'>
+                              <a role='button' data-toggle='collapse' data-parent='#accordion02' href='#collapse06' aria-expanded='false' aria-controls='collapse06'>
+                                add(T valor)
+                              </a>
+                            </h3>
+                          </div>
+                          <div id='collapse06' class='panel-collapse collapse in' role='tabpanel' aria-labelledby='heading06'>
+                            <div class='panel-body'>
+                              <p>Inclui um valor (do tipo genérico T) na fila.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class='panel panel-default'>
+                          <div class='panel-heading' role='tab' id='heading07'>
+                            <h3 class='panel-title'>
+                              <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion02' href='#collapse07' aria-expanded='false' aria-controls='collapse07'>
+                                remove()
+                              </a>
+                            </h3>
+                          </div>
+                          <div id='collapse07' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading07'>
+                            <div class='panel-body'>
+                              <p>Remove o último elemento da fila, retornando seu valor.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class='panel panel-default'>
+                          <div class='panel-heading' role='tab' id='heading08'>
+                            <h3 class='panel-title'>
+                              <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion02' href='#collapse08' aria-expanded='false' aria-controls='collapse08'>
+                                peek()
+                              </a>
+                            </h3>
+                          </div>
+                          <div id='collapse08' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading08'>
+                            <div class='panel-body'>
+                              <p>Retorna o primeiro elemento da fila (o próximo a ser utilizado).</p>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="acessivel print">
+                    <h4>add(T valor)</h4>
+                    <p>Inclui um valor (do tipo genérico T) na fila.</p>
+                    <h4>remove()</h4>
+                    <p>Remove o último elemento da fila, retornando seu valor.</p>
+                    <h4>peek()</h4>
+                    <p>Retorna o primeiro elemento da fila (o próximo a ser utilizado).</p>
+                  </div>
+                  <p>Por ser interface, <b>Queue</b> não pode ser instanciada diretamente. Ao invés disso, é necessário usar alguma de suas implementações.</p>
+                  <p>Uma implementação de uso mais direto e que, na verdade, implementa outro tipo de estrutura de dados é a classe <b>LinkedList</b>. Essa classe implementa a interface <b>Deque</b> (<i>double ended queue</i>), que estende a interface <b>Queue</b>.</p>
+                  <p>A interface <b>Deque</b> será detalhada em seguida neste material.</p>
+                  <p>Como um primeiro exemplo, será implementada uma fila com nomes de pessoas a serem atendidas em uma clínica. A ordem de chegada delas será a ordem em que serão atendidas.</p>
+                  <pre>
+                    <code>
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.LinkedList</span>;
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.Queue</span>;
+
+<span style="color: #0000aa">public</span> <span style="color: #0000aa">class</span> <span style="color: #00aa00;">TesteQueue</span> {
+
+    <span style="color: #0000aa">public</span> <span style="color: #0000aa">static</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">main</span>(String[] args) {
+        Queue&lt;String&gt; fila = <span style="color: #0000aa">new</span> LinkedList&lt;String&gt;();
+        
+        fila.<span style="color: #1e90ff">add</span>(<span style="color: #aa5500">&quot;Maria&quot;</span>);
+        fila.<span style="color: #1e90ff">add</span>(<span style="color: #aa5500">&quot;Aparecida&quot;</span>);
+        fila.<span style="color: #1e90ff">add</span>(<span style="color: #aa5500">&quot;João&quot;</span>);
+        fila.<span style="color: #1e90ff">add</span>(<span style="color: #aa5500">&quot;Tonico&quot;</span>);
+        
+        <span style="color: #00aaaa">int</span> ordem = <span style="color: #009999">1</span>;
+        <span style="color: #0000aa">while</span>(!fila.<span style="color: #1e90ff">isEmpty</span>())
+        {
+            String nome = fila.<span style="color: #1e90ff">remove</span>();
+            System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(ordem + <span style="color: #aa5500">&quot;º a ser atendido(a):&quot;</span> + nome);
+            ordem++;
+        }
+    }
+    
+}
+                    </code>
+                  </pre>
+                  <p>O resultado desse código será o seguinte:</p>
+                  <img src="imgs/layout_4_navegador_1.png" class="img-responsive center-block">
+                  <div class="acessivel no-print">
+                    <code>
+                      1º a ser atendido(a):Maria <br>
+                      2º a ser atendido(a):Aparecida <br>
+                      3º a ser atendido(a):João <br>
+                      4º a ser atendido(a):Tonico
+                    </code>
+                  </div>
+                  <p>Essa é a implementação mais tradicional para fila. No entanto, existe ainda outra classe que implementa diretamente a interface <b>Queue</b> e que trabalha de uma maneira mais específica. <b>PriorityQueue</b> é uma fila que mantém sempre ordenados os seus elementos. Aplique <b>PriorityQueue</b> ao exemplo anterior e compare seu resultado. A alteração necessária no código aparece em destaque.</p>
+                  <pre>
+                    <code>
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.PriorityQueue</span>;
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.Queue</span>;
+
+<span style="color: #0000aa">public</span> <span style="color: #0000aa">class</span> <span style="color: #00aa00;">TesteQueue</span> {
+
+    <span style="color: #0000aa">public</span> <span style="color: #0000aa">static</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">main</span>(String[] args) {
+        Queue&lt;String&gt; fila = <span style="color: #0000aa">new</span> PriorityQueue&lt;String&gt;();
+        
+        fila.<span style="color: #1e90ff">add</span>(<span style="color: #aa5500">&quot;Maria&quot;</span>);
+        fila.<span style="color: #1e90ff">add</span>(<span style="color: #aa5500">&quot;Aparecida&quot;</span>);
+        fila.<span style="color: #1e90ff">add</span>(<span style="color: #aa5500">&quot;João&quot;</span>);
+        fila.<span style="color: #1e90ff">add</span>(<span style="color: #aa5500">&quot;Tonico&quot;</span>);
+        
+        <span style="color: #00aaaa">int</span> ordem = <span style="color: #009999">1</span>;
+        <span style="color: #0000aa">while</span>(!fila.<span style="color: #1e90ff">isEmpty</span>())
+        {
+            String nome = fila.<span style="color: #1e90ff">remove</span>();
+            System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(ordem + <span style="color: #aa5500">&quot;º a ser atendido(a):&quot;</span> + nome);
+            ordem++;
+        }
+    }
+    
+}
+                    </code>
+                  </pre>
+                  <p>Ao executar o programa, o resultado obtido será o seguinte:</p>
+                  <img src="imgs/layout_4_navegador_2.png" class="img-responsive center-block">
+                  <div class="acessivel no-print">
+                    <code>
+                      1º a ser atendido(a):Aparecida <br>
+                      2º a ser atendido(a):João <br>
+                      3º a ser atendido(a):Maria <br>
+                      4º a ser atendido(a):Tonico
+                    </code>
+                  </div>
+                  <p>Note que, nesse caso, os pacientes seriam atendidos pela ordem alfabética de seus nomes, o que não seria adequado para a clínica, mas que serviu aqui para se entender a diferença entre o <b>LinkedList</b> e o <b>PriorityQueue</b>.</p>
+                  <div class="caixa-destaque icone desafio">
+                    <p>Escreva um programa Java que implemente uma fila de mensagens enviadas em um chat. Primeiro, obtenha do usuário ao menos cinco mensagens textuais e, ao final, apresente e descarte a sequência de mensagens na ordem correta.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="botao borda-primaria-03" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal modal-100 fade" id="modal-painel03" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content no-print">
+              <div class="modal-header" style="padding-top: 30px;">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">
+                  <div class="container">Deque/Deck</div>
+                </h3>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <p>Anteriormente, foi mencionado que <b>LinkedList</b> implementa uma interface chamada <b>Deque</b>. Trata-se de uma estrutura de dados específica que traz flexibilidade à fila, permitindo a inclusão e retirada tanto do início quanto do fim da fila.</p>
+                  <p>Para isso, a interface oferece os seguintes métodos (evidentemente implementados por <b>LinkedList</b>):</p>
+                  <div>
+                    <p>Clique ou toque para visualizar o conteúdo.</p>
+                    <div class='panel-group gaitinha' id='accordion03' role='tablist' aria-multiselectable='true'>
+                        <div class='panel panel-default'>
+                          <div class='panel-heading' role='tab' id='heading09'>
+                            <h3 class='panel-title'>
+                              <a role='button' data-toggle='collapse' data-parent='#accordion03' href='#collapse09' aria-expanded='false' aria-controls='collapse09'>
+                                addFirst()
+                              </a>
+                            </h3>
+                          </div>
+                          <div id='collapse09' class='panel-collapse collapse in' role='tabpanel' aria-labelledby='heading09'>
+                            <div class='panel-body'>
+                              <p>Adiciona um elemento ao início da fila.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class='panel panel-default'>
+                          <div class='panel-heading' role='tab' id='heading10'>
+                            <h3 class='panel-title'>
+                              <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion03' href='#collapse10' aria-expanded='false' aria-controls='collapse10'>
+                                addLast()
+                              </a>
+                            </h3>
+                          </div>
+                          <div id='collapse10' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading10'>
+                            <div class='panel-body'>
+                              <p>Adiciona um elemento ao fim da fila.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class='panel panel-default'>
+                          <div class='panel-heading' role='tab' id='heading11'>
+                            <h3 class='panel-title'>
+                              <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion03' href='#collapse11' aria-expanded='false' aria-controls='collapse11'>
+                                removeFirst()
+                              </a>
+                            </h3>
+                          </div>
+                          <div id='collapse11' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading11'>
+                            <div class='panel-body'>
+                              <p>Remove o elemento do início da fila.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class='panel panel-default'>
+                          <div class='panel-heading' role='tab' id='heading12'>
+                            <h3 class='panel-title'>
+                              <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion03' href='#collapse12' aria-expanded='false' aria-controls='collapse12'>
+                                removeLast()
+                              </a>
+                            </h3>
+                          </div>
+                          <div id='collapse12' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading12'>
+                            <div class='panel-body'>
+                              <p>Remove o elemento do fim da fila.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class='panel panel-default'>
+                          <div class='panel-heading' role='tab' id='heading13'>
+                            <h3 class='panel-title'>
+                              <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion03' href='#collapse13' aria-expanded='false' aria-controls='collapse13'>
+                                getFirst()
+                              </a>
+                            </h3>
+                          </div>
+                          <div id='collapse13' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading13'>
+                            <div class='panel-body'>
+                              <p>Retorna o elemento no início da fila.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class='panel panel-default'>
+                          <div class='panel-heading' role='tab' id='heading14'>
+                            <h3 class='panel-title'>
+                              <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion03' href='#collapse14' aria-expanded='false' aria-controls='collapse14'>
+                                getLast()
+                              </a>
+                            </h3>
+                          </div>
+                          <div id='collapse14' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading14'>
+                            <div class='panel-body'>
+                              <p>Retorna o elemento no fim da fila.</p>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="acessivel print">
+                    <h4>addFirst()</h4>
+                    <p>Adiciona um elemento ao início da fila.</p>
+                    <h4>addLast()</h4>
+                    <p>Adiciona um elemento ao fim da fila.</p>
+                    <h4>removeFirst()</h4>
+                    <p>Remove o elemento do início da fila.</p>
+                    <h4>removeLast()</h4>
+                    <p>Remove o elemento do fim da fila.</p>
+                    <h4>getFirst()</h4>
+                    <p>Retorna o elemento no início da fila.</p>
+                    <h4>getLast()</h4>
+                    <p>Retorna o elemento no fim da fila.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="botao borda-primaria-03" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal modal-100 fade" id="modal-classe01" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content no-print">
+              <div class="modal-header" style="padding-top: 30px;">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">
+                  <div class="container">ArrayList&lt;E></div>
+                </h3>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <p>Seria possível dizer, de certo modo, que um objeto <b>ArrayList</b> é uma espécie de vetor sem limitações de tamanho, em que se pode incluir livremente um novo item na lista sem a preocupação com índices e com a capacidade do vetor. Também se pode excluir um item sem preocupações com índices e com realocação de valores.</p>
+                  <p>Veja a seguir um exemplo de código Java que utiliza <b>ArrayList</b> para incluir e excluir nomes em uma lista de clientes de uma loja. O programa permite a inclusão e a exclusão de nomes, mostrando o estado atual da lista a cada iteração.</p>
+                  <pre>
+                    <code>
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.ArrayList</span>;
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.List</span>;
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.Scanner</span>;
+
+<span style="color: #0000aa">public</span> <span style="color: #0000aa">class</span> <span style="color: #00aa00;">ListaTeste</span> {
+
+    <span style="color: #0000aa">public</span> <span style="color: #0000aa">static</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">main</span>(String[] args) {
+        Scanner entrada = <span style="color: #0000aa">new</span> Scanner(System.<span style="color: #1e90ff">in</span>);
+        String nome, operacao = <span style="color: #aa5500">&quot;I&quot;</span>;
+        <span style="color: #00aaaa">int</span> indice;
+
+        List&lt;String&gt; clientes = <span style="color: #0000aa">new</span> ArrayList&lt;String&gt;();
+        
+        <span style="color: #0000aa">while</span>(!operacao.<span style="color: #1e90ff">equals</span>(<span style="color: #aa5500">&quot;S&quot;</span>))
+        {
+            System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(<span style="color: #aa5500">&quot;Digite a operação [I]ncluir, [E]xcluir, [S]air&quot;</span>);
+            operacao = entrada.<span style="color: #1e90ff">nextLine</span>();
+            <span style="color: #0000aa">switch</span>(operacao)
+            {
+                <span style="color: #0000aa">case</span> <span style="color: #aa5500">&quot;I&quot;</span>:
+                    System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">print</span>(<span style="color: #aa5500">&quot;Digite o nome: &quot;</span>);
+                    nome = entrada.<span style="color: #1e90ff">nextLine</span>();
+                    clientes.<span style="color: #1e90ff">add</span>(nome); <span style="color: #aaaaaa; font-style: italic">//incluindo um novo nome na lista</span>
+                    <span style="color: #0000aa">break</span>;
+                    
+                <span style="color: #0000aa">case</span> <span style="color: #aa5500">&quot;E&quot;</span>:
+                    System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">print</span>(<span style="color: #aa5500">&quot;Digite o indice: &quot;</span>);
+                    indice = entrada.<span style="color: #1e90ff">nextInt</span>();
+                    <span style="color: #0000aa">if</span>(indice &gt;= <span style="color: #009999">0</span> &amp;&amp; indice &lt; clientes.<span style="color: #1e90ff">size</span>())<span style="color: #aaaaaa; font-style: italic">//valida se o índice informado é válido</span>
+                        clientes.<span style="color: #1e90ff">remove</span>(indice); <span style="color: #aaaaaa; font-style: italic">//excluindo o valor que está no índice informado</span>
+                    <span style="color: #0000aa">break</span>;
+                
+                <span style="color: #0000aa">case</span> <span style="color: #aa5500">&quot;S&quot;</span>:
+                    System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(<span style="color: #aa5500">&quot;Encerrando o programa&quot;</span>);
+                    <span style="color: #0000aa">break</span>;
+            }
+            
+            System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(<span style="color: #aa5500">&quot;A lista neste momento está assim: &quot;</span>);
+            <span style="color: #0000aa">for</span>(<span style="color: #00aaaa">int</span> i = <span style="color: #009999">0</span>; i&lt;clientes.<span style="color: #1e90ff">size</span>(); i++)
+            {
+                <span style="color: #aaaaaa; font-style: italic">//em ArrayList, não se usa [] para acessar um item, mas sim método get()</span>
+                System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(clientes.<span style="color: #1e90ff">get</span>(i));
+            }
+        }
+    }
+    
+}
+                    </code>
+                  </pre>
+                  <p>Note no exemplo que foi utilizada esta declaração:</p>
+                  <pre>
+                    <code>
+List&lt;String&gt; clientes = <span style="color: #0000aa">new</span> ArrayList&lt;String&gt;();
+                    </code>
+                  </pre>
+                  <p>A declaração anterior foi utilizada ao invés da seguinte:</p>
+                  <pre>
+                    <code>
+ArrayList&lt;String&gt; clientes = <span style="color: #0000aa">new</span> ArrayList&lt;String&gt;();
+                    </code>
+                  </pre>
+                  <p>Ambas, evidentemente, são corretas. A primeira declaração é possível por <b>ArrayList</b> implementar a interface <b>List</b>; no entanto, porque “clientes” está declarado com o tipo de <b>List</b>, só se terá acesso aos métodos declarados nessa interface. Caso se queira acessar métodos e atributos específicos da classe <b>ArrayList</b>, é preferível utilizar a segunda declaração.</p>
+                  <p>Internamente, um <b>ArrayList</b> cria um vetor e o usa para armazenar os valores. Quando o vetor já não é mais suficiente, a classe cria outro novo vetor e descarta o antigo. De qualquer maneira, ao usar a classe, o programador não precisa se preocupar com esses detalhes técnicos.</p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="botao borda-primaria-03" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal modal-100 fade" id="modal-classe02" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content no-print">
+              <div class="modal-header" style="padding-top: 30px;">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">
+                  <div class="container">Vector&lt;E></div>
+                </h3>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <p>Vector é uma alternativa que funciona quase exatamente igual ao <b>ArrayList</b>, com a diferença de ser <i>thread-safe</i>, ou seja, tem mecanismos que previnem problemas em aplicações <b>multithread</b>.</p>
+                  <p>Uma aplicação <i>multithread</i> é aquela em que duas operações executam de modo paralelo, e não sequencial, como normalmente se programa. Cada linha paralela de execução é chamada <i>thread</i>.</p>
+                  <p>Como analogia, pense em <i>multithread</i> como duas ou mais transações SQL rodando em paralelo. Alguns problemas semelhantes podem acontecer, como a utilização de um mesmo recurso por duas <i>threads</i> e o risco de uma sobrescrever a alteração que a outra realizou nesse recurso. O que o Vector faz é prevenir essas situações de risco, mas isso vem a um custo de processamento e, por isso, seu uso deve acontecer apenas quando o programa for realmente <i>multithread</i>, caso contrário, é preferível usar <b>ArrayList</b>.</p>
+                  <p>Sua aplicação é quase idêntica à do <b>ArrayList</b>. Você pode testar trocando, no exemplo anterior, o tipo do objeto “clientes” para <b>Vector&lt;String></b>.</p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="botao borda-primaria-03" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal modal-100 fade" id="modal-classe03" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content no-print">
+              <div class="modal-header" style="padding-top: 30px;">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">
+                  <div class="container">LinkedList&lt;E></div>
+                </h3>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <p><b>LinkedList (ou Listas Ligadas)</b> foi apresentada anteriormente no contexto de filas. De fato, <b>LinkedList</b> implementa tanto a interface <b>List&lt;E></b> quanto <b>Queue&lt;E></b>. Assim, ela também traz os métodos padrão de <b>List</b>. Veja no exemplo a seguir a <b>LinkedList</b> sendo usada como uma lista comum para incluir notas de alunos de maneira ordenada.</p>
+                  <pre>
+                    <code>
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.LinkedList</span>;
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.List</span>;
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.Scanner</span>;
+
+<span style="color: #0000aa">public</span> <span style="color: #0000aa">class</span> <span style="color: #00aa00;">ListaLigadaTeste</span> {
+
+    <span style="color: #0000aa">public</span> <span style="color: #0000aa">static</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">main</span>(String[] args) {
+        Scanner entrada = <span style="color: #0000aa">new</span> Scanner(System.<span style="color: #1e90ff">in</span>);
+        List&lt;Float&gt; notas = <span style="color: #0000aa">new</span> LinkedList&lt;Float&gt;();
+
+        notas.<span style="color: #1e90ff">add</span>(<span style="color: #009999">5.5f</span>);
+        notas.<span style="color: #1e90ff">add</span>(<span style="color: #009999">7</span>f);
+        notas.<span style="color: #1e90ff">add</span>(<span style="color: #009999">9.75f</span>);
+        
+        <span style="color: #00aaaa">float</span> novaNota = entrada.<span style="color: #1e90ff">nextFloat</span>();
+        <span style="color: #00aaaa">int</span> indice = <span style="color: #009999">0</span>;
+
+        <span style="color: #aaaaaa; font-style: italic">//busca a posição correta em que a nova nota deve ser incluída</span>
+        <span style="color: #0000aa">while</span>(notas.<span style="color: #1e90ff">get</span>(indice) &lt; novaNota &amp;&amp; indice &lt; notas.<span style="color: #1e90ff">size</span>())
+        {
+            indice++;
+        }
+
+        <span style="color: #0000aa">if</span>(indice &lt; notas.<span style="color: #1e90ff">size</span>()) <span style="color: #aaaaaa; font-style: italic">//se não chegou ao final da lista...</span>
+            notas.<span style="color: #1e90ff">add</span>(indice, novaNota);<span style="color: #aaaaaa; font-style: italic">//...incluir na posição correta</span>
+        <span style="color: #0000aa">else</span><span style="color: #aaaaaa; font-style: italic">//senão...</span>
+            notas.<span style="color: #1e90ff">add</span>(novaNota);<span style="color: #aaaaaa; font-style: italic">//...incluir ao final da lista</span>
+        
+        System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">print</span>(<span style="color: #aa5500">&quot;Notas em ordem: &quot;</span>);
+        <span style="color: #0000aa">for</span>(<span style="color: #00aaaa">int</span> i = <span style="color: #009999">0</span>; i&lt;notas.<span style="color: #1e90ff">size</span>(); i++)
+        {
+            System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">print</span>(notas.<span style="color: #1e90ff">get</span>(i) + <span style="color: #aa5500">&quot; &quot;</span>);
+        }
+    }
+    
+}
+                    </code>
+                  </pre>
+                  <p>Por estarem sendo utilizadas <b>List&lt;Float></b>, as operações são idênticas às utilizadas com <b>ArrayList</b>. Internamente, no entanto, as operações ocorrem como demonstradas nos dois <i>gifs</i> anteriores.</p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="botao borda-primaria-03" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal modal-100 fade" id="modal-classeSet01" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content no-print">
+              <div class="modal-header" style="padding-top: 30px;">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">
+                  <div class="container">HashSet&lt;E></div>
+                </h3>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <p><b>HashSet</b> são coleções que não garantem a ordem dos elementos – ou seja, a ordem deles pode mudar a cada inclusão –, mas que mantêm eficiência constante na busca por valores, independentemente da quantidade de itens incluídos. Internamente, a classe usa <b>HashTable</b> (ou tabelas de dispersão), uma estrutura que associa uma chave a um valor e que permite a eficiência na busca.</p>
+                  <p>O exemplo a seguir mostra o uso de <b>HashSet</b> para cadastrar títulos de livros e depois permitir uma busca nessa coleção.</p>
+                  <pre>
+                    <code>
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.HashSet</span>;
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.Scanner</span>;
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.Set</span>;
+
+<span style="color: #0000aa">public</span> <span style="color: #0000aa">class</span> <span style="color: #00aa00;">HashsetTeste</span> {
+
+    <span style="color: #0000aa">public</span> <span style="color: #0000aa">static</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">main</span>(String[] args) {
+        Scanner entrada = <span style="color: #0000aa">new</span> Scanner(System.<span style="color: #1e90ff">in</span>);
+        Set&lt;String&gt; livros = <span style="color: #0000aa">new</span> HashSet&lt;String&gt;();
+        String nomeLivro;
+        
+        System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(<span style="color: #aa5500">&quot;Primeiro inclua 7 títulos de livros&quot;</span>);
+        <span style="color: #0000aa">for</span>(<span style="color: #00aaaa">int</span> i=<span style="color: #009999">0</span>; i&lt;<span style="color: #009999">7</span>; i++)
+        {
+            <span style="color: #aaaaaa; font-style: italic">//incluindo novo valor informado pelo usuário</span>
+            nomeLivro = entrada.<span style="color: #1e90ff">nextLine</span>();
+            livros.<span style="color: #1e90ff">add</span>(nomeLivro);
+            
+            System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(<span style="color: #aa5500">&quot;&gt; Coleção agora: &quot;</span>);
+            <span style="color: #0000aa">for</span>(String l : livros)
+            {
+                System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(l);
+            }
+        }
+        
+        System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(<span style="color: #aa5500">&quot;Agora faça buscas. Digite PARE para encerrar&quot;</span>);
+        nomeLivro = entrada.<span style="color: #1e90ff">nextLine</span>();
+        <span style="color: #0000aa">while</span>(!nomeLivro.<span style="color: #1e90ff">equals</span>(<span style="color: #aa5500">&quot;PARE&quot;</span>))
+        {
+            <span style="color: #aaaaaa; font-style: italic">//buscando o valor informado no HashSet</span>
+            <span style="color: #0000aa">if</span>(livros.<span style="color: #1e90ff">contains</span>(nomeLivro))
+            {
+                System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(<span style="color: #aa5500">&quot;Valor &#39;&quot;</span> + nomeLivro + <span style="color: #aa5500">&quot;&#39; foi encontrado.&quot;</span>);
+            }
+            <span style="color: #0000aa">else</span>
+            {
+                System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(<span style="color: #aa5500">&quot;Valor &#39;&quot;</span> + nomeLivro + <span style="color: #aa5500">&quot;&#39; não foi encontrado.&quot;</span>);
+            }
+            
+            nomeLivro = entrada.<span style="color: #1e90ff">nextLine</span>();
+        }
+        
+    }
+    
+}
+                    </code>
+                  </pre>
+                  <p>Teste o código Java apresentado. Ao incluir novos valores, perceba que eles nem sempre ficarão na ordem em que você os informou. Isso é natural com <b>HashSet</b>.</p>
+                  <p>O laço <i>for-each</i>, presente no código anterior, será abordado em seguida, neste conteúdo.</p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="botao borda-primaria-03" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal modal-100 fade" id="modal-classeSet02" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content no-print">
+              <div class="modal-header" style="padding-top: 30px;">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">
+                  <div class="container">TreeSet&lt;E></div>
+                </h3>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <p>A operação com <b>TreeSet</b> é semelhante à do <b>HashSet</b>, com a diferença de que, ao incluir um novo valor, a coleção é reordenada. Assim, <b>TreeSet</b> mantém sempre os valores em ordem. Internamente a classe utiliza uma estrutura de dados chamada árvore rubro-negra (<i>red-black tree</i>), que auxilia na eficiência da ordenação dos dados, por isso o nome <b>TreeSet</b>.</p>
+                  <p>Para testar, use o mesmo exemplo anterior, trocando apenas a declaração do objeto “livros” para o tipo <b>TreeSet</b>:</p>
+                  <pre>
+                    <code>
+Set&lt;String&gt; livros = <span style="color: #0000aa">new</span> TreeSet&lt;String&gt;();
+                    </code>
+                  </pre>
+                  <p>Ao executar o código, note que, após cada inclusão, a coleção se mantém ordenada.</p>
+                  <div class="caixa-destaque borda-primaria-03 icone importante">
+                    <p>Ao utilizar classes próprias (alguma classe criada por você) com <b>TreeSet</b>, será necessário implementar a interface <b>Comparable</b> e desenvolver o método <b>compareTo()</b>, que deve retornar -1 se o valor informado for anterior, 0 se for igual ou 1 se for posterior ao objeto atual. Assim, se você tivesse uma classe <b>Livro</b> para o exemplo anterior, com atributos “título” e “autor”, ela precisaria ficar mais ou menos assim:</p>
+                    <pre>
+                      <code>
+<span style="color: #0000aa">public</span> <span style="color: #0000aa">class</span> <span style="color: #00aa00;">Livro</span> <span style="color: #0000aa">implements</span> Comparable&lt;Livro&gt;{
+    <span style="color: #0000aa">public</span> String titulo;
+    <span style="color: #0000aa">public</span> String autor;
+
+    <span style="color: #0000aa">public</span> <span style="color: #00aaaa">int</span> <span style="color: #00aa00">compareTo</span>(Livro o) {
+        <span style="color: #0000aa">return</span> <span style="color: #0000aa">this</span>.<span style="color: #1e90ff">titulo</span>.<span style="color: #1e90ff">compareTo</span>(o.<span style="color: #1e90ff">titulo</span>);
+    }
+}
+                      </code>
+                    </pre>
+                    <p>É preciso implementar <b>compareTo()</b> comparando o título do objeto com o do livro informado por parâmetro. Internamente, <b>TreeSet</b> utiliza esse método <b>compareTo()</b> para a ordenação.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="botao borda-primaria-03" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      
+
+    </div>
+
+
+
+    <!--  Em caso de footer personalizado utilizar esse elemento e adicionar a classe customizada
+    <footer>
+    </footer>
+	-->
+<!-- carrega todas as imagens dos icones nesta div
+ caso queira adicionar mais imagens de novos icones do css,
+ ou qualquer imagem que deva ser contabilizada durante a fase
+ de loading, referenciar aqui.
+ -->
+<div class="ico-div-loader">
+	<img src="../template/images/atencao.png">
+    <img src="../template/images/bg-content.jpg">
+    <img src="../template/images/bg-topo.jpg">
+    <img src="../template/images/black-zoom-in-256.png">
+    <img src="../template/images/concluindo.png">
+    <img src="../template/images/curtir.png">
+    <img src="../template/images/desafio.png">
+    <img src="../template/images/dica.png">
+    <img src="../template/images/doc.png">
+    <img src="../template/images/fundamental.png">
+    <img src="../template/images/icon-03.png">
+    <img src="../template/images/importante.png">
+    <img src="../template/images/lightbulb.png">
+    <img src="../template/images/link.png">
+    <img src="../template/images/link_pdf_hover.png">
+    <img src="../template/images/link_pdf_normal.png">
+    <img src="../template/images/logo-senac.png">
+    <img src="../template/images/mark-icon.png">
+    <img src="../template/images/mark-icon02.png">
+    <img src="../template/images/midia.png">
+    <img src="../template/images/monitor.png">
+    <img src="../template/images/nao_curtir.png">
+    <img src="../template/images/pergunta.png">
+    <img src="../template/images/pesquisa.png">
+    <img src="../template/images/play.png">
+    <img src="../template/images/radio_flat.png">
+    <img src="../template/images/refletir.png">
+    <img src="../template/images/saiba_mais.png">
+    <img src="../template/images/senac_loader.png">
+    <img src="../template/images/tanamidia.png">
+    <img src="../template/images/transcricao.png">
+    <img src="../template/images/transcricao_small.png">
+    <img src="../template/images/tv.png">
+    <img src="../template/images/tv_bottom.png">
+    <img src="../template/images/zoom.png">
+    <img src="../template/images/zoom_ie.cur">
+    <img src="../template/images/zoom_ie.png">
+    <!-- adicionar as imagens customizadas aqui abaixo -->
+</div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../template/js/jquery.min.js"></script>
+<script src="../template/js/bootstrap.min.js"></script>
+<script src="../template/js/jquery.magnific-popup.min.js"></script>
+<script src="../template/js/print.js"></script>
+<script src="../template/js/template.config.js"></script>
+<script src="../template/js/images.loader.js"></script>
+<script src="../template/js/interativos.js"></script>
+<noscript>
+  <style media="screen">
+    .over-loader { display: none;}    
+  </style>
+</noscript>
+
+<!-- Versao atual do handtalk -->
+<script>
+  var scriptElem=document.createElement("script");
+  scriptElem.src="https://plugin.handtalk.me/web/latest/handtalk.min.js",
+  scriptElem.charset="UTF-8",
+  scriptElem.onload=function(){
+        window.ht = new HT({
+            token:"bf5b7efb148a829a126a0e0c9fd533bf",
+            align:"top",
+            videoEnabled: true,
+            ytEmbedReplace: true,           
+            mobileConfig:{align:"right",
+                          actionsAlign:"top",
+                          customButtonStyle:{
+                                borderRadius:"6px",
+                                size:"38px",
+                                horizontalMargin:"13px",
+                                bottomMargin:"140px",
+                                rightMargin:"40px"}
+                          }
+          });        
+      $('.ht-skip').attr("aria-hidden","true")
+    },
+ document.body.appendChild(scriptElem);
+
+</script>
+
+</body>
+</html>
+<script>
+  $( ".panel-heading" ).click(function() {
+    $( this ).toggleClass( "ativo" );
+  });
+	//inicializa zoom na imagem
+	$('.zoom-imagem').magnificPopup({
+	 type: 'image',
+  	 mainClass: 'mfp-with-zoom', // this class is for CSS animation below
+ 	 zoom: {
+		enabled: true, // By default it's false, so don't forget to enable it
+
+		duration: 300, // duration of the effect, in milliseconds
+		easing: 'ease-in-out', // CSS transition easing function
+
+		// The "opener" function should return the element from which popup will be zoomed in
+		// and to which popup will be scaled down
+		// By defailt it looks for an image tag:
+		opener: function(openerElement) {
+		  // openerElement is the element on which popup was initialized, in this case its <a> tag
+		  // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+		  return openerElement.is('img') ? openerElement : openerElement.find('img');
+		}
+	  },
+	   image: {
+		  markup: '<div class="mfp-figure">'+
+					'<div class="mfp-close"></div>'+
+					'<div class="mfp-img"></div>'+ // Floated left
+					'<div class="mfp-bottom-bar">'+'<figcaption>'+'<div class="mfp-title" style="text-align:center"></div>'+
+					  '<div class="mfp-counter"></div>'+'</figcaption>'+
+					'</div>'+
+				  '</div>', // Popup HTML markup. `.mfp-img` div will be replaced with img tag, `.mfp-close` by close button
+
+		  cursor: 'mfp-zoom-out-cur', // Class that adds zoom cursor, will be added to body. Set to null to disable zoom out cursor.
+
+		  tError: '<a href="%url%">A imagem</a> não pode ser carregada.' // Error message
+	   }
+	});
+
+	//inicializa popover
+	$(function () {
+	  $('[data-toggle="popover"]').popover()
+	})
+	//inicializa tooltip
+	$(function () {
+	  $('[data-toggle="tooltip"]').tooltip()
+	})
+
+</script>

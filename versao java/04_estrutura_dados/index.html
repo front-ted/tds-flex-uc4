@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Estrutura de dados: conceitos, aplicação e usabilidade</title>
+
+    <!-- Bootstrap -->
+    <link href="../template/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../template/css/tecnicos_senac.css" rel="stylesheet">
+    <link href="../template/css/cores.css" rel="stylesheet">
+    <!--Extras - novas classes para facilitar-->
+    <link rel="stylesheet" href="../template/css/extras.css">
+    <link href="../template/css/sncload.css" rel="stylesheet">
+    <link href="../template/css/magnific-popup.css" rel="stylesheet">
+    <link href="../template/css/atividades_interativas.css" rel="stylesheet">
+    <!-- referencia ao arquivo css com estilos especificos da pagina -->
+    <link href="css/custom.css" type="text/css" rel="stylesheet">
+    <!-- css necessario para o print -->
+    <link href="../template/css/fa/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="../template/css/print.css" type="text/css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+  
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Bruna Flores de Oliveira</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">46085400.0000000</mso:Order>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Bruna Flores de Oliveira</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ContentTypeId msdt:dt="string">0x010100393332CEE5C5294F9D2C3CF7CCDACBE5</mso:ContentTypeId>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body onLoad="Javascript:document.getElementById('sncloader').style.display='none';">
+    <!-- MARCA D´ÁGUA -->
+    <img src="../template/images/logo_senac_colorido.png" id="marcadaguaLogo">
+    <!-- /MARCA D´ÁGUA -->
+
+    <div id='sncloader' class='over-loader'><div class="over-cell"><div id="sncload"></div></div></div>
+    <header id="topo" class="senac no-print">
+        <div  class="header-tecnicos container">
+          <h1 id="nome-curso">Desenvolvimento de Sistemas</h1>
+          <div id="logo-senac"><img src="../template/images/logo-senac.png" alt="logo do senac"></div>
+        </div>
+        <div id="sombra"></div>
+    </header>
+
+    <div id="booklet" class="fundo-tecnicos">
+
+        <div class="acessivel no-print">
+          <p>Como sugestão, configure a opção de leitura de caracteres e de pontuação de seu leitor de tela para o grau máximo de leitura, para que os códigos disponibilizados neste material sejam lidos corretamente. No caso do NVDA (Nonvisual Desktop Access), para localizar a opção <b>Grau de pontuação/símbolos</b>, acesse <b>Preferências – Configurações – Fala</b>. Altere o padrão <b>Pouco</b> para <b>Tudo</b>. Dessa forma, o leitor passará a ler os segmentos de código em sua totalidade.</p>
+        </div>
+        
+<!-- - - - - - - - - - - - - - - - não alterar acima - - - - - - - - - - - - -->
+        <section class="paginas">
+
+          <!-- - - - - - - - cada página é independente  - - - - - - - - - - -->
+          <div class="pagina">
+            <div class="bloco">
+              <div class="container">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <header class="no-print">
+                    <!-- BTO IMPRIMIR -->
+                    <div class="grupo-imprimir no-print">
+                      <button type="button" data-pdf="true" class="bto-imprimir" name="button">
+                        <span class="fa fa-print"></span> <span>Imprimir</span>
+                      </button>
+                    </div>
+                    <!-- /BTO IMPRIMIR -->
+                  </header>
+                  <h2>Estrutura de dados: conceitos, aplicação e usabilidade</h2>
+                  <h3>Introdução</h3>
+                  <p>Estruturas de dados são meios de organizar e manipular informações de modo que as operações sobre elas sejam eficientes. Por exemplo, é muito mais eficiente e intuitivo manipular uma série de números em um vetor do que em muitas variáveis separadas. Além de prover uma maneira de guardar informações, as estruturas devem permitir operações para acesso e manipulação desses dados. No caso dos vetores, os índices permitem um acesso rápido à determinada informação.</p>
+                  <p>Sem conhecer estruturas de dados, o programador pode escrever programas e chegar a uma solução correta, mas que provavelmente será menos eficiente do que se aplicasse a estrutura adequada.</p>
+                  <p>As classes em si são um tipo de estrutura de dados que guardam informações e permitem a criação de métodos para manipulá-las. É a partir de classes que muitas outras estruturas de dados são possíveis, como listas ligadas, árvores, pilhas, filas, entre outras.</p>
+                  <p>Apesar de ser possível implementar cada estrutura, a biblioteca padrão Java (geralmente sob o pacote <b>java.util</b>) já traz classes prontas para várias estruturas de dados de maneira simples. A seguir, observe algumas das principais estruturas, ressaltando o conceito e a aplicação de cada uma.</p>
+                  <div class="caixa-destaque borda-primaria-03 icone dica">
+                    <p>Para um bom aproveitamento, siga esta leitura realizando e testando os exemplos demonstrados. Crie um projeto no NetBeans para cada exemplo ou modifique um código já existente. Execute, realize modificações e teste para entender como cada estrutura funciona.</p>
+                  </div>
+
+                </div>
+                <!--
+                <div class="col-md-5 col-sm-5 hidden-xs">
+                  <img src="imgs/img1.png" class="no-print" aria-hidden="true">
+                </div>
+                -->
+              </div>
+            </div>
+            <img src="imgs/separador.png" class="img-separador img-responsive center-block">
+            <div class="bloco azul">
+              <div class="container">
+                <h3><i>Generics</i></h3>
+                <p>Antes de analisar as estruturas de dados implementadas em Java, é preciso entender um conceito utilizado por boa parte dessas classes. <i>Generics</i> é a capacidade de parametrizar uma classe com um ou mais tipos específicos com os quais ela trabalhará.</p>
+                <p>Para compreender <i>generics</i>, é necessário entender que toda classe em Java <b>deriva implicitamente da classe Object</b>. Ela é a base de tudo, e, sendo assim, qualquer classe pode ser referenciada como <b>Object</b>. Por exemplo, considere a interface <b>Comparable</b> de Java, usada para forçar uma implementação de um método de comparação padronizado em uma classe. Sua assinatura original, antes da versão 1.5 do JDK, era a seguinte:</p>
+                <pre>
+                  <code>
+<span style="color: #0000aa">package</span> java.<span style="color: #1e90ff">lang</span>;
+<span style="color: #0000aa">public</span> <span style="color: #0000aa">interface</span> <span style="color: #00aa00;">Comparable</span> {
+    <span style="color: #0000aa">public</span> <span style="color: #00aaaa">int</span> <span style="color: #00aa00">compareTo</span>(Object o)
+}
+                  </code>
+                </pre>
+                <p>Note que o parâmetro é <b>Object</b> e, por ser o tipo base para todas as classes, aceita objeto de qualquer classe como parâmetro. Sabendo que a classe <b>Date</b> de Java implementa a interface Comparable, é possível aplicar o seguinte trecho de código:</p>
+                <pre>
+                  <code>
+Comparable c = <span style="color: #0000aa">new</span> Date();
+System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(c.<span style="color: #1e90ff">compareTo</span>(<span style="color: #aa5500">&quot;red&quot;</span>));
+                  </code>
+                </pre>
+                <p>Note que está sendo feita a comparação de <b>c</b> (tipo <b>Date</b>) com um texto (<b>“red”</b>) passado pelo parâmetro de <b>compareTo()</b>. O resultado disso (e você pode experimentar em seu computador) é um erro em tempo de execução – ou seja, apenas quando você executar o código, verá o problema: <i>class java.lang.String cannot be cast to class java.util.Date</i> ou “classe String não pode ser convertida para classe Date”.</p>
+                <p>A partir de JDK 1.5, com <i>generics</i>, a interface de Comparable ganha uma possibilidade nova:</p>
+                <pre>
+                  <code>
+<span style="color: #0000aa">package</span> java.<span style="color: #1e90ff">lang</span>;
+<span style="color: #0000aa">public</span> <span style="color: #0000aa">interface</span> <span style="color: #00aa00;">Comparable</span>&lt;T&gt; {
+    <span style="color: #0000aa">public</span> <span style="color: #00aaaa">int</span> <span style="color: #00aa00">compareTo</span>(T o)
+}
+                  </code>
+                </pre>
+                <p>Note o <b>&lt;T></b> presente logo após o nome da interface. Observe ainda que <b>compareTo()</b> ao invés de <b>Object</b> recebe esse tipo hipotético <b>T</b> como parâmetro. <b>T</b>, nesse caso, é um tipo genérico (e, na realidade, ao invés de <b>T</b>, poderia ser qualquer termo entre <b>&lt;</b> e <b>></b>) que pode ser referenciado no código da interface ou da classe, como é no parâmetro de <b>compareTo()</b>. Ao criar um objeto de classe com <i>generics</i>, informe no lugar o <b>T</b> um tipo concreto (outra classe). O trecho de código para testar a comparação de <b>Data</b> com <i>string</i> ficaria como o seguinte exemplo:</p>
+                <pre>
+                  <code>
+Comparable&lt;Date&gt; c = <span style="color: #0000aa">new</span> Date();
+System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(c.<span style="color: #1e90ff">compareTo</span>(<span style="color: #aa5500">&quot;red&quot;</span>));
+                  </code>
+                </pre>
+                <p>Note o tipo <b>Comparable&lt;Date></b>. Aqui, fica demonstrado que se espera o tipo <i>date</i> para certas operações dessa interface Comparable. Qual é a vantagem dessa abordagem em relação à anterior? A maior vantagem é que a falha de conversão continua acontecendo, mas é anunciada em tempo de compilação, ou seja, o código não executará com erro para o usuário. Caso você esteja usando NetBeans, note que, com o código mostrado, a linha com <b>compareTo("red")</b> fica grifada com a mensagem de erro “Incompatible types” (ou “tipos incompatíveis”).</p>
+                <p>O exemplo apresentado esclarece a função do <i>generics</i>: <b>tipificar fortemente algumas operações ou dados de uma classe ou interface</b>, de maneira que o tipo informado seja obedecido e verificado em tempo de compilação e não de execução. Além disso, o uso de <i>generics</i> <b>deixa o código mais claro</b>.</p>
+                <p>A classe <b>ArrayList</b>, usada para lista não limitada de dados, é uma das várias em Java que contém uma versão <i>generics</i>. Assim, observe os códigos a seguir:</p>
+                <pre>
+                  <code>
+ArrayList minhaLista = <span style="color: #0000aa">new</span> ArrayList();
+                  </code>
+                </pre>
+                <p>Esse código fica menos claro e mais suscetível a erros em tempo de execução do que este:</p>
+                <pre>
+                  <code>
+ArrayList&lt;Integer&gt; minhaLista = <span style="color: #0000aa">new</span> ArrayList&lt;Integer&gt;();
+                  </code>
+                </pre>
+                <p>Esse deixa explícito que <b>minhaLista</b> é uma lista de números inteiros.</p>
+                <div class="caixa-destaque borda-primaria-03 icone anotar">
+                  <p>Repare que se utilizou <i>integer</i> ao invés de <i>int</i> no parâmetro <i>generic</i> de <b>ArrayList</b>. Isso porque só se pode usar classes, não tipos primitivos, entre <b>&lt;</b> e <b>></b> em uma declaração de <i>generics</i>.</p>
+                </div>
+                <div class="caixa-destaque borda-primaria-03 icone desafio">
+                  <p>Crie um projeto Java e inclua a seguinte classe <b>CGenerica</b>:</p>
+                  <pre>
+                    <code>
+<span style="color: #0000aa">class</span> <span style="color: #00aa00;">CGenerica</span>&lt;T&gt;
+{
+    <span style="color: #0000aa">private</span> T data;
+    
+    <span style="color: #0000aa">public</span> <span style="color: #0000aa">static</span> T <span style="color: #00aa00">getData</span>(){
+       <span style="color: #0000aa">return</span> data;
+    }
+
+    <span style="color: #0000aa">public</span> <span style="color: #0000aa">static</span> T <span style="color: #00aa00">getData</span>(){
+       <span style="color: #0000aa">return</span> data;
+    }    
+}
+                    </code>
+                  </pre>
+                  <p>No método <b>main()</b> do projeto, utilize essa classe com <i>integer</i>, <i>string</i> e <i>date</i>.</p>
+                </div>
+              </div>
+            </div>
+            <img src="imgs/separador.png" class="img-separador img-responsive center-block">
+            <div class="bloco">
+              <div class="container">
+                
+                <div class="no-print" aria-hidden="true">
+                  <p>Clique ou toque para visualizar o conteúdo.</p>
+                  <div class="row">
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                      <button type="button" class="btn-painel btn-painel01 center-block" data-toggle="modal" data-target="#modal-painel01"></button>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                      <button type="button" class="btn-painel btn-painel02 center-block" data-toggle="modal" data-target="#modal-painel02"></button>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                      <button type="button" class="btn-painel btn-painel03 center-block" data-toggle="modal" data-target="#modal-painel03"></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="acessivel print">
+                  <h3>Pilha</h3>
+                  <h4>Conceitos</h4>
+                  <p><b>Pilhas são listas de valores que simulam uma pilha de objetos</b>. Pense, por exemplo, em pratos empilhados em um restaurante que oferece serviço de bufê. Você pegará o prato do topo dessa pilha, e não o da base. Os funcionários do restaurante farão a reposição incluindo novos pratos acima do que está no topo.</p>
+                  <p>Da mesma maneira acontece com uma estrutura de dados pilha: um valor, quando é incluído, vai ao topo da pilha e, quando é retirado, também sai do topo. Daí a denominação comum de que se trata de uma estrutura LIFO (<i>last in, fist out</i>, ou “último a entrar, primeiro a sair”). Isso significa que o último valor incluído é o primeiro a ser excluído.</p>
+                  <p>As pilhas utilizam apenas as operações de empilhar (geralmente chamado <i>push</i>), para incluir dados, e desempilhar (<i>pop</i>), para excluir; geralmente ainda acompanham de um método <i>peek</i>, usado para verificar qual valor está no topo da pilha sem retirá-lo, como mostra o <i>gif</i> a seguir:</p>
+                  <img src="imgs/01.gif" class="img-responsive center-block">
+                  <p class="acessivel no-print">O gif exemplifica uma pilha. Ao centro, há três caixas: uma com número 3, abaixo dela, número 2, e, abaixo, número 1. Ao lado de “3” está a palavra “topo” e, ao lado de “1”, a palavra “base”. À esquerda, surge a expressão “push()” e uma caixa com o número 4. Em seguida, essa caixa se move até acima de “3” e “topo” passa para o lado de “4”. Depois apaga-se “pop()” e surge a expressão “push()”. O “4” sai do topo da pilha e a palavra “topo” volta a descer para “3”.</p>
+                  <h4>Usabilidade</h4>
+                  <p>Um uso clássico de pilhas acontece no próprio sistema operacional. Processos de sistema geralmente iniciam outros processos, que iniciam outros. Constrói-se assim uma pilha de processos, uma vez que o último processo iniciado deve ser finalizado para que o anterior (que chamou o último) possa ser processado ou finalizado, e assim por diante. </p>
+                  <p>Outra aplicação clássica de pilhas acontece nos compiladores, para verificar a abertura e o fechamento de parênteses em uma expressão lógica, por exemplo. Assim, por meio de uma pilha de caracteres, seria possível validar a seguinte expressão:</p>
+                  <pre>
+                    <code>
+<span class="code3">(</span>x * <span class="code2">(</span>y - 2<span class="code2">)</span> / <span class="code1">(</span>10 + z<span class="code1">)</span><span class="code3">)</span>)
+                    </code>
+                  </pre>
+                  <p>É possível percorrer a expressão e usar pilha para empilhar valor ao encontrar o caractere “<b>(</b>” e desempilhar ao encontrar o caractere “<b>)</b>”. Se a expressão estiver correta, a pilha estará vazia ao final. No exemplo mostrado, esse algoritmo indicaria que a expressão está incorreta, pois, ao alcançar o último caractere, a pilha já estará vazia.</p>
+                  <p>Em qualquer situação análoga em que a última informação incluída tenha que ser processada antes que a anteriormente incluída, é possível aplicar pilhas.</p>
+                  <h4>Aplicação</h4>
+                  <p>Java implementa pilha por meio da classe <b>Stack</b>, presente no pacote <b>java.util</b>. A declaração de um objeto <b>Stack</b> de números inteiros fica como o exemplo a seguir:</p>
+                  <pre>
+                    <code>
+Stack&lt;Integer> pilha = new Stack&lt;Integer>();
+                    </code>
+                  </pre>
+                  <p>Os principais métodos de <b>Stack</b> são:</p>
+                  <div class="acessivel print">
+                    <h4>empty()</h4>
+                    <p>Retorna verdadeiro se a pilha está vazia.</p>
+                    <h4>peek()</h4>
+                    <p>Retorna o valor presente no topo da pilha.</p>
+                    <h4>pop()</h4>
+                    <p>Retira o item do topo, retornando seu valor.</p>
+                    <h4>push(T valor)</h4>
+                    <p>Adiciona um novo elemento do tipo T (definido pelo <i>generics</i>) no topo da pilha.</p>
+                    <h4>search(Object valor)</h4>
+                    <p>Retorna a posição de determinado elemento.</p>
+                  </div>
+                  <p>Imagine que você precisa implementar um código para organizar e determinar quais carros devem sair de um caminhão-cegonha. Os carros estão enfileirados, mas o último a entrar será o primeiro a sair.</p>
+                  <p>Nesta aplicação, será solicitado o nome de cada carro e depois deverá ser apresentada a ordem em que eles sairão do caminhão. Para simplificar, considere apenas um dos andares do veículo de transporte.</p>
+                  <img src="imgs/layout_4_fig_1.png" class="img-responsive center-block">
+                  <p class="legenda-imagem">
+                    Figura 1 – Caminhão-cegonha <br>
+                    Fonte: Ohana Transportes de Veículos (s.d.)
+                  </p>
+                  <p class="acessivel no-print">A imagem mostra um caminhão-cegonha carregando vários carros, um atrás do outro, em dois andares.</p>
+                  <p>Crie um novo projeto Java ou reescreva o método <b>main()</b> de algum já existente com o seguinte código.</p>
+                  <pre>
+                    <code>
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Scanner;
+import java.util.Stack;
+
+public class TesteStack {
+
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        String carro, continuar = "S";
+       
+        //declaração da pilha
+        Stack&lt;String> cegonha = new Stack&lt;String>();
+        
+        while(!continuar.equals("N"))
+        {
+            System.out.println("Digite o nome do próximo carro a entrar no caminhão cegonha: ");
+            carro = entrada.nextLine();
+            //incluindo o carro na pilha
+            cegonha.push(carro);
+            System.out.println("Continuar informando dados? S/N");
+            continuar = entrada.nextLine();
+        }
+        
+        System.out.println("Retirar os carros nesta ordem:");
+        while(!cegonha.empty()) //enquanto ainda há elementos na pilha
+        {
+            //retira o item do topo 
+            carro = cegonha.pop();
+            System.out.println(carro);
+        }
+    }
+    
+}
+                    </code>
+                  </pre>
+                  <p>Teste com os valores “fusca”, “chevette” e “opala” para verificar que o resultado final será “opala, chevette, fusca”.</p>
+                  <div class="caixa-destaque borda-primaria-03 icone desafio">
+                    <p>Implemente um programa Java em que o usuário informará números inteiros. Inclua o primeiro número em uma pilha e inclua os próximos apenas se for maior que último número informado. Depois, desempilhe os valores mostrando na tela cada um em sequência.</p>
+                  </div>
+
+                  <h3>Fila</h3>
+                  <h4>Conceitos</h4>
+                  <p>O que diferencia uma pilha de uma fila é a ordem em que os elementos são incluídos e excluídos da estrutura. Aqui, o primeiro valor incluído será o primeiro a ser retirado (FIFO – <i>first in, first out</i>). </p>
+                  <p>As filas necessitam basicamente das operações de enfileirar (<i>enqueue</i> ou <i>add</i>) e desenfileirar (<i>dequeue</i> ou <i>remove</i>). O <i>gif</i> a seguir demonstra a inclusão do dado após o último elemento da fila; <b>remove()</b> exclui o primeiro item da fila.</p>
+                  <img src="imgs/03.gif" class="img-responsive center-block">
+                  <p class="acessivel no-print">O gif mostra os números 1, 2 e 3 em caixas, uma ao lado da outra. Surge a expressão “add()” acima e uma caixa “4” surge à direita de “3”. Apaga-se a expressão “add()” e surge “remove()”; a caixa “1”, mais à esquerda de todas, então se apaga.</p>
+                  <h4>Usabilidade</h4>
+                  <img src="imgs/layout_4_aguardando_atendimento.png" class="img-responsive center-block">
+                  <p>As situações que envolvem o uso de fila são intuitivas. Uma fila de pessoas esperando para serem atendidas em um consultório médico, por exemplo, pode se beneficiar dessa estrutura de dados. Uma lista de documentos enviados para impressão também certamente implementa uma estrutura de dados fila, uma vez que o primeiro documento enviado deve ser também o primeiro a ser impresso e a ordem dos documentos deve ser preservada.</p>
+                  <h4>Aplicação</h4>
+                  <p>A interface <b>Queue</b> da biblioteca padrão Java representa uma fila e está presente no pacote <b>java.util</b>. Ela traz os seguintes métodos:</p>
+                  <div class="acessivel print">
+                    <h4>add(T valor)</h4>
+                    <p>Inclui um valor (do tipo genérico T) na fila.</p>
+                    <h4>remove()</h4>
+                    <p>Remove o último elemento da fila, retornando seu valor.</p>
+                    <h4>peek()</h4>
+                    <p>Retorna o primeiro elemento da fila (o próximo a ser utilizado).</p>
+                  </div>
+                  <p>Por ser interface, <b>Queue</b> não pode ser instanciada diretamente. Ao invés disso, é necessário usar alguma de suas implementações.</p>
+                  <p>Uma implementação de uso mais direto e que, na verdade, implementa outro tipo de estrutura de dados é a classe <b>LinkedList</b>. Essa classe implementa a interface <b>Deque</b> (<i>double ended queue</i>), que estende a interface <b>Queue</b>.</p>
+                  <p>A interface <b>Deque</b> será detalhada em seguida neste material.</p>
+                  <p>Como um primeiro exemplo, será implementada uma fila com nomes de pessoas a serem atendidas em uma clínica. A ordem de chegada delas será a ordem em que serão atendidas.</p>
+                  <pre>
+                    <code>
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class TesteQueue {
+
+    public static void main(String[] args) {
+        Queue&lt;String> fila = new LinkedList&lt;String>();
+        
+        fila.add("Maria");
+        fila.add("Aparecida");
+        fila.add("João");
+        fila.add("Tonico");
+        
+        int ordem = 1;
+        while(!fila.isEmpty())
+        {
+            String nome = fila.remove();
+            System.out.println(ordem + "º a ser atendido(a):" + nome);
+            ordem++;
+        }
+    }
+    
+}
+                    </code>
+                  </pre>
+                  <p>O resultado desse código será o seguinte:</p>
+                  <img src="imgs/layout_4_navegador_1.png" class="img-responsive center-block">
+                  <div class="acessivel no-print">
+                    1º a ser atendido(a):Maria <br>
+                    2º a ser atendido(a):Aparecida <br>
+                    3º a ser atendido(a):João <br>
+                    4º a ser atendido(a):Tonico
+                  </div>
+                  <p>Essa é a implementação mais tradicional para fila. No entanto, existe ainda outra classe que implementa diretamente a interface <b>Queue</b> e que trabalha de uma maneira mais específica. <b>PriorityQueue</b> é uma fila que mantém sempre ordenados os seus elementos. Aplique <b>PriorityQueue</b> ao exemplo anterior e compare seu resultado. A alteração necessária no código aparece em destaque.</p>
+                  <pre>
+                    <code>
+import java.util.PriorityQueue;
+import java.util.Queue;
+
+public class TesteQueue {
+
+    public static void main(String[] args) {
+        Queue&lt;String> fila = new PriorityQueue&lt;String>();
+        
+        fila.add("Maria");
+        fila.add("Aparecida");
+        fila.add("João");
+        fila.add("Tonico");
+        
+        int ordem = 1;
+        while(!fila.isEmpty())
+        {
+            String nome = fila.remove();
+            System.out.println(ordem + "º a ser atendido(a):" + nome);
+            ordem++;
+        }
+    }
+    
+}
+                    </code>
+                  </pre>
+                  <p>Ao executar o programa, o resultado obtido será o seguinte:</p>
+                  <div>
+                    <code>
+                      1º a ser atendido(a):Aparecida <br>
+                      2º a ser atendido(a):João <br>
+                      3º a ser atendido(a):Maria <br>
+                      4º a ser atendido(a):Tonico
+                    </code>
+                  </div>
+                  <p>Note que, nesse caso, os pacientes seriam atendidos pela ordem alfabética de seus nomes, o que não seria adequado para a clínica, mas que serviu aqui para se entender a diferença entre o <b>LinkedList</b> e o <b>PriorityQueue</b>.</p>
+                  <div class="caixa-destaque icone desafio">
+                    <p>Escreva um programa Java que implemente uma fila de mensagens enviadas em um chat. Primeiro, obtenha do usuário ao menos cinco mensagens textuais e, ao final, apresente e descarte a sequência de mensagens na ordem correta.</p>
+                  </div>
+
+                  <h3>Deque/Deck</h3>
+                  <p>Anteriormente, foi mencionado que <b>LinkedList</b> implementa uma interface chamada <b>Deque</b>. Trata-se de uma estrutura de dados específica que traz flexibilidade à fila, permitindo a inclusão e retirada tanto do início quanto do fim da fila.</p>
+                  <p>Para isso, a interface oferece os seguintes métodos (evidentemente implementados por <b>LinkedList</b>):</p>
+                  <div class="acessivel print">
+                    <h4>addFirst()</h4>
+                    <p>Adiciona um elemento ao início da fila.</p>
+                    <h4>addLast()</h4>
+                    <p>Adiciona um elemento ao fim da fila.</p>
+                    <h4>removeFirst()</h4>
+                    <p>Remove o elemento do início da fila.</p>
+                    <h4>removeLast()</h4>
+                    <p>Remove o elemento do fim da fila.</p>
+                    <h4>getFirst()</h4>
+                    <p>Retorna o elemento no início da fila.</p>
+                    <h4>getLast()</h4>
+                    <p>Retorna o elemento no fim da fila.</p>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <img src="imgs/separador.png" class="img-separador img-responsive center-block">
+            <div class="bloco azul">
+              <div class="container">
+                <h3>Listas</h3>
+                <h4>Conceito</h4>
+                <p>A estrutura de dados mais básica é o vetor (ou <i>array</i>), capaz de armazenar uma quantidade específica de valores em um espaço dedicado da memória, organizando-os sequencialmente. As limitações do vetor, como a incapacidade de expandir um vetor já declarado ou de eliminar um índice da estrutura, levaram à implementação de estruturas de dados que têm o mesmo propósito, mas que contam com mais flexibilidade.</p>
+                <p>Uma dessas estruturas é a lista ligada, em que os elementos estão conectados por meio de referências; ao invés de os valores estarem juntos em um bloco de memória, como acontece em um vetor, na lista ligada cada elemento está em uma parte da memória, apenas mantendo referência para o próximo elemento e, em algumas implementações, também para o anterior.</p>
+                <img src="imgs/layout_4_fig_2.png" class="img-responsive center-block">
+                <p class="legenda-imagem">
+                  Figura 2 – Implementações de listas ligadas <br>
+                  Fonte: Senac EAD (2022)
+                </p>
+                <p class="acessivel no-print">A imagem mostra, acima, o rótulo “Lista ligada” e, à direita, uma caixa com o número 5, com uma flecha direcionada à outra com o número 10, à direita, que está com uma flecha direcionada à outra, com o número 15, também à direita. Esta última caixa traz um X à direita, indicando que não aponta mais nada. Abaixo, há o rótulo “Lista duplamente ligada” e inicia com caixa com um X à esquerda, o valor 5 e uma flecha para a caixa da direita; à direita, a caixa com o valor 10 tem uma flecha apontando à esquerda para a caixa de valor 5 e outra apontando para a caixa seguinte; à direita, a caixa com o valor 15 tem uma flecha à esquerda apontando para a caixa 10 e um X à direita. Abaixo, há o rótulo “Lista ligada circular” e inicia com caixa com valor 5 com flecha à direita apontando para a caixa 10, com flecha à direita apontando para 15, que traz à direita uma flecha que aponta de volta para a primeira caixa 5.</p>
+                <div class="caixa-destaque borda-primaria-03 icone anotar">
+                  <p>Como qualquer outra estrutura de dados, é possível implementar uma lista ligada a partir de classes simples, em que cada elemento é um objeto “nó”, que aponta para outro objeto “nó”.</p>
+                </div>
+                <p>Em um vetor de cinco posições, por exemplo, se você quiser incluir um sexto elemento, precisará criar novo vetor com mais posições, transferir todos os dados e incluir o novo valor. Se quiser excluir um item, é preciso remanejar os seguintes para a posição anterior.</p>
+                <p>Na lista ligada, no entanto, ao incluir um novo elemento, escolhe-se a posição na qual será adicionado, cria-se um novo elemento e atualiza-se o apontamento do elemento anterior para que se ligue ao próximo. Não é necessário recriar toda a estrutura. Confira o <i>gif</i> a seguir para compreender melhor:</p>
+                <img src="imgs/05.gif" class="img-responsive center-block">
+                <p class="acessivel no-print">O gif mostra caixas com os números 5, 10 e 20, uma à direita da outra e uma com flecha apontando de uma para a outra. Surge a caixa 25, à direita de 20; a caixa 20 cria uma flecha que aponta para 25. Surge uma caixa 15 abaixo; a caixa 10 apaga a flecha que aponta para 20 e cria uma flecha para a 15, da qual sai uma flecha apontando para 20.</p>
+                <p>Ao remover um item de lista ligada, simplesmente atualiza-se o apontamento do elemento anterior para o seguinte ao elemento removido. Veja mais detalhes no <i>gif</i> a seguir:</p>
+                <img src="imgs/06.gif" class="img-responsive center-block">
+                <p class="acessivel no-print">O gif mostra uma lista ligada com caixas 5, 10, 15, 20, 25, uma à direita da outra e cada uma com flecha apontando para a seguinte. Primeiro, a caixa 10 some; a flecha que apontava de 5 para 10 é substituída por uma flecha de 5 para 15. Depois a 25 some e a flecha que saía de 20 e apontava para 25 é excluída.</p>
+                <p>A flexibilidade da lista ligada vem a um custo: torna-se mais dispendioso buscar um valor na lista, já que é necessário percorrer item a item para encontrá-lo (por não ser uma estrutura contígua, os índices usados em vetores para acessar uma posição da estrutura não são aplicáveis aqui). </p>
+                <p>Essa não é a única implementação de uma estrutura sequencial flexível. Em alguns casos, a substituição de um vetor pode ser mais vantajosa que a lista ligada; em outros, pode-se combinar vetores e listas ligadas para usar alguns benefícios de ambas as estruturas.</p>
+                <h4>Usabilidade</h4>
+                <p>Em qualquer formato que seja, as listas lidam com coleções de valores. Em algumas linguagens, como Java, essa coleção é necessariamente de valores do mesmo tipo (ou de um tipo derivado). Em boa parte das situações, vetores podem ser suficientes e com bom desempenho. Listas ligadas são recomendadas quando se necessita de flexibilidade de adição e remoção de itens, mas pouca busca de valores.</p>
+                <h4>Aplicação</h4>
+                <p>Java conta com uma estrutura de classes para lidar com conjuntos de dados, o Collections Framework. Trata-se de uma biblioteca de interfaces e classes, que abrange estruturas as quais manipulam coleções de elementos e também mapas, que são estruturas armazenando dados em pares chave/valor (ou seja, os valores são indexados por outro valor-chave).</p>
+                <img src="imgs/layout_4_fig_3.png" class="img-responsive center-block">
+                <p class="legenda-imagem">
+                  Figura 3 – Diagrama de classes do Collections Framework de Java <br>
+                  Fonte: Araújo (2010)
+                </p>
+                <p class="acessivel no-print">A imagem mostra um diagrama UML de classes. Ao topo consta a interface “Collection” e, abaixo, derivam interfaces “Set”, “List” e “Queue”. Implementando “Set” estão as classes concretas “HashSet” e “LinkedHashSet”. Derivando de “Set”, há a interface “SortedSet” e, implementando-a, abaixo, a classe “TreeSet”. Implementando List estão “ArrayList”, “Vector” e “LinkedList”. Implementando “Queue” estão “LinkedList” e “PriorityQueue”.</p>
+                <p>A interface <b>Collection</b> é a base dessas classes. Em seguida estão a interface <b>Set</b>, para estruturas que armazenem dados não duplicados, e a interface <b>List</b>, para coleções em geral, além de <b>Queue</b>, para fila.</p>  
+              </div>
+            </div>
+            <img src="imgs/separador.png" class="img-separador img-responsive center-block">
+            <div class="bloco">
+              <div class="container">
+                <h3>Interface List</h3>
+                <p>A interface <b>List&lt;T></b> traz operações gerais para manipulação de coleções, sendo alguns dos principais métodos:</p>
+                <div class="no-print" aria-hidden="true">
+                  <p>Clique ou toque para visualizar o conteúdo.</p>
+                  <div class='panel-group gaitinha' id='accordion04' role='tablist' aria-multiselectable='true'>
+                      <div class='panel panel-default'>
+                        <div class='panel-heading' role='tab' id='heading15'>
+                          <h3 class='panel-title'>
+                            <a role='button' data-toggle='collapse' data-parent='#accordion04' href='#collapse15' aria-expanded='false' aria-controls='collapse15'>
+                              add(T valor)
+                            </a>
+                          </h3>
+                        </div>
+                        <div id='collapse15' class='panel-collapse collapse in' role='tabpanel' aria-labelledby='heading15'>
+                          <div class='panel-body'>
+                            <p>Inclui um novo item ao final da lista (T é o tipo a ser definido pelo <i>generic</i> na classe).</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='panel panel-default'>
+                        <div class='panel-heading' role='tab' id='heading16'>
+                          <h3 class='panel-title'>
+                            <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion04' href='#collapse16' aria-expanded='false' aria-controls='collapse16'>
+                              add(int i, T valor)
+                            </a>
+                          </h3>
+                        </div>
+                        <div id='collapse16' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading16'>
+                          <div class='panel-body'>
+                            <p>Incluir um novo item no índice “i” da lista.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='panel panel-default'>
+                        <div class='panel-heading' role='tab' id='heading17'>
+                          <h3 class='panel-title'>
+                            <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion04' href='#collapse17' aria-expanded='false' aria-controls='collapse17'>
+                              get(int i)
+                            </a>
+                          </h3>
+                        </div>
+                        <div id='collapse17' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading17'>
+                          <div class='panel-body'>
+                            <p>Retorna o valor presente no índice “i” da lista.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='panel panel-default'>
+                        <div class='panel-heading' role='tab' id='heading18'>
+                          <h3 class='panel-title'>
+                            <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion04' href='#collapse18' aria-expanded='false' aria-controls='collapse18'>
+                              indexOf(Object o) 
+                            </a>
+                          </h3>
+                        </div>
+                        <div id='collapse18' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading18'>
+                          <div class='panel-body'>
+                            <p>Retorna o índice do objeto “o” na lista ou -1, caso ele não exista.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='panel panel-default'>
+                        <div class='panel-heading' role='tab' id='heading19'>
+                          <h3 class='panel-title'>
+                            <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion04' href='#collapse19' aria-expanded='false' aria-controls='collapse19'>
+                              isEmpty()
+                            </a>
+                          </h3>
+                        </div>
+                        <div id='collapse19' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading19'>
+                          <div class='panel-body'>
+                            <p>Retorna verdadeiro quando a lista está vazia.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='panel panel-default'>
+                        <div class='panel-heading' role='tab' id='heading20'>
+                          <h3 class='panel-title'>
+                            <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion04' href='#collapse20' aria-expanded='false' aria-controls='collapse20'>
+                              remove(int i)
+                            </a>
+                          </h3>
+                        </div>
+                        <div id='collapse20' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading20'>
+                          <div class='panel-body'>
+                            <p>Remove o item presente no índice “i” da lista. Retorna o valor removido.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='panel panel-default'>
+                        <div class='panel-heading' role='tab' id='heading21'>
+                          <h3 class='panel-title'>
+                            <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion04' href='#collapse21' aria-expanded='false' aria-controls='collapse21'>
+                              remove(Object o)
+                            </a>
+                          </h3>
+                        </div>
+                        <div id='collapse21' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading21'>
+                          <div class='panel-body'>
+                            <p>Remove o item “o” presente na lista; retorna falso se o objeto não está presente na lista.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='panel panel-default'>
+                        <div class='panel-heading' role='tab' id='heading22'>
+                          <h3 class='panel-title'>
+                            <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion04' href='#collapse22' aria-expanded='false' aria-controls='collapse22'>
+                              clear()
+                            </a>
+                          </h3>
+                        </div>
+                        <div id='collapse22' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading22'>
+                          <div class='panel-body'>
+                            <p>Exclui todos os itens da lista.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='panel panel-default'>
+                        <div class='panel-heading' role='tab' id='heading23'>
+                          <h3 class='panel-title'>
+                            <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion04' href='#collapse23' aria-expanded='false' aria-controls='collapse23'>
+                              size()
+                            </a>
+                          </h3>
+                        </div>
+                        <div id='collapse23' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading23'>
+                          <div class='panel-body'>
+                            <p>Retorna o número de itens presentes na lista.</p>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="acessivel print">
+                  <h4>add(T valor)</h4>
+                  <p>Inclui um novo item ao final da lista (T é o tipo a ser definido pelo <i>generic</i> na classe).</p>
+                  <h4>add(int i, T valor)</h4>
+                  <p>Incluir um novo item no índice “i” da lista.</p>
+                  <h4>get(int i)</h4>
+                  <p>Retorna o valor presente no índice “i” da lista.</p>
+                  <h4>indexOf(Object o) </h4>
+                  <p>Retorna o índice do objeto “o” na lista ou -1, caso ele não exista.</p>
+                  <h4>isEmpty()</h4>
+                  <p>Retorna verdadeiro quando a lista está vazia.</p>
+                  <h4>remove(int i)</h4>
+                  <p>Remove o item presente no índice “i” da lista. Retorna o valor removido.</p>
+                  <h4>remove(Object o)</h4>
+                  <p>Remove o item “o” presente na lista; retorna falso se o objeto não está presente na lista.</p>
+                  <h4>clear()</h4>
+                  <p>Exclui todos os itens da lista.</p>
+                  <h4>size()</h4>
+                  <p>Retorna o número de itens presentes na lista.</p>
+                </div>
+                <p>Naturalmente, qualquer classe que implemente direta ou indiretamente essa interface precisará implementar esses métodos.</p>
+                <p>As principais classes concretas de <b>List</b> são:</p>
+                <div class="no-print" aria-hidden="true">
+                  <p>Clique ou toque para visualizar o conteúdo.</p>
+                  <div class="row">
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                      <button type="button" class="btn-classes btn-classe01 center-block" data-toggle="modal" data-target="#modal-classe01"></button>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                      <button type="button" class="btn-classes btn-classe02 center-block" data-toggle="modal" data-target="#modal-classe02"></button>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                      <button type="button" class="btn-classes btn-classe03 center-block" data-toggle="modal" data-target="#modal-classe03"></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="acessivel print">
+                  <h3>ArrayList&lt;E></h3>
+                  <p>Seria possível dizer, de certo modo, que um objeto <b>ArrayList</b> é uma espécie de vetor sem limitações de tamanho, em que se pode incluir livremente um novo item na lista sem a preocupação com índices e com a capacidade do vetor. Também se pode excluir um item sem preocupações com índices e com realocação de valores.</p>
+                  <p>Veja a seguir um exemplo de código Java que utiliza <b>ArrayList</b> para incluir e excluir nomes em uma lista de clientes de uma loja. O programa permite a inclusão e a exclusão de nomes, mostrando o estado atual da lista a cada iteração.</p>
+                  <pre>
+                    <code>
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class ListaTeste {
+
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        String nome, operacao = "I";
+        int indice;
+
+        List&lt;String> clientes = new ArrayList&lt;String>();
+        
+        while(!operacao.equals("S"))
+        {
+            System.out.println("Digite a operação [I]ncluir, [E]xcluir, [S]air");
+            operacao = entrada.nextLine();
+            switch(operacao)
+            {
+                case "I":
+                    System.out.print("Digite o nome: ");
+                    nome = entrada.nextLine();
+                    clientes.add(nome); //incluindo um novo nome na lista
+                    break;
+                    
+                case "E":
+                    System.out.print("Digite o indice: ");
+                    indice = entrada.nextInt();
+                    if(indice >= 0 && indice &lt; clientes.size())//valida se o índice informado é válido
+                        clientes.remove(indice); //excluindo o valor que está no índice informado
+                    break;
+                
+                case "S":
+                    System.out.println("Encerrando o programa");
+                    break;
+            }
+            
+            System.out.println("A lista neste momento está assim: ");
+            for(int i = 0; i&lt;clientes.size(); i++)
+            {
+                //em ArrayList, não se usa [] para acessar um item, mas sim método get()
+                System.out.println(clientes.get(i));
+            }
+        }
+    }
+    
+}
+                    </code>
+                  </pre>
+                  <p>Note no exemplo que foi utilizada esta declaração:</p>
+                  <pre>
+                    <code>
+List&lt;String> clientes = new ArrayList&lt;String>();
+                    </code>
+                  </pre>
+                  <p>A declaração anterior foi utilizada ao invés da seguinte:</p>
+                  <pre>
+                    <code>
+ArrayList&lt;String> clientes = new ArrayList&lt;String>();
+                    </code>
+                  </pre>
+                  <p>Ambas, evidentemente, são corretas. A primeira declaração é possível por <b>ArrayList</b> implementar a interface <b>List</b>; no entanto, porque “clientes” está declarado com o tipo de <b>List</b>, só se terá acesso aos métodos declarados nessa interface. Caso se queira acessar métodos e atributos específicos da classe <b>ArrayList</b>, é preferível utilizar a segunda declaração.</p>
+                  <p>Internamente, um <b>ArrayList</b> cria um vetor e o usa para armazenar os valores. Quando o vetor já não é mais suficiente, a classe cria outro novo vetor e descarta o antigo. De qualquer maneira, ao usar a classe, o programador não precisa se preocupar com esses detalhes técnicos.</p>
+
+                  <h3>Vector&lt;E></h3>
+                  <p>Vector é uma alternativa que funciona quase exatamente igual ao <b>ArrayList</b>, com a diferença de ser <i>thread-safe</i>, ou seja, tem mecanismos que previnem problemas em aplicações <b>multithread</b>.</p>
+                  <p>Uma aplicação <i>multithread</i> é aquela em que duas operações executam de modo paralelo, e não sequencial, como normalmente se programa. Cada linha paralela de execução é chamada <i>thread</i>.</p>
+                  <p>Como analogia, pense em <i>multithread</i> como duas ou mais transações SQL rodando em paralelo. Alguns problemas semelhantes podem acontecer, como a utilização de um mesmo recurso por duas <i>threads</i> e o risco de uma sobrescrever a alteração que a outra realizou nesse recurso. O que o Vector faz é prevenir essas situações de risco, mas isso vem a um custo de processamento e, por isso, seu uso deve acontecer apenas quando o programa for realmente <i>multithread</i>, caso contrário, é preferível usar <b>ArrayList</b>.</p>
+                  <p>Sua aplicação é quase idêntica à do <b>ArrayList</b>. Você pode testar trocando, no exemplo anterior, o tipo do objeto “clientes” para <b>Vector&lt;String></b>.</p>
+
+                  <h3>LinkedList&lt;E></h3>
+                  <p><b>LinkedList (ou Listas Ligadas)</b> foi apresentada anteriormente no contexto de filas. De fato, <b>LinkedList</b> implementa tanto a interface <b>List&lt;E></b> quanto <b>Queue&lt;E></b>. Assim, ela também traz os métodos padrão de <b>List</b>. Veja no exemplo a seguir a <b>LinkedList</b> sendo usada como uma lista comum para incluir notas de alunos de maneira ordenada.</p>
+                  <pre>
+                    <code>
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Scanner;
+
+public class ListaLigadaTeste {
+
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+        List&lt;Float> notas = new LinkedList&lt;Float>();
+
+        notas.add(5.5f);
+        notas.add(7f);
+        notas.add(9.75f);
+        
+        float novaNota = entrada.nextFloat();
+        int indice = 0;
+
+        //busca a posição correta em que a nova nota deve ser incluída
+        while(notas.get(indice) &lt; novaNota && indice &lt; notas.size())
+        {
+            indice++;
+        }
+
+        if(indice &lt; notas.size()) //se não chegou ao final da lista...
+            notas.add(indice, novaNota);//...incluir na posição correta
+        else//senão...
+            notas.add(novaNota);//...incluir ao final da lista
+        
+        System.out.print("Notas em ordem: ");
+        for(int i = 0; i&lt;notas.size(); i++)
+        {
+            System.out.print(notas.get(i) + " ");
+        }
+    }
+    
+}
+                    </code>
+                  </pre>
+                  <p>Por estarem sendo utilizadas <b>List&lt;Float></b>, as operações são idênticas às utilizadas com <b>ArrayList</b>. Internamente, no entanto, as operações ocorrem como demonstradas nos dois <i>gifs</i> anteriores.</p>
+                </div>
+              </div>
+            </div>
+            <img src="imgs/separador.png" class="img-separador img-responsive center-block">
+            <div class="bloco azul">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <h3>Interface Set</h3>
+                    <p>A interface <b>Set</b> especifica operações para coleções de dados que não admitem duplicatas, ou seja, não pode haver valores repetidos no armazenamento. Essa estrutura permite uma pesquisa de dados mais rápida que <b>List</b>, mas a inclusão de dados é mais lenta. </p>
+                    <p>Os principais métodos especificados por <b>Set&lt;E></b> são os seguintes:</p>
+                    <div class="no-print" aria-hidden="true">
+                      <p>Clique ou toque para visualizar o conteúdo.</p>
+                      <div class='panel-group gaitinha' id='accordion05' role='tablist' aria-multiselectable='true'>
+                          <div class='panel panel-default'>
+                            <div class='panel-heading' role='tab' id='heading24'>
+                              <h3 class='panel-title'>
+                                <a role='button' data-toggle='collapse' data-parent='#accordion05' href='#collapse24' aria-expanded='false' aria-controls='collapse24'>
+                                  add(E e)
+                                </a>
+                              </h3>
+                            </div>
+                            <div id='collapse24' class='panel-collapse collapse in' role='tabpanel' aria-labelledby='heading24'>
+                              <div class='panel-body'>
+                                <p>Inclui o objeto “e” na coleção, caso o valor já não esteja presente.</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class='panel panel-default'>
+                            <div class='panel-heading' role='tab' id='heading25'>
+                              <h3 class='panel-title'>
+                                <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion05' href='#collapse25' aria-expanded='false' aria-controls='collapse25'>
+                                  clear()
+                                </a>
+                              </h3>
+                            </div>
+                            <div id='collapse25' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading25'>
+                              <div class='panel-body'>
+                                <p>Exclui todos os itens da coleção.</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class='panel panel-default'>
+                            <div class='panel-heading' role='tab' id='heading26'>
+                              <h3 class='panel-title'>
+                                <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion05' href='#collapse26' aria-expanded='false' aria-controls='collapse26'>
+                                  contains(Object o)
+                                </a>
+                              </h3>
+                            </div>
+                            <div id='collapse26' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading26'>
+                              <div class='panel-body'>
+                                <p>Retorna verdadeiro se o objeto “o” está presente na coleção.</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class='panel panel-default'>
+                            <div class='panel-heading' role='tab' id='heading27'>
+                              <h3 class='panel-title'>
+                                <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion05' href='#collapse27' aria-expanded='false' aria-controls='collapse27'>
+                                  remove(Object o)
+                                </a>
+                              </h3>
+                            </div>
+                            <div id='collapse27' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading27'>
+                              <div class='panel-body'>
+                                <p>Remove o objeto “o” da coleção, caso esteja presente.</p>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="acessivel print">
+                      <h4>add(E e)</h4>
+                      <p>Inclui o objeto “e” na coleção, caso o valor já não esteja presente.</p>
+                      <h4>clear()</h4>
+                      <p>Exclui todos os itens da coleção.</p>
+                      <h4>contains(Object o)</h4>
+                      <p>Retorna verdadeiro se o objeto “o” está presente na coleção.</p>
+                      <h4>remove(Object o)</h4>
+                      <p>Remove o objeto “o” da coleção, caso esteja presente.</p>
+                    </div>
+                    <p>As principais classes concretas de <b>Set</b> são:</p>
+                    <div class="no-print" aria-hidden="true">
+                      <p>Clique ou toque para visualizar o conteúdo.</p>
+                      <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <button type="button" class="btn-classesSet btn-classeSet01 center-block" data-toggle="modal" data-target="#modal-classeSet01"></button>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <button type="button" class="btn-classesSet btn-classeSet02 center-block" data-toggle="modal" data-target="#modal-classeSet02"></button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="acessivel print">
+                      <h3>HashSet&lt;E></h3>
+                      <p><b>HashSet</b> são coleções que não garantem a ordem dos elementos – ou seja, a ordem deles pode mudar a cada inclusão –, mas que mantêm eficiência constante na busca por valores, independentemente da quantidade de itens incluídos. Internamente, a classe usa <b>HashTable</b> (ou tabelas de dispersão), uma estrutura que associa uma chave a um valor e que permite a eficiência na busca.</p>
+                      <p>O exemplo a seguir mostra o uso de <b>HashSet</b> para cadastrar títulos de livros e depois permitir uma busca nessa coleção.</p>
+                      <pre>
+                        <code>
+    import java.util.HashSet;
+    import java.util.Scanner;
+    import java.util.Set;
+    
+    public class HashsetTeste {
+    
+        public static void main(String[] args) {
+            Scanner entrada = new Scanner(System.in);
+            Set&lt;String> livros = new HashSet&lt;String>();
+            String nomeLivro;
+            
+            System.out.println("Primeiro inclua 7 títulos de livros");
+            for(int i=0; i&lt;7; i++)
+            {
+                //incluindo novo valor informado pelo usuário
+                nomeLivro = entrada.nextLine();
+                livros.add(nomeLivro);
+                
+                System.out.println("> Coleção agora: ");
+                for(String l : livros)
+                {
+                    System.out.println(l);
+                }
+            }
+            
+            System.out.println("Agora faça buscas. Digite PARE para encerrar");
+            nomeLivro = entrada.nextLine();
+            while(!nomeLivro.equals("PARE"))
+            {
+                //buscando o valor informado no HashSet
+                if(livros.contains(nomeLivro))
+                {
+                    System.out.println("Valor '" + nomeLivro + "' foi encontrado.");
+                }
+                else
+                {
+                    System.out.println("Valor '" + nomeLivro + "' não foi encontrado.");
+                }
+                
+                nomeLivro = entrada.nextLine();
+            }
+            
+        }
+        
+    }
+                        </code>
+                      </pre>
+                      <p>Teste o código Java apresentado. Ao incluir novos valores, perceba que eles nem sempre ficarão na ordem em que você os informou. Isso é natural com <b>HashSet</b>.</p>
+                      <p>O laço <i>for-each</i>, presente no código anterior, será abordado em seguida, neste conteúdo.</p>
+
+                      <h3>TreeSet&lt;E></h3>
+                      <p>A operação com <b>TreeSet</b> é semelhante à do <b>HashSet</b>, com a diferença de que, ao incluir um novo valor, a coleção é reordenada. Assim, <b>TreeSet</b> mantém sempre os valores em ordem. Internamente a classe utiliza uma estrutura de dados chamada árvore rubro-negra (<i>red-black tree</i>), que auxilia na eficiência da ordenação dos dados, por isso o nome <b>TreeSet</b>.</p>
+                      <p>Para testar, use o mesmo exemplo anterior, trocando apenas a declaração do objeto “livros” para o tipo <b>TreeSet</b>:</p>
+                      <pre>
+                        <code>
+    Set&lt;String> livros = new TreeSet&lt;String>();
+                        </code>
+                      </pre>
+                      <p>Ao executar o código, note que, após cada inclusão, a coleção se mantém ordenada.</p>
+                      <div class="caixa-destaque borda-primaria-03 icone importante">
+                        <p>Ao utilizar classes próprias (alguma classe criada por você) com <b>TreeSet</b>, será necessário implementar a interface <b>Comparable</b> e desenvolver o método <b>compareTo()</b>, que deve retornar -1 se o valor informado for anterior, 0 se for igual ou 1 se for posterior ao objeto atual. Assim, se você tivesse uma classe <b>Livro</b> para o exemplo anterior, com atributos “título” e “autor”, ela precisaria ficar mais ou menos assim:</p>
+                        <pre>
+                          <code>
+    public class Livro implements Comparable&lt;Livro>{
+        public String titulo;
+        public String autor;
+    
+        public int compareTo(Livro o) {
+            return this.titulo.compareTo(o.titulo);
+        }
+    }
+                          </code>
+                        </pre>
+                        <p>É preciso implementar <b>compareTo()</b> comparando o título do objeto com o do livro informado por parâmetro. Internamente, <b>TreeSet</b> utiliza esse método <b>compareTo()</b> para a ordenação.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <img src="imgs/separador.png" class="img-separador img-responsive center-block">
+            <div class="bloco">
+              <div class="container">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <h3>Laço <i>for each</i></h3>
+                  <p>O laço <i>for</i> (“para”) é utilizado classicamente para iteração sobre os elementos de vetores. A partir da padronização de coleções, as linguagens de programação introduziram um novo tipo de laço específico para elas, normalmente chamado de <i>for-each</i> (“para cada”). A sintaxe no Java é a seguinte:</p>
+                  <pre>
+                    <code>
+<span style="color: #0000aa">for</span>(Tipo variavel : lista)
+{
+    &lt;código&gt;
+} 
+                    </code>
+                  </pre>
+                  <p>Um laço <i>for-each</i> itera automaticamente sobre os elementos de uma lista, sem necessidade de manipular índices. Em <i>for-each</i>, uma variável local é declarada com o tipo dos elementos da lista e é utilizada para receber, a cada iteração do laço, o valor do item atual na lista, passando ao próximo item no fim da iteração. É o que acontece no exemplo de uso do <b>HashSet</b>, no seguinte trecho:</p>
+                  <pre>
+                    <code>
+<span style="color: #0000aa">for</span>(String l : livros)
+{
+    System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(l);
+}
+                    </code>
+                  </pre>
+                  <p><b>HashSet</b> não usa índices para referenciar seus valores. Assim, o laço <i>for</i> não seria suficiente para percorrer a coleção de valores, o que se torna possível e simples com <i>for-each</i>.</p>
+                  <p>O trecho a seguir mostra um laço <i>for-each</i> aplicado a um vetor simples para mostrar o dobro de cada valor armazenado.</p>
+                  <pre>
+                    <code>
+<span style="color: #00aaaa">int</span> valores[] = {<span style="color: #009999">7</span>, <span style="color: #009999">8</span>, <span style="color: #009999">4</span>, <span style="color: #009999">1</span>, <span style="color: #009999">5</span>};
+<span style="color: #0000aa">for</span>(<span style="color: #00aaaa">int</span> valor : valores)
+{
+    valor = valor * <span style="color: #009999">2</span>;
+    System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(valor);
+}
+                    </code>
+                  </pre>
+                  <p>O que faz o <i>for-each</i> funcionar é um objeto iterator presente em cada objeto <b>Collection</b>. Ele permite que se percorra item a item de uma coleção e que se verifique se já chegou ao fim dela. É possível usar diretamente via código o <b>Iterator</b> (todo <b>Collection</b> tem um método chamado <b>iterator()</b>, que retorna seu objeto de iteração), mas o laço <i>for-each</i> facilita muito essa operação, além de deixar o código mais limpo.</p>
+                </div>
+              </div>
+            </div>
+            <img src="imgs/separador.png" class="img-separador img-responsive center-block">
+            <div class="bloco-final">
+              <div class="container">
+                <h3>Estruturas Java</h3>
+                <p>Assista agora os vídeos que explicam as estruturas de dados implementadas no JAVA</p>
+
+                <iframe class="center-block hidden-xs" width="640" height="360" src="https://www.youtube.com/embed/g13MIiB2c4Q" title="TDS - UC 06 - Estruturas Java - 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe class="center-block visible-xs" width="320" height="180" src="https://www.youtube.com/embed/g13MIiB2c4Q" title="TDS - UC 06 - Estruturas Java - 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <iframe class="center-block hidden-xs mt-40" width="640" height="360" src="https://www.youtube.com/embed/jXpNEgkzm8o" title="TDS - UC 06 - Estruturas Java - 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe class="center-block visible-xs mt-40" width="320" height="180" src="https://www.youtube.com/embed/jXpNEgkzm8o" title="TDS - UC 06 - Estruturas Java - 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                <iframe class="center-block hidden-xs mt-40" width="640" height="360" src="https://www.youtube.com/embed/1ECDqyY14t0" title="TDS - UC 06 - Estruturas Java - 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe class="center-block visible-xs mt-40" width="320" height="180" src="https://www.youtube.com/embed/1ECDqyY14t0" title="TDS - UC 06 - Estruturas Java - 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+
+                <h3 class="mt-60">Encerramento</h3>
+                <div class="row mt-40">
+                  <div class="col-sm-2 col-xs-12">
+                    <img src="imgs/layout_4_bandeira_finalizar.png" class="img-responsive center-block">
+                  </div>
+                  <div class="col-sm-10 col-xs-12">
+                    <p>Você pode perceber a partir desse conteúdo que Java traz muitas implementações de algoritmos e estruturas clássicas, o que é uma boa ajuda ao programador – ao invés de construir toda a regra para uma pilha, por exemplo, basta usar a classe <b>Stack</b>.</p>
+                  </div>
+                </div>
+                <p>É importante seguir pesquisando a biblioteca Java, que traz mais uma variedade de estruturas de dados ou de interfaces que podem ser úteis para determinados problemas. Em algumas situações, no entanto, será necessário implementar a estrutura. Daí a importância de saber a sua utilidade e seu funcionamento, verificando se ela se aplica ou não à situação que se deseja desenvolver.</p>
+
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        
+<!-- - - - - - - - - - - - - - - - não alterar abaixo- - - - - - - - - - - - -->
+        <!--
+        <footer class="text-center no-print">
+          <ul class="pagination">
+
+          </ul>
+        </footer>
+        -->
+
+
+        <!-- Modais 100% -->
+        <div class="modal modal-100 fade" id="modal-painel01" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content no-print">
+              <div class="modal-header" style="padding-top: 30px;">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">
+                  <div class="container">Pilha</div>
+                </h3>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <h4>Conceitos</h4>
+                  <p><b>Pilhas são listas de valores que simulam uma pilha de objetos</b>. Pense, por exemplo, em pratos empilhados em um restaurante que oferece serviço de bufê. Você pegará o prato do topo dessa pilha, e não o da base. Os funcionários do restaurante farão a reposição incluindo novos pratos acima do que está no topo.</p>
+                  <p>Da mesma maneira acontece com uma estrutura de dados pilha: um valor, quando é incluído, vai ao topo da pilha e, quando é retirado, também sai do topo. Daí a denominação comum de que se trata de uma estrutura LIFO (<i>last in, fist out</i>, ou “último a entrar, primeiro a sair”). Isso significa que o último valor incluído é o primeiro a ser excluído.</p>
+                  <p>As pilhas utilizam apenas as operações de empilhar (geralmente chamado <i>push</i>), para incluir dados, e desempilhar (<i>pop</i>), para excluir; geralmente ainda acompanham de um método <i>peek</i>, usado para verificar qual valor está no topo da pilha sem retirá-lo, como mostra o <i>gif</i> a seguir:</p>
+                  <img src="imgs/01.gif" class="img-responsive center-block">
+                  <p class="acessivel no-print">O gif exemplifica uma pilha. Ao centro, há três caixas: uma com número 3, abaixo dela, número 2, e, abaixo, número 1. Ao lado de “3” está a palavra “topo” e, ao lado de “1”, a palavra “base”. À esquerda, surge a expressão “push()” e uma caixa com o número 4. Em seguida, essa caixa se move até acima de “3” e “topo” passa para o lado de “4”. Depois apaga-se “pop()” e surge a expressão “push()”. O “4” sai do topo da pilha e a palavra “topo” volta a descer para “3”.</p>
+                  <h4>Usabilidade</h4>
+                  <p>Um uso clássico de pilhas acontece no próprio sistema operacional. Processos de sistema geralmente iniciam outros processos, que iniciam outros. Constrói-se assim uma pilha de processos, uma vez que o último processo iniciado deve ser finalizado para que o anterior (que chamou o último) possa ser processado ou finalizado, e assim por diante. </p>
+                  <p>Outra aplicação clássica de pilhas acontece nos compiladores, para verificar a abertura e o fechamento de parênteses em uma expressão lógica, por exemplo. Assim, por meio de uma pilha de caracteres, seria possível validar a seguinte expressão:</p>
+                  <pre>
+                    <code>
+<span class="code3">(</span>x * <span class="code2">(</span>y - 2<span class="code2">)</span> / <span class="code1">(</span>10 + z<span class="code1">)</span><span class="code3">)</span>)
+                    </code>
+                  </pre>
+                  <p>É possível percorrer a expressão e usar pilha para empilhar valor ao encontrar o caractere “<b>(</b>” e desempilhar ao encontrar o caractere “<b>)</b>”. Se a expressão estiver correta, a pilha estará vazia ao final. No exemplo mostrado, esse algoritmo indicaria que a expressão está incorreta, pois, ao alcançar o último caractere, a pilha já estará vazia.</p>
+                  <p>Em qualquer situação análoga em que a última informação incluída tenha que ser processada antes que a anteriormente incluída, é possível aplicar pilhas.</p>
+                  <h4>Aplicação</h4>
+                  <p>Java implementa pilha por meio da classe <b>Stack</b>, presente no pacote <b>java.util</b>. A declaração de um objeto <b>Stack</b> de números inteiros fica como o exemplo a seguir:</p>
+                  <pre>
+                    <code>
+Stack&lt;Integer&gt; pilha = <span style="color: #0000aa">new</span> Stack&lt;Integer&gt;();
+                    </code>
+                  </pre>
+                  <p>Os principais métodos de <b>Stack</b> são:</p>
+                  <div class="no-print" aria-hidden="true">
+                    <p>Clique ou toque para visualizar o conteúdo.</p>
+                    <div class='panel-group gaitinha' id='accordion01' role='tablist' aria-multiselectable='true'>
+                        <div class='panel panel-default'>
+                          <div class='panel-heading' role='tab' id='heading01'>
+                            <h3 class='panel-title'>
+                              <a role='button' data-toggle='collapse' data-parent='#accordion01' href='#collapse01' aria-expanded='false' aria-controls='collapse01'>
+                                empty()
+                              </a>
+                            </h3>
+                          </div>
+                          <div id='collapse01' class='panel-collapse collapse in' role='tabpanel' aria-labelledby='heading01'>
+                            <div class='panel-body'>
+                              <p>Retorna verdadeiro se a pilha está vazia.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class='panel panel-default'>
+                          <div class='panel-heading' role='tab' id='heading02'>
+                            <h3 class='panel-title'>
+                              <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion01' href='#collapse02' aria-expanded='false' aria-controls='collapse02'>
+                                peek()
+                              </a>
+                            </h3>
+                          </div>
+                          <div id='collapse02' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading02'>
+                            <div class='panel-body'>
+                              <p>Retorna o valor presente no topo da pilha.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class='panel panel-default'>
+                          <div class='panel-heading' role='tab' id='heading03'>
+                            <h3 class='panel-title'>
+                              <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion01' href='#collapse03' aria-expanded='false' aria-controls='collapse03'>
+                                pop()
+                              </a>
+                            </h3>
+                          </div>
+                          <div id='collapse03' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading03'>
+                            <div class='panel-body'>
+                              <p>Retira o item do topo, retornando seu valor.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class='panel panel-default'>
+                          <div class='panel-heading' role='tab' id='heading04'>
+                            <h3 class='panel-title'>
+                              <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion01' href='#collapse04' aria-expanded='false' aria-controls='collapse04'>
+                                push(T valor)
+                              </a>
+                            </h3>
+                          </div>
+                          <div id='collapse04' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading04'>
+                            <div class='panel-body'>
+                              <p>Adiciona um novo elemento do tipo T (definido pelo <i>generics</i>) no topo da pilha.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class='panel panel-default'>
+                          <div class='panel-heading' role='tab' id='heading05'>
+                            <h3 class='panel-title'>
+                              <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion01' href='#collapse05' aria-expanded='false' aria-controls='collapse05'>
+                                search(Object valor)
+                              </a>
+                            </h3>
+                          </div>
+                          <div id='collapse05' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading05'>
+                            <div class='panel-body'>
+                              <p>Retorna a posição de determinado elemento.</p>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="acessivel print">
+                    <h4>empty()</h4>
+                    <p>Retorna verdadeiro se a pilha está vazia.</p>
+                    <h4>peek()</h4>
+                    <p>Retorna o valor presente no topo da pilha.</p>
+                    <h4>pop()</h4>
+                    <p>Retira o item do topo, retornando seu valor.</p>
+                    <h4>push(T valor)</h4>
+                    <p>Adiciona um novo elemento do tipo T (definido pelo <i>generics</i>) no topo da pilha.</p>
+                    <h4>search(Object valor)</h4>
+                    <p>Retorna a posição de determinado elemento.</p>
+                  </div>
+                  <p>Imagine que você precisa implementar um código para organizar e determinar quais carros devem sair de um caminhão-cegonha. Os carros estão enfileirados, mas o último a entrar será o primeiro a sair.</p>
+                  <p>Nesta aplicação, será solicitado o nome de cada carro e depois deverá ser apresentada a ordem em que eles sairão do caminhão. Para simplificar, considere apenas um dos andares do veículo de transporte.</p>
+                  <img src="imgs/layout_4_fig_1.png" class="img-responsive center-block">
+                  <p class="legenda-imagem">
+                    Figura 1 – Caminhão-cegonha <br>
+                    Fonte: Ohana Transportes de Veículos (s.d.)
+                  </p>
+                  <p class="acessivel no-print">A imagem mostra um caminhão-cegonha carregando vários carros, um atrás do outro, em dois andares.</p>
+                  <p>Crie um novo projeto Java ou reescreva o método <b>main()</b> de algum já existente com o seguinte código.</p>
+                  <pre>
+                    <code>
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.ArrayList</span>;
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.Date</span>;
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.Scanner</span>;
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.Stack</span>;
+
+<span style="color: #0000aa">public</span> <span style="color: #0000aa">class</span> <span style="color: #00aa00;">TesteStack</span> {
+
+    <span style="color: #0000aa">public</span> <span style="color: #0000aa">static</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">main</span>(String[] args) {
+        Scanner entrada = <span style="color: #0000aa">new</span> Scanner(System.<span style="color: #1e90ff">in</span>);
+        String carro, continuar = <span style="color: #aa5500">&quot;S&quot;</span>;
+        
+        <span style="color: #aaaaaa; font-style: italic">//declaração da pilha</span>
+        Stack&lt;String&gt; cegonha = <span style="color: #0000aa">new</span> Stack&lt;String&gt;();
+        
+        <span style="color: #0000aa">while</span>(!continuar.<span style="color: #1e90ff">equals</span>(<span style="color: #aa5500">&quot;N&quot;</span>))
+        {
+            System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(<span style="color: #aa5500">&quot;Digite o nome do próximo carro a entrar no caminhão cegonha: &quot;</span>);
+            carro = entrada.<span style="color: #1e90ff">nextLine</span>();
+            <span style="color: #aaaaaa; font-style: italic">//incluindo o carro na pilha</span>
+            cegonha.<span style="color: #1e90ff">push</span>(carro);
+            System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(<span style="color: #aa5500">&quot;Continuar informando dados? S/N&quot;</span>);
+            continuar = entrada.<span style="color: #1e90ff">nextLine</span>();
+        }
+        
+        System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(<span style="color: #aa5500">&quot;Retirar os carros nesta ordem:&quot;</span>);
+        <span style="color: #0000aa">while</span>(!cegonha.<span style="color: #1e90ff">empty</span>()) <span style="color: #aaaaaa; font-style: italic">//enquanto ainda há elementos na pilha</span>
+        {
+            <span style="color: #aaaaaa; font-style: italic">//retira o item do topo </span>
+            carro = cegonha.<span style="color: #1e90ff">pop</span>();
+            System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(carro);
+        }
+    }
+    
+}
+                    </code>
+                  </pre>
+                  <p>Teste com os valores “fusca”, “chevette” e “opala” para verificar que o resultado final será “opala, chevette, fusca”.</p>
+                  <div class="caixa-destaque borda-primaria-03 icone desafio">
+                    <p>Implemente um programa Java em que o usuário informará números inteiros. Inclua o primeiro número em uma pilha e inclua os próximos apenas se for maior que último número informado. Depois, desempilhe os valores mostrando na tela cada um em sequência.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="botao borda-primaria-03" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal modal-100 fade" id="modal-painel02" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content no-print">
+              <div class="modal-header" style="padding-top: 30px;">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">
+                  <div class="container">Fila</div>
+                </h3>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <h4>Conceitos</h4>
+                  <p>O que diferencia uma pilha de uma fila é a ordem em que os elementos são incluídos e excluídos da estrutura. Aqui, o primeiro valor incluído será o primeiro a ser retirado (FIFO – <i>first in, first out</i>). </p>
+                  <p>As filas necessitam basicamente das operações de enfileirar (<i>enqueue</i> ou <i>add</i>) e desenfileirar (<i>dequeue</i> ou <i>remove</i>). O <i>gif</i> a seguir demonstra a inclusão do dado após o último elemento da fila; <b>remove()</b> exclui o primeiro item da fila.</p>
+                  <img src="imgs/03.gif" class="img-responsive center-block">
+                  <p class="acessivel no-print">O gif mostra os números 1, 2 e 3 em caixas, uma ao lado da outra. Surge a expressão “add()” acima e uma caixa “4” surge à direita de “3”. Apaga-se a expressão “add()” e surge “remove()”; a caixa “1”, mais à esquerda de todas, então se apaga.</p>
+                  <h4>Usabilidade</h4>
+                  <img src="imgs/layout_4_aguardando_atendimento.png" class="img-responsive center-block">
+                  <p>As situações que envolvem o uso de fila são intuitivas. Uma fila de pessoas esperando para serem atendidas em um consultório médico, por exemplo, pode se beneficiar dessa estrutura de dados. Uma lista de documentos enviados para impressão também certamente implementa uma estrutura de dados fila, uma vez que o primeiro documento enviado deve ser também o primeiro a ser impresso e a ordem dos documentos deve ser preservada.</p>
+                  <h4>Aplicação</h4>
+                  <p>A interface <b>Queue</b> da biblioteca padrão Java representa uma fila e está presente no pacote <b>java.util</b>. Ela traz os seguintes métodos:</p>
+                  <div>
+                    <p>Clique ou toque para visualizar o conteúdo.</p>
+                    <div class='panel-group gaitinha' id='accordion02' role='tablist' aria-multiselectable='true'>
+                        <div class='panel panel-default'>
+                          <div class='panel-heading' role='tab' id='heading06'>
+                            <h3 class='panel-title'>
+                              <a role='button' data-toggle='collapse' data-parent='#accordion02' href='#collapse06' aria-expanded='false' aria-controls='collapse06'>
+                                add(T valor)
+                              </a>
+                            </h3>
+                          </div>
+                          <div id='collapse06' class='panel-collapse collapse in' role='tabpanel' aria-labelledby='heading06'>
+                            <div class='panel-body'>
+                              <p>Inclui um valor (do tipo genérico T) na fila.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class='panel panel-default'>
+                          <div class='panel-heading' role='tab' id='heading07'>
+                            <h3 class='panel-title'>
+                              <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion02' href='#collapse07' aria-expanded='false' aria-controls='collapse07'>
+                                remove()
+                              </a>
+                            </h3>
+                          </div>
+                          <div id='collapse07' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading07'>
+                            <div class='panel-body'>
+                              <p>Remove o último elemento da fila, retornando seu valor.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class='panel panel-default'>
+                          <div class='panel-heading' role='tab' id='heading08'>
+                            <h3 class='panel-title'>
+                              <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion02' href='#collapse08' aria-expanded='false' aria-controls='collapse08'>
+                                peek()
+                              </a>
+                            </h3>
+                          </div>
+                          <div id='collapse08' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading08'>
+                            <div class='panel-body'>
+                              <p>Retorna o primeiro elemento da fila (o próximo a ser utilizado).</p>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="acessivel print">
+                    <h4>add(T valor)</h4>
+                    <p>Inclui um valor (do tipo genérico T) na fila.</p>
+                    <h4>remove()</h4>
+                    <p>Remove o último elemento da fila, retornando seu valor.</p>
+                    <h4>peek()</h4>
+                    <p>Retorna o primeiro elemento da fila (o próximo a ser utilizado).</p>
+                  </div>
+                  <p>Por ser interface, <b>Queue</b> não pode ser instanciada diretamente. Ao invés disso, é necessário usar alguma de suas implementações.</p>
+                  <p>Uma implementação de uso mais direto e que, na verdade, implementa outro tipo de estrutura de dados é a classe <b>LinkedList</b>. Essa classe implementa a interface <b>Deque</b> (<i>double ended queue</i>), que estende a interface <b>Queue</b>.</p>
+                  <p>A interface <b>Deque</b> será detalhada em seguida neste material.</p>
+                  <p>Como um primeiro exemplo, será implementada uma fila com nomes de pessoas a serem atendidas em uma clínica. A ordem de chegada delas será a ordem em que serão atendidas.</p>
+                  <pre>
+                    <code>
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.LinkedList</span>;
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.Queue</span>;
+
+<span style="color: #0000aa">public</span> <span style="color: #0000aa">class</span> <span style="color: #00aa00;">TesteQueue</span> {
+
+    <span style="color: #0000aa">public</span> <span style="color: #0000aa">static</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">main</span>(String[] args) {
+        Queue&lt;String&gt; fila = <span style="color: #0000aa">new</span> LinkedList&lt;String&gt;();
+        
+        fila.<span style="color: #1e90ff">add</span>(<span style="color: #aa5500">&quot;Maria&quot;</span>);
+        fila.<span style="color: #1e90ff">add</span>(<span style="color: #aa5500">&quot;Aparecida&quot;</span>);
+        fila.<span style="color: #1e90ff">add</span>(<span style="color: #aa5500">&quot;João&quot;</span>);
+        fila.<span style="color: #1e90ff">add</span>(<span style="color: #aa5500">&quot;Tonico&quot;</span>);
+        
+        <span style="color: #00aaaa">int</span> ordem = <span style="color: #009999">1</span>;
+        <span style="color: #0000aa">while</span>(!fila.<span style="color: #1e90ff">isEmpty</span>())
+        {
+            String nome = fila.<span style="color: #1e90ff">remove</span>();
+            System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(ordem + <span style="color: #aa5500">&quot;º a ser atendido(a):&quot;</span> + nome);
+            ordem++;
+        }
+    }
+    
+}
+                    </code>
+                  </pre>
+                  <p>O resultado desse código será o seguinte:</p>
+                  <img src="imgs/layout_4_navegador_1.png" class="img-responsive center-block">
+                  <div class="acessivel no-print">
+                    <code>
+                      1º a ser atendido(a):Maria <br>
+                      2º a ser atendido(a):Aparecida <br>
+                      3º a ser atendido(a):João <br>
+                      4º a ser atendido(a):Tonico
+                    </code>
+                  </div>
+                  <p>Essa é a implementação mais tradicional para fila. No entanto, existe ainda outra classe que implementa diretamente a interface <b>Queue</b> e que trabalha de uma maneira mais específica. <b>PriorityQueue</b> é uma fila que mantém sempre ordenados os seus elementos. Aplique <b>PriorityQueue</b> ao exemplo anterior e compare seu resultado. A alteração necessária no código aparece em destaque.</p>
+                  <pre>
+                    <code>
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.PriorityQueue</span>;
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.Queue</span>;
+
+<span style="color: #0000aa">public</span> <span style="color: #0000aa">class</span> <span style="color: #00aa00;">TesteQueue</span> {
+
+    <span style="color: #0000aa">public</span> <span style="color: #0000aa">static</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">main</span>(String[] args) {
+        Queue&lt;String&gt; fila = <span style="color: #0000aa">new</span> PriorityQueue&lt;String&gt;();
+        
+        fila.<span style="color: #1e90ff">add</span>(<span style="color: #aa5500">&quot;Maria&quot;</span>);
+        fila.<span style="color: #1e90ff">add</span>(<span style="color: #aa5500">&quot;Aparecida&quot;</span>);
+        fila.<span style="color: #1e90ff">add</span>(<span style="color: #aa5500">&quot;João&quot;</span>);
+        fila.<span style="color: #1e90ff">add</span>(<span style="color: #aa5500">&quot;Tonico&quot;</span>);
+        
+        <span style="color: #00aaaa">int</span> ordem = <span style="color: #009999">1</span>;
+        <span style="color: #0000aa">while</span>(!fila.<span style="color: #1e90ff">isEmpty</span>())
+        {
+            String nome = fila.<span style="color: #1e90ff">remove</span>();
+            System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(ordem + <span style="color: #aa5500">&quot;º a ser atendido(a):&quot;</span> + nome);
+            ordem++;
+        }
+    }
+    
+}
+                    </code>
+                  </pre>
+                  <p>Ao executar o programa, o resultado obtido será o seguinte:</p>
+                  <img src="imgs/layout_4_navegador_2.png" class="img-responsive center-block">
+                  <div class="acessivel no-print">
+                    <code>
+                      1º a ser atendido(a):Aparecida <br>
+                      2º a ser atendido(a):João <br>
+                      3º a ser atendido(a):Maria <br>
+                      4º a ser atendido(a):Tonico
+                    </code>
+                  </div>
+                  <p>Note que, nesse caso, os pacientes seriam atendidos pela ordem alfabética de seus nomes, o que não seria adequado para a clínica, mas que serviu aqui para se entender a diferença entre o <b>LinkedList</b> e o <b>PriorityQueue</b>.</p>
+                  <div class="caixa-destaque icone desafio">
+                    <p>Escreva um programa Java que implemente uma fila de mensagens enviadas em um chat. Primeiro, obtenha do usuário ao menos cinco mensagens textuais e, ao final, apresente e descarte a sequência de mensagens na ordem correta.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="botao borda-primaria-03" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal modal-100 fade" id="modal-painel03" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content no-print">
+              <div class="modal-header" style="padding-top: 30px;">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">
+                  <div class="container">Deque/Deck</div>
+                </h3>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <p>Anteriormente, foi mencionado que <b>LinkedList</b> implementa uma interface chamada <b>Deque</b>. Trata-se de uma estrutura de dados específica que traz flexibilidade à fila, permitindo a inclusão e retirada tanto do início quanto do fim da fila.</p>
+                  <p>Para isso, a interface oferece os seguintes métodos (evidentemente implementados por <b>LinkedList</b>):</p>
+                  <div>
+                    <p>Clique ou toque para visualizar o conteúdo.</p>
+                    <div class='panel-group gaitinha' id='accordion03' role='tablist' aria-multiselectable='true'>
+                        <div class='panel panel-default'>
+                          <div class='panel-heading' role='tab' id='heading09'>
+                            <h3 class='panel-title'>
+                              <a role='button' data-toggle='collapse' data-parent='#accordion03' href='#collapse09' aria-expanded='false' aria-controls='collapse09'>
+                                addFirst()
+                              </a>
+                            </h3>
+                          </div>
+                          <div id='collapse09' class='panel-collapse collapse in' role='tabpanel' aria-labelledby='heading09'>
+                            <div class='panel-body'>
+                              <p>Adiciona um elemento ao início da fila.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class='panel panel-default'>
+                          <div class='panel-heading' role='tab' id='heading10'>
+                            <h3 class='panel-title'>
+                              <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion03' href='#collapse10' aria-expanded='false' aria-controls='collapse10'>
+                                addLast()
+                              </a>
+                            </h3>
+                          </div>
+                          <div id='collapse10' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading10'>
+                            <div class='panel-body'>
+                              <p>Adiciona um elemento ao fim da fila.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class='panel panel-default'>
+                          <div class='panel-heading' role='tab' id='heading11'>
+                            <h3 class='panel-title'>
+                              <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion03' href='#collapse11' aria-expanded='false' aria-controls='collapse11'>
+                                removeFirst()
+                              </a>
+                            </h3>
+                          </div>
+                          <div id='collapse11' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading11'>
+                            <div class='panel-body'>
+                              <p>Remove o elemento do início da fila.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class='panel panel-default'>
+                          <div class='panel-heading' role='tab' id='heading12'>
+                            <h3 class='panel-title'>
+                              <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion03' href='#collapse12' aria-expanded='false' aria-controls='collapse12'>
+                                removeLast()
+                              </a>
+                            </h3>
+                          </div>
+                          <div id='collapse12' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading12'>
+                            <div class='panel-body'>
+                              <p>Remove o elemento do fim da fila.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class='panel panel-default'>
+                          <div class='panel-heading' role='tab' id='heading13'>
+                            <h3 class='panel-title'>
+                              <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion03' href='#collapse13' aria-expanded='false' aria-controls='collapse13'>
+                                getFirst()
+                              </a>
+                            </h3>
+                          </div>
+                          <div id='collapse13' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading13'>
+                            <div class='panel-body'>
+                              <p>Retorna o elemento no início da fila.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class='panel panel-default'>
+                          <div class='panel-heading' role='tab' id='heading14'>
+                            <h3 class='panel-title'>
+                              <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion03' href='#collapse14' aria-expanded='false' aria-controls='collapse14'>
+                                getLast()
+                              </a>
+                            </h3>
+                          </div>
+                          <div id='collapse14' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading14'>
+                            <div class='panel-body'>
+                              <p>Retorna o elemento no fim da fila.</p>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="acessivel print">
+                    <h4>addFirst()</h4>
+                    <p>Adiciona um elemento ao início da fila.</p>
+                    <h4>addLast()</h4>
+                    <p>Adiciona um elemento ao fim da fila.</p>
+                    <h4>removeFirst()</h4>
+                    <p>Remove o elemento do início da fila.</p>
+                    <h4>removeLast()</h4>
+                    <p>Remove o elemento do fim da fila.</p>
+                    <h4>getFirst()</h4>
+                    <p>Retorna o elemento no início da fila.</p>
+                    <h4>getLast()</h4>
+                    <p>Retorna o elemento no fim da fila.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="botao borda-primaria-03" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal modal-100 fade" id="modal-classe01" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content no-print">
+              <div class="modal-header" style="padding-top: 30px;">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">
+                  <div class="container">ArrayList&lt;E></div>
+                </h3>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <p>Seria possível dizer, de certo modo, que um objeto <b>ArrayList</b> é uma espécie de vetor sem limitações de tamanho, em que se pode incluir livremente um novo item na lista sem a preocupação com índices e com a capacidade do vetor. Também se pode excluir um item sem preocupações com índices e com realocação de valores.</p>
+                  <p>Veja a seguir um exemplo de código Java que utiliza <b>ArrayList</b> para incluir e excluir nomes em uma lista de clientes de uma loja. O programa permite a inclusão e a exclusão de nomes, mostrando o estado atual da lista a cada iteração.</p>
+                  <pre>
+                    <code>
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.ArrayList</span>;
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.List</span>;
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.Scanner</span>;
+
+<span style="color: #0000aa">public</span> <span style="color: #0000aa">class</span> <span style="color: #00aa00;">ListaTeste</span> {
+
+    <span style="color: #0000aa">public</span> <span style="color: #0000aa">static</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">main</span>(String[] args) {
+        Scanner entrada = <span style="color: #0000aa">new</span> Scanner(System.<span style="color: #1e90ff">in</span>);
+        String nome, operacao = <span style="color: #aa5500">&quot;I&quot;</span>;
+        <span style="color: #00aaaa">int</span> indice;
+
+        List&lt;String&gt; clientes = <span style="color: #0000aa">new</span> ArrayList&lt;String&gt;();
+        
+        <span style="color: #0000aa">while</span>(!operacao.<span style="color: #1e90ff">equals</span>(<span style="color: #aa5500">&quot;S&quot;</span>))
+        {
+            System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(<span style="color: #aa5500">&quot;Digite a operação [I]ncluir, [E]xcluir, [S]air&quot;</span>);
+            operacao = entrada.<span style="color: #1e90ff">nextLine</span>();
+            <span style="color: #0000aa">switch</span>(operacao)
+            {
+                <span style="color: #0000aa">case</span> <span style="color: #aa5500">&quot;I&quot;</span>:
+                    System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">print</span>(<span style="color: #aa5500">&quot;Digite o nome: &quot;</span>);
+                    nome = entrada.<span style="color: #1e90ff">nextLine</span>();
+                    clientes.<span style="color: #1e90ff">add</span>(nome); <span style="color: #aaaaaa; font-style: italic">//incluindo um novo nome na lista</span>
+                    <span style="color: #0000aa">break</span>;
+                    
+                <span style="color: #0000aa">case</span> <span style="color: #aa5500">&quot;E&quot;</span>:
+                    System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">print</span>(<span style="color: #aa5500">&quot;Digite o indice: &quot;</span>);
+                    indice = entrada.<span style="color: #1e90ff">nextInt</span>();
+                    <span style="color: #0000aa">if</span>(indice &gt;= <span style="color: #009999">0</span> &amp;&amp; indice &lt; clientes.<span style="color: #1e90ff">size</span>())<span style="color: #aaaaaa; font-style: italic">//valida se o índice informado é válido</span>
+                        clientes.<span style="color: #1e90ff">remove</span>(indice); <span style="color: #aaaaaa; font-style: italic">//excluindo o valor que está no índice informado</span>
+                    <span style="color: #0000aa">break</span>;
+                
+                <span style="color: #0000aa">case</span> <span style="color: #aa5500">&quot;S&quot;</span>:
+                    System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(<span style="color: #aa5500">&quot;Encerrando o programa&quot;</span>);
+                    <span style="color: #0000aa">break</span>;
+            }
+            
+            System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(<span style="color: #aa5500">&quot;A lista neste momento está assim: &quot;</span>);
+            <span style="color: #0000aa">for</span>(<span style="color: #00aaaa">int</span> i = <span style="color: #009999">0</span>; i&lt;clientes.<span style="color: #1e90ff">size</span>(); i++)
+            {
+                <span style="color: #aaaaaa; font-style: italic">//em ArrayList, não se usa [] para acessar um item, mas sim método get()</span>
+                System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(clientes.<span style="color: #1e90ff">get</span>(i));
+            }
+        }
+    }
+    
+}
+                    </code>
+                  </pre>
+                  <p>Note no exemplo que foi utilizada esta declaração:</p>
+                  <pre>
+                    <code>
+List&lt;String&gt; clientes = <span style="color: #0000aa">new</span> ArrayList&lt;String&gt;();
+                    </code>
+                  </pre>
+                  <p>A declaração anterior foi utilizada ao invés da seguinte:</p>
+                  <pre>
+                    <code>
+ArrayList&lt;String&gt; clientes = <span style="color: #0000aa">new</span> ArrayList&lt;String&gt;();
+                    </code>
+                  </pre>
+                  <p>Ambas, evidentemente, são corretas. A primeira declaração é possível por <b>ArrayList</b> implementar a interface <b>List</b>; no entanto, porque “clientes” está declarado com o tipo de <b>List</b>, só se terá acesso aos métodos declarados nessa interface. Caso se queira acessar métodos e atributos específicos da classe <b>ArrayList</b>, é preferível utilizar a segunda declaração.</p>
+                  <p>Internamente, um <b>ArrayList</b> cria um vetor e o usa para armazenar os valores. Quando o vetor já não é mais suficiente, a classe cria outro novo vetor e descarta o antigo. De qualquer maneira, ao usar a classe, o programador não precisa se preocupar com esses detalhes técnicos.</p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="botao borda-primaria-03" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal modal-100 fade" id="modal-classe02" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content no-print">
+              <div class="modal-header" style="padding-top: 30px;">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">
+                  <div class="container">Vector&lt;E></div>
+                </h3>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <p>Vector é uma alternativa que funciona quase exatamente igual ao <b>ArrayList</b>, com a diferença de ser <i>thread-safe</i>, ou seja, tem mecanismos que previnem problemas em aplicações <b>multithread</b>.</p>
+                  <p>Uma aplicação <i>multithread</i> é aquela em que duas operações executam de modo paralelo, e não sequencial, como normalmente se programa. Cada linha paralela de execução é chamada <i>thread</i>.</p>
+                  <p>Como analogia, pense em <i>multithread</i> como duas ou mais transações SQL rodando em paralelo. Alguns problemas semelhantes podem acontecer, como a utilização de um mesmo recurso por duas <i>threads</i> e o risco de uma sobrescrever a alteração que a outra realizou nesse recurso. O que o Vector faz é prevenir essas situações de risco, mas isso vem a um custo de processamento e, por isso, seu uso deve acontecer apenas quando o programa for realmente <i>multithread</i>, caso contrário, é preferível usar <b>ArrayList</b>.</p>
+                  <p>Sua aplicação é quase idêntica à do <b>ArrayList</b>. Você pode testar trocando, no exemplo anterior, o tipo do objeto “clientes” para <b>Vector&lt;String></b>.</p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="botao borda-primaria-03" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal modal-100 fade" id="modal-classe03" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content no-print">
+              <div class="modal-header" style="padding-top: 30px;">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">
+                  <div class="container">LinkedList&lt;E></div>
+                </h3>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <p><b>LinkedList (ou Listas Ligadas)</b> foi apresentada anteriormente no contexto de filas. De fato, <b>LinkedList</b> implementa tanto a interface <b>List&lt;E></b> quanto <b>Queue&lt;E></b>. Assim, ela também traz os métodos padrão de <b>List</b>. Veja no exemplo a seguir a <b>LinkedList</b> sendo usada como uma lista comum para incluir notas de alunos de maneira ordenada.</p>
+                  <pre>
+                    <code>
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.LinkedList</span>;
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.List</span>;
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.Scanner</span>;
+
+<span style="color: #0000aa">public</span> <span style="color: #0000aa">class</span> <span style="color: #00aa00;">ListaLigadaTeste</span> {
+
+    <span style="color: #0000aa">public</span> <span style="color: #0000aa">static</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">main</span>(String[] args) {
+        Scanner entrada = <span style="color: #0000aa">new</span> Scanner(System.<span style="color: #1e90ff">in</span>);
+        List&lt;Float&gt; notas = <span style="color: #0000aa">new</span> LinkedList&lt;Float&gt;();
+
+        notas.<span style="color: #1e90ff">add</span>(<span style="color: #009999">5.5f</span>);
+        notas.<span style="color: #1e90ff">add</span>(<span style="color: #009999">7</span>f);
+        notas.<span style="color: #1e90ff">add</span>(<span style="color: #009999">9.75f</span>);
+        
+        <span style="color: #00aaaa">float</span> novaNota = entrada.<span style="color: #1e90ff">nextFloat</span>();
+        <span style="color: #00aaaa">int</span> indice = <span style="color: #009999">0</span>;
+
+        <span style="color: #aaaaaa; font-style: italic">//busca a posição correta em que a nova nota deve ser incluída</span>
+        <span style="color: #0000aa">while</span>(notas.<span style="color: #1e90ff">get</span>(indice) &lt; novaNota &amp;&amp; indice &lt; notas.<span style="color: #1e90ff">size</span>())
+        {
+            indice++;
+        }
+
+        <span style="color: #0000aa">if</span>(indice &lt; notas.<span style="color: #1e90ff">size</span>()) <span style="color: #aaaaaa; font-style: italic">//se não chegou ao final da lista...</span>
+            notas.<span style="color: #1e90ff">add</span>(indice, novaNota);<span style="color: #aaaaaa; font-style: italic">//...incluir na posição correta</span>
+        <span style="color: #0000aa">else</span><span style="color: #aaaaaa; font-style: italic">//senão...</span>
+            notas.<span style="color: #1e90ff">add</span>(novaNota);<span style="color: #aaaaaa; font-style: italic">//...incluir ao final da lista</span>
+        
+        System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">print</span>(<span style="color: #aa5500">&quot;Notas em ordem: &quot;</span>);
+        <span style="color: #0000aa">for</span>(<span style="color: #00aaaa">int</span> i = <span style="color: #009999">0</span>; i&lt;notas.<span style="color: #1e90ff">size</span>(); i++)
+        {
+            System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">print</span>(notas.<span style="color: #1e90ff">get</span>(i) + <span style="color: #aa5500">&quot; &quot;</span>);
+        }
+    }
+    
+}
+                    </code>
+                  </pre>
+                  <p>Por estarem sendo utilizadas <b>List&lt;Float></b>, as operações são idênticas às utilizadas com <b>ArrayList</b>. Internamente, no entanto, as operações ocorrem como demonstradas nos dois <i>gifs</i> anteriores.</p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="botao borda-primaria-03" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal modal-100 fade" id="modal-classeSet01" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content no-print">
+              <div class="modal-header" style="padding-top: 30px;">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">
+                  <div class="container">HashSet&lt;E></div>
+                </h3>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <p><b>HashSet</b> são coleções que não garantem a ordem dos elementos – ou seja, a ordem deles pode mudar a cada inclusão –, mas que mantêm eficiência constante na busca por valores, independentemente da quantidade de itens incluídos. Internamente, a classe usa <b>HashTable</b> (ou tabelas de dispersão), uma estrutura que associa uma chave a um valor e que permite a eficiência na busca.</p>
+                  <p>O exemplo a seguir mostra o uso de <b>HashSet</b> para cadastrar títulos de livros e depois permitir uma busca nessa coleção.</p>
+                  <pre>
+                    <code>
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.HashSet</span>;
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.Scanner</span>;
+<span style="color: #0000aa">import</span> <span style="color: #00aaaa;">java.util.Set</span>;
+
+<span style="color: #0000aa">public</span> <span style="color: #0000aa">class</span> <span style="color: #00aa00;">HashsetTeste</span> {
+
+    <span style="color: #0000aa">public</span> <span style="color: #0000aa">static</span> <span style="color: #00aaaa">void</span> <span style="color: #00aa00">main</span>(String[] args) {
+        Scanner entrada = <span style="color: #0000aa">new</span> Scanner(System.<span style="color: #1e90ff">in</span>);
+        Set&lt;String&gt; livros = <span style="color: #0000aa">new</span> HashSet&lt;String&gt;();
+        String nomeLivro;
+        
+        System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(<span style="color: #aa5500">&quot;Primeiro inclua 7 títulos de livros&quot;</span>);
+        <span style="color: #0000aa">for</span>(<span style="color: #00aaaa">int</span> i=<span style="color: #009999">0</span>; i&lt;<span style="color: #009999">7</span>; i++)
+        {
+            <span style="color: #aaaaaa; font-style: italic">//incluindo novo valor informado pelo usuário</span>
+            nomeLivro = entrada.<span style="color: #1e90ff">nextLine</span>();
+            livros.<span style="color: #1e90ff">add</span>(nomeLivro);
+            
+            System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(<span style="color: #aa5500">&quot;&gt; Coleção agora: &quot;</span>);
+            <span style="color: #0000aa">for</span>(String l : livros)
+            {
+                System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(l);
+            }
+        }
+        
+        System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(<span style="color: #aa5500">&quot;Agora faça buscas. Digite PARE para encerrar&quot;</span>);
+        nomeLivro = entrada.<span style="color: #1e90ff">nextLine</span>();
+        <span style="color: #0000aa">while</span>(!nomeLivro.<span style="color: #1e90ff">equals</span>(<span style="color: #aa5500">&quot;PARE&quot;</span>))
+        {
+            <span style="color: #aaaaaa; font-style: italic">//buscando o valor informado no HashSet</span>
+            <span style="color: #0000aa">if</span>(livros.<span style="color: #1e90ff">contains</span>(nomeLivro))
+            {
+                System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(<span style="color: #aa5500">&quot;Valor &#39;&quot;</span> + nomeLivro + <span style="color: #aa5500">&quot;&#39; foi encontrado.&quot;</span>);
+            }
+            <span style="color: #0000aa">else</span>
+            {
+                System.<span style="color: #1e90ff">out</span>.<span style="color: #1e90ff">println</span>(<span style="color: #aa5500">&quot;Valor &#39;&quot;</span> + nomeLivro + <span style="color: #aa5500">&quot;&#39; não foi encontrado.&quot;</span>);
+            }
+            
+            nomeLivro = entrada.<span style="color: #1e90ff">nextLine</span>();
+        }
+        
+    }
+    
+}
+                    </code>
+                  </pre>
+                  <p>Teste o código Java apresentado. Ao incluir novos valores, perceba que eles nem sempre ficarão na ordem em que você os informou. Isso é natural com <b>HashSet</b>.</p>
+                  <p>O laço <i>for-each</i>, presente no código anterior, será abordado em seguida, neste conteúdo.</p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="botao borda-primaria-03" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal modal-100 fade" id="modal-classeSet02" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content no-print">
+              <div class="modal-header" style="padding-top: 30px;">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3 class="modal-title">
+                  <div class="container">TreeSet&lt;E></div>
+                </h3>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                  <p>A operação com <b>TreeSet</b> é semelhante à do <b>HashSet</b>, com a diferença de que, ao incluir um novo valor, a coleção é reordenada. Assim, <b>TreeSet</b> mantém sempre os valores em ordem. Internamente a classe utiliza uma estrutura de dados chamada árvore rubro-negra (<i>red-black tree</i>), que auxilia na eficiência da ordenação dos dados, por isso o nome <b>TreeSet</b>.</p>
+                  <p>Para testar, use o mesmo exemplo anterior, trocando apenas a declaração do objeto “livros” para o tipo <b>TreeSet</b>:</p>
+                  <pre>
+                    <code>
+Set&lt;String&gt; livros = <span style="color: #0000aa">new</span> TreeSet&lt;String&gt;();
+                    </code>
+                  </pre>
+                  <p>Ao executar o código, note que, após cada inclusão, a coleção se mantém ordenada.</p>
+                  <div class="caixa-destaque borda-primaria-03 icone importante">
+                    <p>Ao utilizar classes próprias (alguma classe criada por você) com <b>TreeSet</b>, será necessário implementar a interface <b>Comparable</b> e desenvolver o método <b>compareTo()</b>, que deve retornar -1 se o valor informado for anterior, 0 se for igual ou 1 se for posterior ao objeto atual. Assim, se você tivesse uma classe <b>Livro</b> para o exemplo anterior, com atributos “título” e “autor”, ela precisaria ficar mais ou menos assim:</p>
+                    <pre>
+                      <code>
+<span style="color: #0000aa">public</span> <span style="color: #0000aa">class</span> <span style="color: #00aa00;">Livro</span> <span style="color: #0000aa">implements</span> Comparable&lt;Livro&gt;{
+    <span style="color: #0000aa">public</span> String titulo;
+    <span style="color: #0000aa">public</span> String autor;
+
+    <span style="color: #0000aa">public</span> <span style="color: #00aaaa">int</span> <span style="color: #00aa00">compareTo</span>(Livro o) {
+        <span style="color: #0000aa">return</span> <span style="color: #0000aa">this</span>.<span style="color: #1e90ff">titulo</span>.<span style="color: #1e90ff">compareTo</span>(o.<span style="color: #1e90ff">titulo</span>);
+    }
+}
+                      </code>
+                    </pre>
+                    <p>É preciso implementar <b>compareTo()</b> comparando o título do objeto com o do livro informado por parâmetro. Internamente, <b>TreeSet</b> utiliza esse método <b>compareTo()</b> para a ordenação.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="botao borda-primaria-03" data-dismiss="modal">Fechar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!--  Em caso de footer personalizado utilizar esse elemento e adicionar a classe customizada
+    <footer>
+    </footer>
+	-->
+<!-- carrega todas as imagens dos icones nesta div
+ caso queira adicionar mais imagens de novos icones do css,
+ ou qualquer imagem que deva ser contabilizada durante a fase
+ de loading, referenciar aqui.
+ -->
+<div class="ico-div-loader">
+	<img src="../template/images/atencao.png">
+    <img src="../template/images/bg-content.jpg">
+    <img src="../template/images/bg-topo.jpg">
+    <img src="../template/images/black-zoom-in-256.png">
+    <img src="../template/images/concluindo.png">
+    <img src="../template/images/curtir.png">
+    <img src="../template/images/desafio.png">
+    <img src="../template/images/dica.png">
+    <img src="../template/images/doc.png">
+    <img src="../template/images/fundamental.png">
+    <img src="../template/images/icon-03.png">
+    <img src="../template/images/importante.png">
+    <img src="../template/images/lightbulb.png">
+    <img src="../template/images/link.png">
+    <img src="../template/images/link_pdf_hover.png">
+    <img src="../template/images/link_pdf_normal.png">
+    <img src="../template/images/logo-senac.png">
+    <img src="../template/images/mark-icon.png">
+    <img src="../template/images/mark-icon02.png">
+    <img src="../template/images/midia.png">
+    <img src="../template/images/monitor.png">
+    <img src="../template/images/nao_curtir.png">
+    <img src="../template/images/pergunta.png">
+    <img src="../template/images/pesquisa.png">
+    <img src="../template/images/play.png">
+    <img src="../template/images/radio_flat.png">
+    <img src="../template/images/refletir.png">
+    <img src="../template/images/saiba_mais.png">
+    <img src="../template/images/senac_loader.png">
+    <img src="../template/images/tanamidia.png">
+    <img src="../template/images/transcricao.png">
+    <img src="../template/images/transcricao_small.png">
+    <img src="../template/images/tv.png">
+    <img src="../template/images/tv_bottom.png">
+    <img src="../template/images/zoom.png">
+    <img src="../template/images/zoom_ie.cur">
+    <img src="../template/images/zoom_ie.png">
+    <!-- adicionar as imagens customizadas aqui abaixo -->
+</div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../template/js/jquery.min.js"></script>
+<script src="../template/js/bootstrap.min.js"></script>
+<script src="../template/js/jquery.magnific-popup.min.js"></script>
+<script src="../template/js/print.js"></script>
+<script src="../template/js/template.config.js"></script>
+<script src="../template/js/images.loader.js"></script>
+<script src="../template/js/interativos.js"></script>
+<noscript>
+  <style media="screen">
+    .over-loader { display: none;}    
+  </style>
+</noscript>
+
+<!-- Versao atual do handtalk -->
+<script>
+  var scriptElem=document.createElement("script");
+  scriptElem.src="https://plugin.handtalk.me/web/latest/handtalk.min.js",
+  scriptElem.charset="UTF-8",
+  scriptElem.onload=function(){
+        window.ht = new HT({
+            token:"bf5b7efb148a829a126a0e0c9fd533bf",
+            align:"top",
+            videoEnabled: true,
+            ytEmbedReplace: true,           
+            mobileConfig:{align:"right",
+                          actionsAlign:"top",
+                          customButtonStyle:{
+                                borderRadius:"6px",
+                                size:"38px",
+                                horizontalMargin:"13px",
+                                bottomMargin:"140px",
+                                rightMargin:"40px"}
+                          }
+          });        
+      $('.ht-skip').attr("aria-hidden","true")
+    },
+ document.body.appendChild(scriptElem);
+
+</script>
+
+</body>
+</html>
+<script>
+  $( ".panel-heading" ).click(function() {
+    $( this ).toggleClass( "ativo" );
+  });
+	//inicializa zoom na imagem
+	$('.zoom-imagem').magnificPopup({
+	 type: 'image',
+  	 mainClass: 'mfp-with-zoom', // this class is for CSS animation below
+ 	 zoom: {
+		enabled: true, // By default it's false, so don't forget to enable it
+
+		duration: 300, // duration of the effect, in milliseconds
+		easing: 'ease-in-out', // CSS transition easing function
+
+		// The "opener" function should return the element from which popup will be zoomed in
+		// and to which popup will be scaled down
+		// By defailt it looks for an image tag:
+		opener: function(openerElement) {
+		  // openerElement is the element on which popup was initialized, in this case its <a> tag
+		  // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+		  return openerElement.is('img') ? openerElement : openerElement.find('img');
+		}
+	  },
+	   image: {
+		  markup: '<div class="mfp-figure">'+
+					'<div class="mfp-close"></div>'+
+					'<div class="mfp-img"></div>'+ // Floated left
+					'<div class="mfp-bottom-bar">'+'<figcaption>'+'<div class="mfp-title" style="text-align:center"></div>'+
+					  '<div class="mfp-counter"></div>'+'</figcaption>'+
+					'</div>'+
+				  '</div>', // Popup HTML markup. `.mfp-img` div will be replaced with img tag, `.mfp-close` by close button
+
+		  cursor: 'mfp-zoom-out-cur', // Class that adds zoom cursor, will be added to body. Set to null to disable zoom out cursor.
+
+		  tError: '<a href="%url%">A imagem</a> não pode ser carregada.' // Error message
+	   }
+	});
+
+	//inicializa popover
+	$(function () {
+	  $('[data-toggle="popover"]').popover()
+	})
+	//inicializa tooltip
+	$(function () {
+	  $('[data-toggle="tooltip"]').tooltip()
+	})
+
+</script>

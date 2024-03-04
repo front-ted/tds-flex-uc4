@@ -1,0 +1,16 @@
+body{
+	word-break: break-all;
+}
+.icone.hardware{
+	background-image: url(../objetos/icone-hardware.png);
+}
+.icone.software{
+	background-image: url(../objetos/icone-software.png);
+}
+
+h1 i, h2 i, h3 i, h4 i {
+	font-weight: bold;
+}
+h3{
+	margin-top: 50px;
+}
