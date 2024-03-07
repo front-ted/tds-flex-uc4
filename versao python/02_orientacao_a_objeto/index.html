@@ -83,7 +83,7 @@
 
             <p>Como já foi citado anteriormente nos conteúdos desta unidade curricular quanto aos conceitos iniciais da POO (programação orientada a objetos), é preciso ver na prática a sua utilização por meio de uma linguagem de programação. Neste momento, a linguagem utilizada para exemplificar os conceitos do paradigma orientado a objetos será o PYTHON, que, apesar de ser uma linguagem multiparadigma (pode ser usada em outros paradigmas da programação, como, por exemplo, o estruturado), é muito poderosa quando utilizada na POO, apresentando diversas vantagens como reutilização do código, facilidade de manutenção e atualização, além de grande capacidade de escalabilidade.</p>
 
-            <h3>Definição de classes no PYTHON</h3>
+            <h3>Definição de classes no Python</h3>
             <div class="table-responsive">
               <table class="senac tabela-pequena">
                 <thead>
@@ -104,14 +104,14 @@
             </div>
             <p class="legenda-imagem">
               Classe <strong>alunos</strong>, que será implementada no PYTHON<br>
-              Fonte: Senac EAD (2022)
+              Fonte: Senac EAD (2023)
             </p>
             <p>Você estudou anteriormente que classe é uma abstração, um molde de qualquer elemento do mundo real. Nesta seção do conteúdo, você aprenderá como essa relação acontece dentro de uma linguagem de programação e quais são suas melhores formas de utilização para resolução de problemas do mundo real.</p>
             <p>Neste exemplo, semelhante ao visto no conteúdo <strong>Orientação a objetos</strong> desta unidade curricular, você tem uma classe chamada <strong>Aluno</strong>, que contém como atributos os elementos <strong>Nome do Aluno</strong>, <strong>Número da Matrícula</strong> e <strong>Curso</strong>.</p>
             
             <p>Sem ainda se preocupar com métodos e outras nomenclaturas dentro da linguagem, conheça mais agora sobre a criação de uma classe, apenas considerando os atributos desta.</p>
-            <p>Sem ainda se preocupar com métodos e outras nomenclaturas dentro da linguagem vamos iniciar o entendimento de criação de uma classe apenas nos preocupando com os atributos da mesma.</p>
-
+            
+           
             <p>Veja, a seguir, uma ideia inicial da criação de classes, com método construtor, em código Python: </p>
 
             <pre>
@@ -461,8 +461,8 @@ aluno3.matricula=<span class="language-python__blue">2023023</span>
               </table>
             </div>
             <p class="legenda-imagem">
-              Tabela 3 – Classe Aluno, na qual serão criados os métodos<br>
-              Fonte: Senac EAD (2022)
+              Classe Aluno, na qual serão criados os métodos<br>
+              Fonte: Senac EAD (2023)
             </p>
 
 
@@ -502,7 +502,21 @@ main()
               </code>
             </pre>
 
-            <p>Nesse programa, para começar, foi definida uma função chamada <b>calcular_media</b>, que aceita duas notas como argumentos, soma as notas e calcula a média. Em seguida, há uma função principal chamada <b>main</b>, que solicita ao usuário as notas do aluno, chama a função <b>calcular_media</b> e exibe o resultado. </p>
+            <p>Nesse programa, para começar, foi definida uma função chamada <b>calcular_media</b>, que aceita duas notas como argumentos, soma as notas e calcula a média. Em seguida, há uma função principal chamada <b>main</b>, que solicita ao usuário as notas do aluno, chama a função 
+            
+            <b>calcular_media</b> e exibe o resultado. </p>
+              
+            <p>
+              Podemos ver que na função somar recebe dois parâmetros do tipo real, o primeiro chamado “valor1” e o segundo chamado “valor2”, dentro da função é criado uma variável chamada resultado que recebe o cálculo da média entre as duas notas recebidas e retorna este resultado ao programa.
+            </p>
+
+            <p>
+              Essa forma de programação é muito semelhante com a qual veremos nos métodos criados com passagem de parâmetro, que da mesma forma agiliza o código e reutilização dele, porém com a diferença que nos métodos muitas vezes o valor dos atributos dos objetos é modificado quando esta chamada é feita. Por exemplo se o caso acima fosse um método e o mesmo tivesse um atributo resultado, a partir deste momento o valor deste atributo poderia já se tornar “3,5”, resultado do exemplo acima.
+            </p>
+
+
+
+
             
             <p>Para rodar o programa, você pode copiá-lo e colá-lo em um ambiente Python, como o IDLE, ou em um script Python, e seguir as instruções para inserir as notas do aluno e vê-las.</p>
 
@@ -748,7 +762,11 @@ aluno3.listarAluno()
               </p>
             </div>
             
-            <p>Vamos pensar em uma situação em que eu queira uma descrição completa de um aluno, onde apenas com uma linha de código eu conseguisse apresentar seu nome, matrícula, CPF e idade, será isso possível?</p>            
+            <p>Vamos pensar em uma situação em que eu queira uma descrição completa de um aluno, onde apenas com uma linha de código eu conseguisse apresentar seu nome, matrícula, CPF e idade, será isso possível?</p>    
+            
+            <p>
+              Começaremos instanciando alguns objetos e mostrando as informações completas dele, primeiro sem utilizar métodos e depois com sua utilização.
+            </p>
           </div>
 
           <!-- Página 3 -->
@@ -1432,7 +1450,6 @@ aluno3.listarAluno()
   <span>main()</span>
                         </code>
                       </pre>
-                      <p>Esse programa inclui um menu interativo com opções para escolher a operação. O usuário pode inserir os valores valor1 e valor2, e o programa realizará a operação desejada e mostrará o resultado. O programa continuará a funcionar até que o usuário escolha a opção de sair (digitar 'x').</p>
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">
@@ -1502,7 +1519,6 @@ aluno3.listarAluno()
 <span>main()</span>
                 </code>
               </pre>
-              <p>Esse programa inclui um menu interativo com opções para escolher a operação. O usuário pode inserir os valores valor1 e valor2, e o programa realizará a operação desejada e mostrará o resultado. O programa continuará a funcionar até que o usuário escolha a opção de sair (digitar 'x').</p>
             </div>
        
             <h3>Variáveis de tipos primitivos e de referência em Python</h3>
@@ -1546,6 +1562,33 @@ aluno3.listarAluno()
     <span class="language-python__red">self</span>.modelo = modelo 
     <span class="language-python__red">self</span>.ano = ano 
  
+<span class="language-python__grey">print</span><span class="language-python__grey"># Criando uma instância da classe Carro</span>
+<span>meu_carro = Carro(</span><span class="language-python__green">"Toyota"</span><span>,</span> <span class="language-python__green">"Corolla"</span><span>,</span> <span class="language-python__blue">2022</span><span>)</span> 
+
+<span class="language-python__grey">print</span><span class="language-python__grey"># O método __init__ é chamado automaticamente para inicializar os atributos</span>
+
+<span class="language-python__grey">print</span>(meu_carro.marca)<span class="language-python__grey"> # Output: Toyota</span>
+<span class="language-python__grey">print</span>(meu_carro.modelo)<span class="language-python__grey"> # Output: Corolla</span>
+<span class="language-python__grey">print</span>(meu_carro.ano)<span class="language-python__grey"> # Output: 2022</span>
+              </code>
+            </pre>
+
+            <p>
+              Nesse exemplo, o método __init__ da classe Carro é usado para inicializar os atributos marca, modelo e ano quando uma instância do objeto Carro é criada. Isso permite que você configure os valores iniciais dos atributos ao criar objetos da classe. 
+            </p>
+
+            <p>
+              Em Python, uma classe pode ter apenas um método construtor, que é o método __init__. O método __init__ é chamado automaticamente quando um objeto da classe é criado e é usado para inicializar os atributos do objeto. No entanto, você pode usar argumentos-padrão para criar construtores com comportamentos diferentes, permitindo que a classe seja inicializada de maneiras variadas. Isso é conhecido como “sobrecarga” do construtor. Aqui está um exemplo de como usar argumentos-padrão para criar construtores diferentes: 
+            </p>
+
+            <pre>
+              <code>
+<span class="language-python__orange">class</span> <span>Carro:</span> 
+  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span><span>(</span><span class="language-python__red">self</span><span>, marca=</span><span class="language-python__green">"Desconhecida"</span><span>, modelo=</span><span class="language-python__green">"Desconhecido"</span><span>, ano=</span><span class="language-python__blue">0</span><span>):</span> 
+    <span class="language-python__red">self</span>.marca = marca 
+    <span class="language-python__red">self</span>.modelo = modelo 
+    <span class="language-python__red">self</span>.ano = ano 
+ 
 <span class="language-python__grey"># Criando instâncias da classe Carro com diferentes construtores</span>
 <span>carro1 = Carro(</span><span class="language-python__green">"Toyota"</span><span>,</span> <span class="language-python__green">"Corolla"</span><span>,</span> <span class="language-python__blue">2022</span><span>)</span> 
 <span>carro2 = Carro(</span><span class="language-python__green">"Honda"</span><span>,</span> <span class="language-python__green">"Civic"</span><span>)</span> 
@@ -1559,8 +1602,8 @@ aluno3.listarAluno()
               </code>
             </pre>
           
-
           <p>Saída na console:</p>
+
           <pre>
             <code>
 <span>Toyota Corolla 2022</span>
@@ -1888,7 +1931,7 @@ aluno3.listarAluno()
 
           <!-- Página 6 -->
           <div class="pagina">
-            <h3><b>MÓDULOS E PACOTES EM PYTHON</b></h3>
+            <h3><b>Módulos e pacotes em Python</b></h3>
 
             <p>Em Python, existe uma funcionalidade semelhante aos pacotes em Python, chamada de "módulos" e "pacotes". Os módulos são arquivos Python individuais (.py) que contêm código, enquanto os pacotes são diretórios que contêm vários módulos relacionados.</p>
 
