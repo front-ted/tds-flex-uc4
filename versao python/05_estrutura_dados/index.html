@@ -80,7 +80,7 @@
                     </div>
                     <!-- /BTO IMPRIMIR -->
                   </header>
-                  <h2>Estrutura de dados: conceitos, aplicação e usabilidade – pilha, fila, deck, listas </h2>
+                  <h2>Estrutura de dados: conceitos, aplicação e usabilidade – pilha, fila, <i>deck</i>, listas </h2>
 
                   <h3>Introdução</h3>
 
@@ -887,30 +887,30 @@ heapq.heappush(fila_de_prioridade, (<span class="language-python__blue">4</span>
 <span class="language-python__orange">import</span> queue
 
 <span class="language-python__grey"># Inicializa uma fila de prioridade vazia</span>
-fila_de_atendimento = queue.PriorityQueue()
+<span class="destaque-codigo">fila_de_atendimento = queue.PriorityQueue()</span>
                               
 <span class="language-python__grey"># Função para adicionar uma pessoa à fila com prioridade</span>
 <span class="language-python__orange">def</span> <span class="language-python__blue">adicionar_pessoa</span>(): 
     nome = <span class="language-python__blue">input</span>(<span class="language-python__green">"Digite o nome da pessoa a ser atendida (ou digite 'sair' para encerrar a entrada na fila):"</span>)
     <span class="language-python__orange">if</span> nome.lower() != <span class="language-python__green">'sair'</span>:
         prioridade = <span class="language-python__blue">int</span>(<span class="language-python__blue">input</span>(<span class="language-python__green">"Digite a prioridade da pessoa (um número inteiro): "</span>))
-        fila_de_atendimento.put((prioridade, nome))
-        <span class="language-python__grey">print</span>(<span class="language-python__green">f"</span><span class="language-python__orange">{</span>nome<span class="language-python__orange">}</span> <span class="language-python__green">foi adicionado à fila de atendimento com prioridade</span> <span class="language-python__orange">{</span>prioridade<span class="language-python__orange">}</span>.<span class="language-python__green">"</span>)
-    <span class="language-python__orange">else</span>:
+        <span class="destaque-codigo">fila_de_atendimento.put((prioridade, nome))</span>
+        <span class="destaque-codigo"><span>print</span>(<span>f"</span><span>{</span>nome<span>}</span> <span>foi adicionado à fila de atendimento com prioridade</span> <span>{</span>prioridade<span>}</span>.<span>"</span>)</span>
+        <span class="language-python__orange">else</span>:
         <span class="language-python__grey">print</span>(<span class="language-python__green">"Encerrando ENTRADA NA FILA"</span>)
 
 <span class="language-python__grey"># Função para atender pessoas na ordem de prioridade</span>
 <span class="language-python__orange">def</span> <span class="language-python__blue">atender_pessoas</span>():
     <span class="language-python__orange">try</span>:
-        prioridade, pessoa = fila_de_atendimento.get_nowait()
-        <span class="language-python__grey">print</span>(<span class="language-python__green">f"Atendendo</span><span class="language-python__orange"> {</span>pessoa<span class="language-python__orange">}</span><span class="language-python__green"> com prioridade</span> <span class="language-python__orange">{</span>prioridade<span class="language-python__orange">}</span><span class="language-python__green">"</span>)
+        <span class="destaque-codigo">prioridade, pessoa = fila_de_atendimento.get_nowait()</span>
+        <span class="destaque-codigo"><span>print</span>(<span>f"Atendendo</span><span> {</span>pessoa<span>}</span><span> com prioridade</span> <span>{</span>prioridade<span>}</span><span>"</span>)</span>
     <span class="language-python__orange">except</span> queue.Empty:
         <span class="language-python__grey">print</span>(<span class="language-python__green">"A fila de atendimento está vazia."</span>)
 
 <span class="language-python__grey"># Função para listar a fila de prioridade (apenas para visualização)</span>
 <span class="language-python__orange">def</span> <span class="language-python__blue">listar_fila</span>():
-    fila_copy = fila_de_atendimento.queue.copy()
-    fila_copy.sort() <span class="language-python__grey"># Ordena a cópia para exibição</span>
+    <span class="destaque-codigo">fila_copy = fila_de_atendimento.queue.copy()</span>
+    <span class="destaque-codigo">fila_copy.sort() <span># Ordena a cópia para exibição</span></span>
     <span class="language-python__grey">print</span>(<span class="language-python__grey">"Fila de Atendimento:"</span>)
     <span class="language-python__orange">for</span> prioridade, pessoa <span class="language-python__orange">in</span> fila_copy:
         <span class="language-python__grey">print</span>(<span class="language-python__green">f"Prioridade</span><span class="language-python__orange"> {</span>prioridade<span class="language-python__orange">}</span>:<span class="language-python__orange">{</span>pessoa<span class="language-python__orange">}</span><span class="language-python__green">"</span>)
@@ -2294,14 +2294,14 @@ Process finished with exit code 0
               <div class="container">
                 <h3 class="mt-60">Encerramento</h3>
                 <div class="row mt-40">
-                  <div class="col-sm-2 col-xs-12">
+                  <div class="col-sm-2 col-xs-12 imagem-encerramento">
                     <img src="imgs/layout_4_bandeira_finalizar.png" class="img-responsive center-block">
                   </div>
                   <div class="col-sm-10 col-xs-12">
-                    <p>Você pode perceber a partir desse conteúdo que Java traz muitas implementações de algoritmos e estruturas clássicas, o que é uma boa ajuda ao programador – ao invés de construir toda a regra para uma pilha, por exemplo, basta usar a classe <b>Stack</b>.</p>
+                    <p>Neste capítulo, foi explorada a riqueza das estruturas de dados em Python. Você aprendeu como manipular e acessar essas estruturas, entendendo a importância de escolher a estrutura de dados certa para cada situação. À medida que se avança no aprendizado da linguagem Python, é fundamental dominar o uso dessas estruturas para criar programas mais eficientes e organizados. Compreender como as estruturas de dados funcionam é como ter um conjunto de ferramentas valiosas à disposição, permitindo que você resolva problemas de forma elegante e eficaz. No próximo capítulo, será dada continuidade a essa jornada de aprendizado, explorando tópicos mais avançados em Python, a fim de expandir horizontes e aprimorar habilidades de programação. Lembre-se sempre de praticar e aplicar o conhecimento adquirido, pois a experiência é a chave para se tornar um programador Python habilidoso.</p>
                   </div>
                 </div>
-                <p>É importante seguir pesquisando a biblioteca Java, que traz mais uma variedade de estruturas de dados ou de interfaces que podem ser úteis para determinados problemas. Em algumas situações, no entanto, será necessário implementar a estrutura. Daí a importância de saber a sua utilidade e seu funcionamento, verificando se ela se aplica ou não à situação que se deseja desenvolver.</p>
+                
               </div>
             </div>
           </div>

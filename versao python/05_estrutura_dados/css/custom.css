@@ -358,6 +358,17 @@ pre code {
   transition: 0.5s;
 }
 
+.destaque-codigo{
+  background-color: green; 
+}
+
+.imagem-encerramento{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+}
+
 @media only screen and (max-width: 1500px) {
   .bloco.elemento {
     background: none;
