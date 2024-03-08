@@ -690,6 +690,10 @@ table.senac {
   margin: 0;
 }
 
+.loop-while{
+  margin-top: 20px;
+}
+
 @media screen and (max-width: 1650px) {
   body {
     background: url("../imagens/bg.jpg") no-repeat center;
@@ -727,6 +731,19 @@ table.senac {
     margin-top: 2px;
     z-index: 100;
   }
+}
+
+@media screen and (max-width: 1700px) {
+
+  .pagina-1 {
+    background:
+      url("../imagens/bg.jpg") no-repeat center;
+    background-size:cover;
+    background-attachment: fixed;
+  }
+
+
+
 }
 
 @media screen and (max-width: 1000px) {

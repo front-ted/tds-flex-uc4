@@ -3011,10 +3011,12 @@ Process finished with exit code 0
               <p>Clique ou toque para visualizar o conteúdo.</p>
            
               <div class="painel-categorias">
-                  <button type="button" class="btn-categorias btn-categoria02 center-block" data-toggle="modal"
-                      data-target="#modal-categoria02"></button>
-                  <button type="button" class="btn-categorias btn-categoria03 center-block" data-toggle="modal"
-                      data-target="#modal-categoria03"></button>
+                  <!-- <button type="button" class="btn-categorias btn-agregacao center-block" data-toggle="modal"
+                      data-target="#modal-agregacao"></button> -->
+
+                      <img src="objetos/esquema_3.png" class="btn-categorias btn-agregacao img-responsive center-block" data-toggle="modal" data-target="#modal-composicao" id="agregacao" srcset="">
+
+                    <img src="objetos/esquema_2.png" class="btn-categorias btn-composicao center-block img-responsive" data-toggle="modal" data-target="#modal-composicao" id="composicao" srcset="">
               </div>
 
               <div class="legenda-imagem">
@@ -3023,7 +3025,7 @@ Process finished with exit code 0
               </div>
 
 
-              <div class="modal modal-100 fade" id="modal-categoria03" aria-hidden="true">
+              <div class="modal modal-100 fade" id="modal-composicao" aria-hidden="true">
                   <div class="modal-dialog">
                       <div class="modal-content no-print">
                           <div class="modal-header" style="padding-top: 30px;">
@@ -3142,7 +3144,7 @@ Process finished with exit code 0
                       </div>
                   </div>
               </div>
-              <div class="modal modal-100 fade" id="modal-categoria02" aria-hidden="true">
+              <div class="modal modal-100 fade" id="modal-agregacao" aria-hidden="true">
                   <div class="modal-dialog">
                       <div class="modal-content no-print">
                           <div class="modal-header" style="padding-top: 30px;">
@@ -4879,4 +4881,47 @@ Process finished with exit code 0
       document.body.classList.remove('pagina-1');
   }
   
+</script>
+
+<!-- botoes associacao -->
+
+<script>
+    // Obtém a referência para o elemento de imagem
+    var imagemAssociacao = document.getElementById("composicao");
+
+    // Armazena o src da imagem original
+    var srcOriginalAssociacao = imagemAssociacao.src;
+
+    console.log(imagemAssociacao)
+
+
+    // Define a função para trocar a imagem quando o mouse passar por cima
+    imagemAssociacao.addEventListener("mouseover", function() {
+        imagemAssociacao.src = "./objetos/painelesquema_1.png"; 
+        console.log(imagem)
+    });
+
+    // Define a função para restaurar a imagem original quando o mouse sair de cima
+    imagemAssociacao.addEventListener("mouseout", function() {
+        imagemAssociacao.src = srcOriginalAssociacao;
+    });
+</script>
+
+<script>
+    // Obtém a referência para o elemento de imagem
+    var imagem = document.getElementById("agregacao");
+
+    // Armazena o src da imagem original
+    var srcOriginal = imagem.src;
+
+
+    // Define a função para trocar a imagem quando o mouse passar por cima
+    imagem.addEventListener("mouseover", function() {
+        imagem.src = "./objetos/painelesquema_2.png"; // Substitua "imagem2.jpg" pelo caminho da sua segunda imagem
+    });
+
+    // Define a função para restaurar a imagem original quando o mouse sair de cima
+    imagem.addEventListener("mouseout", function() {
+        imagem.src = srcOriginal;
+    });
 </script>

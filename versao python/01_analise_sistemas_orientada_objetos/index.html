@@ -1922,305 +1922,307 @@
                   </div>
 
 
-                          <!-- Modais -->
-            <div class="modal fade"
-            id="modalPublico"
-            tabindex="-1"
-            role="dialog"
-            aria-labelledby="myModalLabel"
-            aria-live="polite"
-            aria-atomic="true"
-            aria-hidden="false">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button
-                    type="button"
-                    class="close"
-                    data-dismiss="modal"
-                    aria-label="Close"
-                  >
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                  <h4 class="modal-title" id="myModalLabel">Métodos públicos</h4>
-                </div>
-                <div class="modal-body">
-
-                  <p>Métodos públicos são acessíveis de fora da classe e devem ser nomeados normalmente. Por convenção, eles <strong>não têm um sublinhado</strong> no início do nome. </p>
-
-                  <pre>
-                    <code>
-    <span class="language-python__blue">class </span><span class="language-python__red">MinhaClasse: </span><span class="language-python__blue">def </span><span class="language-python__red">metodo_publico</span><span>(self):</span>
-      
-          <span class="language-python__green">return</span> <span class="language-python__blue">"Este é um método público."</span>
-      
-          <span class="language-python__green">#início do Programa</span>
-        
-          <span>objeto = MinhaClasse()</span>
-        
-          <span class="language-python__orange">print</span><span>((objeto.metodo_publico())</span><span class="language-python__green"># Isso funcionará</span>
-                    </code>
-                  </pre>
-                  
-                          
-                          
-
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">
-                    Fechar
-                  </button>
-                </div>
-              </div>
-            </div>
-            </div>
-
-            <div
-        class="modal fade"
-        id="modalPrivado"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="myModalLabel"
-        aria-live="polite"
-        aria-atomic="true"
-        aria-hidden="false"
-        >
-        <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <h4 class="modal-title" id="myModalLabel">Métodos privados</h4>
-          </div>
-          <div class="modal-body">
-            <p>Métodos privados não devem ser acessados diretamente fora da classe. Por convenção, eles <strong>têm um sublinhado</strong> no início do nome.</p>
-
-            <pre>
-              <code>
-        <span class="language-python__blue">class </span><span class="language-python__red">MinhaClasse: </span><span class="language-python__blue">def </span><span class="language-python__red">__metodo_privado</span><span>(self):</span>
-
-        <span class="language-python__green">return</span> <span class="language-python__blue">"Este é um método privado."</span>
-
-        <span class="language-python__blue">def </span><span class="language-python__red">metodo_publico_chama_privado</span><span>(self):</span>
-
-        <span class="language-python__green">return</span> <span>self.metodo_privado()</span>
-
-        <span>objeto = MinhaClasse()</span>
-
-        <span class="language-python__green"># Tentar acessar diretamente o método privado gerará um erro. </span> 
-
-        <span class="language-python__green"># objeto. metodo_privado()   # Isso gerará um erro</span> 
-
-        <span class="language-python__green"># Para acessar o método privado, você pode chamar o método público que o utiliza.</span> 
-
-        <span class="language-python__orange">print</span><span>(objeto.metodo_publico_chama_privado())</span><span class="language-python__green"># Isso funcionará</span>
-              </code>
-            </pre>  
-
-            <div class="destaque-pixel">
-              <div class="icone-position-importante">
-                <div class="caixa-destaque">
-                    <p>Usar um sublinhado no início de nomes de métodos para indicar privacidade é apenas uma convenção. Tecnicamente, os métodos com sublinhado no início ainda podem ser acessados de fora da classe, mas não é uma boa prática. Python confia na “convenção de privacidade” em vez de impor a restrição diretamente.</p>
-                </div>
-              </div>
-            </div>
-
-            <p>Além disso, a partir do Python 3.9, você pode usar a anotação private para fornecer um nível mais alto de proteção para membros de classe, mas isso ainda é uma convenção. </p>
-
-
-            <pre>
-              <code>
-        <span class="language-python__blue">class </span><span class="language-python__red">MinhaClasse: </span>
-
-        <span class="language-python__blue">def </span><span class="language-python__red">__init</span><span>(self):</span>
-
-        <div class="language-python">
-        <span class="">self.__atributo_privado =</span><span class="language-python__red">42</span>
-
-        <span>@property</span>
-
-        <span class="language-python__blue">def </span><span class="language-python__red">atributo_privado</span><span>(self)</span>
-
-        <span  class="language-python__blue ">return </span><span>self.__atributo_privado  </span><span>(self)</span>
-
-        <span>@atributo_privado.setter</span>
-
-        <span class="language-python__blue">def </span><span class="language-python__red">atributo_privado</span><span>(self, valor):</span>
-
-        <span class="">self.__atributo_privado = valor</span>
-
-        <span>
-        objeto = MinhaClasse()
-        </span>
-
-        <span class="language-python__orange">print</span><span>(objeto.atributo_privado) </span><span class="language-python__green"># Isso funcionará</span>
-
-        <span>objeto.atributo_privado = 100 </span></span><span class="language-python__green"># Isso funcionará</span>
-              </code>
-            </pre>
-
-                    
-                    
-
-            <p>O uso de métodos privados no Python é uma questão de convenção e boa prática, e <strong>não uma imposição</strong> rígida do Python. Portanto, é importante seguir as convenções para manter o código organizado e de fácil manutenção. </p>
-            </div>
-
-          
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">
-              Fechar
-            </button>
-          </div>
-        </div>
-        </div>
-            </div>
-
-            <!-- Modais 100% -->
-            <div class="modal modal-100 fade" id="modal-diagrams" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content no-print">
-                  <div class="modal-header" style="padding-top: 30px;">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h3 class="modal-title">
-                      <div class="container">App Diagrams</div>
-                    </h3>
+            <div class="no-print">
+              <!-- Modais -->
+              <div class="modal fade"
+              id="modalPublico"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="myModalLabel"
+              aria-live="polite"
+              aria-atomic="true"
+              aria-hidden="false">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Métodos públicos</h4>
                   </div>
                   <div class="modal-body">
-                    <div class="container">
-                      <p><b>1</b>. Para acessar o aplicativo, clique neste <i>link</i> <a href="https://app.diagrams.net" target="_blank">https://app.diagrams.net</a>. Realize os passos a seguir para utilizar a ferramenta.</p>
-                      <p><b>2</b>. Depois de entrar no aplicativo, você verá este pequeno <i>pop-up</i>:</p>
-                      <img src="objetos/figura_19.png" class="img-responsive center-block">
-                      <p class="legenda-imagem">
-                        <i>Pop-up</i> de entrada do Diagrams <br>
-                        Fonte: Diagrams.net (s.d.)
-                      </p>
-                      <p class="acessivel no-print">A imagem mostra um quadrado com uma tabela de três colunas e duas linhas. Na primeira linha está o ícone do Google Drive; ao lado deste, o ícone do 11Drive e, ao lado, o ícone de um dispositivo de armazenamento. Na linha de baixo, consta o ícone do Dropbox; ao lado, o ícone do GitHub e, ao lado, o ícone do GitLab.</p>
-                      <p>Essa tela é muito importante, pois é nela que você decidirá onde seus diagramas <b>ficarão salvos</b>. Você pode escolher qualquer uma das opções para salvar em nuvem ou, se preferir, pode clicar na opção <b>Decide later</b> para continuar o uso direto da ferramenta e realizar o salvamento dos arquivos manualmente. Todas essas opções anteriores estarão disponíveis novamente.</p>
-                      <p><b>3</b>. Conheça agora algumas funções básicas de edição da área de trabalho do Diagrams, como cor de fundo, cor do <i>grid</i> e algumas funções que ajudarão você a usar e compreender o aplicativo.</p>
-                      <img src="objetos/figura_20.png" class="img-responsive center-block">
-                      <p class="legenda-imagem">
-                        Demonstrativo de opções de cores e tamanho no Diagrams <br>
-                        Fonte: Diagrams.net (s.d.)
-                      </p>
-                      <p class="acessivel no-print">Na imagem constam dois destaques: o primeiro engloba o texto “View”. Abaixo dele há uma caixa de seleção, ao lado dela está o texto “Grid”, um texto com o valor numérico de “10pt” e um quadrado seletor de cores. Abaixo uma caixa de seleção com o texto “Page View”. Abaixo disso está uma caixa de seleção com o texto “Background” e, ao lado, o botão com o texto “Change”. Abaixo, há uma caixa de seleção com o texto “Shadow”. No segundo destaque está o texto “Paper Size”; abaixo dele consta uma caixa de opções com a opção marcada “A4 (210 mm x 297 mm)”; abaixo há duas opções com o texto “Portrait” que está marcada e, ao lado, a opção com o texto “Landscape”.</p>
-                      <p>Nessa imagem existem algumas opções que são relevantes quanto à personalização do aplicativo Diagrams, as quais podem alterar as cores, o tamanho da folha e orientação do documento.</p>
-                      <div class="no-print" aria-hidden="true">
-                        <p>Clique ou toque para visualizar o conteúdo.</p>
-                        <div class='panel-group gaitinha' id='accordion04' role='tablist' aria-multiselectable='true'>
-                          <div class='panel panel-default'>
-                            <div class='panel-heading' role='tab' id='heading11'>
-                              <h3 class='panel-title'>
-                                <a role='button' data-toggle='collapse' data-parent='#accordion04' href='#collapse11' aria-expanded='false' aria-controls='collapse11'>
-                                  Grid
-                                </a>
-                              </h3>
-                            </div>
-                            <div id='collapse11' class='panel-collapse collapse in' role='tabpanel' aria-labelledby='heading11'>
-                              <div class='panel-body'>
-                                <p>São as grades do documento. Essa opção pode ser desmarcada para que as grades fiquem ocultas ou para que se possa ajustar o tamanho e cor delas.</p>
+
+                    <p>Métodos públicos são acessíveis de fora da classe e devem ser nomeados normalmente. Por convenção, eles <strong>não têm um sublinhado</strong> no início do nome. </p>
+
+                    <pre>
+                      <code>
+      <span class="language-python__blue">class </span><span class="language-python__red">MinhaClasse: </span><span class="language-python__blue">def </span><span class="language-python__red">metodo_publico</span><span>(self):</span>
+        
+            <span class="language-python__green">return</span> <span class="language-python__blue">"Este é um método público."</span>
+        
+            <span class="language-python__green">#início do Programa</span>
+          
+            <span>objeto = MinhaClasse()</span>
+          
+            <span class="language-python__orange">print</span><span>((objeto.metodo_publico())</span><span class="language-python__green"># Isso funcionará</span>
+                      </code>
+                    </pre>
+                    
+                            
+                            
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                      Fechar
+                    </button>
+                  </div>
+                </div>
+              </div>
+              </div>
+
+              <div
+          class="modal fade"
+          id="modalPrivado"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="myModalLabel"
+          aria-live="polite"
+          aria-atomic="true"
+          aria-hidden="false"
+          >
+          <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel">Métodos privados</h4>
+            </div>
+            <div class="modal-body">
+              <p>Métodos privados não devem ser acessados diretamente fora da classe. Por convenção, eles <strong>têm um sublinhado</strong> no início do nome.</p>
+
+              <pre>
+                <code>
+          <span class="language-python__blue">class </span><span class="language-python__red">MinhaClasse: </span><span class="language-python__blue">def </span><span class="language-python__red">__metodo_privado</span><span>(self):</span>
+
+          <span class="language-python__green">return</span> <span class="language-python__blue">"Este é um método privado."</span>
+
+          <span class="language-python__blue">def </span><span class="language-python__red">metodo_publico_chama_privado</span><span>(self):</span>
+
+          <span class="language-python__green">return</span> <span>self.metodo_privado()</span>
+
+          <span>objeto = MinhaClasse()</span>
+
+          <span class="language-python__green"># Tentar acessar diretamente o método privado gerará um erro. </span> 
+
+          <span class="language-python__green"># objeto. metodo_privado()   # Isso gerará um erro</span> 
+
+          <span class="language-python__green"># Para acessar o método privado, você pode chamar o método público que o utiliza.</span> 
+
+          <span class="language-python__orange">print</span><span>(objeto.metodo_publico_chama_privado())</span><span class="language-python__green"># Isso funcionará</span>
+                </code>
+              </pre>  
+
+              <div class="destaque-pixel">
+                <div class="icone-position-importante">
+                  <div class="caixa-destaque">
+                      <p>Usar um sublinhado no início de nomes de métodos para indicar privacidade é apenas uma convenção. Tecnicamente, os métodos com sublinhado no início ainda podem ser acessados de fora da classe, mas não é uma boa prática. Python confia na “convenção de privacidade” em vez de impor a restrição diretamente.</p>
+                  </div>
+                </div>
+              </div>
+
+              <p>Além disso, a partir do Python 3.9, você pode usar a anotação private para fornecer um nível mais alto de proteção para membros de classe, mas isso ainda é uma convenção. </p>
+
+
+              <pre>
+                <code>
+          <span class="language-python__blue">class </span><span class="language-python__red">MinhaClasse: </span>
+
+          <span class="language-python__blue">def </span><span class="language-python__red">__init</span><span>(self):</span>
+
+          <div class="language-python">
+          <span class="">self.__atributo_privado =</span><span class="language-python__red">42</span>
+
+          <span>@property</span>
+
+          <span class="language-python__blue">def </span><span class="language-python__red">atributo_privado</span><span>(self)</span>
+
+          <span  class="language-python__blue ">return </span><span>self.__atributo_privado  </span><span>(self)</span>
+
+          <span>@atributo_privado.setter</span>
+
+          <span class="language-python__blue">def </span><span class="language-python__red">atributo_privado</span><span>(self, valor):</span>
+
+          <span class="">self.__atributo_privado = valor</span>
+
+          <span>
+          objeto = MinhaClasse()
+          </span>
+
+          <span class="language-python__orange">print</span><span>(objeto.atributo_privado) </span><span class="language-python__green"># Isso funcionará</span>
+
+          <span>objeto.atributo_privado = 100 </span></span><span class="language-python__green"># Isso funcionará</span>
+                </code>
+              </pre>
+
+                      
+                      
+
+              <p>O uso de métodos privados no Python é uma questão de convenção e boa prática, e <strong>não uma imposição</strong> rígida do Python. Portanto, é importante seguir as convenções para manter o código organizado e de fácil manutenção. </p>
+              </div>
+
+            
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">
+                Fechar
+              </button>
+            </div>
+          </div>
+          </div>
+              </div>
+
+              <!-- Modais 100% -->
+              <div class="modal modal-100 fade" id="modal-diagrams" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content no-print">
+                    <div class="modal-header" style="padding-top: 30px;">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h3 class="modal-title">
+                        <div class="container">App Diagrams</div>
+                      </h3>
+                    </div>
+                    <div class="modal-body">
+                      <div class="container">
+                        <p><b>1</b>. Para acessar o aplicativo, clique neste <i>link</i> <a href="https://app.diagrams.net" target="_blank">https://app.diagrams.net</a>. Realize os passos a seguir para utilizar a ferramenta.</p>
+                        <p><b>2</b>. Depois de entrar no aplicativo, você verá este pequeno <i>pop-up</i>:</p>
+                        <img src="objetos/figura_19.png" class="img-responsive center-block">
+                        <p class="legenda-imagem">
+                          <i>Pop-up</i> de entrada do Diagrams <br>
+                          Fonte: Diagrams.net (s.d.)
+                        </p>
+                        <p class="acessivel no-print">A imagem mostra um quadrado com uma tabela de três colunas e duas linhas. Na primeira linha está o ícone do Google Drive; ao lado deste, o ícone do 11Drive e, ao lado, o ícone de um dispositivo de armazenamento. Na linha de baixo, consta o ícone do Dropbox; ao lado, o ícone do GitHub e, ao lado, o ícone do GitLab.</p>
+                        <p>Essa tela é muito importante, pois é nela que você decidirá onde seus diagramas <b>ficarão salvos</b>. Você pode escolher qualquer uma das opções para salvar em nuvem ou, se preferir, pode clicar na opção <b>Decide later</b> para continuar o uso direto da ferramenta e realizar o salvamento dos arquivos manualmente. Todas essas opções anteriores estarão disponíveis novamente.</p>
+                        <p><b>3</b>. Conheça agora algumas funções básicas de edição da área de trabalho do Diagrams, como cor de fundo, cor do <i>grid</i> e algumas funções que ajudarão você a usar e compreender o aplicativo.</p>
+                        <img src="objetos/figura_20.png" class="img-responsive center-block">
+                        <p class="legenda-imagem">
+                          Demonstrativo de opções de cores e tamanho no Diagrams <br>
+                          Fonte: Diagrams.net (s.d.)
+                        </p>
+                        <p class="acessivel no-print">Na imagem constam dois destaques: o primeiro engloba o texto “View”. Abaixo dele há uma caixa de seleção, ao lado dela está o texto “Grid”, um texto com o valor numérico de “10pt” e um quadrado seletor de cores. Abaixo uma caixa de seleção com o texto “Page View”. Abaixo disso está uma caixa de seleção com o texto “Background” e, ao lado, o botão com o texto “Change”. Abaixo, há uma caixa de seleção com o texto “Shadow”. No segundo destaque está o texto “Paper Size”; abaixo dele consta uma caixa de opções com a opção marcada “A4 (210 mm x 297 mm)”; abaixo há duas opções com o texto “Portrait” que está marcada e, ao lado, a opção com o texto “Landscape”.</p>
+                        <p>Nessa imagem existem algumas opções que são relevantes quanto à personalização do aplicativo Diagrams, as quais podem alterar as cores, o tamanho da folha e orientação do documento.</p>
+                        <div class="no-print" aria-hidden="true">
+                          <p>Clique ou toque para visualizar o conteúdo.</p>
+                          <div class='panel-group gaitinha' id='accordion04' role='tablist' aria-multiselectable='true'>
+                            <div class='panel panel-default'>
+                              <div class='panel-heading' role='tab' id='heading11'>
+                                <h3 class='panel-title'>
+                                  <a role='button' data-toggle='collapse' data-parent='#accordion04' href='#collapse11' aria-expanded='false' aria-controls='collapse11'>
+                                    Grid
+                                  </a>
+                                </h3>
+                              </div>
+                              <div id='collapse11' class='panel-collapse collapse in' role='tabpanel' aria-labelledby='heading11'>
+                                <div class='panel-body'>
+                                  <p>São as grades do documento. Essa opção pode ser desmarcada para que as grades fiquem ocultas ou para que se possa ajustar o tamanho e cor delas.</p>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                          <div class='panel panel-default'>
-                            <div class='panel-heading' role='tab' id='heading12'>
-                              <h3 class='panel-title'>
-                                <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion04' href='#collapse12' aria-expanded='false' aria-controls='collapse12'>
-                                  Page View
-                                </a>
-                              </h3>
-                            </div>
-                            <div id='collapse12' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading12'>
-                              <div class='panel-body'>
-                                <p>Enquanto você está desenvolvendo diagramas, o aplicativo, automaticamente, estará indicando a quantidade de páginas que estão sendo ocupadas. Caso você gere um arquivo (impresso ou em PDF), já saberá quantas páginas ele conterá. Essa opção pode ser desativada, se necessário.</p>
+                            <div class='panel panel-default'>
+                              <div class='panel-heading' role='tab' id='heading12'>
+                                <h3 class='panel-title'>
+                                  <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion04' href='#collapse12' aria-expanded='false' aria-controls='collapse12'>
+                                    Page View
+                                  </a>
+                                </h3>
+                              </div>
+                              <div id='collapse12' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading12'>
+                                <div class='panel-body'>
+                                  <p>Enquanto você está desenvolvendo diagramas, o aplicativo, automaticamente, estará indicando a quantidade de páginas que estão sendo ocupadas. Caso você gere um arquivo (impresso ou em PDF), já saberá quantas páginas ele conterá. Essa opção pode ser desativada, se necessário.</p>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                          <div class='panel panel-default'>
-                            <div class='panel-heading' role='tab' id='heading13'>
-                              <h3 class='panel-title'>
-                                <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion04' href='#collapse13' aria-expanded='false' aria-controls='collapse13'>
-                                  Background
-                                </a>
-                              </h3>
-                            </div>
-                            <div id='collapse13' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading13'>
-                              <div class='panel-body'>
-                                <p>A cor de fundo padrão do Diagrams é branco, porém, caso haja a necessidade, pode-se trocar a cor desse fundo a qualquer momento.</p>
+                            <div class='panel panel-default'>
+                              <div class='panel-heading' role='tab' id='heading13'>
+                                <h3 class='panel-title'>
+                                  <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion04' href='#collapse13' aria-expanded='false' aria-controls='collapse13'>
+                                    Background
+                                  </a>
+                                </h3>
+                              </div>
+                              <div id='collapse13' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading13'>
+                                <div class='panel-body'>
+                                  <p>A cor de fundo padrão do Diagrams é branco, porém, caso haja a necessidade, pode-se trocar a cor desse fundo a qualquer momento.</p>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                          <div class='panel panel-default'>
-                            <div class='panel-heading' role='tab' id='heading14'>
-                              <h3 class='panel-title'>
-                                <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion04' href='#collapse14' aria-expanded='false' aria-controls='collapse14'>
-                                  Shadow
-                                </a>
-                              </h3>
-                            </div>
-                            <div id='collapse14' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading14'>
-                              <div class='panel-body'>
-                                <p>Aplica um efeito de sombra nos diagramas.</p>
+                            <div class='panel panel-default'>
+                              <div class='panel-heading' role='tab' id='heading14'>
+                                <h3 class='panel-title'>
+                                  <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion04' href='#collapse14' aria-expanded='false' aria-controls='collapse14'>
+                                    Shadow
+                                  </a>
+                                </h3>
+                              </div>
+                              <div id='collapse14' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading14'>
+                                <div class='panel-body'>
+                                  <p>Aplica um efeito de sombra nos diagramas.</p>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                          <div class='panel panel-default'>
-                            <div class='panel-heading' role='tab' id='heading15'>
-                              <h3 class='panel-title'>
-                                <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion04' href='#collapse15' aria-expanded='false' aria-controls='collapse15'>
-                                  Paper Size
-                                </a>
-                              </h3>
-                            </div>
-                            <div id='collapse15' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading15'>
-                              <div class='panel-body'>
-                                <p>Refere-se ao tamanho do papel ou do documento que será gerado desse diagrama, caso seja exportado para o formato de PDF, por exemplo. O padrão A4 é utilizado em todos os documentos, porém pode ser trocado a qualquer momento, assim como a orientação da folha pode ser ajustada para <b>Portrait</b> (retrato) ou <b>Landscape</b> (paisagem).</p>
+                            <div class='panel panel-default'>
+                              <div class='panel-heading' role='tab' id='heading15'>
+                                <h3 class='panel-title'>
+                                  <a class='collapsed' role='button' data-toggle='collapse' data-parent='#accordion04' href='#collapse15' aria-expanded='false' aria-controls='collapse15'>
+                                    Paper Size
+                                  </a>
+                                </h3>
+                              </div>
+                              <div id='collapse15' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading15'>
+                                <div class='panel-body'>
+                                  <p>Refere-se ao tamanho do papel ou do documento que será gerado desse diagrama, caso seja exportado para o formato de PDF, por exemplo. O padrão A4 é utilizado em todos os documentos, porém pode ser trocado a qualquer momento, assim como a orientação da folha pode ser ajustada para <b>Portrait</b> (retrato) ou <b>Landscape</b> (paisagem).</p>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
+                        <div class="acessivel print">
+                          <h4>Grid</h4>
+                          <p>São as grades do documento. Essa opção pode ser desmarcada para que as grades fiquem ocultas ou para que se possa ajustar o tamanho e cor delas.</p>
+                          <h4>Page View</h4>
+                          <p>Enquanto você está desenvolvendo diagramas, o aplicativo, automaticamente, estará indicando a quantidade de páginas que estão sendo ocupadas. Caso você gere um arquivo (impresso ou em PDF), já saberá quantas páginas ele conterá. Essa opção pode ser desativada, se necessário.</p>
+                          <h4>Background</h4>
+                          <p>A cor de fundo padrão do Diagrams é branco, porém, caso haja a necessidade, pode-se trocar a cor desse fundo a qualquer momento.</p>
+                          <h4>Shadow</h4>
+                          <p>Aplica um efeito de sombra nos diagramas.</p>
+                          <h4>Paper Size</h4>
+                          <p>Refere-se ao tamanho do papel ou do documento que será gerado desse diagrama, caso seja exportado para o formato de PDF, por exemplo. O padrão A4 é utilizado em todos os documentos, porém pode ser trocado a qualquer momento, assim como a orientação da folha pode ser ajustada para <b>Portrait</b> (retrato) ou <b>Landscape</b> (paisagem).</p>
+                        </div>
+                        <p>Observe agora como isso se comporta no aplicativo Diagrams:</p>
+                        <img src="objetos/gif_2.gif" class="img-responsive center-block">
+                        <div class="acessivel no-print">Na animação, o usuário está clicando na caixa de seleção “Grid” duas vezes, depois isso clicando na seleção de cores e escolhendo uma cor azul. Após isso, o usuário clica duas vezes na opção “Page View”, depois na caixa de seleção “Background” e seleciona uma cor.</div>
+                        <p>Com isso, você já será capaz de gerar um processo mais personalizado.</p>
+                        <p>Agora você encontrará onde poderá produzir os seus <b>diagramas de classe</b> e entenderá um pouco a produção desses diagramas dentro do Diagrams.</p>
+                        <img src="objetos/figura_21.png" class="img-responsive center-block">
+                        <p class="legenda-imagem">
+                          Figura 21 – Demonstração de onde encontrar a opção de UML no aplicativo Diagrams <br>
+                          Fonte: Diagrams.net (s.d.)
+                        </p>
+                        <p class="acessivel no-print">Na figura constam duas imagens. À esquerda há um menu vertical com um destaque para o último item do menu, com o texto “UML”; ao lado há diversos ícones retangulares e redondos.</p>
+                        <p>No Diagrams, no canto esquerdo, haverá os menus para acessar as opções sobre diagramas, fluxogramas e formas que a aplicação oferece. Contudo, como marcado na imagem, ao clicar em UML, você terá as opções que quiser para produzir seus diagramas de classe. O ícone que será utilizado neste momento é o terceiro da primeira linha. Ao clicar nele, surgirá o seguinte resultado:</p>
+                        <img src="objetos/gif_3.gif" class="img-responsive center-block">
+                        <div class="acessivel no-print">Na animação, o usuário está clicando no terceiro ícone da primeira linha do menu UML. Ao clicar, no lado direito, aparece uma tabela com três linhas, nas quais constam os seguintes textos, em ordem, de cima para baixo: “Classname”, “field:type” e “method(type): type”.</div>
+                        <p>Pronto! Agora, basta começar a digitar o nome da classe, os atributos e os métodos. Confira o quanto é simples esse processo:</p>
+                        <img src="objetos/gif_4.gif" class="img-responsive center-block">
+                        <div class="acessivel no-print">Na animação, o usuário está clicando no terceiro ícone da primeira linha do menu UML. Ao clicar, ao lado direito aparece uma tabela com três linhas com os seguintes textos, em ordem, de cima para baixo: “Classname”, “field:type” e “method(type): type”. Após isso, na primeira linha, o usuário altera o texto para “NomeDaClasse”; depois, na linha seguinte, altera para “atributo: tipo”; abaixo, altera para “método ( ): retorno”.</div>
+                        <p>Com isso, basta ampliar seu uso do aplicativo Diagrams e começar a produzir seus próprios diagramas de classe. Para finalizar, basta salvar esses diagramas. Como visto anteriormente, é possível salvá-los de diversas formas, seja em nuvem ou localmente, no seu dispositivo. Veja a demonstração de como salvar no aplicativo Diagrams.</p>
+                        <img src="objetos/gif_4.gif" class="img-responsive center-block">
+                        <div class="acessivel no-print">Na animação, o usuário clica na opção no canto superior direito “File”. Ao clicar, um menu se abre e o usuário clica na opção “Save”, que abre outra imagem com o texto “Save As”. Nesta imagem há sete diferentes ícones, que são, em ordem da esquerda para a direita e de cima para baixo: ícone Google Drive, ícone OneDrive, ícone Dropbox, ícone GitHub, ícone GitLab, ícone de dispositivo de armazenamento e ícone de navegador. Abaixo disso há três botões na mesma linha, em ordem, da esquerda para direita, “Open in New Window”, “Download” e “Close”.</div>
                       </div>
-                      <div class="acessivel print">
-                        <h4>Grid</h4>
-                        <p>São as grades do documento. Essa opção pode ser desmarcada para que as grades fiquem ocultas ou para que se possa ajustar o tamanho e cor delas.</p>
-                        <h4>Page View</h4>
-                        <p>Enquanto você está desenvolvendo diagramas, o aplicativo, automaticamente, estará indicando a quantidade de páginas que estão sendo ocupadas. Caso você gere um arquivo (impresso ou em PDF), já saberá quantas páginas ele conterá. Essa opção pode ser desativada, se necessário.</p>
-                        <h4>Background</h4>
-                        <p>A cor de fundo padrão do Diagrams é branco, porém, caso haja a necessidade, pode-se trocar a cor desse fundo a qualquer momento.</p>
-                        <h4>Shadow</h4>
-                        <p>Aplica um efeito de sombra nos diagramas.</p>
-                        <h4>Paper Size</h4>
-                        <p>Refere-se ao tamanho do papel ou do documento que será gerado desse diagrama, caso seja exportado para o formato de PDF, por exemplo. O padrão A4 é utilizado em todos os documentos, porém pode ser trocado a qualquer momento, assim como a orientação da folha pode ser ajustada para <b>Portrait</b> (retrato) ou <b>Landscape</b> (paisagem).</p>
-                      </div>
-                      <p>Observe agora como isso se comporta no aplicativo Diagrams:</p>
-                      <img src="objetos/gif_2.gif" class="img-responsive center-block">
-                      <div class="acessivel no-print">Na animação, o usuário está clicando na caixa de seleção “Grid” duas vezes, depois isso clicando na seleção de cores e escolhendo uma cor azul. Após isso, o usuário clica duas vezes na opção “Page View”, depois na caixa de seleção “Background” e seleciona uma cor.</div>
-                      <p>Com isso, você já será capaz de gerar um processo mais personalizado.</p>
-                      <p>Agora você encontrará onde poderá produzir os seus <b>diagramas de classe</b> e entenderá um pouco a produção desses diagramas dentro do Diagrams.</p>
-                      <img src="objetos/figura_21.png" class="img-responsive center-block">
-                      <p class="legenda-imagem">
-                        Figura 21 – Demonstração de onde encontrar a opção de UML no aplicativo Diagrams <br>
-                        Fonte: Diagrams.net (s.d.)
-                      </p>
-                      <p class="acessivel no-print">Na figura constam duas imagens. À esquerda há um menu vertical com um destaque para o último item do menu, com o texto “UML”; ao lado há diversos ícones retangulares e redondos.</p>
-                      <p>No Diagrams, no canto esquerdo, haverá os menus para acessar as opções sobre diagramas, fluxogramas e formas que a aplicação oferece. Contudo, como marcado na imagem, ao clicar em UML, você terá as opções que quiser para produzir seus diagramas de classe. O ícone que será utilizado neste momento é o terceiro da primeira linha. Ao clicar nele, surgirá o seguinte resultado:</p>
-                      <img src="objetos/gif_3.gif" class="img-responsive center-block">
-                      <div class="acessivel no-print">Na animação, o usuário está clicando no terceiro ícone da primeira linha do menu UML. Ao clicar, no lado direito, aparece uma tabela com três linhas, nas quais constam os seguintes textos, em ordem, de cima para baixo: “Classname”, “field:type” e “method(type): type”.</div>
-                      <p>Pronto! Agora, basta começar a digitar o nome da classe, os atributos e os métodos. Confira o quanto é simples esse processo:</p>
-                      <img src="objetos/gif_4.gif" class="img-responsive center-block">
-                      <div class="acessivel no-print">Na animação, o usuário está clicando no terceiro ícone da primeira linha do menu UML. Ao clicar, ao lado direito aparece uma tabela com três linhas com os seguintes textos, em ordem, de cima para baixo: “Classname”, “field:type” e “method(type): type”. Após isso, na primeira linha, o usuário altera o texto para “NomeDaClasse”; depois, na linha seguinte, altera para “atributo: tipo”; abaixo, altera para “método ( ): retorno”.</div>
-                      <p>Com isso, basta ampliar seu uso do aplicativo Diagrams e começar a produzir seus próprios diagramas de classe. Para finalizar, basta salvar esses diagramas. Como visto anteriormente, é possível salvá-los de diversas formas, seja em nuvem ou localmente, no seu dispositivo. Veja a demonstração de como salvar no aplicativo Diagrams.</p>
-                      <img src="objetos/gif_4.gif" class="img-responsive center-block">
-                      <div class="acessivel no-print">Na animação, o usuário clica na opção no canto superior direito “File”. Ao clicar, um menu se abre e o usuário clica na opção “Save”, que abre outra imagem com o texto “Save As”. Nesta imagem há sete diferentes ícones, que são, em ordem da esquerda para a direita e de cima para baixo: ícone Google Drive, ícone OneDrive, ícone Dropbox, ícone GitHub, ícone GitLab, ícone de dispositivo de armazenamento e ícone de navegador. Abaixo disso há três botões na mesma linha, em ordem, da esquerda para direita, “Open in New Window”, “Download” e “Close”.</div>
                     </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="botao borda-primaria-03" data-dismiss="modal">Fechar</button>
+                    <div class="modal-footer">
+                      <button type="button" class="botao borda-primaria-03" data-dismiss="modal">Fechar</button>
+                    </div>
                   </div>
                 </div>
               </div>

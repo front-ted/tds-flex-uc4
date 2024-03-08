@@ -279,7 +279,7 @@ code {
 }
 
 .pag-visitada{
-  opacity: 0.1;
+  opacity: 0.3;
 }
 
 .menu-titulo1 {
@@ -431,10 +431,10 @@ code {
 .painel-categorias {
   position: relative;
   display: block;
-  margin: 20px auto;
-  width: 400px;
-  height: 236px;
-  background: url("../objetos/esquema_1.png") no-repeat;
+  margin: 20px auto 60px auto;
+  width: 481px;
+  height: 282px;
+  background: url("../objetos/esquema_4.png") no-repeat;
   background-size: 100%;
 }
 
@@ -456,19 +456,34 @@ code {
   z-index: 10;
 }
 
-.btn-categoria02 {
-  width: 300px;
-  height: 178px;
+.btn-agregacao {
+  /* width: 385px;
+  height: 174px; */
+  position: absolute;
+  left: 25%;
+  top: 5%;
   z-index: 20;
-  margin-left: 50px;
+  margin-left: -50px;
+  background-size: cover;
 }
 
-.btn-categoria03 {
-  width: 200px;
-  height: 118px;
+
+.btn-composicao {
+  position: absolute;
+  top: 6%;
+  left: 37%;
   z-index: 30;
-  margin-left: 100px;
+  background-size: cover;
+   margin-left: -50px;
+   padding: 0 0;
 }
+
+
+
+
+
+
+
 
 .painel-objeto {
   background: url("../objetos/painel_fundo.png") no-repeat;
