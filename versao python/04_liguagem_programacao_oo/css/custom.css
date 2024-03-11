@@ -856,6 +856,22 @@ code {
   }
 } */
 
+ @media only screen and (max-width: 1500px) {
+
+
+  
+.pagina-1{
+  background: 
+    url("../objetos/bg.jpg") no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+ }
+
+
+
+
+
 @media screen and (max-width: 820px) {
   .fig04-kanban,
   .ilustra-metodos {
