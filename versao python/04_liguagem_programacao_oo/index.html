@@ -159,25 +159,25 @@
             <button type="button" class="btn-painel_robo btn-painel_robo02 center-block" data-toggle="modal" data-target="#modal-painel_robo02"></button>
             <button type="button" class="btn-painel_robo btn-painel_robo03 center-block" data-toggle="modal" data-target="#modal-painel_robo03"></button>
           </div>
-          <p class="legenda-imagem">
+          <!-- <p class="legenda-imagem">
             Herança de uma classe robô (mais genérica) e classes que são derivadas dela <br>
             Fonte: Senac EAD (2022)
           </p>
           <p class="acessivel no-print">A imagem mostra um diagrama UML com classe “Robô”, atributos “Bateria” e
             “Fabricante”, métodos “Movimentar()” e “EvitarObstaculos()”. Abaixo, à esquerda, aparece a classe derivada
             “Robô Cheetah”, com método “Pular()”. Abaixo da classe “Robô”, à direita, está a classe derivada “Robô de
-            Limpeza”, com atributo “HoraAgendada” e médodo “Aspirar()”.</p>
+            Limpeza”, com atributo “HoraAgendada” e médodo “Aspirar()”.</p> -->
         </div>
         <div class="acessivel print">
           <img src='objetos/layout_5_fig2.png' class='img-responsive center-block'>
-          <p class="legenda-imagem">
+          <!-- <p class="legenda-imagem">
             Herança de uma classe robô (mais genérica) e classes que são derivadas dela <br>
             Fonte: Senac EAD (2022)
           </p>
           <p class="acessivel no-print">A imagem mostra um diagrama UML com classe “Robô”, atributos “Bateria” e
             “Fabricante”, métodos “Movimentar()” e “EvitarObstaculos()”. Abaixo, à esquerda, aparece a classe derivada
             “Robô Cheetah”, com método “Pular()”. Abaixo da classe “Robô”, à direita, está a classe derivada “Robô de
-            Limpeza”, com atributo “HoraAgendada” e médodo “Aspirar()”.</p>
+            Limpeza”, com atributo “HoraAgendada” e médodo “Aspirar()”.</p> -->
           <img src='objetos/gif_01.gif' class='img-responsive center-block'>
           <p class="acessivel no-print">A animação mostra um robô quadrúpede pulando um obstáculo.</p>
           <img src='objetos/gif_02.gif' class='img-responsive center-block'>
@@ -261,7 +261,7 @@ pessoa.apresentar()
             </code>
         </pre>
        <p>
-          Nessa classe, o construtor __init__ cria um objeto uuid usando a biblioteca uuid para gerar
+          Nessa classe, o construtor __init__ cria um objeto UUID usando a biblioteca UUID para gerar
           um
           identificador único. Os atributos nome e cpf são inicializados como <i>strings</i> vazias,
           mas
@@ -355,6 +355,9 @@ pessoa.apresentar()
           </p>
         </div>
 
+        <p>
+            Assista ao vídeo a seguir para compreender o passo a passo de criação de um projeto Python no Pycharm.
+        </p>
         <div class="video-1">VIDEO</div>
                    
         <div class="acessivel print">
@@ -542,7 +545,7 @@ class Subclasse(ClasseBase):
 <span class="l-python-violeta">self</span>.cargo = cargo 
            
 <span class="l-python-orange">def</span> __str__(<span class="l-python-violeta">self</span>): 
-<span class="l-python-orange">return</span> <span class="l-python-green">f"Nome:</span> <span class="l-python-orange">{</span><pan class="l-python-violeta">self</pan>.nome<span class="l-python-orange">}</span><span class="l-python-green">, Salário:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.salario<span class="l-python-orange">}</span><span class="l-python-green">, Cargo:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.cargo<span class="l-python-orange">}</span><span class="l-python-green">"</span> 
+<span class="l-python-orange">return</span> <span class="l-python-green">f"Nome:</span> <span class="l-python-orange">{</span><pan class="l-python-violeta">self</pan>.nome<span class="l-python-orange">}</span><span class="l-python-green">, Salário:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.salario<span class="l-python-orange">}</span><span claEss="l-python-green">, Cargo:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.cargo<span class="l-python-orange">}</span><span class="l-python-green">"</span> 
            
 # Exemplos de criação de objetos 
 funcionario1 = Vendedor(<span class="l-python-green">"João"</span>, <span class="l-python-aqua">3000.0</span>, <span class="l-python-aqua">500.0</span>) 
@@ -2198,7 +2201,7 @@ carro_radio.ligar()
                   um método na classe pai.
               </p>
               <p>
-                  Em Python, a sobreposição de métodos (override) é alcançada simplesmente definindo um método
+                  Em Python, a sobreposição de métodos (<i>override</i>) é alcançada simplesmente definindo um método
                   na
                   classe filha com o mesmo nome que o método na classe pai. Python não requer uma anotação
                   especial para indicar a sobreposição. Se você definir um método com o mesmo nome na classe
@@ -3167,7 +3170,7 @@ Process finished with exit code 0
                                   </p>
                                   <p>
                                       Por exemplo, um departamento pode ter um ou mais funcionários, mas um
-                                      funcionário não tem um departamento, apenas faz parte de um departamento,
+                                      funcionário não <b>tem</b> um departamento, apenas <b>faz parte</b> de um departamento,
                                       novamente, um relacionamento do tipo proprietário e propriedade. Portanto,
                                       diz-se que a agregação tem uma natureza unidirecional.
                                   </p>
@@ -3747,9 +3750,9 @@ pessoa1.divorciar()
                 </code>
             </pre>
             <p>
-                Há a classe “Pessoa” com a propriedade “cônjuge”. O método casar_com permite casar duas pessoas
+                Há a classe “Pessoa” com a propriedade “cônjuge”. O método <b>casar_com</b> permite casar duas pessoas
                 e
-                criar um relacionamento bidirecional, enquanto o método divorciar permite o divórcio, removendo
+                criar um relacionamento bidirecional, enquanto o método <b>divorciar</b> permite o divórcio, removendo
                 o
                 relacionamento. Esse é um exemplo de relacionamento bidirecional, em que os objetos da mesma
                 classe
@@ -3773,7 +3776,7 @@ Process finished with exit code 0
         <div class="container">
             <h3>Sintaxe da linguagem para orientação a objeto </h3>
             <p>
-                A programação orientada a objetos (POO) é uma metodologia de desenvolvimento de software
+                A programação orientada a objetos (POO) é uma metodologia de desenvolvimento de <i>software</i>
                 amplamente
                 usada em Python. Ela permite organizar e estruturar o código em torno de objetos, que são
                 instâncias
