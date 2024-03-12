@@ -205,8 +205,8 @@
        <span class="l-python-violeta"> self</span>.__cpf = <span class="l-python-green">""</span> 
        <span class="l-python-violeta"> self</span>.__uuid = uuid.uuid4() 
                             
-<span class="l-python-orange">def</span> <span class="l-python-blue">set_nome</span>(<span class="l-python-violeta">self</span>, nome): 
-    <span class="l-python-violeta">self</span>.__nome = nome 
+    <span class="l-python-orange">def</span> <span class="l-python-blue">set_nome</span>(<span class="l-python-violeta">self</span>, nome): 
+        <span class="l-python-violeta">self</span>.__nome = nome 
                              
     <span class="l-python-orange">def</span> <span class="l-python-blue">get_nome</span>(<span class="l-python-violeta">self</span>): 
         <span class="l-python-orange">return</span> <span class="l-python-violeta">self</span>.__nome 
@@ -232,8 +232,8 @@ pessoa.set_cpf(<span class="l-python-green">"123.456.789-00"</span>)
 # Apresentando os dados da pessoa usando os métodos get 
 pessoa.apresentar() 
         
-<span class="l-python-orange">def</span> <span class="l-python-blue">set_nome</span>(<span class="l-python-violeta">self</span>, nome): 
-    <span class="l-python-violeta">self</span>.__nome = nome 
+    <!-- <span class="l-python-orange">def</span> <span class="l-python-blue">set_nome</span>(<span class="l-python-violeta">self</span>, nome): 
+        <span class="l-python-violeta">self</span>.__nome = nome 
          
     <span class="l-python-orange">def</span> <span class="l-python-blue">get_nome</span>(self): 
         <span class="l-python-orange">return</span> <span class="l-python-violeta">self</span>.__nome 
@@ -257,7 +257,7 @@ pessoa.set_nome(<span class="l-python-green">"Alice"</span>)
 pessoa.set_cpf(<span class="l-python-green">"123.456.789-00"</span>) 
          
 # Apresentando os dados da pessoa usando os métodos get 
-pessoa.apresentar() 
+pessoa.apresentar()  -->
             </code>
         </pre>
        <p>
@@ -410,20 +410,20 @@ pessoa.apresentar()
 
         <pre>
             <code>
-<span class="l-python-orange">class</span> Aluno(Pessoa): 
-<span class="l-python-orange">def</span> <span class="l-python-roxo">__init__</span>(<span class="l-python-violeta">self</span>): 
-<span class="l-python-aescuro">super</span>().<span class="l-python-roxo">__init__</span>() 
-<span class="l-python-violeta">self</span>.__matricula = <span class="l-python-green">""</span> 
+    <span class="l-python-orange">class</span> Aluno(Pessoa): 
+        <span class="l-python-orange">def</span> <span class="l-python-roxo">__init__</span>(<span class="l-python-violeta">self</span>): 
+        <span class="l-python-aescuro">super</span>().<span class="l-python-roxo">__init__</span>() 
+        <span class="l-python-violeta">self</span>.__matricula = <span class="l-python-green">""</span> 
 
-<span class="l-python-orange">def</span> <span class="l-python-blue">set_matricula</span>(<span class="l-python-violeta">self</span>, matricula): 
-<span class="l-python-violeta">self</span>.__matricula = matricula 
+        <span class="l-python-orange">def</span> <span class="l-python-blue">set_matricula</span>(<span class="l-python-violeta">self</span>, matricula): 
+        <span class="l-python-violeta">self</span>.__matricula = matricula 
 
-<span class="l-python-orange">def</span> <span class="l-python-blue">get_matricula</span>(<span class="l-python-violeta">self</span>): 
-<span class="l-python-orange">return</span> <span class="l-python-violeta">self</span>.__matricula 
+        <span class="l-python-orange">def</span> <span class="l-python-blue">get_matricula</span>(<span class="l-python-violeta">self</span>): 
+        <span class="l-python-orange">return</span> <span class="l-python-violeta">self</span>.__matricula 
 
-<span class="l-python-orange">def</span> <span class="l-python-blue">apresentar</span>(<span class="l-python-violeta">self</span>): 
-<span class="l-python-aescuro">super</span>().apresentar() 
-<span class="l-python-aescuro">print</span>(<span class="l-python-green">f"Matrícula:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.get_matricula()<span class="l-python-orange">}</span><span class="l-python-green">"</span>) 
+        <span class="l-python-orange">def</span> <span class="l-python-blue">apresentar</span>(<span class="l-python-violeta">self</span>): 
+        <span class="l-python-aescuro">super</span>().apresentar() 
+        <span class="l-python-aescuro">print</span>(<span class="l-python-green">f"Matrícula:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.get_matricula()<span class="l-python-orange">}</span><span class="l-python-green">"</span>) 
              
 # Criando um objeto da classe Aluno 
 aluno = Aluno() 
@@ -516,36 +516,36 @@ class Subclasse(ClasseBase):
 
         <pre>
           <code>
-<span class="l-python-orange">class</span> Funcionario: 
-<span class="l-python-orange">def</span> <span class="l-python-roxo">__init__</span>(<span class="l-python-violeta">self</span>, nome, salario): 
-<span class="l-python-violeta">self</span>.nome = nome 
-<span class="l-python-violeta">self</span>.salario = salario 
+    <span class="l-python-orange">class</span> Funcionario: 
+        <span class="l-python-orange">def</span> <span class="l-python-roxo">__init__</span>(<span class="l-python-violeta">self</span>, nome, salario): 
+        <span class="l-python-violeta">self</span>.nome = nome 
+        <span class="l-python-violeta">self</span>.salario = salario 
            
-<span class="l-python-orange">def</span> <span class="l-python-blue">aplicaAumento</span>(<span class="l-python-violeta">self</span>, aumento): 
-<span class="l-python-violeta">self</span>.salario += aumento 
+    <span class="l-python-orange">def</span> <span class="l-python-blue">aplicaAumento</span>(<span class="l-python-violeta">self</span>, aumento): 
+        <span class="l-python-violeta">self</span>.salario += aumento 
            
-<span class="l-python-orange">def</span> <span class="l-python-roxo">__str__</span>(<span class="l-python-violeta">self</span>): 
-<span class="l-python-orange">return</span> <span class="l-python-green">f"Nome:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.nome<span class="l-python-orange">}</span><span class="l-python-green">, Salário:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.salario<span class="l-python-orange">}</span><span class="l-python-green">"</span> 
+    <span class="l-python-orange">def</span> <span class="l-python-roxo">__str__</span>(<span class="l-python-violeta">self</span>): 
+        <span class="l-python-orange">return</span> <span class="l-python-green">f"Nome:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.nome<span class="l-python-orange">}</span><span class="l-python-green">, Salário:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.salario<span class="l-python-orange">}</span><span class="l-python-green">"</span> 
            
-<span class="l-python-orange">class</span> Vendedor(Funcionario): 
-<span class="l-python-orange">def</span> <span class="l-python-roxo">__init__</span>(<span class="l-python-violeta">self</span>, nome, salario, comissao): 
-<span class="l-python-aescuro">super</span>().<span class="l-python-roxo">__init__</span>(nome, salario) 
-<span class="l-python-violeta">self</span>.comissao = comissao 
+    <span class="l-python-orange">class</span> Vendedor(Funcionario): 
+        <span class="l-python-orange">def</span> <span class="l-python-roxo">__init__</span>(<span class="l-python-violeta">self</span>, nome, salario, comissao): 
+        <span class="l-python-aescuro">super</span>().<span class="l-python-roxo">__init__</span>(nome, salario) 
+        <span class="l-python-violeta">self</span>.comissao = comissao 
            
-<span class="l-python-orange">def</span> <span class="l-python-blue">aplicaAumento</span>(<span class="l-python-violeta">self</span>, aumento): 
-<span class="l-python-aescuro">super</span>().aplicaAumento(aumento) 
-<span class="l-python-violeta">self</span>.comissao += aumento 
+    <span class="l-python-orange">def</span> <span class="l-python-blue">aplicaAumento</span>(<span class="l-python-violeta">self</span>, aumento): 
+        <span class="l-python-aescuro">super</span>().aplicaAumento(aumento) 
+        <span class="l-python-violeta">self</span>.comissao += aumento 
            
-<span class="l-python-orange">def</span> <span class="l-python-roxo">__str__</span>(<span class="l-python-violeta">self</span>): 
-<span class="l-python-orange">return</span> <span class="l-python-green">f"Nome:</span> <span class="l-python-orange">{</span>self.nome<span class="l-python-orange">}</span><span class="l-python-green">, Salário:</span> <span class="l-python-orange">{</span>self.salario<span class="l-python-orange">}</span><span class="l-python-green">, Comissão:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.comissao<span class="">}</span><span class="l-python-green">"</span> 
+    <span class="l-python-orange">def</span> <span class="l-python-roxo">__str__</span>(<span class="l-python-violeta">self</span>): 
+        <span class="l-python-orange">return</span> <span class="l-python-green">f"Nome:</span> <span class="l-python-orange">{</span>self.nome<span class="l-python-orange">}</span><span class="l-python-green">, Salário:</span> <span class="l-python-orange">{</span>self.salario<span class="l-python-orange">}</span><span class="l-python-green">, Comissão:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.comissao<span class="">}</span><span class="l-python-green">"</span> 
            
-<span class="l-python-orange">class</span> Administrativo(Funcionario): 
-<span class="l-python-orange">def</span> <span class="l-python-roxo">__init__</span>(<span class="l-python-violeta">self</span>, nome, salario, cargo): 
-<span class="l-python-aescuro">super</span>().<span class="l-python-roxo">__init__</span>(nome, salario) 
-<span class="l-python-violeta">self</span>.cargo = cargo 
+    <span class="l-python-orange">class</span> Administrativo(Funcionario): 
+        <span class="l-python-orange">def</span> <span class="l-python-roxo">__init__</span>(<span class="l-python-violeta">self</span>, nome, salario, cargo): 
+        <span class="l-python-aescuro">super</span>().<span class="l-python-roxo">__init__</span>(nome, salario) 
+        <span class="l-python-violeta">self</span>.cargo = cargo 
            
-<span class="l-python-orange">def</span> __str__(<span class="l-python-violeta">self</span>): 
-<span class="l-python-orange">return</span> <span class="l-python-green">f"Nome:</span> <span class="l-python-orange">{</span><pan class="l-python-violeta">self</pan>.nome<span class="l-python-orange">}</span><span class="l-python-green">, Salário:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.salario<span class="l-python-orange">}</span><span claEss="l-python-green">, Cargo:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.cargo<span class="l-python-orange">}</span><span class="l-python-green">"</span> 
+    <span class="l-python-orange">def</span> __str__(<span class="l-python-violeta">self</span>): 
+        <span class="l-python-orange">return</span> <span class="l-python-green">f"Nome:</span> <span class="l-python-orange">{</span><pan class="l-python-violeta">self</pan>.nome<span class="l-python-orange">}</span><span class="l-python-green">, Salário:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.salario<span class="l-python-orange">}</span><span claEss="l-python-green">, Cargo:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.cargo<span class="l-python-orange">}</span><span class="l-python-green">"</span> 
            
 # Exemplos de criação de objetos 
 funcionario1 = Vendedor(<span class="l-python-green">"João"</span>, <span class="l-python-aqua">3000.0</span>, <span class="l-python-aqua">500.0</span>) 
@@ -750,14 +750,14 @@ print(funcionario2)
 
         <pre>
             <code>
-  <span class="l-python-orange">class</span> ClasseBase: 
-  <span class="l-python-orange">def</span> <span class="l-python-roxo">__init__</span>(<span class="l-python-violeta">self</span>, atributo_base): 
-  <span class="l-python-violeta">self</span>.atributo_base = atributo_base 
+    <span class="l-python-orange">class</span> ClasseBase: 
+        <span class="l-python-orange">def</span> <span class="l-python-roxo">__init__</span>(<span class="l-python-violeta">self</span>, atributo_base): 
+            <span class="l-python-violeta">self</span>.atributo_base = atributo_base 
 
-  <span class="l-python-orange">class</span> ClasseDerivada(ClasseBase): 
-  <span class="l-python-orange">def</span> <span class="l-python-roxo">__init__</span>(self, atributo_base, atributo_derivado): 
-  <span class="l-python-aescuro">super</span>().<span class="l-python-roxo">__init__</span>(atributo_base)  # Chama o construtor da classe base 
-  <span class="l-python-violeta">self</span>.atributo_derivado = atributo_derivado 
+    <span class="l-python-orange">class</span> ClasseDerivada(ClasseBase): 
+        <span class="l-python-orange">def</span> <span class="l-python-roxo">__init__</span>(self, atributo_base, atributo_derivado): 
+            <span class="l-python-aescuro">super</span>().<span class="l-python-roxo">__init__</span>(atributo_base)  # Chama o construtor da classe base 
+            <span class="l-python-violeta">self</span>.atributo_derivado = atributo_derivado 
 
   objeto = ClasseDerivada(<span class="l-python-green">"Base"</span>, <span class="l-python-green">"Derivado"</span>) 
   <span class="l-python-aescuro">print</span>(objeto.atributo_base)  # Acesso ao atributo da classe base 
@@ -783,24 +783,24 @@ print(funcionario2)
 
         <pre>
             <code>
-  <span class="l-python-orange">class</span> Pessoa: 
-  <span class="l-python-orange">def</span> <span class="l-python-roxo">__init__</span>(<span class="l-python-violeta">self</span>, nome, cpf): 
-  <span class="l-python-violeta">self</span>.nome = nome 
-  <span class="l-python-violeta">self</span>.cpf = cpf 
+    <span class="l-python-orange">class</span> Pessoa: 
+        <span class="l-python-orange">def</span> <span class="l-python-roxo">__init__</span>(<span class="l-python-violeta">self</span>, nome, cpf): 
+            <span class="l-python-violeta">self</span>.nome = nome 
+            <span class="l-python-violeta">self</span>.cpf = cpf 
             
-  <span class="l-python-orange">def</span> <span class="l-python-blue">apresentar</span>(<span class="l-python-violeta">self</span>): 
-  <span class="l-python-aescuro">print</span>(<span class="l-python-green">f"Nome:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.nome<span class="l-python-orange">}</span><span class="l-python-green">"</span>) 
-  <span class="l-python-aescuro">print</span>(<span class="l-python-green">f"CPF:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.cpf<span class="l-python-orange">}</span><span class="l-python-green">"</span>) 
+        <span class="l-python-orange">def</span> <span class="l-python-blue">apresentar</span>(<span class="l-python-violeta">self</span>): 
+            <span class="l-python-aescuro">print</span>(<span class="l-python-green">f"Nome:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.nome<span class="l-python-orange">}</span><span class="l-python-green">"</span>) 
+            <span class="l-python-aescuro">print</span>(<span class="l-python-green">f"CPF:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.cpf<span class="l-python-orange">}</span><span class="l-python-green">"</span>) 
             
-  <span class="l-python-orange">class</span> Aluno(Pessoa): 
-  <span class="l-python-orange">def</span> <span class="l-python-roxo">__init__</span>(<span class="l-python-violeta">self</span>, nome, cpf, matricula): 
-  # Chama o construtor da superclasse (Pessoa) com os valores necessários 
-  <span class="l-python-aescuro">super</span>().<span class="l-python-roxo">__init__</span>(nome, cpf) 
-  <span class="l-python-violeta">self</span>.matricula = matricula 
+    <span class="l-python-orange">class</span> Aluno(Pessoa): 
+        <span class="l-python-orange">def</span> <span class="l-python-roxo">__init__</span>(<span class="l-python-violeta">self</span>, nome, cpf, matricula): 
+            # Chama o construtor da superclasse (Pessoa) com os valores necessários 
+            <span class="l-python-aescuro">super</span>().<span class="l-python-roxo">__init__</span>(nome, cpf) 
+            <span class="l-python-violeta">self</span>.matricula = matricula 
             
-  <span class="l-python-orange">def</span> <span class="l-python-blue">apresentar</span>(<span class="l-python-violeta">self</span>): 
-  <span class="l-python-aescuro">super</span>().apresentar() 
-  <span class="l-python-aescuro">print</span>(<span class="l-python-green">f"Matrícula:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.matricula<span class="l-python-orange">}</span><span class="l-python-green">"</span>) 
+        <span class="l-python-orange">def</span> <span class="l-python-blue">apresentar</span>(<span class="l-python-violeta">self</span>): 
+            <span class="l-python-aescuro">super</span>().apresentar() 
+            <span class="l-python-aescuro">print</span>(<span class="l-python-green">f"Matrícula:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.matricula<span class="l-python-orange">}</span><span class="l-python-green">"</span>) 
             
   # Exemplo de criação de um objeto Aluno com atributos inicializados 
   aluno = Aluno(<span class="l-python-green">"João"</span>, <span class="l-python-green">"123.456.789-00"</span>, <span class="l-python-green">"A12345"</span>) 
@@ -844,24 +844,24 @@ print(funcionario2)
           <pre>
             <code>
 # Definindo a superclasse "Automovel" 
-<span class="l-python-orange">class</span> Automovel: 
-<span class="l-python-orange">def</span> <span class="l-python-roxo">__init__</span>(<span class="l-python-violeta">self</span>, potencia): 
-<span class="l-python-violeta">self</span>.potencia = potencia 
+    <span class="l-python-orange">class</span> Automovel: 
+        <span class="l-python-orange">def</span> <span class="l-python-roxo">__init__</span>(<span class="l-python-violeta">self</span>, potencia): 
+        <span class="l-python-violeta">self</span>.potencia = potencia 
                  
-<span class="l-python-orange">def</span> <span class="l-python-blue">imprimirDados</span>(<span class="l-python-violeta">self</span>): 
-<span class="l-python-aescuro">print</span>(<span class="l-python-green">f"Potência do Automóvel:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.potencia<span class="l-python-orange">}</span> <span class="l-python-green">cavalos"</span>) 
+        <span class="l-python-orange">def</span> <span class="l-python-blue">imprimirDados</span>(<span class="l-python-violeta">self</span>): 
+        <span class="l-python-aescuro">print</span>(<span class="l-python-green">f"Potência do Automóvel:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.potencia<span class="l-python-orange">}</span> <span class="l-python-green">cavalos"</span>) 
                  
 # Definindo a subclasse "Carro" que herda de "Automovel" 
-<span class="l-python-orange">class</span> Carro(Automovel): 
-<span class="l-python-orange">def</span> <span class="l-python-roxo">__init__</span>(<span class="l-python-violeta">self</span>, potencia, consumo): 
+    <span class="l-python-orange">class</span> Carro(Automovel): 
+        <span class="l-python-orange">def</span> <span class="l-python-roxo">__init__</span>(<span class="l-python-violeta">self</span>, potencia, consumo): 
 # Chama o construtor da superclasse (Automovel) 
-<span class="l-python-aescuro">super</span>().<span class="l-python-roxo">__init__</span>(potencia) 
-<span class="l-python-violeta">self</span>.consumo = consumo 
+        <span class="l-python-aescuro">super</span>().<span class="l-python-roxo">__init__</span>(potencia) 
+        <span class="l-python-violeta">self</span>.consumo = consumo 
                  
-<span class="l-python-orange">def</span> <span class="l-python-blue">imprimirDados</span>(<span class="l-python-violeta">self</span>): 
+        <span class="l-python-orange">def</span> <span class="l-python-blue">imprimirDados</span>(<span class="l-python-violeta">self</span>): 
 # Chama o método da superclasse (Automovel) 
-<span class="l-python-aescuro">super</span>().imprimirDados() 
-<span class="l-python-aescuro">print</span>(<span class="l-python-green">f"Consumo do Carro:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.consumo<span class="l-python-orange">}</span> <span class="l-python-green">km/l"</span>) 
+        <span class="l-python-aescuro">super</span>().imprimirDados() 
+        <span class="l-python-aescuro">print</span>(<span class="l-python-green">f"Consumo do Carro:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.consumo<span class="l-python-orange">}</span> <span class="l-python-green">km/l"</span>) 
                  
 # Exemplo de criação de um objeto Carro 
 carro = Carro(<span class="l-python-aqua">150</span>, <span class="l-python-aqua">12</span>)  # Potência de 150 cavalos e consumo de 12 km/l 
@@ -927,41 +927,41 @@ Process finished with exit code 0
 
         <pre>
           <code>
-<span class="l-python-orange">class</span> Video: 
-<span class="l-python-orange">def</span> <span class="l-python-roxo">__init__</span>(<span class="l-python-violeta">self</span>): 
-<span class="l-python-violeta">self</span>.titulo = <span class="l-python-green">""</span> 
-<span class="l-python-violeta">self</span>.direcao = <span class="l-python-green">""</span> 
-<span class="l-python-violeta">self</span>.ano = <span class="l-python-aqua">0</span> 
-<span class="l-python-violeta">self</span>.duracao = <span class="l-python-aqua">0.0</span> 
+    <span class="l-python-orange">class</span> Video: 
+        <span class="l-python-orange">def</span> <span class="l-python-roxo">__init__</span>(<span class="l-python-violeta">self</span>): 
+        <span class="l-python-violeta">self</span>.titulo = <span class="l-python-green">""</span> 
+        <span class="l-python-violeta">self</span>.direcao = <span class="l-python-green">""</span> 
+        <span class="l-python-violeta">self</span>.ano = <span class="l-python-aqua">0</span> 
+        <span class="l-python-violeta">self</span>.duracao = <span class="l-python-aqua">0.0</span> 
 
-<span class="l-python-orange">def</span> <span class="l-python-blue">tocar</span>(<span class="l-python-violeta">self</span>): 
+    <span class="l-python-orange">def</span> <span class="l-python-blue">tocar</span>(<span class="l-python-violeta">self</span>): 
 <span class="l-python-aescuro">print</span>(<span class="l-python-green">f"Tocando</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span class="l-python-violeta">.titulo<span class="l-python-orange">}</span><span class="l-python-green">"</span>) 
 
 # Classe para representar filmes, que herda de Video 
-<span class="l-python-orange">class</span> Filme(Video): 
-<span class="l-python-orange">def</span> <span class="l-python-roxo">__init__</span>(<span class="l-python-violeta">self</span>): 
-<span class="l-python-aescuro">super</span>().<span class="l-python-roxo">__init__()</span> 
-<span class="l-python-violeta">self</span>.genero = <span class="l-python-green">""</span> 
-<span class="l-python-violeta">self</span>.produtora = <span class="l-python-green">""</span> 
+    <span class="l-python-orange">class</span> Filme(Video): 
+        <span class="l-python-orange">def</span> <span class="l-python-roxo">__init__</span>(<span class="l-python-violeta">self</span>): 
+        <span class="l-python-aescuro">super</span>().<span class="l-python-roxo">__init__()</span> 
+        <span class="l-python-violeta">self</span>.genero = <span class="l-python-green">""</span> 
+        <span class="l-python-violeta">self</span>.produtora = <span class="l-python-green">""</span> 
 
-<span class="l-python-orange">def</span> <span class="l-python-blue">informacoes</span>(<span class="l-python-violeta">self</span>): 
-<span class="l-python-aescuro">print</span>(<span class="l-python-green">f"Filme:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.titulo<span class="l-python-orange">}</span> <span class="l-python-green">(</span><span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.ano<span class="l-python-orange">}</span><span class="l-python-green">)"</span>) 
-<span class="l-python-aescuro">print</span>(<span class="l-python-green">f"Diretor(a):</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.direcao<span class="l-python-orange">}</span><span class="l-python-green">"</span>) 
-<span class="l-python-aescuro">print</span>(<span class="l-python-green">f"Gênero:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.genero<span class="l-python-orange">}</span><span class="l-python-green">"</span>) 
-<span class="l-python-aescuro">print</span>(<span class="l-python-green">f"Duração:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.duracao<span class="l-python-orange">}</span> <span class="l-python-green">minutos"</span>) 
-<span class="l-python-aescuro">print</span>(<span class="l-python-green">f"Produtora:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.produtora<span class="l-python-orange">}</span><span class="l-python-green">"</span>) 
+    <span class="l-python-orange">def</span> <span class="l-python-blue">informacoes</span>(<span class="l-python-violeta">self</span>): 
+        <span class="l-python-aescuro">print</span>(<span class="l-python-green">f"Filme:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.titulo<span class="l-python-orange">}</span> <span class="l-python-green">(</span><span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.ano<span class="l-python-orange">}</span><span class="l-python-green">)"</span>) 
+        <span class="l-python-aescuro">print</span>(<span class="l-python-green">f"Diretor(a):</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.direcao<span class="l-python-orange">}</span><span class="l-python-green">"</span>) 
+        <span class="l-python-aescuro">print</span>(<span class="l-python-green">f"Gênero:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.genero<span class="l-python-orange">}</span><span class="l-python-green">"</span>) 
+        <span class="l-python-aescuro">print</span>(<span class="l-python-green">f"Duração:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.duracao<span class="l-python-orange">}</span> <span class="l-python-green">minutos"</span>) 
+        <span class="l-python-aescuro">print</span>(<span class="l-python-green">f"Produtora:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.produtora<span class="l-python-orange">}</span><span class="l-python-green">"</span>) 
 
 # Classe para representar episódios de séries, que herda de Video 
-<span class="l-python-orange">class</span> Episodio(Video): 
+    <span class="l-python-orange">class</span> Episodio(Video): 
 <span class="l-python-orange">def</span><span class="l-python-roxo"> __init__</span>(<span class="l-python-violeta">self</span>): 
-<span class="l-python-aescuro">super</span>().<span class="l-python-roxo">__init__</span>() 
-<span class="l-python-violeta">self</span>.episodio = <span class="l-python-aqua">0</span> 
-<span class="l-python-violeta">self</span>.temporada = <span class="l-python-aqua">0</span> 
+        <span class="l-python-aescuro">super</span>().<span class="l-python-roxo">__init__</span>() 
+        <span class="l-python-violeta">self</span>.episodio = <span class="l-python-aqua">0</span> 
+        <span class="l-python-violeta">self</span>.temporada = <span class="l-python-aqua">0</span> 
 
-<span class="l-python-orange">def</span> <span class="l-python-blue">informacoes</span>(<span class="l-python-violeta">self</span>): 
-<span class="l-python-aescuro">print</span>(<span class="l-python-green">f"Episódio:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.titulo<span class="l-python-orange">}</span> <span class="l-python-green">(Temporada</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.temporada<span class="l-python-orange">}</span><span class="l-python-green">, Episódio</span> {<span class="l-python-violeta">self</span>.episodio<span class="l-python-orange">}</span><span class="l-python-green">,</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.ano<span class="l-python-orange">}</span><span class="l-python-green">)"</span>) 
-<span class="l-python-aescuro">print</span>(<span class="l-python-green">f"Diretor(a):</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.direcao<span class="l-python-orange">}</span><span class="l-python-green">"</span>) 
-<span class="l-python-aescuro">print</span>(<span class="l-python-green">f"Duração:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.duracao<span class="l-python-orange">}</span> <span class="l-python-green">minutos"</span>) 
+    <span class="l-python-orange">def</span> <span class="l-python-blue">informacoes</span>(<span class="l-python-violeta">self</span>): 
+        <span class="l-python-aescuro">print</span>(<span class="l-python-green">f"Episódio:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.titulo<span class="l-python-orange">}</span> <span class="l-python-green">(Temporada</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.temporada<span class="l-python-orange">}</span><span class="l-python-green">, Episódio</span> {<span class="l-python-violeta">self</span>.episodio<span class="l-python-orange">}</span><span class="l-python-green">,</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.ano<span class="l-python-orange">}</span><span class="l-python-green">)"</span>) 
+        <span class="l-python-aescuro">print</span>(<span class="l-python-green">f"Diretor(a):</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.direcao<span class="l-python-orange">}</span><span class="l-python-green">"</span>) 
+        <span class="l-python-aescuro">print</span>(<span class="l-python-green">f"Duração:</span> <span class="l-python-orange">{</span><span class="l-python-violeta">self</span>.duracao<span class="l-python-orange">}</span> <span class="l-python-green">minutos"</span>) 
 
 # Criando objetos 
 v = Video() 

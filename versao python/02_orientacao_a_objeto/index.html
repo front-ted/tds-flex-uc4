@@ -482,19 +482,19 @@ aluno3.matricula=<span class="language-python__blue">2023023</span>
   <span class="language-python__blue">return</span> media  
 
 <span class="language-python__green"># Função principal para receber as notas do aluno e calcular a média</span> 
-<span class="language-python__blue">def</span> <span class="language-python__red">main</span>():  
-<span class="language-python__orange">print</span>(<span class="language-python__green">"Calculadora de Média de Notas"</span>)  
-nome_aluno = <span class="language-python__orange">input</span>(<span class="language-python__green">"Digite o nome do aluno: "</span>)  
+  <span class="language-python__blue">def</span> <span class="language-python__red">main</span>():  
+  <span class="language-python__orange">print</span>(<span class="language-python__green">"Calculadora de Média de Notas"</span>)  
+  nome_aluno = <span class="language-python__orange">input</span>(<span class="language-python__green">"Digite o nome do aluno: "</span>)  
 
-nota1 = float(<span class="language-python__orange">input</span>(<span class="language-python__green">"Digite a primeira nota: "</span>))  
+  nota1 = float(<span class="language-python__orange">input</span>(<span class="language-python__green">"Digite a primeira nota: "</span>))  
 
-nota2 = float(<span class="language-python__orange">input</span>(<span class="language-python__green">"Digite a segunda nota: "</span>))  
+  nota2 = float(<span class="language-python__orange">input</span>(<span class="language-python__green">"Digite a segunda nota: "</span>))  
 
-<span class="language-python__green"># Chama a função calcular_media para obter o resultado</span>  
-media = calcular_media(nota1, nota2)  
+  <span class="language-python__green"># Chama a função calcular_media para obter o resultado</span>  
+  media = calcular_media(nota1, nota2)  
 
-<span class="language-python__green"># Exibe a média com duas casas decimais</span>
-<span class="language-python__orange">print</span>(f"A média das notas do aluno {nome_aluno} é: {media:.2f}")  
+  <span class="language-python__green"># Exibe a média com duas casas decimais</span>
+  <span class="language-python__orange">print</span>(f"A média das notas do aluno {nome_aluno} é: {media:.2f}")  
 
 <span class="language-python__green">#verifica para chamar função main</span>  
 if __name__ == <span class="language-python__green">"__main__"</span>:  
@@ -534,12 +534,12 @@ main()
     <span class="language-python__red">self</span>.data_nascimento = data_nascimento 
 
     <span class="language-python__green"># define método listarAluno para os objetos da classe</span>
-    def  listarAluno(<span class="language-python__red">self</span>): 
-        print(<span class="language-python__green">"Nome: "</span>, <span class="language-python__red">self</span>.nome) 
-        print(<span class="language-python__green">"Matrícula: "</span>, <span class="language-python__red">self</span>.matricula) 
-        print(<span class="language-python__green">"CPF: "</span>, <span class="language-python__red">self</span>.cpf) 
-        print(<span class="language-python__green">"Data de Nascimento: "</span>, <span class="language-python__red">self</span>.data_nascimento) 
-        print(<span class="language-python__green">"------------------------"</span>) 
+      def  listarAluno(<span class="language-python__red">self</span>): 
+          print(<span class="language-python__green">"Nome: "</span>, <span class="language-python__red">self</span>.nome) 
+          print(<span class="language-python__green">"Matrícula: "</span>, <span class="language-python__red">self</span>.matricula) 
+          print(<span class="language-python__green">"CPF: "</span>, <span class="language-python__red">self</span>.cpf) 
+          print(<span class="language-python__green">"Data de Nascimento: "</span>, <span class="language-python__red">self</span>.data_nascimento) 
+          print(<span class="language-python__green">"------------------------"</span>) 
  
  
 <span class="language-python__green"># Exemplos de criação de objetos Aluno</span>
@@ -1721,18 +1721,18 @@ aluno3.listarAluno()
       <span>funcionario.listar_atributos()</span>
     <span class="language-python__grey">print</span><span>(</span><span class="language-python__green">"------------------------"</span><span>)</span>
 
-    <span class="language-python__grey"># Criando funcionários</span>
-    <span>funcionario1 = Funcionario(</span><span class="language-python__green">"João Silva"</span><span>,</span><span class="language-python__green">"Gerente de Vendas"</span><span>,</span><span class="language-python__green">"01/05/1985"</span><span>,</span> <span class="language-python__blue">5000.0</span><span>)</span>
-    <span>funcionario2 = Funcionario(</span><span class="language-python__green">"Maria Souza"</span><span>,</span><span class="language-python__green">"Analista de Marketing"</span><span>,</span><span class="language-python__green">"15/08/1990"</span><span>,</span> <span class="language-python__blue">3500.0</span><span>)</span>
+  <span class="language-python__grey"># Criando funcionários</span>
+  <span>funcionario1 = Funcionario(</span><span class="language-python__green">"João Silva"</span><span>,</span><span class="language-python__green">"Gerente de Vendas"</span><span>,</span><span class="language-python__green">"01/05/1985"</span><span>,</span> <span class="language-python__blue">5000.0</span><span>)</span>
+  <span>funcionario2 = Funcionario(</span><span class="language-python__green">"Maria Souza"</span><span>,</span><span class="language-python__green">"Analista de Marketing"</span><span>,</span><span class="language-python__green">"15/08/1990"</span><span>,</span> <span class="language-python__blue">3500.0</span><span>)</span>
 
-    <span class="language-python__grey"># Criando uma empresa com funcionários</span>
-      <span>empresa1 = Empresa(</span><span class="language-python__green">"Minha Empresa"</span><span>,</span><span class="language-python__green">"1234567890"</span><span>,</span><span>funcionario1</span><span>)</span>
-    
-    <span class="language-python__grey"># Adicionando funcionário à lista de funcionários da empresa</span>
-      <span>empresa1.adicionar_funcionario(funcionario2)</span>
+  <span class="language-python__grey"># Criando uma empresa com funcionários</span>
+    <span>empresa1 = Empresa(</span><span class="language-python__green">"Minha Empresa"</span><span>,</span><span class="language-python__green">"1234567890"</span><span>,</span><span>funcionario1</span><span>)</span>
 
-    <span class="language-python__grey"># Listando atributos da empresa, incluindo o gerente e os funcionários</span>
-      <span>empresa1.listar_atributos()</span>
+  <span class="language-python__grey"># Adicionando funcionário à lista de funcionários da empresa</span>
+    <span>empresa1.adicionar_funcionario(funcionario2)</span>
+
+  <span class="language-python__grey"># Listando atributos da empresa, incluindo o gerente e os funcionários</span>
+    <span>empresa1.listar_atributos()</span>
               </code>
             </pre>
 
@@ -2070,8 +2070,8 @@ meu_pacote/
             <pre>
               <code>
 <span class="language-python__orange">class</span> MinhaClasse: 
-  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>): 
-  <span class="language-python__red">self</span>.atributo_publico = <span class="language-python__blue">10</span> 
+      <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>): 
+      <span class="language-python__red">self</span>.atributo_publico = <span class="language-python__blue">10</span> 
              
 <span>objeto = MinhaClasse()</span> 
 <span class="language-python__grey">print</span>(objeto.atributo_publico)  <span class="language-python__grey"># Acesso ao atributo público</span> 
@@ -2083,8 +2083,8 @@ meu_pacote/
             <pre>
               <code>
 <span class="language-python__orange">class</span> MinhaClasse: 
-  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>): 
-  <span class="language-python__red">self</span>__.atributo_privado = <span class="language-python__blue">20</span> 
+      <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>): 
+      <span class="language-python__red">self</span>__.atributo_privado = <span class="language-python__blue">20</span> 
              
 <span>objeto = MinhaClasse()</span> 
 <span class="language-python__grey"># Isso não é recomendado, mas é possível</span> 
@@ -2097,8 +2097,8 @@ meu_pacote/
             <pre>
               <code>
 <span class="language-python__orange">class</span> MinhaClasse: 
-  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>): 
-  <span class="language-python__red">self</span>_.atributo_privado = <span class="language-python__blue">30</span> 
+      <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>): 
+      <span class="language-python__red">self</span>_.atributo_privado = <span class="language-python__blue">30</span> 
               
 <span>objeto = MinhaClasse()</span> 
  
@@ -2111,8 +2111,8 @@ meu_pacote/
             <pre>
               <code>
 <span class="language-python__orange">class</span> MinhaClasse: 
-  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>): 
-  <span class="language-python__red">self</span>._atributo_protegido = <span class="language-python__blue">30</span> 
+      <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>): 
+      <span class="language-python__red">self</span>._atributo_protegido = <span class="language-python__blue">30</span> 
              
 <span>objeto = MinhaClasse()</span> 
 <span class="language-python__grey"># Embora seja possível, não é recomendado</span> 
@@ -2294,8 +2294,8 @@ meu_pacote/
                 <pre>
                   <code>
 <span class="language-python__orange">class</span> MinhaClasse: 
-  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>): 
-  <span class="language-python__red">self</span>.atributo_publico  = <span class="language-python__blue">30</span> 
+      <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>): 
+      <span class="language-python__red">self</span>.atributo_publico  = <span class="language-python__blue">30</span> 
              
   <span class="language-python__orange">def</span> <span class="language-python__blue">metodo_publico</span>(<span class="language-python__red">self</span>): 
     <span class="language-python__orange"> return</span> <span class="language-python__green">"Método público"</span>
@@ -2308,8 +2308,8 @@ meu_pacote/
                 <pre>
                   <code>
 <span class="language-python__orange">class</span> MinhaClasse: 
-  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>): 
-  <span class="language-python__red">self</span>._atributo_protegido  = <span class="language-python__blue">42</span> <span class="language-python__grey"># Atributo protegido</span>
+      <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>): 
+      <span class="language-python__red">self</span>._atributo_protegido  = <span class="language-python__blue">42</span> <span class="language-python__grey"># Atributo protegido</span>
              
   <span class="language-python__orange">def</span> <span class="language-python__blue">_metodo_protegido</span>(<span class="language-python__red">self</span>): 
     <span class="language-python__orange"> return</span> <span class="language-python__green">"Método protegido"</span>
@@ -2322,8 +2322,8 @@ meu_pacote/
                 <pre>
                   <code>
 <span class="language-python__orange">class</span> MinhaClasse: 
-  <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>): 
-  <span class="language-python__red">self</span>.__atributo_privado  = <span class="language-python__blue">42</span> <span class="language-python__grey"># Atributo privado</span>
+      <span class="language-python__orange">def</span> <span class="language-python__red">__init__</span>(<span class="language-python__red">self</span>): 
+      <span class="language-python__red">self</span>.__atributo_privado  = <span class="language-python__blue">42</span> <span class="language-python__grey"># Atributo privado</span>
              
   <span class="language-python__orange">def</span> <span class="language-python__blue">__metodo_privado</span>(<span class="language-python__red">self</span>): 
     <span class="language-python__orange"> return</span> <span class="language-python__green">"Método privado"</span>
