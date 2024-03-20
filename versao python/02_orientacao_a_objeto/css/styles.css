@@ -294,6 +294,10 @@ body {
     top: -10%;
     left: 10%;
   }
+
+  .video-player{
+    margin-bottom: 50px;
+  }
   
   @media screen and (max-width: 1700px) {
     body {
